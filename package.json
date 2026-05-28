@@ -1,0 +1,14 @@
+{
+  "name": "tiger-lab-private",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Private internal lab for advanced full-stack, DevOps, and AI projects",
+  "scripts": {
+    "test": "node tests/smoke/repo-structure.test.mjs",
+    "check:secrets": "bash ./scripts/verify-secrets.sh",
+    "ci:local": "npm run test && npm run check:secrets"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

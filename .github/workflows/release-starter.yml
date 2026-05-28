@@ -1,0 +1,20 @@
+name: Release Starter
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release-note:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Create starter release note artifact
+        run: |
+          mkdir -p out
+          echo "Release draft - fill changelog before publishing." > out/release-note.txt
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-note
+          path: out/release-note.txt
