@@ -32,6 +32,8 @@ Private internal lab to build production-grade full-stack, DevOps, and AI projec
 - `docs/internal/MONETIZATION_ENGINE.md`: revenue model and execution cadence.
 - `docs/internal/OFFER_CATALOG.md`: packaged offers with pricing ranges.
 - `docs/internal/CLIENT_OUTREACH_PLAYBOOK.md`: outreach and proposal system.
+- `docs/internal/PROFILE_REPOS_MATRIX_2026-05-28.md`: full 29-repo scoring matrix (60/40 weighted).
+- `docs/internal/AUDIT_PROMPTS_RESULT_2026-05-28.md`: consolidated compliance audit report (A-E).
 - `ops/revenue/forecast.example.json`: forecast scenario examples.
 - `scripts/revenue-forecast.mjs`: projection utility for revenue and MRR.
 - `ops/command-center/`: interface for task monitoring and urgency signals.
@@ -40,6 +42,16 @@ Private internal lab to build production-grade full-stack, DevOps, and AI projec
 - `ops/pipeline/weekly-pipeline.json`: weekly sales board data.
 - `scripts/pipeline-weekly-summary.mjs`: weighted pipeline and MRR summary.
 - `.github/workflows/weekly-pipeline-reminder.yml`: weekly pipeline reminder issue.
+- `ops/supervisor/latest-supervisor-report.example.json`: supervisor report JSON example.
+- `scripts/supervisor-sync-command-center.mjs`: sync supervisor actions into command center tasks.
+
+## Supervisor Sync Flow
+1. Run reviewer + performance + deploy-prep.
+2. Generate supervisor unified report with JSON appendix.
+3. Save JSON to `ops/supervisor/latest-supervisor-report.example.json` or a custom path.
+4. Sync into command center:
+   - `npm run supervisor:sync:example`
+   - or `npm run supervisor:sync -- <path-to-report.json>`
 
 ## Confidentiality
 This repository is private and intended for internal usage only.

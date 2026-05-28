@@ -1,0 +1,32 @@
+{
+  "meta": {
+    "generatedAt": "2026-05-28T18:00:00Z",
+    "sourceAgents": ["reviewer", "performance", "deploy-prep"],
+    "scope": "portfolio repos",
+    "notes": "Example supervisor report for task sync"
+  },
+  "actions": [
+    {
+      "id": "S-001",
+      "task": "Fix high-risk CORS configuration in public API",
+      "owner": "ai",
+      "repoPath": "web_project_api_full/server",
+      "dueWindow": "48h",
+      "status": "todo",
+      "priority": "P0",
+      "area": "security",
+      "nextAction": "Harden allowlist and add validation tests"
+    },
+    {
+      "id": "S-002",
+      "task": "Send revised proposal to top lead",
+      "owner": "human",
+      "repoPath": "sales/pipeline",
+      "dueWindow": "today",
+      "status": "todo",
+      "priority": "P0",
+      "area": "revenue",
+      "nextAction": "Send fixed-scope proposal with 3-tier options"
+    }
+  ]
+}

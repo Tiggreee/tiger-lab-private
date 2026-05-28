@@ -15,8 +15,10 @@ const required = [
   'ops/command-center/index.html',
   'ops/command-center/tasks.json',
   'ops/pipeline/weekly-pipeline.json',
+  'ops/supervisor/latest-supervisor-report.example.json',
   'scripts/command-center-summary.mjs',
   'scripts/pipeline-weekly-summary.mjs',
+  'scripts/supervisor-sync-command-center.mjs',
   'templates/node-api/README.md',
   'scripts/new-project.sh',
   'scripts/new-project.ps1'

@@ -11,6 +11,8 @@
     "revenue:forecast:example": "node scripts/revenue-forecast.mjs ops/revenue/forecast.example.json",
     "command-center:start": "node scripts/serve-command-center.mjs",
     "command-center:summary": "node scripts/command-center-summary.mjs",
+    "supervisor:sync": "node scripts/supervisor-sync-command-center.mjs",
+    "supervisor:sync:example": "node scripts/supervisor-sync-command-center.mjs ops/supervisor/latest-supervisor-report.example.json",
     "pipeline:summary": "node scripts/pipeline-weekly-summary.mjs",
     "pipeline:summary:md": "node scripts/pipeline-weekly-summary.mjs --markdown"
   },

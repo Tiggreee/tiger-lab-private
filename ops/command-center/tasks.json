@@ -2,7 +2,9 @@
   "meta": {
     "timezone": "America/Mexico_City",
     "owner": "Victor",
-    "project": "Monetization Engine"
+    "project": "Monetization Engine",
+    "lastSupervisorSyncAt": "2026-05-28T11:30:59.088Z",
+    "lastSupervisorReport": "ops/supervisor/latest-supervisor-report.example.json"
   },
   "tasks": [
     {
@@ -84,6 +86,68 @@
       "status": "todo",
       "dueDate": "2026-06-30",
       "nextAction": "Mark task progress and reschedule overdue items"
+    },
+    {
+      "id": "M-009",
+      "title": "Upgrade README for 3 star repos",
+      "area": "employability",
+      "priority": "P1",
+      "owner": "ai",
+      "status": "todo",
+      "dueDate": "2026-06-03",
+      "nextAction": "Add architecture, metrics, CI badges, and business outcomes"
+    },
+    {
+      "id": "M-010",
+      "title": "Publish one bilingual technical case study",
+      "area": "employability",
+      "priority": "P1",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-04",
+      "nextAction": "Publish EN/ES case with problem, architecture, and KPI impact"
+    },
+    {
+      "id": "M-011",
+      "title": "Send 8 targeted job applications",
+      "area": "employability",
+      "priority": "P1",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-06",
+      "nextAction": "Tailor CV/portfolio packet to Node-React-AI roles"
+    },
+    {
+      "id": "M-012",
+      "title": "Prepare interview packet for star repos",
+      "area": "employability",
+      "priority": "P2",
+      "owner": "ai",
+      "status": "todo",
+      "dueDate": "2026-06-07",
+      "nextAction": "Create repo narratives with tradeoffs, risks, and architecture decisions"
+    },
+    {
+      "id": "S-001",
+      "title": "Fix high-risk CORS configuration in public API",
+      "area": "security",
+      "priority": "P0",
+      "owner": "ai",
+      "status": "todo",
+      "dueDate": "2026-05-30",
+      "nextAction": "Harden allowlist and add validation tests",
+      "repoPath": "web_project_api_full/server"
+    },
+    {
+      "id": "S-002",
+      "title": "Send revised proposal to top lead",
+      "area": "revenue",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-05-28",
+      "nextAction": "Send fixed-scope proposal with 3-tier options",
+      "repoPath": "sales/pipeline"
     }
   ]
 }
