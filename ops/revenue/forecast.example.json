@@ -1,0 +1,30 @@
+{
+  "scenarios": [
+    {
+      "name": "conservative",
+      "months": 3,
+      "auditDealsPerMonth": 2,
+      "auditPrice": 250,
+      "sprintDealsPerMonth": 1,
+      "sprintPrice": 1200,
+      "productDealsPerMonth": 0,
+      "productPrice": 3500,
+      "newRetainersPerMonth": 1,
+      "retainerMonthly": 300,
+      "churnRate": 0.1
+    },
+    {
+      "name": "target",
+      "months": 3,
+      "auditDealsPerMonth": 3,
+      "auditPrice": 300,
+      "sprintDealsPerMonth": 2,
+      "sprintPrice": 1600,
+      "productDealsPerMonth": 1,
+      "productPrice": 4000,
+      "newRetainersPerMonth": 1,
+      "retainerMonthly": 450,
+      "churnRate": 0.08
+    }
+  ]
+}

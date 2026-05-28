@@ -6,7 +6,9 @@
   "scripts": {
     "test": "node tests/smoke/repo-structure.test.mjs",
     "check:secrets": "bash ./scripts/verify-secrets.sh",
-    "ci:local": "npm run test && npm run check:secrets"
+    "ci:local": "npm run test && npm run check:secrets",
+    "revenue:forecast": "node scripts/revenue-forecast.mjs",
+    "revenue:forecast:example": "node scripts/revenue-forecast.mjs ops/revenue/forecast.example.json"
   },
   "engines": {
     "node": ">=20"
