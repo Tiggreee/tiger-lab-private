@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "owner": "Victor",
+    "weekStart": "2026-05-25",
+    "currency": "USD",
+    "weeklyTargets": {
+      "newLeads": 15,
+      "discoveryCalls": 5,
+      "proposalsSent": 3,
+      "dealsClosed": 1,
+      "newMRR": 500,
+      "oneOffRevenue": 1200
+    }
+  },
+  "deals": [
+    {
+      "id": "D-001",
+      "name": "Local Retail Invoicing Setup",
+      "source": "LinkedIn",
+      "offer": "FacturAutentico Sprint",
+      "stage": "discovery",
+      "value": 1500,
+      "isMRR": false,
+      "probability": 0.6,
+      "owner": "human",
+      "nextAction": "Confirm discovery call agenda",
+      "dueDate": "2026-05-30"
+    },
+    {
+      "id": "D-002",
+      "name": "Agency API Foundation",
+      "source": "Referral",
+      "offer": "API Foundation and DevOps Setup",
+      "stage": "proposal",
+      "value": 1200,
+      "isMRR": false,
+      "probability": 0.5,
+      "owner": "human",
+      "nextAction": "Send 3-tier proposal",
+      "dueDate": "2026-05-31"
+    },
+    {
+      "id": "D-003",
+      "name": "SMB Monitoring Retainer",
+      "source": "Outbound",
+      "offer": "Security Hardening Retainer",
+      "stage": "negotiation",
+      "value": 400,
+      "isMRR": true,
+      "probability": 0.4,
+      "owner": "human",
+      "nextAction": "Follow up after pricing objection",
+      "dueDate": "2026-06-01"
+    }
+  ]
+}

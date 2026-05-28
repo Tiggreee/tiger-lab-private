@@ -37,6 +37,9 @@ Private internal lab to build production-grade full-stack, DevOps, and AI projec
 - `ops/command-center/`: interface for task monitoring and urgency signals.
 - `scripts/command-center-summary.mjs`: CLI summary of urgent tasks.
 - `.github/workflows/daily-monetization-reminder.yml`: daily GitHub reminder issue.
+- `ops/pipeline/weekly-pipeline.json`: weekly sales board data.
+- `scripts/pipeline-weekly-summary.mjs`: weighted pipeline and MRR summary.
+- `.github/workflows/weekly-pipeline-reminder.yml`: weekly pipeline reminder issue.
 
 ## Confidentiality
 This repository is private and intended for internal usage only.

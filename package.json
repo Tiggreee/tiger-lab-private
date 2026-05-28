@@ -10,7 +10,9 @@
     "revenue:forecast": "node scripts/revenue-forecast.mjs",
     "revenue:forecast:example": "node scripts/revenue-forecast.mjs ops/revenue/forecast.example.json",
     "command-center:start": "node scripts/serve-command-center.mjs",
-    "command-center:summary": "node scripts/command-center-summary.mjs"
+    "command-center:summary": "node scripts/command-center-summary.mjs",
+    "pipeline:summary": "node scripts/pipeline-weekly-summary.mjs",
+    "pipeline:summary:md": "node scripts/pipeline-weekly-summary.mjs --markdown"
   },
   "engines": {
     "node": ">=20"
