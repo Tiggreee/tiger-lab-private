@@ -1,0 +1,173 @@
+:root {
+  --bg: #f4f1e8;
+  --ink: #182126;
+  --brand: #0f7b73;
+  --brand-dark: #0b5d58;
+  --danger: #b02a37;
+  --warn: #9a6700;
+  --ok: #256f3a;
+  --card: #fffdf8;
+  --line: #d6cfbf;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: radial-gradient(circle at 15% 10%, #fff3d6 0, var(--bg) 45%), linear-gradient(180deg, #f7f4ed 0, #efe9db 100%);
+  color: var(--ink);
+  padding: 20px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
+  margin: 0 0 12px;
+}
+
+.hero p {
+  margin: 8px 0 0;
+  color: #38444d;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  border: 0;
+  background: var(--brand);
+  color: #fff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--brand-dark);
+}
+
+.btn-secondary {
+  background: #3d4953;
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.metric {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.metric b {
+  display: block;
+  font-size: 1.4rem;
+}
+
+.panel {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.task {
+  border: 1px solid var(--line);
+  border-left-width: 6px;
+  border-radius: 8px;
+  padding: 10px;
+  background: #fff;
+}
+
+.task h3 {
+  margin: 0 0 6px;
+  font-size: 1rem;
+}
+
+.task p {
+  margin: 2px 0;
+}
+
+.task.overdue {
+  border-left-color: var(--danger);
+}
+
+.task.due-soon {
+  border-left-color: var(--warn);
+}
+
+.task.on-track {
+  border-left-color: var(--ok);
+}
+
+.badge {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 0.75rem;
+  background: #e6ecef;
+  margin-right: 6px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+label {
+  display: grid;
+  gap: 4px;
+  font-size: 0.9rem;
+}
+
+footer {
+  margin-top: 8px;
+  color: #4a5966;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-actions {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

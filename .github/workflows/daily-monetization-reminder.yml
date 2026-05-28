@@ -1,0 +1,70 @@
+name: Daily Monetization Reminder
+
+on:
+  schedule:
+    - cron: "0 14 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  reminder:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Build reminder body
+        id: summary
+        shell: bash
+        run: |
+          {
+            echo "body<<EOF"
+            node scripts/command-center-summary.mjs --markdown
+            echo "EOF"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Upsert reminder issue
+        uses: actions/github-script@v7
+        env:
+          REMINDER_BODY: ${{ steps.summary.outputs.body }}
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const title = "Daily Monetization Command Center Reminder";
+            const body = process.env.REMINDER_BODY;
+
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: "open",
+              per_page: 100
+            });
+
+            const existing = issues.find(i => i.title === title);
+            if (existing) {
+              await github.rest.issues.update({
+                owner,
+                repo,
+                issue_number: existing.number,
+                body
+              });
+              core.info(`Updated issue #${existing.number}`);
+            } else {
+              const created = await github.rest.issues.create({
+                owner,
+                repo,
+                title,
+                body,
+                labels: ["reminder", "monetization"]
+              });
+              core.info(`Created issue #${created.data.number}`);
+            }

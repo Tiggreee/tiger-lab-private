@@ -16,6 +16,10 @@ Private internal lab to build production-grade full-stack, DevOps, and AI projec
    - PowerShell: `./scripts/new-project.ps1 -Name <project-name> -Template node-api`
 5. Run monetization projection:
    - `npm run revenue:forecast:example`
+6. Start daily command center:
+   - `npm run command-center:start`
+   - Open `http://localhost:4310`
+   - Enable browser alerts from the UI
 
 ## Internal Areas
 - `architecture/`: ADRs and architecture decisions.
@@ -30,6 +34,9 @@ Private internal lab to build production-grade full-stack, DevOps, and AI projec
 - `docs/internal/CLIENT_OUTREACH_PLAYBOOK.md`: outreach and proposal system.
 - `ops/revenue/forecast.example.json`: forecast scenario examples.
 - `scripts/revenue-forecast.mjs`: projection utility for revenue and MRR.
+- `ops/command-center/`: interface for task monitoring and urgency signals.
+- `scripts/command-center-summary.mjs`: CLI summary of urgent tasks.
+- `.github/workflows/daily-monetization-reminder.yml`: daily GitHub reminder issue.
 
 ## Confidentiality
 This repository is private and intended for internal usage only.

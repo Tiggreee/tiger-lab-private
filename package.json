@@ -8,7 +8,9 @@
     "check:secrets": "bash ./scripts/verify-secrets.sh",
     "ci:local": "npm run test && npm run check:secrets",
     "revenue:forecast": "node scripts/revenue-forecast.mjs",
-    "revenue:forecast:example": "node scripts/revenue-forecast.mjs ops/revenue/forecast.example.json"
+    "revenue:forecast:example": "node scripts/revenue-forecast.mjs ops/revenue/forecast.example.json",
+    "command-center:start": "node scripts/serve-command-center.mjs",
+    "command-center:summary": "node scripts/command-center-summary.mjs"
   },
   "engines": {
     "node": ">=20"

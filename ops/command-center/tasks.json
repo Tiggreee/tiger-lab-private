@@ -1,0 +1,89 @@
+{
+  "meta": {
+    "timezone": "America/Mexico_City",
+    "owner": "Victor",
+    "project": "Monetization Engine"
+  },
+  "tasks": [
+    {
+      "id": "M-001",
+      "title": "Publish 1 LinkedIn post with business outcome",
+      "area": "positioning",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-05-29",
+      "nextAction": "Publish case-style post with CTA to 20-min call"
+    },
+    {
+      "id": "M-002",
+      "title": "Send 10 outbound messages to ICP prospects",
+      "area": "sales",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-05-30",
+      "nextAction": "Use CLIENT_OUTREACH_PLAYBOOK and send first wave"
+    },
+    {
+      "id": "M-003",
+      "title": "Book 3 discovery calls",
+      "area": "sales",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-05-31",
+      "nextAction": "Offer 20-min audit and fixed-scope plan"
+    },
+    {
+      "id": "M-004",
+      "title": "Create proposal template with 3 tiers",
+      "area": "sales",
+      "priority": "P1",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-05-31",
+      "nextAction": "Define Basic/Standard/Premium deliverables and terms"
+    },
+    {
+      "id": "M-005",
+      "title": "Harden FacturAutentico testing baseline",
+      "area": "delivery",
+      "priority": "P1",
+      "owner": "ai",
+      "status": "todo",
+      "dueDate": "2026-06-02",
+      "nextAction": "Implement integration tests and CI checks"
+    },
+    {
+      "id": "M-006",
+      "title": "Prepare monetization one-pager",
+      "area": "positioning",
+      "priority": "P1",
+      "owner": "ai",
+      "status": "todo",
+      "dueDate": "2026-06-01",
+      "nextAction": "Generate concise offer summary aligned with pricing"
+    },
+    {
+      "id": "M-007",
+      "title": "Close first paid sprint",
+      "area": "revenue",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-05",
+      "nextAction": "Convert strongest lead into signed fixed-scope sprint"
+    },
+    {
+      "id": "M-008",
+      "title": "Update command center every day",
+      "area": "operations",
+      "priority": "P1",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-30",
+      "nextAction": "Mark task progress and reschedule overdue items"
+    }
+  ]
+}

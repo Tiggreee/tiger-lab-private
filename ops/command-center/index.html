@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiger Command Center</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <h1>Tiger Command Center</h1>
+        <p>Monetization control room: tasks, alerts, and execution pressure.</p>
+      </div>
+      <div class="hero-actions">
+        <button id="notifyBtn" class="btn">Enable Alerts</button>
+        <button id="refreshBtn" class="btn btn-secondary">Refresh</button>
+      </div>
+    </header>
+
+    <section class="metrics" id="metrics"></section>
+
+    <section class="panel">
+      <h2>Human-Critical Tasks (Your Next Moves)</h2>
+      <ul id="humanTasks" class="list"></ul>
+    </section>
+
+    <section class="panel">
+      <h2>AI/Automation Tasks (My Side)</h2>
+      <ul id="aiTasks" class="list"></ul>
+    </section>
+
+    <section class="panel">
+      <h2>All Active Tasks</h2>
+      <div class="filters">
+        <label>
+          Priority
+          <select id="priorityFilter">
+            <option value="all">All</option>
+            <option value="P0">P0</option>
+            <option value="P1">P1</option>
+            <option value="P2">P2</option>
+            <option value="P3">P3</option>
+          </select>
+        </label>
+        <label>
+          Owner
+          <select id="ownerFilter">
+            <option value="all">All</option>
+            <option value="human">Human</option>
+            <option value="ai">AI</option>
+          </select>
+        </label>
+      </div>
+      <ul id="allTasks" class="list"></ul>
+    </section>
+
+    <footer>
+      <p id="footerText"></p>
+    </footer>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

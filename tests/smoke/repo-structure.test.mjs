@@ -6,8 +6,13 @@ const required = [
   '.github/workflows/ci.yml',
   '.github/workflows/security.yml',
   '.github/dependabot.yml',
+  '.github/workflows/daily-monetization-reminder.yml',
   'architecture/ADR-0001-repo-foundation.md',
   'docs/internal/LAB_OPERATING_GUIDE.md',
+  'docs/internal/COMMAND_CENTER_GUIDE.md',
+  'ops/command-center/index.html',
+  'ops/command-center/tasks.json',
+  'scripts/command-center-summary.mjs',
   'templates/node-api/README.md',
   'scripts/new-project.sh',
   'scripts/new-project.ps1'
