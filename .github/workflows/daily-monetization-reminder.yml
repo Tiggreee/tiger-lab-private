@@ -63,8 +63,7 @@ jobs:
                 owner,
                 repo,
                 title,
-                body,
-                labels: ["reminder", "monetization"]
+                body
               });
               core.info(`Created issue #${created.data.number}`);
             }
