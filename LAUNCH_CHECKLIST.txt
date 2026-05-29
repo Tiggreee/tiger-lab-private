@@ -1,0 +1,62 @@
+LAUNCH CHECKLIST – LISTA DE LANZAMIENTO
+
+1. Catálogo
+- Definir productos iniciales
+- Asignar funnels
+- Asignar pricing
+- Asignar contenido
+
+1. Funnels
+- Activar funnels iniciales
+- Validar pasos
+- Validar eventos
+- Validar conversiones
+
+1. Pricing
+- Activar reglas dinámicas
+- Validar ajustes
+- Validar descuentos
+- Validar bundles
+
+1. Automatizaciones
+- Activar secuencias
+- Validar triggers
+- Validar mensajes
+- Validar tiempos
+
+1. Bots
+- Activar bots base
+- Validar respuestas
+- Validar triggers
+- Validar límites
+
+1. Contenido
+- Publicar contenido inicial
+- Publicar contenido técnico
+- Publicar contenido de producto
+
+1. Tráfico
+- Activar adquisición
+- Activar outreach
+- Activar contenido recurrente
+
+1. Pruebas
+- Flujo integral
+- Estrés
+- Demo
+- Modo continuo
+
+1. Build
+- Congelar versión
+- Generar build
+- Validar build
+
+1. Lanzamiento
+- Publicar catálogo
+- Publicar contenido
+- Activar funnels
+- Activar automatizaciones
+- Activar bots
+- Activar tráfico
+
+FIN DE LAUNCH CHECKLIST

@@ -1,0 +1,52 @@
+METRICS DASHBOARD SPEC – ESPECIFICACIÓN DEL DASHBOARD
+
+Objetivo
+Monitorear operación, ingresos, tráfico, conversión y retención.
+
+Secciones del dashboard
+
+1. Tráfico
+- visitas
+- leads
+- fuentes
+- costo por lead
+
+1. Conversión
+- tasa de conversión
+- embudos activos
+- pasos completados
+- abandono
+
+1. Productos
+- productos generados
+- productos activos
+- productos vendidos
+- ingresos por producto
+
+1. Pricing
+- precios actuales
+- ajustes aplicados
+- descuentos activos
+
+1. Automatizaciones
+- secuencias activas
+- mensajes enviados
+- triggers ejecutados
+
+1. Bots
+- interacciones
+- conversiones asistidas
+- usuarios reactivados
+
+1. Retención
+- churn
+- retención 7 días
+- retención 30 días
+- valor por usuario
+
+1. Alertas
+- errores
+- anomalías
+- eventos críticos
+
+FIN DE METRICS DASHBOARD SPEC
