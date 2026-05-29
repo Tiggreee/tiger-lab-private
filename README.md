@@ -29,11 +29,13 @@ Private internal lab to build production-grade full-stack, DevOps, and AI projec
 - `.github/`: CI/CD, dependency updates, security checks.
 
 ## Monetization Toolkit
+- `docs/internal/AUTOMATED_MONETIZATION_MASTER_PLAN.md`: master automation plan (products, modules, events, roadmap).
 - `docs/internal/MONETIZATION_ENGINE.md`: revenue model and execution cadence.
 - `docs/internal/OFFER_CATALOG.md`: packaged offers with pricing ranges.
-- `docs/internal/CLIENT_OUTREACH_PLAYBOOK.md`: outreach and proposal system.
+- `docs/internal/CLIENT_OUTREACH_PLAYBOOK.md`: legacy human-outreach reference (deprecated).
 - `docs/internal/PROFILE_REPOS_MATRIX_2026-05-28.md`: full 29-repo scoring matrix (60/40 weighted).
 - `docs/internal/AUDIT_PROMPTS_RESULT_2026-05-28.md`: consolidated compliance audit report (A-E).
+- `docs/internal/WEEKLY_EXECUTION_FLOW.md`: one-page weekly execution flow (automation-first cadence).
 - `ops/revenue/forecast.example.json`: forecast scenario examples.
 - `scripts/revenue-forecast.mjs`: projection utility for revenue and MRR.
 - `ops/command-center/`: interface for task monitoring and urgency signals.
@@ -56,3 +58,32 @@ Private internal lab to build production-grade full-stack, DevOps, and AI projec
 ## Confidentiality
 This repository is private and intended for internal usage only.
 Do not publish proprietary logic, credentials, or customer data.
+
+---
+
+## DEMO MODE — Comandos oficiales
+
+### 1. Demo completa (recomendada)
+```
+node ./dist/monetization/MonetizationRuntime.js --demo
+```
+
+### 2. Demo completa en TypeScript (sin build)
+```
+ts-node ./src/monetization/MonetizationRuntime.ts --demo
+```
+
+### 3. Demo extendida (loops + stress suave)
+```
+ts-node ./src/monetization/MonetizationRuntime.ts --demo-extended
+```
+
+### 4. Demo silenciosa (solo KPIs)
+```
+ts-node ./src/monetization/MonetizationRuntime.ts --demo-quiet
+```
+
+### 5. Demo agresiva (stress test)
+```
+ts-node ./src/monetization/MonetizationRuntime.ts --demo-stress
+```

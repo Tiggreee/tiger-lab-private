@@ -1,0 +1,16 @@
+{
+  "catalogVersion": "2026.05.28",
+  "generatedAt": "2026-05-28T00:00:00.000Z",
+  "files": {
+    "products": "products.json",
+    "plans": "plans.json",
+    "features": "features.json",
+    "limits": "limits.json",
+    "trials": "trials.json",
+    "upgrades": "upgrades.json",
+    "availabilityByChannel": "availability-by-channel.json",
+    "pricingRules": "pricing-rules.json",
+    "experimentFlags": "experiment-flags.json",
+    "validityWindows": "validity-windows.json"
+  }
+}

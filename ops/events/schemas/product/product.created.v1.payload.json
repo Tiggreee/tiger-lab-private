@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tiggreee.dev/schemas/events/product/product.created.v1.payload.json",
+  "title": "product.created payload v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["productId", "name"],
+  "properties": {
+    "productId": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 }
+  }
+}

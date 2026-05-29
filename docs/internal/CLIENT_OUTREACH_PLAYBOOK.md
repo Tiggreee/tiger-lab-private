@@ -1,47 +1,35 @@
-# Client Outreach Playbook
+# Inbound Automation Playbook (Replaces Outreach)
 
-## ICP (Ideal Customer Profile)
-- Small and medium businesses with manual workflows.
-- Startup founders needing speed without hiring full teams.
-- Agencies needing backend or DevOps reinforcement.
+## Status
+This file replaces the previous outreach-first approach.
+The active model is product-led, inbound, and automated.
 
-## Outreach Channels
-- LinkedIn direct message.
-- Warm referrals from previous collaborators.
-- Niche communities and local business groups.
+## ICP Signals (Captured Automatically)
+- Team uses repetitive workflows that can be automated.
+- Team explores API docs, pricing, and integration pages.
+- Team starts trial or uses playground endpoints.
 
-## Message Structure
-1. Problem signal:
-   - "I noticed your team is doing X manually..."
-2. Outcome promise:
-   - "We can reduce this to Y minutes with automation."
-3. Proof:
-   - Mention one relevant repo and concrete outcome.
-4. CTA:
-   - Ask for a 20-minute discovery call.
+## Acquisition Channels (Automation)
+- Technical docs and release notes with SEO structure.
+- Playground demos and API quickstart snippets.
+- Automated social distribution from release artifacts.
 
-## Sample DM Template
-Hello <name>,
-I help teams automate repetitive operations using full stack + AI workflows.
-I built similar solutions that reduce manual reporting and response time.
-If useful, I can show a 20-minute walkthrough and a fixed-scope plan for your case.
-Would next Tuesday or Wednesday work?
+## Conversion Structure
+1. Trigger event:
+   - docs_view, pricing_view, playground_use, trial_started
+2. Lead scoring:
+   - score by intent, product fit, and usage depth
+3. Bot response:
+   - recommends plan and setup path
+4. Checkout:
+   - self-serve payment and automatic provisioning
 
-## Discovery Call Checklist
-- Current process and bottlenecks.
-- Cost of delay (time, errors, missed revenue).
-- Existing stack and constraints.
-- Decision maker and budget window.
-- Success metric in 30 days.
+## Bot Conversation Rules
+- Answer pricing, setup, limits, and migration questions.
+- Offer product-specific next step (trial, API key, starter template).
+- Escalate only on security or enterprise exceptions.
 
-## Proposal Rules
-- Include only three options: basic, standard, premium.
-- Define exact deliverables and non-goals.
-- Add timeline with milestone-based payments.
-- Add support window and escalation path.
-
-## Follow-up Sequence
-- Day 0: send proposal.
-- Day 2: short value reminder.
-- Day 5: case-study micro proof.
-- Day 8: close loop with explicit yes/no ask.
+## Content Loop
+- Generate one technical artifact per release.
+- Repurpose artifact into docs, short post, and changelog highlight.
+- Publish via scheduler and track CTR, trial starts, and paid activations.

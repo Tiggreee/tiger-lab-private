@@ -1,0 +1,1 @@
+export { CatalogFileRepository } from './CatalogFileRepository';

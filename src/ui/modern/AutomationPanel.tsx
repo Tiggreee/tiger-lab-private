@@ -1,0 +1,22 @@
+export default function AutomationPanel({ logs = [] }: { logs?: string[] }) {
+  return (
+    <div className="min-h-screen bg-white p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h2 className="text-xl font-bold mb-4">Tu sistema está operando.</h2>
+        <div className="space-y-4">
+          <button className="w-full bg-black text-white py-3 rounded font-bold">Generar producto</button>
+          <button className="w-full bg-black text-white py-3 rounded font-bold">Publicar contenido</button>
+          <button className="w-full bg-black text-white py-3 rounded font-bold">Simular tráfico</button>
+        </div>
+      </div>
+      <div>
+        <h3 className="text-lg font-bold mb-2">Log</h3>
+        <div className="bg-gray-900 text-green-400 font-mono rounded-lg p-4 h-64 overflow-y-auto text-sm">
+          {logs.length === 0 ? (
+            <div>• Funnel iniciado…<br />• Lead capturado…<br />• Pricing resuelto…<br />• Contenido publicado…</div>
+          ) : logs.map((l, i) => <div key={i}>• {l}</div>)}
+        </div>
+      </div>
+    </div>
+  );
+}

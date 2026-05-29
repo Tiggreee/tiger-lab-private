@@ -1,0 +1,16 @@
+{
+  "limits": {
+    "starter": {
+      "monthlyRequests": 10000,
+      "teamSeats": 2
+    },
+    "pro": {
+      "monthlyRequests": 100000,
+      "teamSeats": 10
+    },
+    "enterprise": {
+      "monthlyRequests": 1000000,
+      "teamSeats": 100
+    }
+  }
+}

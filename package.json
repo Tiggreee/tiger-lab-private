@@ -4,7 +4,24 @@
   "private": true,
   "description": "Private internal lab for advanced full-stack, DevOps, and AI projects",
   "scripts": {
-    "test": "node tests/smoke/repo-structure.test.mjs",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:contract": "vitest run tests/contract",
+    "test:e2e": "vitest run tests/e2e",
+    "test:smoke": "vitest run tests/smoke",
+    "test:coverage": "vitest run --coverage",
+    "test:all": "npm run test:unit && npm run test:integration && npm run test:contract && npm run test:e2e && npm run test:smoke && npm run test:coverage",
+    "test:server-mode": "vitest run tests/e2e/server-mode",
+    "test:automation-flow": "vitest run tests/e2e/funnel",
+    "generate-product": "node scripts/generate-product.mjs",
+    "generate-content": "node scripts/generate-content.mjs",
+    "publish-content": "node scripts/publish-content.mjs",
+    "capture-lead": "node scripts/capture-lead.mjs",
+    "provision-product": "node scripts/provision-product.mjs",
+    "analyze-monetization": "node scripts/analyze-monetization.mjs",
+    "server:mode": "node server/copilot-server.mjs",
+    "server:client:test": "node scripts/server-mode-test-client.mjs",
     "check:secrets": "bash ./scripts/verify-secrets.sh",
     "ci:local": "npm run test && npm run check:secrets",
     "revenue:forecast": "node scripts/revenue-forecast.mjs",
@@ -15,6 +32,10 @@
     "supervisor:sync:example": "node scripts/supervisor-sync-command-center.mjs ops/supervisor/latest-supervisor-report.example.json",
     "pipeline:summary": "node scripts/pipeline-weekly-summary.mjs",
     "pipeline:summary:md": "node scripts/pipeline-weekly-summary.mjs --markdown"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.8",
+    "vitest": "^2.1.8"
   },
   "engines": {
     "node": ">=20"

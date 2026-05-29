@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "lead.created",
+  "type": "object",
+  "required": ["event", "timestamp", "leadId", "source", "channel", "attributes"],
+  "properties": {
+    "event": { "const": "lead.created" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "leadId": { "type": "string", "minLength": 3 },
+    "source": { "type": "string", "minLength": 2 },
+    "channel": { "type": "string", "enum": ["web", "api", "social", "docs"] },
+    "attributes": {
+      "type": "object",
+      "required": ["product", "intent"],
+      "properties": {
+        "product": { "type": "string" },
+        "intent": { "type": "string" }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tiggreee.dev/schemas/events/content/content.published.v1.payload.json",
+  "title": "content.published payload v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["publicationId", "assetId", "channel"],
+  "properties": {
+    "publicationId": { "type": "string", "minLength": 1 },
+    "assetId": { "type": "string", "minLength": 1 },
+    "channel": { "type": "string", "minLength": 1 }
+  }
+}

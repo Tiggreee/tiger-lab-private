@@ -1,0 +1,14 @@
+{
+  "trials": [
+    {
+      "planId": "starter",
+      "trialDays": 14,
+      "requiresCard": false
+    },
+    {
+      "planId": "pro",
+      "trialDays": 7,
+      "requiresCard": true
+    }
+  ]
+}

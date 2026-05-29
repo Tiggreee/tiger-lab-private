@@ -1,0 +1,6 @@
+{
+  "upgradePaths": [
+    { "from": "starter", "to": "pro" },
+    { "from": "pro", "to": "enterprise" }
+  ]
+}

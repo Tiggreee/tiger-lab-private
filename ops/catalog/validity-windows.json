@@ -1,0 +1,16 @@
+{
+  "planValidityWindows": [
+    {
+      "planId": "starter",
+      "validFrom": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "planId": "pro",
+      "validFrom": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "planId": "enterprise",
+      "validFrom": "2026-01-01T00:00:00.000Z"
+    }
+  ]
+}

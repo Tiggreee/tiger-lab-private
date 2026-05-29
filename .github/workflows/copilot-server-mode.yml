@@ -1,0 +1,37 @@
+name: copilot-server-mode
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+    paths:
+      - "server/**"
+      - "tests/e2e/**"
+      - "scripts/**"
+      - "package.json"
+      - ".github/workflows/copilot-server-mode.yml"
+
+jobs:
+  validate-server-mode:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run repository smoke test
+        run: npm run test
+
+      - name: Validate server mode contract
+        run: npm run test:server-mode
+
+      - name: Validate automation flow
+        run: npm run test:automation-flow

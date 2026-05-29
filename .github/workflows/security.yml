@@ -1,33 +1,29 @@
-name: Security
+name: security
 
 on:
-  push:
-    branches: ["main"]
   pull_request:
-  schedule:
-    - cron: "0 4 * * 1"
-
-permissions:
-  contents: read
-  security-events: write
+  push:
+    branches:
+      - main
 
 jobs:
-  codeql:
+  security:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        language: ["javascript"]
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
-          languages: ${{ matrix.language }}
+          node-version: 20
+          cache: npm
 
-      - name: Autobuild
-        uses: github/codeql-action/autobuild@v3
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Analyze
-        uses: github/codeql-action/analyze@v3
+      - name: Verify repository secrets policy
+        run: npm run check:secrets
+
+      - name: Audit npm dependencies
+        run: npm audit --audit-level=high

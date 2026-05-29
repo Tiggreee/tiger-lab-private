@@ -1,0 +1,8 @@
+{
+  "availabilityByChannel": {
+    "web": ["starter", "pro", "enterprise"],
+    "whatsapp": ["starter", "pro"],
+    "email": ["starter", "pro", "enterprise"],
+    "internal": ["starter", "pro", "enterprise"]
+  }
+}

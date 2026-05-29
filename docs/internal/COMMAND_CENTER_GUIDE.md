@@ -2,7 +2,7 @@
 
 ## Purpose
 This interface keeps monetization execution visible every day.
-It separates what you must do from what can be automated.
+It prioritizes automated growth loops and product reliability tasks.
 
 ## Run Locally
 1. `npm install`
@@ -10,20 +10,21 @@ It separates what you must do from what can be automated.
 3. Open `http://localhost:4310`
 
 ## Daily Usage
-1. Start with Human-Critical tasks.
-2. Complete at least one P0 action before coding.
+1. Start with Automation-Critical tasks.
+2. Complete at least one P0 funnel/product action before coding.
 3. Update `ops/command-center/tasks.json` statuses.
 4. Re-run `npm run command-center:summary`.
 
-## What You Must Do Yourself
-- Outbound messages and follow-ups.
-- Discovery calls and negotiation.
-- Final proposal approval and payment collection.
+## Automation-Critical Tasks
+- Release and provisioning reliability checks.
+- Lead capture and scoring integrity checks.
+- Checkout and activation funnel monitoring.
+- Bot response quality and fallback handling.
 
 ## What I Can Keep Doing
 - Maintain and improve repos.
 - Add technical automation and workflows.
-- Build proposal assets and operation templates.
+- Build product, content, and lead-engine assets.
 - Keep your command center updated as we iterate.
 
 ## Alert Channels

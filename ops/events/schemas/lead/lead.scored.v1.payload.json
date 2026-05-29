@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tiggreee.dev/schemas/events/lead/lead.scored.v1.payload.json",
+  "title": "lead.scored payload v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["leadId", "score"],
+  "properties": {
+    "leadId": { "type": "string", "minLength": 1 },
+    "score": { "type": "number", "minimum": 0, "maximum": 100 }
+  }
+}

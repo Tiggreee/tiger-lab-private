@@ -1,0 +1,10 @@
+{
+  "pricingRules": [
+    {
+      "id": "default-monthly-pricing",
+      "type": "flat-monthly",
+      "enabled": true,
+      "description": "Use static monthly prices from plans.json"
+    }
+  ]
+}

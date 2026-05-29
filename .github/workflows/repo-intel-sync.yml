@@ -1,0 +1,31 @@
+name: repo-intel-sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "20 12 * * 1"
+
+jobs:
+  sync-catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate required files
+        run: |
+          test -f ops/catalog/products.json
+          test -d ops/events/schemas
+
+      - name: Generate sync summary
+        run: |
+          echo "Repo intel sync executed at $(date -u +%Y-%m-%dT%H:%M:%SZ)" > sync-summary.txt
+          echo "Catalog file: ops/catalog/products.json" >> sync-summary.txt
+          echo "Schemas:" >> sync-summary.txt
+          ls -1 ops/events/schemas >> sync-summary.txt
+
+      - name: Upload summary artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: repo-intel-sync-summary
+          path: sync-summary.txt

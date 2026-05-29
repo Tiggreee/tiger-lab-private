@@ -1,36 +1,36 @@
-# Weekly Pipeline Board
+# Weekly Funnel Board
 
 ## Goal
-Track commercial execution with measurable weekly targets and enforce focus on deal closure.
+Track automated inbound and conversion execution with measurable weekly targets.
 
 ## Data Source
 - Main board data: ops/pipeline/weekly-pipeline.json
 - Auto summary: scripts/pipeline-weekly-summary.mjs
 
 ## Update Cadence
-- Monday morning: reset weekly targets and deal statuses.
-- Daily (end of day): update stage, probability, next action, due date.
-- Friday: review weighted pipeline and closure gap.
+- Monday morning: reset weekly targets and funnel thresholds.
+- Daily (end of day): ingest event export and update stage metrics.
+- Friday: review conversion gaps and activation blockers.
 
 ## Stage Definition
-- lead: identified prospect, no call booked.
-- discovery: call scheduled or completed.
-- proposal: priced proposal sent.
-- negotiation: objections, legal, or terms discussion.
-- closed: signed and paid.
-- lost: not moving forward.
+- visit: anonymous product/docs traffic event.
+- lead: qualified capture event.
+- trial: user started self-serve trial.
+- checkout: user initiated payment.
+- paid: payment succeeded and provisioning completed.
+- churn: cancelled or inactive by rule.
 
 ## Non-Negotiable Rules
-- Every deal must have nextAction and dueDate.
-- No dueDate older than today without explicit reason.
-- At least one P0 follow-up every business day.
-- Human-owned tasks must be executed before new technical work.
+- Every stage must have event counts and conversion ratio.
+- No stage can be skipped without explicit instrumentation.
+- At least one P0 automation fix every business day.
+- Funnel-blocking tasks must be resolved before new feature work.
 
 ## Weekly Review Checklist
-1. Are leads enough to support next month target?
-2. Is weighted pipeline at least 3x of weekly closure target?
-3. Do we have at least one near-close deal in negotiation?
-4. Are urgent human actions blocked by missing follow-up?
+1. Are inbound leads enough to support next month target?
+2. Which stage has the largest drop-off this week?
+3. Is trial-to-paid conversion improving week over week?
+4. Are there critical automation failures blocking activations?
 
 ## Commands
 - pipeline summary: npm run pipeline:summary

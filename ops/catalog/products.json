@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "id": "facturautentico-cloud",
+      "name": "FacturAutentico Cloud",
+      "status": "active",
+      "planIds": ["starter", "pro", "enterprise"]
+    },
+    {
+      "id": "docflow-api",
+      "name": "Docflow API",
+      "status": "active",
+      "planIds": ["starter", "pro"]
+    },
+    {
+      "id": "sentrylog-lite",
+      "name": "Sentrylog Lite",
+      "status": "planned",
+      "planIds": ["starter"]
+    }
+  ]
+}

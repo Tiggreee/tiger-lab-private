@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "trial.started",
+  "type": "object",
+  "required": ["event", "timestamp", "userId", "product", "plan"],
+  "properties": {
+    "event": { "const": "trial.started" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "userId": { "type": "string", "minLength": 3 },
+    "product": { "type": "string", "minLength": 2 },
+    "plan": { "type": "string", "minLength": 2 }
+  },
+  "additionalProperties": false
+}

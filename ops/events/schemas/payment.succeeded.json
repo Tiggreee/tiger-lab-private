@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "payment.succeeded",
+  "type": "object",
+  "required": ["event", "timestamp", "customerId", "product", "plan", "amount", "currency"],
+  "properties": {
+    "event": { "const": "payment.succeeded" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "customerId": { "type": "string", "minLength": 3 },
+    "product": { "type": "string", "minLength": 2 },
+    "plan": { "type": "string", "minLength": 2 },
+    "amount": { "type": "number", "minimum": 0 },
+    "currency": { "type": "string", "minLength": 3, "maxLength": 3 }
+  },
+  "additionalProperties": false
+}

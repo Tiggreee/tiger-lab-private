@@ -1,0 +1,13 @@
+{
+  "features": [
+    { "id": "api-access", "name": "API Access" },
+    { "id": "priority-support", "name": "Priority Support" },
+    { "id": "audit-log", "name": "Audit Log" },
+    { "id": "team-seats", "name": "Team Seats" }
+  ],
+  "planFeatures": {
+    "starter": ["api-access"],
+    "pro": ["api-access", "priority-support", "team-seats"],
+    "enterprise": ["api-access", "priority-support", "audit-log", "team-seats"]
+  }
+}

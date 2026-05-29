@@ -1,0 +1,25 @@
+{
+  "plans": [
+    {
+      "id": "starter",
+      "name": "Starter",
+      "tier": 1,
+      "currency": "USD",
+      "priceMonthly": 39
+    },
+    {
+      "id": "pro",
+      "name": "Pro",
+      "tier": 2,
+      "currency": "USD",
+      "priceMonthly": 99
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "tier": 3,
+      "currency": "USD",
+      "priceMonthly": 249
+    }
+  ]
+}

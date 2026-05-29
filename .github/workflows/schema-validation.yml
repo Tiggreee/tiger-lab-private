@@ -1,0 +1,26 @@
+name: schema-validation
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  schema-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate event schemas and catalog contracts
+        run: npx vitest run tests/contract/events/events-schema.contract.test.ts

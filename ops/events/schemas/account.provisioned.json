@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "account.provisioned",
+  "type": "object",
+  "required": ["event", "timestamp", "customerId", "product", "tenantId"],
+  "properties": {
+    "event": { "const": "account.provisioned" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "customerId": { "type": "string", "minLength": 3 },
+    "product": { "type": "string", "minLength": 2 },
+    "tenantId": { "type": "string", "minLength": 3 },
+    "apiKeyId": { "type": "string" }
+  },
+  "additionalProperties": false
+}

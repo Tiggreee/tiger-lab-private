@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tiggreee.dev/schemas/events/catalog/catalog.updated.v1.payload.json",
+  "title": "catalog.updated payload v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["catalogVersion", "changedFiles"],
+  "properties": {
+    "catalogVersion": { "type": "string", "minLength": 1 },
+    "changedFiles": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    }
+  }
+}

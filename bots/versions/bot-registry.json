@@ -1,0 +1,9 @@
+{
+  "bots": [
+    {
+      "botName": "sales-bot",
+      "activeVersion": "1.0.0",
+      "rollbackVersion": "1.0.0"
+    }
+  ]
+}

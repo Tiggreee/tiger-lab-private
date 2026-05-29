@@ -1,0 +1,11 @@
+{
+  "agents": [
+    {
+      "agentName": "agentName",
+      "activeAgentVersion": "1.0.0",
+      "activePromptVersion": "v1",
+      "rollbackAgentVersion": "1.0.0",
+      "rollbackPromptVersion": "v1"
+    }
+  ]
+}

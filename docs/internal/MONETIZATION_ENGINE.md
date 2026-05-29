@@ -1,59 +1,60 @@
 # Monetization Engine
 
 ## Objective
-Turn portfolio repos into recurring income assets with a repeatable offer system.
+Turn portfolio repos into recurring income assets through self-serve products and automation loops.
 
 ## Asset to Revenue Map
 - FacturAutentico:
   - Primary: SaaS for invoicing operations.
-  - Secondary: Setup service for local businesses.
+  - Secondary: API for invoicing workflows.
 - mindtrack-ai:
   - Primary: AI productivity subscription.
-  - Secondary: AI implementation consulting.
+  - Secondary: self-hosted premium deployment package.
 - vmDevWeb:
-  - Primary: Premium portfolio template + setup package.
-  - Secondary: Personal brand websites as a service.
+  - Primary: inbound traffic and conversion hub.
+  - Secondary: premium portfolio template package.
 - AIOutputtoPDFweb:
   - Primary: Micro-product (freemium + paid templates).
-  - Secondary: White-label export modules.
+  - Secondary: PDF generation API usage tiers.
 - sentrylog:
-  - Primary: Security alerting service for SMBs.
-  - Secondary: Monitoring and incident response setup.
+  - Primary: Security alerting SaaS for SMBs.
+  - Secondary: event API subscriptions.
 
 ## Revenue Ladder
-1. Quick Audit (low ticket): 150 to 400 USD.
-2. Implementation Sprint (mid ticket): 900 to 2500 USD.
-3. Product Build (high ticket): 2500 to 7000 USD.
-4. Monthly Retainer (recurring): 250 to 1500 USD/month.
+1. Template/API Starter: 19 to 99 USD/month.
+2. Product Growth: 99 to 399 USD/month.
+3. Product Pro: 399 to 1200 USD/month.
+4. Enterprise automation tier: custom pricing.
 
 ## Monthly Targets
 - Minimum target:
-  - 2 implementation sprints.
-  - 3 audits.
-  - 2 active retainers.
+  - 2 products with active paid plans.
+  - 40 qualified inbound leads.
+  - 8 paid activations.
 - Growth target:
-  - 1 high-ticket product build.
-  - 4 retainers.
+  - 80 qualified inbound leads.
+  - 20 paid activations.
+  - stable conversion uplift month over month.
 
 ## Weekly Execution Cadence
 - Monday:
-  - Review pipeline and select top 10 prospects.
+  - Review funnel metrics and anomaly alerts.
 - Tuesday:
-  - Outreach and discovery calls.
+  - Optimize onboarding, trial events, and bot responses.
 - Wednesday:
-  - Proposal delivery with fixed scope and timeline.
+  - Publish technical content from release artifacts.
 - Thursday:
-  - Build/demo sessions and progress artifacts.
+  - Run product release and pricing experiments.
 - Friday:
-  - Publish one technical case post and update funnel metrics.
+  - Review activation-to-payment metrics and apply improvements.
 
 ## Pricing Discipline
 - Anchor price with business impact, not hours.
-- Include strict change request boundaries.
-- Require 50 percent upfront for fixed projects.
-- Attach a maintenance offer to every project close.
+- Keep plans simple and usage-based where possible.
+- Trigger upgrades based on automated usage thresholds.
+- Keep checkout and provisioning frictionless.
 
 ## Risk Controls
-- No unpaid custom trial work.
-- No vague scope without acceptance criteria.
-- No production deploy without rollback checklist.
+- No manual dependencies for core conversion paths.
+- No product release without automated test and rollback checks.
+- No growth decision without event-based metrics.
