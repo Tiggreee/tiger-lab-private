@@ -1,0 +1,19 @@
+Ejercicio 1
+Listar todos los productos
+SELECT * FROM products;
+
+Ejercicio 2
+Contar leads por fuente
+SELECT source, COUNT(*) FROM leads GROUP BY source;
+
+Ejercicio 3
+Obtener precios finales mayores a 20
+SELECT * FROM pricing WHERE final_price > 20;
+
+Ejercicio 4
+Ver eventos del sistema
+SELECT type, created_at FROM events ORDER BY created_at DESC;
+
+Ejercicio 5
+Ver metricas mas recientes
+SELECT * FROM metrics ORDER BY created_at DESC LIMIT 10;

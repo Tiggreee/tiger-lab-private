@@ -1,0 +1,27 @@
+Entidades principales
+products
+content
+leads
+funnels
+pricing
+automations
+bots
+events
+metrics
+
+Relaciones
+products -> content (1:N)
+products -> funnels (1:N)
+products -> pricing (1:N)
+
+Eventos
+Todo lo que ocurre en el sistema se registra en events
+
+Simulacion
+stress_runs
+traffic_runs
+pricing_runs
+
+Aprendizaje
+sql_exercises
+datasets
