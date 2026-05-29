@@ -1,0 +1,57 @@
+====================================================================
+
+FUNNELS_INICIALES.txt
+
+====================================================================
+
+FUNNELS INICIALES - CONFIGURACION BASE
+
+1. Funnel de Producto Digital
+
+Entrada: contenido web
+
+Lead: formulario simple
+
+Nurturing: 3 mensajes automaticos
+
+Conversion: pricing dinamico
+
+Retencion: upsell automatico
+
+2. Funnel de Servicio Automatizado
+
+Entrada: contenido tecnico
+
+Lead: formulario detallado
+
+Nurturing: secuencia de valor
+
+Conversion: oferta personalizada
+
+Retencion: cross-sell automatico
+
+3. Funnel de Suscripcion
+
+Entrada: contenido recurrente
+
+Lead: registro rapido
+
+Nurturing: prueba gratuita
+
+Conversion: suscripcion mensual
+
+Retencion: contenido premium
+
+4. Funnel de Bundle
+
+Entrada: contenido comparativo
+
+Lead: formulario simple
+
+Nurturing: demostracion
+
+Conversion: bundle con descuento
+
+Retencion: upgrade automatico
+
+FIN DE FUNNELS INICIALES

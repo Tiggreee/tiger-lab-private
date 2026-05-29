@@ -1,0 +1,117 @@
+====================================================================
+
+HOST_REACT_VITE.txt
+
+====================================================================
+
+Objetivo
+
+Proveer la estructura minima de una app React/Vite que monte la UI moderna y consuma el AutonomousSystemController.
+
+Comandos de creacion
+
+npm create vite@latest ui-host -- --template react-ts
+
+cd ui-host
+
+npm install
+
+npm install zustand react-router-dom
+
+Estructura recomendada
+
+ui-host/
+
+index.html
+
+vite.config.ts
+
+tsconfig.json
+
+src/
+
+main.tsx
+
+App.tsx
+
+routes/
+
+Landing.tsx
+
+Onboarding.tsx
+
+Dashboard.tsx
+
+Checkout.tsx
+
+Automation.tsx
+
+controllers/
+
+AutonomousSystemController.ts (importado desde tu repo principal)
+
+state/
+
+uiStore.ts
+
+styles/
+
+global.css
+
+Contenido de main.tsx
+
+import React from "react"
+
+import ReactDOM from "react-dom/client"
+
+import App from "./App"
+
+ReactDOM.createRoot(document.getElementById("root")!).render(<App />)
+
+Contenido de App.tsx
+
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+
+import Landing from "./routes/Landing"
+
+import Onboarding from "./routes/Onboarding"
+
+import Dashboard from "./routes/Dashboard"
+
+import Checkout from "./routes/Checkout"
+
+import Automation from "./routes/Automation"
+
+export default function App() {
+
+return (
+
+<BrowserRouter>
+
+<Routes>
+
+<Route path="/" element={<Landing />} />
+
+<Route path="/onboarding" element={<Onboarding />} />
+
+<Route path="/dashboard" element={<Dashboard />} />
+
+<Route path="/checkout" element={<Checkout />} />
+
+<Route path="/automation" element={<Automation />} />
+
+</Routes>
+
+</BrowserRouter>
+
+)
+
+}
+
+Integracion con tu repo
+
+Importar AutonomousSystemController desde tu repo principal y usarlo en cada ruta.
+
+Cada componente UI ya esta cableado, solo necesita ser montado.
+
+FIN DE HOST_REACT_VITE

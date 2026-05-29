@@ -1,0 +1,49 @@
+====================================================================
+
+BOT_TEMPLATES.txt
+
+====================================================================
+
+BOT TEMPLATES - PLANTILLAS BASE
+
+1. Bot de Soporte
+
+Funcion: responder dudas basicas
+
+Acciones: FAQ, guia, redireccion
+
+Activacion: cada vez que un lead interactua
+
+2. Bot de Conversion
+
+Funcion: empujar a la compra
+
+Acciones: oferta, recordatorio, urgencia
+
+Activacion: leads calientes
+
+3. Bot de Retencion
+
+Funcion: mantener suscriptores
+
+Acciones: contenido, beneficios, upgrades
+
+Activacion: usuarios activos
+
+4. Bot de Reactivacion
+
+Funcion: recuperar usuarios inactivos
+
+Acciones: descuento, contenido, invitacion
+
+Activacion: usuarios inactivos 7+ dias
+
+5. Bot de Upsell
+
+Funcion: aumentar ticket promedio
+
+Acciones: recomendacion, bundle, upgrade
+
+Activacion: despues de una compra
+
+FIN DE BOT TEMPLATES

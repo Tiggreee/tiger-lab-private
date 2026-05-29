@@ -1,0 +1,57 @@
+====================================================================
+
+AUTOMATION_SEQUENCES.txt
+
+====================================================================
+
+AUTOMATION SEQUENCES - SECUENCIAS BASE
+
+1. Secuencia de Nurturing
+
+Mensaje 1: bienvenida
+
+Mensaje 2: valor educativo
+
+Mensaje 3: caso de uso
+
+Mensaje 4: oferta
+
+Mensaje 5: cierre
+
+2. Secuencia de Conversion
+
+Mensaje 1: recordatorio
+
+Mensaje 2: prueba social
+
+Mensaje 3: urgencia
+
+Mensaje 4: descuento
+
+Mensaje 5: cierre
+
+3. Secuencia de Retencion
+
+Mensaje 1: contenido premium
+
+Mensaje 2: actualizacion
+
+Mensaje 3: recomendacion
+
+Mensaje 4: upsell
+
+Mensaje 5: cross-sell
+
+4. Secuencia de Reactivacion
+
+Mensaje 1: te extranamos
+
+Mensaje 2: oferta especial
+
+Mensaje 3: contenido nuevo
+
+Mensaje 4: upgrade
+
+Mensaje 5: cierre
+
+FIN DE AUTOMATION SEQUENCES

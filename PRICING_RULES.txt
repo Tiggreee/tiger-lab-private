@@ -1,0 +1,43 @@
+====================================================================
+
+PRICING_RULES.txt
+
+====================================================================
+
+PRICING RULES - REGLAS BASE
+
+1. Precio base
+
+Cada producto tiene un precio inicial definido.
+
+2. Ajuste por demanda
+
+Si la demanda sube, aumentar precio entre 5% y 20%.
+
+3. Ajuste por conversion
+
+Si la conversion baja, reducir precio entre 5% y 15%.
+
+4. Ajuste por tipo de lead
+
+Lead caliente: +10%
+
+Lead frio: -10%
+
+5. Ajuste por canal
+
+Organico: precio normal
+
+Pago: +5%
+
+Referido: -5%
+
+6. Ajuste por tiempo
+
+Ofertas temporales de 24 horas con -20%.
+
+7. Ajuste por bundle
+
+Descuento entre 10% y 30%.
+
+FIN DE PRICING RULES
