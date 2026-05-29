@@ -1,12 +1,30 @@
-export default function AutomationPanel({ logs = [] }: { logs?: string[] }) {
+import { AsyncStatus } from './AutonomousSystemController';
+
+interface AutomationPanelProps {
+  readonly logs?: string[];
+  readonly status?: AsyncStatus;
+  readonly onGenerateProduct?: () => void;
+  readonly onPublishContent?: () => void;
+  readonly onSimulateTraffic?: () => void;
+}
+
+export default function AutomationPanel({
+  logs = [],
+  status = 'idle',
+  onGenerateProduct,
+  onPublishContent,
+  onSimulateTraffic
+}: AutomationPanelProps) {
+  const isLoading = status === 'loading';
+
   return (
     <div className="min-h-screen bg-white p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
       <div>
         <h2 className="text-xl font-bold mb-4">Tu sistema está operando.</h2>
         <div className="space-y-4">
-          <button className="w-full bg-black text-white py-3 rounded font-bold">Generar producto</button>
-          <button className="w-full bg-black text-white py-3 rounded font-bold">Publicar contenido</button>
-          <button className="w-full bg-black text-white py-3 rounded font-bold">Simular tráfico</button>
+          <button className="w-full bg-black text-white py-3 rounded font-bold disabled:opacity-50" disabled={isLoading} onClick={onGenerateProduct} type="button">Generar producto</button>
+          <button className="w-full bg-black text-white py-3 rounded font-bold disabled:opacity-50" disabled={isLoading} onClick={onPublishContent} type="button">Publicar contenido</button>
+          <button className="w-full bg-black text-white py-3 rounded font-bold disabled:opacity-50" disabled={isLoading} onClick={onSimulateTraffic} type="button">Simular tráfico</button>
         </div>
       </div>
       <div>

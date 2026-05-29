@@ -1,89 +1,115 @@
-# tiger-lab-private
+# Plataforma Autonoma de Monetizacion y Operacion
 
-Private internal lab to build production-grade full-stack, DevOps, and AI projects.
+Sistema modular y autonomo para crear, operar y escalar productos digitales con intervencion humana minima. Incluye motores de producto, contenido, leads, pricing, funnels, bots y automatizaciones, orquestados por un EventBus interno.
 
-## Purpose
-- Build high-impact projects with reusable standards.
-- Validate architecture and security before publishing to public repos.
-- Speed up delivery with internal templates and automation.
+## Estado actual
+- Avance total estimado: 92%.
+- Motores: completos.
+- Hardening: completo.
+- Simuladores: completos.
+- Playbooks: completos.
+- Documentacion interna: completa.
+- Runtime: completo.
+- CI/CD: configurado.
+- UI: base lista, falta wiring completo al backend.
+
+## Arquitectura
+- Motores independientes por dominio.
+- EventBus central para flujos de extremo a extremo.
+- Runtime de hardening con diagnosticos, simuladores, metricas, dashboards JSON y alertas.
+- Capa CLI operativa.
+- UI opcional como capa de control.
+
+## Caracteristicas principales
+- Generacion automatica de productos.
+- Generacion automatica de contenido.
+- Captura y gestion de leads.
+- Pricing dinamico.
+- Construccion y optimizacion de funnels.
+- Automatizaciones basadas en eventos.
+- Bots operativos.
+- Simuladores de trafico y carga.
+- Dashboards JSON.
+- Alertas operativas.
+- Diagnosticos automaticos.
+
+## Requisitos
+- Node.js 20 o superior.
+- Entorno local.
 
 ## Quick Start
-1. Install Node.js 20+.
-2. Run `npm install`.
-3. Run `npm run test`.
-4. Create a project scaffold:
-   - Bash: `./scripts/new-project.sh <project-name> node-api`
-   - PowerShell: `./scripts/new-project.ps1 -Name <project-name> -Template node-api`
-5. Run monetization projection:
-   - `npm run revenue:forecast:example`
-6. Start daily command center:
-   - `npm run command-center:start`
-   - Open `http://localhost:4310`
-   - Enable browser alerts from the UI
-
-## Internal Areas
-- `architecture/`: ADRs and architecture decisions.
-- `docs/internal/`: operating playbooks, security baseline, roadmap.
-- `templates/`: starter templates for new internal products.
-- `scripts/`: automation scripts.
-- `.github/`: CI/CD, dependency updates, security checks.
-
-## Monetization Toolkit
-- `docs/internal/AUTOMATED_MONETIZATION_MASTER_PLAN.md`: master automation plan (products, modules, events, roadmap).
-- `docs/internal/MONETIZATION_ENGINE.md`: revenue model and execution cadence.
-- `docs/internal/OFFER_CATALOG.md`: packaged offers with pricing ranges.
-- `docs/internal/CLIENT_OUTREACH_PLAYBOOK.md`: legacy human-outreach reference (deprecated).
-- `docs/internal/PROFILE_REPOS_MATRIX_2026-05-28.md`: full 29-repo scoring matrix (60/40 weighted).
-- `docs/internal/AUDIT_PROMPTS_RESULT_2026-05-28.md`: consolidated compliance audit report (A-E).
-- `docs/internal/WEEKLY_EXECUTION_FLOW.md`: one-page weekly execution flow (automation-first cadence).
-- `ops/revenue/forecast.example.json`: forecast scenario examples.
-- `scripts/revenue-forecast.mjs`: projection utility for revenue and MRR.
-- `ops/command-center/`: interface for task monitoring and urgency signals.
-- `scripts/command-center-summary.mjs`: CLI summary of urgent tasks.
-- `.github/workflows/daily-monetization-reminder.yml`: daily GitHub reminder issue.
-- `ops/pipeline/weekly-pipeline.json`: weekly sales board data.
-- `scripts/pipeline-weekly-summary.mjs`: weighted pipeline and MRR summary.
-- `.github/workflows/weekly-pipeline-reminder.yml`: weekly pipeline reminder issue.
-- `ops/supervisor/latest-supervisor-report.example.json`: supervisor report JSON example.
-- `scripts/supervisor-sync-command-center.mjs`: sync supervisor actions into command center tasks.
-
-## Supervisor Sync Flow
-1. Run reviewer + performance + deploy-prep.
-2. Generate supervisor unified report with JSON appendix.
-3. Save JSON to `ops/supervisor/latest-supervisor-report.example.json` or a custom path.
-4. Sync into command center:
-   - `npm run supervisor:sync:example`
-   - or `npm run supervisor:sync -- <path-to-report.json>`
-
-## Confidentiality
-This repository is private and intended for internal usage only.
-Do not publish proprietary logic, credentials, or customer data.
-
----
-
-## DEMO MODE — Comandos oficiales
-
-### 1. Demo completa (recomendada)
+1. Instalar dependencias:
+```bash
+npm install
 ```
-node ./dist/monetization/MonetizationRuntime.js --demo
+2. Ejecutar pruebas base:
+```bash
+npm run test
+```
+3. Ejecutar suite completa:
+```bash
+npm run test:all
+```
+4. Levantar Command Center:
+```bash
+npm run command-center:start
 ```
 
-### 2. Demo completa en TypeScript (sin build)
-```
-ts-node ./src/monetization/MonetizationRuntime.ts --demo
-```
-
-### 3. Demo extendida (loops + stress suave)
-```
-ts-node ./src/monetization/MonetizationRuntime.ts --demo-extended
-```
-
-### 4. Demo silenciosa (solo KPIs)
-```
-ts-node ./src/monetization/MonetizationRuntime.ts --demo-quiet
+## Comandos operativos principales
+```bash
+npm run generate-product -- facturautentico-cloud saas
+npm run generate-content -- facturautentico-cloud post web
+npm run publish-content -- asset-facturautentico-cloud web
+npm run capture-lead -- lead-demo-1 web
+npm run provision-product -- customer-demo-1 facturautentico-cloud starter
+npm run analyze-monetization -- facturautentico-cloud pro
+npm run command-center:summary
+npm run pipeline:summary
+npm run supervisor:sync:example
 ```
 
-### 5. Demo agresiva (stress test)
+## Build y validacion
+```bash
+npm run test:all
+npm pack
 ```
-ts-node ./src/monetization/MonetizationRuntime.ts --demo-stress
+
+## Modo autonomo continuo
+Este sistema puede operar sin UI y con intervencion humana minima mediante un ciclo periodico (hora/dia/semana):
+
+1. Generar productos.
+2. Generar contenido.
+3. Crear leads.
+4. Calcular pricing.
+5. Construir funnels.
+6. Ejecutar automatizaciones.
+7. Ejecutar bots.
+8. Registrar metricas.
+9. Emitir alertas.
+10. Ejecutar diagnosticos.
+
+Referencia extendida del ciclo: `docs/internal/DOCUMENTO_MAESTRO.md`.
+
+## Pendientes criticos para activar monetizacion
+Resumen operativo:
+- Wiring completo de UI al backend.
+- Validacion completa del flujo extremo a extremo.
+- Pruebas de estres y pruebas de demo con comandos oficiales.
+- Cierre final: congelar version, generar build, preparar demo/pitch/pricing/onboarding.
+
+Checklist completo: `docs/internal/PENDIENTES_CRITICOS_ACTIVACION.md`.
+
+## Areas clave del repositorio
+- `src/`: motores y runtime.
+- `server/`: contratos HTTP, controladores, middleware y rutas.
+- `scripts/`: adaptadores CLI y utilidades operativas.
+- `ops/`: catalogos, eventos, simulacion y tableros.
+- `docs/internal/`: guias de ejecucion, playbooks y contexto maestro.
+- `.github/workflows/`: pipelines de validacion y automatizacion.
+
+## Seguridad y publicacion
+- No incluir secretos, tokens, credenciales ni datos sensibles en commits.
+- Ejecutar verificaciones tecnicas antes de cada release:
+```bash
+npm run ci:local
 ```
