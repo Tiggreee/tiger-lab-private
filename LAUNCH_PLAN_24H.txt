@@ -1,0 +1,75 @@
+LANZAMIENTO EN 24 HORAS - PLAN OPERATIVO
+
+Hora 1
+Definir catalogo inicial de productos.
+
+Hora 2
+Asignar funnels a cada producto.
+
+Hora 3
+Configurar pricing dinamico.
+
+Hora 4
+Generar contenido inicial.
+
+Hora 5
+Activar automatizaciones.
+
+Hora 6
+Activar bots.
+
+Hora 7
+Activar adquisicion.
+
+Hora 8
+Ejecutar pruebas de flujo.
+
+Hora 9
+Ajustar pricing y funnels.
+
+Hora 10
+Ejecutar pruebas de estres.
+
+Hora 11
+Ejecutar pruebas de demo.
+
+Hora 12
+Congelar version.
+
+Hora 13
+Generar build.
+
+Hora 14
+Validar build.
+
+Hora 15
+Preparar pitch.
+
+Hora 16
+Preparar onboarding.
+
+Hora 17
+Publicar catalogo.
+
+Hora 18
+Publicar contenido.
+
+Hora 19
+Activar funnels.
+
+Hora 20
+Activar automatizaciones.
+
+Hora 21
+Activar bots.
+
+Hora 22
+Activar adquisicion.
+
+Hora 23
+Monitorear metricas.
+
+Hora 24
+Lanzamiento oficial.
+
+FIN DEL PLAN 24H

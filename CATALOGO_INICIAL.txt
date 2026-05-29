@@ -1,0 +1,35 @@
+CATALOGO INICIAL - PRODUCTOS RECOMENDADOS
+
+1. MicroSaaS
+Descripcion: herramientas pequenas, utiles y automatizadas.
+Precio sugerido: 9 a 49 USD.
+
+2. APIs listas para usar
+Descripcion: endpoints funcionales para tareas comunes.
+Precio sugerido: 7 a 29 USD.
+
+3. Scripts premium
+Descripcion: scripts automatizados para tareas tecnicas.
+Precio sugerido: 7 a 29 USD.
+
+4. Plantillas profesionales
+Descripcion: plantillas listas para usar en negocios y contenido.
+Precio sugerido: 5 a 19 USD.
+
+5. Ebooks tecnicos
+Descripcion: guias practicas generadas automaticamente.
+Precio sugerido: 9 a 29 USD.
+
+6. Cursos cortos automatizados
+Descripcion: cursos de 30 a 90 minutos generados por el sistema.
+Precio sugerido: 19 a 49 USD.
+
+7. Servicios automatizados
+Descripcion: diagnosticos, analisis, pipelines, reportes.
+Precio sugerido: 29 a 199 USD.
+
+8. Bots listos para provisionar
+Descripcion: bots configurables para tareas de negocio.
+Precio sugerido: 9 a 49 USD mensuales.
+
+FIN DEL CATALOGO INICIAL
