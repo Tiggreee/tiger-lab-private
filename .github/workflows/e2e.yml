@@ -2,9 +2,29 @@ name: e2e
 
 on:
   pull_request:
+    paths:
+      - 'src/**'
+      - 'server/**'
+      - 'tests/e2e/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/e2e.yml'
   push:
     branches:
       - main
+    paths:
+      - 'src/**'
+      - 'server/**'
+      - 'tests/e2e/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/e2e.yml'
+
+concurrency:
+  group: e2e-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   e2e:

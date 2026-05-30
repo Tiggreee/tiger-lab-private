@@ -1,0 +1,9 @@
+{
+  "northStarMetric": "qualified_conversations_per_week",
+  "targets": {
+    "qualifiedConversationsPerWeek": 12,
+    "weeklyRevenueUSD": 1200,
+    "firstResponseSlaMinutes": 15
+  },
+  "primaryChannel": "linkedin"
+}

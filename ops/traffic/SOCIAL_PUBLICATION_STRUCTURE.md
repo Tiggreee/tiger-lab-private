@@ -2,6 +2,25 @@
 
 This structure is optimized for faster execution and higher conversion intent.
 
+## LinkedIn-first fast lane (today)
+
+If the goal is to go live today with minimum risk and maximum focus, use only LinkedIn.
+
+1. Build one campaign pack for LinkedIn only.
+2. Point to a real landing URL (never placeholders).
+3. Validate go-live for `linkedin` only.
+4. Publish in dry-run first, then live.
+5. Track responses in the first 24h and update the pipeline.
+
+Command sequence:
+
+```bash
+npm run traffic:pack -- --topic "Sistema autonomo para capturar leads" --audience "founders SMB" --offer "diagnostico de 15 min" --campaign "linkedin-today" --baseLink "https://tu-landing-real.com" --closeChannel "calendar" --closeDestination "https://cal.com/tu-enlace"
+npm run traffic:go-live -- --campaign "linkedin-today" --channels "linkedin"
+npm run traffic:publish:dry -- --campaign "linkedin-today" --channels "linkedin"
+npm run traffic:publish -- --campaign "linkedin-today" --channels "linkedin"
+```
+
 ## Core structure
 
 1. Hook
@@ -63,6 +82,10 @@ npm run traffic:publish:dry -- --campaign "sprint-24h"
 6. Run go-live checklist before any live publish:
 
 npm run traffic:go-live -- --campaign "sprint-24h" --channels "linkedin,x,facebook,telegram,discord"
+
+For same-day execution, prefer one-channel validation:
+
+npm run traffic:go-live -- --campaign "linkedin-today" --channels "linkedin"
 
 This checklist fails fast if:
 - traffic destination is placeholder
@@ -132,6 +155,22 @@ LINKEDIN_CLIENT_ID
 LINKEDIN_CLIENT_SECRET
 LINKEDIN_ORG_ID
 LINKEDIN_ACCESS_TOKEN
+
+## Minimum daily autonomous loop (1 hour)
+
+Run these commands once a day:
+
+```bash
+npm run revenue:daily
+npm run traffic:sla
+npm run command-center:summary
+```
+
+Human actions expected after loop:
+
+1. Reply to urgent leads first (SLA < 15 min in active windows).
+2. Approve one LinkedIn post/campaign.
+3. Update pipeline deals and next actions.
 
 ## GitHub CLI examples for Environment secrets
 

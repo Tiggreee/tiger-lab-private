@@ -1,0 +1,16 @@
+{
+  "items": [
+    {
+      "leadId": "lead-001",
+      "channel": "linkedin",
+      "leadCapturedAt": "2026-05-30T14:00:00.000Z",
+      "firstHumanReplyAt": "2026-05-30T14:08:00.000Z"
+    },
+    {
+      "leadId": "lead-002",
+      "channel": "linkedin",
+      "leadCapturedAt": "2026-05-30T15:10:00.000Z",
+      "firstHumanReplyAt": "2026-05-30T15:24:00.000Z"
+    }
+  ]
+}

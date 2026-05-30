@@ -40,7 +40,13 @@
     "supervisor:sync": "node scripts/supervisor-sync-command-center.mjs",
     "supervisor:sync:example": "node scripts/supervisor-sync-command-center.mjs ops/supervisor/latest-supervisor-report.example.json",
     "pipeline:summary": "node scripts/pipeline-weekly-summary.mjs",
-    "pipeline:summary:md": "node scripts/pipeline-weekly-summary.mjs --markdown"
+    "pipeline:summary:md": "node scripts/pipeline-weekly-summary.mjs --markdown",
+    "revenue:daily": "node scripts/revenue-daily-dashboard.mjs",
+    "revenue:daily:md": "node scripts/revenue-daily-dashboard.mjs --markdown",
+    "traffic:sla": "node scripts/traffic/check-lead-sla.mjs",
+    "git:start:feature": "bash scripts/git/start-feature.sh",
+    "git:start:hotfix": "bash scripts/git/start-hotfix.sh",
+    "git:weekly:check": "bash scripts/git/weekly-release-check.sh"
   },
   "devDependencies": {
     "@vitest/coverage-v8": "^2.1.8",

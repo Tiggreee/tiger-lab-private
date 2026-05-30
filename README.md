@@ -76,6 +76,51 @@ npm run test:all
 npm pack
 ```
 
+## Flujo Git recomendado (regla practica)
+
+Para balancear velocidad de desarrollo y control comercial:
+
+1. Desarrollo diario (feature + PR)
+```bash
+npm run git:start:feature -- mejorar-funnel-cierre
+```
+
+2. Hotfix urgente (impacto en ingresos/operacion)
+```bash
+npm run git:start:hotfix -- fix-payment-timeout
+```
+
+3. Cierre semanal / release
+```bash
+npm run git:weekly:check
+```
+
+Guia completa: `ops/process/GIT_RULE_PRACTICA.md`.
+
+## LinkedIn-first launch (same day)
+
+When speed and cash priority are critical, run a single-channel launch using LinkedIn only.
+
+```bash
+npm run traffic:pack -- --topic "Sistema autonomo para capturar leads" --audience "founders SMB" --offer "diagnostico de 15 min" --campaign "linkedin-today" --baseLink "https://tu-landing-real.com" --closeChannel "calendar" --closeDestination "https://cal.com/tu-enlace"
+npm run traffic:go-live -- --campaign "linkedin-today" --channels "linkedin"
+npm run traffic:publish:dry -- --campaign "linkedin-today" --channels "linkedin"
+npm run traffic:publish -- --campaign "linkedin-today" --channels "linkedin"
+```
+
+Execution playbook: `ops/process/LINKEDIN_LAUNCH_TODAY_8H.md`.
+
+## Daily autonomous loop (1 hour)
+
+```bash
+npm run revenue:daily
+npm run traffic:sla
+npm run command-center:summary
+npm run pipeline:summary
+```
+
+Guide: `ops/process/AUTONOMOUS_OPERATION_1H_DAILY.md`.
+
 ## Modo autonomo continuo
 Este sistema puede operar sin UI y con intervencion humana minima mediante un ciclo periodico (hora/dia/semana):
 
