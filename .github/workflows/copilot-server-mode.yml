@@ -2,14 +2,6 @@ name: copilot-server-mode
 
 on:
   workflow_dispatch:
-  push:
-    branches: ["main"]
-    paths:
-      - "server/**"
-      - "tests/e2e/**"
-      - "scripts/**"
-      - "package.json"
-      - ".github/workflows/copilot-server-mode.yml"
 
 jobs:
   validate-server-mode:

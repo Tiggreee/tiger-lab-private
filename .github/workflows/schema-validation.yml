@@ -1,10 +1,18 @@
 name: schema-validation
 
 on:
-  pull_request:
   push:
     branches:
       - main
+    paths:
+      - 'server/**'
+      - 'src/**'
+      - 'tests/contract/**'
+      - 'ops/events/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/schema-validation.yml'
+  workflow_dispatch:
 
 jobs:
   schema-validation:

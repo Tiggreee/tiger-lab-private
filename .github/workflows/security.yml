@@ -1,13 +1,6 @@
 name: security
 
 on:
-  pull_request:
-    paths:
-      - 'package.json'
-      - 'package-lock.json'
-      - 'scripts/verify-secrets.sh'
-      - 'scripts/validate-social-secrets.mjs'
-      - '.github/workflows/security.yml'
   push:
     branches:
       - main
@@ -17,6 +10,7 @@ on:
       - 'scripts/verify-secrets.sh'
       - 'scripts/validate-social-secrets.mjs'
       - '.github/workflows/security.yml'
+  workflow_dispatch:
 
 concurrency:
   group: security-${{ github.ref }}

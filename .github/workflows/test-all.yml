@@ -1,17 +1,6 @@
 name: test-all
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'src/**'
-      - 'server/**'
-      - 'tests/**'
-      - 'scripts/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - '.github/workflows/test-all.yml'
   workflow_dispatch:
   schedule:
     - cron: '0 8 * * *'
