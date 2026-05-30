@@ -8,12 +8,17 @@ jobs:
   validate-title:
     runs-on: ubuntu-latest
     steps:
+      - name: Skip Dependabot PRs
+        if: github.actor == 'dependabot[bot]'
+        run: echo "Dependabot title checks are exempted."
+
       - name: Validate PR title prefix
+        if: github.actor != 'dependabot[bot]'
         env:
           PR_TITLE: ${{ github.event.pull_request.title }}
         run: |
           echo "PR title: $PR_TITLE"
-          if [[ "$PR_TITLE" =~ ^(feat|fix|chore|docs|refactor|hotfix):[[:space:]].+ ]]; then
+          if [[ "$PR_TITLE" =~ ^(feat|fix|chore(\([^)]+\))?|docs|refactor|hotfix|ci|build):[[:space:]].+ ]]; then
             echo "Title format OK"
             exit 0
           fi
