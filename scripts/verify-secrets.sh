@@ -5,7 +5,7 @@ set -euo pipefail
 PATTERNS=(
   "AKIA[0-9A-Z]{16}"
   "-----BEGIN (RSA|EC|OPENSSH) PRIVATE KEY-----"
-  "ghp_[A-Za-z0-9]{36}"
+  "gh[pousr]_[A-Za-z0-9._-]{36,}"
   "AIza[0-9A-Za-z-_]{35}"
 )
 

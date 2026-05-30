@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Facebook OAuth 2.0 Demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>Facebook Login OAuth 2.0</h1>
+      <p class="muted">Frontend JavaScript + backend Express</p>
+
+      <label for="apiBase">Backend API Base URL</label>
+      <input id="apiBase" value="http://localhost:3001" />
+
+      <button id="fbLoginButton">Login with Facebook</button>
+
+      <section>
+        <h2>Status</h2>
+        <pre id="statusBox">Idle</pre>
+      </section>
+
+      <section>
+        <h2>User</h2>
+        <pre id="userBox">No user data yet.</pre>
+      </section>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

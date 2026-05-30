@@ -111,6 +111,52 @@ function handleRoute(pathname, payload) {
     };
   }
 
+  if (pathname === '/register-payment') {
+    const paymentId = payload.paymentId || makeActionId('pay');
+    const customerId = payload.customerId || 'customer-demo';
+    const productId = payload.productId || 'facturautentico-cloud';
+    const planId = payload.planId || 'starter';
+    const amount = Number.isFinite(payload.amount) ? payload.amount : 39;
+    const currency = payload.currency || 'USD';
+
+    return {
+      statusCode: 200,
+      body: {
+        status: 'ok',
+        action: 'register-payment',
+        result: {
+          paymentId,
+          customerId,
+          productId,
+          planId,
+          amount,
+          currency,
+          dryRun: payload.dryRun !== false
+        }
+      }
+    };
+  }
+
+  if (pathname === '/publish-content') {
+    const publicationId = payload.publicationId || makeActionId('pub');
+    const assetId = payload.assetId || makeActionId('content');
+    const channel = payload.channel || 'web';
+
+    return {
+      statusCode: 200,
+      body: {
+        status: 'ok',
+        action: 'publish-content',
+        result: {
+          publicationId,
+          assetId,
+          channel,
+          dryRun: payload.dryRun !== false
+        }
+      }
+    };
+  }
+
   if (pathname === '/bot-query') {
     const message = payload.message || '';
     const responseText = message
@@ -126,6 +172,57 @@ function handleRoute(pathname, payload) {
           reply: responseText,
           recommendation: 'start_trial',
           dryRun: payload.dryRun !== false
+        }
+      }
+    };
+  }
+
+  if (pathname === '/conversation-entry') {
+    const leadId = payload.leadId || makeActionId('lead');
+    const channel = payload.channel || 'whatsapp';
+    const destination = String(payload.destination || process.env.SOCIAL_CLOSE_DESTINATION || '').trim();
+    const message =
+      payload.message ||
+      'Hola, vengo de la campana y quiero activar el diagnostico express de 15 min.';
+
+    if ((channel === 'whatsapp' || channel === 'calendar' || channel === 'landing') && !destination) {
+      return {
+        statusCode: 400,
+        body: {
+          status: 'error',
+          error: `destination is required when channel is ${channel}`
+        }
+      };
+    }
+
+    let entryLink = '';
+    if (channel === 'whatsapp') {
+      const phone = destination.replace(/[^\d]/g, '');
+      if (!/^\d{10,15}$/.test(phone)) {
+        return {
+          statusCode: 400,
+          body: {
+            status: 'error',
+            error: 'destination must be a valid whatsapp number (10-15 digits)'
+          }
+        };
+      }
+      entryLink = phone ? `https://wa.me/${phone}?text=${encodeURIComponent(message)}` : '';
+    } else {
+      entryLink = destination;
+    }
+
+    return {
+      statusCode: 200,
+      body: {
+        status: 'ok',
+        action: 'conversation-entry',
+        result: {
+          leadId,
+          channel,
+          destination,
+          message,
+          entryLink
         }
       }
     };

@@ -1,4 +1,4 @@
-import { AsyncStatus } from './AutonomousSystemController';
+import { AsyncStatus } from './types';
 
 interface LandingPageProps {
   readonly onStart?: () => void;

@@ -20,6 +20,7 @@ import { sendJson } from '../http/response';
 import { buildBillingRoutes } from '../http/routes/billing-routes';
 import { buildBotRoutes } from '../http/routes/bot-routes';
 import { buildContentRoutes } from '../http/routes/content-routes';
+import { buildConversationRoutes } from '../http/routes/conversation-routes';
 import { buildHealthRoutes } from '../http/routes/health-routes';
 import { buildProductRoutes } from '../http/routes/product-routes';
 import { Router } from '../http/routes/router';
@@ -38,6 +39,7 @@ function createRouter(): Router {
   router.registerMany(buildContentRoutes(container.contentController));
   router.registerMany(buildBillingRoutes(container.billingController));
   router.registerMany(buildBotRoutes(container.botController));
+  router.registerMany(buildConversationRoutes(container.botController));
 
   return router;
 }

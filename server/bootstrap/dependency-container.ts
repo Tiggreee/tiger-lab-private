@@ -15,6 +15,7 @@ import { CatalogDomainEventPublisherPort } from '../../src/catalog/application/p
 import { CatalogPlan } from '../../src/catalog/domain/entities/CatalogPlan';
 import { CatalogProduct } from '../../src/catalog/domain/entities/CatalogProduct';
 import { GenerateContentUseCase } from '../../src/content/application/use-cases/GenerateContentUseCase';
+import { PublishContentUseCase } from '../../src/content/application/use-cases/PublishContentUseCase';
 import { ContentRepositoryPort } from '../../src/content/application/ports/out/repositories';
 import { ContentChannelPublisherPort, ContentDomainEventPublisherPort } from '../../src/content/application/ports/out/external';
 import { ContentAsset } from '../../src/content/domain/entities/ContentAsset';
@@ -36,6 +37,7 @@ import { Money } from '../../src/shared/domain/value-objects/Money';
 import { PlanId } from '../../src/shared/domain/value-objects/PlanId';
 import { ProductId } from '../../src/shared/domain/value-objects/ProductId';
 import { Version } from '../../src/shared/domain/value-objects/Version';
+import { readRuntimeState, updateRuntimeState } from '../../src/shared/infrastructure/persistence/runtime-state';
 import { BillingController } from '../http/controllers/BillingController';
 import { BotController } from '../http/controllers/BotController';
 import { ContentController } from '../http/controllers/ContentController';
@@ -60,78 +62,171 @@ class InMemoryProductRepository implements ProductRepositoryPort {
 }
 
 class InMemoryContentRepository implements ContentRepositoryPort {
-  private readonly assets = new Map<string, ContentAsset>();
-  private readonly publications = new Map<string, Publication>();
-
   public async saveAsset(asset: ContentAsset): Promise<void> {
-    this.assets.set(asset.assetId, asset);
+    await updateRuntimeState((state) => ({
+      ...state,
+      assets: {
+        ...state.assets,
+        [asset.assetId]: {
+          assetId: asset.assetId,
+          productId: asset.productId.value(),
+          body: asset.body,
+          generatedAt: asset.generatedAt.toISOString()
+        }
+      }
+    }));
   }
 
   public async savePublication(publication: Publication): Promise<void> {
-    this.publications.set(publication.publicationId, publication);
+    await updateRuntimeState((state) => ({
+      ...state,
+      publications: {
+        ...state.publications,
+        [publication.publicationId]: {
+          publicationId: publication.publicationId,
+          assetId: publication.assetId,
+          channel: publication.channel,
+          publishedAt: publication.publishedAt.toISOString()
+        }
+      }
+    }));
   }
 
   public async findAssetById(assetId: string): Promise<ContentAsset | null> {
-    return this.assets.get(assetId) || null;
+    const state = await readRuntimeState();
+    const asset = state.assets[assetId];
+    if (!asset) {
+      return null;
+    }
+
+    return new ContentAsset(
+      asset.assetId,
+      new ProductId(asset.productId),
+      asset.body,
+      new Date(asset.generatedAt)
+    );
   }
 }
 
 class InMemoryLeadRepository implements LeadRepositoryPort {
-  private readonly leads = new Map<string, Lead>();
-  private readonly scores = new Map<string, LeadScore>();
-
   public async saveLead(lead: Lead): Promise<void> {
-    this.leads.set(lead.leadId.value(), lead);
+    await updateRuntimeState((state) => ({
+      ...state,
+      leads: {
+        ...state.leads,
+        [lead.leadId.value()]: {
+          leadId: lead.leadId.value(),
+          source: lead.source,
+          createdAt: lead.createdAt.toISOString(),
+          score: lead.getScore()?.value
+        }
+      }
+    }));
   }
 
   public async saveLeadScore(leadScore: LeadScore): Promise<void> {
-    this.scores.set(leadScore.leadId.value(), leadScore);
+    await updateRuntimeState((state) => ({
+      ...state,
+      leadScores: {
+        ...state.leadScores,
+        [leadScore.leadId.value()]: {
+          leadId: leadScore.leadId.value(),
+          value: leadScore.value.value,
+          scoredAt: leadScore.scoredAt.toISOString()
+        }
+      }
+    }));
   }
 
   public async findLeadById(leadId: string): Promise<Lead | null> {
-    const lead = this.leads.get(leadId);
-    if (lead) {
-      return lead;
+    const state = await readRuntimeState();
+    const item = state.leads[leadId];
+    if (!item) {
+      return null;
     }
 
-    const placeholder = new Lead(new LeadId(leadId), 'bot');
-    this.leads.set(leadId, placeholder);
-    return placeholder;
+    const lead = new Lead(new LeadId(item.leadId), item.source, new Date(item.createdAt));
+    if (typeof item.score === 'number') {
+      lead.applyScore(new LeadScore(item.score));
+    }
+
+    return lead;
   }
 }
 
 class InMemoryBillingRepository implements BillingRepositoryPort {
-  private readonly payments = new Map<string, Payment>();
-  private readonly accounts = new Map<string, ProvisionedAccount>();
-
   public async savePayment(payment: Payment): Promise<void> {
-    this.payments.set(payment.paymentId, payment);
+    await updateRuntimeState((state) => ({
+      ...state,
+      payments: {
+        ...state.payments,
+        [payment.paymentId]: {
+          paymentId: payment.paymentId,
+          customerId: payment.customerId,
+          productId: payment.productId.value(),
+          planId: payment.planId.value(),
+          amount: payment.amount.amount,
+          currency: payment.amount.currency.value(),
+          createdAt: payment.createdAt.toISOString(),
+          status: payment.isSucceeded() ? 'succeeded' : 'pending'
+        }
+      }
+    }));
   }
 
   public async saveProvisionedAccount(account: ProvisionedAccount): Promise<void> {
-    this.accounts.set(account.accountId, account);
+    await updateRuntimeState((state) => ({
+      ...state,
+      accounts: {
+        ...state.accounts,
+        [account.accountId]: {
+          accountId: account.accountId,
+          customerId: account.customerId,
+          productId: account.productId.value(),
+          planId: account.planId.value(),
+          provisionedAt: account.provisionedAt.toISOString()
+        }
+      }
+    }));
   }
 
   public async findPaymentById(paymentId: string): Promise<Payment | null> {
-    const payment = this.payments.get(paymentId);
-    if (payment) {
-      return payment;
+    const state = await readRuntimeState();
+    const item = state.payments[paymentId];
+    if (!item) {
+      return null;
     }
 
-    const fallback = new Payment(
-      paymentId,
-      'anonymous',
-      new ProductId('unknown-product'),
-      new PlanId('starter'),
-      new Money(0, new Currency('USD'))
+    const payment = new Payment(
+      item.paymentId,
+      item.customerId,
+      new ProductId(item.productId),
+      new PlanId(item.planId),
+      new Money(item.amount, new Currency(item.currency)),
+      new Date(item.createdAt)
     );
-    fallback.markSucceeded();
-    this.payments.set(paymentId, fallback);
-    return fallback;
+
+    if (item.status === 'succeeded') {
+      payment.markSucceeded();
+    }
+
+    return payment;
   }
 
   public async findProvisionedAccountById(accountId: string): Promise<ProvisionedAccount | null> {
-    return this.accounts.get(accountId) || null;
+    const state = await readRuntimeState();
+    const item = state.accounts[accountId];
+    if (!item) {
+      return null;
+    }
+
+    return new ProvisionedAccount(
+      item.accountId,
+      item.customerId,
+      new ProductId(item.productId),
+      new PlanId(item.planId),
+      new Date(item.provisionedAt)
+    );
   }
 }
 
@@ -188,14 +283,50 @@ class NoopEventPublisher
 }
 
 class NoopPaymentGateway implements PaymentGatewayPort {
-  public async confirmPayment(): Promise<void> {
-    return Promise.resolve();
+  public async confirmPayment(paymentId: string): Promise<void> {
+    const endpoint = process.env.PAYMENT_GATEWAY_CONFIRM_URL;
+    if (!endpoint) {
+      throw new Error('PAYMENT_GATEWAY_CONFIRM_URL is required for payment confirmation.');
+    }
+
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(process.env.PAYMENT_GATEWAY_TOKEN
+          ? { Authorization: `Bearer ${process.env.PAYMENT_GATEWAY_TOKEN}` }
+          : {})
+      },
+      body: JSON.stringify({ paymentId })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Payment gateway failed with status ${response.status}.`);
+    }
   }
 }
 
 class NoopEntitlementPort implements EntitlementPort {
-  public async grantEntitlements(): Promise<void> {
-    return Promise.resolve();
+  public async grantEntitlements(accountId: string, productId: string, planId: string): Promise<void> {
+    const endpoint = process.env.ENTITLEMENT_API_URL;
+    if (!endpoint) {
+      throw new Error('ENTITLEMENT_API_URL is required for entitlement grants.');
+    }
+
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(process.env.ENTITLEMENT_API_TOKEN
+          ? { Authorization: `Bearer ${process.env.ENTITLEMENT_API_TOKEN}` }
+          : {})
+      },
+      body: JSON.stringify({ accountId, productId, planId })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Entitlement API failed with status ${response.status}.`);
+    }
   }
 }
 
@@ -206,8 +337,26 @@ class InMemoryApiKeyPort implements ApiKeyPort {
 }
 
 class NoopContentChannelPublisherPort implements ContentChannelPublisherPort {
-  public async publish(): Promise<void> {
-    return Promise.resolve();
+  public async publish(channel: string, body: string): Promise<void> {
+    const endpoint = process.env.CONTENT_PUBLISHER_API_URL;
+    if (!endpoint) {
+      throw new Error('CONTENT_PUBLISHER_API_URL is required for content publication.');
+    }
+
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(process.env.CONTENT_PUBLISHER_API_TOKEN
+          ? { Authorization: `Bearer ${process.env.CONTENT_PUBLISHER_API_TOKEN}` }
+          : {})
+      },
+      body: JSON.stringify({ channel, body })
+    });
+
+    if (!response.ok) {
+      throw new Error(`Content publisher API failed with status ${response.status}.`);
+    }
   }
 }
 
@@ -230,11 +379,14 @@ export function createServerDependencyContainer(): ServerDependencyContainer {
 
   const createProductUseCase = new CreateProductUseCase(productRepository, eventPublisher);
   const generateContentUseCase = new GenerateContentUseCase(contentRepository, eventPublisher);
+  const publishContentUseCase = new PublishContentUseCase(
+    contentRepository,
+    new NoopContentChannelPublisherPort(),
+    eventPublisher
+  );
 
   const captureLeadUseCase = new CaptureLeadUseCase(leadRepository, eventPublisher);
   const scoreLeadUseCase = new ScoreLeadUseCase(leadRepository, eventPublisher);
-  void captureLeadUseCase;
-
   const resolveOfferUseCase = new ResolveOfferUseCase(catalogRepository, eventPublisher);
 
   const registerPaymentUseCase = new RegisterPaymentUseCase(
@@ -242,7 +394,6 @@ export function createServerDependencyContainer(): ServerDependencyContainer {
     new NoopPaymentGateway(),
     eventPublisher
   );
-  void registerPaymentUseCase;
 
   const provisionAccountUseCase = new ProvisionAccountUseCase(
     billingRepository,
@@ -254,8 +405,8 @@ export function createServerDependencyContainer(): ServerDependencyContainer {
   return {
     healthController: new HealthController(),
     productController: new ProductController(createProductUseCase),
-    contentController: new ContentController(generateContentUseCase),
-    billingController: new BillingController(provisionAccountUseCase),
-    botController: new BotController(resolveOfferUseCase, scoreLeadUseCase)
+    contentController: new ContentController(generateContentUseCase, publishContentUseCase),
+    billingController: new BillingController(registerPaymentUseCase, provisionAccountUseCase),
+    botController: new BotController(resolveOfferUseCase, captureLeadUseCase, scoreLeadUseCase)
   };
 }

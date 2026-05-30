@@ -1,4 +1,4 @@
-import { AsyncStatus } from './AutonomousSystemController';
+import { AsyncStatus } from './types';
 
 interface CheckoutProps {
   readonly status?: AsyncStatus;

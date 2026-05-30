@@ -4,6 +4,7 @@ import { ProvisionAccountCommand } from '../ports/in/commands';
 import { ProvisionAccountCommandHandler } from '../ports/in/handlers';
 import { BillingRepositoryPort } from '../ports/out/repositories';
 import { ApiKeyPort, BillingDomainEventPublisherPort, EntitlementPort } from '../ports/out/external';
+import { trackFunnelEvent } from '../../../../shared/infrastructure/observability/funnel-telemetry';
 
 /** Provision account use case. */
 export class ProvisionAccountUseCase implements ProvisionAccountCommandHandler {
@@ -39,5 +40,11 @@ export class ProvisionAccountUseCase implements ProvisionAccountCommandHandler {
     });
 
     await this.eventPublisher.publish(event);
+    await trackFunnelEvent('account_provisioned', {
+      accountId: account.accountId,
+      customerId: account.customerId,
+      productId: account.productId.value(),
+      planId: account.planId.value()
+    });
   }
 }

@@ -1,7 +1,6 @@
 import { ChannelPolicy } from '../contracts/channel-policy.schema';
 import { BotOutput, validateBotOutput } from '../contracts/bot-output.schema';
-
-const FORBIDDEN_TERMS = ['password', 'secret', 'token'];
+import { FORBIDDEN_TERMS } from '../../shared/forbidden-terms';
 
 export function assertValidBotOutput(output: unknown, policy: ChannelPolicy): BotOutput {
   if (!validateBotOutput(output)) {

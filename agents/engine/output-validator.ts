@@ -1,6 +1,5 @@
 import { AgentOutput, validateAgentOutput } from '../contracts/agent-output.schema';
-
-const FORBIDDEN_TERMS = ['password', 'secret', 'token'];
+import { FORBIDDEN_TERMS } from '../../shared/forbidden-terms';
 
 export function assertValidAgentOutput(output: unknown): AgentOutput {
   if (!validateAgentOutput(output)) {

@@ -1,4 +1,4 @@
-import { AsyncStatus } from './AutonomousSystemController';
+import { AsyncStatus } from './types';
 
 function KpiBlock({ label, value }: { label: string; value: string | number }) {
   return (

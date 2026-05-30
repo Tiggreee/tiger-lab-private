@@ -8,6 +8,7 @@ import { RegisterPaymentCommand } from '../ports/in/commands';
 import { RegisterPaymentCommandHandler } from '../ports/in/handlers';
 import { BillingRepositoryPort } from '../ports/out/repositories';
 import { BillingDomainEventPublisherPort, PaymentGatewayPort } from '../ports/out/external';
+import { trackFunnelEvent } from '../../../../shared/infrastructure/observability/funnel-telemetry';
 
 /** Register payment use case. */
 export class RegisterPaymentUseCase implements RegisterPaymentCommandHandler {
@@ -38,5 +39,13 @@ export class RegisterPaymentUseCase implements RegisterPaymentCommandHandler {
     });
 
     await this.eventPublisher.publish(event);
+    await trackFunnelEvent('payment_succeeded', {
+      paymentId: payment.paymentId,
+      customerId: payment.customerId,
+      productId: payment.productId.value(),
+      planId: payment.planId.value(),
+      amount: payment.amount.amount,
+      currency: payment.amount.currency.value()
+    });
   }
 }

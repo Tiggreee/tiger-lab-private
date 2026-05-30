@@ -1,5 +1,7 @@
 # Plataforma Autonoma de Monetizacion y Operacion
 
+Dashboard en GitHub Pages: https://tiggreee.github.io/tiger-lab-private/#/dashboard
+
 Sistema modular y autonomo para crear, operar y escalar productos digitales con intervencion humana minima. Incluye motores de producto, contenido, leads, pricing, funnels, bots y automatizaciones, orquestados por un EventBus interno.
 
 ## Estado actual

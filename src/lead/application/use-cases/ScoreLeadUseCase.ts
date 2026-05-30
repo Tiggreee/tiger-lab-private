@@ -6,6 +6,7 @@ import { ScoreLeadCommand } from '../ports/in/commands';
 import { ScoreLeadCommandHandler } from '../ports/in/handlers';
 import { LeadRepositoryPort } from '../ports/out/repositories';
 import { LeadDomainEventPublisherPort } from '../ports/out/external';
+import { trackFunnelEvent } from '../../../../shared/infrastructure/observability/funnel-telemetry';
 
 /** Score lead use case. */
 export class ScoreLeadUseCase implements ScoreLeadCommandHandler {
@@ -37,5 +38,9 @@ export class ScoreLeadUseCase implements ScoreLeadCommandHandler {
     });
 
     await this.eventPublisher.publish(event);
+    await trackFunnelEvent('lead_scored', {
+      leadId: command.leadId,
+      score: scoreValue.value
+    });
   }
 }

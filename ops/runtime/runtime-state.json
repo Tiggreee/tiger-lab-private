@@ -1,0 +1,65 @@
+{
+  "leads": {
+    "lead-e2e-1": {
+      "leadId": "lead-e2e-1",
+      "source": "campaign-web",
+      "createdAt": "2026-05-30T12:42:30.625Z",
+      "score": 73
+    },
+    "lead-funnel-1": {
+      "leadId": "lead-funnel-1",
+      "source": "web-visit",
+      "createdAt": "2026-05-30T12:42:32.817Z",
+      "score": 82
+    }
+  },
+  "leadScores": {
+    "lead-e2e-1": {
+      "leadId": "lead-e2e-1",
+      "value": 73,
+      "scoredAt": "2026-05-30T12:42:30.631Z"
+    },
+    "lead-funnel-1": {
+      "leadId": "lead-funnel-1",
+      "value": 82,
+      "scoredAt": "2026-05-30T12:42:32.827Z"
+    }
+  },
+  "payments": {
+    "pay-funnel-1": {
+      "paymentId": "pay-funnel-1",
+      "customerId": "cust-funnel-1",
+      "productId": "facturautentico-cloud",
+      "planId": "pro",
+      "amount": 99,
+      "currency": "USD",
+      "createdAt": "2026-05-30T12:42:32.836Z",
+      "status": "succeeded"
+    }
+  },
+  "accounts": {
+    "acct-funnel-1": {
+      "accountId": "acct-funnel-1",
+      "customerId": "cust-funnel-1",
+      "productId": "facturautentico-cloud",
+      "planId": "pro",
+      "provisionedAt": "2026-05-30T12:42:32.842Z"
+    }
+  },
+  "assets": {
+    "asset-e2e-1": {
+      "assetId": "asset-e2e-1",
+      "productId": "product-e2e-1",
+      "body": "Automated announcement post",
+      "generatedAt": "2026-05-30T12:42:30.614Z"
+    }
+  },
+  "publications": {
+    "pub-e2e-1": {
+      "publicationId": "pub-e2e-1",
+      "assetId": "asset-e2e-1",
+      "channel": "web",
+      "publishedAt": "2026-05-30T12:42:30.621Z"
+    }
+  }
+}

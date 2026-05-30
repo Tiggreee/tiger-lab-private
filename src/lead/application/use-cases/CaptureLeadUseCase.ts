@@ -5,6 +5,7 @@ import { CaptureLeadCommand } from '../ports/in/commands';
 import { CaptureLeadCommandHandler } from '../ports/in/handlers';
 import { LeadRepositoryPort } from '../ports/out/repositories';
 import { LeadDomainEventPublisherPort } from '../ports/out/external';
+import { trackFunnelEvent } from '../../../../shared/infrastructure/observability/funnel-telemetry';
 
 /** Capture lead use case. */
 export class CaptureLeadUseCase implements CaptureLeadCommandHandler {
@@ -23,5 +24,9 @@ export class CaptureLeadUseCase implements CaptureLeadCommandHandler {
     });
 
     await this.eventPublisher.publish(event);
+    await trackFunnelEvent('lead_captured', {
+      leadId: lead.leadId.value(),
+      source: lead.source
+    });
   }
 }

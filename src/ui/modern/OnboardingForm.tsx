@@ -1,5 +1,5 @@
 import { FormEvent, useState } from 'react';
-import { AsyncStatus, OnboardingInput } from './AutonomousSystemController';
+import { AsyncStatus, OnboardingInput } from './types';
 
 interface OnboardingFormProps {
   readonly status?: AsyncStatus;

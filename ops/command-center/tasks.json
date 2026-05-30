@@ -3,7 +3,7 @@
     "timezone": "America/Mexico_City",
     "owner": "Victor",
     "project": "Monetization Engine",
-    "lastSupervisorSyncAt": "2026-05-28T11:30:59.088Z",
+    "lastSupervisorSyncAt": "2026-05-29T03:26:21.136Z",
     "lastSupervisorReport": "ops/supervisor/latest-supervisor-report.example.json"
   },
   "tasks": [
@@ -134,7 +134,7 @@
       "priority": "P0",
       "owner": "ai",
       "status": "todo",
-      "dueDate": "2026-05-30",
+      "dueDate": "2026-05-31",
       "nextAction": "Harden allowlist and add validation tests",
       "repoPath": "web_project_api_full/server"
     },
@@ -145,7 +145,7 @@
       "priority": "P0",
       "owner": "human",
       "status": "todo",
-      "dueDate": "2026-05-28",
+      "dueDate": "2026-05-29",
       "nextAction": "Send fixed-scope proposal with 3-tier options",
       "repoPath": "sales/pipeline"
     }
