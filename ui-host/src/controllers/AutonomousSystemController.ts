@@ -1,6 +1,11 @@
-import type { AsyncStatus, OnboardingInput } from '../../../src/ui/modern/types'
+export type AsyncStatus = 'idle' | 'loading' | 'success' | 'error'
 
-export type { AsyncStatus, OnboardingInput }
+export interface OnboardingInput {
+  readonly productId: string
+  readonly productName: string
+  readonly audience: string
+  readonly firstAutomation: string
+}
 
 export interface ActivationFlowResult {
   readonly productId: string
