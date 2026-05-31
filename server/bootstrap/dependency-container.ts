@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
 import { RegisterPaymentUseCase } from '../../src/billing/application/use-cases/RegisterPaymentUseCase';
 import { ProvisionAccountUseCase } from '../../src/billing/application/use-cases/ProvisionAccountUseCase';
 import { BillingRepositoryPort } from '../../src/billing/application/ports/out/repositories';
@@ -231,17 +233,96 @@ class InMemoryBillingRepository implements BillingRepositoryPort {
 }
 
 class InMemoryCatalogRepository implements CatalogRepositoryPort {
-  private readonly product: CatalogProduct;
+  private readonly products: Map<string, CatalogProduct>;
 
   constructor() {
-    const defaultPlan = new CatalogPlan(
+    this.products = this.loadProducts();
+  }
+
+  private loadProducts(): Map<string, CatalogProduct> {
+    const defaults = new Map<string, CatalogProduct>();
+
+    const fallbackPlan = new CatalogPlan(
       new PlanId('starter'),
       'Starter',
       new Money(39, new Currency('USD')),
       new Date('2026-01-01T00:00:00.000Z')
     );
 
-    this.product = new CatalogProduct(new ProductId('facturautentico-cloud'), 'FacturAutentico Cloud', [defaultPlan]);
+    defaults.set(
+      'facturautentico-cloud',
+      new CatalogProduct(new ProductId('facturautentico-cloud'), 'FacturAutentico Cloud', [fallbackPlan])
+    );
+
+    try {
+      const filePath = path.resolve('ops/catalog/products.json');
+      const raw = readFileSync(filePath, 'utf8');
+      const parsed = JSON.parse(raw) as {
+        products?: Array<{
+          id?: string;
+          name?: string;
+          planIds?: string[];
+        }>;
+      };
+
+      const rows = Array.isArray(parsed.products) ? parsed.products : [];
+      if (rows.length === 0) {
+        return defaults;
+      }
+
+      const map = new Map<string, CatalogProduct>();
+      for (const row of rows) {
+        const productId = String(row.id || '').trim();
+        if (!productId) {
+          continue;
+        }
+
+        const plans = this.buildPlans(row.planIds || ['starter']);
+        map.set(
+          productId,
+          new CatalogProduct(
+            new ProductId(productId),
+            String(row.name || productId),
+            plans.length > 0 ? plans : [fallbackPlan]
+          )
+        );
+      }
+
+      return map.size > 0 ? map : defaults;
+    } catch {
+      return defaults;
+    }
+  }
+
+  private buildPlans(planIds: string[]): CatalogPlan[] {
+    const seen = new Set<string>();
+    const priceByPlan: Record<string, number> = {
+      starter: 39,
+      pro: 99,
+      growth: 149,
+      enterprise: 299
+    };
+
+    return planIds
+      .map((value) => String(value || '').trim().toLowerCase())
+      .filter((planId) => {
+        if (!planId || seen.has(planId)) {
+          return false;
+        }
+
+        seen.add(planId);
+        return true;
+      })
+      .map((planId) => {
+        const amount = priceByPlan[planId] ?? 59;
+        const planName = `${planId.charAt(0).toUpperCase()}${planId.slice(1)}`;
+        return new CatalogPlan(
+          new PlanId(planId),
+          planName,
+          new Money(amount, new Currency('USD')),
+          new Date('2026-01-01T00:00:00.000Z')
+        );
+      });
   }
 
   public async saveCatalogProduct(): Promise<void> {
@@ -249,20 +330,17 @@ class InMemoryCatalogRepository implements CatalogRepositoryPort {
   }
 
   public async findProductById(productId: string): Promise<CatalogProduct | null> {
-    if (this.product.productId.value() === productId) {
-      return this.product;
-    }
-
-    return null;
+    return this.products.get(productId) || null;
   }
 
   public async findPlanById(productId: string, planId: string): Promise<CatalogPlan | null> {
-    if (productId !== this.product.productId.value()) {
+    const product = this.products.get(productId);
+    if (!product) {
       return null;
     }
 
     try {
-      return this.product.resolvePlan(new PlanId(planId), new Date());
+      return product.resolvePlan(new PlanId(planId), new Date());
     } catch {
       return null;
     }
