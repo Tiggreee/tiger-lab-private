@@ -135,6 +135,14 @@ a {
   font-size: 0.84rem;
 }
 
+.gateway-focus-tag {
+  margin-top: 0.95rem;
+  color: var(--accent);
+  font-size: 0.84rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
 .gateway-grid {
   position: relative;
   z-index: 1;
@@ -151,6 +159,19 @@ a {
   box-shadow: var(--shadow);
   border-radius: 18px;
   padding: 1.1rem 1rem;
+}
+
+.gateway-card-primary {
+  border-color: rgba(243, 178, 59, 0.52);
+}
+
+.gateway-grid-title {
+  grid-column: 1 / -1;
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .gateway-card-role {

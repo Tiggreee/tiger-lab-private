@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-06-01T00:00:00.000Z",
+  "campaign": "facturaautentica-railway-ready-2026-06-01",
+  "topic": "CFDI confiable sin retrabajo operativo",
+  "audience": "despachos contables y operaciones SMB en MX/LATAM",
+  "offer": "diagnostico operativo express de 15 min",
+  "brand": {
+    "productName": "FacturaAutentica",
+    "problemDetail": "timbrado manual, errores CFDI y retrabajo semanal",
+    "primaryOutcome": "reducir errores de captura y tiempo de facturacion",
+    "proofPoint": "validacion previa reduce retrabajo y rechazos CFDI",
+    "domainTerms": ["cfdi", "timbrado", "pac", "xml", "sat", "facturacion"]
+  },
+  "funnel": {
+    "trafficDestination": "https://tiger-lab-private-production.up.railway.app",
+    "closeChannel": "landing",
+    "closeDestination": "https://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica",
+    "prefilledMessage": "Hola, vengo de la campana y quiero activar el diagnostico express de 15 min.",
+    "finalCta": "Activa FacturaAutentica aqui y te contacto con el siguiente paso: https://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica",
+    "closeLink": "https://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica"
+  },
+  "quality": {
+    "averageScore": 95,
+    "projectedAverageLiftPct": 20,
+    "targetLiftPct": 15,
+    "targetReached": true
+  },
+  "channels": {
+    "linkedin": {
+      "selectedVariant": "A",
+      "selectedScore": 95,
+      "projectedLiftPct": 20,
+      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=linkedin&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01"
+    },
+    "x": {
+      "selectedVariant": "A",
+      "selectedScore": 92,
+      "projectedLiftPct": 18,
+      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=x&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01"
+    },
+    "facebook": {
+      "selectedVariant": "A",
+      "selectedScore": 94,
+      "projectedLiftPct": 19,
+      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=facebook&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01"
+    },
+    "telegram": {
+      "selectedVariant": "A",
+      "selectedScore": 95,
+      "projectedLiftPct": 20,
+      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=telegram&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01"
+    },
+    "discord": {
+      "selectedVariant": "A",
+      "selectedScore": 92,
+      "projectedLiftPct": 18,
+      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=discord&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01"
+    }
+  }
+}

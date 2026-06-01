@@ -6,25 +6,20 @@ interface LandingPageProps {
   readonly activeRouteLabel?: string
 }
 
-const launchProducts = [
-  {
-    name: 'FacturaAutentica',
-    role: 'Producto propio refinado',
-    detail: 'Facturacion CFDI simplificada para negocio real en Mexico.'
-  },
+const expansionTracks = [
   {
     name: 'all-about-money',
-    role: 'Producto propio probado',
+    role: 'Expansion comercial',
     detail: 'Operacion financiera y crecimiento con trazabilidad tecnica.'
   },
   {
     name: 'FacturAutentico Cloud',
-    role: 'Motor CLI probado',
+    role: 'Expansion tecnica',
     detail: 'Oferta cloud con planes listos para escalar conversion.'
   },
   {
     name: 'Script Premium Kit',
-    role: 'Motor CLI modernista',
+    role: 'Expansion operativa',
     detail: 'Automatizaciones premium orientadas a velocidad de ejecucion.'
   }
 ]
@@ -37,26 +32,36 @@ export default function LandingPage({ onStart, status = 'idle', activeRouteLabel
     <main className="gateway-page" aria-label="TigreLabs entry page">
       <section className="gateway-hero" aria-labelledby="gateway-title">
         <p className="gateway-kicker">TigreLabs Organization Gateway</p>
-        <h1 id="gateway-title">Productos reales para negocios que no tienen tiempo para perder.</h1>
+        <h1 id="gateway-title">FacturaAutentica: convertir y cobrar con menos friccion operativa.</h1>
         <p className="gateway-subtitle">
-          Interfaz clara, automatizacion fuerte y ejecucion confiable. Diseñado para que una persona adulta
-          pueda entrar, entender y facturar sin friccion mental.
+          Flujo principal enfocado en FacturaAutentica para despachos y operaciones SMB en Mexico.
+          Objetivo: cerrar mas rapido, cobrar mejor y ejecutar onboarding sin friccion.
         </p>
 
         <div className="gateway-actions">
           <button className="gateway-button-primary" disabled={isLoading} onClick={onStart} type="button">
-            {isLoading ? 'Activando...' : 'Entrar al flujo'}
+            {isLoading ? 'Activando...' : 'Iniciar FacturaAutentica'}
           </button>
           <a className="gateway-button-ghost" href="#launch-grid">
-            Ver cartera Fantastic 4
+            Ver tracks secundarios
           </a>
         </div>
 
+        <p className="gateway-focus-tag">Foco actual: FacturaAutentica-first</p>
         <p className="gateway-route-tag">Ruta activa: {activeRouteLabel}</p>
       </section>
 
       <section id="launch-grid" className="gateway-grid" aria-label="Launch products">
-        {launchProducts.map((product) => (
+        <article className="gateway-card gateway-card-primary">
+          <p className="gateway-card-role">Producto activo</p>
+          <h2>FacturaAutentica</h2>
+          <p>Facturacion CFDI simplificada para negocio real en Mexico.</p>
+        </article>
+      </section>
+
+      <section className="gateway-grid" aria-label="Expansion tracks">
+        <p className="gateway-grid-title">Tracks en expansion (no foco del milestone)</p>
+        {expansionTracks.map((product) => (
           <article key={product.name} className="gateway-card">
             <p className="gateway-card-role">{product.role}</p>
             <h2>{product.name}</h2>

@@ -1,211 +1,227 @@
 PROJECT BLUEPRINT TOTAL
-Version: 1.0
-Date: 2026-05-31
-Purpose: Provide a plain-text, system-wide blueprint for local AI analysis and architectural review.
+Version: 2.0
+Date: 2026-06-01
+Owner: TigreLabs
+Mode: tiggreeeon
 
-1. PROJECT THESIS
-This project is an autonomous monetization and operations platform designed to create, operate, and scale digital products with minimal human intervention while preserving human control at strategic gates.
+Purpose
+Establish one operational truth for architecture, product focus, deploy reality, payment direction, and closure plan.
+This document is intended to stop context drift and keep execution aligned with quality.
 
-Primary goals:
-- Close faster.
-- Collect money through the fastest viable rails.
-- Automate follow-up, objections, checkout, provisioning, and reporting.
-- Keep the system human-friendly now and developer-friendly in future premium tiers.
+1) Strategic North Star
+The platform exists to convert intent into revenue with minimum manual friction and full operational traceability.
 
-2. PRODUCT LINEUP (WAVE 1)
-The initial lineup is intentionally differentiated to avoid repeating the same story across all products.
+Non negotiables:
+- Real conversion over vanity output.
+- Collection rails with fast fallback.
+- Human control on strategic gates only.
+- Technical decisions must reduce risk and increase repeatability.
 
-2.1 FacturaAutentica
-- Category: fiscal / CFDI / operations.
-- Audience: despachos contables, SMB ops, teams that need timbrado reliability.
-- Primary job: reduce CFDI friction, retrabajo, and capture errors.
-- Commercial role: direct cash product.
+2) Current Product Philosophy
+Commercial focus now: FacturaAutentica first.
 
-2.2 all-about-money
-- Category: non-IT monetization / education / entry offer.
-- Audience: creators, operators, non-technical users, people looking for income routes.
-- Primary job: help choose one clear monetization route and validate it quickly.
-- Commercial role: audience entry and broader top-of-funnel product.
+Meaning in practice:
+- FacturaAutentica is the active revenue spearhead.
+- Other products are valid assets but currently function as expansion tracks.
+- UX and copy should progressively move from multi-product catalog to FacturaAutentica-first journey.
 
-2.3 Docflow API
-- Category: technical automation / document orchestration.
-- Audience: backend teams and document operations teams.
-- Primary job: orchestrate documents through API with traceability and fewer integration errors.
-- Commercial role: high-value technical offer.
+Important alignment note:
+- Frontend landing currently still renders 4 products in the visual catalog.
+- This is not a bug; it is an outdated narrative state pending consolidation.
 
-2.4 Script Premium Kit
-- Category: automation kit / scripts / runbooks.
-- Audience: operators, founders, growth teams, technical leads.
-- Primary job: remove repetitive manual work with reusable automation.
-- Commercial role: execution speed and operational efficiency product.
+3) Real Technical State (as of this date)
+3.1 Deploy and runtime
+- UI host is deployable and serves correctly on Railway generated domain.
+- Production runtime now uses npm run start instead of preview-only behavior.
+- Static serving path is controlled by a dedicated startup script.
 
-3. CURRENT SYSTEM ARCHITECTURE
-The platform is modular.
+3.2 Domain state
+- Railway generated domain flow is stable and sufficient for operation.
+- Custom DNS/domain is optional at this stage and was intentionally de-prioritized to avoid blocking delivery.
 
-Core engines:
-- Product engine
-- Content engine
-- Lead engine
-- Pricing engine
-- Funnel engine
-- Automation engine
-- Bot engine
-- Monetization engine
+3.3 Frontend behavior
+- Routes available: /, /onboarding, /dashboard, /checkout, /automation.
+- Router strategy:
+	- BrowserRouter in dev.
+	- HashRouter in production for static-host compatibility.
+- Landing includes subdomain-to-route mapping logic.
+- Landing footer now reads current host dynamically (domain-agnostic).
 
-Core runtime layers:
-- EventBus for internal orchestration
-- Diagnostics
-- Simulators
-- Metrics
-- Alerts
-- CLI operations
-- Command center / dashboard control plane
+3.4 UI/business logic status
+- State management exists and is functional for simulated flow.
+- Activation flow computes recommended plan and simulated checkout amount.
+- Dashboard and automation panels operate as control-plane simulation.
+- End-to-end live payment provider wiring is still pending.
 
-Design principle:
-- Engines decide and execute.
-- Humans approve only strategic or risky gates.
+4) Code-Level Components (high signal map)
+4.1 UI Host
+- src/main.tsx: app bootstrap.
+- src/App.tsx: router and route declarations.
+- src/routes/Landing.tsx: entry flow, subdomain redirects, local tracking.
+- src/components/LandingPage.tsx: public gateway narrative and product cards.
+- src/state/uiStore.ts: client orchestration/state transitions.
+- src/controllers/AutonomousSystemController.ts: flow orchestration contract.
 
-4. DASHBOARD INTEGRATED ADVANCED
-Status:
-- Exists as a command center / operational dashboard concept and local UI surface.
-- It is useful for daily visibility, task prioritization, and operational reminders.
-- It is not yet fully wired to the backend in a complete production sense.
+4.2 Runtime and operations
+- scripts/: operational CLI commands, summaries, traffic publishing.
+- ops/: catalogs, runtime artifacts, process docs, payment decisions.
+- server/: API and runtime bridge for non-UI operations.
 
-What it currently does well:
-- Shows task priorities and urgency.
-- Separates human tasks from AI tasks.
-- Supports daily operational discipline.
-- Gives visibility to monetization-critical work.
+5) Commercial and Payment Direction
+FacturaAutentica-first payment policy:
+- Primary processor path for card checkout.
+- PayPal and transfer rails as pragmatic fallback.
+- No provisioning before payment confirmation.
+- Reconciliation is mandatory before calling a sale closed.
 
-What it still needs to be considered fully advanced:
-- Complete wiring to backend data sources.
-- End-to-end live event ingestion.
-- Stronger connection to payment/provisioning truth.
-- Better integration with live operational metrics and alerts.
+Known maturity level:
+- Decision docs and process controls are present.
+- Live processor + webhook hardening + reconciliation automation still require final closure.
 
-Interpretation:
-- Treat it as a control plane and execution cockpit.
-- Do not treat it as the only source of truth for billing or production risk.
+6) Why the Frontend Still Shows 4 Products
+Reason:
+- The UI catalog was intentionally built as a portfolio gateway during Wave 1.
+- Strategy evolved to FacturaAutentica-first faster than the landing narrative was refactored.
 
-5. GO-TO-MARKET LOGIC
-The project should sell through the fastest reliable path.
+Implication:
+- Current UI is functional but message-focus is diluted.
 
-Commercial doctrine:
-- Fastest valid payment rail wins.
-- No routine human bottleneck in objections or checkout.
-- Human only steps in for publication approval, exceptions, security, and fraud.
+Recommended correction path:
+- Keep backend/runtime architecture multi-product.
+- Narrow top-level UX and copy to FacturaAutentica-first conversion path.
+- Preserve the other products behind secondary navigation or roadmap sections.
 
-Commercial closer behavior:
-- Qualify lead intent.
-- Recommend plan.
-- Handle objections.
-- Offer only policy-approved discounts.
-- Send checkout immediately.
-- Retry/follow up automatically.
-- Provision on successful payment.
+7) What Is Functional Right Now
+Functional today:
+- Railway deploy for ui-host.
+- Generated domain access (HTTP 200 expected when deployment is healthy).
+- Frontend route navigation and local state transitions.
+- Core operational scripts and process documents.
 
-6. PAYMENT AND COLLECTION STRATEGY
-Primary objective:
-- Receive money fast, with strong backup options and clear reconciliation.
+Partially functional:
+- Dashboard as command center is useful, but not yet full live truth of payments/provisioning.
 
-Recommended collection stack:
-- Card via primary processor.
-- PayPal as a trusted alternative.
-- Transfer/SPEI/CLABE for B2B and invoice-oriented buyers.
-- Cash-reference options for non-card users.
-- Manual cash only with strict controls and digital evidence.
+Not fully closed yet:
+- Production-grade payment event lifecycle with hardened webhooks and automated reconciliation loops.
 
-Important policy:
-- Money does not go to GitHub.
-- GitHub only stores code, docs, and automation assets.
-- Money must settle in bank or processor accounts configured for the business.
+8) Quality Bar and Reality Check
+This project is not mediocre.
+It is already advanced in architecture and operational intent, but still in closing phase for monetization-grade production.
 
-Collection principle:
-- If the customer can pay faster with a valid rail, offer it.
-- If one rail fails, fall back to the next best rail.
-- Keep manual cash as a controlled exception, not the default.
+Professional standard for closure:
+- Stable deploy.
+- Clear commercial focus.
+- Verified payment-to-provisioning path.
+- Measured operational loop with alerts and reconciliation.
 
-7. HUMAN PARTICIPATION MODEL
-Human work should be minimized and concentrated on high-leverage gates.
+9) Closure Plan (execution order)
+Phase A: Stabilize baseline (DONE / MAINTAIN)
+1. Keep Railway generated domain as canonical runtime entry.
+2. Avoid custom-domain complexity until payment closure is validated.
+3. Maintain deterministic build and start commands.
 
-Human responsibilities:
-- Final publication / go-live approval.
-- Discount or contract exceptions outside policy.
-- Security, compliance, fraud, or legal incidents.
-- Reviewing top hot leads when necessary.
-- Making policy adjustments for pricing and rails.
+Phase B: Product-message consolidation (NEXT)
+1. Refactor landing from Fantastic 4 to FacturaAutentica-first hero path.
+2. Keep expansion products as secondary offers.
+3. Align onboarding defaults and CTA copy to FacturaAutentica conversion.
 
-Human should not routinely:
-- Handle every objection.
-- Manually close every deal.
-- Manually provision every paid account.
-- Manually approve every checkout.
+Phase C: Monetization hardening (CRITICAL)
+1. Implement and verify live payment provider integration.
+2. Harden webhook signature, idempotency, replay protection.
+3. Enforce payment-confirmed provisioning gate.
+4. Ship reconciliation checks and exception handling.
 
-8. BILINGUAL / HUMAN-FRIENDLY POSITIONING
-The platform should remain readable and operationally friendly.
+Phase D: Operational readiness gate (GO/NO-GO)
+1. Run technical audit checklist.
+2. Run commercial flow dry-run and live small-batch validation.
+3. Approve launch with explicit go/no-go decision.
 
-Principles:
-- Clear language over hype.
-- Direct operational signals over generic marketing copy.
-- Human-friendly now.
-- Developer-friendly in premium tiers.
-- Avoid generic AI-looking output.
+10) Definition of Done for Current Milestone
+Milestone closes only when all are true:
+1. Railway runtime stable for 7 consecutive days without fallback incidents.
+2. Landing message aligned to FacturaAutentica-first.
+3. Payment->provisioning E2E verified with real provider events.
+4. Reconciliation report generated and reviewed on schedule.
+5. Operational dashboard used as cockpit, not as fake source of truth.
 
-9. OPERATING LOOPS
-Daily loop:
-- Review command center.
-- Review active leads and payment state.
-- Review alerts.
-- Review product/content/funnel status.
-- Make one high-leverage human decision.
+11) Risks and Mitigations
+Risk: context switching between infra and strategy causes drift.
+Mitigation: this blueprint is the source of truth and gets versioned.
 
-Weekly loop:
-- Reorder payment rails by success rate.
-- Review objection patterns.
-- Re-tune discounts and checkout strategy.
-- Review product lineup overlap.
+Risk: custom-domain obsession delays revenue closure.
+Mitigation: generated domain is accepted for Phase A/B execution.
 
-Launch loop:
-- Generate campaigns.
-- Validate authenticity.
-- Dry-run multi-channel publication.
-- Activate live only after go/no-go checks.
+Risk: portfolio messaging dilutes conversion.
+Mitigation: prioritize single-offer narrative at top funnel.
 
-10. TECHNICAL GUARDAILS
-Critical safety rules:
-- Webhook signature verification.
-- Idempotency for payment events.
-- Replay protection.
-- Secret rotation.
-- No provisioning without confirmed payment state.
-- Reconciliation between provider and runtime records.
-- No production publishing without go-live approval.
+12) Immediate Next Actions (Execution Now)
+1. Lock FacturaAutentica-first narrative in landing and onboarding flow.
+2. Enable real payment flow and checkout path with production-safe controls.
+3. Harden webhook processing (signature, idempotency, replay protection).
+4. Implement and validate reconciliation loop (provider vs runtime truth).
+5. Keep Railway deployment stable and continuously verified while changes land.
 
-11. CURRENT STATUS SNAPSHOT
-Strong areas:
-- Campaign generation.
-- Authenticity guardrails.
-- Dry-run publish validation.
-- Command center workflow.
-- Modular architecture.
-- Runtime and operational docs.
+13) Focus Audit (Critical vs Not Important Right Now)
+CRITICAL:
+1. Real payments.
+2. Webhooks.
+3. Reconciliation.
+4. FacturaAutentica-first narrative.
+5. Onboarding aligned to conversion.
+6. Stable deployment.
+7. Conversion flow quality.
+8. Milestone closure discipline.
 
-Still incomplete for fully live production:
-- Live payment provider integration and webhook hardening.
-- Full backend wiring for the advanced dashboard.
-- Final end-to-end production reconciliation.
-- Real-live validation under provider accounts.
+NOT IMPORTANT RIGHT NOW:
+1. Domains.
+2. SEO.
+3. Perfect copy.
+4. Perfect design.
+5. Multi-product top-level positioning.
+6. New features.
+7. Aesthetic-only refactors.
+8. New ideas outside milestone scope.
+9. New engines.
+10. New products.
+11. Full rewrites.
 
-12. RECOMMENDED NEXT ACTIONS
-1. Finalize live payment rails and webhook integration.
-2. Keep the external app as enrichment only.
-3. Use the dashboard as a daily control plane, not as the billing source of truth.
-4. Launch with the 4-product lineup and keep Cloud out of the first wave unless needed.
-5. Run an extensiva audit before the final go-live.
+Execution rule:
+If a task is outside CRITICAL, postpone it.
+If a task appears in NOT IMPORTANT RIGHT NOW, do not execute it in this milestone.
+This rule is mandatory to avoid losing weeks.
 
-13. SUMMARY FOR LOCAL AI ANALYSIS
-If analyzed by local models, the strongest architectural conclusion is:
-- The system is already strong as an autonomous operation engine.
-- The main missing pieces are live payment hardening and full backend wiring of the advanced dashboard.
-- Human participation should be reduced to strategic gates only.
-- The initial 4-product lineup is sufficiently differentiated for a controlled launch.
+14) Fiscal Readiness Mini Checklist (MX)
+Goal:
+Improve collection strength, trust, and scaling readiness without blocking immediate execution.
+
+Checklist:
+1. Confirm current SAT status (regimen, obligations, CFDI scope).
+2. Validate if migration to Persona Fisica con Actividad Empresarial is applicable.
+3. Confirm invoicing implications and billing obligations after migration.
+4. Open/upgrade PayPal business profile aligned with fiscal data.
+5. Open/confirm business-oriented bank account for clearer reconciliation.
+6. Align account holder/legal names across SAT, bank, and payment providers.
+7. Update checkout legal text and payment evidence workflow.
+
+Advantages of continuing WITHOUT fiscal/business upgrade (short term):
+1. Faster immediate start and lower setup friction.
+2. Quicker validation of demand and conversion assumptions.
+3. Lower cognitive overhead in the first launch window.
+
+Disadvantages of continuing WITHOUT fiscal/business upgrade:
+1. Lower trust for B2B buyers and higher objection rate at checkout.
+2. More reconciliation friction and weaker accounting clarity.
+3. Higher risk of operational bottlenecks when volume increases.
+4. Less flexibility for formal invoicing and enterprise-style sales.
+
+15) Urgency and Deployment Recommendation
+Viability of starting now:
+Yes, it is viable and recommended to start now on the stable Railway-generated domain while fiscal upgrade is processed in parallel.
+
+Execution stance:
+1. Do not freeze launch waiting for perfect fiscal stack.
+2. Launch with current rails under controlled scope and measured risk.
+3. Prioritize immediate monetization signals, then reinforce with fiscal/business upgrade.
+4. Keep payment compliance and reconciliation discipline from day one.
+
+End of blueprint v2.0.

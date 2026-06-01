@@ -4,10 +4,7 @@ import LandingPage from '../components/LandingPage'
 import { useUiStore } from '../state/uiStore'
 
 const SUBDOMAIN_REDIRECTS: Record<string, string> = {
-  factura: '/onboarding?product=facturaautentica',
-  money: '/onboarding?product=all-about-money',
-  cloud: '/onboarding?product=facturautentico-cloud',
-  kit: '/onboarding?product=script-premium-kit'
+  factura: '/onboarding?product=facturaautentica'
 }
 
 function buildNavigationTarget(targetPath: string) {

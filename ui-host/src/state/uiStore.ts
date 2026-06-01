@@ -30,10 +30,10 @@ interface UiState {
 const controller = new AutonomousSystemController()
 
 const defaultInput: OnboardingInput = {
-  productId: 'facturautentico-cloud',
-  productName: 'FacturAutentico Cloud',
-  audience: 'SMB',
-  firstAutomation: 'weekly-summary'
+  productId: 'facturaautentica',
+  productName: 'FacturaAutentica',
+  audience: 'Despachos contables SMB',
+  firstAutomation: 'follow-up-cobro'
 }
 
 function parseDiagnosticsAveragePrice(diagnostics: Record<string, unknown>): string {
@@ -61,8 +61,8 @@ export const useUiStore = create<UiState>((set, get) => ({
     activeBots: 1,
     averagePrice: '$0.00'
   },
-  checkoutPlanName: 'Starter',
-  checkoutPriceLabel: '$39.00',
+  checkoutPlanName: 'FacturaAutentica Starter',
+  checkoutPriceLabel: '$39.00 MXN',
   submitOnboarding: async (input: OnboardingInput) => {
     set({ onboardingStatus: 'loading', errorMessage: null })
 
