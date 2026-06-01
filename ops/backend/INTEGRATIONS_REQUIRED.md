@@ -31,6 +31,20 @@ This project now enforces external backend integrations for critical business in
 - Expected response:
   - HTTP 2xx for successful publication
 
+4. Manual cash registration endpoint
+- Env var: `MANUAL_CASH_API_URL`
+- Optional auth env var: `MANUAL_CASH_API_TOKEN`
+- Request payload:
+  - `paymentId` (string)
+  - `customerId` (string)
+  - `productId` (string)
+  - `planId` (string)
+  - `amount` (number)
+  - `currency` (string)
+  - `evidenceUrl` (string)
+- Expected response:
+  - HTTP 2xx for registered pending cash payment
+
 ## Durable state files
 
 The runtime now writes durable state to disk by default:
@@ -53,3 +67,10 @@ Live publish is blocked if:
 - traffic destination is placeholder
 - close channel destination/link is invalid
 - required secrets are missing
+
+Billing automation should be blocked if:
+- webhook signature validation is not configured
+- idempotency storage is unavailable
+- reconciliation job is not scheduled
+
+External enrichment apps are out of scope for the core billing system.

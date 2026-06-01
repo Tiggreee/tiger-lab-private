@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tiggreee.dev/schemas/events/billing/manual-cash.confirmed.v1.payload.json",
+  "title": "manual-cash.confirmed payload v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "paymentId",
+    "confirmedBy",
+    "confirmedAt",
+    "dualApproved"
+  ],
+  "properties": {
+    "paymentId": { "type": "string", "minLength": 1 },
+    "confirmedBy": { "type": "string", "minLength": 1 },
+    "confirmedAt": { "type": "string", "format": "date-time" },
+    "dualApproved": { "type": "boolean", "const": true },
+    "approvalRef": { "type": "string", "minLength": 1 },
+    "riskFlags": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    }
+  }
+}

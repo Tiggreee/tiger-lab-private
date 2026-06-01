@@ -1,0 +1,73 @@
+{
+  "generatedAt": "2026-05-31T03:05:22.764Z",
+  "campaign": "launch-4-products",
+  "topic": "Sistema autonomo para atraer leads con menos friccion operativa",
+  "audience": "founders y operadores SMB",
+  "offer": "diagnostico de 15 min con plan de activacion en 24h",
+  "funnel": {
+    "trafficDestination": "https://wa.me/5215512345678?text=Hola%2C%20vengo%20de%20la%20campana%20launch-4-products%20y%20quiero%20activar%20el%20diagnostico%20express.",
+    "closeChannel": "whatsapp",
+    "closeDestination": "5215512345678",
+    "prefilledMessage": "Hola, vengo de la campana launch-4-products y quiero activar el diagnostico express.",
+    "finalCta": "Escribe ACTIVAR por WhatsApp y te envio el plan hoy: https://wa.me/5215512345678?text=Hola%2C%20vengo%20de%20la%20campana%20launch-4-products%20y%20quiero%20activar%20el%20diagnostico%20express.",
+    "closeLink": "https://wa.me/5215512345678?text=Hola%2C%20vengo%20de%20la%20campana%20launch-4-products%20y%20quiero%20activar%20el%20diagnostico%20express."
+  },
+  "quality": {
+    "averageScore": 94,
+    "projectedAverageLiftPct": 20,
+    "targetLiftPct": 15,
+    "targetReached": true
+  },
+  "channels": {
+    "linkedin": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Sistema autonomo para atraer leads con menos friccion operativa.\n\nSi hoy estas publicando sin convertir, no te falta contenido: te falta sistema y seguimiento.\n\nCon un flujo de 4 pasos puedes mover interes a llamada en el mismo dia para founders y operadores SMB.\n\nCaso base: CTA unico + seguimiento en 4h = mas conversaciones calificadas.\n\nChecklist rapido:\n1. Publica valor con un solo CTA.\n2. Responde DMs en menos de 15 minutos.\n3. Haz seguimiento en 4 horas.\n4. Mide DM->Lead->Call.\n\nEscribe ACTIVAR por WhatsApp y te envio el plan hoy: https://wa.me/5215512345678?text=Hola%2C%20vengo%20de%20la%20campana%20launch-4-products%20y%20quiero%20activar%20el%20diagnostico%20express.\nhttps://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+express.&utm_source=linkedin&utm_medium=social&utm_campaign=launch-4-products\n\n#Monetizacion #Automatizacion #Growth",
+      "variants": {
+        "A": "Sistema autonomo para atraer leads con menos friccion operativa.\n\nSi hoy estas publicando sin convertir, no te falta contenido: te falta sistema y seguimiento.\n\nCon un flujo de 4 pasos puedes mover interes a llamada en el mismo dia para founders y operadores SMB.\n\nCaso base: CTA unico + seguimiento en 4h = mas conversaciones calificadas.\n\nChecklist rapido:\n1. Publica valor con un solo CTA.\n2. Responde DMs en menos de 15 minutos.\n3. Haz seguimiento en 4 horas.\n4. Mide DM->Lead->Call.\n\nEscribe ACTIVAR por WhatsApp y te envio el plan hoy: https://wa.me/5215512345678?text=Hola%2C%20vengo%20de%20la%20campana%20launch-4-products%20y%20quiero%20activar%20el%20diagnostico%20express.\nhttps://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+express.&utm_source=linkedin&utm_medium=social&utm_campaign=launch-4-products\n\n#Monetizacion #Automatizacion #Growth",
+        "B": "Tu embudo no esta roto por falta de alcance, esta roto por falta de estructura.\n\nSi hoy estas publicando sin convertir, no te falta contenido: te falta sistema y seguimiento.\n\nCon un flujo de 4 pasos puedes mover interes a llamada en el mismo dia para founders y operadores SMB.\n\nCaso base: CTA unico + seguimiento en 4h = mas conversaciones calificadas.\n\nChecklist rapido:\n1. Publica valor con un solo CTA.\n2. Responde DMs en menos de 15 minutos.\n3. Haz seguimiento en 4 horas.\n4. Mide DM->Lead->Call.\n\nComenta ACTIVAR y te mando la version editable para que la ejecutes hoy.\nhttps://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+express.&utm_source=linkedin&utm_medium=social&utm_campaign=launch-4-products\n\n#Monetizacion #Automatizacion #Growth"
+      }
+    },
+    "x": {
+      "selectedVariant": "A",
+      "selectedScore": 86,
+      "projectedLiftPct": 16,
+      "copyPaste": "Publicar mas no convierte mas. 1 CTA + seguimiento en 4h = mas leads calificados. DM ACTIVAR y te envio el blueprint 24h. https://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+express.&utm_source=x&utm_medium=social&utm_...",
+      "variants": {
+        "A": "Publicar mas no convierte mas. 1 CTA + seguimiento en 4h = mas leads calificados. DM ACTIVAR y te envio el blueprint 24h. https://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+express.&utm_source=x&utm_medium=social&utm_...",
+        "B": "Tu embudo cae por falta de seguimiento, no por falta de alcance. 1 CTA + seguimiento en 4h = mas leads calificados. Comenta ACTIVAR y te paso plantilla editable hoy. https://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+..."
+      }
+    },
+    "facebook": {
+      "selectedVariant": "A",
+      "selectedScore": 92,
+      "projectedLiftPct": 19,
+      "copyPaste": "Sistema autonomo para atraer leads con menos friccion operativa.\n\nSi hoy estas publicando sin convertir, no te falta contenido: te falta sistema y seguimiento.\n\nCon un flujo de 4 pasos puedes mover interes a llamada en el mismo dia para founders y operadores SMB.\n\nHoy solo necesitas una pieza de valor + un CTA unico + seguimiento temprano.\n\nEscribe ACTIVAR por WhatsApp y te envio el plan hoy: https://wa.me/5215512345678?text=Hola%2C%20vengo%20de%20la%20campana%20launch-4-products%20y%20quiero%20activar%20el%20diagnostico%20express.\nhttps://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+express.&utm_source=facebook&utm_medium=social&utm_campaign=launch-4-products",
+      "variants": {
+        "A": "Sistema autonomo para atraer leads con menos friccion operativa.\n\nSi hoy estas publicando sin convertir, no te falta contenido: te falta sistema y seguimiento.\n\nCon un flujo de 4 pasos puedes mover interes a llamada en el mismo dia para founders y operadores SMB.\n\nHoy solo necesitas una pieza de valor + un CTA unico + seguimiento temprano.\n\nEscribe ACTIVAR por WhatsApp y te envio el plan hoy: https://wa.me/5215512345678?text=Hola%2C%20vengo%20de%20la%20campana%20launch-4-products%20y%20quiero%20activar%20el%20diagnostico%20express.\nhttps://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+express.&utm_source=facebook&utm_medium=social&utm_campaign=launch-4-products",
+        "B": "Tu embudo no esta roto por falta de alcance, esta roto por falta de estructura.\n\nSi hoy estas publicando sin convertir, no te falta contenido: te falta sistema y seguimiento.\n\nCon un flujo de 4 pasos puedes mover interes a llamada en el mismo dia para founders y operadores SMB.\n\nHoy solo necesitas una pieza de valor + un CTA unico + seguimiento temprano.\n\nComenta ACTIVAR y te mando la version editable para que la ejecutes hoy.\nhttps://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+express.&utm_source=facebook&utm_medium=social&utm_campaign=launch-4-products"
+      }
+    },
+    "telegram": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Sistema autonomo para atraer leads con menos friccion operativa.\n\nSi hoy estas publicando sin convertir, no te falta contenido: te falta sistema y seguimiento.\n\nPlan operativo de hoy:\n- Publica una pieza con CTA unico\n- Responde DMs en 15 minutos\n- Seguimiento en 4h\n- Cierre con llamada corta\n\nEscribe ACTIVAR por WhatsApp y te envio el plan hoy: https://wa.me/5215512345678?text=Hola%2C%20vengo%20de%20la%20campana%20launch-4-products%20y%20quiero%20activar%20el%20diagnostico%20express.\nhttps://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+express.&utm_source=telegram&utm_medium=social&utm_campaign=launch-4-products",
+      "variants": {
+        "A": "Sistema autonomo para atraer leads con menos friccion operativa.\n\nSi hoy estas publicando sin convertir, no te falta contenido: te falta sistema y seguimiento.\n\nPlan operativo de hoy:\n- Publica una pieza con CTA unico\n- Responde DMs en 15 minutos\n- Seguimiento en 4h\n- Cierre con llamada corta\n\nEscribe ACTIVAR por WhatsApp y te envio el plan hoy: https://wa.me/5215512345678?text=Hola%2C%20vengo%20de%20la%20campana%20launch-4-products%20y%20quiero%20activar%20el%20diagnostico%20express.\nhttps://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+express.&utm_source=telegram&utm_medium=social&utm_campaign=launch-4-products",
+        "B": "Tu embudo no esta roto por falta de alcance, esta roto por falta de estructura.\n\nSi hoy estas publicando sin convertir, no te falta contenido: te falta sistema y seguimiento.\n\nPlan operativo de hoy:\n- Publica una pieza con CTA unico\n- Responde DMs en 15 minutos\n- Seguimiento en 4h\n- Cierre con llamada corta\n\nComenta ACTIVAR y te mando la version editable para que la ejecutes hoy.\nhttps://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+express.&utm_source=telegram&utm_medium=social&utm_campaign=launch-4-products"
+      }
+    },
+    "discord": {
+      "selectedVariant": "A",
+      "selectedScore": 92,
+      "projectedLiftPct": 19,
+      "copyPaste": "Sistema autonomo para atraer leads con menos friccion operativa.\nSi hoy estas publicando sin convertir, no te falta contenido: te falta sistema y seguimiento.\nCon un flujo de 4 pasos puedes mover interes a llamada en el mismo dia para founders y operadores SMB.\nEscribe ACTIVAR por WhatsApp y te envio el plan hoy: https://wa.me/5215512345678?text=Hola%2C%20vengo%20de%20la%20campana%20launch-4-products%20y%20quiero%20activar%20el%20diagnostico%20express.\nhttps://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+express.&utm_source=discord&utm_medium=social&utm_campaign=launch-4-products",
+      "variants": {
+        "A": "Sistema autonomo para atraer leads con menos friccion operativa.\nSi hoy estas publicando sin convertir, no te falta contenido: te falta sistema y seguimiento.\nCon un flujo de 4 pasos puedes mover interes a llamada en el mismo dia para founders y operadores SMB.\nEscribe ACTIVAR por WhatsApp y te envio el plan hoy: https://wa.me/5215512345678?text=Hola%2C%20vengo%20de%20la%20campana%20launch-4-products%20y%20quiero%20activar%20el%20diagnostico%20express.\nhttps://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+express.&utm_source=discord&utm_medium=social&utm_campaign=launch-4-products",
+        "B": "Tu embudo no esta roto por falta de alcance, esta roto por falta de estructura.\nSi hoy estas publicando sin convertir, no te falta contenido: te falta sistema y seguimiento.\nCon un flujo de 4 pasos puedes mover interes a llamada en el mismo dia para founders y operadores SMB.\nComenta ACTIVAR y te mando la version editable para que la ejecutes hoy.\nhttps://wa.me/5215512345678?text=Hola%2C+vengo+de+la+campana+launch-4-products+y+quiero+activar+el+diagnostico+express.&utm_source=discord&utm_medium=social&utm_campaign=launch-4-products"
+      }
+    }
+  }
+}

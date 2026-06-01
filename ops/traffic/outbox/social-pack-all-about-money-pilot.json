@@ -1,0 +1,87 @@
+{
+  "generatedAt": "2026-05-31T05:20:20.100Z",
+  "campaign": "all-about-money-pilot",
+  "topic": "14 rutas reales para monetizar IA sin humo",
+  "audience": "personas no IT, creadores y operadores que quieren ingresos digitales",
+  "offer": "diagnostico de ruta y primer experimento en 7 dias",
+  "brand": {
+    "productName": "all-about-money",
+    "problemDetail": "mucha informacion suelta y poca ejecucion rentable con IA",
+    "primaryOutcome": "elegir una ruta concreta y validar traccion sin sobrecarga tecnica",
+    "proofPoint": "Framework de 14 formas de ingreso con pruebas cortas y decisiones por evidencia",
+    "domainTerms": [
+      "monetizacion",
+      "ia",
+      "rutas",
+      "experimentos",
+      "ingresos",
+      "validacion"
+    ]
+  },
+  "funnel": {
+    "trafficDestination": "https://tigrelabs.xyz",
+    "closeChannel": "landing",
+    "closeDestination": "https://tigrelabs.xyz/#/onboarding?product=all-about-money",
+    "prefilledMessage": "Hola, vengo de la campana y quiero activar el diagnostico express de 15 min.",
+    "finalCta": "Revisa all-about-money aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=all-about-money",
+    "closeLink": "https://tigrelabs.xyz/#/onboarding?product=all-about-money"
+  },
+  "quality": {
+    "averageScore": 100,
+    "projectedAverageLiftPct": 24,
+    "targetLiftPct": 15,
+    "targetReached": true
+  },
+  "channels": {
+    "linkedin": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "all-about-money: 14 rutas reales para monetizar IA sin humo.\n\nContexto operativo: personas no IT, creadores y operadores que quieren ingresos digitales con foco en elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nSi hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con IA, el costo ya es operativo y visible.\n\nall-about-money esta hecho para elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nEnfoque de esta solucion: validacion de ruta comercial, experimento corto y senal de ingreso real.\n\nPrueba concreta: Framework de 14 formas de ingreso con pruebas cortas y decisiones por evidencia\n\nSenales de encaje: monetizacion, ia, rutas, experimentos.\n\nNo apto para: personas buscando teoria infinita sin experimentar en campo.\n\nRevisa all-about-money aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=all-about-money\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=all-about-money-pilot",
+      "variants": {
+        "A": "all-about-money: 14 rutas reales para monetizar IA sin humo.\n\nContexto operativo: personas no IT, creadores y operadores que quieren ingresos digitales con foco en elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nSi hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con IA, el costo ya es operativo y visible.\n\nall-about-money esta hecho para elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nEnfoque de esta solucion: validacion de ruta comercial, experimento corto y senal de ingreso real.\n\nPrueba concreta: Framework de 14 formas de ingreso con pruebas cortas y decisiones por evidencia\n\nSenales de encaje: monetizacion, ia, rutas, experimentos.\n\nNo apto para: personas buscando teoria infinita sin experimentar en campo.\n\nRevisa all-about-money aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=all-about-money\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=all-about-money-pilot",
+        "B": "all-about-money no existe para sonar futurista. Existe para quitar mucha informacion suelta y poca ejecucion rentable con IA.\n\nContexto operativo: personas no IT, creadores y operadores que quieren ingresos digitales con foco en elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nSi hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con IA, el costo ya es operativo y visible.\n\nall-about-money esta hecho para elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nEnfoque de esta solucion: validacion de ruta comercial, experimento corto y senal de ingreso real.\n\nPrueba concreta: Framework de 14 formas de ingreso con pruebas cortas y decisiones por evidencia\n\nSenales de encaje: monetizacion, ia, rutas, experimentos.\n\nNo apto para: personas buscando teoria infinita sin experimentar en campo.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=all-about-money-pilot"
+      }
+    },
+    "x": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "all-about-money: 14 rutas reales para monetizar IA sin humo. Si hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con IA, el costo ya es operativo y visible. Framework de 14 formas de ...",
+      "variants": {
+        "A": "all-about-money: 14 rutas reales para monetizar IA sin humo. Si hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con IA, el costo ya es operativo y visible. Framework de 14 formas de ...",
+        "B": "all-about-money no existe para sonar futurista. Existe para quitar mucha informacion suelta y poca ejecucion rentable con IA. Si hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con I..."
+      }
+    },
+    "facebook": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "all-about-money: 14 rutas reales para monetizar IA sin humo.\n\nEscenario real: personas no IT, creadores y operadores que quieren ingresos digitales con foco en elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nSi hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con IA, el costo ya es operativo y visible.\n\nall-about-money esta hecho para elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nFoco de implementacion: validacion de ruta comercial, experimento corto y senal de ingreso real.\n\nPrueba concreta: Framework de 14 formas de ingreso con pruebas cortas y decisiones por evidencia\n\nChecklist de encaje: monetizacion, ia, rutas, experimentos.\n\nNo apto para: personas buscando teoria infinita sin experimentar en campo.\n\nRevisa all-about-money aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=all-about-money\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=all-about-money-pilot",
+      "variants": {
+        "A": "all-about-money: 14 rutas reales para monetizar IA sin humo.\n\nEscenario real: personas no IT, creadores y operadores que quieren ingresos digitales con foco en elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nSi hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con IA, el costo ya es operativo y visible.\n\nall-about-money esta hecho para elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nFoco de implementacion: validacion de ruta comercial, experimento corto y senal de ingreso real.\n\nPrueba concreta: Framework de 14 formas de ingreso con pruebas cortas y decisiones por evidencia\n\nChecklist de encaje: monetizacion, ia, rutas, experimentos.\n\nNo apto para: personas buscando teoria infinita sin experimentar en campo.\n\nRevisa all-about-money aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=all-about-money\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=all-about-money-pilot",
+        "B": "all-about-money no existe para sonar futurista. Existe para quitar mucha informacion suelta y poca ejecucion rentable con IA.\n\nEscenario real: personas no IT, creadores y operadores que quieren ingresos digitales con foco en elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nSi hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con IA, el costo ya es operativo y visible.\n\nall-about-money esta hecho para elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nFoco de implementacion: validacion de ruta comercial, experimento corto y senal de ingreso real.\n\nPrueba concreta: Framework de 14 formas de ingreso con pruebas cortas y decisiones por evidencia\n\nChecklist de encaje: monetizacion, ia, rutas, experimentos.\n\nNo apto para: personas buscando teoria infinita sin experimentar en campo.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=all-about-money-pilot"
+      }
+    },
+    "telegram": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "all-about-money: 14 rutas reales para monetizar IA sin humo.\n\nSi hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con IA, el costo ya es operativo y visible.\n\nall-about-money esta hecho para elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nFoco: validacion de ruta comercial, experimento corto y senal de ingreso real.\n\nPrueba concreta: Framework de 14 formas de ingreso con pruebas cortas y decisiones por evidencia\n\nSenales de encaje: monetizacion, ia, rutas, experimentos.\n\nRevisa all-about-money aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=all-about-money\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=all-about-money-pilot",
+      "variants": {
+        "A": "all-about-money: 14 rutas reales para monetizar IA sin humo.\n\nSi hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con IA, el costo ya es operativo y visible.\n\nall-about-money esta hecho para elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nFoco: validacion de ruta comercial, experimento corto y senal de ingreso real.\n\nPrueba concreta: Framework de 14 formas de ingreso con pruebas cortas y decisiones por evidencia\n\nSenales de encaje: monetizacion, ia, rutas, experimentos.\n\nRevisa all-about-money aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=all-about-money\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=all-about-money-pilot",
+        "B": "all-about-money no existe para sonar futurista. Existe para quitar mucha informacion suelta y poca ejecucion rentable con IA.\n\nSi hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con IA, el costo ya es operativo y visible.\n\nall-about-money esta hecho para elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\n\nFoco: validacion de ruta comercial, experimento corto y senal de ingreso real.\n\nPrueba concreta: Framework de 14 formas de ingreso con pruebas cortas y decisiones por evidencia\n\nSenales de encaje: monetizacion, ia, rutas, experimentos.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=all-about-money-pilot"
+      }
+    },
+    "discord": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "all-about-money: 14 rutas reales para monetizar IA sin humo.\nSi hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con IA, el costo ya es operativo y visible.\nall-about-money esta hecho para elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\nFoco: validacion de ruta comercial, experimento corto y senal de ingreso real.\nPrueba concreta: Framework de 14 formas de ingreso con pruebas cortas y decisiones por evidencia\nSenales de encaje: monetizacion, ia, rutas, experimentos.\nRevisa all-about-money aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=all-about-money\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=all-about-money-pilot",
+      "variants": {
+        "A": "all-about-money: 14 rutas reales para monetizar IA sin humo.\nSi hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con IA, el costo ya es operativo y visible.\nall-about-money esta hecho para elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\nFoco: validacion de ruta comercial, experimento corto y senal de ingreso real.\nPrueba concreta: Framework de 14 formas de ingreso con pruebas cortas y decisiones por evidencia\nSenales de encaje: monetizacion, ia, rutas, experimentos.\nRevisa all-about-money aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=all-about-money\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=all-about-money-pilot",
+        "B": "all-about-money no existe para sonar futurista. Existe para quitar mucha informacion suelta y poca ejecucion rentable con IA.\nSi hoy personas no IT, creadores y operadores que quieren ingresos digitales sigue resolviendo mucha informacion suelta y poca ejecucion rentable con IA, el costo ya es operativo y visible.\nall-about-money esta hecho para elegir una ruta concreta y validar traccion sin sobrecarga tecnica.\nFoco: validacion de ruta comercial, experimento corto y senal de ingreso real.\nPrueba concreta: Framework de 14 formas de ingreso con pruebas cortas y decisiones por evidencia\nSenales de encaje: monetizacion, ia, rutas, experimentos.\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=all-about-money-pilot"
+      }
+    }
+  }
+}

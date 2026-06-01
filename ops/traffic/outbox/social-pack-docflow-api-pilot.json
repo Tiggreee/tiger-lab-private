@@ -1,0 +1,87 @@
+{
+  "generatedAt": "2026-05-31T05:20:20.801Z",
+  "campaign": "docflow-api-pilot",
+  "topic": "Flujos documentales API-first sin cuellos de botella",
+  "audience": "equipos backend y operaciones documentales",
+  "offer": "review tecnico de flujo documental",
+  "brand": {
+    "productName": "Docflow API",
+    "problemDetail": "procesos documentales lentos con integraciones fragiles",
+    "primaryOutcome": "orquestar documentos por API con trazabilidad",
+    "proofPoint": "Equipos con endpoints estables reducen errores de integracion y retrabajo",
+    "domainTerms": [
+      "api",
+      "endpoint",
+      "workflow",
+      "documentos",
+      "integracion",
+      "trazabilidad"
+    ]
+  },
+  "funnel": {
+    "trafficDestination": "https://tigrelabs.xyz",
+    "closeChannel": "landing",
+    "closeDestination": "https://tigrelabs.xyz/#/onboarding?product=docflow-api",
+    "prefilledMessage": "Hola, vengo de la campana y quiero activar el diagnostico express de 15 min.",
+    "finalCta": "Revisa Docflow API aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=docflow-api",
+    "closeLink": "https://tigrelabs.xyz/#/onboarding?product=docflow-api"
+  },
+  "quality": {
+    "averageScore": 100,
+    "projectedAverageLiftPct": 24,
+    "targetLiftPct": 15,
+    "targetReached": true
+  },
+  "channels": {
+    "linkedin": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Docflow API: Flujos documentales API-first sin cuellos de botella.\n\nContexto operativo: equipos backend y operaciones documentales con foco en orquestar documentos por API con trazabilidad.\n\nSi hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visible.\n\nDocflow API esta hecho para orquestar documentos por API con trazabilidad.\n\nEnfoque de esta solucion: estabilidad de endpoints, trazabilidad y menos errores de integracion.\n\nPrueba concreta: Equipos con endpoints estables reducen errores de integracion y retrabajo\n\nSenales de encaje: api, endpoint, workflow, documentos.\n\nNo apto para: equipos sin carga de integraciones documentales.\n\nRevisa Docflow API aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=docflow-api\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=docflow-api-pilot",
+      "variants": {
+        "A": "Docflow API: Flujos documentales API-first sin cuellos de botella.\n\nContexto operativo: equipos backend y operaciones documentales con foco en orquestar documentos por API con trazabilidad.\n\nSi hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visible.\n\nDocflow API esta hecho para orquestar documentos por API con trazabilidad.\n\nEnfoque de esta solucion: estabilidad de endpoints, trazabilidad y menos errores de integracion.\n\nPrueba concreta: Equipos con endpoints estables reducen errores de integracion y retrabajo\n\nSenales de encaje: api, endpoint, workflow, documentos.\n\nNo apto para: equipos sin carga de integraciones documentales.\n\nRevisa Docflow API aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=docflow-api\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=docflow-api-pilot",
+        "B": "Docflow API no existe para sonar futurista. Existe para quitar procesos documentales lentos con integraciones fragiles.\n\nContexto operativo: equipos backend y operaciones documentales con foco en orquestar documentos por API con trazabilidad.\n\nSi hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visible.\n\nDocflow API esta hecho para orquestar documentos por API con trazabilidad.\n\nEnfoque de esta solucion: estabilidad de endpoints, trazabilidad y menos errores de integracion.\n\nPrueba concreta: Equipos con endpoints estables reducen errores de integracion y retrabajo\n\nSenales de encaje: api, endpoint, workflow, documentos.\n\nNo apto para: equipos sin carga de integraciones documentales.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=docflow-api-pilot"
+      }
+    },
+    "x": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Docflow API: Flujos documentales API-first sin cuellos de botella. Si hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visible. Equipos con endpoints estables reducen errores de...",
+      "variants": {
+        "A": "Docflow API: Flujos documentales API-first sin cuellos de botella. Si hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visible. Equipos con endpoints estables reducen errores de...",
+        "B": "Docflow API no existe para sonar futurista. Existe para quitar procesos documentales lentos con integraciones fragiles. Si hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visib..."
+      }
+    },
+    "facebook": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Docflow API: Flujos documentales API-first sin cuellos de botella.\n\nEscenario real: equipos backend y operaciones documentales con foco en orquestar documentos por API con trazabilidad.\n\nSi hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visible.\n\nDocflow API esta hecho para orquestar documentos por API con trazabilidad.\n\nFoco de implementacion: estabilidad de endpoints, trazabilidad y menos errores de integracion.\n\nPrueba concreta: Equipos con endpoints estables reducen errores de integracion y retrabajo\n\nChecklist de encaje: api, endpoint, workflow, documentos.\n\nNo apto para: equipos sin carga de integraciones documentales.\n\nRevisa Docflow API aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=docflow-api\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=docflow-api-pilot",
+      "variants": {
+        "A": "Docflow API: Flujos documentales API-first sin cuellos de botella.\n\nEscenario real: equipos backend y operaciones documentales con foco en orquestar documentos por API con trazabilidad.\n\nSi hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visible.\n\nDocflow API esta hecho para orquestar documentos por API con trazabilidad.\n\nFoco de implementacion: estabilidad de endpoints, trazabilidad y menos errores de integracion.\n\nPrueba concreta: Equipos con endpoints estables reducen errores de integracion y retrabajo\n\nChecklist de encaje: api, endpoint, workflow, documentos.\n\nNo apto para: equipos sin carga de integraciones documentales.\n\nRevisa Docflow API aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=docflow-api\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=docflow-api-pilot",
+        "B": "Docflow API no existe para sonar futurista. Existe para quitar procesos documentales lentos con integraciones fragiles.\n\nEscenario real: equipos backend y operaciones documentales con foco en orquestar documentos por API con trazabilidad.\n\nSi hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visible.\n\nDocflow API esta hecho para orquestar documentos por API con trazabilidad.\n\nFoco de implementacion: estabilidad de endpoints, trazabilidad y menos errores de integracion.\n\nPrueba concreta: Equipos con endpoints estables reducen errores de integracion y retrabajo\n\nChecklist de encaje: api, endpoint, workflow, documentos.\n\nNo apto para: equipos sin carga de integraciones documentales.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=docflow-api-pilot"
+      }
+    },
+    "telegram": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Docflow API: Flujos documentales API-first sin cuellos de botella.\n\nSi hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visible.\n\nDocflow API esta hecho para orquestar documentos por API con trazabilidad.\n\nFoco: estabilidad de endpoints, trazabilidad y menos errores de integracion.\n\nPrueba concreta: Equipos con endpoints estables reducen errores de integracion y retrabajo\n\nSenales de encaje: api, endpoint, workflow, documentos.\n\nRevisa Docflow API aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=docflow-api\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=docflow-api-pilot",
+      "variants": {
+        "A": "Docflow API: Flujos documentales API-first sin cuellos de botella.\n\nSi hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visible.\n\nDocflow API esta hecho para orquestar documentos por API con trazabilidad.\n\nFoco: estabilidad de endpoints, trazabilidad y menos errores de integracion.\n\nPrueba concreta: Equipos con endpoints estables reducen errores de integracion y retrabajo\n\nSenales de encaje: api, endpoint, workflow, documentos.\n\nRevisa Docflow API aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=docflow-api\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=docflow-api-pilot",
+        "B": "Docflow API no existe para sonar futurista. Existe para quitar procesos documentales lentos con integraciones fragiles.\n\nSi hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visible.\n\nDocflow API esta hecho para orquestar documentos por API con trazabilidad.\n\nFoco: estabilidad de endpoints, trazabilidad y menos errores de integracion.\n\nPrueba concreta: Equipos con endpoints estables reducen errores de integracion y retrabajo\n\nSenales de encaje: api, endpoint, workflow, documentos.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=docflow-api-pilot"
+      }
+    },
+    "discord": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Docflow API: Flujos documentales API-first sin cuellos de botella.\nSi hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visible.\nDocflow API esta hecho para orquestar documentos por API con trazabilidad.\nFoco: estabilidad de endpoints, trazabilidad y menos errores de integracion.\nPrueba concreta: Equipos con endpoints estables reducen errores de integracion y retrabajo\nSenales de encaje: api, endpoint, workflow, documentos.\nRevisa Docflow API aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=docflow-api\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=docflow-api-pilot",
+      "variants": {
+        "A": "Docflow API: Flujos documentales API-first sin cuellos de botella.\nSi hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visible.\nDocflow API esta hecho para orquestar documentos por API con trazabilidad.\nFoco: estabilidad de endpoints, trazabilidad y menos errores de integracion.\nPrueba concreta: Equipos con endpoints estables reducen errores de integracion y retrabajo\nSenales de encaje: api, endpoint, workflow, documentos.\nRevisa Docflow API aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=docflow-api\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=docflow-api-pilot",
+        "B": "Docflow API no existe para sonar futurista. Existe para quitar procesos documentales lentos con integraciones fragiles.\nSi hoy equipos backend y operaciones documentales sigue resolviendo procesos documentales lentos con integraciones fragiles, el costo ya es operativo y visible.\nDocflow API esta hecho para orquestar documentos por API con trazabilidad.\nFoco: estabilidad de endpoints, trazabilidad y menos errores de integracion.\nPrueba concreta: Equipos con endpoints estables reducen errores de integracion y retrabajo\nSenales de encaje: api, endpoint, workflow, documentos.\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=docflow-api-pilot"
+      }
+    }
+  }
+}

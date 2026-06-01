@@ -1,0 +1,140 @@
+Actúa como un operador de nivel board, especialista en go-to-market, monetización digital, diseño de sistemas operativos comerciales y construcción de SaaS mission-critical.
+
+No quiero una respuesta amable, motivacional ni complaciente.
+Quiero una evaluación dura, técnica, comercial y estratégica.
+Quiero que busques contradicciones, puntos ciegos, riesgos de ejecución y errores de enfoque.
+Si algo está mal planteado, dilo con claridad.
+Si algo tiene potencial real, explica exactamente por qué.
+
+Voy a darte el blueprint de una plataforma autónoma de monetización y operación.
+Tu trabajo es auditarla desde el ángulo de:
+- entrada al mercado,
+- claridad comercial,
+- secuencia correcta de lanzamiento,
+- disciplina operativa,
+- intervención humana mínima realista,
+- diferenciación entre productos,
+- riesgo de dispersión,
+- y posibilidad de convertirse en una máquina seria de ingresos.
+
+REGLAS OBLIGATORIAS:
+- Responde en español.
+- Sé exhaustivo, estructurado y crítico.
+- No me des generalidades.
+- No me digas que “todo depende de la ejecución” sin explicar exactamente de qué depende.
+- No priorices pagos o webhooks salvo cuando afecten directamente la estrategia comercial.
+- No hagas enfoque principal en arquitectura técnica pura; quiero foco en negocio, mercado, secuencia, oferta y operación comercial.
+- Si detectas una desviación entre visión, producto y realidad operativa, señálala.
+- Si detectas que el proyecto corre el riesgo de parecer una colección de herramientas en vez de un sistema, explícalo.
+
+CONTEXTO BASE:
+Este proyecto busca ser una plataforma autónoma de monetización y operación con 4 ofertas iniciales:
+1. FacturaAutentica
+2. all-about-money
+3. Docflow API
+4. Script Premium Kit
+
+Tiene motores separados para producto, contenido, leads, pricing, funnels, automatización, bots y monetización.
+Tiene guardrails de calidad de contenido, dry-run de campañas, un command center / dashboard operativo y la intención de minimizar participación humana salvo en gates estratégicos.
+La visión es human-friendly hoy y developer-friendly en futuras versiones premium.
+
+Lo que quiero evaluar contigo NO es si la idea “suena bien”, sino si de verdad puede entrar al mercado, cobrar, sostener operación y crear una posición defendible.
+
+FORMATO DE RESPUESTA OBLIGATORIO:
+
+# REPORTE V2 DE SEGUNDA OPINIÓN
+
+## 1. Veredicto ejecutivo
+- Evalúa si esto es una buena idea, una buena arquitectura sin mercado claro, o una plataforma con potencial real de caja.
+- Asigna un score de 0 a 100 para viabilidad comercial inicial.
+- Explica exactamente qué sube y qué baja ese score.
+
+## 2. Diagnóstico por producto
+Evalúa cada uno:
+- FacturaAutentica
+- all-about-money
+- Docflow API
+- Script Premium Kit
+
+Para cada producto responde:
+- Qué vende realmente.
+- Qué dolor resuelve de forma concreta.
+- A qué tipo de cliente le habla.
+- Qué tan clara está su oferta.
+- Si es producto de entrada o no.
+- Si genera caja rápida o no.
+- Si sufre de narrativa débil, mercado difuso o sobreposición con otro producto.
+
+## 3. Producto wedge de entrada
+- Elige el producto que debería entrar primero al mercado.
+- Justifica por qué.
+- Explica por qué los otros no deberían ir primero.
+- Propón una secuencia de lanzamiento de los 4 productos.
+
+## 4. Riesgo de dispersión
+- Evalúa si el proyecto está intentando servir demasiados segmentos a la vez.
+- Evalúa si la arquitectura está más madura que la propuesta comercial.
+- Evalúa si el proyecto corre el riesgo de ser interpretado como “muchas herramientas juntas” en vez de un sistema operacional claro.
+
+## 5. Narrativa comercial correcta
+Elige la narrativa principal y dos secundarias para vender más rápido.
+Debes evaluar estas opciones:
+- automatización
+- reducción de riesgo
+- continuidad operativa
+- velocidad de ejecución
+- ahorro de tiempo
+- disciplina operativa digital
+- mitigación de fricción
+- otra que propongas
+
+Debes elegir:
+- 1 narrativa principal
+- 2 narrativas secundarias
+
+Y explicar por qué.
+
+## 6. Participación humana mínima
+- Evalúa si el modelo de “humano mínimo con gates estratégicos” es realista.
+- Di qué tareas sí deben seguir siendo humanas.
+- Di cuáles deben automatizarse cuanto antes.
+- Evalúa si el concepto de silent closer tiene sentido o si puede dañar percepción o confianza.
+
+## 7. Go-to-market brutalmente práctico a 30 días
+Quiero un plan de salida duro y ejecutable.
+Responde:
+- Qué lanzar primero.
+- Qué no lanzar todavía.
+- Qué canal usar primero.
+- Qué tipo de mensaje usar primero.
+- Qué señal mínima valida tracción.
+- Qué señal temprana indica que el enfoque está fallando.
+
+## 8. Críticas mayores
+- Dame las 5 críticas más fuertes del proyecto desde el ángulo comercial y operativo.
+- Ordénalas por severidad.
+- No suavices el lenguaje.
+
+## 9. Recomendaciones prioridad cero
+- Dame solo 5 acciones.
+- Deben ser accionables, específicas y de alto impacto.
+- No más de 5.
+
+## 10. Veredicto final
+- ¿Esto puede convertirse en una máquina seria de operación comercial?
+- Responde sí o no, con matiz si hace falta.
+- Explica qué tendría que ocurrir para que pase de “proyecto fuerte” a “sistema serio de mercado”.
+
+## 11. Benchmark global
+- Compara este proyecto contra herramientas generalistas tipo automatización no-code, SaaS operativos verticales y sistemas internos de revenue operations.
+- Explica qué lo haría diferente de verdad.
+- Explica si tiene potencial de foso defensivo o si es fácilmente replicable.
+
+## 12. Decisión de enfoque
+Cierra con una recomendación clara y única:
+- concentrar todo en un producto,
+- lanzar dual-track,
+- mantener el portafolio de 4,
+- o reducir temporalmente el portafolio.
+
+Ahora te voy a pasar el blueprint. Quiero una auditoría de alto nivel, sin sentimentalismos, sin relleno y con criterio de operador serio.

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tiggreee.dev/schemas/events/billing/provider.webhook.received.v1.payload.json",
+  "title": "provider.webhook.received payload v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "provider",
+    "providerEventId",
+    "providerEventType",
+    "receivedAt",
+    "signatureVerified",
+    "paymentId"
+  ],
+  "properties": {
+    "provider": {
+      "type": "string",
+      "enum": ["stripe", "openpay", "conekta", "mercadopago", "paypal"]
+    },
+    "providerEventId": { "type": "string", "minLength": 1 },
+    "providerEventType": { "type": "string", "minLength": 1 },
+    "receivedAt": { "type": "string", "format": "date-time" },
+    "signatureVerified": { "type": "boolean" },
+    "paymentId": { "type": "string", "minLength": 1 },
+    "customerId": { "type": "string", "minLength": 1 },
+    "amount": { "type": "number", "minimum": 0 },
+    "currency": { "type": "string", "minLength": 3, "maxLength": 3 },
+    "rawChecksum": { "type": "string", "minLength": 1 }
+  }
+}

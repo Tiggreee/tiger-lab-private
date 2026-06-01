@@ -1,20 +1,277 @@
-[
-  {
-    "repo": "FacturAutentico",
-    "lastCommit": "TODO",
-    "opportunities": [],
-    "versions": []
+{
+  "generatedAt": "2026-05-31T03:39:45.221Z",
+  "workspaceRoot": "C:\\Users\\victo\\Documents\\TripleTen",
+  "policy": {
+    "ownMandatoryTop2": 2,
+    "benchmarkFallbackEnabled": true,
+    "minOwnQualityScore": 68
   },
-  {
-    "repo": "all-about-money",
-    "lastCommit": "TODO",
-    "opportunities": [],
-    "versions": []
+  "benchmark": {
+    "id": "benchmark/saas-b2b-reference",
+    "name": "SaaS B2B Benchmark Reference",
+    "score": 86,
+    "notes": [
+      "Referencia externa para estandar de UX, confiabilidad y go-to-market.",
+      "Reemplazo permitido solo si un repo propio cae por debajo del umbral de lanzamiento."
+    ]
   },
-  {
-    "repo": "web_project_around_express",
-    "lastCommit": "TODO",
-    "opportunities": [],
-    "versions": []
-  }
-]
+  "analyzed": {
+    "repoCount": 4,
+    "engineProductCount": 5
+  },
+  "launchSelection": {
+    "ownCandidates": [
+      {
+        "repo": "all-about-money",
+        "path": "C:\\Users\\victo\\Documents\\TripleTen\\all-about-money",
+        "score": 79,
+        "signals": {
+          "hasPackageJson": true,
+          "hasReadme": true,
+          "hasLicense": false,
+          "hasTestScript": true,
+          "hasBuildScript": true,
+          "hasLintScript": true,
+          "hasTypeScript": true,
+          "hasServerEntry": false,
+          "ciWorkflows": 1,
+          "docsReadiness": 2
+        },
+        "opportunities": []
+      },
+      {
+        "repo": "vmDevWeb",
+        "path": "C:\\Users\\victo\\Documents\\TripleTen\\vmDevWeb",
+        "score": 73,
+        "signals": {
+          "hasPackageJson": true,
+          "hasReadme": true,
+          "hasLicense": false,
+          "hasTestScript": true,
+          "hasBuildScript": true,
+          "hasLintScript": true,
+          "hasTypeScript": false,
+          "hasServerEntry": false,
+          "ciWorkflows": 1,
+          "docsReadiness": 3
+        },
+        "opportunities": []
+      }
+    ],
+    "engineCandidates": [
+      {
+        "id": "facturautentico-cloud",
+        "name": "FacturAutentico Cloud",
+        "status": "active",
+        "planIds": [
+          "starter",
+          "pro",
+          "enterprise"
+        ],
+        "score": 80
+      },
+      {
+        "id": "docflow-api",
+        "name": "Docflow API",
+        "status": "active",
+        "planIds": [
+          "starter",
+          "pro"
+        ],
+        "score": 78
+      }
+    ],
+    "top2Decision": {
+      "top2": [
+        {
+          "id": "all-about-money",
+          "name": "all-about-money",
+          "source": "user-repo",
+          "score": 79,
+          "status": "selected"
+        },
+        {
+          "id": "vmDevWeb",
+          "name": "vmDevWeb",
+          "source": "user-repo",
+          "score": 73,
+          "status": "selected"
+        }
+      ],
+      "benchmarkUsed": false,
+      "rationale": "Se mantiene regla de 2 repos propios obligatorios en top final."
+    }
+  },
+  "hardeningPlan": [
+    {
+      "repo": "all-about-money",
+      "score": 79,
+      "actions": [
+        "Agregar o reforzar pruebas de humo para rutas criticas de monetizacion.",
+        "Definir dashboard minimo de conversion (visit->lead->close).",
+        "Ajustar oferta y CTA principal con una sola accion de cierre."
+      ]
+    },
+    {
+      "repo": "vmDevWeb",
+      "score": 73,
+      "actions": [
+        "Agregar o reforzar pruebas de humo para rutas criticas de monetizacion.",
+        "Definir dashboard minimo de conversion (visit->lead->close).",
+        "Ajustar oferta y CTA principal con una sola accion de cierre."
+      ]
+    },
+    {
+      "repo": "web_project_around_express",
+      "score": 63,
+      "actions": [
+        "Agregar o reforzar pruebas de humo para rutas criticas de monetizacion.",
+        "Definir dashboard minimo de conversion (visit->lead->close).",
+        "Ajustar oferta y CTA principal con una sola accion de cierre.",
+        "Agregar pipeline de build para deploy repetible.",
+        "Agregar al menos un workflow CI para validacion automatica."
+      ]
+    },
+    {
+      "repo": "FacturAutentico",
+      "score": 51,
+      "actions": [
+        "Agregar o reforzar pruebas de humo para rutas criticas de monetizacion.",
+        "Definir dashboard minimo de conversion (visit->lead->close).",
+        "Ajustar oferta y CTA principal con una sola accion de cierre.",
+        "Agregar script de test para confiabilidad continua."
+      ]
+    }
+  ],
+  "repoAnalysis": [
+    {
+      "repo": "all-about-money",
+      "path": "C:\\Users\\victo\\Documents\\TripleTen\\all-about-money",
+      "score": 79,
+      "signals": {
+        "hasPackageJson": true,
+        "hasReadme": true,
+        "hasLicense": false,
+        "hasTestScript": true,
+        "hasBuildScript": true,
+        "hasLintScript": true,
+        "hasTypeScript": true,
+        "hasServerEntry": false,
+        "ciWorkflows": 1,
+        "docsReadiness": 2
+      },
+      "opportunities": []
+    },
+    {
+      "repo": "vmDevWeb",
+      "path": "C:\\Users\\victo\\Documents\\TripleTen\\vmDevWeb",
+      "score": 73,
+      "signals": {
+        "hasPackageJson": true,
+        "hasReadme": true,
+        "hasLicense": false,
+        "hasTestScript": true,
+        "hasBuildScript": true,
+        "hasLintScript": true,
+        "hasTypeScript": false,
+        "hasServerEntry": false,
+        "ciWorkflows": 1,
+        "docsReadiness": 3
+      },
+      "opportunities": []
+    },
+    {
+      "repo": "web_project_around_express",
+      "path": "C:\\Users\\victo\\Documents\\TripleTen\\web_project_around_express",
+      "score": 63,
+      "signals": {
+        "hasPackageJson": true,
+        "hasReadme": true,
+        "hasLicense": false,
+        "hasTestScript": true,
+        "hasBuildScript": false,
+        "hasLintScript": true,
+        "hasTypeScript": false,
+        "hasServerEntry": true,
+        "ciWorkflows": 0,
+        "docsReadiness": 3
+      },
+      "opportunities": [
+        "Agregar pipeline de build para deploy repetible.",
+        "Agregar al menos un workflow CI para validacion automatica."
+      ]
+    },
+    {
+      "repo": "FacturAutentico",
+      "path": "C:\\Users\\victo\\Documents\\TripleTen\\FacturAutentico",
+      "score": 51,
+      "signals": {
+        "hasPackageJson": true,
+        "hasReadme": true,
+        "hasLicense": false,
+        "hasTestScript": false,
+        "hasBuildScript": true,
+        "hasLintScript": true,
+        "hasTypeScript": false,
+        "hasServerEntry": false,
+        "ciWorkflows": 1,
+        "docsReadiness": 2
+      },
+      "opportunities": [
+        "Agregar script de test para confiabilidad continua."
+      ]
+    }
+  ],
+  "engineProducts": [
+    {
+      "id": "facturautentico-cloud",
+      "name": "FacturAutentico Cloud",
+      "status": "active",
+      "planIds": [
+        "starter",
+        "pro",
+        "enterprise"
+      ],
+      "score": 80
+    },
+    {
+      "id": "docflow-api",
+      "name": "Docflow API",
+      "status": "active",
+      "planIds": [
+        "starter",
+        "pro"
+      ],
+      "score": 78
+    },
+    {
+      "id": "sentrylog-lite",
+      "name": "Sentrylog Lite",
+      "status": "planned",
+      "planIds": [
+        "starter"
+      ],
+      "score": 67
+    },
+    {
+      "id": "script-premium-kit",
+      "name": "Script Premium Kit",
+      "status": "active",
+      "planIds": [
+        "starter",
+        "pro"
+      ],
+      "score": 78
+    },
+    {
+      "id": "facturautentico",
+      "name": "FacturAutentico",
+      "status": "active",
+      "planIds": [
+        "starter",
+        "pro"
+      ],
+      "score": 78
+    }
+  ]
+}

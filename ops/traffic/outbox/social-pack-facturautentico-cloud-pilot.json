@@ -1,0 +1,87 @@
+{
+  "generatedAt": "2026-05-31T04:56:16.558Z",
+  "campaign": "facturautentico-cloud-pilot",
+  "topic": "Facturacion cloud lista para escalar sin caos",
+  "audience": "operadores digitales y equipos SaaS B2B",
+  "offer": "diagnostico de activacion cloud",
+  "brand": {
+    "productName": "FacturAutentico Cloud",
+    "problemDetail": "alta friccion en onboarding y provision manual de cuentas",
+    "primaryOutcome": "acelerar provision y estandarizar facturacion cloud",
+    "proofPoint": "Provision automatizada y planes claros reducen tiempo de activacion operativa",
+    "domainTerms": [
+      "cloud",
+      "provision",
+      "saas",
+      "billing",
+      "planes",
+      "activation"
+    ]
+  },
+  "funnel": {
+    "trafficDestination": "https://tigrelabs.xyz",
+    "closeChannel": "landing",
+    "closeDestination": "https://tigrelabs.xyz/#/onboarding?product=facturautentico-cloud",
+    "prefilledMessage": "Hola, vengo de la campana y quiero activar el diagnostico express de 15 min.",
+    "finalCta": "Revisa FacturAutentico Cloud aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico-cloud",
+    "closeLink": "https://tigrelabs.xyz/#/onboarding?product=facturautentico-cloud"
+  },
+  "quality": {
+    "averageScore": 100,
+    "projectedAverageLiftPct": 24,
+    "targetLiftPct": 15,
+    "targetReached": true
+  },
+  "channels": {
+    "linkedin": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturAutentico Cloud: Facturacion cloud lista para escalar sin caos.\n\nSi hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operativo y visible.\n\nFacturAutentico Cloud esta hecho para acelerar provision y estandarizar facturacion cloud.\n\nPrueba concreta: Provision automatizada y planes claros reducen tiempo de activacion operativa\n\nEsto sirve cuando el problema ya es visible en operacion, no cuando solo quieres publicar mas.\n\nRevisa FacturAutentico Cloud aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico-cloud\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=facturautentico-cloud-pilot",
+      "variants": {
+        "A": "FacturAutentico Cloud: Facturacion cloud lista para escalar sin caos.\n\nSi hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operativo y visible.\n\nFacturAutentico Cloud esta hecho para acelerar provision y estandarizar facturacion cloud.\n\nPrueba concreta: Provision automatizada y planes claros reducen tiempo de activacion operativa\n\nEsto sirve cuando el problema ya es visible en operacion, no cuando solo quieres publicar mas.\n\nRevisa FacturAutentico Cloud aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico-cloud\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=facturautentico-cloud-pilot",
+        "B": "FacturAutentico Cloud no existe para sonar futurista. Existe para quitar alta friccion en onboarding y provision manual de cuentas.\n\nSi hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operativo y visible.\n\nFacturAutentico Cloud esta hecho para acelerar provision y estandarizar facturacion cloud.\n\nPrueba concreta: Provision automatizada y planes claros reducen tiempo de activacion operativa\n\nEsto sirve cuando el problema ya es visible en operacion, no cuando solo quieres publicar mas.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=facturautentico-cloud-pilot"
+      }
+    },
+    "x": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturAutentico Cloud: Facturacion cloud lista para escalar sin caos. Si hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operativo y visible. Provision automatizada y planes claros reducen ...",
+      "variants": {
+        "A": "FacturAutentico Cloud: Facturacion cloud lista para escalar sin caos. Si hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operativo y visible. Provision automatizada y planes claros reducen ...",
+        "B": "FacturAutentico Cloud no existe para sonar futurista. Existe para quitar alta friccion en onboarding y provision manual de cuentas. Si hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operat..."
+      }
+    },
+    "facebook": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturAutentico Cloud: Facturacion cloud lista para escalar sin caos.\n\nSi hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operativo y visible.\n\nFacturAutentico Cloud esta hecho para acelerar provision y estandarizar facturacion cloud.\n\nPrueba concreta: Provision automatizada y planes claros reducen tiempo de activacion operativa\n\nRevisa FacturAutentico Cloud aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico-cloud\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=facturautentico-cloud-pilot",
+      "variants": {
+        "A": "FacturAutentico Cloud: Facturacion cloud lista para escalar sin caos.\n\nSi hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operativo y visible.\n\nFacturAutentico Cloud esta hecho para acelerar provision y estandarizar facturacion cloud.\n\nPrueba concreta: Provision automatizada y planes claros reducen tiempo de activacion operativa\n\nRevisa FacturAutentico Cloud aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico-cloud\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=facturautentico-cloud-pilot",
+        "B": "FacturAutentico Cloud no existe para sonar futurista. Existe para quitar alta friccion en onboarding y provision manual de cuentas.\n\nSi hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operativo y visible.\n\nFacturAutentico Cloud esta hecho para acelerar provision y estandarizar facturacion cloud.\n\nPrueba concreta: Provision automatizada y planes claros reducen tiempo de activacion operativa\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=facturautentico-cloud-pilot"
+      }
+    },
+    "telegram": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturAutentico Cloud: Facturacion cloud lista para escalar sin caos.\n\nSi hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operativo y visible.\n\nFacturAutentico Cloud esta hecho para acelerar provision y estandarizar facturacion cloud.\n\nPrueba concreta: Provision automatizada y planes claros reducen tiempo de activacion operativa\n\nRevisa FacturAutentico Cloud aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico-cloud\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=facturautentico-cloud-pilot",
+      "variants": {
+        "A": "FacturAutentico Cloud: Facturacion cloud lista para escalar sin caos.\n\nSi hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operativo y visible.\n\nFacturAutentico Cloud esta hecho para acelerar provision y estandarizar facturacion cloud.\n\nPrueba concreta: Provision automatizada y planes claros reducen tiempo de activacion operativa\n\nRevisa FacturAutentico Cloud aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico-cloud\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=facturautentico-cloud-pilot",
+        "B": "FacturAutentico Cloud no existe para sonar futurista. Existe para quitar alta friccion en onboarding y provision manual de cuentas.\n\nSi hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operativo y visible.\n\nFacturAutentico Cloud esta hecho para acelerar provision y estandarizar facturacion cloud.\n\nPrueba concreta: Provision automatizada y planes claros reducen tiempo de activacion operativa\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=facturautentico-cloud-pilot"
+      }
+    },
+    "discord": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturAutentico Cloud: Facturacion cloud lista para escalar sin caos.\nSi hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operativo y visible.\nFacturAutentico Cloud esta hecho para acelerar provision y estandarizar facturacion cloud.\nPrueba concreta: Provision automatizada y planes claros reducen tiempo de activacion operativa\nRevisa FacturAutentico Cloud aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico-cloud\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=facturautentico-cloud-pilot",
+      "variants": {
+        "A": "FacturAutentico Cloud: Facturacion cloud lista para escalar sin caos.\nSi hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operativo y visible.\nFacturAutentico Cloud esta hecho para acelerar provision y estandarizar facturacion cloud.\nPrueba concreta: Provision automatizada y planes claros reducen tiempo de activacion operativa\nRevisa FacturAutentico Cloud aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico-cloud\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=facturautentico-cloud-pilot",
+        "B": "FacturAutentico Cloud no existe para sonar futurista. Existe para quitar alta friccion en onboarding y provision manual de cuentas.\nSi hoy operadores digitales y equipos SaaS B2B sigue resolviendo alta friccion en onboarding y provision manual de cuentas, el costo ya es operativo y visible.\nFacturAutentico Cloud esta hecho para acelerar provision y estandarizar facturacion cloud.\nPrueba concreta: Provision automatizada y planes claros reducen tiempo de activacion operativa\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=facturautentico-cloud-pilot"
+      }
+    }
+  }
+}

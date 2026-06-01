@@ -1,0 +1,87 @@
+{
+  "generatedAt": "2026-05-31T05:20:21.500Z",
+  "campaign": "script-premium-kit-pilot",
+  "topic": "Automatizaciones premium para operaciones con velocidad",
+  "audience": "operadores tecnicos, founders y equipos de growth",
+  "offer": "diagnostico de automatizacion util",
+  "brand": {
+    "productName": "Script Premium Kit",
+    "problemDetail": "tareas repetitivas manuales que consumen horas del equipo",
+    "primaryOutcome": "reducir carga operativa con automatizaciones reutilizables",
+    "proofPoint": "Runbooks y scripts bien definidos acortan tiempos y reducen errores humanos",
+    "domainTerms": [
+      "scripts",
+      "runbook",
+      "automatizacion",
+      "ops",
+      "orquestacion",
+      "eficiencia"
+    ]
+  },
+  "funnel": {
+    "trafficDestination": "https://tigrelabs.xyz",
+    "closeChannel": "landing",
+    "closeDestination": "https://tigrelabs.xyz/#/onboarding?product=script-premium-kit",
+    "prefilledMessage": "Hola, vengo de la campana y quiero activar el diagnostico express de 15 min.",
+    "finalCta": "Revisa Script Premium Kit aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=script-premium-kit",
+    "closeLink": "https://tigrelabs.xyz/#/onboarding?product=script-premium-kit"
+  },
+  "quality": {
+    "averageScore": 100,
+    "projectedAverageLiftPct": 24,
+    "targetLiftPct": 15,
+    "targetReached": true
+  },
+  "channels": {
+    "linkedin": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Script Premium Kit: Automatizaciones premium para operaciones con velocidad.\n\nContexto operativo: operadores tecnicos, founders y equipos de growth con foco en reducir carga operativa con automatizaciones reutilizables.\n\nSi hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es operativo y visible.\n\nScript Premium Kit esta hecho para reducir carga operativa con automatizaciones reutilizables.\n\nEnfoque de esta solucion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: Runbooks y scripts bien definidos acortan tiempos y reducen errores humanos\n\nSenales de encaje: scripts, runbook, automatizacion, ops.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nRevisa Script Premium Kit aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=script-premium-kit\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=script-premium-kit-pilot",
+      "variants": {
+        "A": "Script Premium Kit: Automatizaciones premium para operaciones con velocidad.\n\nContexto operativo: operadores tecnicos, founders y equipos de growth con foco en reducir carga operativa con automatizaciones reutilizables.\n\nSi hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es operativo y visible.\n\nScript Premium Kit esta hecho para reducir carga operativa con automatizaciones reutilizables.\n\nEnfoque de esta solucion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: Runbooks y scripts bien definidos acortan tiempos y reducen errores humanos\n\nSenales de encaje: scripts, runbook, automatizacion, ops.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nRevisa Script Premium Kit aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=script-premium-kit\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=script-premium-kit-pilot",
+        "B": "Script Premium Kit no existe para sonar futurista. Existe para quitar tareas repetitivas manuales que consumen horas del equipo.\n\nContexto operativo: operadores tecnicos, founders y equipos de growth con foco en reducir carga operativa con automatizaciones reutilizables.\n\nSi hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es operativo y visible.\n\nScript Premium Kit esta hecho para reducir carga operativa con automatizaciones reutilizables.\n\nEnfoque de esta solucion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: Runbooks y scripts bien definidos acortan tiempos y reducen errores humanos\n\nSenales de encaje: scripts, runbook, automatizacion, ops.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=script-premium-kit-pilot"
+      }
+    },
+    "x": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Script Premium Kit: Automatizaciones premium para operaciones con velocidad. Si hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es operativo y visible. Runbooks y scripts bien defini...",
+      "variants": {
+        "A": "Script Premium Kit: Automatizaciones premium para operaciones con velocidad. Si hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es operativo y visible. Runbooks y scripts bien defini...",
+        "B": "Script Premium Kit no existe para sonar futurista. Existe para quitar tareas repetitivas manuales que consumen horas del equipo. Si hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es..."
+      }
+    },
+    "facebook": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Script Premium Kit: Automatizaciones premium para operaciones con velocidad.\n\nEscenario real: operadores tecnicos, founders y equipos de growth con foco en reducir carga operativa con automatizaciones reutilizables.\n\nSi hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es operativo y visible.\n\nScript Premium Kit esta hecho para reducir carga operativa con automatizaciones reutilizables.\n\nFoco de implementacion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: Runbooks y scripts bien definidos acortan tiempos y reducen errores humanos\n\nChecklist de encaje: scripts, runbook, automatizacion, ops.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nRevisa Script Premium Kit aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=script-premium-kit\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=script-premium-kit-pilot",
+      "variants": {
+        "A": "Script Premium Kit: Automatizaciones premium para operaciones con velocidad.\n\nEscenario real: operadores tecnicos, founders y equipos de growth con foco en reducir carga operativa con automatizaciones reutilizables.\n\nSi hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es operativo y visible.\n\nScript Premium Kit esta hecho para reducir carga operativa con automatizaciones reutilizables.\n\nFoco de implementacion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: Runbooks y scripts bien definidos acortan tiempos y reducen errores humanos\n\nChecklist de encaje: scripts, runbook, automatizacion, ops.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nRevisa Script Premium Kit aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=script-premium-kit\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=script-premium-kit-pilot",
+        "B": "Script Premium Kit no existe para sonar futurista. Existe para quitar tareas repetitivas manuales que consumen horas del equipo.\n\nEscenario real: operadores tecnicos, founders y equipos de growth con foco en reducir carga operativa con automatizaciones reutilizables.\n\nSi hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es operativo y visible.\n\nScript Premium Kit esta hecho para reducir carga operativa con automatizaciones reutilizables.\n\nFoco de implementacion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: Runbooks y scripts bien definidos acortan tiempos y reducen errores humanos\n\nChecklist de encaje: scripts, runbook, automatizacion, ops.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=script-premium-kit-pilot"
+      }
+    },
+    "telegram": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Script Premium Kit: Automatizaciones premium para operaciones con velocidad.\n\nSi hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es operativo y visible.\n\nScript Premium Kit esta hecho para reducir carga operativa con automatizaciones reutilizables.\n\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: Runbooks y scripts bien definidos acortan tiempos y reducen errores humanos\n\nSenales de encaje: scripts, runbook, automatizacion, ops.\n\nRevisa Script Premium Kit aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=script-premium-kit\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=script-premium-kit-pilot",
+      "variants": {
+        "A": "Script Premium Kit: Automatizaciones premium para operaciones con velocidad.\n\nSi hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es operativo y visible.\n\nScript Premium Kit esta hecho para reducir carga operativa con automatizaciones reutilizables.\n\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: Runbooks y scripts bien definidos acortan tiempos y reducen errores humanos\n\nSenales de encaje: scripts, runbook, automatizacion, ops.\n\nRevisa Script Premium Kit aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=script-premium-kit\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=script-premium-kit-pilot",
+        "B": "Script Premium Kit no existe para sonar futurista. Existe para quitar tareas repetitivas manuales que consumen horas del equipo.\n\nSi hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es operativo y visible.\n\nScript Premium Kit esta hecho para reducir carga operativa con automatizaciones reutilizables.\n\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: Runbooks y scripts bien definidos acortan tiempos y reducen errores humanos\n\nSenales de encaje: scripts, runbook, automatizacion, ops.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=script-premium-kit-pilot"
+      }
+    },
+    "discord": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Script Premium Kit: Automatizaciones premium para operaciones con velocidad.\nSi hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es operativo y visible.\nScript Premium Kit esta hecho para reducir carga operativa con automatizaciones reutilizables.\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\nPrueba concreta: Runbooks y scripts bien definidos acortan tiempos y reducen errores humanos\nSenales de encaje: scripts, runbook, automatizacion, ops.\nRevisa Script Premium Kit aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=script-premium-kit\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=script-premium-kit-pilot",
+      "variants": {
+        "A": "Script Premium Kit: Automatizaciones premium para operaciones con velocidad.\nSi hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es operativo y visible.\nScript Premium Kit esta hecho para reducir carga operativa con automatizaciones reutilizables.\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\nPrueba concreta: Runbooks y scripts bien definidos acortan tiempos y reducen errores humanos\nSenales de encaje: scripts, runbook, automatizacion, ops.\nRevisa Script Premium Kit aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=script-premium-kit\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=script-premium-kit-pilot",
+        "B": "Script Premium Kit no existe para sonar futurista. Existe para quitar tareas repetitivas manuales que consumen horas del equipo.\nSi hoy operadores tecnicos, founders y equipos de growth sigue resolviendo tareas repetitivas manuales que consumen horas del equipo, el costo ya es operativo y visible.\nScript Premium Kit esta hecho para reducir carga operativa con automatizaciones reutilizables.\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\nPrueba concreta: Runbooks y scripts bien definidos acortan tiempos y reducen errores humanos\nSenales de encaje: scripts, runbook, automatizacion, ops.\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=script-premium-kit-pilot"
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tiggreee.dev/schemas/events/billing/manual-cash.registered.v1.payload.json",
+  "title": "manual-cash.registered payload v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "paymentId",
+    "customerId",
+    "productId",
+    "planId",
+    "amount",
+    "currency",
+    "registeredBy",
+    "registeredAt",
+    "evidenceUrl"
+  ],
+  "properties": {
+    "paymentId": { "type": "string", "minLength": 1 },
+    "customerId": { "type": "string", "minLength": 1 },
+    "productId": { "type": "string", "minLength": 1 },
+    "planId": { "type": "string", "minLength": 1 },
+    "amount": { "type": "number", "exclusiveMinimum": 0 },
+    "currency": { "type": "string", "minLength": 3, "maxLength": 3 },
+    "registeredBy": { "type": "string", "minLength": 1 },
+    "registeredAt": { "type": "string", "format": "date-time" },
+    "evidenceUrl": { "type": "string", "format": "uri" },
+    "notes": { "type": "string", "maxLength": 2000 }
+  }
+}

@@ -3,13 +3,13 @@
     "lead-e2e-1": {
       "leadId": "lead-e2e-1",
       "source": "campaign-web",
-      "createdAt": "2026-05-30T12:42:30.625Z",
+      "createdAt": "2026-05-31T03:32:20.618Z",
       "score": 73
     },
     "lead-funnel-1": {
       "leadId": "lead-funnel-1",
       "source": "web-visit",
-      "createdAt": "2026-05-30T12:42:32.817Z",
+      "createdAt": "2026-05-31T03:32:22.500Z",
       "score": 82
     }
   },
@@ -17,12 +17,12 @@
     "lead-e2e-1": {
       "leadId": "lead-e2e-1",
       "value": 73,
-      "scoredAt": "2026-05-30T12:42:30.631Z"
+      "scoredAt": "2026-05-31T03:32:20.622Z"
     },
     "lead-funnel-1": {
       "leadId": "lead-funnel-1",
       "value": 82,
-      "scoredAt": "2026-05-30T12:42:32.827Z"
+      "scoredAt": "2026-05-31T03:32:22.506Z"
     }
   },
   "payments": {
@@ -33,7 +33,7 @@
       "planId": "pro",
       "amount": 99,
       "currency": "USD",
-      "createdAt": "2026-05-30T12:42:32.836Z",
+      "createdAt": "2026-05-31T03:32:22.511Z",
       "status": "succeeded"
     }
   },
@@ -43,7 +43,7 @@
       "customerId": "cust-funnel-1",
       "productId": "facturautentico-cloud",
       "planId": "pro",
-      "provisionedAt": "2026-05-30T12:42:32.842Z"
+      "provisionedAt": "2026-05-31T03:32:22.514Z"
     }
   },
   "assets": {
@@ -51,7 +51,7 @@
       "assetId": "asset-e2e-1",
       "productId": "product-e2e-1",
       "body": "Automated announcement post",
-      "generatedAt": "2026-05-30T12:42:30.614Z"
+      "generatedAt": "2026-05-31T03:32:20.610Z"
     }
   },
   "publications": {
@@ -59,7 +59,7 @@
       "publicationId": "pub-e2e-1",
       "assetId": "asset-e2e-1",
       "channel": "web",
-      "publishedAt": "2026-05-30T12:42:30.621Z"
+      "publishedAt": "2026-05-31T03:32:20.616Z"
     }
   }
 }

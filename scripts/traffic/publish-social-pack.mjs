@@ -3,6 +3,7 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import { assertPackAuthenticity } from './content-quality-guard.mjs';
 
 const CHANNELS = ['linkedin', 'x', 'facebook', 'telegram', 'discord'];
 
@@ -378,6 +379,8 @@ async function main() {
   const options = parseArgs(process.argv.slice(2));
   const packPath = resolvePackPath(options);
   const pack = loadPack(packPath);
+
+  assertPackAuthenticity(pack);
 
   if (!options.dryRun) {
     validateLivePublicationGuardrails(pack);

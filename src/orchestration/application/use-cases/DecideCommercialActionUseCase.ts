@@ -5,6 +5,7 @@ export interface DecideCommercialActionInput {
   readonly hasSuccessfulPayment: boolean;
   readonly hasOutstandingInvoice: boolean;
   readonly customerSegment?: 'new' | 'existing';
+  readonly requireHighValueHandoff?: boolean;
 }
 
 export interface DecideCommercialActionResult {
@@ -106,6 +107,9 @@ export class DecideCommercialActionUseCase {
   }
 
   private evaluateBillingPolicy(input: DecideCommercialActionInput): BillingPolicyResult {
+    const requireHighValueHandoff =
+      input.requireHighValueHandoff ?? process.env.COMMERCIAL_REQUIRE_HIGH_VALUE_HANDOFF === 'true';
+
     if (input.hasOutstandingInvoice) {
       return {
         nextAction: 'request_payment_method',
@@ -120,10 +124,17 @@ export class DecideCommercialActionUseCase {
       };
     }
 
-    if (input.leadScore >= 90) {
+    if (input.leadScore >= 90 && requireHighValueHandoff) {
       return {
         nextAction: 'handoff_to_sales',
         reasonCodes: ['BILLING_HIGH_VALUE_HANDOFF']
+      };
+    }
+
+    if (input.leadScore >= 90 && !requireHighValueHandoff) {
+      return {
+        nextAction: 'send_checkout',
+        reasonCodes: ['BILLING_HIGH_VALUE_AUTOCLOSE']
       };
     }
 

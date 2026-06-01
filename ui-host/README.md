@@ -24,6 +24,20 @@ npm run preview
 - /checkout
 - /automation
 
+## Monolith Gateway (tigrelabs.xyz)
+
+- Entry page: / (registro de visita en localStorage y beacon opcional a /api/track/visit)
+- Redirecciones por subdominio (cuando aplique):
+	- factura.tigrelabs.xyz -> /onboarding?product=facturaautentica
+	- money.tigrelabs.xyz -> /onboarding?product=all-about-money
+	- cloud.tigrelabs.xyz -> /onboarding?product=facturautentico-cloud
+	- kit.tigrelabs.xyz -> /onboarding?product=script-premium-kit
+
+Notas:
+
+- En build de produccion se transforma el target a hash route para compatibilidad de hosting estatico.
+- El redirect es rapido y sin pasos manuales para el visitante.
+
 ## Publicacion en GitHub Pages
 
 - Workflow: .github/workflows/ui-host-pages.yml

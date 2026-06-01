@@ -1,0 +1,87 @@
+{
+  "generatedAt": "2026-05-31T05:20:19.392Z",
+  "campaign": "facturaautentica-pilot",
+  "topic": "CFDI confiable sin retrabajo operativo",
+  "audience": "despachos contables y operaciones SMB en MX/LATAM",
+  "offer": "diagnostico operativo de facturacion",
+  "brand": {
+    "productName": "FacturaAutentica",
+    "problemDetail": "timbrado manual, errores CFDI y retrabajo semanal",
+    "primaryOutcome": "reducir errores de captura y tiempo de facturacion",
+    "proofPoint": "Equipos que validan previo al timbrado reducen retrabajo y rechazos CFDI",
+    "domainTerms": [
+      "cfdi",
+      "timbrado",
+      "pac",
+      "xml",
+      "sat",
+      "facturacion"
+    ]
+  },
+  "funnel": {
+    "trafficDestination": "https://tigrelabs.xyz",
+    "closeChannel": "landing",
+    "closeDestination": "https://tigrelabs.xyz/#/onboarding?product=facturautentico",
+    "prefilledMessage": "Hola, vengo de la campana y quiero activar el diagnostico express de 15 min.",
+    "finalCta": "Revisa FacturaAutentica aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico",
+    "closeLink": "https://tigrelabs.xyz/#/onboarding?product=facturautentico"
+  },
+  "quality": {
+    "averageScore": 100,
+    "projectedAverageLiftPct": 24,
+    "targetLiftPct": 15,
+    "targetReached": true
+  },
+  "channels": {
+    "linkedin": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturaAutentica: CFDI confiable sin retrabajo operativo.\n\nContexto operativo: despachos contables y operaciones SMB en MX/LATAM con foco en reducir errores de captura y tiempo de facturacion.\n\nSi hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para reducir errores de captura y tiempo de facturacion.\n\nEnfoque de esta solucion: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: Equipos que validan previo al timbrado reducen retrabajo y rechazos CFDI\n\nSenales de encaje: cfdi, timbrado, pac, xml.\n\nNo apto para: equipos sin responsabilidad de cumplimiento CFDI.\n\nRevisa FacturaAutentica aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=facturaautentica-pilot",
+      "variants": {
+        "A": "FacturaAutentica: CFDI confiable sin retrabajo operativo.\n\nContexto operativo: despachos contables y operaciones SMB en MX/LATAM con foco en reducir errores de captura y tiempo de facturacion.\n\nSi hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para reducir errores de captura y tiempo de facturacion.\n\nEnfoque de esta solucion: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: Equipos que validan previo al timbrado reducen retrabajo y rechazos CFDI\n\nSenales de encaje: cfdi, timbrado, pac, xml.\n\nNo apto para: equipos sin responsabilidad de cumplimiento CFDI.\n\nRevisa FacturaAutentica aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=facturaautentica-pilot",
+        "B": "FacturaAutentica no existe para sonar futurista. Existe para quitar timbrado manual, errores CFDI y retrabajo semanal.\n\nContexto operativo: despachos contables y operaciones SMB en MX/LATAM con foco en reducir errores de captura y tiempo de facturacion.\n\nSi hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para reducir errores de captura y tiempo de facturacion.\n\nEnfoque de esta solucion: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: Equipos que validan previo al timbrado reducen retrabajo y rechazos CFDI\n\nSenales de encaje: cfdi, timbrado, pac, xml.\n\nNo apto para: equipos sin responsabilidad de cumplimiento CFDI.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=linkedin&utm_medium=social&utm_campaign=facturaautentica-pilot"
+      }
+    },
+    "x": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturaAutentica: CFDI confiable sin retrabajo operativo. Si hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible. Equipos que validan previo al timbrado reducen retrabajo ...",
+      "variants": {
+        "A": "FacturaAutentica: CFDI confiable sin retrabajo operativo. Si hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible. Equipos que validan previo al timbrado reducen retrabajo ...",
+        "B": "FacturaAutentica no existe para sonar futurista. Existe para quitar timbrado manual, errores CFDI y retrabajo semanal. Si hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visib..."
+      }
+    },
+    "facebook": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturaAutentica: CFDI confiable sin retrabajo operativo.\n\nEscenario real: despachos contables y operaciones SMB en MX/LATAM con foco en reducir errores de captura y tiempo de facturacion.\n\nSi hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para reducir errores de captura y tiempo de facturacion.\n\nFoco de implementacion: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: Equipos que validan previo al timbrado reducen retrabajo y rechazos CFDI\n\nChecklist de encaje: cfdi, timbrado, pac, xml.\n\nNo apto para: equipos sin responsabilidad de cumplimiento CFDI.\n\nRevisa FacturaAutentica aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=facturaautentica-pilot",
+      "variants": {
+        "A": "FacturaAutentica: CFDI confiable sin retrabajo operativo.\n\nEscenario real: despachos contables y operaciones SMB en MX/LATAM con foco en reducir errores de captura y tiempo de facturacion.\n\nSi hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para reducir errores de captura y tiempo de facturacion.\n\nFoco de implementacion: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: Equipos que validan previo al timbrado reducen retrabajo y rechazos CFDI\n\nChecklist de encaje: cfdi, timbrado, pac, xml.\n\nNo apto para: equipos sin responsabilidad de cumplimiento CFDI.\n\nRevisa FacturaAutentica aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=facturaautentica-pilot",
+        "B": "FacturaAutentica no existe para sonar futurista. Existe para quitar timbrado manual, errores CFDI y retrabajo semanal.\n\nEscenario real: despachos contables y operaciones SMB en MX/LATAM con foco en reducir errores de captura y tiempo de facturacion.\n\nSi hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para reducir errores de captura y tiempo de facturacion.\n\nFoco de implementacion: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: Equipos que validan previo al timbrado reducen retrabajo y rechazos CFDI\n\nChecklist de encaje: cfdi, timbrado, pac, xml.\n\nNo apto para: equipos sin responsabilidad de cumplimiento CFDI.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=facebook&utm_medium=social&utm_campaign=facturaautentica-pilot"
+      }
+    },
+    "telegram": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturaAutentica: CFDI confiable sin retrabajo operativo.\n\nSi hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para reducir errores de captura y tiempo de facturacion.\n\nFoco: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: Equipos que validan previo al timbrado reducen retrabajo y rechazos CFDI\n\nSenales de encaje: cfdi, timbrado, pac, xml.\n\nRevisa FacturaAutentica aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=facturaautentica-pilot",
+      "variants": {
+        "A": "FacturaAutentica: CFDI confiable sin retrabajo operativo.\n\nSi hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para reducir errores de captura y tiempo de facturacion.\n\nFoco: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: Equipos que validan previo al timbrado reducen retrabajo y rechazos CFDI\n\nSenales de encaje: cfdi, timbrado, pac, xml.\n\nRevisa FacturaAutentica aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=facturaautentica-pilot",
+        "B": "FacturaAutentica no existe para sonar futurista. Existe para quitar timbrado manual, errores CFDI y retrabajo semanal.\n\nSi hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para reducir errores de captura y tiempo de facturacion.\n\nFoco: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: Equipos que validan previo al timbrado reducen retrabajo y rechazos CFDI\n\nSenales de encaje: cfdi, timbrado, pac, xml.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=telegram&utm_medium=social&utm_campaign=facturaautentica-pilot"
+      }
+    },
+    "discord": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturaAutentica: CFDI confiable sin retrabajo operativo.\nSi hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible.\nFacturaAutentica esta hecho para reducir errores de captura y tiempo de facturacion.\nFoco: control fiscal, validacion previa y continuidad de timbrado.\nPrueba concreta: Equipos que validan previo al timbrado reducen retrabajo y rechazos CFDI\nSenales de encaje: cfdi, timbrado, pac, xml.\nRevisa FacturaAutentica aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=facturaautentica-pilot",
+      "variants": {
+        "A": "FacturaAutentica: CFDI confiable sin retrabajo operativo.\nSi hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible.\nFacturaAutentica esta hecho para reducir errores de captura y tiempo de facturacion.\nFoco: control fiscal, validacion previa y continuidad de timbrado.\nPrueba concreta: Equipos que validan previo al timbrado reducen retrabajo y rechazos CFDI\nSenales de encaje: cfdi, timbrado, pac, xml.\nRevisa FacturaAutentica aqui y te contacto con el siguiente paso: https://tigrelabs.xyz/#/onboarding?product=facturautentico\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=facturaautentica-pilot",
+        "B": "FacturaAutentica no existe para sonar futurista. Existe para quitar timbrado manual, errores CFDI y retrabajo semanal.\nSi hoy despachos contables y operaciones SMB en MX/LATAM sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible.\nFacturaAutentica esta hecho para reducir errores de captura y tiempo de facturacion.\nFoco: control fiscal, validacion previa y continuidad de timbrado.\nPrueba concreta: Equipos que validan previo al timbrado reducen retrabajo y rechazos CFDI\nSenales de encaje: cfdi, timbrado, pac, xml.\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://tigrelabs.xyz/?utm_source=discord&utm_medium=social&utm_campaign=facturaautentica-pilot"
+      }
+    }
+  }
+}

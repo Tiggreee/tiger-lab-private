@@ -38,7 +38,7 @@
     },
     {
       "id": "facturautentico",
-      "name": "FacturAutentico",
+      "name": "FacturAutentica",
       "status": "active",
       "planIds": [
         "starter",

@@ -1,0 +1,222 @@
+PROJECT BLUEPRINT ORAWEBON
+Version: 1.0
+Date: 2026-05-31
+Purpose: Plain-text blueprint for local AI analysis, architectural review, and opinion gathering.
+
+1. PROJECT THESIS
+This project is an autonomous monetization and operations platform designed to create, operate, and scale digital products with minimal human intervention while preserving human control at strategic gates.
+
+Primary goals:
+- Close faster.
+- Collect money through the fastest viable rails.
+- Automate follow-up, objections, checkout, provisioning, and reporting.
+- Keep the system human-friendly now and developer-friendly in future premium tiers.
+
+2. PHASED PRODUCT STRATEGY
+Launch is phased and cashflow-first.
+
+Phase 1 is single-product focus. Phase 2 and Phase 3 are expansion only after proof.
+
+2.1 Phase 1: FacturAutentica (only commercial focus)
+- Category: fiscal / CFDI / operations.
+- Audience: despachos contables, SMB ops, teams that need timbrado reliability.
+- Primary job: reduce CFDI friction, retrabajo, and capture errors.
+- Commercial role: direct cash product.
+
+2.2 Phase 2 candidate: Docflow API (expansion)
+- Condition to unlock: payment/provisioning reliability and positive unit economics in Phase 1.
+- Category: technical automation / document orchestration.
+- Audience: backend teams and document operations teams.
+- Primary job: orchestrate documents through API with traceability and fewer integration errors.
+- Commercial role: premium modular upsell.
+
+2.3 Phase 3 candidate: Script Premium Kit (retention/ops efficiency)
+- Condition to unlock: stable conversion and service reliability from first two phases.
+- Category: automation kit / scripts / runbooks.
+- Audience: operators, founders, growth teams, technical leads.
+- Primary job: remove repetitive manual work with reusable automation.
+- Commercial role: operational LTV expansion.
+
+2.4 Funnel-only track: all-about-money
+- Category: non-IT monetization / education / entry offer.
+- Audience: creators, operators, non-technical users, people looking for income routes.
+- Primary job: help choose one clear monetization route and validate it quickly.
+- Commercial role: lead acquisition only during early phases, not primary revenue focus.
+
+3. CORE SYSTEM ARCHITECTURE
+The platform is modular.
+
+Core engines:
+- Product engine
+- Content engine
+- Lead engine
+- Pricing engine
+- Funnel engine
+- Automation engine
+- Bot engine
+- Monetization engine
+
+Core runtime layers:
+- EventBus for internal orchestration
+- Diagnostics
+- Simulators
+- Metrics
+- Alerts
+- CLI operations
+- Command center / dashboard control plane
+
+Design principle:
+- Engines decide and execute.
+- Humans approve only strategic or risky gates.
+
+4. DASHBOARD INTEGRATED ADVANCED
+Status:
+- Exists as a command center / operational dashboard concept and local UI surface.
+- It is useful for daily visibility, task prioritization, and operational reminders.
+- It is not yet fully wired to the backend in a complete production sense.
+
+What it currently does well:
+- Shows task priorities and urgency.
+- Separates human tasks from AI tasks.
+- Supports daily operational discipline.
+- Gives visibility to monetization-critical work.
+
+What it still needs to be considered fully advanced:
+- Complete wiring to backend data sources.
+- End-to-end live event ingestion.
+- Stronger connection to payment/provisioning truth.
+- Better integration with live operational metrics and alerts.
+
+Interpretation:
+- Treat it as a control plane and execution cockpit.
+- Do not treat it as the only source of truth for billing or production risk.
+
+5. GO-TO-MARKET LOGIC
+The project should sell through the fastest reliable path.
+
+Commercial doctrine:
+- Fastest valid payment rail wins.
+- No routine human bottleneck in objections or checkout.
+- Human only steps in for publication approval, exceptions, security, and fraud.
+
+Commercial closer behavior:
+- Qualify lead intent.
+- Recommend plan.
+- Handle objections.
+- Offer only policy-approved discounts.
+- Send checkout immediately.
+- Retry/follow up automatically.
+- Provision on successful payment.
+
+6. PAYMENT AND COLLECTION STRATEGY
+Primary objective:
+- Receive money fast, with strong backup options and clear reconciliation.
+
+Recommended collection stack:
+- Card via primary processor.
+- PayPal as a trusted alternative.
+- Transfer/SPEI/CLABE for B2B and invoice-oriented buyers.
+- Cash-reference options for non-card users.
+- Manual cash only with strict controls and digital evidence.
+
+Important policy:
+- Money does not go to GitHub.
+- GitHub only stores code, docs, and automation assets.
+- Money must settle in bank or processor accounts configured for the business.
+
+Current configured destinations (FacturAutentica Phase 1):
+- Klar bank account (MXN): 661610004954169657
+- Account holder: Victor Manuel Salgado Luna
+- PayPal business: tiggreee@vmdev.lat
+- Default collection order: PayPal, Card, Transfer
+
+Collection principle:
+- If the customer can pay faster with a valid rail, offer it.
+- If one rail fails, fall back to the next best rail.
+- Keep manual cash as a controlled exception, not the default.
+
+7. HUMAN PARTICIPATION MODEL
+Human work should be minimized and concentrated on high-leverage gates.
+
+Human responsibilities:
+- Final publication / go-live approval.
+- Discount or contract exceptions outside policy.
+- Security, compliance, fraud, or legal incidents.
+- Reviewing top hot leads when necessary.
+- Making policy adjustments for pricing and rails.
+
+Human should not routinely:
+- Handle every objection.
+- Manually close every deal.
+- Manually provision every paid account.
+- Manually approve every checkout.
+
+8. HUMAN-FRIENDLY / DEVELOPER-FRIENDLY POSITIONING
+The platform should remain readable and operationally friendly.
+
+Principles:
+- Clear language over hype.
+- Direct operational signals over generic marketing copy.
+- Human-friendly now.
+- Developer-friendly in premium tiers.
+- Avoid generic AI-looking output.
+
+9. OPERATING LOOPS
+Daily loop:
+- Review command center.
+- Review active leads and payment state.
+- Review alerts.
+- Review product/content/funnel status.
+- Make one high-leverage human decision.
+
+Weekly loop:
+- Reorder payment rails by success rate.
+- Review objection patterns.
+- Re-tune discounts and checkout strategy.
+- Review product lineup overlap.
+
+Launch loop:
+- Generate campaigns.
+- Validate authenticity.
+- Dry-run multi-channel publication.
+- Activate live only after go/no-go checks.
+
+10. TECHNICAL GUARDAILS
+Critical safety rules:
+- Webhook signature verification.
+- Idempotency for payment events.
+- Replay protection.
+- Secret rotation.
+- No provisioning without confirmed payment state.
+- Reconciliation between provider and runtime records.
+- No production publishing without go-live approval.
+
+11. CURRENT STATUS SNAPSHOT
+Strong areas:
+- Campaign generation.
+- Authenticity guardrails.
+- Dry-run publish validation.
+- Command center workflow.
+- Modular architecture.
+- Runtime and operational docs.
+
+Still incomplete for fully live production:
+- Live payment provider integration and webhook hardening.
+- Full backend wiring for the advanced dashboard.
+- Final end-to-end production reconciliation.
+- Real-live validation under provider accounts.
+
+12. RECOMMENDED NEXT ACTIONS
+1. Execute Phase 1 with FacturAutentica as the only commercial focus.
+2. Finalize live payment rails and webhook integration.
+3. Keep the dashboard as a daily control plane, not as the billing source of truth.
+4. Run an extensiva audit before the final go-live.
+5. Keep the external portfolio app outside the core system.
+
+13. SUMMARY FOR LOCAL AI ANALYSIS
+If analyzed by local models, the strongest architectural conclusion is:
+- The system is already strong as an autonomous operation engine.
+- The main missing pieces are live payment hardening and full backend wiring of the advanced dashboard.
+- Human participation should be reduced to strategic gates only.
+- A phased rollout with FacturAutentica first is the lowest-risk path to reliable cashflow.
+- The related app should stay outside the core and be tested only as a portfolio piece.

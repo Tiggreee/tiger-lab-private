@@ -51,9 +51,9 @@ if (markdownMode) {
   }
 
   out += '\n## Blockers I cannot solve alone\n';
-  out += '- Client calls and negotiation require your direct action.\n';
-  out += '- Outbound messages require your account presence and follow-up.\n';
-  out += '- Contract signature and payment collection require your approval flow.\n';
+  out += '- Publication go-live approval by channel remains a human gate.\n';
+  out += '- Contract exceptions outside policy require human decision.\n';
+  out += '- Security/fraud/compliance incidents require immediate human escalation.\n';
 
   process.stdout.write(out);
 } else {

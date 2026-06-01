@@ -2,6 +2,7 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { assertBrandInputs, assertPackAuthenticity, scoreBrandSpecificity } from './content-quality-guard.mjs';
 
 const CHANNELS = ['linkedin', 'x', 'facebook', 'telegram', 'discord'];
 const CHAR_LIMITS = {
@@ -25,6 +26,11 @@ function parseArgs(argv) {
     prefillMessage:
       process.env.SOCIAL_PREFILL_MESSAGE ||
       'Hola, vengo de la campana y quiero activar el diagnostico express de 15 min.',
+    productName: process.env.SOCIAL_PRODUCT_NAME || '',
+    problemDetail: process.env.SOCIAL_PROBLEM_DETAIL || '',
+    primaryOutcome: process.env.SOCIAL_PRIMARY_OUTCOME || '',
+    proofPoint: process.env.SOCIAL_PROOF_POINT || '',
+    domainTerms: process.env.SOCIAL_DOMAIN_TERMS || '',
     outDir: 'ops/traffic/outbox'
   };
 
@@ -105,36 +111,93 @@ function buildPrimaryCta(options, closeLink) {
   }
 
   if (options.closeChannel === 'whatsapp' && closeLink) {
-    return `Escribe ACTIVAR por WhatsApp y te envio el plan hoy: ${closeLink}`;
+    return `Si ${options.productName} encaja con tu operacion, escribeme por WhatsApp y revisamos tu caso real: ${closeLink}`;
   }
 
   if (options.closeChannel === 'calendar' && closeLink) {
-    return `Agenda aqui tu diagnostico de 15 min: ${closeLink}`;
+    return `Agenda aqui un diagnostico de ${options.productName}: ${closeLink}`;
   }
 
   if (options.closeChannel === 'landing' && closeLink) {
-    return `Activa aqui y te contacto en minutos: ${closeLink}`;
+    return `Revisa ${options.productName} aqui y te contacto con el siguiente paso: ${closeLink}`;
   }
 
-  return 'Escribe ACTIVAR por DM y te envio el blueprint hoy.';
+  return `Si este problema ya te pega hoy, respondeme con tu caso y te digo si ${options.productName} encaja.`;
 }
 
 function buildCoreStructure(options) {
   const closeLink = buildCloseLink(options);
   const primaryCta = buildPrimaryCta(options, closeLink);
+  const domainTerms = parseDomainTerms(options.domainTerms);
 
-  const pain = `Si hoy estas publicando sin convertir, no te falta contenido: te falta sistema y seguimiento.`;
-  const promise = `Con un flujo de 4 pasos puedes mover interes a llamada en el mismo dia para ${options.audience}.`;
+  const pain = `Si hoy ${options.audience} sigue resolviendo ${options.problemDetail}, el costo ya es operativo y visible.`;
+  const promise = `${options.productName} esta hecho para ${options.primaryOutcome}.`;
 
   return {
-    hookA: `${options.topic}.`,
-    hookB: `Tu embudo no esta roto por falta de alcance, esta roto por falta de estructura.`,
+    hookA: `${options.productName}: ${options.topic}.`,
+    hookB: `${options.productName} no existe para sonar futurista. Existe para quitar ${options.problemDetail}.`,
     pain,
     promise,
-    proof: 'Caso base: CTA unico + seguimiento en 4h = mas conversaciones calificadas.',
+    proof: options.proofPoint,
+    domainTerms,
+    operatorContext: `${options.audience} con foco en ${options.primaryOutcome}`,
     ctaA: primaryCta,
-    ctaB: 'Comenta ACTIVAR y te mando la version editable para que la ejecutes hoy.',
+    ctaB: `Si tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.`,
     closeLink
+  };
+}
+
+function pickDomainTerms(domainTerms, count = 3) {
+  if (!Array.isArray(domainTerms) || domainTerms.length === 0) {
+    return '';
+  }
+
+  return domainTerms.slice(0, count).join(', ');
+}
+
+function buildFitSignal(structure) {
+  const terms = pickDomainTerms(structure.domainTerms, 4);
+  if (!terms) {
+    return 'encaje operativo validable en una semana';
+  }
+
+  return terms;
+}
+
+function resolveVerticalAngle(structure) {
+  const terms = Array.isArray(structure.domainTerms) ? structure.domainTerms.map((item) => item.toLowerCase()) : [];
+
+  if (terms.some((term) => ['cfdi', 'timbrado', 'sat', 'pac', 'xml'].includes(term))) {
+    return {
+      focus: 'control fiscal, validacion previa y continuidad de timbrado',
+      antiFit: 'equipos sin responsabilidad de cumplimiento CFDI'
+    };
+  }
+
+  if (terms.some((term) => ['api', 'endpoint', 'workflow', 'integracion', 'trazabilidad'].includes(term))) {
+    return {
+      focus: 'estabilidad de endpoints, trazabilidad y menos errores de integracion',
+      antiFit: 'equipos sin carga de integraciones documentales'
+    };
+  }
+
+  if (terms.some((term) => ['scripts', 'runbook', 'automatizacion', 'ops', 'orquestacion'].includes(term))) {
+    return {
+      focus: 'runbooks ejecutables, menos tareas manuales y handoff ordenado',
+      antiFit: 'equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion'
+    };
+  }
+
+  if (terms.some((term) => ['monetizacion', 'ingresos', 'validacion', 'experimentos', 'rutas'].includes(term))) {
+    return {
+      focus: 'validacion de ruta comercial, experimento corto y senal de ingreso real',
+      antiFit: 'personas buscando teoria infinita sin experimentar en campo'
+    };
+  }
+
+  return {
+    focus: 'resultado operativo medible en menos ciclos de prueba',
+    antiFit: 'equipos sin urgencia operativa en este trimestre'
   };
 }
 
@@ -149,42 +212,50 @@ function fitToLimit(text, limit) {
 function formatLinkedIn(structure, link, variant) {
   const hook = variant === 'A' ? structure.hookA : structure.hookB;
   const cta = variant === 'A' ? structure.ctaA : structure.ctaB;
+  const fitSignal = buildFitSignal(structure);
+  const angle = resolveVerticalAngle(structure);
 
-  return `${hook}\n\n${structure.pain}\n\n${structure.promise}\n\n${structure.proof}\n\nChecklist rapido:\n1. Publica valor con un solo CTA.\n2. Responde DMs en menos de 15 minutos.\n3. Haz seguimiento en 4 horas.\n4. Mide DM->Lead->Call.\n\n${cta}\n${link}\n\n#Monetizacion #Automatizacion #Growth`;
+  return `${hook}\n\nContexto operativo: ${structure.operatorContext}.\n\n${structure.pain}\n\n${structure.promise}\n\nEnfoque de esta solucion: ${angle.focus}.\n\nPrueba concreta: ${structure.proof}\n\nSenales de encaje: ${fitSignal}.\n\nNo apto para: ${angle.antiFit}.\n\n${cta}\n${link}`;
 }
 
 function formatX(structure, link, variant) {
   const hook = variant === 'A'
-    ? 'Publicar mas no convierte mas.'
-    : 'Tu embudo cae por falta de seguimiento, no por falta de alcance.';
+    ? `${structure.hookA}`
+    : `${structure.hookB}`;
 
   const cta = variant === 'A'
-    ? 'DM ACTIVAR y te envio el blueprint 24h.'
-    : 'Comenta ACTIVAR y te paso plantilla editable hoy.';
+    ? structure.ctaA
+    : structure.ctaB;
 
-  const compact = `${hook} 1 CTA + seguimiento en 4h = mas leads calificados. ${cta} ${link}`;
+  const compact = `${hook} ${structure.pain} ${structure.proof} ${cta} ${link}`;
   return fitToLimit(compact, CHAR_LIMITS.x);
 }
 
 function formatFacebook(structure, link, variant) {
   const hook = variant === 'A' ? structure.hookA : structure.hookB;
   const cta = variant === 'A' ? structure.ctaA : structure.ctaB;
+  const fitSignal = buildFitSignal(structure);
+  const angle = resolveVerticalAngle(structure);
 
-  return `${hook}\n\n${structure.pain}\n\n${structure.promise}\n\nHoy solo necesitas una pieza de valor + un CTA unico + seguimiento temprano.\n\n${cta}\n${link}`;
+  return `${hook}\n\nEscenario real: ${structure.operatorContext}.\n\n${structure.pain}\n\n${structure.promise}\n\nFoco de implementacion: ${angle.focus}.\n\nPrueba concreta: ${structure.proof}\n\nChecklist de encaje: ${fitSignal}.\n\nNo apto para: ${angle.antiFit}.\n\n${cta}\n${link}`;
 }
 
 function formatTelegram(structure, link, variant) {
   const hook = variant === 'A' ? structure.hookA : structure.hookB;
   const cta = variant === 'A' ? structure.ctaA : structure.ctaB;
+  const fitSignal = buildFitSignal(structure);
+  const angle = resolveVerticalAngle(structure);
 
-  return `${hook}\n\n${structure.pain}\n\nPlan operativo de hoy:\n- Publica una pieza con CTA unico\n- Responde DMs en 15 minutos\n- Seguimiento en 4h\n- Cierre con llamada corta\n\n${cta}\n${link}`;
+  return `${hook}\n\n${structure.pain}\n\n${structure.promise}\n\nFoco: ${angle.focus}.\n\nPrueba concreta: ${structure.proof}\n\nSenales de encaje: ${fitSignal}.\n\n${cta}\n${link}`;
 }
 
 function formatDiscord(structure, link, variant) {
   const hook = variant === 'A' ? structure.hookA : structure.hookB;
   const cta = variant === 'A' ? structure.ctaA : structure.ctaB;
+  const fitSignal = buildFitSignal(structure);
+  const angle = resolveVerticalAngle(structure);
 
-  return `${hook}\n${structure.pain}\n${structure.promise}\n${cta}\n${link}`;
+  return `${hook}\n${structure.pain}\n${structure.promise}\nFoco: ${angle.focus}.\nPrueba concreta: ${structure.proof}\nSenales de encaje: ${fitSignal}.\n${cta}\n${link}`;
 }
 
 function generateChannelVariant(channel, structure, options, variant) {
@@ -220,27 +291,24 @@ function countMatches(text, patterns) {
   return count;
 }
 
-function scoreCopy(text, channel) {
+function parseDomainTerms(input) {
+  return String(input || '')
+    .split(',')
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function scoreCopy(text, channel, brand) {
   const lower = text.toLowerCase();
-  let score = 40;
+  let score = 20;
+
+  score += scoreBrandSpecificity(text, brand);
 
   if (text.includes('http://') || text.includes('https://')) {
     score += 10;
   }
 
-  if (countMatches(lower, [/\b(1\.|2\.|3\.|4\.)/, /checklist/, /plan operativo/]) > 0) {
-    score += 12;
-  }
-
-  if (countMatches(lower, [/\b(hoy|24h|15 min|4 horas|15 minutos)\b/]) > 0) {
-    score += 12;
-  }
-
-  if (countMatches(lower, [/activar/, /dm/, /comenta/]) > 0) {
-    score += 12;
-  }
-
-  if (countMatches(lower, [/dolor/, /friccion/, /convierte|conversion|leads/]) > 0) {
+  if (countMatches(lower, [/prueba concreta/, /operacion/, /caso/, /diagnostico/]) > 0) {
     score += 8;
   }
 
@@ -257,6 +325,10 @@ function scoreCopy(text, channel) {
     score -= 6;
   }
 
+  if (countMatches(lower, [/blueprint/, /plantilla editable/, /comenta activar/, /dm activar/, /tu embudo no esta roto/]) > 0) {
+    score -= 25;
+  }
+
   return Math.max(0, Math.min(100, score));
 }
 
@@ -267,9 +339,9 @@ function estimateLift(score) {
   return Math.max(0, Math.min(35, projected));
 }
 
-function selectBestVariant(channel, variantA, variantB) {
-  const scoreA = scoreCopy(variantA, channel);
-  const scoreB = scoreCopy(variantB, channel);
+function selectBestVariant(channel, variantA, variantB, brand) {
+  const scoreA = scoreCopy(variantA, channel, brand);
+  const scoreB = scoreCopy(variantB, channel, brand);
 
   if (scoreB > scoreA) {
     return {
@@ -290,12 +362,19 @@ function selectBestVariant(channel, variantA, variantB) {
 
 function buildPack(options) {
   const structure = buildCoreStructure(options);
+  const brand = {
+    productName: options.productName,
+    problemDetail: options.problemDetail,
+    primaryOutcome: options.primaryOutcome,
+    proofPoint: options.proofPoint,
+    domainTerms: parseDomainTerms(options.domainTerms)
+  };
   const channels = {};
 
   for (const channel of CHANNELS) {
     const variantA = generateChannelVariant(channel, structure, options, 'A');
     const variantB = generateChannelVariant(channel, structure, options, 'B');
-    const best = selectBestVariant(channel, variantA, variantB);
+    const best = selectBestVariant(channel, variantA, variantB, brand);
 
     channels[channel] = {
       selectedVariant: best.selected,
@@ -323,6 +402,7 @@ function buildPack(options) {
     topic: options.topic,
     audience: options.audience,
     offer: options.offer,
+    brand,
     funnel: {
       trafficDestination: options.baseLink,
       closeChannel: options.closeChannel,
@@ -400,7 +480,10 @@ function main() {
     );
   }
 
+  assertBrandInputs(options);
+
   const pack = buildPack(options);
+  assertPackAuthenticity(pack);
 
   const outDir = path.resolve(options.outDir);
   ensureDirectory(outDir);
