@@ -48,3 +48,12 @@ Notas tecnicas:
 
 - En produccion se usa HashRouter para evitar 404 en refresh de rutas.
 - El build usa base relativa para que los assets funcionen en rutas de Pages.
+
+## PayPal SDK
+
+- El checkout PayPal usa `VITE_PAYPAL_CLIENT_ID` para cargar la SDK.
+- En desarrollo, si no se define, usa sandbox público (`sb`).
+- En producción, `VITE_PAYPAL_CLIENT_ID` es obligatorio (fail-fast).
+- El frontend usa `VITE_API_BASE_URL` para llamar al backend cuando UI y API están en dominios separados.
+- Las llamadas de checkout usan `VITE_PUBLIC_API_KEY`; en producción también es obligatoria.
+- Para producción, setea estas variables en Railway o en tu entorno de build con el client ID real y la URL del backend.
