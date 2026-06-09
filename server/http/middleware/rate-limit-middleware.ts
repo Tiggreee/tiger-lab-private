@@ -5,6 +5,7 @@ import { readStore, writeStore } from './durable-store';
 
 const WINDOW_MS = 60_000;
 const MAX_REQUESTS_PER_WINDOW = 60;
+const WEBHOOK_MAX_REQUESTS_PER_WINDOW = Number(process.env.WEBHOOK_RATE_LIMIT_PER_WINDOW || 300);
 const RATE_LIMIT_STORE_FILE = path.resolve(
   process.env.RATE_LIMIT_STORE_FILE || 'ops/runtime/rate-limit-store.json'
 );
@@ -21,9 +22,16 @@ async function loadDurableCounters(): Promise<CounterStore> {
   return Object.fromEntries(active);
 }
 
-function setRateHeaders(ctx: Parameters<Middleware>[0], count: number): void {
-  const remaining = Math.max(0, MAX_REQUESTS_PER_WINDOW - count);
-  ctx.res.setHeader('x-ratelimit-limit', String(MAX_REQUESTS_PER_WINDOW));
+function resolveRouteLimit(pathname: string): number {
+  if (pathname.startsWith('/billing/webhooks')) {
+    return WEBHOOK_MAX_REQUESTS_PER_WINDOW;
+  }
+  return MAX_REQUESTS_PER_WINDOW;
+}
+
+function setRateHeaders(ctx: Parameters<Middleware>[0], count: number, routeLimit: number): void {
+  const remaining = Math.max(0, routeLimit - count);
+  ctx.res.setHeader('x-ratelimit-limit', String(routeLimit));
   ctx.res.setHeader('x-ratelimit-remaining', String(remaining));
   ctx.res.setHeader('x-ratelimit-window-ms', String(WINDOW_MS));
 }
@@ -32,6 +40,7 @@ export const rateLimitMiddleware: Middleware = async (ctx, next) => {
   const apiKey = ctx.auth?.apiKey || 'anonymous';
   const counterKey = `${apiKey}:${ctx.routeKey}`;
   const now = Date.now();
+  const routeLimit = resolveRouteLimit(ctx.pathname);
 
   const durableCounters = await loadDurableCounters();
   const durableCurrent = durableCounters[counterKey];
@@ -45,14 +54,14 @@ export const rateLimitMiddleware: Middleware = async (ctx, next) => {
     counters.set(counterKey, fresh);
     durableCounters[counterKey] = fresh;
     await writeStore(RATE_LIMIT_STORE_FILE, durableCounters);
-    setRateHeaders(ctx, fresh.count);
+    setRateHeaders(ctx, fresh.count, routeLimit);
   } else {
     current.count += 1;
     counters.set(counterKey, current);
     durableCounters[counterKey] = current;
     await writeStore(RATE_LIMIT_STORE_FILE, durableCounters);
-    setRateHeaders(ctx, current.count);
-    if (current.count > MAX_REQUESTS_PER_WINDOW) {
+    setRateHeaders(ctx, current.count, routeLimit);
+    if (current.count > routeLimit) {
       throw new HttpError(429, 'Rate limit exceeded for current key and endpoint.');
     }
   }

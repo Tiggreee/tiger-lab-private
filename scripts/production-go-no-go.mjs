@@ -239,6 +239,31 @@ addCheck('P10', 'Gobernanza de produccion y tiggreeeon', 'critical', () => {
   };
 });
 
+addCheck('P11', 'Hardening de seguridad y checkout', 'critical', () => {
+  const authPath = 'server/http/middleware/auth-middleware.ts';
+  const billingPath = 'server/http/controllers/BillingController.ts';
+  const uiStorePath = 'ui-host/src/state/uiStore.ts';
+
+  const authText = readText(authPath);
+  const billingText = readText(billingPath);
+  const uiText = readText(uiStorePath);
+
+  const authRequiresEnv = authText.includes('API_KEY_REGISTRY') && authText.includes("NODE_ENV === 'production'");
+  const noExampleFallback = !billingText.includes('example.com/checkout/success') && !billingText.includes('example.com/checkout/cancel');
+  const uiNoHardcodedHeader = !uiText.includes("'x-api-key': 'dev-public-key'");
+
+  const ok = authRequiresEnv && noExampleFallback && uiNoHardcodedHeader;
+
+  return {
+    status: ok ? 'PASS' : 'FAIL',
+    details: ok
+      ? 'Hardening clave de auth y checkout activo.'
+      : 'Faltan guardrails en auth/checkout o persiste hardcode de API key en UI.',
+    evidence: [authPath, billingPath, uiStorePath],
+    ownerAction: ok ? 'Sin accion.' : 'Corregir hardening antes de go-live.'
+  };
+});
+
 const failCount = checks.filter((c) => c.status === 'FAIL').length;
 const warnCount = checks.filter((c) => c.status === 'WARN').length;
 const passCount = checks.filter((c) => c.status === 'PASS').length;
