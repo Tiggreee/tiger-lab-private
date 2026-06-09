@@ -1,5 +1,6 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { readRuntimeStateFromPostgres, writeRuntimeStateToPostgres } from './postgres-runtime-store';
 
 export interface RuntimeLeadState {
   readonly leadId: string;
@@ -65,13 +66,30 @@ const DEFAULT_STATE: RuntimeState = {
   publications: {}
 };
 
+const IS_TEST_RUNTIME = process.env.VITEST === 'true' || process.env.NODE_ENV === 'test';
+let inMemoryState: RuntimeState = DEFAULT_STATE;
 let saveQueue: Promise<void> = Promise.resolve();
+
+function isPostgresRuntimeEnabled(): boolean {
+  const backend = (process.env.RUNTIME_STATE_BACKEND || '').trim().toLowerCase();
+  if (backend === 'file') {
+    return false;
+  }
+  if (backend === 'postgres') {
+    return true;
+  }
+  return typeof process.env.DATABASE_URL === 'string' && process.env.DATABASE_URL.trim().length > 0;
+}
 
 function stateFilePath(): string {
   return path.resolve(process.env.RUNTIME_STATE_FILE || 'ops/runtime/runtime-state.json');
 }
 
 async function ensureStateFile(): Promise<string> {
+  if (IS_TEST_RUNTIME && !process.env.RUNTIME_STATE_FILE) {
+    return Promise.resolve('');
+  }
+
   const filePath = stateFilePath();
   const dirPath = path.dirname(filePath);
   await mkdir(dirPath, { recursive: true });
@@ -86,6 +104,28 @@ async function ensureStateFile(): Promise<string> {
 }
 
 export async function readRuntimeState(): Promise<RuntimeState> {
+  if (IS_TEST_RUNTIME && !process.env.RUNTIME_STATE_FILE) {
+    return inMemoryState;
+  }
+
+  if (isPostgresRuntimeEnabled()) {
+    try {
+      const fromPostgres = await readRuntimeStateFromPostgres();
+      if (fromPostgres) {
+        return {
+          leads: fromPostgres.leads || {},
+          leadScores: fromPostgres.leadScores || {},
+          payments: fromPostgres.payments || {},
+          accounts: fromPostgres.accounts || {},
+          assets: fromPostgres.assets || {},
+          publications: fromPostgres.publications || {}
+        };
+      }
+    } catch {
+      // Fallback to file persistence if Postgres is temporarily unavailable.
+    }
+  }
+
   const filePath = await ensureStateFile();
   const raw = await readFile(filePath, 'utf8');
 
@@ -105,6 +145,29 @@ export async function readRuntimeState(): Promise<RuntimeState> {
 }
 
 export async function updateRuntimeState(mutator: (state: RuntimeState) => RuntimeState): Promise<void> {
+  if (IS_TEST_RUNTIME && !process.env.RUNTIME_STATE_FILE) {
+    inMemoryState = mutator(inMemoryState);
+    return;
+  }
+
+  if (isPostgresRuntimeEnabled()) {
+    saveQueue = saveQueue.then(async () => {
+      const current = await readRuntimeState();
+      const next = mutator(current);
+      try {
+        await writeRuntimeStateToPostgres(next);
+      } catch {
+        // Keep file update path as fallback durability.
+      }
+
+      const filePath = await ensureStateFile();
+      await writeFile(filePath, `${JSON.stringify(next, null, 2)}\n`, 'utf8');
+    });
+
+    await saveQueue;
+    return;
+  }
+
   saveQueue = saveQueue.then(async () => {
     const filePath = await ensureStateFile();
     const current = await readRuntimeState();

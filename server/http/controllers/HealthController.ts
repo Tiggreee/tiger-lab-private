@@ -1,5 +1,6 @@
 import { HealthResponse } from '../contracts/responses/health-response';
 import { readRuntimeState } from '../../../src/shared/infrastructure/persistence/runtime-state';
+import { checkPostgresConnection, isPostgresAvailable } from '../../../src/shared/infrastructure/persistence/postgres-runtime-store';
 
 function isProduction(): boolean {
   return process.env.NODE_ENV === 'production';
@@ -8,6 +9,34 @@ function isProduction(): boolean {
 function hasValue(name: string): boolean {
   const value = process.env[name];
   return typeof value === 'string' && value.trim().length > 0;
+}
+
+function shouldRunActiveProbes(): boolean {
+  return process.env.HEALTHCHECK_ACTIVE_PROBES === 'true';
+}
+
+async function probeUrl(url: string): Promise<{ ok: boolean; detail: string }> {
+  const timeoutMs = Number(process.env.HEALTHCHECK_HTTP_TIMEOUT_MS || 2_000);
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const response = await fetch(url, { method: 'GET', signal: controller.signal });
+    return {
+      ok: response.ok,
+      detail: response.ok ? `HTTP ${response.status}` : `HTTP ${response.status}`
+    };
+  } catch (error) {
+    if (error instanceof Error && error.name === 'AbortError') {
+      return { ok: false, detail: `Timeout after ${timeoutMs}ms` };
+    }
+    return {
+      ok: false,
+      detail: error instanceof Error ? error.message : 'Probe failed.'
+    };
+  } finally {
+    clearTimeout(timeout);
+  }
 }
 
 export class HealthController {
@@ -35,6 +64,10 @@ export class HealthController {
       },
       runtimePersistence: {
         status: 'up'
+      },
+      postgres: {
+        status: 'skipped',
+        detail: 'DATABASE_URL not configured.'
       }
     };
 
@@ -68,6 +101,41 @@ export class HealthController {
         status: 'down',
         detail: error instanceof Error ? error.message : 'Failed to access runtime persistence.'
       };
+    }
+
+    const hasPostgres = await isPostgresAvailable();
+    if (hasPostgres) {
+      const postgresProbe = await checkPostgresConnection();
+      dependencies.postgres = {
+        status: postgresProbe.ok ? 'up' : 'down',
+        detail: postgresProbe.detail
+      };
+    }
+
+    if (shouldRunActiveProbes() && isProduction()) {
+      if (hasValue('PAYMENT_GATEWAY_CONFIRM_URL')) {
+        const paymentProbe = await probeUrl(String(process.env.PAYMENT_GATEWAY_CONFIRM_URL));
+        dependencies.paymentGateway = {
+          status: paymentProbe.ok ? 'up' : 'down',
+          detail: paymentProbe.detail
+        };
+      }
+
+      if (hasValue('ENTITLEMENT_API_URL')) {
+        const entitlementProbe = await probeUrl(String(process.env.ENTITLEMENT_API_URL));
+        dependencies.entitlementApi = {
+          status: entitlementProbe.ok ? 'up' : 'down',
+          detail: entitlementProbe.detail
+        };
+      }
+
+      if (hasValue('CONTENT_PUBLISHER_API_URL')) {
+        const contentProbe = await probeUrl(String(process.env.CONTENT_PUBLISHER_API_URL));
+        dependencies.contentPublisherApi = {
+          status: contentProbe.ok ? 'up' : 'down',
+          detail: contentProbe.detail
+        };
+      }
     }
 
     const hasDownDependency = Object.values(dependencies).some((dependency) => dependency.status === 'down');

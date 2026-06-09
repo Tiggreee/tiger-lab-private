@@ -67,11 +67,20 @@ Override locations:
 - `IDEMPOTENCY_STORE_FILE`
 - `RATE_LIMIT_STORE_FILE`
 
+Optional shared persistence (recommended for high concurrency):
+- `DATABASE_URL`
+- `RUNTIME_STATE_BACKEND=postgres` (or auto when DATABASE_URL is present)
+- `FUNNEL_EVENTS_BACKEND=postgres` (or auto when DATABASE_URL is present)
+
 Rate limiting and idempotency defaults:
 - Rate limit window: 60s (`WINDOW_MS` internal)
 - API/web routes default limit: 60 requests/window
 - Webhook routes default limit: 300 requests/window (`WEBHOOK_RATE_LIMIT_PER_WINDOW`)
 - Idempotency TTL: 24h (file-backed cache)
+
+Health probes:
+- `HEALTHCHECK_ACTIVE_PROBES=true` enables active HTTP checks to configured integration URLs in production.
+- `HEALTHCHECK_HTTP_TIMEOUT_MS` controls probe timeout (default: 2000ms).
 
 Production auth hardening:
 - `API_KEY_REGISTRY` is required in production mode.
