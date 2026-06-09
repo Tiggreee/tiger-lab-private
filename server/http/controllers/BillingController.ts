@@ -1,6 +1,10 @@
 import { randomUUID } from 'node:crypto';
 import { RegisterPaymentUseCase } from '../../../src/billing/application/use-cases/RegisterPaymentUseCase';
 import { ProvisionAccountUseCase } from '../../../src/billing/application/use-cases/ProvisionAccountUseCase';
+import { PayPalPaymentService } from '../../bootstrap/paypal-payment-service';
+import { HttpError } from '../errors';
+import { CreateCheckoutSessionRequest } from '../contracts/requests/create-checkout-session-request';
+import { CreateCheckoutSessionResponse } from '../contracts/responses/create-checkout-session-response';
 import { ProvisionProductRequest } from '../contracts/requests/provision-product-request';
 import { ProvisionProductResponse } from '../contracts/responses/provision-product-response';
 import { RegisterPaymentRequest } from '../contracts/requests/register-payment-request';
@@ -9,7 +13,8 @@ import { RegisterPaymentResponse } from '../contracts/responses/register-payment
 export class BillingController {
   constructor(
     private readonly registerPaymentUseCase: RegisterPaymentUseCase,
-    private readonly provisionAccountUseCase: ProvisionAccountUseCase
+    private readonly provisionAccountUseCase: ProvisionAccountUseCase,
+    private readonly payPalPaymentService?: PayPalPaymentService
   ) {}
 
   public async registerPayment(request: RegisterPaymentRequest): Promise<RegisterPaymentResponse> {
@@ -40,6 +45,80 @@ export class BillingController {
         amount,
         currency,
         dryRun: request.dryRun !== false
+      }
+    };
+  }
+
+  public async createCheckoutSession(request: CreateCheckoutSessionRequest): Promise<CreateCheckoutSessionResponse> {
+    if (!this.payPalPaymentService) {
+      throw new Error('PayPal is not configured in the server.');
+    }
+
+    const productId = request.productId || 'facturautentico-cloud';
+    const planId = request.planId || 'starter';
+    const amount = request.amount ?? 39;
+    const currency = (request.currency || 'USD').toUpperCase();
+    const returnUrl = request.returnUrl || process.env.PAYPAL_RETURN_URL;
+    const cancelUrl = request.cancelUrl || process.env.PAYPAL_CANCEL_URL;
+
+    if (!returnUrl || !cancelUrl) {
+      throw new HttpError(500, 'PAYPAL_RETURN_URL and PAYPAL_CANCEL_URL must be configured.');
+    }
+
+    if (returnUrl.includes('example.com') || cancelUrl.includes('example.com')) {
+      throw new HttpError(500, 'PayPal redirect URLs cannot use example.com placeholders.');
+    }
+
+    const session = await this.payPalPaymentService.createCheckoutSession(amount, currency, returnUrl, cancelUrl);
+
+    return {
+      status: 'ok',
+      action: 'create-checkout-session',
+      result: {
+        sessionId: session.sessionId,
+        approvalUrl: session.approvalUrl,
+        amount: session.amount,
+        currency: session.currency,
+        productId,
+        planId
+      }
+    };
+  }
+
+  public async handlePayPalWebhook(rawBody: string, headers: Record<string, string | undefined>): Promise<{ status: 'ok'; action: 'paypal-webhook'; result: { paymentId: string } }> {
+    if (!this.payPalPaymentService) {
+      throw new Error('PayPal is not configured in the server.');
+    }
+
+    const verified = await this.payPalPaymentService.verifyWebhookSignature(rawBody, headers);
+    if (!verified) {
+      throw new HttpError(401, 'Invalid PayPal webhook signature.');
+    }
+
+    const webhookEvent = JSON.parse(rawBody) as Record<string, unknown>;
+    const orderId = this.payPalPaymentService.extractOrderIdFromWebhook(webhookEvent);
+    if (!orderId) {
+      throw new Error('PayPal order ID not found in webhook event.');
+    }
+
+    const amount = this.payPalPaymentService.extractAmountFromWebhook(webhookEvent);
+    const currency = this.payPalPaymentService.extractCurrencyFromWebhook(webhookEvent) ?? 'USD';
+    const customerId = `paypal-${orderId}`;
+
+    await this.registerPaymentUseCase.execute({
+      paymentId: orderId,
+      customerId,
+      productId: 'facturautentico-cloud',
+      planId: 'starter',
+      amount,
+      currency
+    });
+
+    return {
+      status: 'ok',
+      action: 'paypal-webhook',
+      result: {
+        paymentId: orderId
       }
     };
   }

@@ -1,0 +1,41 @@
+name: agent-audit
+version: 1.0.0
+mission: Auditar repositorio, elevar estandares y recomendar mejora continua sin romper compatibilidad.
+scope:
+  include:
+    - .github/**
+    - agents/**
+    - bots/**
+    - ops/**
+    - scripts/**
+    - server/**
+    - src/**
+    - docs/**
+capabilities:
+  - repo_navigation
+  - code_generation
+  - file_editing
+  - pull_request_creation
+inputs:
+  - snapshot_repo
+  - estandares
+  - debt_items
+outputs:
+  - reporte_hallazgos
+  - lista_riesgos
+  - plan_mejora
+  - pr_hardening
+audit_dimensions:
+  - seguridad
+  - consistencia_documental
+  - calidad_contratos
+  - deuda_tecnica
+  - cobertura_operativa
+compatibility_policy:
+  - preferir_cambios_incrementales
+  - no_romper_comportamiento_verificado
+  - registrar_tradeoffs
+success_criteria:
+  - hallazgos_priorizados
+  - acciones_ejecutables
+  - regresiones_evitas

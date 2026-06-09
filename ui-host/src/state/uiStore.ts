@@ -23,6 +23,7 @@ interface UiState {
   readonly checkoutPriceLabel: string
   submitOnboarding: (input: OnboardingInput) => Promise<void>
   activateMonetization: () => Promise<void>
+  startCheckout: () => Promise<void>
   loadDashboard: () => void
   runAutomationAction: (action: 'product' | 'content' | 'traffic') => Promise<void>
 }
@@ -44,6 +45,24 @@ function parseDiagnosticsAveragePrice(diagnostics: Record<string, unknown>): str
   }
 
   return '$39.00'
+}
+
+function buildCheckoutCallbackUrl(path: string): string {
+  const origin = typeof window !== 'undefined' ? window.location.origin : ''
+  return import.meta.env.PROD ? `${origin}/#${path}` : `${origin}${path}`
+}
+
+function resolvePublicApiKey(): string {
+  const explicitKey = import.meta.env.VITE_PUBLIC_API_KEY as string | undefined
+  if (explicitKey && explicitKey.trim().length > 0) {
+    return explicitKey.trim()
+  }
+
+  if (import.meta.env.DEV) {
+    return 'dev-public-key'
+  }
+
+  throw new Error('Missing VITE_PUBLIC_API_KEY for checkout request in production mode.')
 }
 
 export const useUiStore = create<UiState>((set, get) => ({
@@ -119,6 +138,48 @@ export const useUiStore = create<UiState>((set, get) => ({
         automationStatus: 'error',
         errorMessage: error instanceof Error ? error.message : 'Activation flow error'
       })
+      throw error
+    }
+  },
+  startCheckout: async () => {
+    set({ checkoutStatus: 'loading', errorMessage: null })
+
+    try {
+      const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || ''
+      const publicApiKey = resolvePublicApiKey()
+      const returnUrl = buildCheckoutCallbackUrl('/checkout/success')
+      const cancelUrl = buildCheckoutCallbackUrl('/checkout/cancel')
+      const response = await fetch(`${apiBaseUrl}/billing/checkout/session`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-api-key': publicApiKey
+        },
+        body: JSON.stringify({
+          productId: 'facturautentico-cloud',
+          planId: 'starter',
+          amount: 39,
+          currency: 'USD',
+          returnUrl,
+          cancelUrl
+        })
+      })
+
+      if (!response.ok) {
+        const errorBody = await response.text()
+        throw new Error(`Checkout session request failed: ${response.status} ${errorBody}`)
+      }
+
+      const payload = (await response.json()) as { result?: { approvalUrl?: string } }
+      const approvalUrl = payload?.result?.approvalUrl
+      if (!approvalUrl) {
+        throw new Error('PayPal approval URL was not returned.')
+      }
+
+      set({ checkoutStatus: 'success' })
+      window.location.assign(approvalUrl)
+    } catch (error) {
+      set({ checkoutStatus: 'error', errorMessage: error instanceof Error ? error.message : 'Checkout error' })
       throw error
     }
   },

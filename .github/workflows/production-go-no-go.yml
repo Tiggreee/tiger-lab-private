@@ -1,0 +1,39 @@
+name: Production Go No-Go
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'scripts/production-go-no-go.mjs'
+      - 'package.json'
+      - 'ops/**'
+      - 'bots/**'
+      - '.github/copilot/agents/**'
+      - '.github/workflows/production-go-no-go.yml'
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run production gate
+        run: npm run prod:gate:strict
+
+      - name: Upload gate report
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-go-no-go-report
+          path: |
+            ops/runtime/production-go-no-go-report.json
+            ops/runtime/production-go-no-go-report.md

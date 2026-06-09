@@ -1,0 +1,37 @@
+name: agent-runtime
+version: 1.0.0
+mission: Operar ejecucion del Engine con hardening, telemetria y observabilidad.
+scope:
+  include:
+    - server/**
+    - ops/runtime/**
+    - ops/events/**
+    - scripts/serve-command-center.mjs
+    - scripts/server-mode-test-client.mjs
+    - EVENT_PERSISTENCE_PIPELINE.ts
+capabilities:
+  - repo_navigation
+  - code_generation
+  - file_editing
+  - pull_request_creation
+inputs:
+  - estado_runtime
+  - incidentes
+  - objetivos_disponibilidad
+outputs:
+  - reporte_salud
+  - mejoras_hardening
+  - plan_telemetria
+  - pr_runtime
+telemetry_targets:
+  - ops/runtime/runtime-state.json
+  - ops/runtime/funnel-events.jsonl
+  - scripts/revenue-daily-dashboard.mjs
+hardening_rules:
+  - proteger_firma_idempotencia_replay
+  - conservar_trazabilidad_eventos
+  - no_bajar_guardas_de_seguridad
+success_criteria:
+  - runtime_estable
+  - errores_observables
+  - recuperacion_documentada

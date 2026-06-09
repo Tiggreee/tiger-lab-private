@@ -27,7 +27,8 @@ import { ScoreLeadUseCase } from '../../src/lead/application/use-cases/ScoreLead
 import { LeadRepositoryPort } from '../../src/lead/application/ports/out/repositories';
 import { LeadDomainEventPublisherPort } from '../../src/lead/application/ports/out/external';
 import { Lead } from '../../src/lead/domain/entities/Lead';
-import { LeadScore } from '../../src/lead/domain/entities/LeadScore';
+import { LeadScore as LeadScoreEntity } from '../../src/lead/domain/entities/LeadScore';
+import { LeadScore as LeadScoreValue } from '../../src/shared/domain/value-objects/LeadScore';
 import { CreateProductUseCase } from '../../src/product/application/use-cases/CreateProductUseCase';
 import { ProductRepositoryPort } from '../../src/product/application/ports/out/repositories';
 import { ProductDomainEventPublisherPort } from '../../src/product/application/ports/out/external';
@@ -45,6 +46,7 @@ import { BotController } from '../http/controllers/BotController';
 import { ContentController } from '../http/controllers/ContentController';
 import { HealthController } from '../http/controllers/HealthController';
 import { ProductController } from '../http/controllers/ProductController';
+import { PayPalPaymentService } from './paypal-payment-service';
 
 class InMemoryProductRepository implements ProductRepositoryPort {
   private readonly products = new Map<string, Product>();
@@ -126,7 +128,7 @@ class InMemoryLeadRepository implements LeadRepositoryPort {
     }));
   }
 
-  public async saveLeadScore(leadScore: LeadScore): Promise<void> {
+  public async saveLeadScore(leadScore: LeadScoreEntity): Promise<void> {
     await updateRuntimeState((state) => ({
       ...state,
       leadScores: {
@@ -149,7 +151,7 @@ class InMemoryLeadRepository implements LeadRepositoryPort {
 
     const lead = new Lead(new LeadId(item.leadId), item.source, new Date(item.createdAt));
     if (typeof item.score === 'number') {
-      lead.applyScore(new LeadScore(item.score));
+      lead.applyScore(new LeadScoreValue(item.score));
     }
 
     return lead;
@@ -446,7 +448,47 @@ export interface ServerDependencyContainer {
   readonly botController: BotController;
 }
 
+function assertRequiredEnv(keys: readonly string[]): void {
+  const missing = keys.filter((key) => !process.env[key]);
+  if (missing.length > 0) {
+    throw new Error(`Missing required environment variables: ${missing.join(', ')}`);
+  }
+}
+
+function validateServerEnvironment(): void {
+  if (process.env.NODE_ENV !== 'production') {
+    return;
+  }
+
+  assertRequiredEnv([
+    'PAYMENT_GATEWAY_CONFIRM_URL',
+    'ENTITLEMENT_API_URL',
+    'CONTENT_PUBLISHER_API_URL',
+    'API_KEY_REGISTRY'
+  ]);
+
+  const paypalClientId = process.env.PAYPAL_CLIENT_ID;
+  const paypalClientSecret = process.env.PAYPAL_CLIENT_SECRET;
+  if (paypalClientId || paypalClientSecret) {
+    assertRequiredEnv([
+      'PAYPAL_CLIENT_ID',
+      'PAYPAL_CLIENT_SECRET',
+      'PAYPAL_WEBHOOK_ID',
+      'PAYPAL_RETURN_URL',
+      'PAYPAL_CANCEL_URL'
+    ]);
+
+    if (
+      String(process.env.PAYPAL_RETURN_URL).includes('example.com') ||
+      String(process.env.PAYPAL_CANCEL_URL).includes('example.com')
+    ) {
+      throw new Error('PAYPAL_RETURN_URL and PAYPAL_CANCEL_URL cannot contain example.com in production.');
+    }
+  }
+}
+
 export function createServerDependencyContainer(): ServerDependencyContainer {
+  validateServerEnvironment();
   const eventPublisher = new NoopEventPublisher();
 
   const productRepository = new InMemoryProductRepository();
@@ -467,9 +509,20 @@ export function createServerDependencyContainer(): ServerDependencyContainer {
   const scoreLeadUseCase = new ScoreLeadUseCase(leadRepository, eventPublisher);
   const resolveOfferUseCase = new ResolveOfferUseCase(catalogRepository, eventPublisher);
 
+  const payPalClientId = process.env.PAYPAL_CLIENT_ID;
+  const payPalClientSecret = process.env.PAYPAL_CLIENT_SECRET;
+  const payPalLiveMode = process.env.PAYPAL_MODE === 'live';
+
+  const payPalService =
+    payPalClientId && payPalClientSecret
+      ? new PayPalPaymentService(payPalClientId, payPalClientSecret, payPalLiveMode)
+      : undefined;
+
+  const paymentGateway: PaymentGatewayPort = payPalService ?? new NoopPaymentGateway();
+
   const registerPaymentUseCase = new RegisterPaymentUseCase(
     billingRepository,
-    new NoopPaymentGateway(),
+    paymentGateway,
     eventPublisher
   );
 
@@ -484,7 +537,7 @@ export function createServerDependencyContainer(): ServerDependencyContainer {
     healthController: new HealthController(),
     productController: new ProductController(createProductUseCase),
     contentController: new ContentController(generateContentUseCase, publishContentUseCase),
-    billingController: new BillingController(registerPaymentUseCase, provisionAccountUseCase),
+    billingController: new BillingController(registerPaymentUseCase, provisionAccountUseCase, payPalService),
     botController: new BotController(resolveOfferUseCase, captureLeadUseCase, scoreLeadUseCase)
   };
 }

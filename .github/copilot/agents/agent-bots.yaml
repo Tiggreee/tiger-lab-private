@@ -1,0 +1,38 @@
+name: agent-bots
+version: 1.0.0
+mission: Gestionar bots internos, integraciones y webhooks con politicas de canal.
+scope:
+  include:
+    - bots/**
+    - bots/engine/**
+    - bots/contracts/**
+    - scripts/capture-lead.mjs
+    - scripts/capture-leads.mjs
+    - server/copilot-server.mjs
+capabilities:
+  - repo_navigation
+  - code_generation
+  - file_editing
+  - pull_request_creation
+inputs:
+  - canales
+  - politicas
+  - contratos_webhook
+outputs:
+  - configuracion_bots
+  - ajustes_intents
+  - validacion_webhooks
+  - pr_bots
+dependencies:
+  - bots/engine/BotOrchestrator.ts
+  - bots/engine/BotRouter.ts
+  - bots/engine/intent-classifier.ts
+  - bots/contracts/channel-policy.schema.ts
+rules:
+  - escalar_a_humano_en_riesgo_legal_compliance_fraude
+  - respetar_politicas_de_canal
+  - evitar_respuestas_genericas
+success_criteria:
+  - bots_consistentes
+  - webhooks_validos
+  - menos_errores_de_enrutamiento
