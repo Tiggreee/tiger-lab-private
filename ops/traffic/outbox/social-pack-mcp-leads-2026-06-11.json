@@ -1,0 +1,102 @@
+{
+  "generatedAt": "2026-06-11T07:18:51.336Z",
+  "campaign": "mcp-leads-2026-06-11",
+  "topic": "Campanas con leads calificables en menos de 24h",
+  "audience": "equipos de growth y ventas B2B que dependen de outreach y contenido",
+  "offer": "playbook de campana + scoring operativo para activar pipeline hoy",
+  "brand": {
+    "productName": "FacturaAutentica Growth Engine",
+    "problemDetail": "campanas sin criterio de calidad, sin follow-up y sin senal para cierre",
+    "primaryOutcome": "subir respuesta util y convertir interes en reuniones con contexto real",
+    "proofPoint": "pack con scoring por canal, lift proyectado y decision MCP apply/manual-review/block",
+    "domainTerms": [
+      "lead scoring",
+      "campana",
+      "cta",
+      "pipeline",
+      "conversion",
+      "follow-up",
+      "benchmark"
+    ]
+  },
+  "funnel": {
+    "trafficDestination": "https://facturaautentica.mx/diagnostico",
+    "closeChannel": "calendar",
+    "closeDestination": "https://cal.com/facturaautentica/diagnostico",
+    "prefilledMessage": "Hola, vengo de la campana y quiero activar el diagnostico express de 15 min.",
+    "finalCta": "Agenda aqui un diagnostico de FacturaAutentica Growth Engine: https://cal.com/facturaautentica/diagnostico",
+    "closeLink": "https://cal.com/facturaautentica/diagnostico"
+  },
+  "quality": {
+    "averageScore": 97,
+    "projectedAverageLiftPct": 22,
+    "targetLiftPct": 15,
+    "targetReached": true
+  },
+  "channels": {
+    "linkedin": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturaAutentica Growth Engine: Campanas con leads calificables en menos de 24h.\n\nContexto operativo: equipos de growth y ventas B2B que dependen de outreach y contenido con foco en subir respuesta util y convertir interes en reuniones con contexto real.\n\nSi hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de calidad, sin follow-up y sin senal para cierre, el costo ya es operativo y visible.\n\nFacturaAutentica Growth Engine esta hecho para subir respuesta util y convertir interes en reuniones con contexto real.\n\nEnfoque de esta solucion: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: pack con scoring por canal, lift proyectado y decision MCP apply/manual-review/block\n\nSenales de encaje: lead scoring, campana, cta, pipeline.\n\nNo apto para: equipos sin urgencia operativa en este trimestre.\n\nAgenda aqui un diagnostico de FacturaAutentica Growth Engine: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=linkedin&utm_medium=social&utm_campaign=mcp-leads-2026-06-11",
+      "variants": {
+        "A": "FacturaAutentica Growth Engine: Campanas con leads calificables en menos de 24h.\n\nContexto operativo: equipos de growth y ventas B2B que dependen de outreach y contenido con foco en subir respuesta util y convertir interes en reuniones con contexto real.\n\nSi hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de calidad, sin follow-up y sin senal para cierre, el costo ya es operativo y visible.\n\nFacturaAutentica Growth Engine esta hecho para subir respuesta util y convertir interes en reuniones con contexto real.\n\nEnfoque de esta solucion: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: pack con scoring por canal, lift proyectado y decision MCP apply/manual-review/block\n\nSenales de encaje: lead scoring, campana, cta, pipeline.\n\nNo apto para: equipos sin urgencia operativa en este trimestre.\n\nAgenda aqui un diagnostico de FacturaAutentica Growth Engine: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=linkedin&utm_medium=social&utm_campaign=mcp-leads-2026-06-11",
+        "B": "FacturaAutentica Growth Engine no existe para sonar futurista. Existe para quitar campanas sin criterio de calidad, sin follow-up y sin senal para cierre.\n\nContexto operativo: equipos de growth y ventas B2B que dependen de outreach y contenido con foco en subir respuesta util y convertir interes en reuniones con contexto real.\n\nSi hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de calidad, sin follow-up y sin senal para cierre, el costo ya es operativo y visible.\n\nFacturaAutentica Growth Engine esta hecho para subir respuesta util y convertir interes en reuniones con contexto real.\n\nEnfoque de esta solucion: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: pack con scoring por canal, lift proyectado y decision MCP apply/manual-review/block\n\nSenales de encaje: lead scoring, campana, cta, pipeline.\n\nNo apto para: equipos sin urgencia operativa en este trimestre.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://facturaautentica.mx/diagnostico?utm_source=linkedin&utm_medium=social&utm_campaign=mcp-leads-2026-06-11"
+      }
+    },
+    "x": {
+      "selectedVariant": "A",
+      "selectedScore": 84,
+      "projectedLiftPct": 14,
+      "copyPaste": "FacturaAutentica Growth Engine: Campanas con leads calificables en menos de 24h. Si hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de calidad, sin follow-up y sin senal para cierre, el costo ya es operativo y vis...",
+      "variants": {
+        "A": "FacturaAutentica Growth Engine: Campanas con leads calificables en menos de 24h. Si hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de calidad, sin follow-up y sin senal para cierre, el costo ya es operativo y vis...",
+        "B": "FacturaAutentica Growth Engine no existe para sonar futurista. Existe para quitar campanas sin criterio de calidad, sin follow-up y sin senal para cierre. Si hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de cali..."
+      }
+    },
+    "facebook": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturaAutentica Growth Engine: Campanas con leads calificables en menos de 24h.\n\nEscenario real: equipos de growth y ventas B2B que dependen de outreach y contenido con foco en subir respuesta util y convertir interes en reuniones con contexto real.\n\nSi hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de calidad, sin follow-up y sin senal para cierre, el costo ya es operativo y visible.\n\nFacturaAutentica Growth Engine esta hecho para subir respuesta util y convertir interes en reuniones con contexto real.\n\nFoco de implementacion: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: pack con scoring por canal, lift proyectado y decision MCP apply/manual-review/block\n\nChecklist de encaje: lead scoring, campana, cta, pipeline.\n\nNo apto para: equipos sin urgencia operativa en este trimestre.\n\nAgenda aqui un diagnostico de FacturaAutentica Growth Engine: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=facebook&utm_medium=social&utm_campaign=mcp-leads-2026-06-11",
+      "variants": {
+        "A": "FacturaAutentica Growth Engine: Campanas con leads calificables en menos de 24h.\n\nEscenario real: equipos de growth y ventas B2B que dependen de outreach y contenido con foco en subir respuesta util y convertir interes en reuniones con contexto real.\n\nSi hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de calidad, sin follow-up y sin senal para cierre, el costo ya es operativo y visible.\n\nFacturaAutentica Growth Engine esta hecho para subir respuesta util y convertir interes en reuniones con contexto real.\n\nFoco de implementacion: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: pack con scoring por canal, lift proyectado y decision MCP apply/manual-review/block\n\nChecklist de encaje: lead scoring, campana, cta, pipeline.\n\nNo apto para: equipos sin urgencia operativa en este trimestre.\n\nAgenda aqui un diagnostico de FacturaAutentica Growth Engine: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=facebook&utm_medium=social&utm_campaign=mcp-leads-2026-06-11",
+        "B": "FacturaAutentica Growth Engine no existe para sonar futurista. Existe para quitar campanas sin criterio de calidad, sin follow-up y sin senal para cierre.\n\nEscenario real: equipos de growth y ventas B2B que dependen de outreach y contenido con foco en subir respuesta util y convertir interes en reuniones con contexto real.\n\nSi hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de calidad, sin follow-up y sin senal para cierre, el costo ya es operativo y visible.\n\nFacturaAutentica Growth Engine esta hecho para subir respuesta util y convertir interes en reuniones con contexto real.\n\nFoco de implementacion: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: pack con scoring por canal, lift proyectado y decision MCP apply/manual-review/block\n\nChecklist de encaje: lead scoring, campana, cta, pipeline.\n\nNo apto para: equipos sin urgencia operativa en este trimestre.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://facturaautentica.mx/diagnostico?utm_source=facebook&utm_medium=social&utm_campaign=mcp-leads-2026-06-11"
+      }
+    },
+    "telegram": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturaAutentica Growth Engine: Campanas con leads calificables en menos de 24h.\n\nSi hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de calidad, sin follow-up y sin senal para cierre, el costo ya es operativo y visible.\n\nFacturaAutentica Growth Engine esta hecho para subir respuesta util y convertir interes en reuniones con contexto real.\n\nFoco: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: pack con scoring por canal, lift proyectado y decision MCP apply/manual-review/block\n\nSenales de encaje: lead scoring, campana, cta, pipeline.\n\nAgenda aqui un diagnostico de FacturaAutentica Growth Engine: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=telegram&utm_medium=social&utm_campaign=mcp-leads-2026-06-11",
+      "variants": {
+        "A": "FacturaAutentica Growth Engine: Campanas con leads calificables en menos de 24h.\n\nSi hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de calidad, sin follow-up y sin senal para cierre, el costo ya es operativo y visible.\n\nFacturaAutentica Growth Engine esta hecho para subir respuesta util y convertir interes en reuniones con contexto real.\n\nFoco: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: pack con scoring por canal, lift proyectado y decision MCP apply/manual-review/block\n\nSenales de encaje: lead scoring, campana, cta, pipeline.\n\nAgenda aqui un diagnostico de FacturaAutentica Growth Engine: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=telegram&utm_medium=social&utm_campaign=mcp-leads-2026-06-11",
+        "B": "FacturaAutentica Growth Engine no existe para sonar futurista. Existe para quitar campanas sin criterio de calidad, sin follow-up y sin senal para cierre.\n\nSi hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de calidad, sin follow-up y sin senal para cierre, el costo ya es operativo y visible.\n\nFacturaAutentica Growth Engine esta hecho para subir respuesta util y convertir interes en reuniones con contexto real.\n\nFoco: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: pack con scoring por canal, lift proyectado y decision MCP apply/manual-review/block\n\nSenales de encaje: lead scoring, campana, cta, pipeline.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://facturaautentica.mx/diagnostico?utm_source=telegram&utm_medium=social&utm_campaign=mcp-leads-2026-06-11"
+      }
+    },
+    "discord": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturaAutentica Growth Engine: Campanas con leads calificables en menos de 24h.\nSi hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de calidad, sin follow-up y sin senal para cierre, el costo ya es operativo y visible.\nFacturaAutentica Growth Engine esta hecho para subir respuesta util y convertir interes en reuniones con contexto real.\nFoco: resultado operativo medible en menos ciclos de prueba.\nPrueba concreta: pack con scoring por canal, lift proyectado y decision MCP apply/manual-review/block\nSenales de encaje: lead scoring, campana, cta, pipeline.\nAgenda aqui un diagnostico de FacturaAutentica Growth Engine: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=discord&utm_medium=social&utm_campaign=mcp-leads-2026-06-11",
+      "variants": {
+        "A": "FacturaAutentica Growth Engine: Campanas con leads calificables en menos de 24h.\nSi hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de calidad, sin follow-up y sin senal para cierre, el costo ya es operativo y visible.\nFacturaAutentica Growth Engine esta hecho para subir respuesta util y convertir interes en reuniones con contexto real.\nFoco: resultado operativo medible en menos ciclos de prueba.\nPrueba concreta: pack con scoring por canal, lift proyectado y decision MCP apply/manual-review/block\nSenales de encaje: lead scoring, campana, cta, pipeline.\nAgenda aqui un diagnostico de FacturaAutentica Growth Engine: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=discord&utm_medium=social&utm_campaign=mcp-leads-2026-06-11",
+        "B": "FacturaAutentica Growth Engine no existe para sonar futurista. Existe para quitar campanas sin criterio de calidad, sin follow-up y sin senal para cierre.\nSi hoy equipos de growth y ventas B2B que dependen de outreach y contenido sigue resolviendo campanas sin criterio de calidad, sin follow-up y sin senal para cierre, el costo ya es operativo y visible.\nFacturaAutentica Growth Engine esta hecho para subir respuesta util y convertir interes en reuniones con contexto real.\nFoco: resultado operativo medible en menos ciclos de prueba.\nPrueba concreta: pack con scoring por canal, lift proyectado y decision MCP apply/manual-review/block\nSenales de encaje: lead scoring, campana, cta, pipeline.\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://facturaautentica.mx/diagnostico?utm_source=discord&utm_medium=social&utm_campaign=mcp-leads-2026-06-11"
+      }
+    }
+  },
+  "mcpAudit": {
+    "enabled": true,
+    "auditedAt": "2026-06-11T07:18:51.336Z",
+    "benchmark": {
+      "averageScore": 97,
+      "minimumScoreForApply": 72,
+      "projectedLiftPct": 22,
+      "targetLiftPct": 15
+    },
+    "decision": "apply",
+    "findings": [
+      "Campana apta para ejecucion automatizada segun benchmark MCP."
+    ]
+  }
+}

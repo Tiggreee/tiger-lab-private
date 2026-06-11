@@ -160,3 +160,13 @@ Checklist completo: `docs/internal/PENDIENTES_CRITICOS_ACTIVACION.md`.
 ```bash
 npm run ci:local
 ```
+
+<!-- AUTO:README:START -->
+## Estado Automático
+- Repo: .
+- Ultima actualización: 2026-06-10T09:52:57.921Z
+- Node engine: >=20
+- Scripts operativos: 57
+- Prod gate: GO (PASS 11 | WARN 0 | FAIL 0)
+- Nota: este bloque se genera con scripts/update-readme.mjs y puede regenerarse sin afectar secciones manuales.
+<!-- AUTO:README:END -->

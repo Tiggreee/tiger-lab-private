@@ -4,7 +4,7 @@ import { ProvisionAccountCommand } from '../ports/in/commands';
 import { ProvisionAccountCommandHandler } from '../ports/in/handlers';
 import { BillingRepositoryPort } from '../ports/out/repositories';
 import { ApiKeyPort, BillingDomainEventPublisherPort, EntitlementPort } from '../ports/out/external';
-import { trackFunnelEvent } from '../../../../shared/infrastructure/observability/funnel-telemetry';
+import { trackFunnelEvent } from '../../../shared/infrastructure/observability/funnel-telemetry';
 
 /** Provision account use case. */
 export class ProvisionAccountUseCase implements ProvisionAccountCommandHandler {

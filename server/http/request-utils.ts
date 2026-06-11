@@ -2,7 +2,7 @@ import { IncomingMessage } from 'node:http';
 
 const MAX_BODY_SIZE = 1024 * 1024;
 
-export async function readJsonBody(req: IncomingMessage): Promise<unknown> {
+export async function readRequestBody(req: IncomingMessage): Promise<{ body: unknown; rawBody: string }> {
   return new Promise((resolve, reject) => {
     let raw = '';
 
@@ -15,12 +15,12 @@ export async function readJsonBody(req: IncomingMessage): Promise<unknown> {
 
     req.on('end', () => {
       if (!raw) {
-        resolve({});
+        resolve({ body: {}, rawBody: '' });
         return;
       }
 
       try {
-        resolve(JSON.parse(raw));
+        resolve({ body: JSON.parse(raw), rawBody: raw });
       } catch {
         reject(new Error('Invalid JSON body'));
       }

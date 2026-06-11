@@ -1,11 +1,11 @@
 import { Lead } from '../../domain/entities/Lead';
 import { LeadCreatedEvent } from '../../domain/events/LeadCreatedEvent';
-import { LeadId } from '../../../../shared/domain/value-objects/LeadId';
+import { LeadId } from '../../../shared/domain/value-objects/LeadId';
 import { CaptureLeadCommand } from '../ports/in/commands';
 import { CaptureLeadCommandHandler } from '../ports/in/handlers';
 import { LeadRepositoryPort } from '../ports/out/repositories';
 import { LeadDomainEventPublisherPort } from '../ports/out/external';
-import { trackFunnelEvent } from '../../../../shared/infrastructure/observability/funnel-telemetry';
+import { trackFunnelEvent } from '../../../shared/infrastructure/observability/funnel-telemetry';
 
 /** Capture lead use case. */
 export class CaptureLeadUseCase implements CaptureLeadCommandHandler {

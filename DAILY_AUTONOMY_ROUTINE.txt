@@ -1,31 +1,45 @@
-DAILY AUTONOMY ROUTINE – RUTINA DIARIA DEL SISTEMA AUTÓNOMO
+DAILY AUTONOMY ROUTINE - RUTINA DIARIA DEL SISTEMA AUTONOMO
 
-1. Diagnósticos
+1. Diagnosticos
 runtime.runDiagnostics()
-2. Generación
+
+2. Generacion
 engine.product.generate()
 engine.content.generate()
 engine.leads.create()
+
 3. Pricing
 pricingEngine.calculate()
+
 4. Funnels
 funnelEngine.build()
+
 5. Automatizaciones
 automationEngine.run()
+
 6. Bots
 botEngine.execute()
-7. Métricas
+
+7. Metricas
 metrics.collect()
+
 8. Alertas
 alerts.evaluate()
+
 9. Ajustes
 - ajustar pricing
 - ajustar funnels
 - ajustar contenido
 - ajustar automatizaciones
-1. Publicación
+
+10. Publicacion
 - publicar contenido
 - publicar actualizaciones
 - publicar recomendaciones
+
+11. Gates de seguridad comercial
+- no provisioning antes de pago confirmado
+- reconciliacion obligatoria antes de cierre
+- escalamiento humano en legal/compliance/fraude/excepcion de politica
 
 FIN DE DAILY AUTONOMY ROUTINE

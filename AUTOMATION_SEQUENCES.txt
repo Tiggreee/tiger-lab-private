@@ -7,51 +7,40 @@ AUTOMATION_SEQUENCES.txt
 AUTOMATION SEQUENCES - SECUENCIAS BASE
 
 1. Secuencia de Nurturing
-
-Mensaje 1: bienvenida
-
-Mensaje 2: valor educativo
-
-Mensaje 3: caso de uso
-
-Mensaje 4: oferta
-
-Mensaje 5: cierre
+- Objetivo: mover lead frio a lead calificado.
+- Mensaje 1: bienvenida + problema operativo concreto.
+- Mensaje 2: valor educativo con ejemplo real.
+- Mensaje 3: caso de uso con resultado medible.
+- Mensaje 4: oferta alineada al dolor detectado.
+- Mensaje 5: cierre con siguiente paso unico (demo o checkout).
 
 2. Secuencia de Conversion
-
-Mensaje 1: recordatorio
-
-Mensaje 2: prueba social
-
-Mensaje 3: urgencia
-
-Mensaje 4: descuento
-
-Mensaje 5: cierre
+- Objetivo: convertir lead calificado en pago confirmado.
+- Mensaje 1: recordatorio de valor y costo de no actuar.
+- Mensaje 2: prueba social verificable.
+- Mensaje 3: deadline real (sin urgencia artificial).
+- Mensaje 4: descuento solo si esta dentro de politica.
+- Mensaje 5: cierre con checkout y condicion de activacion por pago.
 
 3. Secuencia de Retencion
-
-Mensaje 1: contenido premium
-
-Mensaje 2: actualizacion
-
-Mensaje 3: recomendacion
-
-Mensaje 4: upsell
-
-Mensaje 5: cross-sell
+- Objetivo: reducir churn y aumentar valor por cliente.
+- Mensaje 1: contenido premium aplicable.
+- Mensaje 2: actualizacion de producto relevante.
+- Mensaje 3: recomendacion de mejora operativa.
+- Mensaje 4: upsell solo con fit validado.
+- Mensaje 5: cross-sell sin canibalizar oferta principal.
 
 4. Secuencia de Reactivacion
+- Objetivo: reactivar cuentas inactivas con bajo costo comercial.
+- Mensaje 1: diagnostico breve de friccion.
+- Mensaje 2: oferta especial con vigencia y condiciones claras.
+- Mensaje 3: contenido nuevo con valor inmediato.
+- Mensaje 4: upgrade solo si hay evidencia de necesidad.
+- Mensaje 5: cierre o salida limpia del flujo.
 
-Mensaje 1: te extranamos
-
-Mensaje 2: oferta especial
-
-Mensaje 3: contenido nuevo
-
-Mensaje 4: upgrade
-
-Mensaje 5: cierre
+Reglas comunes
+1. Cada secuencia debe definir trigger de entrada y criterio de salida.
+2. Si hay objecion legal/compliance/fraude, escalar a humano.
+3. No usar claims absolutos ni promesas no verificables.
 
 FIN DE AUTOMATION SEQUENCES

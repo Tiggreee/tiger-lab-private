@@ -22,6 +22,27 @@ This project now enforces external backend integrations for critical business in
 - When configured, the server can create PayPal checkout sessions and confirm PayPal order IDs as payments.
 - Webhook endpoint: `POST /billing/webhooks/paypal`
 
+2.1 CFDI timbrado provider (Mexico)
+- Selected provider: Facturama (reliable non-premium baseline).
+- Env var: `FACTURAMA_API_KEY`
+- Env var: `FACTURAMA_API_SECRET`
+- Optional env var: `FACTURAMA_API_BASE_URL`
+- Optional env var: `INVOICE_PROVIDER` (`facturama` default, `manual` for fallback without provider access)
+- Required operational policy:
+  - Emit CFDI only after confirmed payment.
+  - Preserve XML/PDF/UUID evidence with timestamp and customer reference.
+  - Reconcile emitted CFDI against payment ledger daily.
+
+2.2 Invoice email delivery
+- Selected provider: Resend (reliable and low-friction baseline).
+- Env var: `RESEND_API_KEY`
+- Env var: `BILLING_FROM_EMAIL`
+- Optional env var: `INVOICE_AUTOMATION_STRICT=true` (fail request when CFDI/email automation fails)
+- Recipient policy:
+  - Buyer email required.
+  - Seller notification optional.
+  - Accountant notification optional per customer/account configuration.
+
 3. Entitlements endpoint
 - Env var: `ENTITLEMENT_API_URL`
 - Optional auth env var: `ENTITLEMENT_API_TOKEN`
@@ -81,6 +102,9 @@ Rate limiting and idempotency defaults:
 Health probes:
 - `HEALTHCHECK_ACTIVE_PROBES=true` enables active HTTP checks to configured integration URLs in production.
 - `HEALTHCHECK_HTTP_TIMEOUT_MS` controls probe timeout (default: 2000ms).
+- Health also checks provider readiness for:
+  - `cfdiProvider` (Facturama credentials)
+  - `invoiceEmailDelivery` (Resend + sender email)
 
 Production auth hardening:
 - `API_KEY_REGISTRY` is required in production mode.
@@ -104,5 +128,10 @@ Billing automation should be blocked if:
 - webhook signature validation is not configured
 - idempotency storage is unavailable
 - reconciliation job is not scheduled
+
+Recommended reconciliation run:
+- `npm run billing:reconcile` (daily operational report)
+- `npm run billing:reconcile:strict` (non-zero exit when mismatches exist)
+- `npm run invoice:pending` (list non-issued invoices for manual follow-up)
 
 External enrichment apps are out of scope for the core billing system.

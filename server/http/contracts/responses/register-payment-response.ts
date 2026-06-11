@@ -9,5 +9,11 @@ export interface RegisterPaymentResponse {
     readonly amount: number;
     readonly currency: string;
     readonly dryRun: boolean;
+    readonly invoice: {
+      readonly status: 'issued' | 'skipped' | 'failed';
+      readonly detail: string;
+      readonly cfdiUuid?: string;
+      readonly recipients: readonly string[];
+    };
   };
 }

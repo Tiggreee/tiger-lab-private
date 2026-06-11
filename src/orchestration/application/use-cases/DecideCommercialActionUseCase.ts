@@ -108,7 +108,7 @@ export class DecideCommercialActionUseCase {
 
   private evaluateBillingPolicy(input: DecideCommercialActionInput): BillingPolicyResult {
     const requireHighValueHandoff =
-      input.requireHighValueHandoff ?? process.env.COMMERCIAL_REQUIRE_HIGH_VALUE_HANDOFF === 'true';
+      input.requireHighValueHandoff ?? process.env.COMMERCIAL_REQUIRE_HIGH_VALUE_HANDOFF !== 'false';
 
     if (input.hasOutstandingInvoice) {
       return {

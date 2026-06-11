@@ -1,0 +1,157 @@
+{
+  "generatedAt": "2026-06-11T07:18:55.956Z",
+  "strict": false,
+  "gateStatus": "GO",
+  "summary": {
+    "pass": 11,
+    "warn": 0,
+    "fail": 0
+  },
+  "checks": [
+    {
+      "id": "P1",
+      "title": "Catalogo activo y consistente",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "Activos: 4 productos.",
+      "evidence": [
+        "ops/catalog/products.json",
+        "ops/catalog/plans.json",
+        "ops/catalog/catalog-manifest.json"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P2",
+      "title": "Funnels y eventos trazables",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "Eventos clave presentes.",
+      "evidence": [
+        "ops/runtime/funnel-events.jsonl"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P3",
+      "title": "Pricing rules y politicas activas",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "Reglas activas: 1.",
+      "evidence": [
+        "ops/catalog/pricing-rules.json",
+        "PRICING_RULES.txt"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P4",
+      "title": "Automatizaciones y secuencias operativas",
+      "severity": "high",
+      "status": "PASS",
+      "details": "Base de automatizacion presente.",
+      "evidence": [
+        "AUTOMATION_SEQUENCES.txt",
+        "AUTONOMY_MODE.txt",
+        "DAILY_AUTONOMY_ROUTINE.txt",
+        "scripts/supervisor-sync-command-center.mjs"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P5",
+      "title": "Bots e integraciones base",
+      "severity": "high",
+      "status": "PASS",
+      "details": "Bots base presentes.",
+      "evidence": [
+        "bots/SalesBot.md",
+        "bots/ContentBot.md",
+        "bots/FAQBot.md",
+        "bots/ProvisionBot.md",
+        "bots/engine/BotOrchestrator.ts",
+        "bots/engine/BotRouter.ts"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P6",
+      "title": "Contenido y publicacion automatizada",
+      "severity": "high",
+      "status": "PASS",
+      "details": "Pipeline de contenido presente.",
+      "evidence": [
+        "scripts/generate-content.mjs",
+        "scripts/publish-content.mjs",
+        "ops/traffic/SOCIAL_PUBLICATION_STRUCTURE.md"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P7",
+      "title": "Traffic multicanal preparado",
+      "severity": "high",
+      "status": "PASS",
+      "details": "Scripts multicanal listos.",
+      "evidence": [
+        "scripts/traffic/check-social-ready.mjs",
+        "scripts/traffic/generate-social-pack.mjs",
+        "scripts/traffic/publish-social-pack.mjs",
+        "scripts/traffic/check-go-live.mjs"
+      ],
+      "ownerAction": "Validar tokens/secretos por canal."
+    },
+    {
+      "id": "P8",
+      "title": "Pruebas criticas de humo",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "test:smoke aprobado.",
+      "evidence": [
+        "npm run test:smoke"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P9",
+      "title": "Build de backend y arranque",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "build:server aprobado.",
+      "evidence": [
+        "npm run build:server"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P10",
+      "title": "Gobernanza de produccion y tiggreeeon",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "Gobernanza y guardrails tiggreeeon activos.",
+      "evidence": [
+        ".github/copilot/agents/agent-tiggreeeon.yaml",
+        ".github/copilot/agents/agent-master.yaml",
+        "scripts/validate-copilot-agents.mjs",
+        "PROJECT_BLUEPRINT_TOTAL.txt",
+        "LAUNCH_CHECKLIST.txt",
+        "LAUNCH_PLAN_24H.txt"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P11",
+      "title": "Hardening de seguridad y checkout",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "Hardening clave de auth y checkout activo.",
+      "evidence": [
+        "server/http/middleware/auth-middleware.ts",
+        "server/http/controllers/BillingController.ts",
+        "ui-host/src/state/uiStore.ts"
+      ],
+      "ownerAction": "Sin accion."
+    }
+  ],
+  "ownerNextActions": []
+}

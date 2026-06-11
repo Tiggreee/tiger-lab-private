@@ -1,0 +1,102 @@
+{
+  "generatedAt": "2026-06-11T07:18:51.271Z",
+  "campaign": "mcp-cfdi-2026-06-11",
+  "topic": "Cumplimiento CFDI sin caos operativo",
+  "audience": "equipos financieros y founders con volumen de facturacion en Mexico",
+  "offer": "diagnostico de riesgo fiscal y flujo de timbrado en 15 min",
+  "brand": {
+    "productName": "FacturaAutentica",
+    "problemDetail": "errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad",
+    "primaryOutcome": "emitir CFDI con control de evidencia y menor tasa de rechazo",
+    "proofPoint": "flujo con evidencia por pago, UUID y estado de envio en runtime",
+    "domainTerms": [
+      "cfdi",
+      "timbrado",
+      "pac",
+      "sat",
+      "uuid",
+      "xml",
+      "reconciliacion"
+    ]
+  },
+  "funnel": {
+    "trafficDestination": "https://facturaautentica.mx/diagnostico",
+    "closeChannel": "calendar",
+    "closeDestination": "https://cal.com/facturaautentica/diagnostico",
+    "prefilledMessage": "Hola, vengo de la campana y quiero activar el diagnostico express de 15 min.",
+    "finalCta": "Agenda aqui un diagnostico de FacturaAutentica: https://cal.com/facturaautentica/diagnostico",
+    "closeLink": "https://cal.com/facturaautentica/diagnostico"
+  },
+  "quality": {
+    "averageScore": 100,
+    "projectedAverageLiftPct": 24,
+    "targetLiftPct": 15,
+    "targetReached": true
+  },
+  "channels": {
+    "linkedin": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturaAutentica: Cumplimiento CFDI sin caos operativo.\n\nContexto operativo: equipos financieros y founders con volumen de facturacion en Mexico con foco en emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nSi hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nEnfoque de esta solucion: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: flujo con evidencia por pago, UUID y estado de envio en runtime\n\nSenales de encaje: cfdi, timbrado, pac, sat.\n\nNo apto para: equipos sin responsabilidad de cumplimiento CFDI.\n\nAgenda aqui un diagnostico de FacturaAutentica: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=linkedin&utm_medium=social&utm_campaign=mcp-cfdi-2026-06-11",
+      "variants": {
+        "A": "FacturaAutentica: Cumplimiento CFDI sin caos operativo.\n\nContexto operativo: equipos financieros y founders con volumen de facturacion en Mexico con foco en emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nSi hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nEnfoque de esta solucion: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: flujo con evidencia por pago, UUID y estado de envio en runtime\n\nSenales de encaje: cfdi, timbrado, pac, sat.\n\nNo apto para: equipos sin responsabilidad de cumplimiento CFDI.\n\nAgenda aqui un diagnostico de FacturaAutentica: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=linkedin&utm_medium=social&utm_campaign=mcp-cfdi-2026-06-11",
+        "B": "FacturaAutentica no existe para sonar futurista. Existe para quitar errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad.\n\nContexto operativo: equipos financieros y founders con volumen de facturacion en Mexico con foco en emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nSi hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nEnfoque de esta solucion: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: flujo con evidencia por pago, UUID y estado de envio en runtime\n\nSenales de encaje: cfdi, timbrado, pac, sat.\n\nNo apto para: equipos sin responsabilidad de cumplimiento CFDI.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://facturaautentica.mx/diagnostico?utm_source=linkedin&utm_medium=social&utm_campaign=mcp-cfdi-2026-06-11"
+      }
+    },
+    "x": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturaAutentica: Cumplimiento CFDI sin caos operativo. Si hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad, el costo ya es operativo y visible. flujo con evidencia...",
+      "variants": {
+        "A": "FacturaAutentica: Cumplimiento CFDI sin caos operativo. Si hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad, el costo ya es operativo y visible. flujo con evidencia...",
+        "B": "FacturaAutentica no existe para sonar futurista. Existe para quitar errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad. Si hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimi..."
+      }
+    },
+    "facebook": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturaAutentica: Cumplimiento CFDI sin caos operativo.\n\nEscenario real: equipos financieros y founders con volumen de facturacion en Mexico con foco en emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nSi hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nFoco de implementacion: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: flujo con evidencia por pago, UUID y estado de envio en runtime\n\nChecklist de encaje: cfdi, timbrado, pac, sat.\n\nNo apto para: equipos sin responsabilidad de cumplimiento CFDI.\n\nAgenda aqui un diagnostico de FacturaAutentica: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=facebook&utm_medium=social&utm_campaign=mcp-cfdi-2026-06-11",
+      "variants": {
+        "A": "FacturaAutentica: Cumplimiento CFDI sin caos operativo.\n\nEscenario real: equipos financieros y founders con volumen de facturacion en Mexico con foco en emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nSi hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nFoco de implementacion: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: flujo con evidencia por pago, UUID y estado de envio en runtime\n\nChecklist de encaje: cfdi, timbrado, pac, sat.\n\nNo apto para: equipos sin responsabilidad de cumplimiento CFDI.\n\nAgenda aqui un diagnostico de FacturaAutentica: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=facebook&utm_medium=social&utm_campaign=mcp-cfdi-2026-06-11",
+        "B": "FacturaAutentica no existe para sonar futurista. Existe para quitar errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad.\n\nEscenario real: equipos financieros y founders con volumen de facturacion en Mexico con foco en emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nSi hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nFoco de implementacion: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: flujo con evidencia por pago, UUID y estado de envio en runtime\n\nChecklist de encaje: cfdi, timbrado, pac, sat.\n\nNo apto para: equipos sin responsabilidad de cumplimiento CFDI.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://facturaautentica.mx/diagnostico?utm_source=facebook&utm_medium=social&utm_campaign=mcp-cfdi-2026-06-11"
+      }
+    },
+    "telegram": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturaAutentica: Cumplimiento CFDI sin caos operativo.\n\nSi hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nFoco: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: flujo con evidencia por pago, UUID y estado de envio en runtime\n\nSenales de encaje: cfdi, timbrado, pac, sat.\n\nAgenda aqui un diagnostico de FacturaAutentica: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=telegram&utm_medium=social&utm_campaign=mcp-cfdi-2026-06-11",
+      "variants": {
+        "A": "FacturaAutentica: Cumplimiento CFDI sin caos operativo.\n\nSi hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nFoco: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: flujo con evidencia por pago, UUID y estado de envio en runtime\n\nSenales de encaje: cfdi, timbrado, pac, sat.\n\nAgenda aqui un diagnostico de FacturaAutentica: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=telegram&utm_medium=social&utm_campaign=mcp-cfdi-2026-06-11",
+        "B": "FacturaAutentica no existe para sonar futurista. Existe para quitar errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad.\n\nSi hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para emitir CFDI con control de evidencia y menor tasa de rechazo.\n\nFoco: control fiscal, validacion previa y continuidad de timbrado.\n\nPrueba concreta: flujo con evidencia por pago, UUID y estado de envio en runtime\n\nSenales de encaje: cfdi, timbrado, pac, sat.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://facturaautentica.mx/diagnostico?utm_source=telegram&utm_medium=social&utm_campaign=mcp-cfdi-2026-06-11"
+      }
+    },
+    "discord": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "FacturaAutentica: Cumplimiento CFDI sin caos operativo.\nSi hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad, el costo ya es operativo y visible.\nFacturaAutentica esta hecho para emitir CFDI con control de evidencia y menor tasa de rechazo.\nFoco: control fiscal, validacion previa y continuidad de timbrado.\nPrueba concreta: flujo con evidencia por pago, UUID y estado de envio en runtime\nSenales de encaje: cfdi, timbrado, pac, sat.\nAgenda aqui un diagnostico de FacturaAutentica: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=discord&utm_medium=social&utm_campaign=mcp-cfdi-2026-06-11",
+      "variants": {
+        "A": "FacturaAutentica: Cumplimiento CFDI sin caos operativo.\nSi hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad, el costo ya es operativo y visible.\nFacturaAutentica esta hecho para emitir CFDI con control de evidencia y menor tasa de rechazo.\nFoco: control fiscal, validacion previa y continuidad de timbrado.\nPrueba concreta: flujo con evidencia por pago, UUID y estado de envio en runtime\nSenales de encaje: cfdi, timbrado, pac, sat.\nAgenda aqui un diagnostico de FacturaAutentica: https://cal.com/facturaautentica/diagnostico\nhttps://facturaautentica.mx/diagnostico?utm_source=discord&utm_medium=social&utm_campaign=mcp-cfdi-2026-06-11",
+        "B": "FacturaAutentica no existe para sonar futurista. Existe para quitar errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad.\nSi hoy equipos financieros y founders con volumen de facturacion en Mexico sigue resolviendo errores de timbrado, rechazos PAC y seguimiento manual sin trazabilidad, el costo ya es operativo y visible.\nFacturaAutentica esta hecho para emitir CFDI con control de evidencia y menor tasa de rechazo.\nFoco: control fiscal, validacion previa y continuidad de timbrado.\nPrueba concreta: flujo con evidencia por pago, UUID y estado de envio en runtime\nSenales de encaje: cfdi, timbrado, pac, sat.\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://facturaautentica.mx/diagnostico?utm_source=discord&utm_medium=social&utm_campaign=mcp-cfdi-2026-06-11"
+      }
+    }
+  },
+  "mcpAudit": {
+    "enabled": true,
+    "auditedAt": "2026-06-11T07:18:51.271Z",
+    "benchmark": {
+      "averageScore": 100,
+      "minimumScoreForApply": 72,
+      "projectedLiftPct": 24,
+      "targetLiftPct": 15
+    },
+    "decision": "apply",
+    "findings": [
+      "Campana apta para ejecucion automatizada segun benchmark MCP."
+    ]
+  }
+}

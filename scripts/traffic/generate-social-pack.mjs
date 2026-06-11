@@ -339,6 +339,56 @@ function estimateLift(score) {
   return Math.max(0, Math.min(35, projected));
 }
 
+function resolveMcpCampaignAudit(pack) {
+  const avgScore = Number(pack.quality.averageScore || 0);
+  const avgLift = Number(pack.quality.projectedAverageLiftPct || 0);
+  const targetLift = Number(pack.quality.targetLiftPct || 0);
+
+  const decision = avgScore >= 72 && avgLift >= targetLift
+    ? 'apply'
+    : avgScore >= 60
+      ? 'manual-review'
+      : 'block';
+
+  const findings = [];
+
+  if (avgScore < 72) {
+    findings.push('Subir especificidad de copy por canal: producto, dolor operativo y prueba concreta.');
+  }
+
+  if (avgLift < targetLift) {
+    findings.push('No alcanza lift objetivo: reforzar CTA final y encaje de audiencia/canal.');
+  }
+
+  const weakChannels = CHANNELS
+    .filter((channel) => Number(pack.channels?.[channel]?.selectedScore || 0) < 65)
+    .map((channel) => ({
+      channel,
+      score: Number(pack.channels[channel].selectedScore || 0)
+    }));
+
+  if (weakChannels.length > 0) {
+    findings.push(
+      `Canales debiles detectados: ${weakChannels
+        .map((item) => `${item.channel}(${item.score})`)
+        .join(', ')}.`
+    );
+  }
+
+  return {
+    enabled: (process.env.MCP_CAMPAIGN_AUDIT_ENABLED || 'true').trim().toLowerCase() !== 'false',
+    auditedAt: new Date().toISOString(),
+    benchmark: {
+      averageScore: avgScore,
+      minimumScoreForApply: 72,
+      projectedLiftPct: avgLift,
+      targetLiftPct: targetLift
+    },
+    decision,
+    findings: findings.length > 0 ? findings : ['Campana apta para ejecucion automatizada segun benchmark MCP.']
+  };
+}
+
 function selectBestVariant(channel, variantA, variantB, brand) {
   const scoreA = scoreCopy(variantA, channel, brand);
   const scoreB = scoreCopy(variantB, channel, brand);
@@ -396,7 +446,7 @@ function buildPack(options) {
     CHANNELS.reduce((acc, channel) => acc + channels[channel].projectedLiftPct, 0) / CHANNELS.length
   );
 
-  return {
+  const pack = {
     generatedAt: new Date().toISOString(),
     campaign: options.campaign,
     topic: options.topic,
@@ -418,6 +468,11 @@ function buildPack(options) {
       targetReached: avgLift >= 15
     },
     channels
+  };
+
+  return {
+    ...pack,
+    mcpAudit: resolveMcpCampaignAudit(pack)
   };
 }
 
@@ -441,6 +496,12 @@ function toMarkdown(pack) {
   lines.push(`- Projected average lift: ${pack.quality.projectedAverageLiftPct}%`);
   lines.push(`- Target lift: ${pack.quality.targetLiftPct}%`);
   lines.push(`- Target reached: ${pack.quality.targetReached ? 'yes' : 'no'}`);
+  lines.push(`- MCP audit decision: ${pack.mcpAudit?.decision || 'n/a'}`);
+  if (Array.isArray(pack.mcpAudit?.findings)) {
+    for (const finding of pack.mcpAudit.findings) {
+      lines.push(`- MCP finding: ${finding}`);
+    }
+  }
   lines.push('');
 
   for (const channel of CHANNELS) {

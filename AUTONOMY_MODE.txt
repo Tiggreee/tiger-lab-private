@@ -1,37 +1,37 @@
 AUTONOMY MODE - CICLO OPERATIVO CONTINUO
 
 Objetivo
-Mantener el sistema funcionando sin intervencion humana, generando productos, contenido, leads, funnels, pricing, automatizaciones, bots, metricas y alertas de manera continua.
+Mantener operacion autonoma con control de riesgo: generar, medir y optimizar sin romper seguridad comercial.
 
-Ciclo autonomo recomendado (ejecutar cada hora)
-runtime.runDiagnostics()
-engine.product.generate()
-engine.content.generate()
-engine.leads.create()
-pricingEngine.calculate()
-funnelEngine.build()
-automationEngine.run()
-botEngine.execute()
-metrics.collect()
-alerts.evaluate()
+Ciclo autonomo recomendado (cada hora)
+1. runtime.runDiagnostics()
+2. engine.product.generate()
+3. engine.content.generate()
+4. engine.leads.create()
+5. pricingEngine.calculate()
+6. funnelEngine.build()
+7. automationEngine.run()
+8. botEngine.execute()
+9. metrics.collect()
+10. alerts.evaluate()
 
-Condiciones de operacion
+Gates obligatorios de produccion
+1. Nunca provisionar antes de pago confirmado.
+2. Nunca marcar venta cerrada sin reconciliacion.
+3. Si hay conflicto con compliance/fraude/politica critica, escalar a humano y bloquear accion automatica.
+4. Si diagnostics falla en estado critico, ejecutar solo modo seguro (sin cierres ni provisioning).
 
-- El sistema debe tener acceso a los motores.
-- El EventBus debe estar activo.
-- Las automatizaciones deben estar registradas.
-- Los generadores deben estar configurados.
-- Las metricas deben estar expuestas.
+Condiciones minimas de operacion
+1. EventBus activo.
+2. Motores registrados y configurados.
+3. Automatizaciones y triggers cargados.
+4. Metricas y alertas expuestas.
+5. Persistencia runtime disponible.
 
 Modo continuo
-El ciclo puede ejecutarse mediante:
-
-- cron interno
-- scheduler propio
-- loop persistente
-- servicio de background
+El ciclo puede ejecutarse con cron interno, scheduler propio, loop persistente o servicio background.
 
 Objetivo final
-Operacion autonoma 24/7 sin intervencion humana.
+Operacion autonoma 24/7 con trazabilidad, control y recuperacion.
 
 FIN DE AUTONOMY MODE

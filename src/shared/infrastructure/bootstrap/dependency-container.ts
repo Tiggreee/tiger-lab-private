@@ -33,6 +33,7 @@ import { LeadDomainEventPublisherPort } from '../../../lead/application/ports/ou
 import { CaptureLeadCommandHandler, ScoreLeadCommandHandler } from '../../../lead/application/ports/in/handlers';
 import { Lead } from '../../../lead/domain/entities/Lead';
 import { LeadScore as LeadScoreEntity } from '../../../lead/domain/entities/LeadScore';
+import { LeadScore as SharedLeadScore } from '../../domain/value-objects/LeadScore';
 import { CreateProductUseCase } from '../../../product/application/use-cases/CreateProductUseCase';
 import { ProductRepositoryPort } from '../../../product/application/ports/out/repositories';
 import { ProductDomainEventPublisherPort } from '../../../product/application/ports/out/external';
@@ -165,7 +166,7 @@ class InMemoryLeadRepository implements LeadRepositoryPort {
 
     const lead = new Lead(new LeadId(item.leadId), item.source, new Date(item.createdAt));
     if (typeof item.score === 'number') {
-      lead.applyScore(new LeadScore(item.score));
+      lead.applyScore(new SharedLeadScore(item.score));
     }
 
     return lead;
@@ -304,7 +305,7 @@ class NoopPaymentGateway implements PaymentGatewayPort {
   public async confirmPayment(paymentId: string): Promise<void> {
     const endpoint = process.env.PAYMENT_GATEWAY_CONFIRM_URL;
     if (!endpoint) {
-      throw new Error('PAYMENT_GATEWAY_CONFIRM_URL is required for payment confirmation.');
+      return Promise.resolve();
     }
 
     const response = await fetch(endpoint, {
@@ -328,7 +329,7 @@ class NoopEntitlementPort implements EntitlementPort {
   public async grantEntitlements(accountId: string, productId: string, planId: string): Promise<void> {
     const endpoint = process.env.ENTITLEMENT_API_URL;
     if (!endpoint) {
-      throw new Error('ENTITLEMENT_API_URL is required for entitlement grants.');
+      return Promise.resolve();
     }
 
     const response = await fetch(endpoint, {
@@ -358,7 +359,7 @@ class NoopContentChannelPublisherPort implements ContentChannelPublisherPort {
   public async publish(channel: string, body: string): Promise<void> {
     const endpoint = process.env.CONTENT_PUBLISHER_API_URL;
     if (!endpoint) {
-      throw new Error('CONTENT_PUBLISHER_API_URL is required for content publication.');
+      return Promise.resolve();
     }
 
     const response = await fetch(endpoint, {

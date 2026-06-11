@@ -28,5 +28,17 @@ export function validateRegisterPaymentRequest(payload: unknown): RegisterPaymen
     throw new HttpError(400, 'currency must be a string.');
   }
 
+  if (candidate.buyerEmail !== undefined && typeof candidate.buyerEmail !== 'string') {
+    throw new HttpError(400, 'buyerEmail must be a string.');
+  }
+
+  if (candidate.sellerEmail !== undefined && typeof candidate.sellerEmail !== 'string') {
+    throw new HttpError(400, 'sellerEmail must be a string.');
+  }
+
+  if (candidate.accountantEmail !== undefined && typeof candidate.accountantEmail !== 'string') {
+    throw new HttpError(400, 'accountantEmail must be a string.');
+  }
+
   return candidate;
 }

@@ -48,6 +48,44 @@ export interface RuntimePublicationState {
   readonly publishedAt: string;
 }
 
+export interface RuntimeInvoiceState {
+  readonly paymentId: string;
+  readonly customerId: string;
+  readonly productId: string;
+  readonly planId: string;
+  readonly amount: number;
+  readonly currency: string;
+  readonly status: 'issued' | 'skipped' | 'failed';
+  readonly detail: string;
+  readonly cfdiUuid?: string;
+  readonly xmlReference?: string;
+  readonly pdfReference?: string;
+  readonly recipients: readonly string[];
+  readonly issuedAt: string;
+}
+
+export interface RuntimeInvoiceMcpAuditState {
+  readonly auditId: string;
+  readonly paymentId: string;
+  readonly provider: string;
+  readonly action: 'issue_cfdi';
+  readonly status: 'success' | 'failed' | 'blocked';
+  readonly decision: 'apply' | 'manual-review' | 'block';
+  readonly detail: string;
+  readonly benchmark: {
+    readonly latencyMs: number;
+    readonly latencyTargetMs: number;
+    readonly withinLatencyTarget: boolean;
+    readonly recentFailureRate: number;
+    readonly failureRateThreshold: number;
+    readonly withinFailureRateTarget: boolean;
+    readonly sampleSize: number;
+  };
+  readonly recommendations: readonly string[];
+  readonly startedAt: string;
+  readonly finishedAt: string;
+}
+
 export interface RuntimeState {
   readonly leads: Record<string, RuntimeLeadState>;
   readonly leadScores: Record<string, RuntimeLeadScoreState>;
@@ -55,6 +93,8 @@ export interface RuntimeState {
   readonly accounts: Record<string, RuntimeProvisionedAccountState>;
   readonly assets: Record<string, RuntimeContentAssetState>;
   readonly publications: Record<string, RuntimePublicationState>;
+  readonly invoices: Record<string, RuntimeInvoiceState>;
+  readonly invoiceMcpAudits: Record<string, RuntimeInvoiceMcpAuditState>;
 }
 
 const DEFAULT_STATE: RuntimeState = {
@@ -63,7 +103,9 @@ const DEFAULT_STATE: RuntimeState = {
   payments: {},
   accounts: {},
   assets: {},
-  publications: {}
+  publications: {},
+  invoices: {},
+  invoiceMcpAudits: {}
 };
 
 const IS_TEST_RUNTIME = process.env.VITEST === 'true' || process.env.NODE_ENV === 'test';
@@ -118,7 +160,9 @@ export async function readRuntimeState(): Promise<RuntimeState> {
           payments: fromPostgres.payments || {},
           accounts: fromPostgres.accounts || {},
           assets: fromPostgres.assets || {},
-          publications: fromPostgres.publications || {}
+          publications: fromPostgres.publications || {},
+          invoices: (fromPostgres as Partial<RuntimeState>).invoices || {},
+          invoiceMcpAudits: (fromPostgres as Partial<RuntimeState>).invoiceMcpAudits || {}
         };
       }
     } catch {
@@ -137,7 +181,9 @@ export async function readRuntimeState(): Promise<RuntimeState> {
       payments: parsed.payments || {},
       accounts: parsed.accounts || {},
       assets: parsed.assets || {},
-      publications: parsed.publications || {}
+      publications: parsed.publications || {},
+      invoices: parsed.invoices || {},
+      invoiceMcpAudits: parsed.invoiceMcpAudits || {}
     };
   } catch {
     return DEFAULT_STATE;

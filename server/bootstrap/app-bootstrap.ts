@@ -15,7 +15,7 @@ import {
   resolveRequestId
 } from '../http/middleware/request-id-middleware';
 import { tracingMiddleware } from '../http/middleware/tracing-middleware';
-import { readJsonBody } from '../http/request-utils';
+import { readRequestBody } from '../http/request-utils';
 import { sendJson } from '../http/response';
 import { buildBillingRoutes } from '../http/routes/billing-routes';
 import { buildBotRoutes } from '../http/routes/bot-routes';
@@ -45,7 +45,10 @@ function createRouter(): Router {
 }
 
 function shouldBypassAuth(route: HttpRoute): boolean {
-  return route.path === '/health' && route.method === 'GET';
+  return (
+    (route.path === '/health' && route.method === 'GET') ||
+    (route.method === 'POST' && route.path.startsWith('/billing/webhooks'))
+  );
 }
 
 async function handleRequest(req: IncomingMessage, res: ServerResponse, router: Router): Promise<void> {
@@ -68,7 +71,7 @@ async function handleRequest(req: IncomingMessage, res: ServerResponse, router: 
     requestId
   );
 
-  const body = method === 'POST' ? await readJsonBody(req) : {};
+  const requestBody = method === 'POST' ? await readRequestBody(req) : { body: {}, rawBody: '' };
 
   const ctx: HttpRequestContext = {
     req,
@@ -78,7 +81,8 @@ async function handleRequest(req: IncomingMessage, res: ServerResponse, router: 
     requestId,
     correlationId,
     routeKey: `${method} ${pathname}`,
-    body
+    body: requestBody.body,
+    rawBody: requestBody.rawBody
   };
 
   const middleware = [

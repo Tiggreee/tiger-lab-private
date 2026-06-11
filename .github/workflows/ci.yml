@@ -35,7 +35,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install deps
@@ -43,6 +43,9 @@ jobs:
 
       - name: Run fast smoke suite
         run: npm run test:smoke
+
+      - name: Build backend
+        run: npm run build:server
 
       - name: Run secret checks
         run: npm run check:secrets

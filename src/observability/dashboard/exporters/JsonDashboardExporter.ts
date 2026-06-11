@@ -4,12 +4,14 @@ import { FunnelMetrics } from '../../metrics/FunnelMetrics';
 import { PricingMetrics } from '../../metrics/PricingMetrics';
 import { DashboardRenderer } from '../DashboardRenderer';
 
+import { DashboardPayload } from '../DashboardRenderer';
+
 export interface DashboardExport {
   readonly funnel: Record<string, unknown>;
   readonly pricing: Record<string, unknown>;
   readonly bots: Record<string, unknown>;
   readonly content: Record<string, unknown>;
-  readonly dashboard: Record<string, unknown>;
+  readonly dashboard: DashboardPayload;
 }
 
 export class JsonDashboardExporter {

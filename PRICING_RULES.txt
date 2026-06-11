@@ -40,4 +40,17 @@ Ofertas temporales de 24 horas con -20%.
 
 Descuento entre 10% y 30%.
 
+8. Guardrails obligatorios
+
+- No aplicar mas de 2 ajustes simultaneos al mismo checkout.
+- Cambio maximo neto por operacion: +/-30% sobre precio base.
+- Mantener margen minimo definido por producto (si no existe, bloquear ajuste y escalar).
+- Toda regla aplicada debe dejar evidencia en logs (motivo, porcentaje, timestamp).
+
+9. Reglas de seguridad comercial
+
+- Descuentos fuera de politica requieren gate humano.
+- Si conversion cae y tambien cae margen, priorizar retencion de margen antes de bajar precio.
+- Si no hay datos suficientes de conversion/demanda, mantener precio base.
+
 FIN DE PRICING RULES

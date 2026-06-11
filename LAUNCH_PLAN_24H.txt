@@ -72,4 +72,14 @@ Monitorear metricas.
 Hora 24
 Lanzamiento oficial.
 
+Condiciones de avance
+1. No avanzar a activacion comercial si build o pruebas fallan.
+2. No avanzar a provisioning si no hay pago confirmado.
+3. No declarar cierre de venta sin reconciliacion.
+
+Criterio de parada (stop)
+1. Incidente de fraude/compliance.
+2. Falla critica de checkout o webhook.
+3. Alertas criticas sin mitigacion activa.
+
 FIN DEL PLAN 24H

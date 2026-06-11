@@ -1,7 +1,7 @@
 import { CatalogPlan } from '../../domain/entities/CatalogPlan';
 import { CatalogProduct } from '../../domain/entities/CatalogProduct';
 import { CatalogOfferResolvedEvent } from '../../domain/events/CatalogOfferResolvedEvent';
-import { PlanId } from '../../../../shared/domain/value-objects/PlanId';
+import { PlanId } from '../../../shared/domain/value-objects/PlanId';
 import { ResolveOfferQuery } from '../ports/in/queries';
 import { ResolveOfferQueryHandler } from '../ports/in/handlers';
 import { CatalogRepositoryPort } from '../ports/out/repositories';

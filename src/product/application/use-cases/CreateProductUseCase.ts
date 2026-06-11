@@ -1,6 +1,6 @@
 import { Product } from '../../domain/entities/Product';
 import { ProductCreatedEvent } from '../../domain/events/ProductCreatedEvent';
-import { ProductId } from '../../../../shared/domain/value-objects/ProductId';
+import { ProductId } from '../../../shared/domain/value-objects/ProductId';
 import { CreateProductCommand } from '../ports/in/commands';
 import { CreateProductCommandHandler } from '../ports/in/handlers';
 import { ProductRepositoryPort } from '../ports/out/repositories';

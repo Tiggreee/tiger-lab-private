@@ -1,14 +1,14 @@
 import { Payment } from '../../domain/entities/Payment';
 import { PaymentSucceededEvent } from '../../domain/events/PaymentSucceededEvent';
-import { Currency } from '../../../../shared/domain/value-objects/Currency';
-import { Money } from '../../../../shared/domain/value-objects/Money';
-import { PlanId } from '../../../../shared/domain/value-objects/PlanId';
-import { ProductId } from '../../../../shared/domain/value-objects/ProductId';
+import { Currency } from '../../../shared/domain/value-objects/Currency';
+import { Money } from '../../../shared/domain/value-objects/Money';
+import { PlanId } from '../../../shared/domain/value-objects/PlanId';
+import { ProductId } from '../../../shared/domain/value-objects/ProductId';
 import { RegisterPaymentCommand } from '../ports/in/commands';
 import { RegisterPaymentCommandHandler } from '../ports/in/handlers';
 import { BillingRepositoryPort } from '../ports/out/repositories';
 import { BillingDomainEventPublisherPort, PaymentGatewayPort } from '../ports/out/external';
-import { trackFunnelEvent } from '../../../../shared/infrastructure/observability/funnel-telemetry';
+import { trackFunnelEvent } from '../../../shared/infrastructure/observability/funnel-telemetry';
 
 /** Register payment use case. */
 export class RegisterPaymentUseCase implements RegisterPaymentCommandHandler {

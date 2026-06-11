@@ -3,6 +3,8 @@ import Landing from './routes/Landing'
 import Onboarding from './routes/Onboarding'
 import Dashboard from './routes/Dashboard'
 import Checkout from './routes/Checkout'
+import CheckoutCancel from './routes/CheckoutCancel'
+import CheckoutSuccess from './routes/CheckoutSuccess'
 import Automation from './routes/Automation'
 
 export default function App() {
@@ -15,6 +17,8 @@ export default function App() {
         <Route path="/onboarding" element={<Onboarding />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout/success" element={<CheckoutSuccess />} />
+        <Route path="/checkout/cancel" element={<CheckoutCancel />} />
         <Route path="/automation" element={<Automation />} />
       </Routes>
     </Router>

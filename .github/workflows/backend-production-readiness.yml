@@ -1,0 +1,38 @@
+name: Backend Production Readiness
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate-production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run full test suite
+        run: npm run test:all
+
+      - name: Build backend
+        run: npm run build:server
+
+      - name: Build UI host
+        working-directory: ui-host
+        run: |
+          npm ci
+          npm run build
+
+      - name: Check secrets readiness
+        run: npm run check:secrets

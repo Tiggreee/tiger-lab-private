@@ -15,6 +15,7 @@ export interface HttpRequestContext {
   readonly correlationId: string;
   readonly routeKey: string;
   readonly body: unknown;
+  readonly rawBody?: string;
   auth?: AuthContext;
   idempotencyKey?: string;
   traceId?: string;

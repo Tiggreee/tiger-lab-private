@@ -47,6 +47,7 @@ import { ContentController } from '../http/controllers/ContentController';
 import { HealthController } from '../http/controllers/HealthController';
 import { ProductController } from '../http/controllers/ProductController';
 import { PayPalPaymentService } from './paypal-payment-service';
+import { FacturamaResendInvoiceAutomationService } from './invoice-automation-service';
 
 class InMemoryProductRepository implements ProductRepositoryPort {
   private readonly products = new Map<string, Product>();
@@ -519,6 +520,7 @@ export function createServerDependencyContainer(): ServerDependencyContainer {
       : undefined;
 
   const paymentGateway: PaymentGatewayPort = payPalService ?? new NoopPaymentGateway();
+  const invoiceAutomationService = new FacturamaResendInvoiceAutomationService();
 
   const registerPaymentUseCase = new RegisterPaymentUseCase(
     billingRepository,
@@ -537,7 +539,12 @@ export function createServerDependencyContainer(): ServerDependencyContainer {
     healthController: new HealthController(),
     productController: new ProductController(createProductUseCase),
     contentController: new ContentController(generateContentUseCase, publishContentUseCase),
-    billingController: new BillingController(registerPaymentUseCase, provisionAccountUseCase, payPalService),
+    billingController: new BillingController(
+      registerPaymentUseCase,
+      provisionAccountUseCase,
+      payPalService,
+      invoiceAutomationService
+    ),
     botController: new BotController(resolveOfferUseCase, captureLeadUseCase, scoreLeadUseCase)
   };
 }

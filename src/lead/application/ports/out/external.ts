@@ -1,4 +1,4 @@
-import { DomainEvent } from '../../../../../shared/domain/events/DomainEvent';
+import { DomainEvent } from '../../../../shared/domain/events/DomainEvent';
 
 /** Lead external service output ports. */
 export interface LeadScoringApiPort {

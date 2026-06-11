@@ -15,6 +15,18 @@ function shouldRunActiveProbes(): boolean {
   return process.env.HEALTHCHECK_ACTIVE_PROBES === 'true';
 }
 
+function hasCfdiProviderConfig(): boolean {
+  return hasValue('FACTURAMA_API_KEY') && hasValue('FACTURAMA_API_SECRET');
+}
+
+function hasInvoiceEmailConfig(): boolean {
+  return hasValue('RESEND_API_KEY') && hasValue('BILLING_FROM_EMAIL');
+}
+
+function isMcpPacEnabled(): boolean {
+  return (process.env.MCP_PAC_ENABLED || 'true').trim().toLowerCase() !== 'false';
+}
+
 async function probeUrl(url: string): Promise<{ ok: boolean; detail: string }> {
   const timeoutMs = Number(process.env.HEALTHCHECK_HTTP_TIMEOUT_MS || 2_000);
   const controller = new AbortController();
@@ -64,6 +76,20 @@ export class HealthController {
       },
       runtimePersistence: {
         status: 'up'
+      },
+      cfdiProvider: {
+        status: isProduction() ? (hasCfdiProviderConfig() ? 'up' : 'down') : 'skipped',
+        detail: 'Facturama credentials required for CFDI timbrado in production.'
+      },
+      invoiceEmailDelivery: {
+        status: isProduction() ? (hasInvoiceEmailConfig() ? 'up' : 'down') : 'skipped',
+        detail: 'Resend API key and BILLING_FROM_EMAIL required for invoice notifications.'
+      },
+      mcpPacLayer: {
+        status: isMcpPacEnabled() ? 'up' : 'down',
+        detail: isMcpPacEnabled()
+          ? 'MCP PAC auditor enabled for secure execution, benchmark and traceability.'
+          : 'MCP_PAC_ENABLED=false disables PAC benchmark/audit guardrails.'
       },
       postgres: {
         status: 'skipped',

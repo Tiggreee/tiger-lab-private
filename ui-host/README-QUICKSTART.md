@@ -25,13 +25,19 @@ http://localhost:5173
 - `/` → Landing
 - `/onboarding` → Formulario de onboarding
 - `/dashboard` → Dashboard de métricas
-- `/checkout` → Checkout simulado
+- `/checkout` → Checkout real conectado al backend
 - `/automation` → Panel de automatización y log
 
 ## ¿Qué está cableado?
 - Todos los componentes UI modernos (Landing, Onboarding, Dashboard, Checkout, AutomationPanel)
 - Estado global con Zustand
-- Controlador simulado (browser-safe) para callbacks y estados
+- El checkout ahora solicita `POST /billing/checkout/session` y redirige a PayPal
+- El UI host mantiene rutas hash en producción para compatibilidad con Railway
+
+## ¿Cómo conecto el runtime real?
+- Usa `ui-host/railway.json` para desplegar este UI como una app independiente en Railway.
+- El backend se despliega desde la raíz del repo con `railway.json`.
+- Configura PayPal return/cancel usando el URL publicado del UI.
 
 ## ¿Cómo conecto el runtime real?
 - Cambia el import en `src/controllers/AutonomousSystemController.ts` para usar el controlador real del repo principal.

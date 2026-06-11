@@ -9,12 +9,32 @@ import { ProvisionProductRequest } from '../contracts/requests/provision-product
 import { ProvisionProductResponse } from '../contracts/responses/provision-product-response';
 import { RegisterPaymentRequest } from '../contracts/requests/register-payment-request';
 import { RegisterPaymentResponse } from '../contracts/responses/register-payment-response';
+import { InvoiceAutomationService } from '../../bootstrap/invoice-automation-service';
 
 export class BillingController {
+  private static extractEmailFromWebhookEvent(webhookEvent: Record<string, unknown>): string | undefined {
+    const resource = webhookEvent.resource as Record<string, unknown> | undefined;
+    if (!resource) {
+      return undefined;
+    }
+
+    const payer = resource.payer as Record<string, unknown> | undefined;
+    const payerEmail = typeof payer?.email_address === 'string' ? payer.email_address : undefined;
+    if (payerEmail) {
+      return payerEmail;
+    }
+
+    const supplementaryData = resource.supplementary_data as Record<string, unknown> | undefined;
+    const relatedIds = supplementaryData?.related_ids as Record<string, unknown> | undefined;
+    const buyerEmail = typeof relatedIds?.buyer_email === 'string' ? relatedIds.buyer_email : undefined;
+    return buyerEmail;
+  }
+
   constructor(
     private readonly registerPaymentUseCase: RegisterPaymentUseCase,
     private readonly provisionAccountUseCase: ProvisionAccountUseCase,
-    private readonly payPalPaymentService?: PayPalPaymentService
+    private readonly payPalPaymentService?: PayPalPaymentService,
+    private readonly invoiceAutomationService?: InvoiceAutomationService
   ) {}
 
   public async registerPayment(request: RegisterPaymentRequest): Promise<RegisterPaymentResponse> {
@@ -34,6 +54,24 @@ export class BillingController {
       currency
     });
 
+    const invoice = this.invoiceAutomationService
+      ? await this.invoiceAutomationService.issueAndNotify({
+          paymentId,
+          customerId,
+          productId,
+          planId,
+          amount,
+          currency,
+          buyerEmail: request.buyerEmail,
+          sellerEmail: request.sellerEmail,
+          accountantEmail: request.accountantEmail
+        })
+      : {
+          status: 'skipped' as const,
+          detail: 'Invoice automation service is not configured.',
+          recipients: []
+        };
+
     return {
       status: 'ok',
       action: 'register-payment',
@@ -44,7 +82,8 @@ export class BillingController {
         planId,
         amount,
         currency,
-        dryRun: request.dryRun !== false
+        dryRun: request.dryRun !== false,
+        invoice
       }
     };
   }
@@ -85,7 +124,19 @@ export class BillingController {
     };
   }
 
-  public async handlePayPalWebhook(rawBody: string, headers: Record<string, string | undefined>): Promise<{ status: 'ok'; action: 'paypal-webhook'; result: { paymentId: string } }> {
+  public async handlePayPalWebhook(rawBody: string, headers: Record<string, string | undefined>): Promise<{
+    status: 'ok';
+    action: 'paypal-webhook';
+    result: {
+      paymentId: string;
+      invoice: {
+        status: 'issued' | 'skipped' | 'failed';
+        detail: string;
+        cfdiUuid?: string;
+        recipients: readonly string[];
+      };
+    };
+  }> {
     if (!this.payPalPaymentService) {
       throw new Error('PayPal is not configured in the server.');
     }
@@ -104,21 +155,41 @@ export class BillingController {
     const amount = this.payPalPaymentService.extractAmountFromWebhook(webhookEvent);
     const currency = this.payPalPaymentService.extractCurrencyFromWebhook(webhookEvent) ?? 'USD';
     const customerId = `paypal-${orderId}`;
+    const buyerEmail = BillingController.extractEmailFromWebhookEvent(webhookEvent);
+    const productId = 'facturautentico-cloud';
+    const planId = 'starter';
 
     await this.registerPaymentUseCase.execute({
       paymentId: orderId,
       customerId,
-      productId: 'facturautentico-cloud',
-      planId: 'starter',
+      productId,
+      planId,
       amount,
       currency
     });
+
+    const invoice = this.invoiceAutomationService
+      ? await this.invoiceAutomationService.issueAndNotify({
+          paymentId: orderId,
+          customerId,
+          productId,
+          planId,
+          amount,
+          currency,
+          buyerEmail
+        })
+      : {
+          status: 'skipped' as const,
+          detail: 'Invoice automation service is not configured.',
+          recipients: []
+        };
 
     return {
       status: 'ok',
       action: 'paypal-webhook',
       result: {
-        paymentId: orderId
+        paymentId: orderId,
+        invoice
       }
     };
   }

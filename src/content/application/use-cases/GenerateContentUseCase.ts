@@ -1,6 +1,6 @@
 import { ContentAsset } from '../../domain/entities/ContentAsset';
 import { ContentGeneratedEvent } from '../../domain/events/ContentGeneratedEvent';
-import { ProductId } from '../../../../shared/domain/value-objects/ProductId';
+import { ProductId } from '../../../shared/domain/value-objects/ProductId';
 import { GenerateContentCommand } from '../ports/in/commands';
 import { GenerateContentCommandHandler } from '../ports/in/handlers';
 import { ContentRepositoryPort } from '../ports/out/repositories';

@@ -1,12 +1,12 @@
 import { LeadScore as LeadScoreEntity } from '../../domain/entities/LeadScore';
 import { LeadScoredEvent } from '../../domain/events/LeadScoredEvent';
-import { LeadId } from '../../../../shared/domain/value-objects/LeadId';
-import { LeadScore } from '../../../../shared/domain/value-objects/LeadScore';
+import { LeadId } from '../../../shared/domain/value-objects/LeadId';
+import { LeadScore } from '../../../shared/domain/value-objects/LeadScore';
 import { ScoreLeadCommand } from '../ports/in/commands';
 import { ScoreLeadCommandHandler } from '../ports/in/handlers';
 import { LeadRepositoryPort } from '../ports/out/repositories';
 import { LeadDomainEventPublisherPort } from '../ports/out/external';
-import { trackFunnelEvent } from '../../../../shared/infrastructure/observability/funnel-telemetry';
+import { trackFunnelEvent } from '../../../shared/infrastructure/observability/funnel-telemetry';
 
 /** Score lead use case. */
 export class ScoreLeadUseCase implements ScoreLeadCommandHandler {
