@@ -31,7 +31,7 @@ jobs:
         run: npm run prod:gate:strict
 
       - name: Upload gate report
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: production-go-no-go-report
           path: |
