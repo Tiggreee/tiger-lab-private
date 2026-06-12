@@ -179,6 +179,42 @@
         }
       },
       "engineScore": 64
+    },
+    {
+      "generatedAt": "2026-06-12T15:10:40.835Z",
+      "scores": {
+        "facturautentico-cloud": {
+          "name": "FacturAutentico Cloud",
+          "score": 56,
+          "tier": "P1",
+          "status": "paused"
+        },
+        "docflow-api": {
+          "name": "Docflow API",
+          "score": 84,
+          "tier": "P3",
+          "status": "active"
+        },
+        "sentrylog-lite": {
+          "name": "Sentrylog Lite",
+          "score": 38,
+          "tier": "P1",
+          "status": "planned"
+        },
+        "script-premium-kit": {
+          "name": "Script Premium Kit",
+          "score": 84,
+          "tier": "P3",
+          "status": "active"
+        },
+        "facturautentico": {
+          "name": "FacturAutentica",
+          "score": 56,
+          "tier": "P1",
+          "status": "paused"
+        }
+      },
+      "engineScore": 64
     }
   ]
 }
