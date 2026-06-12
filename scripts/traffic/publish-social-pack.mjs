@@ -280,6 +280,20 @@ async function postLinkedIn(text) {
   const personId = me.id;
   if (!personId) throw new Error('Could not resolve LinkedIn person ID from /v2/me response');
 
+  const restResp = await fetch('https://api.linkedin.com/rest/posts', {
+    method: 'POST',
+    headers,
+    body: JSON.stringify({
+      author: `urn:li:person:${personId}`,
+      commentary: text,
+      visibility: 'PUBLIC',
+      distribution: { feedDistribution: 'MAIN_FEED', targetEntities: [], thirdPartyDistributionChannels: [] },
+      lifecycleState: 'PUBLISHED'
+    })
+  });
+  const restBody = await restResp.text();
+  if (restResp.ok) return restBody;
+
   const sharesResp = await fetch('https://api.linkedin.com/v2/shares', {
     method: 'POST',
     headers: { ...headers, 'X-Restli-Protocol-Version': '2.0.0' },
@@ -287,7 +301,7 @@ async function postLinkedIn(text) {
   });
   const sharesBody = await sharesResp.text();
   if (sharesResp.ok) return sharesBody;
-  throw new Error(`LinkedIn API ${sharesResp.status}: ${sharesBody}`);
+  throw new Error(`LinkedIn API (shares) ${sharesResp.status}: ${sharesBody}`);
 }
 
 function buildOAuth1Header({ method, url, consumerKey, consumerSecret, token, tokenSecret }) {
