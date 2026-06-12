@@ -21,6 +21,15 @@ jobs:
       - name: Agent monitor scan
         run: node scripts/agent-monitor.mjs
 
+      - name: Monetization engine — pricing recommendations
+        run: node scripts/monetization-engine.mjs
+
+      - name: Product architect — repo blueprints and changelog
+        run: node scripts/product-architect.mjs
+
+      - name: Supervisor decisions — product evaluation report
+        run: node scripts/supervisor-decision-maker.mjs report
+
       - name: Generate unified dashboard data
         run: node scripts/unified-dashboard-data.mjs
 
@@ -31,6 +40,6 @@ jobs:
         run: |
           git config user.name "tiger-bot"
           git config user.email "bot@tigerlab.dev"
-          git add ops/landings/ ops/runtime/agent-monitor.json ops/runtime/dashboard-unified.json
+          git add ops/landings/ ops/artifacts/ ops/runtime/agent-monitor.json ops/runtime/dashboard-unified.json ops/runtime/pricing.json ops/runtime/supervisor-report.json ops/runtime/system-verification.json ops/command-center/decisions.json
           git diff --cached --quiet || git commit -m "agent-monitor: scan $(date -u +%Y-%m-%dT%H:%M)"
           git push || echo "Nothing to push or push skipped"

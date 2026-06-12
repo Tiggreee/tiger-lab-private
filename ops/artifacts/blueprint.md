@@ -1,0 +1,54 @@
+# tiger-lab-private Blueprint
+
+Version: 0.1.0
+Generated: 2026-06-12T08:39:18.291Z
+Product Type: SaaS
+
+## Summary
+
+Private internal lab for advanced full-stack, DevOps, and AI projects
+
+## Architecture
+
+```mermaid
+graph TD
+  A[Client / UI] --> B[HTTP Server]
+  B --> C[Controllers]
+  C --> D[Services / Domain]
+  D --> E[Persistence / Runtime State]
+  F[Bots / Agents] --> B
+  G[CLI Scripts] --> D
+```
+
+## Tech Stack
+
+- Runtime: Node.js 20+
+- Language: TypeScript
+- Testing: Vitest
+- Payments: Stripe + PayPal
+- State: JSON files in ops/runtime/
+
+## Key Directories
+
+- src: 142 source files
+- server: 77 source files
+- shared: 1 source files
+- bots: 7 source files
+
+## Key Dependencies
+
+- pg
+- tsx
+
+## Development Dependencies
+
+- @types/node
+- @vitest/coverage-v8
+- typescript
+- vitest
+
+## Improvements
+
+1. Add integration tests (high priority)
+2. Add request validation schemas (medium)
+3. Add CI caching for faster builds (low)

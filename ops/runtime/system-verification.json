@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-12T08:33:18.057Z",
+  "generatedAt": "2026-06-12T08:39:18.505Z",
   "overallStatus": "ALL_PASS_WITH_WARNINGS",
   "summary": {
     "total": 27,
-    "pass": 24,
-    "warn": 3,
+    "pass": 25,
+    "warn": 2,
     "fail": 0
   },
   "checks": [
@@ -148,21 +148,21 @@
     {
       "label": "All Agents Active",
       "status": "PASS",
-      "detail": "20/20 agents active (7 direct monetization, 8 indirect, 5 support)",
+      "detail": "21/21 agents active (7 direct monetization, 8 indirect, 5 support)",
       "evidence": [
         "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\runtime\\agent-monitor.json"
       ]
     },
     {
       "label": "Project Agents Have Scripts",
-      "status": "WARN",
-      "detail": "3 project agents without scripts: MonetizationEngine, ProductArchitect, SupervisorDecisionMaker",
+      "status": "PASS",
+      "detail": "All project agents have executable scripts",
       "evidence": []
     },
     {
       "label": "Monetization Agents Contributing",
       "status": "PASS",
-      "detail": "75% of agents (15/20) contribute to monetization",
+      "detail": "76% of agents (16/21) contribute to monetization",
       "evidence": []
     },
     {
@@ -192,7 +192,7 @@
     {
       "label": "Daily Automation Workflow Exists",
       "status": "PASS",
-      "detail": "daily-sales-automation.yml with 11 steps",
+      "detail": "daily-sales-automation.yml with 15 steps",
       "evidence": [
         "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\.github\\workflows\\daily-sales-automation.yml"
       ]

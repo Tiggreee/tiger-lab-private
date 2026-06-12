@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-06-12T08:39:18.353Z",
+  "totalProducts": 5,
+  "activeProducts": 2,
+  "flaggedProducts": 3,
+  "evaluations": [
+    {
+      "id": "facturautentico-cloud",
+      "name": "FacturAutentico Cloud",
+      "status": "paused",
+      "revenue30d": 0,
+      "activeCustomers": 0,
+      "churnRate": 1,
+      "decision": "pause",
+      "reason": "Bloqueado por PAC Finkok. No mover hasta resolver."
+    },
+    {
+      "id": "docflow-api",
+      "name": "Docflow API",
+      "status": "active",
+      "revenue30d": 99,
+      "activeCustomers": 3,
+      "churnRate": 0.05,
+      "decision": "keep",
+      "reason": "Producto activo con traccion inicial. Mantener."
+    },
+    {
+      "id": "sentrylog-lite",
+      "name": "Sentrylog Lite",
+      "status": "planned",
+      "revenue30d": 0,
+      "activeCustomers": 0,
+      "churnRate": 1,
+      "decision": "hold",
+      "reason": "En planeacion. Requiere validacion de mercado."
+    },
+    {
+      "id": "script-premium-kit",
+      "name": "Script Premium Kit",
+      "status": "active",
+      "revenue30d": 99,
+      "activeCustomers": 3,
+      "churnRate": 0.05,
+      "decision": "keep",
+      "reason": "Producto activo con traccion inicial. Mantener."
+    },
+    {
+      "id": "facturautentico",
+      "name": "FacturAutentica",
+      "status": "paused",
+      "revenue30d": 0,
+      "activeCustomers": 0,
+      "churnRate": 1,
+      "decision": "pause",
+      "reason": "Bloqueado por PAC Finkok. No mover hasta resolver."
+    }
+  ],
+  "pendingDecisions": [
+    {
+      "id": "D-facturautentico-cloud",
+      "type": "product_supervision",
+      "impact": "medium",
+      "confidence": 0.6,
+      "status": "pending",
+      "title": "Pausar FacturAutentico Cloud",
+      "description": "Bloqueado por PAC Finkok. No mover hasta resolver.",
+      "evidence": [
+        "Evaluacion automatica desde catalogo"
+      ]
+    },
+    {
+      "id": "D-docflow-api",
+      "type": "product_supervision",
+      "impact": "high",
+      "confidence": 0.85,
+      "status": "pending",
+      "title": "Mantener Docflow API",
+      "description": "Producto activo con traccion inicial. Mantener.",
+      "evidence": [
+        "Evaluacion automatica desde catalogo"
+      ]
+    },
+    {
+      "id": "D-sentrylog-lite",
+      "type": "product_supervision",
+      "impact": "medium",
+      "confidence": 0.6,
+      "status": "pending",
+      "title": "Pausar Sentrylog Lite",
+      "description": "En planeacion. Requiere validacion de mercado.",
+      "evidence": [
+        "Evaluacion automatica desde catalogo"
+      ]
+    },
+    {
+      "id": "D-script-premium-kit",
+      "type": "product_supervision",
+      "impact": "high",
+      "confidence": 0.85,
+      "status": "pending",
+      "title": "Mantener Script Premium Kit",
+      "description": "Producto activo con traccion inicial. Mantener.",
+      "evidence": [
+        "Evaluacion automatica desde catalogo"
+      ]
+    },
+    {
+      "id": "D-facturautentico",
+      "type": "product_supervision",
+      "impact": "medium",
+      "confidence": 0.6,
+      "status": "pending",
+      "title": "Pausar FacturAutentica",
+      "description": "Bloqueado por PAC Finkok. No mover hasta resolver.",
+      "evidence": [
+        "Evaluacion automatica desde catalogo"
+      ]
+    }
+  ],
+  "recommendations": [
+    "Contratar PAC Finkok para desbloquear productos de facturacion",
+    "Configurar Stripe/PayPal live keys para habilitar checkout real",
+    "2 productos activos vendibles"
+  ]
+}

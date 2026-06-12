@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T08:33:17.699Z",
+  "generatedAt": "2026-06-12T08:39:18.417Z",
   "monetization": {
     "leadsToday": 10,
     "generatedContent": 10,
@@ -245,9 +245,9 @@
     ]
   },
   "tasks": {
-    "total": 11,
+    "total": 12,
     "done": 5,
-    "pending": 6,
+    "pending": 7,
     "items": [
       {
         "id": "PL-001",
@@ -387,6 +387,16 @@
         "debtSettled": true,
         "settledBy": "engine",
         "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json"
+      },
+      {
+        "id": "SYS-017",
+        "title": "Resolver: All Agents Active",
+        "area": "system",
+        "priority": "P0",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-13",
+        "nextAction": "20/21 agents active"
       }
     ]
   },
@@ -481,15 +491,15 @@
     "note": "Cada landing page esta optimizada para el tono y formato de su canal social."
   },
   "agentMonitor": {
-    "generatedAt": "2026-06-12T08:27:11.312Z",
+    "generatedAt": "2026-06-12T08:39:18.147Z",
     "summary": {
-      "totalAgents": 20,
-      "activeAgents": 20,
+      "totalAgents": 21,
+      "activeAgents": 21,
       "inactiveAgents": 0,
       "directMonetization": 7,
-      "indirectMonetization": 8,
+      "indirectMonetization": 9,
       "supportGovernance": 5,
-      "monetizationContributing": 15
+      "monetizationContributing": 16
     },
     "agents": [
       {
@@ -766,11 +776,12 @@
         "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
         "monetizationType": "directa",
         "integrationChannels": [
+          "script",
           "ops evidence"
         ],
         "evidence": true,
         "workflowCount": 0,
-        "hasScript": false
+        "hasScript": true
       },
       {
         "id": "ProductArchitect",
@@ -781,11 +792,12 @@
         "contributionDetail": "Soporte/gobernanza (no genera ingresos directamente)",
         "monetizationType": "soporte",
         "integrationChannels": [
+          "script",
           "ops evidence"
         ],
         "evidence": true,
         "workflowCount": 0,
-        "hasScript": false
+        "hasScript": true
       },
       {
         "id": "release-auditor",
@@ -812,11 +824,28 @@
         "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
         "monetizationType": "indirecta",
         "integrationChannels": [
+          "script",
           "ops evidence"
         ],
         "evidence": true,
         "workflowCount": 0,
-        "hasScript": false
+        "hasScript": true
+      },
+      {
+        "id": "VerificationSupervisor",
+        "name": "VerificationSupervisor",
+        "type": "Project Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+        "monetizationType": "indirecta",
+        "integrationChannels": [
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 0,
+        "hasScript": true
       }
     ]
   },

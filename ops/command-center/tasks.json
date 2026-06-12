@@ -145,6 +145,16 @@
       "debtSettled": true,
       "settledBy": "engine",
       "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json"
+    },
+    {
+      "id": "SYS-017",
+      "title": "Resolver: All Agents Active",
+      "area": "system",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-13",
+      "nextAction": "20/21 agents active"
     }
   ]
 }

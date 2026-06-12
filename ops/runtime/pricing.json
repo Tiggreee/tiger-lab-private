@@ -1,0 +1,200 @@
+{
+  "generatedAt": "2026-06-12T08:39:18.209Z",
+  "totalPlans": 10,
+  "plans": [
+    {
+      "productId": "facturautentico-cloud",
+      "productName": "FacturAutentico Cloud",
+      "planName": "Starter",
+      "price": 39,
+      "currency": "USD",
+      "billing": "monthly",
+      "tier": 1,
+      "status": "paused",
+      "suggestedPrice": 39,
+      "justification": "Starter (Tier 1) para FacturAutentico Cloud. Precio de mercado para SMBs en Mexico."
+    },
+    {
+      "productId": "facturautentico-cloud",
+      "productName": "FacturAutentico Cloud",
+      "planName": "Pro",
+      "price": 99,
+      "currency": "USD",
+      "billing": "monthly",
+      "tier": 2,
+      "status": "paused",
+      "suggestedPrice": 99,
+      "justification": "Pro (Tier 2) para FacturAutentico Cloud. Precio de mercado para SMBs en Mexico."
+    },
+    {
+      "productId": "facturautentico-cloud",
+      "productName": "FacturAutentico Cloud",
+      "planName": "Enterprise",
+      "price": 249,
+      "currency": "USD",
+      "billing": "monthly",
+      "tier": 3,
+      "status": "paused",
+      "suggestedPrice": 249,
+      "justification": "Enterprise (Tier 3) para FacturAutentico Cloud. Precio de mercado para SMBs en Mexico."
+    },
+    {
+      "productId": "docflow-api",
+      "productName": "Docflow API",
+      "planName": "Starter",
+      "price": 39,
+      "currency": "USD",
+      "billing": "monthly",
+      "tier": 1,
+      "status": "active",
+      "suggestedPrice": 39,
+      "justification": "Starter (Tier 1) para Docflow API. Precio de mercado para SMBs en Mexico."
+    },
+    {
+      "productId": "docflow-api",
+      "productName": "Docflow API",
+      "planName": "Pro",
+      "price": 99,
+      "currency": "USD",
+      "billing": "monthly",
+      "tier": 2,
+      "status": "active",
+      "suggestedPrice": 99,
+      "justification": "Pro (Tier 2) para Docflow API. Precio de mercado para SMBs en Mexico."
+    },
+    {
+      "productId": "sentrylog-lite",
+      "productName": "Sentrylog Lite",
+      "planName": "Starter",
+      "price": 39,
+      "currency": "USD",
+      "billing": "monthly",
+      "tier": 1,
+      "status": "planned",
+      "suggestedPrice": 39,
+      "justification": "Starter (Tier 1) para Sentrylog Lite. Precio de mercado para SMBs en Mexico."
+    },
+    {
+      "productId": "script-premium-kit",
+      "productName": "Script Premium Kit",
+      "planName": "Starter",
+      "price": 39,
+      "currency": "USD",
+      "billing": "monthly",
+      "tier": 1,
+      "status": "active",
+      "suggestedPrice": 39,
+      "justification": "Starter (Tier 1) para Script Premium Kit. Precio de mercado para SMBs en Mexico."
+    },
+    {
+      "productId": "script-premium-kit",
+      "productName": "Script Premium Kit",
+      "planName": "Pro",
+      "price": 99,
+      "currency": "USD",
+      "billing": "monthly",
+      "tier": 2,
+      "status": "active",
+      "suggestedPrice": 99,
+      "justification": "Pro (Tier 2) para Script Premium Kit. Precio de mercado para SMBs en Mexico."
+    },
+    {
+      "productId": "facturautentico",
+      "productName": "FacturAutentica",
+      "planName": "Starter",
+      "price": 39,
+      "currency": "USD",
+      "billing": "monthly",
+      "tier": 1,
+      "status": "paused",
+      "suggestedPrice": 39,
+      "justification": "Starter (Tier 1) para FacturAutentica. Precio de mercado para SMBs en Mexico."
+    },
+    {
+      "productId": "facturautentico",
+      "productName": "FacturAutentica",
+      "planName": "Pro",
+      "price": 99,
+      "currency": "USD",
+      "billing": "monthly",
+      "tier": 2,
+      "status": "paused",
+      "suggestedPrice": 99,
+      "justification": "Pro (Tier 2) para FacturAutentica. Precio de mercado para SMBs en Mexico."
+    }
+  ],
+  "revenue": {
+    "totalMonthly": 840,
+    "currency": "USD"
+  },
+  "recommendations": [
+    {
+      "product": "Docflow API",
+      "plan": "Starter",
+      "action": "maintain",
+      "reason": "Precio activo y dentro del rango de mercado"
+    },
+    {
+      "product": "Docflow API",
+      "plan": "Pro",
+      "action": "maintain",
+      "reason": "Precio activo y dentro del rango de mercado"
+    },
+    {
+      "product": "Script Premium Kit",
+      "plan": "Starter",
+      "action": "maintain",
+      "reason": "Precio activo y dentro del rango de mercado"
+    },
+    {
+      "product": "Script Premium Kit",
+      "plan": "Pro",
+      "action": "maintain",
+      "reason": "Precio activo y dentro del rango de mercado"
+    }
+  ],
+  "alerts": [
+    {
+      "product": "FacturAutentico Cloud",
+      "plan": "Starter",
+      "severity": "warning",
+      "message": "Producto paused — no puede venderse hasta resolver blocker",
+      "blocker": "Requiere PAC Finkok"
+    },
+    {
+      "product": "FacturAutentico Cloud",
+      "plan": "Pro",
+      "severity": "warning",
+      "message": "Producto paused — no puede venderse hasta resolver blocker",
+      "blocker": "Requiere PAC Finkok"
+    },
+    {
+      "product": "FacturAutentico Cloud",
+      "plan": "Enterprise",
+      "severity": "warning",
+      "message": "Producto paused — no puede venderse hasta resolver blocker",
+      "blocker": "Requiere PAC Finkok"
+    },
+    {
+      "product": "Sentrylog Lite",
+      "plan": "Starter",
+      "severity": "warning",
+      "message": "Producto planned — no puede venderse hasta resolver blocker",
+      "blocker": "Requiere desarrollo"
+    },
+    {
+      "product": "FacturAutentica",
+      "plan": "Starter",
+      "severity": "warning",
+      "message": "Producto paused — no puede venderse hasta resolver blocker",
+      "blocker": "Requiere PAC Finkok"
+    },
+    {
+      "product": "FacturAutentica",
+      "plan": "Pro",
+      "severity": "warning",
+      "message": "Producto paused — no puede venderse hasta resolver blocker",
+      "blocker": "Requiere PAC Finkok"
+    }
+  ]
+}

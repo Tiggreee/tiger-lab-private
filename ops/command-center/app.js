@@ -1,10 +1,10 @@
-const UNIFIED_URL = './runtime/dashboard-unified.json';
-const AGENT_MONITOR_URL = './runtime/agent-monitor.json';
-const TASKS_URL = './command-center/tasks.json';
-const DECISIONS_URL = './command-center/decisions.json';
-const PRIORITIZATION_URL = './runtime/dashboard-prioritization-report.json';
-const LEADS_URL = './leads/pipeline.json';
-const LANDINGS_URL = './landings/index.json';
+const UNIFIED_URL = '/runtime/dashboard-unified.json';
+const AGENT_MONITOR_URL = '/runtime/agent-monitor.json';
+const TASKS_URL = '/command-center/tasks.json';
+const DECISIONS_URL = '/command-center/decisions.json';
+const PRIORITIZATION_URL = '/runtime/dashboard-prioritization-report.json';
+const LEADS_URL = '/leads/pipeline.json';
+const LANDINGS_URL = '/landings/index.json';
 
 const els = {
   metrics: document.getElementById('metrics'),
@@ -124,6 +124,16 @@ function renderMetrics(data) {
     const gate = data.systemStatus?.gate || 'UNKNOWN';
     els.systemStatusBadge.textContent = `Gate: ${gate}`;
     els.systemStatusBadge.className = `badge ${gate === 'GO' ? 'badge-go' : 'badge-nogo'}`;
+  }
+
+  const led = document.getElementById('engineLed');
+  if (led) {
+    const gateOk = data.systemStatus?.gate === 'GO';
+    const agentsOk = data.agentMonitor?.summary?.activeAgents === data.agentMonitor?.summary?.totalAgents;
+    const checksOk = data.systemStatus?.automation === 'success';
+    const engineHealthy = gateOk && agentsOk && checksOk;
+    led.className = `led ${engineHealthy ? 'led-green' : 'led-red'}`;
+    led.title = engineHealthy ? 'Engine RUNNING — All systems go' : 'Engine STOPPED — Check systems';
   }
 }
 

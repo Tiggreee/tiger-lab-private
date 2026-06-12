@@ -30,6 +30,30 @@ body {
   margin-bottom: 16px;
 }
 
+.hero-led {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.led {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.led-green {
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e88;
+}
+
+.led-red {
+  background: #ef4444;
+  box-shadow: 0 0 10px #ef444488;
+}
+
 h1 {
   margin: 0;
   font-size: 2rem;

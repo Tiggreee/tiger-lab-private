@@ -50,6 +50,18 @@ function hasScript(name) {
       if (term.length > 3 && content.includes(term)) return true;
     }
   }
+  // Also check .agent.md files — agent may reference a script in its definition
+  const agentsDir = join(ROOT, 'agents');
+  if (existsSync(agentsDir)) {
+    const agentFiles = readdirSync(agentsDir).filter(f => f.endsWith('.agent.md'));
+    for (const af of agentFiles) {
+      const content = readFileSync(join(agentsDir, af), 'utf-8').toLowerCase();
+      if (content.includes('node scripts/') || content.includes('.mjs')) {
+        const normalizedName = name.toLowerCase().replace(/[^a-z0-9]/g, '');
+        if (content.includes(normalizedName)) return true;
+      }
+    }
+  }
   return false;
 }
 
