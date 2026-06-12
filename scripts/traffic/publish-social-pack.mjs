@@ -271,20 +271,17 @@ async function postLinkedIn(text) {
     else throw new Error(`LinkedIn API ${resp.status}: ${body}`);
   }
 
-  const restBody = {
-    commentary: text,
-    visibility: 'PUBLIC',
-    distribution: { feedDistribution: 'MAIN_FEED', targetEntities: [], thirdPartyDistributionChannels: [] },
-    lifecycleState: 'PUBLISHED',
-    isReshareDisabledByAuthor: false
-  };
-  const restResp = await fetch('https://api.linkedin.com/rest/posts', {
-    method: 'POST', headers: { ...headers, 'LinkedIn-Version': '202405' }, body: JSON.stringify(restBody)
-  });
-  if (restResp.ok) return await restResp.text();
+  const meResp = await fetch('https://api.linkedin.com/v2/me', { headers: { ...headers, 'X-Restli-Protocol-Version': '2.0.0' } });
+  if (!meResp.ok) {
+    const meErr = await meResp.text();
+    throw new Error(`LinkedIn /v2/me API ${meResp.status}: ${meErr}`);
+  }
+  const me = await meResp.json();
+  let memberId = me.id || (me.sub || '').replace(/^urn:li:person:/i, '');
+  if (!memberId) throw new Error('Could not resolve LinkedIn member ID from /v2/me response');
 
   const ugcPayload = {
-    author: `urn:li:person:${process.env.LINKEDIN_PERSON_ID || 'ME'}`,
+    author: `urn:li:member:${memberId}`,
     lifecycleState: 'PUBLISHED',
     specificContent: { 'com.linkedin.ugc.ShareContent': { shareCommentary: { text }, shareMediaCategory: 'NONE' } },
     visibility: { 'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC' }
