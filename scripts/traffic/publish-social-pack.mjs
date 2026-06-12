@@ -254,7 +254,7 @@ function extractLinkedInOrgId(input) {
 async function postLinkedIn(text) {
   requiredEnv(['LINKEDIN_ACCESS_TOKEN']);
   const token = process.env.LINKEDIN_ACCESS_TOKEN;
-  const headers = { Authorization: `Bearer ${token}`, 'X-Restli-Protocol-Version': '2.0.0', 'Content-Type': 'application/json' };
+  const headers = { Authorization: `Bearer ${token}`, 'X-Restli-Protocol-Version': '2.0.0', 'LinkedIn-Version': '202405', 'Content-Type': 'application/json' };
 
   if (process.env.LINKEDIN_ORG_ID) {
     const orgId = extractLinkedInOrgId(process.env.LINKEDIN_ORG_ID);
