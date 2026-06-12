@@ -271,7 +271,7 @@ async function postLinkedIn(text) {
     else throw new Error(`LinkedIn API ${resp.status}: ${body}`);
   }
 
-  const meResp = await fetch('https://api.linkedin.com/v2/me', { headers });
+  const meResp = await fetch('https://api.linkedin.com/v2/me', { headers: { ...headers, 'LinkedIn-Version': '202405' } });
   if (!meResp.ok) {
     const errBody = await meResp.text();
     throw new Error(`LinkedIn /me API ${meResp.status}: ${errBody}`);
