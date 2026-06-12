@@ -79,7 +79,7 @@ function parseArgs(argv) {
 
     if (key === 'minChannels') {
       const parsed = Number.parseInt(value, 10);
-      if (Number.isFinite(parsed) && parsed > 0) {
+      if (Number.isFinite(parsed) && parsed >= 0) {
         options.minChannels = parsed;
       }
       index += 1;
@@ -244,6 +244,14 @@ function main() {
     throw new Error(
       `Autopilot blocked: ready channels ${readyChannels.length} is below minChannels ${options.minChannels}. Report: ${reportPath}`
     );
+  }
+
+  if (readyChannels.length === 0) {
+    report.steps.goLive = 'skipped';
+    report.steps.dryPublish = 'skipped';
+    const reportPath = writeReport(options, report);
+    process.stdout.write(`\nAutopilot completed with no ready channels. Report: ${reportPath}\n`);
+    return;
   }
 
   const goLiveArgs = ['--packPath', packPath, '--channels', readyChannels.join(',')];
