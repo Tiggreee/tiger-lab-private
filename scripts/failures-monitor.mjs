@@ -24,11 +24,7 @@ async function main() {
 
   const history = loadJSON(HISTORY_PATH) || { snapshots: [], fixesApplied: [] };
 
-  // 1. Check actions permission
-  const perm = runGh(`gh api repos/Tiggreee/tiger-lab-private/actions/permissions --jq '.allowed_actions' 2>&1`);
-  console.log(`Actions permission: ${perm || 'UNKNOWN'}`);
-
-  // 2. Fetch recent failed runs
+  // 1. Fetch recent failed runs
   const failedJson = runGh(`gh run list --limit ${MAX_FAILURES} --json name,conclusion,status,createdAt,databaseId,url,headBranch,workflowDatabaseId,displayTitle --repo Tiggreee/tiger-lab-private 2>&1`);
   if (!failedJson) { console.error('Cannot fetch runs'); process.exit(1); }
 

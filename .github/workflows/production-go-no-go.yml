@@ -11,6 +11,9 @@ on:
       - '.github/copilot/agents/**'
       - '.github/workflows/production-go-no-go.yml'
 
+env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 permissions:
   contents: read
   actions: read
