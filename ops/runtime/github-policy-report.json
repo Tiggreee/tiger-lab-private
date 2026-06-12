@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-06-12T08:01:00.341Z",
+  "resources": {
+    "actionsMinutes": {
+      "used": 0,
+      "limit": 25000,
+      "unit": "minutes/mes",
+      "usagePct": 0
+    },
+    "actionsStorage": {
+      "used": 0,
+      "limit": 25,
+      "unit": "GB",
+      "usagePct": 0
+    },
+    "actionsCustomImages": {
+      "used": 0,
+      "limit": 75,
+      "unit": "GiB",
+      "usagePct": 0
+    },
+    "gitLfsBandwidth": {
+      "used": 0,
+      "limit": 125,
+      "unit": "GB/mes",
+      "usagePct": 0
+    },
+    "gitLfsStorage": {
+      "used": 0,
+      "limit": 125,
+      "unit": "GB",
+      "usagePct": 0
+    },
+    "packagesTransfer": {
+      "used": 0,
+      "limit": 50,
+      "unit": "GB/mes",
+      "usagePct": 0
+    },
+    "packagesStorage": {
+      "used": 0,
+      "limit": 25,
+      "unit": "GB",
+      "usagePct": 0
+    },
+    "gfysCredits": {
+      "used": 0,
+      "limit": 4982.4,
+      "unit": "USD/mes",
+      "usagePct": 0
+    }
+  },
+  "alerts": [],
+  "policyChanges": [],
+  "summary": {
+    "status": "OK",
+    "totalAlerts": 0,
+    "criticalAlerts": 0,
+    "nextCheck": "2026-06-19T08:01:00.342Z"
+  }
+}

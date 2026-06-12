@@ -6,7 +6,7 @@ on:
     - cron: '0 14 * * 1-5'
 
 jobs:
-  generate:
+  full-pipeline:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,9 +15,17 @@ jobs:
           node-version: 22
           cache: npm
 
-      - name: Generate content
-        run: node scripts/generate-content.mjs tiger-lab post linkedin
+      # 1. Lead Intelligence — genera leads desde ICP si no hay nuevos
+      - name: Lead Intelligence
+        run: node scripts/lead-intelligence.mjs
 
+      # 2. Generate outreach desde leads nuevos
+      - name: Generate outreach
+        run: |
+          node scripts/generate-outreach.mjs --leads ops/leads/pipeline.json || \
+          echo "No leads to process or skipped"
+
+      # 3. Generate social pack
       - name: Generate social pack
         run: |
           node scripts/traffic/generate-social-pack.mjs \
@@ -28,25 +36,33 @@ jobs:
             --baseLink "${{ vars.SOCIAL_BASE_LINK || 'https://cal.com/victor-tigerlab/diagnostic' }}" \
             --closeChannel "calendar" \
             --closeDestination "${{ vars.SOCIAL_CLOSE_DESTINATION || 'https://cal.com/victor-tigerlab/diagnostic' }}" \
-            --productName "Tiger Lab Automation" \
+            --productName "Tiger Lab" \
             --problemDetail "operaciones manuales que consumen 10+h/semana" \
-            --primaryOutcome "operación autónoma en 2 semanas" \
-            --proofPoint "SMB ahorró 15h/semana en su primer sprint" \
-            --domainTerms "automatizacion, smb, operaciones, eficiencia"
+            --primaryOutcome "operaciones autónomas" \
+            --proofPoint "2 productos viables: Docflow API y Script Kit" \
+            --domainTerms "automatizacion, smb, docflow, scripts"
 
-      - name: Run autopilot (dry-run)
+      # 4. Run autopilot (publish si hay secrets, dry-run si no)
+      - name: Run autopilot
         run: |
           node scripts/traffic/run-autopilot.mjs \
             --campaign "daily-$(date -u +%Y-%m-%d)" \
             --channels linkedin,x,facebook,telegram,discord \
-            --minChannels 1
+            --minChannels 0
 
+      # 5. Dashboard prioritization
+      - name: Dashboard prioritization
+        run: node scripts/dashboard-prioritize.mjs
+
+      # 6. Generate daily report
       - name: Generate daily report
         run: |
           echo "## Daily Sales Automation" > daily-report.md
           echo "Date: $(date -u)" >> daily-report.md
+          echo "Lead intelligence: completed" >> daily-report.md
           echo "Social pack: generated" >> daily-report.md
-          echo "Autopilot: dry-run passed" >> daily-report.md
+          echo "Autopilot: completed" >> daily-report.md
+          echo "Dashboard: prioritized" >> daily-report.md
 
       - name: Upload report
         uses: actions/upload-artifact@v4
@@ -54,10 +70,10 @@ jobs:
           name: daily-sales-report
           path: daily-report.md
 
-      - name: Commit social pack
+      - name: Commit all auto-generated assets
         run: |
           git config user.name "tiger-bot"
           git config user.email "bot@tigerlab.dev"
-          git add ops/traffic/outbox/ ops/content/
-          git diff --cached --quiet || git commit -m "daily-sales: auto-generated content $(date -u +%Y-%m-%d)"
+          git add ops/traffic/outbox/ ops/sales/outreach/ ops/leads/ ops/command-center/tasks.json ops/runtime/dashboard-prioritization-report.json
+          git diff --cached --quiet || git commit -m "daily-sales: full pipeline $(date -u +%Y-%m-%d)"
           git push || echo "Nothing to push or push skipped"

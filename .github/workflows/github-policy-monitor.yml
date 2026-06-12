@@ -1,0 +1,29 @@
+name: github-policy-monitor
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 14 * * 1'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Check GitHub billing usage
+        run: node scripts/github-policy-check.mjs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit report
+        run: |
+          git config user.name "tiger-bot"
+          git config user.email "bot@tigerlab.dev"
+          git add ops/runtime/github-policy-report.json
+          git diff --cached --quiet || git commit -m "policy: weekly github resource check $(date -u +%Y-%m-%d)"
+          git push || echo "Nothing to push"

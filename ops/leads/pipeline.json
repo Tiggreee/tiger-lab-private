@@ -1,0 +1,73 @@
+{
+  "leads": [
+    {
+      "id": "lead_1781251590690_0",
+      "name": "Carlos Martinez",
+      "company": "Carlos Tech Ops",
+      "industry": "servicios profesionales",
+      "pain": "reportes manuales",
+      "process": "reconciliacion de pagos",
+      "geo": "CDMX",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T08:06:30.690Z"
+    },
+    {
+      "id": "lead_1781251590691_1",
+      "name": "Ana Rodriguez",
+      "company": "Ana Tech Ops",
+      "industry": "servicios profesionales",
+      "pain": "reportes manuales",
+      "process": "generacion de facturas",
+      "geo": "Queretaro",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T08:06:30.691Z"
+    },
+    {
+      "id": "lead_1781251590691_2",
+      "name": "Alejandro Lopez",
+      "company": "Alejandro Tech Fin",
+      "industry": "fintech",
+      "pain": "deploy manual a produccion",
+      "process": "deploys a produccion",
+      "geo": "Queretaro",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T08:06:30.691Z"
+    },
+    {
+      "id": "lead_1781251590691_3",
+      "name": "Luis Gonzalez",
+      "company": "Luis Tech Fin",
+      "industry": "fintech",
+      "pain": "conciliacion manual",
+      "process": "creacion de reportes",
+      "geo": "CDMX",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T08:06:30.691Z"
+    },
+    {
+      "id": "lead_1781251590691_4",
+      "name": "Roberto Hernandez",
+      "company": "Roberto Tech Fin",
+      "industry": "fintech",
+      "pain": "sin equipo tecnico interno",
+      "process": "creacion de reportes",
+      "geo": "Merida",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T08:06:30.691Z"
+    }
+  ],
+  "stats": {
+    "total": 5,
+    "new": 0,
+    "contacted": 5,
+    "replied": 0,
+    "converted": 0
+  },
+  "lastOutreachGenerated": "2026-06-12T08:06:30.692Z",
+  "updatedAt": "2026-06-12T08:06:30.692Z"
+}

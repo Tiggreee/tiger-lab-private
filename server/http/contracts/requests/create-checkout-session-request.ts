@@ -5,4 +5,5 @@ export interface CreateCheckoutSessionRequest {
   readonly currency?: string;
   readonly returnUrl?: string;
   readonly cancelUrl?: string;
+  readonly provider?: 'stripe' | 'paypal';
 }

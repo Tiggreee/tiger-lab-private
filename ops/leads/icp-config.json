@@ -1,0 +1,26 @@
+{
+  "icp": {
+    "name": "SMB México - Operaciones",
+    "segments": ["fintech", "ecommerce", "logistica", "servicios profesionales"],
+    "companySize": "3-50 empleados",
+    "painPoints": [
+      "conciliacion manual",
+      "deploy manual a produccion",
+      "facturacion manual",
+      "reportes manuales",
+      "sin equipo tecnico interno"
+    ],
+    "processes": [
+      "reconciliacion de pagos",
+      "deploys a produccion",
+      "generacion de facturas",
+      "creacion de reportes",
+      "gestion de inventarios"
+    ],
+    "titles": ["founder", "CEO", "CTO", "COO", "director de operaciones", "head of product"],
+    "geo": ["CDMX", "Monterrey", "Guadalajara", "Queretaro", "Merida"],
+    "willingnessToPay": 99,
+    "source": "linkedin"
+  },
+  "generatedAt": "2026-06-12T08:10:00.000Z"
+}

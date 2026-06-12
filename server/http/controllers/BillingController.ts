@@ -2,6 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { RegisterPaymentUseCase } from '../../../src/billing/application/use-cases/RegisterPaymentUseCase';
 import { ProvisionAccountUseCase } from '../../../src/billing/application/use-cases/ProvisionAccountUseCase';
 import { PayPalPaymentService } from '../../bootstrap/paypal-payment-service';
+import { StripePaymentService } from '../../bootstrap/stripe-payment-service';
 import { HttpError } from '../errors';
 import { CreateCheckoutSessionRequest } from '../contracts/requests/create-checkout-session-request';
 import { CreateCheckoutSessionResponse } from '../contracts/responses/create-checkout-session-response';
@@ -34,6 +35,7 @@ export class BillingController {
     private readonly registerPaymentUseCase: RegisterPaymentUseCase,
     private readonly provisionAccountUseCase: ProvisionAccountUseCase,
     private readonly payPalPaymentService?: PayPalPaymentService,
+    private readonly stripePaymentService?: StripePaymentService,
     private readonly invoiceAutomationService?: InvoiceAutomationService
   ) {}
 
@@ -89,25 +91,45 @@ export class BillingController {
   }
 
   public async createCheckoutSession(request: CreateCheckoutSessionRequest): Promise<CreateCheckoutSessionResponse> {
-    if (!this.payPalPaymentService) {
-      throw new Error('PayPal is not configured in the server.');
-    }
-
-    const productId = request.productId || 'facturautentico-cloud';
+    const provider = request.provider || 'stripe';
+    const productId = request.productId || 'docflow-api';
     const planId = request.planId || 'starter';
     const amount = request.amount ?? 39;
     const currency = (request.currency || 'USD').toUpperCase();
-    const returnUrl = request.returnUrl || process.env.PAYPAL_RETURN_URL;
-    const cancelUrl = request.cancelUrl || process.env.PAYPAL_CANCEL_URL;
+    const returnUrl = request.returnUrl || process.env.PAYPAL_RETURN_URL || process.env.STRIPE_RETURN_URL;
+    const cancelUrl = request.cancelUrl || process.env.PAYPAL_CANCEL_URL || process.env.STRIPE_CANCEL_URL;
 
     if (!returnUrl || !cancelUrl) {
-      throw new HttpError(500, 'PAYPAL_RETURN_URL and PAYPAL_CANCEL_URL must be configured.');
+      throw new HttpError(500, 'Return and cancel URLs must be configured (PAYPAL_RETURN_URL / STRIPE_RETURN_URL).');
     }
 
     if (returnUrl.includes('example.com') || cancelUrl.includes('example.com')) {
-      throw new HttpError(500, 'PayPal redirect URLs cannot use example.com placeholders.');
+      throw new HttpError(500, 'Redirect URLs cannot use example.com placeholders.');
     }
 
+    if (provider === 'stripe') {
+      if (!this.stripePaymentService) {
+        throw new Error('Stripe is not configured in the server.');
+      }
+      const session = await this.stripePaymentService.createCheckoutSession(amount, currency, returnUrl, cancelUrl, productId);
+      return {
+        status: 'ok',
+        action: 'create-checkout-session',
+        result: {
+          sessionId: session.sessionId,
+          approvalUrl: session.url,
+          amount: session.amount,
+          currency: session.currency,
+          productId,
+          planId,
+          provider: 'stripe'
+        }
+      };
+    }
+
+    if (!this.payPalPaymentService) {
+      throw new Error('PayPal is not configured in the server.');
+    }
     const session = await this.payPalPaymentService.createCheckoutSession(amount, currency, returnUrl, cancelUrl);
 
     return {
@@ -119,7 +141,81 @@ export class BillingController {
         amount: session.amount,
         currency: session.currency,
         productId,
-        planId
+        planId,
+        provider: 'paypal'
+      }
+    };
+  }
+
+  public async handleStripeWebhook(rawBody: string, signature: string | undefined): Promise<{
+    status: 'ok';
+    action: 'stripe-webhook';
+    result: {
+      paymentId: string;
+      invoice: {
+        status: 'issued' | 'skipped' | 'failed';
+        detail: string;
+        cfdiUuid?: string;
+        recipients: readonly string[];
+      };
+    };
+  }> {
+    if (!this.stripePaymentService) {
+      throw new Error('Stripe is not configured in the server.');
+    }
+
+    if (!signature) {
+      throw new HttpError(401, 'Missing Stripe signature header.');
+    }
+
+    const verified = this.stripePaymentService.verifyWebhookSignature(rawBody, signature);
+    if (!verified) {
+      throw new HttpError(401, 'Invalid Stripe webhook signature.');
+    }
+
+    const webhookEvent = JSON.parse(rawBody) as Record<string, unknown>;
+    const eventType = webhookEvent.type as string;
+    if (eventType !== 'checkout.session.completed') {
+      throw new Error(`Unhandled Stripe event type: ${eventType}`);
+    }
+
+    const sessionId = webhookEvent.id as string;
+    const paymentIntent = this.stripePaymentService.extractPaymentIntentFromWebhook(webhookEvent);
+    const paymentId = paymentIntent || sessionId;
+    const amount = this.stripePaymentService.extractAmountFromWebhook(webhookEvent);
+    const currency = this.stripePaymentService.extractCurrencyFromWebhook(webhookEvent) ?? 'usd';
+    const customerId = `stripe-${paymentId}`;
+
+    await this.registerPaymentUseCase.execute({
+      paymentId,
+      customerId,
+      productId: 'docflow-api',
+      planId: 'starter',
+      amount,
+      currency
+    });
+
+    const invoice = this.invoiceAutomationService
+      ? await this.invoiceAutomationService.issueAndNotify({
+          paymentId,
+          customerId,
+          productId: 'docflow-api',
+          planId: 'starter',
+          amount,
+          currency
+        })
+      : {
+          status: 'skipped' as const,
+          detail: 'Invoice automation service is not configured.',
+          recipients: []
+        };
+
+    return {
+      status: 'ok',
+      action: 'stripe-webhook',
+      result: {
+        paymentId,
+        invoice
       }
     };
   }

@@ -51,6 +51,7 @@ import { LinkedInIntegrationController } from '../http/controllers/LinkedInInteg
 import { ProductController } from '../http/controllers/ProductController';
 import { DecisionEngine } from '../../src/orchestration/engine/DecisionEngine';
 import { PayPalPaymentService } from './paypal-payment-service';
+import { StripePaymentService } from './stripe-payment-service';
 import { FacturamaResendInvoiceAutomationService } from './invoice-automation-service';
 import { LinkedInOAuthService } from './linkedin-oauth-service';
 
@@ -527,7 +528,15 @@ export function createServerDependencyContainer(): ServerDependencyContainer {
       ? new PayPalPaymentService(payPalClientId, payPalClientSecret, payPalLiveMode)
       : undefined;
 
-  const paymentGateway: PaymentGatewayPort = payPalService ?? new NoopPaymentGateway();
+  const stripeSecretKey = process.env.STRIPE_SECRET_KEY;
+  const stripeWebhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+
+  const stripeService =
+    stripeSecretKey && stripeWebhookSecret
+      ? new StripePaymentService(stripeSecretKey, stripeWebhookSecret)
+      : undefined;
+
+  const paymentGateway: PaymentGatewayPort = stripeService ?? payPalService ?? new NoopPaymentGateway();
   const invoiceAutomationService = new FacturamaResendInvoiceAutomationService();
 
   const registerPaymentUseCase = new RegisterPaymentUseCase(
@@ -552,6 +561,7 @@ export function createServerDependencyContainer(): ServerDependencyContainer {
       registerPaymentUseCase,
       provisionAccountUseCase,
       payPalService,
+      stripeService,
       invoiceAutomationService
     ),
     botController: new BotController(resolveOfferUseCase, captureLeadUseCase, scoreLeadUseCase),

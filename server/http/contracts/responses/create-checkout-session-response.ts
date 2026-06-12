@@ -8,5 +8,6 @@ export interface CreateCheckoutSessionResponse {
     readonly currency: string;
     readonly productId: string;
     readonly planId: string;
+    readonly provider?: 'stripe' | 'paypal';
   };
 }

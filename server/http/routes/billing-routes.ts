@@ -57,6 +57,16 @@ export function buildBillingRoutes(controller: BillingController): readonly Http
         const response = await controller.handlePayPalWebhook(rawBody, headers);
         sendJson(ctx.res, 200, response);
       }
+    },
+    {
+      method: 'POST',
+      path: '/billing/webhooks/stripe',
+      handler: async (ctx) => {
+        const rawBody = ctx.rawBody ?? '';
+        const signature = getHeader(ctx.req, 'stripe-signature');
+        const response = await controller.handleStripeWebhook(rawBody, signature);
+        sendJson(ctx.res, 200, response);
+      }
     }
   ];
 }
