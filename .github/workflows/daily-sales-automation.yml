@@ -66,7 +66,11 @@ jobs:
       - name: Unified dashboard data
         run: node scripts/unified-dashboard-data.mjs
 
-      # 9. Generate daily report
+      # 9. System verification — valida cada sistema contra sus entradas/salidas
+      - name: System verification
+        run: node scripts/verify-systems.mjs
+
+      # 10. Generate daily report
       - name: Generate daily report
         run: |
           echo "## Daily Sales Automation" > daily-report.md
@@ -78,6 +82,7 @@ jobs:
           echo "Social landings: generated" >> daily-report.md
           echo "Agent monitor: completed" >> daily-report.md
           echo "Unified dashboard: generated" >> daily-report.md
+          echo "System verification: completed" >> daily-report.md
 
       - name: Upload report
         uses: actions/upload-artifact@v4
@@ -89,6 +94,6 @@ jobs:
         run: |
           git config user.name "tiger-bot"
           git config user.email "bot@tigerlab.dev"
-          git add ops/traffic/outbox/ ops/sales/outreach/ ops/leads/ ops/landings/ ops/runtime/agent-monitor.json ops/runtime/dashboard-unified.json ops/command-center/tasks.json ops/runtime/dashboard-prioritization-report.json
+          git add ops/traffic/outbox/ ops/sales/outreach/ ops/leads/ ops/landings/ ops/runtime/agent-monitor.json ops/runtime/dashboard-unified.json ops/runtime/system-verification.json ops/command-center/tasks.json ops/runtime/dashboard-prioritization-report.json
           git diff --cached --quiet || git commit -m "daily-sales: full pipeline $(date -u +%Y-%m-%d)"
           git push || echo "Nothing to push or push skipped"

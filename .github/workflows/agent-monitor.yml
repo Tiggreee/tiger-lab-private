@@ -24,6 +24,9 @@ jobs:
       - name: Generate unified dashboard data
         run: node scripts/unified-dashboard-data.mjs
 
+      - name: Verify all systems
+        run: node scripts/verify-systems.mjs
+
       - name: Commit monitor results
         run: |
           git config user.name "tiger-bot"

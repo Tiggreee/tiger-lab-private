@@ -3,7 +3,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const PORT = Number(process.env.COMMAND_CENTER_PORT || 4310);
-const root = path.resolve('ops/command-center');
+const root = path.resolve('ops');
+
+// Fix: serve /index.html -> /command-center/index.html
+function defaultIndex(urlPath) {
+  if (urlPath === '/' || urlPath === '/index.html') {
+    return '/command-center/index.html';
+  }
+  return urlPath;
+}
 
 const contentTypes = {
   '.html': 'text/html; charset=utf-8',
@@ -28,7 +36,7 @@ function serveFile(res, filePath) {
 
 const server = http.createServer((req, res) => {
   const urlPath = (req.url || '/').split('?')[0];
-  const target = urlPath === '/' ? '/index.html' : urlPath;
+  const target = defaultIndex(urlPath);
   const normalized = path.normalize(target).replace(/^\\+/, '').replace(/^\/+/, '');
   const filePath = path.join(root, normalized);
 
