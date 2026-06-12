@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-12T09:48:55.392Z",
+  "generatedAt": "2026-06-12T10:24:38.844Z",
   "strict": false,
-  "gateStatus": "GO_WITH_WARNINGS",
+  "gateStatus": "GO",
   "summary": {
-    "pass": 13,
-    "warn": 1,
+    "pass": 14,
+    "warn": 0,
     "fail": 0
   },
   "checks": [
@@ -176,18 +176,13 @@
       "id": "P14",
       "title": "Railway deploy status",
       "severity": "high",
-      "status": "WARN",
-      "details": "Último Railway deploy: failure",
+      "status": "PASS",
+      "details": "Railway deploy OK",
       "evidence": [
         ".github/workflows/backend-railway-deploy.yml"
       ],
-      "ownerAction": "Revisar Railway deploy logs."
+      "ownerAction": "Sin accion."
     }
   ],
-  "ownerNextActions": [
-    {
-      "id": "P14",
-      "action": "Revisar Railway deploy logs."
-    }
-  ]
+  "ownerNextActions": []
 }

@@ -1,8 +1,8 @@
 # Production Go/No-Go Report
 
-- generatedAt: 2026-06-12T09:48:55.392Z
-- gateStatus: GO_WITH_WARNINGS
-- summary: PASS 13 | WARN 1 | FAIL 0
+- generatedAt: 2026-06-12T10:24:38.844Z
+- gateStatus: GO
+- summary: PASS 14 | WARN 0 | FAIL 0
 
 ## Checks
 
@@ -45,10 +45,10 @@
 - P13 Test coverage thresholds: PASS
   details: Thresholds: lines 35%, statements 35%
   ownerAction: Sin accion.
-- P14 Railway deploy status: WARN
-  details: Último Railway deploy: failure
-  ownerAction: Revisar Railway deploy logs.
+- P14 Railway deploy status: PASS
+  details: Railway deploy OK
+  ownerAction: Sin accion.
 
 ## Owner Next Actions
 
-- P14: Revisar Railway deploy logs.
+- Ninguna.
