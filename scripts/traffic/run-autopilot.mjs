@@ -246,6 +246,14 @@ function main() {
     );
   }
 
+  if (readyChannels.length === 0) {
+    report.steps.goLive = 'skipped';
+    report.steps.dryPublish = 'skipped';
+    const reportPath = writeReport(options, report);
+    process.stdout.write(`\nAutopilot completed with no ready channels. Report: ${reportPath}\n`);
+    return;
+  }
+
   const goLiveArgs = ['--packPath', packPath, '--channels', readyChannels.join(',')];
   const goLiveResult = runNodeScript(goLiveScript, goLiveArgs);
   report.steps.goLive = goLiveResult.ok ? 'passed' : 'failed';
