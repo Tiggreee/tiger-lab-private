@@ -2,56 +2,11 @@
   "meta": {
     "timezone": "America/Mexico_City",
     "owner": "Victor",
-    "project": "Tiger Lab — Production Launch",
-    "lastSupervisorSyncAt": "2026-06-12T07:52:00.000Z",
-    "lastSupervisorReport": "ops/runtime/product-viability-agent-report.json",
-    "lastPrioritizedAt": "2026-06-12T08:06:31.137Z"
+    "project": "Tiger Lab — Fully Automated",
+    "lastSupervisorSyncAt": "2026-06-12T08:10:00.000Z",
+    "lastPrioritizedAt": "2026-06-12T08:10:00.000Z"
   },
   "tasks": [
-    {
-      "id": "PL-007",
-      "title": "Ejecutar publish-packages.yml dry-run",
-      "area": "delivery",
-      "priority": "P1",
-      "owner": "ai",
-      "status": "todo",
-      "dueDate": "2026-06-13",
-      "nextAction": "Ir a GitHub → Actions → publish-packages → Run workflow (dry-run: true).",
-      "daysUntilDue": 2
-    },
-    {
-      "id": "PL-008",
-      "title": "Ejecutar daily-sales-automation.yml primera vez",
-      "area": "operations",
-      "priority": "P1",
-      "owner": "ai",
-      "status": "todo",
-      "dueDate": "2026-06-13",
-      "nextAction": "Ir a GitHub → Actions → daily-sales-automation → Run workflow. Verificar que genera social pack.",
-      "daysUntilDue": 2
-    },
-    {
-      "id": "PL-010",
-      "title": "Activar PAC Finkok para desbloquear productos de facturación",
-      "area": "billing",
-      "priority": "P1",
-      "owner": "human",
-      "status": "todo",
-      "dueDate": "2026-06-19",
-      "nextAction": "Una vez tengas API key, configurar GitHub secrets y activar FacturAutentico Cloud + FacturAutentica.",
-      "daysUntilDue": 8
-    },
-    {
-      "id": "PL-011",
-      "title": "Generar nuevo social pack semanal con resultados reales",
-      "area": "traffic",
-      "priority": "P2",
-      "owner": "ai",
-      "status": "todo",
-      "dueDate": "2026-06-16",
-      "nextAction": "npm run traffic:pack -- --campaign week-2 --topic \"primer cliente pagado\".",
-      "daysUntilDue": 5
-    },
     {
       "id": "PL-001",
       "title": "Configurar Stripe live keys en GitHub Secrets",
@@ -60,8 +15,7 @@
       "owner": "human",
       "status": "todo",
       "dueDate": "2026-06-13",
-      "nextAction": "Ir a GitHub → Settings → Secrets → Actions. Agregar STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET.",
-      "daysUntilDue": 2
+      "nextAction": "Ir a GitHub → Settings → Secrets → Actions. Agregar STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET."
     },
     {
       "id": "PL-002",
@@ -71,30 +25,17 @@
       "owner": "human",
       "status": "todo",
       "dueDate": "2026-06-13",
-      "nextAction": "Agregar PAYPal_CLIENT_ID, PAYPAL_CLIENT_SECRET de cuenta business (tiggreee@vmdev.lat).",
-      "daysUntilDue": 2
+      "nextAction": "Agregar PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET de cuenta business (tiggreee@vmdev.lat)."
     },
     {
-      "id": "PL-003",
-      "title": "Publish 1 LinkedIn post anunciando Docflow API + Script Kit",
-      "area": "positioning",
+      "id": "PL-005",
+      "title": "Conectar PAC Finkok para CFDI",
+      "area": "billing",
       "priority": "P0",
       "owner": "human",
       "status": "todo",
-      "dueDate": "2026-06-13",
-      "nextAction": "Usar social pack generado en ops/traffic/outbox/social-pack-linkedin-today.md. Copiar y pegar en LinkedIn.",
-      "daysUntilDue": 2
-    },
-    {
-      "id": "PL-004",
-      "title": "Enviar 10 mensajes outbound a prospects ICP",
-      "area": "sales",
-      "priority": "P0",
-      "owner": "human",
-      "status": "todo",
-      "dueDate": "2026-06-14",
-      "nextAction": "npm run generate-outreach --leads leads.json. Enviar 5/día por LinkedIn DM.",
-      "daysUntilDue": 3
+      "dueDate": "2026-06-19",
+      "nextAction": "Crear cuenta Finkok sandbox, obtener API key. Detalles en ops/billing/PAC_OPTIONS_MEXICO.md."
     },
     {
       "id": "PL-006",
@@ -104,19 +45,7 @@
       "owner": "human",
       "status": "todo",
       "dueDate": "2026-06-16",
-      "nextAction": "Usar one-pager ops/sales/monetization-one-pager.md. Ofrecer diagnóstico 15 min.",
-      "daysUntilDue": 5
-    },
-    {
-      "id": "PL-005",
-      "title": "Conectar PAC (Finkok) para CFDI — prometido esta semana",
-      "area": "billing",
-      "priority": "P0",
-      "owner": "human",
-      "status": "todo",
-      "dueDate": "2026-06-19",
-      "nextAction": "Crear cuenta Finkok sandbox, obtener API key. Detalles en ops/billing/PAC_OPTIONS_MEXICO.md.",
-      "daysUntilDue": 8
+      "nextAction": "Usar one-pager ops/sales/monetization-one-pager.md. Ofrecer diagnóstico 15 min."
     },
     {
       "id": "PL-009",
@@ -126,8 +55,17 @@
       "owner": "human",
       "status": "todo",
       "dueDate": "2026-06-19",
-      "nextAction": "Propuesta lista. Victor: enviar a lead más caliente hoy.",
-      "daysUntilDue": 8
+      "nextAction": "Propuesta lista. Victor: enviar a lead más caliente hoy."
+    },
+    {
+      "id": "PL-010",
+      "title": "Activar PAC Finkok para desbloquear productos de facturación",
+      "area": "billing",
+      "priority": "P1",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-19",
+      "nextAction": "Una vez tengas API key, configurar GitHub secrets y activar FacturAutentico Cloud + FacturAutentica."
     }
   ]
 }
