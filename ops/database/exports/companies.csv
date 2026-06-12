@@ -1,0 +1,69 @@
+id,name,rfc,industry,size,website,phone,address,city,state,country,geo_lat,geo_lng,source,source_url,created_at,updated_at
+1,Despacho Contable Gutiérrez y Asociados,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+2,Consultoría Fiscal Hernández SC,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+3,Contadores Públicos Martínez y Cía,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+4,Asesoría Empresarial Integral MX,,consultoría,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+5,Grupo Contable López y Asociados,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+6,Despacho Jurídico-Contable Rodríguez,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+7,Facturación Electrónica Total MX,,facturación,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+8,CFDI Express Solutions,,facturación,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+9,Despacho de Contabilidad Digital,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+10,Software Contable y Administrativo Pro,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+11,Integradora de Sistemas Fiscales,,facturación,,,,,Puebla,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+12,Consultores en Automatización de Procesos,,automatización,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+13,Despacho de Outsourcing Contable,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+14,Plataforma de Facturación en la Nube,,facturación,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+15,Grupo de Asesoría Financiera Integral,,financiero,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+16,Contadores Públicos Certificados MX,,contabilidad,,,,,Tijuana,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+17,Solución de Nómina y RH Automatizada,,rrhh,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+18,Despacho Virtual de Contabilidad,,contabilidad,,,,,León,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+19,Consultoría en Transformación Digital,,consultoría,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+20,Sistema de Gestión Empresarial ERP MX,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+21,Outsourcing de Facturación Electrónica,,facturación,,,,,Puebla,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+22,Despacho Contable San Pedro,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+23,Automatización de Facturas y Cobranza,,facturación,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+24,Grupo Empresarial de Servicios Fiscales,,contabilidad,,,,,Mérida,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+25,Tecnología Aplicada a la Contabilidad,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+26,Despacho de Auditoría y Consultoría,,auditoría,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+27,CFDI y Facturación para PyMEs,,facturación,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+28,Contadores Públicos Asociados del Norte,,contabilidad,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+29,Despacho de Asesoría Fiscal Integral,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+30,Plataforma de Pagos y Facturación MX,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+31,Grupo Consultor de Negocios MX,,consultoría,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+32,Solución Integral de Facturación CFDI,,facturación,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+33,Despacho Contable Profesional Zapopan,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+34,Consultoría en Cumplimiento Fiscal,,consultoría,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+35,Software de Facturación en Línea,,software,,,,,Querétaro,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+36,Despacho de Contabilidad Gubernamental,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+37,Centro de Servicios Contables y Fiscales,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+38,Facturación Móvil para PyMEs MX,,facturación,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+39,Despacho de Contadores Especializados,,contabilidad,,,,,Toluca,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+40,Asesoría Contable y Financiera Empresarial,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+41,Grupo de Automatización de Procesos MX,,automatización,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+42,Despacho Contable Santa Fe,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+43,Solución de Facturación para Constructoras,,facturación,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+44,Consultoría en Sistemas Contables,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+45,Outsourcing de Contabilidad General,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+46,Despacho de Gestión de Cobranza,,cobranza,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+47,Plataforma de Conciliación Automática,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+48,Despacho Virtual de Asesoría Empresarial,,consultoría,,,,,León,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+49,Grupo Contable del Bajío,,contabilidad,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+50,Contadores y Auditores del Golfo,,contabilidad,,,,,Veracruz,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+51,Solución Tecnológica para Despachos,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+52,Despacho de Facturación Electrónica SA,,facturación,,,,,Puebla,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+53,Innovación en Procesos Fiscales MX,,facturación,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+54,Consultoría en Optimización Operativa,,consultoría,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+55,Centro de Contabilidad Empresarial,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+56,Despacho de Asesoría Fiscal en Línea,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+57,Grupo de Servicios Administrativos MX,,administración,,,,,Toluca,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+58,Automatización de Procesos Financieros,,fintech,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+59,Despacho de Software Contable Integral,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+60,Consultoría en Normativas Fiscales MX,,consultoría,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+61,Despacho de Contabilidad para Startups,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+62,Solución de Facturación Internacional MX,,facturación,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+63,Integración de Sistemas de Nómina,,rrhh,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+64,Grupo Financiero Contable del Centro,,financiero,,,,,Puebla,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+65,Despacho de Contabilidad en la Nube,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+66,Consultoría de Eficiencia Operacional,,consultoría,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+67,Red de Despachos Contables MX,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+68,Facturación Digital para Comercios MX,,facturación,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37

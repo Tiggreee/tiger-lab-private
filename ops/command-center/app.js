@@ -125,16 +125,6 @@ function renderMetrics(data) {
     els.systemStatusBadge.textContent = `Gate: ${gate}`;
     els.systemStatusBadge.className = `badge ${gate === 'GO' ? 'badge-go' : 'badge-nogo'}`;
   }
-
-  const led = document.getElementById('engineLed');
-  if (led) {
-    const gateOk = data.systemStatus?.gate === 'GO';
-    const agentsOk = data.agentMonitor?.summary?.activeAgents === data.agentMonitor?.summary?.totalAgents;
-    const checksOk = data.systemStatus?.automation === 'success';
-    const engineHealthy = gateOk && agentsOk && checksOk;
-    led.className = `led ${engineHealthy ? 'led-green' : 'led-red'}`;
-    led.title = engineHealthy ? 'Engine RUNNING — All systems go' : 'Engine STOPPED — Check systems';
-  }
 }
 
 function renderKPIs(data) {
@@ -376,10 +366,80 @@ async function render() {
   renderLeadPanel(leadData);
   renderLandingsPanel(landingsData);
   renderAgentMonitor(agentMonitorData);
+  renderLeadEnginePanel(unified);
+  renderImplTrackerPanel(unified);
+  renderLedIndicator(unified);
   triggerNotification(tasks);
 
   const now = new Date().toLocaleString();
   els.footerText.textContent = `Last refresh: ${now} | Data: dashboard-unified.json`;
+}
+
+function renderLeadEnginePanel(data) {
+  const list = document.getElementById('leadEngineStats');
+  const led = document.getElementById('leadEngineLed');
+  if (!list) return;
+  const le = data.leadEngine?.stats;
+  if (!le) { list.innerHTML = '<li class="task">No lead engine data</li>'; return; }
+  if (led) {
+    const status = data.leadEngine?.ledStatus || 'RED';
+    led.textContent = status;
+    led.className = `badge ${status === 'GREEN' ? 'badge-go' : status === 'YELLOW' ? 'badge-nogo' : 'badge-nogo'}`;
+  }
+  const byIndustry = le.byIndustry ? Object.entries(le.byIndustry).slice(0, 5).map(([k, v]) => `${k}: ${v}`).join(', ') : '';
+  const byCity = le.byCity ? Object.entries(le.byCity).slice(0, 5).map(([k, v]) => `${k}: ${v}`).join(', ') : '';
+  list.innerHTML = `
+    <li class="task on-track">
+      <p><b>${le.companies} companies</b> in database</p>
+      <p>Sources: ${(le.sources || []).join(', ')}</p>
+      <p>Oracle DDL: <a href="/database/oracle-import-ddl.sql" target="_blank">oracle-import-ddl.sql</a></p>
+      <p>CSV exports: <a href="/database/exports/" target="_blank">/database/exports/</a></p>
+      ${byIndustry ? `<p><b>Top industries:</b> ${byIndustry}</p>` : ''}
+      ${byCity ? `<p><b>Top cities:</b> ${byCity}</p>` : ''}
+    </li>
+    <li class="task on-track">
+      <p><b>Commands:</b></p>
+      <p><code>node scripts/lead-engine.mjs --mode seed</code> — load seed data</p>
+      <p><code>node scripts/lead-engine.mjs --mode enrich</code> — enrich via OSM</p>
+      <p><code>node scripts/lead-engine.mjs --mode export</code> — CSV for Oracle</p>
+    </li>`;
+}
+
+function renderImplTrackerPanel(data) {
+  const list = document.getElementById('implTrackerStats');
+  const badge = document.getElementById('implPercent');
+  if (!list) return;
+  const impl = data.implementationTracker?.summary;
+  if (!impl) { list.innerHTML = '<li class="task">No implementation data</li>'; return; }
+  if (badge) {
+    badge.textContent = `${impl.implementationPercent}% impl`;
+    badge.className = `badge ${impl.implementationPercent >= 80 ? 'badge-go' : impl.implementationPercent >= 50 ? 'badge-nogo' : 'badge-nogo'}`;
+  }
+  const credit = data.implementationTracker?.githubCredits || {};
+  list.innerHTML = `
+    <li class="task on-track">
+      <p><b>${impl.totalScripts} scripts</b> · ${impl.productionScripts} prod · ${impl.connectedScripts} connected · ${impl.localOnlyScripts} local · ${impl.toyScripts} toy</p>
+      <p>Implementation: <b>${impl.implementationPercent}%</b> · Connected: <b>${impl.connectedPercent}%</b> · Viability: <b>${impl.engineViability}</b></p>
+      <p>DB: ${impl.database.companies} companies · ${impl.database.contacts} contacts · ${impl.database.leads} leads</p>
+      <p>Git: ${impl.gitCommits} commits · ${impl.workflows} workflows · ${impl.agents} agents · ${impl.bots} bots</p>
+    </li>
+    <li class="task on-track">
+      <p><b>GitHub Credits (monthly):</b></p>
+      <p>Actions: ${credit.actionsMinutes?.used || 0}/${credit.actionsMinutes?.limit || 50000} min (${credit.actionsMinutes?.status || 'GREEN'})</p>
+      <p>Startups Budget: ${credit.startupsBudget?.used || '$0'}/${credit.startupsBudget?.limit || '$4,982.40'} (${credit.startupsBudget?.status || 'GREEN'})</p>
+      <p>${credit.note || ''}</p>
+    </li>`;
+}
+
+function renderLedIndicator(data) {
+  const led = document.getElementById('engineLed');
+  if (!led) return;
+  const implOk = data.implementationTracker?.summary?.implementationPercent >= 80;
+  const dbOk = (data.leadEngine?.stats?.companies || 0) > 0;
+  const gateOk = data.systemStatus?.gate === 'GO';
+  const engineHealthy = implOk && dbOk && gateOk;
+  led.className = `led ${engineHealthy ? 'led-green' : 'led-red'}`;
+  led.title = engineHealthy ? 'Engine RUNNING — Implemented + DB active + Gate GO' : 'Engine STOPPED — Check systems';
 }
 
 els.notifyBtn.addEventListener('click', async () => {

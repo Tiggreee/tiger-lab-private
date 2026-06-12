@@ -81,7 +81,13 @@
     "decisions:api": "curl -s http://localhost:8787/decisions | node -e \"process.stdin.resume(); let d=''; process.stdin.on('data',c=>d+=c); process.stdin.on('end',()=>console.log(JSON.stringify(JSON.parse(d),null,2)))\"",
     "packages:build": "npm pack",
     "packages:publish:dry": "npm run test:all && npm pack",
-    "cost-guard:audit": "node -e \"console.log('Cost guard audit: OK - under 50% caps'); console.log('Actions min: ~800/25000 (3.2%)'); console.log('Packages: 0/50GB (0%)'); console.log('Storage: <1GB/25GB (4%)')\""
+    "cost-guard:audit": "node -e \"console.log('Cost guard audit: OK - under 50% caps'); console.log('Actions min: ~800/25000 (3.2%)'); console.log('Packages: 0/50GB (0%)'); console.log('Storage: <1GB/25GB (4%)')\"",
+    "lead:seed": "node scripts/lead-engine.mjs --mode seed",
+    "lead:enrich": "node scripts/lead-engine.mjs --mode enrich",
+    "lead:export": "node scripts/lead-engine.mjs --mode export",
+    "lead:engine": "node scripts/lead-engine.mjs --mode auto",
+    "impl:track": "node scripts/implementation-tracker.mjs",
+    "db:init": "node scripts/init-database.mjs"
   },
   "devDependencies": {
     "@types/node": "^24.12.3",
@@ -94,6 +100,7 @@
   },
   "dependencies": {
     "pg": "^8.21.0",
+    "sql.js": "^1.14.1",
     "tsx": "^4.22.4"
   }
 }
