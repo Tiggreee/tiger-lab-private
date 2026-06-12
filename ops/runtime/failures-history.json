@@ -20,10 +20,33 @@
         "schema-validation": 2
       },
       "perm": "all"
+    },
+    {
+      "timestamp": "2026-06-12T09:29:55.647Z",
+      "totalRuns": 100,
+      "failed": 69,
+      "successful": 31,
+      "byType": {
+        "failure": 3,
+        "startup_failure": 66
+      },
+      "byWorkflow": {
+        "test-all": 1,
+        "Backend Production Readiness": 7,
+        "Deploy Backend to Railway": 7,
+        "CI": 12,
+        "Production Go No-Go": 6,
+        "e2e": 12,
+        "Copilot Agents Validation": 14,
+        "security": 2,
+        "contract-tests": 6,
+        "schema-validation": 2
+      },
+      "perm": "all"
     }
   ],
   "fixesApplied": [],
   "lastKnownPermission": "all",
-  "lastAnalysis": "2026-06-12T09:24:36.791Z",
-  "totalFailuresTracked": 72
+  "lastAnalysis": "2026-06-12T09:29:55.648Z",
+  "totalFailuresTracked": 141
 }

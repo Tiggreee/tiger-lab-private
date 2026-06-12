@@ -369,6 +369,7 @@ async function render() {
   renderLeadEnginePanel(unified);
   renderImplTrackerPanel(unified);
   renderProductEnginePanel(unified);
+  renderFailuresMonitorPanel(unified);
   renderLedIndicator(unified);
   triggerNotification(tasks);
 
@@ -462,6 +463,38 @@ function renderProductEnginePanel(data) {
     <li class="task on-track">
       <p><b>Cycle:</b> <code>npm run prod:engine</code> · <code>.github/workflows/product-engine-2h-cycle.yml</code></p>
       <p><b>Data:</b> <a href="/runtime/product-scores.json" target="_blank">product-scores.json</a> · <a href="/runtime/product-roadmaps.json" target="_blank">product-roadmaps.json</a></p>
+    </li>`;
+}
+
+function renderFailuresMonitorPanel(data) {
+  const list = document.getElementById('failuresMonitorStats');
+  const badge = document.getElementById('failuresCount');
+  if (!list) return;
+  const fm = data.failuresMonitor;
+  if (!fm) { list.innerHTML = '<li class="task">No failures monitor data</li>'; return; }
+  if (badge) {
+    badge.textContent = `${fm.failedToday} failed`;
+    badge.className = `badge ${fm.failedToday === 0 ? 'badge-go' : 'badge-nogo'}`;
+  }
+  const wfHtml = (fm.byWorkflow || []).slice(0, 8).map(w =>
+    `<p>${w.workflow}: ${w.failures} failures</p>`
+  ).join('');
+  const rcHtml = (fm.rootCauses || []).map(rc =>
+    `<p><span class="badge ${rc.severity === 'fixed' ? 'badge-go' : 'badge-nogo'}">${rc.severity}</span> ${rc.cause}</p>`
+  ).join('');
+  list.innerHTML = `
+    <li class="task on-track">
+      <p><b>${fm.totalRuns} runs analyzed</b> · ${fm.failedToday} failed · ${fm.successfulToday} successful</p>
+      <p><b>Permission:</b> ${fm.currentPermission || 'UNKNOWN'} ${fm.permFixed ? '(FIXED)' : ''}</p>
+      ${rcHtml}
+    </li>
+    <li class="task on-track">
+      <p><b>Failures by workflow:</b></p>
+      ${wfHtml || '<p>None</p>'}
+    </li>
+    <li class="task on-track">
+      <p><b>Cycle:</b> <code>.github/workflows/failures-monitor-2h-cycle.yml</code></p>
+      <p><b>Data:</b> <a href="/runtime/failures-history.json" target="_blank">failures-history.json</a></p>
     </li>`;
 }
 

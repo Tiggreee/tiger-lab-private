@@ -1,0 +1,32 @@
+name: Failures Monitor — 2h Cycle
+
+on:
+  schedule:
+    - cron: '30 */2 * * *'
+  workflow_dispatch:
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  scan-and-fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Scan failures and auto-fix
+        run: node scripts/failures-monitor.mjs
+      - name: Check gate status
+        run: npm run prod:gate
+      - name: Commit scan results
+        run: |
+          git config user.name "tigerlab-bot"
+          git config user.email "bot@tigerlab.ai"
+          git add ops/runtime/failures-history.json ops/runtime/dashboard-unified.json
+          git diff --cached --quiet || git commit -m "failures-monitor: scan $(date -u '+%Y-%m-%dT%H:%M')"
+          git push
