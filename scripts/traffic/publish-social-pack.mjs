@@ -271,15 +271,21 @@ async function postLinkedIn(text) {
     else throw new Error(`LinkedIn API ${resp.status}: ${body}`);
   }
 
-  const meResp = await fetch('https://api.linkedin.com/v2/me', { headers: { ...headers, 'LinkedIn-Version': '202405' } });
-  if (!meResp.ok) {
-    const errBody = await meResp.text();
-    throw new Error(`LinkedIn /me API ${meResp.status}: ${errBody}`);
+  let personId = null;
+  const userinfoResp = await fetch('https://api.linkedin.com/v2/userinfo', { headers });
+  if (userinfoResp.ok) {
+    const info = await userinfoResp.json();
+    personId = (info.sub || '').replace(/^urn:li:person:/i, '');
   }
-  const me = await meResp.json();
-  const rawId = me.sub || me.id;
-  if (!rawId) throw new Error('Could not resolve LinkedIn person ID from /me endpoint');
-  const personId = rawId.replace(/^urn:li:person:/i, '');
+  if (!personId) {
+    const meResp = await fetch('https://api.linkedin.com/v2/me', { headers });
+    if (meResp.ok) {
+      const me = await meResp.json();
+      const rawId = me.sub || me.id;
+      if (rawId) personId = rawId.replace(/^urn:li:person:/i, '');
+    }
+  }
+  if (!personId) throw new Error('Could not resolve LinkedIn person ID. Ensure token has r_liteprofile or openid scope.');
 
   const payload = {
     author: `urn:li:person:${personId}`,
