@@ -277,19 +277,17 @@ async function postLinkedIn(text) {
     throw new Error(`LinkedIn /v2/me API ${meResp.status}: ${meErr}`);
   }
   const me = await meResp.json();
-  let memberId = me.id || (me.sub || '').replace(/^urn:li:person:/i, '');
-  if (!memberId) throw new Error('Could not resolve LinkedIn member ID from /v2/me response');
+  const personId = me.id;
+  if (!personId) throw new Error('Could not resolve LinkedIn person ID from /v2/me response');
 
-  const ugcPayload = {
-    author: `urn:li:member:${memberId}`,
-    lifecycleState: 'PUBLISHED',
-    specificContent: { 'com.linkedin.ugc.ShareContent': { shareCommentary: { text }, shareMediaCategory: 'NONE' } },
-    visibility: { 'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC' }
-  };
-  const ugcResp = await fetch('https://api.linkedin.com/v2/ugcPosts', { method: 'POST', headers, body: JSON.stringify(ugcPayload) });
-  const ugcBody = await ugcResp.text();
-  if (!ugcResp.ok) throw new Error(`LinkedIn API ${ugcResp.status}: ${ugcBody}`);
-  return ugcBody;
+  const sharesResp = await fetch('https://api.linkedin.com/v2/shares', {
+    method: 'POST',
+    headers: { ...headers, 'X-Restli-Protocol-Version': '2.0.0' },
+    body: JSON.stringify({ owner: `urn:li:person:${personId}`, subject: '', text: { text } })
+  });
+  const sharesBody = await sharesResp.text();
+  if (sharesResp.ok) return sharesBody;
+  throw new Error(`LinkedIn API ${sharesResp.status}: ${sharesBody}`);
 }
 
 function buildOAuth1Header({ method, url, consumerKey, consumerSecret, token, tokenSecret }) {
