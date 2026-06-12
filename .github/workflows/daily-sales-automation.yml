@@ -8,6 +8,7 @@ on:
 jobs:
   full-pipeline:
     runs-on: ubuntu-latest
+    environment: production-social
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v5
