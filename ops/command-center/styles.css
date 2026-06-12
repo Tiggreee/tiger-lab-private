@@ -157,6 +157,72 @@ footer {
   font-size: 0.9rem;
 }
 
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+}
+
+.kpi-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--brand);
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.kpi-card small {
+  display: block;
+  color: #4a5966;
+  font-size: 0.75rem;
+  margin-bottom: 4px;
+}
+
+.kpi-card b {
+  font-size: 1.6rem;
+  color: var(--ink);
+}
+
+.funnel-stages {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.funnel-stage {
+  flex: 1;
+  min-width: 80px;
+  text-align: center;
+  padding: 10px 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.funnel-active {
+  background: var(--brand);
+  color: #fff;
+  border-color: var(--brand);
+}
+
+.funnel-inactive {
+  background: #e6ecef;
+  color: #7a8a96;
+}
+
+.badge-go {
+  background: var(--ok);
+  color: #fff;
+}
+
+.badge-nogo {
+  background: var(--danger);
+  color: #fff;
+}
+
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;

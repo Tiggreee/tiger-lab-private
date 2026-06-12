@@ -1,0 +1,902 @@
+{
+  "generatedAt": "2026-06-12T08:27:10.863Z",
+  "monetization": {
+    "leadsToday": 10,
+    "generatedContent": 10,
+    "activeBots": 4,
+    "averagePrice": "$69.00"
+  },
+  "funnel": {
+    "stages": [
+      "Visit",
+      "Lead",
+      "Trial",
+      "Checkout",
+      "Paid"
+    ],
+    "activeStage": "Lead"
+  },
+  "campaigns": {
+    "total": 10,
+    "recent": [
+      {
+        "file": "social-pack-script-premium-kit-pilot.json",
+        "name": "script-premium-kit-pilot",
+        "topic": "Automatizaciones premium para operaciones con velocidad",
+        "avgScore": 100,
+        "projectedLift": 24,
+        "targetReached": true,
+        "mcpDecision": "unknown",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-05-31T05:20:21.500Z"
+      },
+      {
+        "file": "social-pack-produccion-week1.json",
+        "name": "produccion-week1",
+        "topic": "Automatización SMB ya disponible — Docflow API + Script Kit",
+        "avgScore": 100,
+        "projectedLift": 24,
+        "targetReached": true,
+        "mcpDecision": "apply",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-06-12T08:02:49.716Z"
+      },
+      {
+        "file": "social-pack-mcp-leads-2026-06-11.json",
+        "name": "mcp-leads-2026-06-11",
+        "topic": "Campanas con leads calificables en menos de 24h",
+        "avgScore": 97,
+        "projectedLift": 22,
+        "targetReached": true,
+        "mcpDecision": "apply",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-06-11T07:18:51.336Z"
+      },
+      {
+        "file": "social-pack-mcp-cfdi-2026-06-11.json",
+        "name": "mcp-cfdi-2026-06-11",
+        "topic": "Cumplimiento CFDI sin caos operativo",
+        "avgScore": 100,
+        "projectedLift": 24,
+        "targetReached": true,
+        "mcpDecision": "apply",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-06-11T07:18:51.271Z"
+      },
+      {
+        "file": "social-pack-linkedin-today.json",
+        "name": "linkedin-today",
+        "topic": "Automatización de operaciones para SMBs sin equipo técnico",
+        "avgScore": 100,
+        "projectedLift": 24,
+        "targetReached": true,
+        "mcpDecision": "apply",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-06-12T07:43:17.057Z"
+      },
+      {
+        "file": "social-pack-launch-4-products.json",
+        "name": "launch-4-products",
+        "topic": "Sistema autonomo para atraer leads con menos friccion operativa",
+        "avgScore": 94,
+        "projectedLift": 20,
+        "targetReached": true,
+        "mcpDecision": "unknown",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-05-31T03:05:22.764Z"
+      },
+      {
+        "file": "social-pack-facturautentico-cloud-pilot.json",
+        "name": "facturautentico-cloud-pilot",
+        "topic": "Facturacion cloud lista para escalar sin caos",
+        "avgScore": 100,
+        "projectedLift": 24,
+        "targetReached": true,
+        "mcpDecision": "unknown",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-05-31T04:56:16.558Z"
+      },
+      {
+        "file": "social-pack-facturaautentica-railway-ready-2026-06-01.json",
+        "name": "facturaautentica-railway-ready-2026-06-01",
+        "topic": "CFDI confiable sin retrabajo operativo",
+        "avgScore": 95,
+        "projectedLift": 20,
+        "targetReached": true,
+        "mcpDecision": "unknown",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-06-01T00:00:00.000Z"
+      },
+      {
+        "file": "social-pack-docflow-api-pilot.json",
+        "name": "docflow-api-pilot",
+        "topic": "Flujos documentales API-first sin cuellos de botella",
+        "avgScore": 100,
+        "projectedLift": 24,
+        "targetReached": true,
+        "mcpDecision": "unknown",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-05-31T05:20:20.801Z"
+      },
+      {
+        "file": "social-pack-all-about-money-pilot.json",
+        "name": "all-about-money-pilot",
+        "topic": "14 rutas reales para monetizar IA sin humo",
+        "avgScore": 100,
+        "projectedLift": 24,
+        "targetReached": true,
+        "mcpDecision": "unknown",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-05-31T05:20:20.100Z"
+      }
+    ]
+  },
+  "bots": {
+    "active": [
+      "ContentBot",
+      "FAQBot",
+      "ProvisionBot",
+      "SalesBot"
+    ],
+    "paperPending": [
+      "ReconciliationBot",
+      "IncidentBot",
+      "ReleaseGateBot",
+      "SupervisorSyncBot",
+      "MarketResearchBot"
+    ]
+  },
+  "products": {
+    "total": 5,
+    "active": 2,
+    "paused": 2,
+    "planned": 1,
+    "items": [
+      {
+        "id": "facturautentico-cloud",
+        "name": "FacturAutentico Cloud",
+        "status": "paused",
+        "plans": ""
+      },
+      {
+        "id": "docflow-api",
+        "name": "Docflow API",
+        "status": "active",
+        "plans": ""
+      },
+      {
+        "id": "sentrylog-lite",
+        "name": "Sentrylog Lite",
+        "status": "planned",
+        "plans": ""
+      },
+      {
+        "id": "script-premium-kit",
+        "name": "Script Premium Kit",
+        "status": "active",
+        "plans": ""
+      },
+      {
+        "id": "facturautentico",
+        "name": "FacturAutentica",
+        "status": "paused",
+        "plans": ""
+      }
+    ]
+  },
+  "tasks": {
+    "total": 11,
+    "done": 5,
+    "pending": 6,
+    "items": [
+      {
+        "id": "PL-001",
+        "title": "Configurar Stripe live keys en GitHub Secrets",
+        "area": "payments",
+        "priority": "P0",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-13",
+        "nextAction": "Ir a GitHub → Settings → Secrets → Actions. Agregar STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET.",
+        "debtSettled": false,
+        "blocker": "No tengo las API keys"
+      },
+      {
+        "id": "PL-002",
+        "title": "Configurar PayPal live keys en GitHub Secrets",
+        "area": "payments",
+        "priority": "P0",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-13",
+        "nextAction": "Agregar PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET de cuenta business (tiggreee@vmdev.lat).",
+        "debtSettled": false,
+        "blocker": "No tengo las API keys"
+      },
+      {
+        "id": "PL-003",
+        "title": "Publicar LinkedIn post (Docflow API + Script Kit)",
+        "area": "positioning",
+        "priority": "P1",
+        "owner": "ai",
+        "status": "done",
+        "dueDate": "2026-06-12",
+        "nextAction": "Copy listo. Autopilot intentó publish pero requiere LINKEDIN_ACCESS_TOKEN. Social pack generado y guardado.",
+        "debtSettled": true,
+        "settledBy": "engine",
+        "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json",
+        "debtNote": "Engine generó el contenido. Publicación real requiere secrets de LinkedIn que solo Victor puede configurar."
+      },
+      {
+        "id": "PL-004",
+        "title": "Enviar mensajes outbound a prospects ICP",
+        "area": "sales",
+        "priority": "P1",
+        "owner": "ai",
+        "status": "done",
+        "dueDate": "2026-06-12",
+        "nextAction": "Lead Intelligence generó 10 leads y 10 mensajes outbound automáticamente.",
+        "debtSettled": true,
+        "settledBy": "engine",
+        "evidence": "ops/sales/outreach/outreach-batch-2026-06-12.md",
+        "debtNote": "Engine generó leads desde ICP y creó los mensajes. Envío manual por LinkedIn DM requiere Victor."
+      },
+      {
+        "id": "PL-005",
+        "title": "Conectar PAC Finkok para CFDI",
+        "area": "billing",
+        "priority": "P0",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-19",
+        "nextAction": "Crear cuenta Finkok sandbox, obtener API key.",
+        "debtSettled": false,
+        "blocker": "Requiere que Victor contrate Finkok"
+      },
+      {
+        "id": "PL-006",
+        "title": "Book 3 discovery calls con leads calientes",
+        "area": "sales",
+        "priority": "P0",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-16",
+        "nextAction": "Usar one-pager. Ofrecer diagnóstico 15 min.",
+        "debtSettled": false,
+        "blocker": "Requiere que Victor haga las llamadas"
+      },
+      {
+        "id": "PL-007",
+        "title": "Ejecutar publish-packages.yml dry-run",
+        "area": "delivery",
+        "priority": "P2",
+        "owner": "ai",
+        "status": "done",
+        "dueDate": "2026-06-12",
+        "nextAction": "npm pack --dry-run ejecutado. Package listo (674 archivos, 544.5 kB). Workflow validado.",
+        "debtSettled": true,
+        "settledBy": "engine",
+        "evidence": "npm pack --dry-run OK"
+      },
+      {
+        "id": "PL-008",
+        "title": "Ejecutar daily-sales-automation pipeline completo",
+        "area": "operations",
+        "priority": "P2",
+        "owner": "ai",
+        "status": "done",
+        "dueDate": "2026-06-12",
+        "nextAction": "Pipeline completo ejecutado localmente: leads → outreach → social pack → dashboard priorization.",
+        "debtSettled": true,
+        "settledBy": "engine",
+        "evidence": "scripts/lead-intelligence.mjs + scripts/dashboard-prioritize.mjs + scripts/traffic/generate-social-pack.mjs"
+      },
+      {
+        "id": "PL-009",
+        "title": "Cerrar primer sprint pagado (Docflow API o Script Kit)",
+        "area": "revenue",
+        "priority": "P0",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-19",
+        "nextAction": "Propuesta lista. Victor: enviar a lead más caliente hoy.",
+        "debtSettled": false,
+        "blocker": "Requiere que Victor cierre el trato"
+      },
+      {
+        "id": "PL-010",
+        "title": "Activar PAC Finkok para desbloquear facturación",
+        "area": "billing",
+        "priority": "P1",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-19",
+        "nextAction": "Una vez tengas API key, configurar GitHub secrets y activar productos.",
+        "debtSettled": false,
+        "blocker": "Requiere PAC key de Victor"
+      },
+      {
+        "id": "PL-011",
+        "title": "Generar social pack semanal con resultados reales",
+        "area": "traffic",
+        "priority": "P2",
+        "owner": "ai",
+        "status": "done",
+        "dueDate": "2026-06-12",
+        "nextAction": "Social pack 'produccion-week1' generado con 24% lift proyectado.",
+        "debtSettled": true,
+        "settledBy": "engine",
+        "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json"
+      }
+    ]
+  },
+  "landings": {
+    "title": "Tiger Lab - Social Landing Pages Index",
+    "generatedAt": "2026-06-12T08:21:35.419Z",
+    "summary": {
+      "totalProducts": 5,
+      "activeProducts": 2,
+      "pausedProducts": 2,
+      "totalLandingPages": 25,
+      "channelsUsed": [
+        "LinkedIn",
+        "X / Twitter",
+        "Facebook",
+        "Telegram",
+        "Discord"
+      ]
+    },
+    "products": {
+      "facturautentico-cloud": {
+        "product": "FacturAutentico Cloud",
+        "status": "paused",
+        "channels": [
+          "LinkedIn",
+          "X / Twitter",
+          "Facebook",
+          "Telegram",
+          "Discord"
+        ]
+      },
+      "docflow-api": {
+        "product": "Docflow API",
+        "status": "active",
+        "channels": [
+          "LinkedIn",
+          "X / Twitter",
+          "Facebook",
+          "Telegram",
+          "Discord"
+        ]
+      },
+      "sentrylog-lite": {
+        "product": "Sentrylog Lite",
+        "status": "planned",
+        "channels": [
+          "LinkedIn",
+          "X / Twitter",
+          "Facebook",
+          "Telegram",
+          "Discord"
+        ]
+      },
+      "script-premium-kit": {
+        "product": "Script Premium Kit",
+        "status": "active",
+        "channels": [
+          "LinkedIn",
+          "X / Twitter",
+          "Facebook",
+          "Telegram",
+          "Discord"
+        ]
+      },
+      "facturautentico": {
+        "product": "FacturAutentica",
+        "status": "paused",
+        "channels": [
+          "LinkedIn",
+          "X / Twitter",
+          "Facebook",
+          "Telegram",
+          "Discord"
+        ]
+      }
+    },
+    "activeProducts": [
+      "Docflow API",
+      "Script Premium Kit"
+    ],
+    "pausedProducts": [
+      {
+        "name": "FacturAutentico Cloud",
+        "note": "Requiere PAC Finkok para CFDI. Presupuestado $99/mes."
+      },
+      {
+        "name": "FacturAutentica",
+        "note": "Requiere PAC Finkok para CFDI. Presupuestado $99/mes."
+      }
+    ],
+    "cta": "https://cal.com/victor-tigerlab/diagnostic",
+    "note": "Cada landing page esta optimizada para el tono y formato de su canal social."
+  },
+  "agentMonitor": {
+    "generatedAt": "2026-06-12T08:21:35.960Z",
+    "summary": {
+      "totalAgents": 20,
+      "activeAgents": 20,
+      "inactiveAgents": 0,
+      "directMonetization": 7,
+      "indirectMonetization": 8,
+      "supportGovernance": 5,
+      "monetizationContributing": 15
+    },
+    "agents": [
+      {
+        "id": "agent-audit",
+        "name": "Audit",
+        "type": "Copilot Agent",
+        "active": true,
+        "monetizationContribution": "parcial",
+        "contributionDetail": "Soporte/gobernanza (no genera ingresos directamente)",
+        "monetizationType": "soporte",
+        "integrationChannels": [
+          "workflows: copilot-agents-validation.yml, production-go-no-go.yml, security.yml",
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 3,
+        "hasScript": true
+      },
+      {
+        "id": "agent-bots",
+        "name": "Bots",
+        "type": "Copilot Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+        "monetizationType": "indirecta",
+        "integrationChannels": [
+          "workflows: copilot-agents-validation.yml, production-go-no-go.yml",
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 2,
+        "hasScript": true
+      },
+      {
+        "id": "agent-docs",
+        "name": "Docs",
+        "type": "Copilot Agent",
+        "active": true,
+        "monetizationContribution": "parcial",
+        "contributionDetail": "Soporte/gobernanza (no genera ingresos directamente)",
+        "monetizationType": "soporte",
+        "integrationChannels": [
+          "workflows: copilot-agents-validation.yml, pr-title-check.yml, production-go-no-go.yml",
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 3,
+        "hasScript": true
+      },
+      {
+        "id": "agent-master",
+        "name": "Master",
+        "type": "Copilot Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+        "monetizationType": "indirecta",
+        "integrationChannels": [
+          "workflows: copilot-agents-validation.yml, production-go-no-go.yml",
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 2,
+        "hasScript": true
+      },
+      {
+        "id": "agent-pipelines",
+        "name": "Pipelines",
+        "type": "Copilot Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+        "monetizationType": "indirecta",
+        "integrationChannels": [
+          "workflows: copilot-agents-validation.yml, production-go-no-go.yml",
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 2,
+        "hasScript": true
+      },
+      {
+        "id": "agent-products",
+        "name": "Products",
+        "type": "Copilot Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
+        "monetizationType": "directa",
+        "integrationChannels": [
+          "workflows: copilot-agents-validation.yml, product-release-pipeline.yml, production-go-no-go.yml, repo-intel-sync.yml",
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 4,
+        "hasScript": true
+      },
+      {
+        "id": "agent-runtime",
+        "name": "Runtime",
+        "type": "Copilot Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+        "monetizationType": "indirecta",
+        "integrationChannels": [
+          "workflows: billing-reconciliation-daily.yml, copilot-agents-validation.yml, daily-sales-automation.yml, github-policy-monitor.yml, production-go-no-go.yml, publish-packages.yml",
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 6,
+        "hasScript": true
+      },
+      {
+        "id": "agent-tiggreeeon",
+        "name": "Tiggreeeon",
+        "type": "Copilot Agent",
+        "active": true,
+        "monetizationContribution": "parcial",
+        "contributionDetail": "Soporte/gobernanza (no genera ingresos directamente)",
+        "monetizationType": "soporte",
+        "integrationChannels": [
+          "workflows: copilot-agents-validation.yml, production-go-no-go.yml",
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 2,
+        "hasScript": true
+      },
+      {
+        "id": "agent-traffic",
+        "name": "Traffic",
+        "type": "Copilot Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
+        "monetizationType": "directa",
+        "integrationChannels": [
+          "workflows: copilot-agents-validation.yml, daily-sales-automation.yml, production-go-no-go.yml, social-publish.yml",
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 4,
+        "hasScript": true
+      },
+      {
+        "id": "BotOrchestrator",
+        "name": "BotOrchestrator",
+        "type": "Project Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
+        "monetizationType": "directa",
+        "integrationChannels": [
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 0,
+        "hasScript": true
+      },
+      {
+        "id": "ContentEngine",
+        "name": "ContentEngine",
+        "type": "Project Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+        "monetizationType": "indirecta",
+        "integrationChannels": [
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 0,
+        "hasScript": true
+      },
+      {
+        "id": "DashboardPrioritization",
+        "name": "DashboardPrioritization",
+        "type": "Project Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+        "monetizationType": "indirecta",
+        "integrationChannels": [
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 0,
+        "hasScript": true
+      },
+      {
+        "id": "GitHubPolicyMonitor",
+        "name": "GitHubPolicyMonitor",
+        "type": "Project Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+        "monetizationType": "indirecta",
+        "integrationChannels": [
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 0,
+        "hasScript": true
+      },
+      {
+        "id": "LandingSocialAgent",
+        "name": "LandingSocialAgent",
+        "type": "Project Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
+        "monetizationType": "directa",
+        "integrationChannels": [
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 0,
+        "hasScript": true
+      },
+      {
+        "id": "LeadAnalyzer",
+        "name": "LeadAnalyzer",
+        "type": "Project Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
+        "monetizationType": "directa",
+        "integrationChannels": [
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 0,
+        "hasScript": true
+      },
+      {
+        "id": "LeadIntelligence",
+        "name": "LeadIntelligence",
+        "type": "Project Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
+        "monetizationType": "directa",
+        "integrationChannels": [
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 0,
+        "hasScript": true
+      },
+      {
+        "id": "MonetizationEngine",
+        "name": "MonetizationEngine",
+        "type": "Project Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
+        "monetizationType": "directa",
+        "integrationChannels": [
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 0,
+        "hasScript": false
+      },
+      {
+        "id": "ProductArchitect",
+        "name": "ProductArchitect",
+        "type": "Project Agent",
+        "active": true,
+        "monetizationContribution": "parcial",
+        "contributionDetail": "Soporte/gobernanza (no genera ingresos directamente)",
+        "monetizationType": "soporte",
+        "integrationChannels": [
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 0,
+        "hasScript": false
+      },
+      {
+        "id": "release-auditor",
+        "name": "Release Auditor",
+        "type": "Release Auditor",
+        "active": true,
+        "monetizationContribution": "parcial",
+        "contributionDetail": "Soporte/gobernanza (no genera ingresos directamente)",
+        "monetizationType": "soporte",
+        "integrationChannels": [
+          "workflows: product-release-pipeline.yml, release-starter.yml",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 2,
+        "hasScript": false
+      },
+      {
+        "id": "SupervisorDecisionMaker",
+        "name": "SupervisorDecisionMaker",
+        "type": "Project Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+        "monetizationType": "indirecta",
+        "integrationChannels": [
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 0,
+        "hasScript": false
+      }
+    ]
+  },
+  "development": {
+    "gaps": [
+      {
+        "id": "lock-gate-auto-on-vscode-open",
+        "title": "Verificar lock gate automatico al abrir VS Code",
+        "severity": "critical",
+        "requiresHuman": true
+      },
+      {
+        "id": "qr-owner-device-only",
+        "title": "Restringir QR al celular del owner",
+        "severity": "critical",
+        "requiresHuman": true
+      },
+      {
+        "id": "lock-gate-mini-access-ui",
+        "title": "Mini UI de accesos (PC y celular)",
+        "severity": "high",
+        "requiresHuman": false
+      },
+      {
+        "id": "bot-coverage-paper-pack",
+        "title": "Formalizar cobertura de bots papel faltantes",
+        "severity": "high",
+        "requiresHuman": true
+      },
+      {
+        "id": "bot-runtime-wiring-plan",
+        "title": "Plan de wiring runtime para bots nuevos",
+        "severity": "high",
+        "requiresHuman": true
+      },
+      {
+        "id": "launch-real-campaign",
+        "title": "Lanzar 1 campana real con seguimiento de pago",
+        "severity": "critical",
+        "requiresHuman": true
+      },
+      {
+        "id": "landing-dynamic-product",
+        "title": "Landing dinamica por producto",
+        "severity": "critical",
+        "requiresHuman": true
+      },
+      {
+        "id": "market-research-ai-bridge",
+        "title": "Ejecutar market-research para producto \"lazo entre IAs\"",
+        "severity": "high",
+        "requiresHuman": true
+      },
+      {
+        "id": "checkout-default-product",
+        "title": "Quitar dependencia de producto default en checkout",
+        "severity": "high",
+        "requiresHuman": false
+      },
+      {
+        "id": "define-pac-strategy",
+        "title": "Definir estrategia PAC por fase (off/byo/managed)",
+        "severity": "medium",
+        "requiresHuman": true
+      }
+    ],
+    "finishedProducts": [
+      {
+        "name": "tigre-labs-context-engine",
+        "status": "imported-to-monolith",
+        "location": "products/finished/tigre-labs-context-engine",
+        "note": "Producto importado desde repo externo."
+      }
+    ],
+    "sealed": false
+  },
+  "systemStatus": {
+    "automation": "success",
+    "dashboard": "success",
+    "checkout": "success",
+    "gate": "GO"
+  }
+}

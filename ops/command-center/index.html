@@ -3,16 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tiger Command Center</title>
+    <title>Tiger Command Center — Unified Dashboard</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="hero">
       <div>
         <h1>Tiger Command Center</h1>
-        <p>Monetization control room: tasks, alerts, and execution pressure.</p>
+        <p>Unified dashboard: monetization, agents, campaigns, devops, and execution pressure.</p>
       </div>
       <div class="hero-actions">
+        <span id="systemStatusBadge" class="badge">loading...</span>
         <button id="notifyBtn" class="btn">Enable Alerts</button>
         <button id="refreshBtn" class="btn btn-secondary">Refresh</button>
       </div>
@@ -20,40 +21,94 @@
 
     <section class="metrics" id="metrics"></section>
 
+    <!-- Monetization KPIs -->
+    <section class="panel" id="kpiPanel">
+      <h2>Monetization KPIs</h2>
+      <div class="kpi-grid" id="kpiGrid"></div>
+    </section>
+
+    <!-- Funnel Preview -->
+    <section class="panel" id="funnelPanel">
+      <h2>Conversion Funnel</h2>
+      <div class="funnel-stages" id="funnelStages"></div>
+    </section>
+
+    <!-- Human-Critical Tasks -->
     <section class="panel">
-      <h2>Human-Critical Tasks (Your Next Moves)</h2>
+      <h2>Human-Critical Tasks</h2>
       <ul id="humanTasks" class="list"></ul>
     </section>
 
+    <!-- AI/Automation Tasks -->
     <section class="panel">
-      <h2>AI/Automation Tasks (My Side)</h2>
+      <h2>AI/Automation Tasks</h2>
       <ul id="aiTasks" class="list"></ul>
     </section>
 
+    <!-- Products -->
+    <section class="panel" id="productsPanel">
+      <h2>Product Catalog</h2>
+      <ul id="productsList" class="list"></ul>
+    </section>
+
+    <!-- Dashboard Agent -->
     <section class="panel" id="prioritizationPanel">
       <h2>Dashboard Agent <span id="agentStatus" class="badge">active</span></h2>
       <div id="agentFocus" class="list"></div>
-      <p><small>Priorización automática · <a href="/runtime/dashboard-prioritization-report.json" target="_blank">JSON</a></small></p>
     </section>
 
+    <!-- Lead Intelligence -->
     <section class="panel" id="leadPanel">
       <h2>Lead Intelligence Agent <span id="leadCount" class="badge">0</span></h2>
       <div id="leadList" class="list"></div>
-      <p><small>Leads pipeline · <a href="/leads/pipeline.json" target="_blank">JSON</a></small></p>
     </section>
 
+    <!-- Business Decisions -->
     <section class="panel" id="decisionsPanel">
       <h2>Business Decisions <span id="decisionsCount" class="badge">0</span></h2>
       <div id="decisionsList" class="list"></div>
-      <p><small>Decisiones de mercado y supervisión de producto · <a href="/decisions.json" target="_blank">JSON</a></small></p>
     </section>
 
+    <!-- Campaign Preview -->
+    <section class="panel" id="campaignPanel">
+      <h2>Recent Campaigns <span id="campaignCount" class="badge">0</span></h2>
+      <ul id="campaignList" class="list"></ul>
+    </section>
+
+    <!-- Bot Coverage -->
+    <section class="panel" id="botPanel">
+      <h2>Bot Coverage <span id="botCount" class="badge">0</span></h2>
+      <ul id="botList" class="list"></ul>
+    </section>
+
+    <!-- Landing Pages -->
+    <section class="panel" id="landingsPanel">
+      <h2>Landing Pages por Producto y Red Social</h2>
+      <ul id="landingsList" class="list"></ul>
+      <p><small>Ver <a href="/landings/index.json" target="_blank">ops/landings/index.json</a></small></p>
+    </section>
+
+    <!-- Task Registry -->
     <section class="panel" id="taskRegistryPanel">
       <h2>Task Register (Complete Enumeration)</h2>
       <ul id="taskRegistry" class="list"></ul>
-      <p><small>Todas las tareas del proyecto enumeradas con estado, evidencia y blockers.<br />Done = engine lo resolvió sin Victor. Todo = Victor debe ejecutar manualmente.</small></p>
+      <p><small>Todas las tareas enumeradas con estado, evidencia y blockers.</small></p>
     </section>
 
+    <!-- Agent Monitor -->
+    <section class="panel" id="agentMonitorPanel">
+      <h2>Agents Active Monitor</h2>
+      <ul id="agentMonitorList" class="list"></ul>
+      <p><small>💰 = Monetizacion directa · ⚙️ = Monetizacion indirecta · 🔧 = Soporte · 🟢 Activo · 🔴 Inactivo</small></p>
+    </section>
+
+    <!-- Developer Ops -->
+    <section class="panel" id="devopsPanel">
+      <h2>Developer Ops <span id="devopsCount" class="badge">10 gaps</span></h2>
+      <ul id="devopsList" class="list"></ul>
+    </section>
+
+    <!-- All Active Tasks (filtered) -->
     <section class="panel">
       <h2>All Active Tasks</h2>
       <div class="filters">
@@ -79,20 +134,9 @@
       <ul id="allTasks" class="list"></ul>
     </section>
 
-    <section class="panel" id="landingsPanel">
-      <h2>Landing Pages por Producto y Red Social</h2>
-      <ul id="landingsList" class="list"></ul>
-      <p><small>Landings generadas por LandingSocialAgent para cada combinacion producto × canal.<br />Ver en <a href="/landings/index.json" target="_blank">ops/landings/index.json</a></small></p>
-    </section>
-
-    <section class="panel" id="agentMonitorPanel">
-      <h2>Agents Active Monitor</h2>
-      <ul id="agentMonitorList" class="list"></ul>
-      <p><small>Evaluacion de todos los agentes del proyecto: activos, inactivos y su contribucion a monetizacion.<br />💰 = Contribuye a monetizacion · 🔧 = Soporte/Gobernanza · 🟢 = Activo · 🔴 = Inactivo<br />Ver <a href="/runtime/agent-monitor.json" target="_blank">ops/runtime/agent-monitor.json</a></small></p>
-    </section>
-
     <footer>
       <p id="footerText"></p>
+      <p><small>Sources: <a href="/runtime/dashboard-unified.json" target="_blank">dashboard-unified.json</a> · <a href="/runtime/agent-monitor.json" target="_blank">agent-monitor.json</a> · <a href="/tasks.json" target="_blank">tasks.json</a></small></p>
     </footer>
 
     <script src="./app.js" type="module"></script>

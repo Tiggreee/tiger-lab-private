@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T08:21:35.960Z",
+  "generatedAt": "2026-06-12T08:27:11.312Z",
   "summary": {
     "totalAgents": 20,
     "activeAgents": 20,
@@ -19,12 +19,12 @@
       "contributionDetail": "Soporte/gobernanza (no genera ingresos directamente)",
       "monetizationType": "soporte",
       "integrationChannels": [
-        "workflows: copilot-agents-validation.yml, production-go-no-go.yml, security.yml",
+        "workflows: agent-monitor.yml, copilot-agents-validation.yml, daily-sales-automation.yml, production-go-no-go.yml, security.yml",
         "script",
         "ops evidence"
       ],
       "evidence": true,
-      "workflowCount": 3,
+      "workflowCount": 5,
       "hasScript": true
     },
     {
@@ -36,12 +36,12 @@
       "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
       "monetizationType": "indirecta",
       "integrationChannels": [
-        "workflows: copilot-agents-validation.yml, production-go-no-go.yml",
+        "workflows: agent-monitor.yml, copilot-agents-validation.yml, daily-sales-automation.yml, production-go-no-go.yml",
         "script",
         "ops evidence"
       ],
       "evidence": true,
-      "workflowCount": 2,
+      "workflowCount": 4,
       "hasScript": true
     },
     {
@@ -53,12 +53,12 @@
       "contributionDetail": "Soporte/gobernanza (no genera ingresos directamente)",
       "monetizationType": "soporte",
       "integrationChannels": [
-        "workflows: copilot-agents-validation.yml, pr-title-check.yml, production-go-no-go.yml",
+        "workflows: agent-monitor.yml, copilot-agents-validation.yml, daily-sales-automation.yml, pr-title-check.yml, production-go-no-go.yml",
         "script",
         "ops evidence"
       ],
       "evidence": true,
-      "workflowCount": 3,
+      "workflowCount": 5,
       "hasScript": true
     },
     {
@@ -70,12 +70,12 @@
       "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
       "monetizationType": "indirecta",
       "integrationChannels": [
-        "workflows: copilot-agents-validation.yml, production-go-no-go.yml",
+        "workflows: agent-monitor.yml, copilot-agents-validation.yml, daily-sales-automation.yml, production-go-no-go.yml",
         "script",
         "ops evidence"
       ],
       "evidence": true,
-      "workflowCount": 2,
+      "workflowCount": 4,
       "hasScript": true
     },
     {
@@ -87,12 +87,12 @@
       "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
       "monetizationType": "indirecta",
       "integrationChannels": [
-        "workflows: copilot-agents-validation.yml, production-go-no-go.yml",
+        "workflows: agent-monitor.yml, copilot-agents-validation.yml, daily-sales-automation.yml, production-go-no-go.yml",
         "script",
         "ops evidence"
       ],
       "evidence": true,
-      "workflowCount": 2,
+      "workflowCount": 4,
       "hasScript": true
     },
     {
@@ -104,12 +104,12 @@
       "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
       "monetizationType": "directa",
       "integrationChannels": [
-        "workflows: copilot-agents-validation.yml, product-release-pipeline.yml, production-go-no-go.yml, repo-intel-sync.yml",
+        "workflows: agent-monitor.yml, copilot-agents-validation.yml, daily-sales-automation.yml, product-release-pipeline.yml, production-go-no-go.yml, repo-intel-sync.yml",
         "script",
         "ops evidence"
       ],
       "evidence": true,
-      "workflowCount": 4,
+      "workflowCount": 6,
       "hasScript": true
     },
     {
@@ -121,12 +121,12 @@
       "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
       "monetizationType": "indirecta",
       "integrationChannels": [
-        "workflows: billing-reconciliation-daily.yml, copilot-agents-validation.yml, daily-sales-automation.yml, github-policy-monitor.yml, production-go-no-go.yml, publish-packages.yml",
+        "workflows: agent-monitor.yml, billing-reconciliation-daily.yml, copilot-agents-validation.yml, daily-sales-automation.yml, github-policy-monitor.yml, production-go-no-go.yml, publish-packages.yml",
         "script",
         "ops evidence"
       ],
       "evidence": true,
-      "workflowCount": 6,
+      "workflowCount": 7,
       "hasScript": true
     },
     {
@@ -138,12 +138,12 @@
       "contributionDetail": "Soporte/gobernanza (no genera ingresos directamente)",
       "monetizationType": "soporte",
       "integrationChannels": [
-        "workflows: copilot-agents-validation.yml, production-go-no-go.yml",
+        "workflows: agent-monitor.yml, copilot-agents-validation.yml, daily-sales-automation.yml, production-go-no-go.yml",
         "script",
         "ops evidence"
       ],
       "evidence": true,
-      "workflowCount": 2,
+      "workflowCount": 4,
       "hasScript": true
     },
     {
@@ -155,12 +155,12 @@
       "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
       "monetizationType": "directa",
       "integrationChannels": [
-        "workflows: copilot-agents-validation.yml, daily-sales-automation.yml, production-go-no-go.yml, social-publish.yml",
+        "workflows: agent-monitor.yml, copilot-agents-validation.yml, daily-sales-automation.yml, production-go-no-go.yml, social-publish.yml",
         "script",
         "ops evidence"
       ],
       "evidence": true,
-      "workflowCount": 4,
+      "workflowCount": 5,
       "hasScript": true
     },
     {

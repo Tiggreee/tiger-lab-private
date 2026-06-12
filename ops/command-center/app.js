@@ -1,26 +1,37 @@
+const UNIFIED_URL = './runtime/dashboard-unified.json';
+const AGENT_MONITOR_URL = './runtime/agent-monitor.json';
 const TASKS_URL = './tasks.json';
 const DECISIONS_URL = './decisions.json';
 const PRIORITIZATION_URL = './runtime/dashboard-prioritization-report.json';
 const LEADS_URL = './leads/pipeline.json';
 const LANDINGS_URL = './landings/index.json';
-const AGENT_MONITOR_URL = './runtime/agent-monitor.json';
 
 const els = {
   metrics: document.getElementById('metrics'),
+  kpiGrid: document.getElementById('kpiGrid'),
+  funnelStages: document.getElementById('funnelStages'),
   humanTasks: document.getElementById('humanTasks'),
   aiTasks: document.getElementById('aiTasks'),
   allTasks: document.getElementById('allTasks'),
+  productsList: document.getElementById('productsList'),
   decisionsList: document.getElementById('decisionsList'),
   decisionsCount: document.getElementById('decisionsCount'),
   agentFocus: document.getElementById('agentFocus'),
   agentStatus: document.getElementById('agentStatus'),
   leadList: document.getElementById('leadList'),
   leadCount: document.getElementById('leadCount'),
+  campaignList: document.getElementById('campaignList'),
+  campaignCount: document.getElementById('campaignCount'),
+  botList: document.getElementById('botList'),
+  botCount: document.getElementById('botCount'),
   notifyBtn: document.getElementById('notifyBtn'),
   refreshBtn: document.getElementById('refreshBtn'),
   priorityFilter: document.getElementById('priorityFilter'),
   ownerFilter: document.getElementById('ownerFilter'),
-  footerText: document.getElementById('footerText')
+  footerText: document.getElementById('footerText'),
+  systemStatusBadge: document.getElementById('systemStatusBadge'),
+  devopsList: document.getElementById('devopsList'),
+  devopsCount: document.getElementById('devopsCount')
 };
 
 function daysUntil(dateISO) {
@@ -46,48 +57,9 @@ function urgencyText(task) {
   return `Due in ${d} day(s)`;
 }
 
-function createTaskRegistry() {
-  const registry = document.getElementById('taskRegistry');
-  if (!registry) return;
-
-  (async () => {
-    const data = await loadJSON(TASKS_URL);
-    if (!data || !data.tasks) {
-      registry.innerHTML = '<li class="task">No tasks data available</li>';
-      return;
-    }
-    let html = `<li class="task on-track">
-      <p><b>Total tasks:</b> ${data.tasks.length} | <b>Done:</b> ${data.tasks.filter(t => t.status === 'done').length} | <b>Pending:</b> ${data.tasks.filter(t => t.status !== 'done').length}</p>
-      <p><small>All tasks — including completed — shown below for full audit trail.</small></p>
-    </li>`;
-    data.tasks.forEach((task, i) => {
-      const sc = statusClass(task);
-      const ownerLabel = task.owner === 'human' ? 'You' : 'AI';
-      const debtLabel = task.debtSettled ? '✅ Settled' : '❌ Pending';
-      html += `<li class="task ${sc}">
-        <h3>#${i + 1}. ${task.id} — ${task.title}</h3>
-        <p>
-          <span class="badge">${task.priority}</span>
-          <span class="badge">${ownerLabel}</span>
-          <span class="badge">${task.area}</span>
-          <span class="badge">${task.status}</span>
-          <span class="badge">${debtLabel}</span>
-        </p>
-        <p><b>Due:</b> ${task.dueDate} (${urgencyText(task)})</p>
-        <p><b>Action:</b> ${task.nextAction}</p>
-        ${task.evidence ? `<p><small>Evidence: ${task.evidence}</small></p>` : ''}
-        ${task.blocker ? `<p><small>Blocker: ${task.blocker}</small></p>` : ''}
-        ${task.debtNote ? `<p><small>Debt note: ${task.debtNote}</small></p>` : ''}
-      </li>`;
-    });
-    registry.innerHTML = html;
-  })();
-}
-
 function createTaskNode(task) {
   const li = document.createElement('li');
   li.className = `task ${statusClass(task)}`;
-
   li.innerHTML = `
     <h3>${task.title}</h3>
     <p>
@@ -99,26 +71,47 @@ function createTaskNode(task) {
     <p><b>Due:</b> ${task.dueDate} (${urgencyText(task)})</p>
     <p><b>Next action:</b> ${task.nextAction}</p>
   `;
-
   return li;
 }
 
-function renderMetrics(tasks) {
-  const active = tasks.filter((t) => t.status !== 'done');
-  const overdue = active.filter((t) => daysUntil(t.dueDate) < 0);
-  const dueSoon = active.filter((t) => {
-    const d = daysUntil(t.dueDate);
-    return d >= 0 && d <= 2;
-  });
-  const humanPending = active.filter((t) => t.owner === 'human');
+function createTaskRegistry() {
+  const registry = document.getElementById('taskRegistry');
+  if (!registry) return;
+  (async () => {
+    const data = await loadJSON(TASKS_URL);
+    if (!data || !data.tasks) { registry.innerHTML = '<li class="task">No tasks data</li>'; return; }
+    let html = `<li class="task on-track"><p>Total: ${data.tasks.length} | Done: ${data.tasks.filter(t => t.status === 'done').length} | Pending: ${data.tasks.filter(t => t.status !== 'done').length}</p></li>`;
+    data.tasks.forEach((task, i) => {
+      const sc = statusClass(task);
+      html += `<li class="task ${sc}">
+        <h3>#${i + 1}. ${task.id} — ${task.title}</h3>
+        <p><span class="badge">${task.priority}</span><span class="badge">${task.owner}</span><span class="badge">${task.area}</span><span class="badge">${task.status}</span></p>
+        <p><b>Due:</b> ${task.dueDate} (${urgencyText(task)})</p>
+        <p><b>Action:</b> ${task.nextAction}</p>
+        ${task.evidence ? `<p>Evidence: ${task.evidence}</p>` : ''}
+        ${task.blocker ? `<p>Blocker: ${task.blocker}</p>` : ''}
+      </li>`;
+    });
+    registry.innerHTML = html;
+  })();
+}
 
+function renderMetrics(data) {
+  const tasks = data.tasks?.items || [];
+  const active = tasks.filter(t => t.status !== 'done');
+  const overdue = active.filter(t => daysUntil(t.dueDate) < 0);
+  const dueSoon = active.filter(t => { const d = daysUntil(t.dueDate); return d >= 0 && d <= 2; });
+  const humanPending = active.filter(t => t.owner === 'human');
   const cards = [
     ['Active Tasks', active.length],
     ['Overdue', overdue.length],
     ['Due in 48h', dueSoon.length],
-    ['Your Pending', humanPending.length]
+    ['Your Pending', humanPending.length],
+    ['Products', data.products?.active || 0],
+    ['Campaigns', data.campaigns?.total || 0],
+    ['Agents', data.agentMonitor?.summary?.activeAgents || 0],
+    ['Bots', (data.bots?.active?.length || 0) + (data.bots?.paperPending?.length || 0)]
   ];
-
   els.metrics.innerHTML = '';
   cards.forEach(([label, value]) => {
     const div = document.createElement('div');
@@ -126,82 +119,193 @@ function renderMetrics(tasks) {
     div.innerHTML = `<small>${label}</small><b>${value}</b>`;
     els.metrics.appendChild(div);
   });
+
+  if (els.systemStatusBadge) {
+    const gate = data.systemStatus?.gate || 'UNKNOWN';
+    els.systemStatusBadge.textContent = `Gate: ${gate}`;
+    els.systemStatusBadge.className = `badge ${gate === 'GO' ? 'badge-go' : 'badge-nogo'}`;
+  }
+}
+
+function renderKPIs(data) {
+  if (!els.kpiGrid) return;
+  const m = data.monetization || {};
+  const html = [
+    { label: 'Leads Today', value: m.leadsToday ?? 0 },
+    { label: 'Content Generated', value: m.generatedContent ?? 0 },
+    { label: 'Active Bots', value: m.activeBots ?? 0 },
+    { label: 'Average Price', value: m.averagePrice ?? '$0' }
+  ].map(k => `<div class="kpi-card"><small>${k.label}</small><b>${k.value}</b></div>`).join('');
+  els.kpiGrid.innerHTML = html;
+}
+
+function renderFunnel(data) {
+  if (!els.funnelStages) return;
+  const funnel = data.funnel || { stages: [], activeStage: 'Lead' };
+  const stages = ['Visit', 'Lead', 'Trial', 'Checkout', 'Paid'];
+  const activeIdx = stages.indexOf(funnel.activeStage);
+  const html = stages.map((s, i) => {
+    const activeClass = i <= activeIdx ? 'funnel-active' : 'funnel-inactive';
+    return `<div class="funnel-stage ${activeClass}"><span>${s}</span></div>`;
+  }).join('');
+  els.funnelStages.innerHTML = html;
+}
+
+function renderProducts(data) {
+  if (!els.productsList) return;
+  const products = data.products?.items || [];
+  if (!products.length) { els.productsList.innerHTML = '<li class="task">No products</li>'; return; }
+  let html = `<li class="task on-track"><p><b>${data.products.active} active</b> · ${data.products.paused} paused · ${data.products.planned} planned</p></li>`;
+  products.forEach(p => {
+    const cls = p.status === 'active' ? 'on-track' : p.status === 'paused' ? 'due-soon' : 'overdue';
+    html += `<li class="task ${cls}"><p><b>${p.name}</b> — ${p.status} | ${p.plans}</p></li>`;
+  });
+  els.productsList.innerHTML = html;
+}
+
+function renderCampaigns(data) {
+  if (!els.campaignList) return;
+  const camps = data.campaigns?.recent || [];
+  els.campaignCount.textContent = data.campaigns?.total || 0;
+  if (!camps.length) { els.campaignList.innerHTML = '<li class="task">No campaigns</li>'; return; }
+  const html = camps.map(c => `<li class="task on-track">
+    <p><b>${c.name}</b> <span class="badge">${c.avgScore} score</span> <span class="badge">${c.projectedLift}% lift</span></p>
+    <p>Topic: ${c.topic} | Channels: ${c.channels.join(', ')} | MCP: ${c.mcpDecision}</p>
+  </li>`).join('');
+  els.campaignList.innerHTML = html;
+}
+
+function renderBots(data) {
+  if (!els.botList) return;
+  const bots = data.bots || { active: [], paperPending: [] };
+  els.botCount.textContent = bots.active.length;
+  let html = `<li class="task on-track"><p><b>${bots.active.length} active</b> · ${bots.paperPending.length} paper pending</p></li>`;
+  bots.active.forEach(b => { html += `<li class="task on-track"><p>🟢 ${b}</p></li>`; });
+  bots.paperPending.forEach(b => { html += `<li class="task due-soon"><p>📄 ${b} (paper — needs wiring)</p></li>`; });
+  els.botList.innerHTML = html;
+}
+
+function renderDevops(data) {
+  if (!els.devopsList) return;
+  const dev = data.development || { gaps: [], finishedProducts: [] };
+  const critical = dev.gaps.filter(g => g.severity === 'critical').length;
+  const high = dev.gaps.filter(g => g.severity === 'high').length;
+  els.devopsCount.textContent = `${dev.gaps.length} gaps`;
+  let html = `<li class="task due-soon"><p><b>${dev.gaps.length} gaps</b> (${critical} critical, ${high} high)</p></li>`;
+  dev.gaps.forEach(g => {
+    const cls = g.severity === 'critical' ? 'overdue' : g.severity === 'high' ? 'due-soon' : 'on-track';
+    html += `<li class="task ${cls}"><p><b>${g.severity.toUpperCase()}</b> ${g.title} ${g.requiresHuman ? '🧑' : '🤖'}</p><p>${g.detail}</p></li>`;
+  });
+  if (dev.finishedProducts.length) {
+    html += `<li class="task on-track"><p><b>Finished products:</b> ${dev.finishedProducts.map(p => p.name).join(', ')}</p></li>`;
+  }
+  els.devopsList.innerHTML = html;
 }
 
 function renderDecisions(decisions) {
   if (!decisions || !decisions.result || !decisions.result.report) {
-    els.decisionsList.innerHTML = '<li class="task">No decision data available</li>';
-    els.decisionsCount.textContent = '0';
+    if (els.decisionsList) els.decisionsList.innerHTML = '<li class="task">No decision data</li>';
+    if (els.decisionsCount) els.decisionsCount.textContent = '0';
     return;
   }
-
   const report = decisions.result.report;
   els.decisionsCount.textContent = report.totalProducts;
-
-  let html = `
-    <li class="task on-track">
-      <h3>Supervisor Report</h3>
-      <p>
-        <span class="badge">${report.activeProducts} Active</span>
-        <span class="badge">${report.flaggedProducts} Flagged</span>
-        <span class="badge">${report.retiredProducts} Retired</span>
-        <span class="badge">$${report.totalPotentialRevenue}/mo potential</span>
-      </p>
-      <p><b>Evaluated at:</b> ${new Date(report.evaluatedAt).toLocaleString()}</p>
-    </li>
-  `;
-
-  if (report.recommendations && report.recommendations.length > 0) {
-    report.recommendations.forEach((rec) => {
-      html += `<li class="task due-soon"><p>${rec}</p></li>`;
-    });
-  }
-
-  if (decisions.result.pending) {
-    decisions.result.pending.forEach((d) => {
-      const impact = d.impact === 'critical' ? 'overdue' : d.impact === 'high' ? 'due-soon' : 'on-track';
-      html += `
-        <li class="task ${impact}">
-          <h3>${d.title}</h3>
-          <p><span class="badge">${d.type}</span> <span class="badge">${d.impact}</span> <span class="badge">${Math.round(d.confidence * 100)}% conf</span></p>
-          <p>${d.description}</p>
-          <p><small>${d.evidence.slice(0, 2).join(' · ')}</small></p>
-        </li>
-      `;
-    });
-  }
-
+  let html = `<li class="task on-track">
+    <h3>Supervisor Report</h3>
+    <p><span class="badge">${report.activeProducts} Active</span><span class="badge">${report.flaggedProducts} Flagged</span><span class="badge">${report.retiredProducts} Retired</span></p>
+  </li>`;
+  if (report.recommendations) report.recommendations.forEach(r => { html += `<li class="task due-soon"><p>${r}</p></li>`; });
   els.decisionsList.innerHTML = html;
 }
 
+function renderAgentPanel(report) {
+  if (!report || !report.recommendedFocus) {
+    if (els.agentFocus) els.agentFocus.innerHTML = '<li class="task">No prioritization data</li>';
+    return;
+  }
+  let html = `<li class="task on-track"><p>Revisado: ${new Date(report.prioritizedAt).toLocaleString()} | Activas: ${report.totalActive} | Vencidas: ${report.overdueCount}</p></li>`;
+  if (report.recommendedFocus.length > 0) {
+    html += `<li class="task due-soon"><h3>Recommended Focus</h3>`;
+    report.recommendedFocus.forEach((r, i) => { html += `<p>${i + 1}. ${r}</p>`; });
+    html += `</li>`;
+  }
+  els.agentFocus.innerHTML = html;
+}
+
+function renderLeadPanel(pipeline) {
+  if (!pipeline || !pipeline.stats) {
+    if (els.leadList) els.leadList.innerHTML = '<li class="task">No lead data</li>';
+    if (els.leadCount) els.leadCount.textContent = '0';
+    return;
+  }
+  els.leadCount.textContent = pipeline.stats.total;
+  let html = `<li class="task on-track">
+    <p>Pipeline: ${pipeline.stats.total} leads</p>
+    <p><span class="badge">${pipeline.stats.new || 0} new</span><span class="badge">${pipeline.stats.contacted || 0} contacted</span></p>
+  </li>`;
+  if (pipeline.leads) {
+    pipeline.leads.slice(-3).reverse().forEach(l => {
+      html += `<li class="task due-soon"><p><b>${l.name}</b> — ${l.company} <span class="badge">${l.industry}</span><br>${l.pain}</p></li>`;
+    });
+  }
+  els.leadList.innerHTML = html;
+}
+
+function renderLandingsPanel(landings) {
+  const list = document.getElementById('landingsList');
+  if (!list) return;
+  if (!landings || !landings.summary) { list.innerHTML = '<li class="task">No landing data</li>'; return; }
+  const s = landings.summary;
+  let html = `<li class="task on-track"><p>${s.totalLandingPages} landings · ${s.totalProducts} products · ${s.channelsUsed.join(', ')}</p></li>`;
+  for (const [pid, info] of Object.entries(landings.products)) {
+    html += `<li class="task ${info.status === 'active' ? 'on-track' : 'due-soon'}"><p>${info.status === 'active' ? '🟢' : '⏸️'} <b>${info.product}</b> — ${info.channels.join(', ')}</p></li>`;
+  }
+  list.innerHTML = html;
+}
+
+function renderAgentMonitor(monitor) {
+  const list = document.getElementById('agentMonitorList');
+  if (!list) return;
+  if (!monitor || !monitor.summary) { list.innerHTML = '<li class="task">No agent monitor data</li>'; return; }
+  const s = monitor.summary;
+  let html = `<li class="task on-track">
+    <p>${s.activeAgents === s.totalAgents ? '🟢' : '🟡'} <b>${s.activeAgents}/${s.totalAgents} active</b></p>
+    <p><span class="badge">💰 ${s.directMonetization} direct</span><span class="badge">⚙️ ${s.indirectMonetization} indirect</span><span class="badge">🔧 ${s.supportGovernance} support</span></p>
+  </li>`;
+  for (const agent of monitor.agents) {
+    const icon = agent.active ? '🟢' : '🔴';
+    const monetIcon = agent.monetizationContribution === 'si' ? '💰' : '🔧';
+    html += `<li class="task ${agent.active ? 'on-track' : 'overdue'}">
+      <p>${icon} ${monetIcon} <b>${agent.name}</b> <span class="badge">${agent.type}</span></p>
+      <p>${agent.active ? 'Activo' : 'Inactivo'} · ${agent.monetizationContribution} (${agent.monetizationType})</p>
+      <p>${agent.contributionDetail}</p>
+      ${agent.integrationChannels.length ? `<p>${agent.integrationChannels.join(' · ')}</p>` : ''}
+    </li>`;
+  }
+  list.innerHTML = html;
+}
+
 function renderLists(tasks) {
-  const active = tasks.filter((t) => t.status !== 'done');
-
-  const human = active.filter((t) => t.owner === 'human');
-  const ai = active.filter((t) => t.owner === 'ai');
-
+  const active = tasks.filter(t => t.status !== 'done');
+  const human = active.filter(t => t.owner === 'human');
+  const ai = active.filter(t => t.owner === 'ai');
   els.humanTasks.innerHTML = '';
-  human.forEach((t) => els.humanTasks.appendChild(createTaskNode(t)));
-
+  human.forEach(t => els.humanTasks.appendChild(createTaskNode(t)));
   els.aiTasks.innerHTML = '';
-  ai.forEach((t) => els.aiTasks.appendChild(createTaskNode(t)));
-
+  ai.forEach(t => els.aiTasks.appendChild(createTaskNode(t)));
   const p = els.priorityFilter.value;
   const o = els.ownerFilter.value;
-
-  const filtered = active.filter((t) => (p === 'all' || t.priority === p) && (o === 'all' || t.owner === o));
+  const filtered = active.filter(t => (p === 'all' || t.priority === p) && (o === 'all' || t.owner === o));
   els.allTasks.innerHTML = '';
-  filtered.forEach((t) => els.allTasks.appendChild(createTaskNode(t)));
+  filtered.forEach(t => els.allTasks.appendChild(createTaskNode(t)));
 }
 
 function triggerNotification(tasks) {
-  const hot = tasks.filter((t) => t.status !== 'done' && t.owner === 'human' && daysUntil(t.dueDate) <= 1);
+  const hot = tasks.filter(t => t.status !== 'done' && t.owner === 'human' && daysUntil(t.dueDate) <= 1);
   if (!hot.length) return;
-
   if ('Notification' in window && Notification.permission === 'granted') {
-    const top = hot.slice(0, 2).map((t) => t.title).join(' | ');
-    const body = `You have ${hot.length} urgent task(s): ${top}`;
-    new Notification('Tiger Command Center Alert', { body });
+    const top = hot.slice(0, 2).map(t => t.title).join(' | ');
+    new Notification('Tiger Alert', { body: `You have ${hot.length} urgent task(s): ${top}` });
   }
 }
 
@@ -210,9 +314,7 @@ async function loadJSON(url) {
     const response = await fetch(url, { cache: 'no-store' });
     if (!response.ok) return null;
     return response.json();
-  } catch {
-    return null;
-  }
+  } catch { return null; }
 }
 
 async function loadTasks() {
@@ -221,173 +323,57 @@ async function loadTasks() {
   return response.json();
 }
 
-function renderAgentPanel(report) {
-  if (!report || !report.recommendedFocus) {
-    els.agentFocus.innerHTML = '<li class="task">No prioritization data</li>';
-    return;
-  }
-
-  let html = `<li class="task on-track">
-    <p><b>Revisado:</b> ${new Date(report.prioritizedAt).toLocaleString()}</p>
-    <p><b>Activas:</b> ${report.totalActive} | <b>Vencidas:</b> ${report.overdueCount} | <b>Archivadas:</b> ${report.archivedCount}</p>
-  </li>`;
-
-  if (report.recommendedFocus.length > 0) {
-    html += `<li class="task due-soon"><h3>🎯 Enfoque recomendado</h3>`;
-    report.recommendedFocus.forEach((r, i) => {
-      html += `<p>${i + 1}. ${r}</p>`;
-    });
-    html += `</li>`;
-  }
-
-  if (report.alerts && report.alerts.length > 0) {
-    report.alerts.forEach(a => {
-      html += `<li class="task overdue"><p>🚨 ${a.alert}</p></li>`;
-    });
-  }
-
-  els.agentFocus.innerHTML = html;
-}
-
-function renderLandingsPanel(landings) {
-  const list = document.getElementById('landingsList');
-  if (!list) return;
-  if (!landings || !landings.summary) {
-    list.innerHTML = '<li class="task">No landing data available</li>';
-    return;
-  }
-
-  const s = landings.summary;
-  let html = `<li class="task on-track">
-    <p><b>Total:</b> ${s.totalLandingPages} landings | <b>Productos:</b> ${s.totalProducts} (${s.activeProducts} activos, ${s.pausedProducts} pausados)</p>
-    <p><b>Canales:</b> ${s.channelsUsed.join(', ')}</p>
-  </li>`;
-
-  for (const [productId, info] of Object.entries(landings.products)) {
-    const statusIcon = info.status === 'active' ? '🟢' : '⏸️';
-    html += `<li class="task ${info.status === 'active' ? 'on-track' : 'due-soon'}">
-      <p>${statusIcon} <b>${info.product}</b> — ${info.status} — Canales: ${info.channels.join(', ')}</p>
-    </li>`;
-  }
-
-  if (landings.activeProducts && landings.activeProducts.length > 0) {
-    html += `<li class="task on-track"><p><b>Productos activos con landing:</b> ${landings.activeProducts.join(', ')}</p></li>`;
-  }
-
-  list.innerHTML = html;
-}
-
-function renderAgentMonitor(monitor) {
-  const list = document.getElementById('agentMonitorList');
-  if (!list) return;
-  if (!monitor || !monitor.summary) {
-    list.innerHTML = '<li class="task">No agent monitor data available</li>';
-    return;
-  }
-
-  const s = monitor.summary;
-  const allActive = s.activeAgents === s.totalAgents;
-  const statusEmoji = allActive ? '🟢' : '🟡';
-  const statusText = allActive ? 'Todos los agentes activos' : `${s.activeAgents}/${s.totalAgents} activos`;
-
-  let html = `<li class="task ${allActive ? 'on-track' : 'due-soon'}">
-    <p>${statusEmoji} <b>${statusText}</b></p>
-    <p>
-      <span class="badge">💰 ${s.directMonetization} directos</span>
-      <span class="badge">⚙️ ${s.indirectMonetization} indirectos</span>
-      <span class="badge">🔧 ${s.supportGovernance} soporte</span>
-      <span class="badge">${s.monetizationContributing} contribuyen a monetizacion</span>
-    </p>
-  </li>`;
-
-  for (const agent of monitor.agents) {
-    const activeIcon = agent.active ? '🟢' : '🔴';
-    const monetIcon = agent.monetizationContribution === 'si' ? '💰' : agent.monetizationContribution === 'parcial' ? '🔧' : '⏸️';
-    const typeLabel = agent.type === 'Copilot Agent' ? 'Copilot' : agent.type === 'Release Auditor' ? 'Release' : 'Project';
-    html += `<li class="task ${agent.active ? 'on-track' : 'overdue'}">
-      <p>${activeIcon} ${monetIcon} <b>${agent.name}</b> <span class="badge">${typeLabel}</span></p>
-      <p>${agent.active ? 'Activo' : 'Inactivo'} · Monetizacion: ${agent.monetizationContribution} (${agent.monetizationType})</p>
-      <p><small>${agent.contributionDetail}</small></p>
-      ${agent.integrationChannels.length > 0 ? `<p><small>Integraciones: ${agent.integrationChannels.join(', ')}</small></p>` : ''}
-    </li>`;
-  }
-
-  list.innerHTML = html;
-}
-
-function renderLeadPanel(pipeline) {
-  if (!pipeline || !pipeline.stats) {
-    els.leadList.innerHTML = '<li class="task">No lead data</li>';
-    els.leadCount.textContent = '0';
-    return;
-  }
-
-  els.leadCount.textContent = pipeline.stats.total;
-
-  let html = `
-    <li class="task on-track">
-      <p><b>Pipeline:</b> ${pipeline.stats.total} leads</p>
-      <p>
-        <span class="badge">${pipeline.stats.new} nuevos</span>
-        <span class="badge">${pipeline.stats.contacted} contactados</span>
-        <span class="badge">${pipeline.stats.replied} respondedieron</span>
-        <span class="badge">${pipeline.stats.converted} convertidos</span>
-      </p>
-      ${pipeline.lastOutreachGenerated ? `<p><small>Último outreach: ${new Date(pipeline.lastOutreachGenerated).toLocaleString()}</small></p>` : ''}
-    </li>`;
-
-  if (pipeline.leads && pipeline.leads.length > 0) {
-    const recent = pipeline.leads.slice(-3).reverse();
-    recent.forEach(l => {
-      html += `<li class="task ${l.status === 'new' ? 'due-soon' : 'on-track'}">
-        <p><b>${l.name}</b> — ${l.company} <span class="badge">${l.industry}</span></p>
-        <p><small>${l.pain} · ${l.status}</small></p>
-      </li>`;
-    });
-  }
-
-  els.leadList.innerHTML = html;
-}
-
 async function loadDecisions() {
   try {
     const response = await fetch(DECISIONS_URL, { cache: 'no-store' });
-    if (!response.ok) throw new Error('Failed to load decisions');
-    return response.json();
-  } catch {
+    if (response.ok) return response.json();
+  } catch {}
+  try {
     const fallback = await fetch('http://localhost:8787/decisions/report', { cache: 'no-store' }).catch(() => null);
     if (fallback && fallback.ok) return fallback.json();
-    return null;
-  }
+  } catch {}
+  return null;
 }
 
 async function render() {
-  const [tasksData, decisionsData, prioritizationData, leadData, landingsData, agentMonitorData] = await Promise.all([
-    loadTasks(),
+  const [unified, decisionsData, prioritizationData, leadData, landingsData, agentMonitorData] = await Promise.all([
+    loadJSON(UNIFIED_URL),
     loadDecisions(),
     loadJSON(PRIORITIZATION_URL),
     loadJSON(LEADS_URL),
     loadJSON(LANDINGS_URL),
     loadJSON(AGENT_MONITOR_URL)
   ]);
-  renderMetrics(tasksData.tasks);
-  renderLists(tasksData.tasks);
+
+  if (!unified) {
+    els.footerText.textContent = 'Could not load dashboard data. Run `npm run command-center` first.';
+    return;
+  }
+
+  renderMetrics(unified);
+  renderKPIs(unified);
+  renderFunnel(unified);
+  renderProducts(unified);
+  renderCampaigns(unified);
+  renderBots(unified);
+  renderDevops(unified);
+
+  const tasks = unified.tasks?.items || [];
+  renderLists(tasks);
   createTaskRegistry();
   renderDecisions(decisionsData);
   renderAgentPanel(prioritizationData);
   renderLeadPanel(leadData);
   renderLandingsPanel(landingsData);
   renderAgentMonitor(agentMonitorData);
-  triggerNotification(tasksData.tasks);
+  triggerNotification(tasks);
+
   const now = new Date().toLocaleString();
-  els.footerText.textContent = `Last refresh: ${now} | Timezone: ${tasksData.meta.timezone}`;
+  els.footerText.textContent = `Last refresh: ${now} | Data: dashboard-unified.json`;
 }
 
 els.notifyBtn.addEventListener('click', async () => {
-  if (!('Notification' in window)) {
-    alert('Browser notifications are not supported in this browser.');
-    return;
-  }
+  if (!('Notification' in window)) { alert('Notifications not supported.'); return; }
   const perm = await Notification.requestPermission();
   alert(perm === 'granted' ? 'Alerts enabled.' : 'Alerts not enabled.');
 });
@@ -397,7 +383,4 @@ els.priorityFilter.addEventListener('change', render);
 els.ownerFilter.addEventListener('change', render);
 
 setInterval(render, 5 * 60 * 1000);
-render().catch((err) => {
-  console.error(err);
-  alert('Could not load tasks.json. Run the local command center server first.');
-});
+render().catch(err => { console.error(err); });
