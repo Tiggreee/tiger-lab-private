@@ -14,14 +14,18 @@ function createPack() {
   const packPath = path.join(dir, 'social-pack-test-campaign.json');
   fs.writeFileSync(
     packPath,
-    `${JSON.stringify({
-      campaign: 'test-campaign',
-      channels: {
-        linkedin: {
-          copyPaste: 'Post copy'
+    JSON.stringify(
+      {
+        campaign: 'test-campaign',
+        channels: {
+          linkedin: {
+            copyPaste: 'Post copy'
+          }
         }
-      }
-    })}\n`,
+      },
+      null,
+      2
+    ) + '\n',
     'utf8'
   );
 
@@ -63,7 +67,14 @@ describe('run-autopilot CLI', () => {
     expect(result.status).toBe(0);
     expect(result.stdout).toContain('Ready channels: -');
     expect(result.stdout).toContain('Autopilot completed with no ready channels.');
-    expect(fs.readdirSync(dir).some((entry) => entry.startsWith('autopilot-report-test-campaign-'))).toBe(true);
+    const reportName = fs.readdirSync(dir).find((entry) => entry.startsWith('autopilot-report-test-campaign-'));
+    expect(reportName).toBeTruthy();
+
+    const report = JSON.parse(fs.readFileSync(path.join(dir, reportName as string), 'utf8'));
+    expect(report.readyChannels).toEqual([]);
+    expect(report.steps.goLive).toBe('skipped');
+    expect(report.steps.dryPublish).toBe('skipped');
+    expect(report.steps.livePublish).toBe('skipped');
   });
 
   it('still blocks when ready channels are below the default minimum', () => {
