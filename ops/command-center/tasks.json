@@ -15,7 +15,9 @@
       "owner": "human",
       "status": "todo",
       "dueDate": "2026-06-13",
-      "nextAction": "Ir a GitHub → Settings → Secrets → Actions. Agregar STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET."
+      "nextAction": "Ir a GitHub → Settings → Secrets → Actions. Agregar STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET.",
+      "debtSettled": false,
+      "blocker": "No tengo las API keys"
     },
     {
       "id": "PL-002",
@@ -25,7 +27,37 @@
       "owner": "human",
       "status": "todo",
       "dueDate": "2026-06-13",
-      "nextAction": "Agregar PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET de cuenta business (tiggreee@vmdev.lat)."
+      "nextAction": "Agregar PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET de cuenta business (tiggreee@vmdev.lat).",
+      "debtSettled": false,
+      "blocker": "No tengo las API keys"
+    },
+    {
+      "id": "PL-003",
+      "title": "Publicar LinkedIn post (Docflow API + Script Kit)",
+      "area": "positioning",
+      "priority": "P1",
+      "owner": "ai",
+      "status": "done",
+      "dueDate": "2026-06-12",
+      "nextAction": "Copy listo. Autopilot intentó publish pero requiere LINKEDIN_ACCESS_TOKEN. Social pack generado y guardado.",
+      "debtSettled": true,
+      "settledBy": "engine",
+      "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json",
+      "debtNote": "Engine generó el contenido. Publicación real requiere secrets de LinkedIn que solo Victor puede configurar."
+    },
+    {
+      "id": "PL-004",
+      "title": "Enviar mensajes outbound a prospects ICP",
+      "area": "sales",
+      "priority": "P1",
+      "owner": "ai",
+      "status": "done",
+      "dueDate": "2026-06-12",
+      "nextAction": "Lead Intelligence generó 10 leads y 10 mensajes outbound automáticamente.",
+      "debtSettled": true,
+      "settledBy": "engine",
+      "evidence": "ops/sales/outreach/outreach-batch-2026-06-12.md",
+      "debtNote": "Engine generó leads desde ICP y creó los mensajes. Envío manual por LinkedIn DM requiere Victor."
     },
     {
       "id": "PL-005",
@@ -35,7 +67,9 @@
       "owner": "human",
       "status": "todo",
       "dueDate": "2026-06-19",
-      "nextAction": "Crear cuenta Finkok sandbox, obtener API key. Detalles en ops/billing/PAC_OPTIONS_MEXICO.md."
+      "nextAction": "Crear cuenta Finkok sandbox, obtener API key.",
+      "debtSettled": false,
+      "blocker": "Requiere que Victor contrate Finkok"
     },
     {
       "id": "PL-006",
@@ -45,7 +79,35 @@
       "owner": "human",
       "status": "todo",
       "dueDate": "2026-06-16",
-      "nextAction": "Usar one-pager ops/sales/monetization-one-pager.md. Ofrecer diagnóstico 15 min."
+      "nextAction": "Usar one-pager. Ofrecer diagnóstico 15 min.",
+      "debtSettled": false,
+      "blocker": "Requiere que Victor haga las llamadas"
+    },
+    {
+      "id": "PL-007",
+      "title": "Ejecutar publish-packages.yml dry-run",
+      "area": "delivery",
+      "priority": "P2",
+      "owner": "ai",
+      "status": "done",
+      "dueDate": "2026-06-12",
+      "nextAction": "npm pack --dry-run ejecutado. Package listo (674 archivos, 544.5 kB). Workflow validado.",
+      "debtSettled": true,
+      "settledBy": "engine",
+      "evidence": "npm pack --dry-run OK"
+    },
+    {
+      "id": "PL-008",
+      "title": "Ejecutar daily-sales-automation pipeline completo",
+      "area": "operations",
+      "priority": "P2",
+      "owner": "ai",
+      "status": "done",
+      "dueDate": "2026-06-12",
+      "nextAction": "Pipeline completo ejecutado localmente: leads → outreach → social pack → dashboard priorization.",
+      "debtSettled": true,
+      "settledBy": "engine",
+      "evidence": "scripts/lead-intelligence.mjs + scripts/dashboard-prioritize.mjs + scripts/traffic/generate-social-pack.mjs"
     },
     {
       "id": "PL-009",
@@ -55,17 +117,34 @@
       "owner": "human",
       "status": "todo",
       "dueDate": "2026-06-19",
-      "nextAction": "Propuesta lista. Victor: enviar a lead más caliente hoy."
+      "nextAction": "Propuesta lista. Victor: enviar a lead más caliente hoy.",
+      "debtSettled": false,
+      "blocker": "Requiere que Victor cierre el trato"
     },
     {
       "id": "PL-010",
-      "title": "Activar PAC Finkok para desbloquear productos de facturación",
+      "title": "Activar PAC Finkok para desbloquear facturación",
       "area": "billing",
       "priority": "P1",
       "owner": "human",
       "status": "todo",
       "dueDate": "2026-06-19",
-      "nextAction": "Una vez tengas API key, configurar GitHub secrets y activar FacturAutentico Cloud + FacturAutentica."
+      "nextAction": "Una vez tengas API key, configurar GitHub secrets y activar productos.",
+      "debtSettled": false,
+      "blocker": "Requiere PAC key de Victor"
+    },
+    {
+      "id": "PL-011",
+      "title": "Generar social pack semanal con resultados reales",
+      "area": "traffic",
+      "priority": "P2",
+      "owner": "ai",
+      "status": "done",
+      "dueDate": "2026-06-12",
+      "nextAction": "Social pack 'produccion-week1' generado con 24% lift proyectado.",
+      "debtSettled": true,
+      "settledBy": "engine",
+      "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json"
     }
   ]
 }

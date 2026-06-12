@@ -1,0 +1,90 @@
+{
+  "title": "Tiger Lab - Social Landing Pages Index",
+  "generatedAt": "2026-06-12T08:21:35.419Z",
+  "summary": {
+    "totalProducts": 5,
+    "activeProducts": 2,
+    "pausedProducts": 2,
+    "totalLandingPages": 25,
+    "channelsUsed": [
+      "LinkedIn",
+      "X / Twitter",
+      "Facebook",
+      "Telegram",
+      "Discord"
+    ]
+  },
+  "products": {
+    "facturautentico-cloud": {
+      "product": "FacturAutentico Cloud",
+      "status": "paused",
+      "channels": [
+        "LinkedIn",
+        "X / Twitter",
+        "Facebook",
+        "Telegram",
+        "Discord"
+      ]
+    },
+    "docflow-api": {
+      "product": "Docflow API",
+      "status": "active",
+      "channels": [
+        "LinkedIn",
+        "X / Twitter",
+        "Facebook",
+        "Telegram",
+        "Discord"
+      ]
+    },
+    "sentrylog-lite": {
+      "product": "Sentrylog Lite",
+      "status": "planned",
+      "channels": [
+        "LinkedIn",
+        "X / Twitter",
+        "Facebook",
+        "Telegram",
+        "Discord"
+      ]
+    },
+    "script-premium-kit": {
+      "product": "Script Premium Kit",
+      "status": "active",
+      "channels": [
+        "LinkedIn",
+        "X / Twitter",
+        "Facebook",
+        "Telegram",
+        "Discord"
+      ]
+    },
+    "facturautentico": {
+      "product": "FacturAutentica",
+      "status": "paused",
+      "channels": [
+        "LinkedIn",
+        "X / Twitter",
+        "Facebook",
+        "Telegram",
+        "Discord"
+      ]
+    }
+  },
+  "activeProducts": [
+    "Docflow API",
+    "Script Premium Kit"
+  ],
+  "pausedProducts": [
+    {
+      "name": "FacturAutentico Cloud",
+      "note": "Requiere PAC Finkok para CFDI. Presupuestado $99/mes."
+    },
+    {
+      "name": "FacturAutentica",
+      "note": "Requiere PAC Finkok para CFDI. Presupuestado $99/mes."
+    }
+  ],
+  "cta": "https://cal.com/victor-tigerlab/diagnostic",
+  "note": "Cada landing page esta optimizada para el tono y formato de su canal social."
+}

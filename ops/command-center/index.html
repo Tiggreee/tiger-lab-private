@@ -48,6 +48,12 @@
       <p><small>Decisiones de mercado y supervisión de producto · <a href="/decisions.json" target="_blank">JSON</a></small></p>
     </section>
 
+    <section class="panel" id="taskRegistryPanel">
+      <h2>Task Register (Complete Enumeration)</h2>
+      <ul id="taskRegistry" class="list"></ul>
+      <p><small>Todas las tareas del proyecto enumeradas con estado, evidencia y blockers.<br />Done = engine lo resolvió sin Victor. Todo = Victor debe ejecutar manualmente.</small></p>
+    </section>
+
     <section class="panel">
       <h2>All Active Tasks</h2>
       <div class="filters">
@@ -71,6 +77,18 @@
         </label>
       </div>
       <ul id="allTasks" class="list"></ul>
+    </section>
+
+    <section class="panel" id="landingsPanel">
+      <h2>Landing Pages por Producto y Red Social</h2>
+      <ul id="landingsList" class="list"></ul>
+      <p><small>Landings generadas por LandingSocialAgent para cada combinacion producto × canal.<br />Ver en <a href="/landings/index.json" target="_blank">ops/landings/index.json</a></small></p>
+    </section>
+
+    <section class="panel" id="agentMonitorPanel">
+      <h2>Agents Active Monitor</h2>
+      <ul id="agentMonitorList" class="list"></ul>
+      <p><small>Evaluacion de todos los agentes del proyecto: activos, inactivos y su contribucion a monetizacion.<br />💰 = Contribuye a monetizacion · 🔧 = Soporte/Gobernanza · 🟢 = Activo · 🔴 = Inactivo<br />Ver <a href="/runtime/agent-monitor.json" target="_blank">ops/runtime/agent-monitor.json</a></small></p>
     </section>
 
     <footer>

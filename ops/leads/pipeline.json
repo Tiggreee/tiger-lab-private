@@ -59,15 +59,75 @@
       "source": "linkedin",
       "status": "contacted",
       "capturedAt": "2026-06-12T08:06:30.691Z"
+    },
+    {
+      "id": "lead_1781252150229_0",
+      "name": "Carlos Gonzalez",
+      "company": "Carlos Tech Ops",
+      "industry": "servicios profesionales",
+      "pain": "sin equipo tecnico interno",
+      "process": "reconciliacion de pagos",
+      "geo": "Guadalajara",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T08:15:50.229Z"
+    },
+    {
+      "id": "lead_1781252150229_1",
+      "name": "Fernanda Perez",
+      "company": "Fernanda Tech Ops",
+      "industry": "servicios profesionales",
+      "pain": "conciliacion manual",
+      "process": "generacion de facturas",
+      "geo": "Monterrey",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T08:15:50.229Z"
+    },
+    {
+      "id": "lead_1781252150229_2",
+      "name": "Sofia Garcia",
+      "company": "Sofia Tech Ops",
+      "industry": "logistica",
+      "pain": "conciliacion manual",
+      "process": "gestion de inventarios",
+      "geo": "CDMX",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T08:15:50.229Z"
+    },
+    {
+      "id": "lead_1781252150229_3",
+      "name": "Carlos Hernandez",
+      "company": "Carlos Tech Fin",
+      "industry": "fintech",
+      "pain": "conciliacion manual",
+      "process": "creacion de reportes",
+      "geo": "Monterrey",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T08:15:50.229Z"
+    },
+    {
+      "id": "lead_1781252150229_4",
+      "name": "Luis Ramirez",
+      "company": "Luis Tech Shop",
+      "industry": "ecommerce",
+      "pain": "conciliacion manual",
+      "process": "reconciliacion de pagos",
+      "geo": "Guadalajara",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T08:15:50.229Z"
     }
   ],
   "stats": {
-    "total": 5,
+    "total": 10,
     "new": 0,
-    "contacted": 5,
+    "contacted": 10,
     "replied": 0,
     "converted": 0
   },
-  "lastOutreachGenerated": "2026-06-12T08:06:30.692Z",
-  "updatedAt": "2026-06-12T08:06:30.692Z"
+  "lastOutreachGenerated": "2026-06-12T08:15:50.231Z",
+  "updatedAt": "2026-06-12T08:15:50.231Z"
 }

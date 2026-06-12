@@ -1,0 +1,35 @@
+{
+  "productId": "docflow-api",
+  "productName": "Docflow API",
+  "channelId": "linkedin",
+  "channelName": "LinkedIn",
+  "generatedAt": "2026-06-12T08:21:35.398Z",
+  "status": "active",
+  "seo": {
+    "title": "Docflow API en LinkedIn | Tiger Lab",
+    "description": "Docflow API - Automatizacion inteligente",
+    "keywords": [
+      "Docflow API",
+      "linkedin",
+      "automatizacion",
+      "tiger lab"
+    ],
+    "ogImage": null
+  },
+  "copy": {
+    "headline": "Docflow API: La herramienta que tu equipo necesita para dejar de hacer procesos manuales",
+    "body": "En Tiger Lab construimos Docflow API para resolver los problemas reales de las SMBs en Mexico.\n\nSabemos que la mayoria de los equipos pequenos no tienen un area de tecnologia dedicada. Por eso creamos una herramienta que:\n• API Access\n• Automation\n• Reports\n\nCon $39/mo empiezas. Sin contratos largos. Sin equipo tecnico.\n\nLa pregunta no es si necesitas automatizar. Es cuanto tiempo mas puedes permitirte no hacerlo.\n\nAgenda un diagnostico gratuito de 15 min y descubre como Docflow API puede transformar tu operacion.",
+    "cta": "Agenda tu diagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
+    "tone": "thought-leadership, profesional, casos de uso"
+  },
+  "tracking": {
+    "utmSource": "linkedin",
+    "utmCampaign": "landing-docflow-api-linkedin",
+    "utmContent": "social-landing-1781252495398"
+  },
+  "metrics": {
+    "targetChars": 2800,
+    "actualChars": 679,
+    "qualityScore": 48
+  }
+}

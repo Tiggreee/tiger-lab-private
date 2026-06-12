@@ -1,0 +1,35 @@
+{
+  "productId": "facturautentico",
+  "productName": "FacturAutentica",
+  "channelId": "discord",
+  "channelName": "Discord",
+  "generatedAt": "2026-06-12T08:21:35.417Z",
+  "status": "paused",
+  "seo": {
+    "title": "FacturAutentica en Discord | Tiger Lab",
+    "description": "FacturAutentica - Automatizacion inteligente",
+    "keywords": [
+      "FacturAutentica",
+      "discord",
+      "automatizacion",
+      "tiger lab"
+    ],
+    "ogImage": null
+  },
+  "copy": {
+    "headline": "FacturAutentica - Release Notes & Tech Specs",
+    "body": "**FacturAutentica — Now Available**\n\n**Status**: Active | **Pricing**: $39/mo\n**Stack**: Node.js 20+, TypeScript, REST API\n**Auth**: API Key via header `X-API-Key`\n\n**Features**:\n• `api-access`\n• `automation`\n• `reports`\n• `support`\n\n**Docs**: https://tigerlab.dev/docs/facturautentico\n**Support**: Discord ticket or victor@tigerlab.dev\n\nTo get started, book a diagnostic: https://cal.com/victor-tigerlab/diagnostic",
+    "cta": "Proximamente. Notificame cuando este disponible.",
+    "tone": "tecnico, detallado, para early adopters"
+  },
+  "tracking": {
+    "utmSource": "discord",
+    "utmCampaign": "landing-facturautentico-discord",
+    "utmContent": "social-landing-1781252495417"
+  },
+  "metrics": {
+    "targetChars": 2000,
+    "actualChars": 507,
+    "qualityScore": 49
+  }
+}

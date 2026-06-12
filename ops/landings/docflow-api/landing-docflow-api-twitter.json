@@ -1,0 +1,35 @@
+{
+  "productId": "docflow-api",
+  "productName": "Docflow API",
+  "channelId": "twitter",
+  "channelName": "X / Twitter",
+  "generatedAt": "2026-06-12T08:21:35.398Z",
+  "status": "active",
+  "seo": {
+    "title": "Docflow API en X / Twitter | Tiger Lab",
+    "description": "Docflow API - Automatizacion inteligente",
+    "keywords": [
+      "Docflow API",
+      "x / twitter",
+      "automatizacion",
+      "tiger lab"
+    ],
+    "ogImage": null
+  },
+  "copy": {
+    "headline": "Docflow API ya esta aqui. Automatiza tu operacion en minutos.",
+    "body": "Docflow API esta vivo.\n\nAPI Access\nAutomation\n\n$39/mo · Sin equipo tecnico necesario\nDiagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
+    "cta": "Agenda tu diagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
+    "tone": "directo, punchy, con call-to-action"
+  },
+  "tracking": {
+    "utmSource": "twitter",
+    "utmCampaign": "landing-docflow-api-twitter",
+    "utmContent": "social-landing-1781252495399"
+  },
+  "metrics": {
+    "targetChars": 280,
+    "actualChars": 280,
+    "qualityScore": 66
+  }
+}

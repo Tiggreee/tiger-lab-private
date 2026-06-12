@@ -1,0 +1,35 @@
+{
+  "productId": "facturautentico",
+  "productName": "FacturAutentica",
+  "channelId": "linkedin",
+  "channelName": "LinkedIn",
+  "generatedAt": "2026-06-12T08:21:35.414Z",
+  "status": "paused",
+  "seo": {
+    "title": "FacturAutentica en LinkedIn | Tiger Lab",
+    "description": "FacturAutentica - Automatizacion inteligente",
+    "keywords": [
+      "FacturAutentica",
+      "linkedin",
+      "automatizacion",
+      "tiger lab"
+    ],
+    "ogImage": null
+  },
+  "copy": {
+    "headline": "Como facturautentica esta transformando la operacion de SMBs en Mexico",
+    "body": "FacturAutentica no es solo software. Es la respuesta a \"no tenemos tiempo para implementar tecnologia\".\n\nConstruimos para el founder que hace de CTO, el COO que tapita incendios, el equipo que crece sin procesos.\n\n✅ API Access\n✅ Automation\n✅ Reports\n✅ Support\n\nResultados en semanas, no en meses. Desde $39/mo.",
+    "cta": "Proximamente. Notificame cuando este disponible.",
+    "tone": "thought-leadership, profesional, casos de uso"
+  },
+  "tracking": {
+    "utmSource": "linkedin",
+    "utmCampaign": "landing-facturautentico-linkedin",
+    "utmContent": "social-landing-1781252495414"
+  },
+  "metrics": {
+    "targetChars": 2800,
+    "actualChars": 428,
+    "qualityScore": 37
+  }
+}

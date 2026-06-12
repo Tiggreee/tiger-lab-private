@@ -1,0 +1,35 @@
+{
+  "productId": "facturautentico-cloud",
+  "productName": "FacturAutentico Cloud",
+  "channelId": "telegram",
+  "channelName": "Telegram",
+  "generatedAt": "2026-06-12T08:21:35.396Z",
+  "status": "paused",
+  "seo": {
+    "title": "FacturAutentico Cloud en Telegram | Tiger Lab",
+    "description": "FacturAutentico Cloud - Automatizacion inteligente",
+    "keywords": [
+      "FacturAutentico Cloud",
+      "telegram",
+      "automatizacion",
+      "tiger lab"
+    ],
+    "ogImage": null
+  },
+  "copy": {
+    "headline": "FacturAutentico Cloud - Prueba gratis 14 dias",
+    "body": "FacturAutentico Cloud - Automatizacion directa para tu operacion.\n\n• API Access\n• Automation\n• Reports\n\nPrecio: $39/mo\nPrueba: 14 dias gratis\n\nAgenda: https://cal.com/victor-tigerlab/diagnostic",
+    "cta": "Proximamente. Notificame cuando este disponible.",
+    "tone": "directo, propositivo, enlace directo"
+  },
+  "tracking": {
+    "utmSource": "telegram",
+    "utmCampaign": "landing-facturautentico-cloud-telegram",
+    "utmContent": "social-landing-1781252495396"
+  },
+  "metrics": {
+    "targetChars": 4096,
+    "actualChars": 286,
+    "qualityScore": 28
+  }
+}

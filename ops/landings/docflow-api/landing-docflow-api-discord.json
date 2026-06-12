@@ -1,0 +1,35 @@
+{
+  "productId": "docflow-api",
+  "productName": "Docflow API",
+  "channelId": "discord",
+  "channelName": "Discord",
+  "generatedAt": "2026-06-12T08:21:35.402Z",
+  "status": "active",
+  "seo": {
+    "title": "Docflow API en Discord | Tiger Lab",
+    "description": "Docflow API - Automatizacion inteligente",
+    "keywords": [
+      "Docflow API",
+      "discord",
+      "automatizacion",
+      "tiger lab"
+    ],
+    "ogImage": null
+  },
+  "copy": {
+    "headline": "Docflow API esta disponible. Integracion tecnica y API docs.",
+    "body": "**Docflow API Release**\n\nTarget: SMBs in Mexico (3-50 employees)\nPricing: $39/mo\nTrial: 14 days, no credit card required\n\n**Integration Guide**:\n1. Book diagnostic\n2. We configure your instance\n3. Start automating\n\nQuestions? Open a ticket.",
+    "cta": "Agenda tu diagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
+    "tone": "tecnico, detallado, para early adopters"
+  },
+  "tracking": {
+    "utmSource": "discord",
+    "utmCampaign": "landing-docflow-api-discord",
+    "utmContent": "social-landing-1781252495402"
+  },
+  "metrics": {
+    "targetChars": 2000,
+    "actualChars": 372,
+    "qualityScore": 41
+  }
+}

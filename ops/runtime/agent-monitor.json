@@ -1,0 +1,340 @@
+{
+  "generatedAt": "2026-06-12T08:21:35.960Z",
+  "summary": {
+    "totalAgents": 20,
+    "activeAgents": 20,
+    "inactiveAgents": 0,
+    "directMonetization": 7,
+    "indirectMonetization": 8,
+    "supportGovernance": 5,
+    "monetizationContributing": 15
+  },
+  "agents": [
+    {
+      "id": "agent-audit",
+      "name": "Audit",
+      "type": "Copilot Agent",
+      "active": true,
+      "monetizationContribution": "parcial",
+      "contributionDetail": "Soporte/gobernanza (no genera ingresos directamente)",
+      "monetizationType": "soporte",
+      "integrationChannels": [
+        "workflows: copilot-agents-validation.yml, production-go-no-go.yml, security.yml",
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 3,
+      "hasScript": true
+    },
+    {
+      "id": "agent-bots",
+      "name": "Bots",
+      "type": "Copilot Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+      "monetizationType": "indirecta",
+      "integrationChannels": [
+        "workflows: copilot-agents-validation.yml, production-go-no-go.yml",
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 2,
+      "hasScript": true
+    },
+    {
+      "id": "agent-docs",
+      "name": "Docs",
+      "type": "Copilot Agent",
+      "active": true,
+      "monetizationContribution": "parcial",
+      "contributionDetail": "Soporte/gobernanza (no genera ingresos directamente)",
+      "monetizationType": "soporte",
+      "integrationChannels": [
+        "workflows: copilot-agents-validation.yml, pr-title-check.yml, production-go-no-go.yml",
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 3,
+      "hasScript": true
+    },
+    {
+      "id": "agent-master",
+      "name": "Master",
+      "type": "Copilot Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+      "monetizationType": "indirecta",
+      "integrationChannels": [
+        "workflows: copilot-agents-validation.yml, production-go-no-go.yml",
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 2,
+      "hasScript": true
+    },
+    {
+      "id": "agent-pipelines",
+      "name": "Pipelines",
+      "type": "Copilot Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+      "monetizationType": "indirecta",
+      "integrationChannels": [
+        "workflows: copilot-agents-validation.yml, production-go-no-go.yml",
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 2,
+      "hasScript": true
+    },
+    {
+      "id": "agent-products",
+      "name": "Products",
+      "type": "Copilot Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
+      "monetizationType": "directa",
+      "integrationChannels": [
+        "workflows: copilot-agents-validation.yml, product-release-pipeline.yml, production-go-no-go.yml, repo-intel-sync.yml",
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 4,
+      "hasScript": true
+    },
+    {
+      "id": "agent-runtime",
+      "name": "Runtime",
+      "type": "Copilot Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+      "monetizationType": "indirecta",
+      "integrationChannels": [
+        "workflows: billing-reconciliation-daily.yml, copilot-agents-validation.yml, daily-sales-automation.yml, github-policy-monitor.yml, production-go-no-go.yml, publish-packages.yml",
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 6,
+      "hasScript": true
+    },
+    {
+      "id": "agent-tiggreeeon",
+      "name": "Tiggreeeon",
+      "type": "Copilot Agent",
+      "active": true,
+      "monetizationContribution": "parcial",
+      "contributionDetail": "Soporte/gobernanza (no genera ingresos directamente)",
+      "monetizationType": "soporte",
+      "integrationChannels": [
+        "workflows: copilot-agents-validation.yml, production-go-no-go.yml",
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 2,
+      "hasScript": true
+    },
+    {
+      "id": "agent-traffic",
+      "name": "Traffic",
+      "type": "Copilot Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
+      "monetizationType": "directa",
+      "integrationChannels": [
+        "workflows: copilot-agents-validation.yml, daily-sales-automation.yml, production-go-no-go.yml, social-publish.yml",
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 4,
+      "hasScript": true
+    },
+    {
+      "id": "BotOrchestrator",
+      "name": "BotOrchestrator",
+      "type": "Project Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
+      "monetizationType": "directa",
+      "integrationChannels": [
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 0,
+      "hasScript": true
+    },
+    {
+      "id": "ContentEngine",
+      "name": "ContentEngine",
+      "type": "Project Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+      "monetizationType": "indirecta",
+      "integrationChannels": [
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 0,
+      "hasScript": true
+    },
+    {
+      "id": "DashboardPrioritization",
+      "name": "DashboardPrioritization",
+      "type": "Project Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+      "monetizationType": "indirecta",
+      "integrationChannels": [
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 0,
+      "hasScript": true
+    },
+    {
+      "id": "GitHubPolicyMonitor",
+      "name": "GitHubPolicyMonitor",
+      "type": "Project Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+      "monetizationType": "indirecta",
+      "integrationChannels": [
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 0,
+      "hasScript": true
+    },
+    {
+      "id": "LandingSocialAgent",
+      "name": "LandingSocialAgent",
+      "type": "Project Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
+      "monetizationType": "directa",
+      "integrationChannels": [
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 0,
+      "hasScript": true
+    },
+    {
+      "id": "LeadAnalyzer",
+      "name": "LeadAnalyzer",
+      "type": "Project Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
+      "monetizationType": "directa",
+      "integrationChannels": [
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 0,
+      "hasScript": true
+    },
+    {
+      "id": "LeadIntelligence",
+      "name": "LeadIntelligence",
+      "type": "Project Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
+      "monetizationType": "directa",
+      "integrationChannels": [
+        "script",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 0,
+      "hasScript": true
+    },
+    {
+      "id": "MonetizationEngine",
+      "name": "MonetizationEngine",
+      "type": "Project Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
+      "monetizationType": "directa",
+      "integrationChannels": [
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 0,
+      "hasScript": false
+    },
+    {
+      "id": "ProductArchitect",
+      "name": "ProductArchitect",
+      "type": "Project Agent",
+      "active": true,
+      "monetizationContribution": "parcial",
+      "contributionDetail": "Soporte/gobernanza (no genera ingresos directamente)",
+      "monetizationType": "soporte",
+      "integrationChannels": [
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 0,
+      "hasScript": false
+    },
+    {
+      "id": "release-auditor",
+      "name": "Release Auditor",
+      "type": "Release Auditor",
+      "active": true,
+      "monetizationContribution": "parcial",
+      "contributionDetail": "Soporte/gobernanza (no genera ingresos directamente)",
+      "monetizationType": "soporte",
+      "integrationChannels": [
+        "workflows: product-release-pipeline.yml, release-starter.yml",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 2,
+      "hasScript": false
+    },
+    {
+      "id": "SupervisorDecisionMaker",
+      "name": "SupervisorDecisionMaker",
+      "type": "Project Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+      "monetizationType": "indirecta",
+      "integrationChannels": [
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 0,
+      "hasScript": false
+    }
+  ]
+}

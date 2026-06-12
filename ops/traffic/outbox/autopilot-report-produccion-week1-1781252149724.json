@@ -1,0 +1,27 @@
+{
+  "executedAt": "2026-06-12T08:15:49.723Z",
+  "campaign": "produccion-week1",
+  "packPath": "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\social-pack-produccion-week1.json",
+  "requestedChannels": [
+    "linkedin"
+  ],
+  "readyChannels": [],
+  "liveRequested": false,
+  "minChannels": 1,
+  "readiness": [
+    {
+      "channel": "linkedin",
+      "hasCopy": true,
+      "missingSecrets": [
+        "LINKEDIN_ACCESS_TOKEN",
+        "LINKEDIN_ORG_ID"
+      ],
+      "ready": false
+    }
+  ],
+  "steps": {
+    "goLive": "not-run",
+    "dryPublish": "not-run",
+    "livePublish": "skipped"
+  }
+}

@@ -54,7 +54,15 @@ jobs:
       - name: Dashboard prioritization
         run: node scripts/dashboard-prioritize.mjs
 
-      # 6. Generate daily report
+      # 6. Generate social landing pages per producto × canal
+      - name: Generate social landings
+        run: node scripts/traffic/generate-landing-social.mjs
+
+      # 7. Agent monitor — escanea todos los agentes y su contribucion
+      - name: Agent monitor
+        run: node scripts/agent-monitor.mjs
+
+      # 8. Generate daily report
       - name: Generate daily report
         run: |
           echo "## Daily Sales Automation" > daily-report.md
@@ -74,6 +82,6 @@ jobs:
         run: |
           git config user.name "tiger-bot"
           git config user.email "bot@tigerlab.dev"
-          git add ops/traffic/outbox/ ops/sales/outreach/ ops/leads/ ops/command-center/tasks.json ops/runtime/dashboard-prioritization-report.json
+          git add ops/traffic/outbox/ ops/sales/outreach/ ops/leads/ ops/landings/ ops/runtime/agent-monitor.json ops/command-center/tasks.json ops/runtime/dashboard-prioritization-report.json
           git diff --cached --quiet || git commit -m "daily-sales: full pipeline $(date -u +%Y-%m-%d)"
           git push || echo "Nothing to push or push skipped"

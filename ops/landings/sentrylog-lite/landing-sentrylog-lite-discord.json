@@ -1,0 +1,35 @@
+{
+  "productId": "sentrylog-lite",
+  "productName": "Sentrylog Lite",
+  "channelId": "discord",
+  "channelName": "Discord",
+  "generatedAt": "2026-06-12T08:21:35.407Z",
+  "status": "planned",
+  "seo": {
+    "title": "Sentrylog Lite en Discord | Tiger Lab",
+    "description": "Sentrylog Lite - Automatizacion inteligente",
+    "keywords": [
+      "Sentrylog Lite",
+      "discord",
+      "automatizacion",
+      "tiger lab"
+    ],
+    "ogImage": null
+  },
+  "copy": {
+    "headline": "Sentrylog Lite esta disponible. Integracion tecnica y API docs.",
+    "body": "**Sentrylog Lite Release**\n\nTarget: SMBs in Mexico (3-50 employees)\nPricing: $39/mo\nTrial: 14 days, no credit card required\n\n**Integration Guide**:\n1. Book diagnostic\n2. We configure your instance\n3. Start automating\n\nQuestions? Open a ticket.",
+    "cta": "Proximamente. Notificame cuando este disponible.",
+    "tone": "tecnico, detallado, para early adopters"
+  },
+  "tracking": {
+    "utmSource": "discord",
+    "utmCampaign": "landing-sentrylog-lite-discord",
+    "utmContent": "social-landing-1781252495407"
+  },
+  "metrics": {
+    "targetChars": 2000,
+    "actualChars": 354,
+    "qualityScore": 40
+  }
+}

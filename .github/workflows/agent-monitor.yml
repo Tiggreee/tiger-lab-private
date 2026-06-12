@@ -1,0 +1,30 @@
+name: agent-monitor
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */2 * * *'
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Generate social landings (all products × all channels)
+        run: node scripts/traffic/generate-landing-social.mjs
+
+      - name: Agent monitor scan
+        run: node scripts/agent-monitor.mjs
+
+      - name: Commit monitor results
+        run: |
+          git config user.name "tiger-bot"
+          git config user.email "bot@tigerlab.dev"
+          git add ops/landings/ ops/runtime/agent-monitor.json
+          git diff --cached --quiet || git commit -m "agent-monitor: scan $(date -u +%Y-%m-%dT%H:%M)"
+          git push || echo "Nothing to push or push skipped"

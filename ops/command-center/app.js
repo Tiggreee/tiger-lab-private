@@ -2,6 +2,8 @@ const TASKS_URL = './tasks.json';
 const DECISIONS_URL = './decisions.json';
 const PRIORITIZATION_URL = './runtime/dashboard-prioritization-report.json';
 const LEADS_URL = './leads/pipeline.json';
+const LANDINGS_URL = './landings/index.json';
+const AGENT_MONITOR_URL = './runtime/agent-monitor.json';
 
 const els = {
   metrics: document.getElementById('metrics'),
@@ -42,6 +44,44 @@ function urgencyText(task) {
   if (d < 0) return `Overdue by ${Math.abs(d)} day(s)`;
   if (d === 0) return 'Due today';
   return `Due in ${d} day(s)`;
+}
+
+function createTaskRegistry() {
+  const registry = document.getElementById('taskRegistry');
+  if (!registry) return;
+
+  (async () => {
+    const data = await loadJSON(TASKS_URL);
+    if (!data || !data.tasks) {
+      registry.innerHTML = '<li class="task">No tasks data available</li>';
+      return;
+    }
+    let html = `<li class="task on-track">
+      <p><b>Total tasks:</b> ${data.tasks.length} | <b>Done:</b> ${data.tasks.filter(t => t.status === 'done').length} | <b>Pending:</b> ${data.tasks.filter(t => t.status !== 'done').length}</p>
+      <p><small>All tasks — including completed — shown below for full audit trail.</small></p>
+    </li>`;
+    data.tasks.forEach((task, i) => {
+      const sc = statusClass(task);
+      const ownerLabel = task.owner === 'human' ? 'You' : 'AI';
+      const debtLabel = task.debtSettled ? '✅ Settled' : '❌ Pending';
+      html += `<li class="task ${sc}">
+        <h3>#${i + 1}. ${task.id} — ${task.title}</h3>
+        <p>
+          <span class="badge">${task.priority}</span>
+          <span class="badge">${ownerLabel}</span>
+          <span class="badge">${task.area}</span>
+          <span class="badge">${task.status}</span>
+          <span class="badge">${debtLabel}</span>
+        </p>
+        <p><b>Due:</b> ${task.dueDate} (${urgencyText(task)})</p>
+        <p><b>Action:</b> ${task.nextAction}</p>
+        ${task.evidence ? `<p><small>Evidence: ${task.evidence}</small></p>` : ''}
+        ${task.blocker ? `<p><small>Blocker: ${task.blocker}</small></p>` : ''}
+        ${task.debtNote ? `<p><small>Debt note: ${task.debtNote}</small></p>` : ''}
+      </li>`;
+    });
+    registry.innerHTML = html;
+  })();
 }
 
 function createTaskNode(task) {
@@ -209,6 +249,72 @@ function renderAgentPanel(report) {
   els.agentFocus.innerHTML = html;
 }
 
+function renderLandingsPanel(landings) {
+  const list = document.getElementById('landingsList');
+  if (!list) return;
+  if (!landings || !landings.summary) {
+    list.innerHTML = '<li class="task">No landing data available</li>';
+    return;
+  }
+
+  const s = landings.summary;
+  let html = `<li class="task on-track">
+    <p><b>Total:</b> ${s.totalLandingPages} landings | <b>Productos:</b> ${s.totalProducts} (${s.activeProducts} activos, ${s.pausedProducts} pausados)</p>
+    <p><b>Canales:</b> ${s.channelsUsed.join(', ')}</p>
+  </li>`;
+
+  for (const [productId, info] of Object.entries(landings.products)) {
+    const statusIcon = info.status === 'active' ? '🟢' : '⏸️';
+    html += `<li class="task ${info.status === 'active' ? 'on-track' : 'due-soon'}">
+      <p>${statusIcon} <b>${info.product}</b> — ${info.status} — Canales: ${info.channels.join(', ')}</p>
+    </li>`;
+  }
+
+  if (landings.activeProducts && landings.activeProducts.length > 0) {
+    html += `<li class="task on-track"><p><b>Productos activos con landing:</b> ${landings.activeProducts.join(', ')}</p></li>`;
+  }
+
+  list.innerHTML = html;
+}
+
+function renderAgentMonitor(monitor) {
+  const list = document.getElementById('agentMonitorList');
+  if (!list) return;
+  if (!monitor || !monitor.summary) {
+    list.innerHTML = '<li class="task">No agent monitor data available</li>';
+    return;
+  }
+
+  const s = monitor.summary;
+  const allActive = s.activeAgents === s.totalAgents;
+  const statusEmoji = allActive ? '🟢' : '🟡';
+  const statusText = allActive ? 'Todos los agentes activos' : `${s.activeAgents}/${s.totalAgents} activos`;
+
+  let html = `<li class="task ${allActive ? 'on-track' : 'due-soon'}">
+    <p>${statusEmoji} <b>${statusText}</b></p>
+    <p>
+      <span class="badge">💰 ${s.directMonetization} directos</span>
+      <span class="badge">⚙️ ${s.indirectMonetization} indirectos</span>
+      <span class="badge">🔧 ${s.supportGovernance} soporte</span>
+      <span class="badge">${s.monetizationContributing} contribuyen a monetizacion</span>
+    </p>
+  </li>`;
+
+  for (const agent of monitor.agents) {
+    const activeIcon = agent.active ? '🟢' : '🔴';
+    const monetIcon = agent.monetizationContribution === 'si' ? '💰' : agent.monetizationContribution === 'parcial' ? '🔧' : '⏸️';
+    const typeLabel = agent.type === 'Copilot Agent' ? 'Copilot' : agent.type === 'Release Auditor' ? 'Release' : 'Project';
+    html += `<li class="task ${agent.active ? 'on-track' : 'overdue'}">
+      <p>${activeIcon} ${monetIcon} <b>${agent.name}</b> <span class="badge">${typeLabel}</span></p>
+      <p>${agent.active ? 'Activo' : 'Inactivo'} · Monetizacion: ${agent.monetizationContribution} (${agent.monetizationType})</p>
+      <p><small>${agent.contributionDetail}</small></p>
+      ${agent.integrationChannels.length > 0 ? `<p><small>Integraciones: ${agent.integrationChannels.join(', ')}</small></p>` : ''}
+    </li>`;
+  }
+
+  list.innerHTML = html;
+}
+
 function renderLeadPanel(pipeline) {
   if (!pipeline || !pipeline.stats) {
     els.leadList.innerHTML = '<li class="task">No lead data</li>';
@@ -256,17 +362,22 @@ async function loadDecisions() {
 }
 
 async function render() {
-  const [tasksData, decisionsData, prioritizationData, leadData] = await Promise.all([
+  const [tasksData, decisionsData, prioritizationData, leadData, landingsData, agentMonitorData] = await Promise.all([
     loadTasks(),
     loadDecisions(),
     loadJSON(PRIORITIZATION_URL),
-    loadJSON(LEADS_URL)
+    loadJSON(LEADS_URL),
+    loadJSON(LANDINGS_URL),
+    loadJSON(AGENT_MONITOR_URL)
   ]);
   renderMetrics(tasksData.tasks);
   renderLists(tasksData.tasks);
+  createTaskRegistry();
   renderDecisions(decisionsData);
   renderAgentPanel(prioritizationData);
   renderLeadPanel(leadData);
+  renderLandingsPanel(landingsData);
+  renderAgentMonitor(agentMonitorData);
   triggerNotification(tasksData.tasks);
   const now = new Date().toLocaleString();
   els.footerText.textContent = `Last refresh: ${now} | Timezone: ${tasksData.meta.timezone}`;

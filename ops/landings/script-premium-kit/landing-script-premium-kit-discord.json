@@ -1,0 +1,35 @@
+{
+  "productId": "script-premium-kit",
+  "productName": "Script Premium Kit",
+  "channelId": "discord",
+  "channelName": "Discord",
+  "generatedAt": "2026-06-12T08:21:35.412Z",
+  "status": "active",
+  "seo": {
+    "title": "Script Premium Kit en Discord | Tiger Lab",
+    "description": "Script Premium Kit - Automatizacion inteligente",
+    "keywords": [
+      "Script Premium Kit",
+      "discord",
+      "automatizacion",
+      "tiger lab"
+    ],
+    "ogImage": null
+  },
+  "copy": {
+    "headline": "Script Premium Kit - Para devs que construyen el futuro de las SMBs",
+    "body": "**Script Premium Kit Release**\n\nTarget: SMBs in Mexico (3-50 employees)\nPricing: $39/mo\nTrial: 14 days, no credit card required\n\n**Integration Guide**:\n1. Book diagnostic\n2. We configure your instance\n3. Start automating\n\nQuestions? Open a ticket.",
+    "cta": "Agenda tu diagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
+    "tone": "tecnico, detallado, para early adopters"
+  },
+  "tracking": {
+    "utmSource": "discord",
+    "utmCampaign": "landing-script-premium-kit-discord",
+    "utmContent": "social-landing-1781252495412"
+  },
+  "metrics": {
+    "targetChars": 2000,
+    "actualChars": 386,
+    "qualityScore": 42
+  }
+}

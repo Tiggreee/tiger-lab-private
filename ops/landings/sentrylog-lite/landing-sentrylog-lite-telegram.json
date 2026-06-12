@@ -1,0 +1,35 @@
+{
+  "productId": "sentrylog-lite",
+  "productName": "Sentrylog Lite",
+  "channelId": "telegram",
+  "channelName": "Telegram",
+  "generatedAt": "2026-06-12T08:21:35.406Z",
+  "status": "planned",
+  "seo": {
+    "title": "Sentrylog Lite en Telegram | Tiger Lab",
+    "description": "Sentrylog Lite - Automatizacion inteligente",
+    "keywords": [
+      "Sentrylog Lite",
+      "telegram",
+      "automatizacion",
+      "tiger lab"
+    ],
+    "ogImage": null
+  },
+  "copy": {
+    "headline": "Sentrylog Lite: Precio accesible, resultados reales",
+    "body": "Sentrylog Lite - Automatizacion directa para tu operacion.\n\n• API Access\n• Automation\n• Reports\n\nPrecio: $39/mo\nPrueba: 14 dias gratis\n\nAgenda: https://cal.com/victor-tigerlab/diagnostic",
+    "cta": "Proximamente. Notificame cuando este disponible.",
+    "tone": "directo, propositivo, enlace directo"
+  },
+  "tracking": {
+    "utmSource": "telegram",
+    "utmCampaign": "landing-sentrylog-lite-telegram",
+    "utmContent": "social-landing-1781252495406"
+  },
+  "metrics": {
+    "targetChars": 4096,
+    "actualChars": 285,
+    "qualityScore": 28
+  }
+}
