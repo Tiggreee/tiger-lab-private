@@ -6,7 +6,7 @@
 
 | Indicador | Status | Detalle |
 |-----------|--------|---------|
-| Engine LED | 🟢 VERDE | Gate GO, 68 empresas cargadas en DB |
+| Engine LED | 🔴 ROJO | Product avg 64 < 70 threshold (Gate GO, 68 empresas cargadas) |
 | Implementación | 98% | 51 scripts, 1 juguete (lead-intelligence obsoleto) |
 | Conexiones reales | 37% | 14/51 scripts con APIs o DB externas |
 | DB Leads | 68 empresas | Seed DENUE + OSM, Oracle-compatible SQL |
