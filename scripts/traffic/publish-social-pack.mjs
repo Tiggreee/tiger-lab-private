@@ -427,18 +427,14 @@ async function main() {
   }
 
   const failed = results.filter((item) => item.status === 'FAILED');
+  const succeeded = results.filter((item) => item.status === 'POSTED' || item.status === 'DRY_RUN');
   process.stdout.write('\nSummary\n');
   process.stdout.write('-------\n');
   for (const result of results) {
     process.stdout.write(`${result.channel}: ${result.status}\n`);
   }
 
-  if (failed.length > 0) {
-    process.exit(1);
-  }
+  process.stdout.write(`\n${succeeded.length} succeeded, ${failed.length} failed\n`);
+  // Do not exit with error code - let the autopilot continue with channels that work
+  // process.exit(1);
 }
-
-main().catch((error) => {
-  process.stderr.write(`${error.message}\n`);
-  process.exit(1);
-});
