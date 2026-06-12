@@ -87,10 +87,31 @@
         "ui-host-pages": 1
       },
       "perm": "all"
+    },
+    {
+      "timestamp": "2026-06-12T13:14:50.087Z",
+      "totalRuns": 100,
+      "failed": 19,
+      "successful": 71,
+      "byType": {
+        "failure": 19
+      },
+      "byWorkflow": {
+        "Billing Reconciliation Daily": 2,
+        "Failures Monitor — 2h Cycle": 5,
+        "Production Go No-Go": 2,
+        "Social Publish": 1,
+        "Running Copilot cloud agent": 1,
+        "daily-sales-automation": 3,
+        "Product Development Engine — 2h Cycle": 1,
+        "Deploy Backend to Railway": 3,
+        "ui-host-pages": 1
+      },
+      "perm": "all"
     }
   ],
   "fixesApplied": [],
   "lastKnownPermission": "all",
-  "lastAnalysis": "2026-06-12T13:12:36.640Z",
-  "totalFailuresTracked": 225
+  "lastAnalysis": "2026-06-12T13:14:50.088Z",
+  "totalFailuresTracked": 244
 }

@@ -1009,12 +1009,12 @@
     }
   },
   "failuresMonitor": {
-    "lastAnalysis": "2026-06-12T13:12:36.640Z",
+    "lastAnalysis": "2026-06-12T13:14:50.088Z",
     "totalRuns": 100,
-    "failedToday": 18,
-    "successfulToday": 69,
+    "failedToday": 19,
+    "successfulToday": 71,
     "byType": {
-      "failure": 18
+      "failure": 19
     },
     "byWorkflow": [
       {
@@ -1030,15 +1030,15 @@
         "failures": 3
       },
       {
+        "workflow": "Billing Reconciliation Daily",
+        "failures": 2
+      },
+      {
         "workflow": "Production Go No-Go",
         "failures": 2
       },
       {
         "workflow": "Social Publish",
-        "failures": 1
-      },
-      {
-        "workflow": "Billing Reconciliation Daily",
         "failures": 1
       },
       {
