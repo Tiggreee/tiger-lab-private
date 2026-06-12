@@ -46,7 +46,7 @@ function parseArgs(argv) {
 
     const key = item.slice(2);
     const value = argv[index + 1];
-    if (!value || value.startsWith('--')) {
+    if (value === undefined || value === null || value.startsWith('--')) {
       continue;
     }
 
@@ -79,7 +79,7 @@ function parseArgs(argv) {
 
     if (key === 'minChannels') {
       const parsed = Number.parseInt(value, 10);
-      if (Number.isFinite(parsed) && parsed > 0) {
+      if (Number.isFinite(parsed) && parsed >= 0) {
         options.minChannels = parsed;
       }
       index += 1;
