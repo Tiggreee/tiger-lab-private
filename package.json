@@ -92,7 +92,7 @@
       "prod:engine:status": "node scripts/product-development-engine.mjs --summary-only"
     },
   "devDependencies": {
-    "@types/node": "^24.12.3",
+    "@types/node": "^25.9.3",
     "@vitest/coverage-v8": "^2.1.8",
     "typescript": "^6.0.3",
     "vitest": "^2.1.8"
