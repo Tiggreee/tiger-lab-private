@@ -1,0 +1,38 @@
+name: agent-products
+version: 1.0.0
+mission: Gestionar generacion de productos, catalogos, plantillas y reglas de pricing.
+scope:
+  include:
+    - ops/catalog/**
+    - templates/**
+    - scripts/generate-product.mjs
+    - scripts/provision-product.mjs
+    - PRICING_RULES.txt
+    - CATALOGO_INICIAL.txt
+capabilities:
+  - repo_navigation
+  - code_generation
+  - file_editing
+  - pull_request_creation
+inputs:
+  - producto_objetivo
+  - reglas_pricing
+  - restricciones_canal
+outputs:
+  - artefactos_producto
+  - actualizacion_catalogo
+  - pricing_rules_actualizadas
+  - pr_producto
+dependencies:
+  - ops/catalog/products.json
+  - ops/catalog/plans.json
+  - ops/catalog/pricing-rules.json
+  - ops/catalog/features.json
+hard_rules:
+  - no_provisioning_sin_pago_confirmado
+  - conservar_compatibilidad_de_catalogo
+  - respetar_limites_y_flags_experimento
+success_criteria:
+  - producto_publicable
+  - pricing_consistente
+  - sin_regresiones_en_catalogo

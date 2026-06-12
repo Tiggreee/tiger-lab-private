@@ -1,0 +1,99 @@
+{
+  "generatedAt": "2026-06-12T07:43:17.057Z",
+  "campaign": "linkedin-today",
+  "topic": "Automatización de operaciones para SMBs sin equipo técnico",
+  "audience": "founders y operadores SMB en México",
+  "offer": "Diagnóstico de 15 min con plan de implementación",
+  "brand": {
+    "productName": "Tiger Lab Automation",
+    "problemDetail": "operaciones manuales que consumen 10+h/semana",
+    "primaryOutcome": "operación autónoma en 2 semanas",
+    "proofPoint": "SMB de 8 personas ahorró 15h/semana en su primer sprint",
+    "domainTerms": [
+      "automatizacion",
+      "smb",
+      "operaciones",
+      "eficiencia"
+    ]
+  },
+  "funnel": {
+    "trafficDestination": "https://cal.com/victor-tigerlab/diagnostic",
+    "closeChannel": "calendar",
+    "closeDestination": "https://cal.com/victor-tigerlab/diagnostic",
+    "prefilledMessage": "Hola, vengo de la campana y quiero activar el diagnostico express de 15 min.",
+    "finalCta": "Agenda aqui un diagnostico de Tiger Lab Automation: https://cal.com/victor-tigerlab/diagnostic",
+    "closeLink": "https://cal.com/victor-tigerlab/diagnostic"
+  },
+  "quality": {
+    "averageScore": 100,
+    "projectedAverageLiftPct": 24,
+    "targetLiftPct": 15,
+    "targetReached": true
+  },
+  "channels": {
+    "linkedin": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Tiger Lab Automation: Automatización de operaciones para SMBs sin equipo técnico.\n\nContexto operativo: founders y operadores SMB en México con foco en operación autónoma en 2 semanas.\n\nSi hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab Automation esta hecho para operación autónoma en 2 semanas.\n\nEnfoque de esta solucion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: SMB de 8 personas ahorró 15h/semana en su primer sprint\n\nSenales de encaje: automatizacion, smb, operaciones, eficiencia.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nAgenda aqui un diagnostico de Tiger Lab Automation: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-today",
+      "variants": {
+        "A": "Tiger Lab Automation: Automatización de operaciones para SMBs sin equipo técnico.\n\nContexto operativo: founders y operadores SMB en México con foco en operación autónoma en 2 semanas.\n\nSi hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab Automation esta hecho para operación autónoma en 2 semanas.\n\nEnfoque de esta solucion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: SMB de 8 personas ahorró 15h/semana en su primer sprint\n\nSenales de encaje: automatizacion, smb, operaciones, eficiencia.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nAgenda aqui un diagnostico de Tiger Lab Automation: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-today",
+        "B": "Tiger Lab Automation no existe para sonar futurista. Existe para quitar operaciones manuales que consumen 10+h/semana.\n\nContexto operativo: founders y operadores SMB en México con foco en operación autónoma en 2 semanas.\n\nSi hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab Automation esta hecho para operación autónoma en 2 semanas.\n\nEnfoque de esta solucion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: SMB de 8 personas ahorró 15h/semana en su primer sprint\n\nSenales de encaje: automatizacion, smb, operaciones, eficiencia.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=linkedin&utm_medium=social&utm_campaign=linkedin-today"
+      }
+    },
+    "x": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Tiger Lab Automation: Automatización de operaciones para SMBs sin equipo técnico. Si hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible. SMB de 8 personas ahorró 15h/semana en su primer sp...",
+      "variants": {
+        "A": "Tiger Lab Automation: Automatización de operaciones para SMBs sin equipo técnico. Si hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible. SMB de 8 personas ahorró 15h/semana en su primer sp...",
+        "B": "Tiger Lab Automation no existe para sonar futurista. Existe para quitar operaciones manuales que consumen 10+h/semana. Si hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible. SMB de 8 perso..."
+      }
+    },
+    "facebook": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Tiger Lab Automation: Automatización de operaciones para SMBs sin equipo técnico.\n\nEscenario real: founders y operadores SMB en México con foco en operación autónoma en 2 semanas.\n\nSi hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab Automation esta hecho para operación autónoma en 2 semanas.\n\nFoco de implementacion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: SMB de 8 personas ahorró 15h/semana en su primer sprint\n\nChecklist de encaje: automatizacion, smb, operaciones, eficiencia.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nAgenda aqui un diagnostico de Tiger Lab Automation: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=facebook&utm_medium=social&utm_campaign=linkedin-today",
+      "variants": {
+        "A": "Tiger Lab Automation: Automatización de operaciones para SMBs sin equipo técnico.\n\nEscenario real: founders y operadores SMB en México con foco en operación autónoma en 2 semanas.\n\nSi hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab Automation esta hecho para operación autónoma en 2 semanas.\n\nFoco de implementacion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: SMB de 8 personas ahorró 15h/semana en su primer sprint\n\nChecklist de encaje: automatizacion, smb, operaciones, eficiencia.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nAgenda aqui un diagnostico de Tiger Lab Automation: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=facebook&utm_medium=social&utm_campaign=linkedin-today",
+        "B": "Tiger Lab Automation no existe para sonar futurista. Existe para quitar operaciones manuales que consumen 10+h/semana.\n\nEscenario real: founders y operadores SMB en México con foco en operación autónoma en 2 semanas.\n\nSi hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab Automation esta hecho para operación autónoma en 2 semanas.\n\nFoco de implementacion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: SMB de 8 personas ahorró 15h/semana en su primer sprint\n\nChecklist de encaje: automatizacion, smb, operaciones, eficiencia.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=facebook&utm_medium=social&utm_campaign=linkedin-today"
+      }
+    },
+    "telegram": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Tiger Lab Automation: Automatización de operaciones para SMBs sin equipo técnico.\n\nSi hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab Automation esta hecho para operación autónoma en 2 semanas.\n\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: SMB de 8 personas ahorró 15h/semana en su primer sprint\n\nSenales de encaje: automatizacion, smb, operaciones, eficiencia.\n\nAgenda aqui un diagnostico de Tiger Lab Automation: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=telegram&utm_medium=social&utm_campaign=linkedin-today",
+      "variants": {
+        "A": "Tiger Lab Automation: Automatización de operaciones para SMBs sin equipo técnico.\n\nSi hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab Automation esta hecho para operación autónoma en 2 semanas.\n\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: SMB de 8 personas ahorró 15h/semana en su primer sprint\n\nSenales de encaje: automatizacion, smb, operaciones, eficiencia.\n\nAgenda aqui un diagnostico de Tiger Lab Automation: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=telegram&utm_medium=social&utm_campaign=linkedin-today",
+        "B": "Tiger Lab Automation no existe para sonar futurista. Existe para quitar operaciones manuales que consumen 10+h/semana.\n\nSi hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab Automation esta hecho para operación autónoma en 2 semanas.\n\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: SMB de 8 personas ahorró 15h/semana en su primer sprint\n\nSenales de encaje: automatizacion, smb, operaciones, eficiencia.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=telegram&utm_medium=social&utm_campaign=linkedin-today"
+      }
+    },
+    "discord": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Tiger Lab Automation: Automatización de operaciones para SMBs sin equipo técnico.\nSi hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\nTiger Lab Automation esta hecho para operación autónoma en 2 semanas.\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\nPrueba concreta: SMB de 8 personas ahorró 15h/semana en su primer sprint\nSenales de encaje: automatizacion, smb, operaciones, eficiencia.\nAgenda aqui un diagnostico de Tiger Lab Automation: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=discord&utm_medium=social&utm_campaign=linkedin-today",
+      "variants": {
+        "A": "Tiger Lab Automation: Automatización de operaciones para SMBs sin equipo técnico.\nSi hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\nTiger Lab Automation esta hecho para operación autónoma en 2 semanas.\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\nPrueba concreta: SMB de 8 personas ahorró 15h/semana en su primer sprint\nSenales de encaje: automatizacion, smb, operaciones, eficiencia.\nAgenda aqui un diagnostico de Tiger Lab Automation: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=discord&utm_medium=social&utm_campaign=linkedin-today",
+        "B": "Tiger Lab Automation no existe para sonar futurista. Existe para quitar operaciones manuales que consumen 10+h/semana.\nSi hoy founders y operadores SMB en México sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\nTiger Lab Automation esta hecho para operación autónoma en 2 semanas.\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\nPrueba concreta: SMB de 8 personas ahorró 15h/semana en su primer sprint\nSenales de encaje: automatizacion, smb, operaciones, eficiencia.\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=discord&utm_medium=social&utm_campaign=linkedin-today"
+      }
+    }
+  },
+  "mcpAudit": {
+    "enabled": true,
+    "auditedAt": "2026-06-12T07:43:17.057Z",
+    "benchmark": {
+      "averageScore": 100,
+      "minimumScoreForApply": 72,
+      "projectedLiftPct": 24,
+      "targetLiftPct": 15
+    },
+    "decision": "apply",
+    "findings": [
+      "Campana apta para ejecucion automatizada segun benchmark MCP."
+    ]
+  }
+}

@@ -1,10 +1,13 @@
 const TASKS_URL = './tasks.json';
+const DECISIONS_URL = './decisions.json';
 
 const els = {
   metrics: document.getElementById('metrics'),
   humanTasks: document.getElementById('humanTasks'),
   aiTasks: document.getElementById('aiTasks'),
   allTasks: document.getElementById('allTasks'),
+  decisionsList: document.getElementById('decisionsList'),
+  decisionsCount: document.getElementById('decisionsCount'),
   notifyBtn: document.getElementById('notifyBtn'),
   refreshBtn: document.getElementById('refreshBtn'),
   priorityFilter: document.getElementById('priorityFilter'),
@@ -79,6 +82,52 @@ function renderMetrics(tasks) {
   });
 }
 
+function renderDecisions(decisions) {
+  if (!decisions || !decisions.result || !decisions.result.report) {
+    els.decisionsList.innerHTML = '<li class="task">No decision data available</li>';
+    els.decisionsCount.textContent = '0';
+    return;
+  }
+
+  const report = decisions.result.report;
+  els.decisionsCount.textContent = report.totalProducts;
+
+  let html = `
+    <li class="task on-track">
+      <h3>Supervisor Report</h3>
+      <p>
+        <span class="badge">${report.activeProducts} Active</span>
+        <span class="badge">${report.flaggedProducts} Flagged</span>
+        <span class="badge">${report.retiredProducts} Retired</span>
+        <span class="badge">$${report.totalPotentialRevenue}/mo potential</span>
+      </p>
+      <p><b>Evaluated at:</b> ${new Date(report.evaluatedAt).toLocaleString()}</p>
+    </li>
+  `;
+
+  if (report.recommendations && report.recommendations.length > 0) {
+    report.recommendations.forEach((rec) => {
+      html += `<li class="task due-soon"><p>${rec}</p></li>`;
+    });
+  }
+
+  if (decisions.result.pending) {
+    decisions.result.pending.forEach((d) => {
+      const impact = d.impact === 'critical' ? 'overdue' : d.impact === 'high' ? 'due-soon' : 'on-track';
+      html += `
+        <li class="task ${impact}">
+          <h3>${d.title}</h3>
+          <p><span class="badge">${d.type}</span> <span class="badge">${d.impact}</span> <span class="badge">${Math.round(d.confidence * 100)}% conf</span></p>
+          <p>${d.description}</p>
+          <p><small>${d.evidence.slice(0, 2).join(' · ')}</small></p>
+        </li>
+      `;
+    });
+  }
+
+  els.decisionsList.innerHTML = html;
+}
+
 function renderLists(tasks) {
   const active = tasks.filter((t) => t.status !== 'done');
 
@@ -116,13 +165,26 @@ async function loadTasks() {
   return response.json();
 }
 
+async function loadDecisions() {
+  try {
+    const response = await fetch(DECISIONS_URL, { cache: 'no-store' });
+    if (!response.ok) throw new Error('Failed to load decisions');
+    return response.json();
+  } catch {
+    const fallback = await fetch('http://localhost:8787/decisions/report', { cache: 'no-store' }).catch(() => null);
+    if (fallback && fallback.ok) return fallback.json();
+    return null;
+  }
+}
+
 async function render() {
-  const data = await loadTasks();
-  renderMetrics(data.tasks);
-  renderLists(data.tasks);
-  triggerNotification(data.tasks);
+  const [tasksData, decisionsData] = await Promise.all([loadTasks(), loadDecisions()]);
+  renderMetrics(tasksData.tasks);
+  renderLists(tasksData.tasks);
+  renderDecisions(decisionsData);
+  triggerNotification(tasksData.tasks);
   const now = new Date().toLocaleString();
-  els.footerText.textContent = `Last refresh: ${now} | Timezone: ${data.meta.timezone}`;
+  els.footerText.textContent = `Last refresh: ${now} | Timezone: ${tasksData.meta.timezone}`;
 }
 
 els.notifyBtn.addEventListener('click', async () => {

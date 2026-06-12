@@ -30,7 +30,12 @@
       "selectedVariant": "A",
       "selectedScore": 95,
       "projectedLiftPct": 20,
-      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=linkedin&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01"
+      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=linkedin&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01",
+      "copyPaste": "FacturaAutentica: CFDI confiable sin retrabajo operativo.\n\nSi hoy despachos contables y operaciones SMB sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para reducir errores de captura y tiempo de facturacion.\n\nProof: Equipos con validacion previa reducen retrabajo y rechazos CFDI en 98%.\n\nPor eso despachos en Mexico ya reportan:\n✓ 98% menos rechazos SAT\n✓ 40% menos tiempo operativo\n✓ Cero retrabajo CFDI\n✓ PAC integrado en minutos\n\nDiagnostico operativo express (15 min, gratis):\nhttps://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica",
+      "variants": {
+        "A": "FacturaAutentica: CFDI confiable sin retrabajo operativo.\n\nSi hoy despachos contables y operaciones SMB sigue resolviendo timbrado manual, errores CFDI y retrabajo semanal, el costo ya es operativo y visible.\n\nFacturaAutentica esta hecho para reducir errores de captura y tiempo de facturacion.\n\nProof: Equipos con validacion previa reducen retrabajo y rechazos CFDI en 98%.\n\nPor eso despachos en Mexico ya reportan:\n✓ 98% menos rechazos SAT\n✓ 40% menos tiempo operativo\n✓ Cero retrabajo CFDI\n✓ PAC integrado en minutos\n\nDiagnostico operativo express (15 min, gratis):\nhttps://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica",
+        "B": "FacturaAutentica no existe para sonar futurista. Existe para quitar timbrado manual, errores CFDI y retrabajo semanal.\n\nSi hoy despachos contables y operaciones SMB sigue resolviendo eso, el costo ya es operativo.\n\nValidacion previa antes de timbrar = menos rechazos, menos retrabajo.\n\nDespachos reportan: 98% menos errores, 40% menos tiempo.\n\nDiagnostico operativo express (15 min, gratis):\nhttps://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica"
+      }
     },
     "x": {
       "selectedVariant": "A",

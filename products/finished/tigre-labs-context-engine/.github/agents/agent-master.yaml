@@ -1,0 +1,54 @@
+name: agent-master
+version: 1.0.0
+mission: Controlador general del Engine para orquestacion, consistencia y cumplimiento de reglas globales.
+scope:
+  include:
+    - agents/**
+    - bots/**
+    - scripts/**
+    - server/**
+    - ops/**
+    - src/**
+    - docs/**
+    - templates/**
+    - .github/workflows/**
+capabilities:
+  - repo_navigation
+  - code_generation
+  - file_editing
+  - pull_request_creation
+inputs:
+  - objetivos_operativos
+  - estado_runtime
+  - backlog_critical
+  - reglas_globales
+outputs:
+  - plan_orquestacion
+  - reporte_consistencia
+  - lista_handoffs
+  - pr_plan
+global_rules:
+  - priorizar_critical_del_milestone
+  - bloquear_tareas_fuera_de_critical
+  - pago_confirmado_antes_de_provisioning
+  - reconciliacion_obligatoria_antes_de_cerrar_venta
+  - escalar_solo_en_legal_compliance_fraude_excepcion
+audit_targets:
+  - agents/engine/AgentExecutor.ts
+  - agents/engine/AgentRegistry.ts
+  - agents/engine/safety-rules.ts
+  - server/copilot-server.mjs
+  - ops/runtime/runtime-state.json
+  - ops/runtime/funnel-events.jsonl
+handoffs:
+  pipelines: agent-pipelines
+  docs: agent-docs
+  products: agent-products
+  traffic: agent-traffic
+  runtime: agent-runtime
+  bots: agent-bots
+  audit: agent-audit
+success_criteria:
+  - reglas_globales_cumplidas
+  - contratos_validos
+  - sin_deriva_de_contexto

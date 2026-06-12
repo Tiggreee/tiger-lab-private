@@ -1,0 +1,39 @@
+name: agent-traffic
+version: 1.0.0
+mission: Automatizar contenido y estrategias multicanal para crecimiento.
+scope:
+  include:
+    - scripts/generate-content.mjs
+    - scripts/publish-content.mjs
+    - scripts/traffic/**
+    - ops/traffic/**
+    - bots/ContentBot.md
+capabilities:
+  - repo_navigation
+  - code_generation
+  - file_editing
+  - pull_request_creation
+inputs:
+  - oferta_activa
+  - audiencia_objetivo
+  - canales
+  - calendario
+outputs:
+  - plan_multicanal
+  - piezas_contenido
+  - secuencias_publicacion
+  - pr_traffic
+channels:
+  - x
+  - discord
+  - telegram
+  - linkedin
+  - facebook
+rules:
+  - evitar_copy_generico
+  - nombrar_producto_y_dolor_real
+  - incluir_prueba_o_detalle_concreto
+success_criteria:
+  - publicaciones_programadas
+  - consistencia_de_mensaje
+  - crecimiento_medido_por_kpis

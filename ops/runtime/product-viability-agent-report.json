@@ -1,0 +1,153 @@
+{
+  "generatedAt": "2026-06-12T07:50:00.000Z",
+  "agents": {
+    "MarketResearcher": {
+      "status": "completed",
+      "source": "src/orchestration/engine/MarketResearcher.ts",
+      "signalCount": 4,
+      "opportunities": 3,
+      "topOpportunity": {
+        "concept": "Automatización de operaciones SMB for SMBs México",
+        "segment": "SMBs México",
+        "painPoint": "operaciones manuales que consumen 10+h/semana",
+        "willingnessToPay": 99,
+        "competitiveGap": "Poca oferta de automatización accesible para SMB sin equipo técnico",
+        "estimatedDemand": "high",
+        "confidence": 0.8
+      }
+    },
+    "ProductSupervisor": {
+      "status": "completed",
+      "source": "src/orchestration/engine/ProductSupervisor.ts",
+      "evaluatedAt": "2026-06-12T07:50:00.000Z",
+      "totalProducts": 5,
+      "activeProducts": 2,
+      "pausedProducts": 2,
+      "plannedProducts": 1,
+      "retiredProducts": 0,
+      "totalPotentialRevenue": 4752,
+      "totalMaintenanceCost": 0,
+      "recommendations": [
+        "PAUSED 2 product(s) requiring PAC to operate",
+        "FacturAutentico Cloud y FacturAutentica no pueden operar sin PAC",
+        "Double down on 2 active product(s): Docflow API, Script Premium Kit",
+        "Sentrylog Lite sigue en planned - validar si tiene mercado antes de invertir",
+        "Total monthly revenue potential: $4,752 USD (si se activan los 4 productos viables)"
+      ]
+    }
+  },
+  "products": [
+    {
+      "productId": "facturautentico-cloud",
+      "name": "FacturAutentico Cloud",
+      "description": "Facturación electrónica CFDI en la nube",
+      "catalogStatus": "paused",
+      "viability": {
+        "status": "BLOCKED",
+        "monetizationPotential": 1188,
+        "confidence": 0.1,
+        "blockers": [
+          "PAC (Proveedor Autorizado de Certificación) no contratado",
+          "Sin PAC no puede timbrar CFDI"
+        ]
+      },
+      "agentDecision": "pause",
+      "agentRationale": [
+        "El producto requiere PAC para funcionar",
+        "No hay PAC contratado en el mercado mexicano",
+        "Se reactiva automaticamente cuando se configure PAC"
+      ]
+    },
+    {
+      "productId": "facturautentico",
+      "name": "FacturAutentica",
+      "description": "Facturación electrónica CFDI on-premise",
+      "catalogStatus": "paused",
+      "viability": {
+        "status": "BLOCKED",
+        "monetizationPotential": 792,
+        "confidence": 0.1,
+        "blockers": [
+          "PAC (Proveedor Autorizado de Certificación) no contratado",
+          "Misma dependencia que FacturAutentico Cloud"
+        ]
+      },
+      "agentDecision": "pause",
+      "agentRationale": [
+        "Dependencia de PAC compartida con FacturAutentico Cloud",
+        "No puede timbrar CFDI sin PAC",
+        "Se reactiva automaticamente cuando se configure PAC"
+      ]
+    },
+    {
+      "productId": "docflow-api",
+      "name": "Docflow API",
+      "description": "API de flujo de documentos",
+      "catalogStatus": "active",
+      "viability": {
+        "status": "VIABLE",
+        "monetizationPotential": 1584,
+        "confidence": 0.85,
+        "blockers": []
+      },
+      "agentDecision": "keep",
+      "agentRationale": [
+        "No requiere proveedores externos",
+        "Margen alto (costo marginal ~$0)",
+        "Listo para vender ahora mismo"
+      ]
+    },
+    {
+      "productId": "script-premium-kit",
+      "name": "Script Premium Kit",
+      "description": "Kits de scripts de automatización",
+      "catalogStatus": "active",
+      "viability": {
+        "status": "VIABLE",
+        "monetizationPotential": 1188,
+        "confidence": 0.8,
+        "blockers": []
+      },
+      "agentDecision": "keep",
+      "agentRationale": [
+        "No requiere infraestructura externa",
+        "Margen alto (costo marginal ~$0)",
+        "Enganche perfecto para SMBs"
+      ]
+    },
+    {
+      "productId": "sentrylog-lite",
+      "name": "Sentrylog Lite",
+      "description": "Logging y monitoreo ligero",
+      "catalogStatus": "planned",
+      "viability": {
+        "status": "UNCERTAIN",
+        "monetizationPotential": 0,
+        "confidence": 0.2,
+        "blockers": [
+          "No hay código ni implementación",
+          "Mercado de logging tiene competidores establecidos",
+          "Solo tiene sentido si se vende como bundle con Docflow API"
+        ]
+      },
+      "agentDecision": "hold",
+      "agentRationale": [
+        "No hay evidencia de demanda validada",
+        "No hay código ni MVP",
+        "Requiere research adicional antes de invertir"
+      ]
+    }
+  ],
+  "summary": {
+    "totalProducts": 5,
+    "viableNow": 2,
+    "blocked": 2,
+    "uncertain": 1,
+    "viableProductIds": ["docflow-api", "script-premium-kit"],
+    "blockedProductIds": ["facturautentico-cloud", "facturautentico"],
+    "uncertainProductIds": ["sentrylog-lite"],
+    "goToMarketOrder": ["docflow-api", "script-premium-kit"],
+    "nextValidationNeeded": ["sentrylog-lite"],
+    "unicoBlockerReal": "PAC de facturación (contratar un Proveedor Autorizado de Certificación para CFDI)"
+  }
+}

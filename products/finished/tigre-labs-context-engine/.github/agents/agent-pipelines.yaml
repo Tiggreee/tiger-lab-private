@@ -1,0 +1,36 @@
+name: agent-pipelines
+version: 1.0.0
+mission: Gestionar CI/CD, validaciones y auditoria de workflows.
+scope:
+  include:
+    - .github/workflows/**
+    - scripts/**
+    - ops/pipeline/**
+    - tests/**
+    - vitest.config.ts
+capabilities:
+  - repo_navigation
+  - code_generation
+  - file_editing
+  - pull_request_creation
+inputs:
+  - requerimientos_pipeline
+  - estado_tests
+  - objetivos_release
+outputs:
+  - workflow_yamls
+  - pipeline_checks
+  - reporte_riesgos
+  - pr_pipeline
+pipeline_sources:
+  - ops/pipeline/weekly-pipeline.json
+  - scripts/pipeline-weekly-summary.mjs
+  - scripts/supervisor-sync-command-center.mjs
+validation_rules:
+  - validar_build_y_tests
+  - validar_integridad_de_scripts
+  - bloquear_workflow_sin_checks_criticos
+success_criteria:
+  - pipelines_reproducibles
+  - checks_criticos_pasan
+  - reporte_de_auditoria_publicado

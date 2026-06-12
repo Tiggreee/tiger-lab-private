@@ -4,6 +4,30 @@ import path from 'node:path';
 
 const [, , productId = 'facturautentico-cloud', planId = 'starter'] = process.argv;
 
+function normalize(value) {
+	return String(value || '').trim().toLowerCase();
+}
+
+function leadMatchesProduct(lead, targetProductId) {
+	const normalizedTarget = normalize(targetProductId);
+	if (!normalizedTarget) {
+		return false;
+	}
+
+	const directProduct = normalize(lead?.productId);
+	if (directProduct && directProduct === normalizedTarget) {
+		return true;
+	}
+
+	const attributeProduct = normalize(lead?.attributes?.product);
+	if (attributeProduct && attributeProduct === normalizedTarget) {
+		return true;
+	}
+
+	const source = normalize(lead?.source);
+	return source.includes(normalizedTarget);
+}
+
 function readJson(filePath, fallback) {
 	if (!fs.existsSync(filePath)) {
 		return fallback;
@@ -29,6 +53,8 @@ const runtimeState = readJson(runtimePath, {
 const payments = Object.values(runtimeState.payments || {}).filter((payment) => payment.productId === productId);
 const accounts = Object.values(runtimeState.accounts || {}).filter((account) => account.productId === productId);
 const assets = Object.values(runtimeState.assets || {}).filter((asset) => asset.productId === productId);
+const leads = Object.values(runtimeState.leads || {});
+const productLeads = leads.filter((lead) => leadMatchesProduct(lead, productId));
 
 const revenue = payments
 	.filter((payment) => payment.status === 'succeeded')
@@ -45,6 +71,7 @@ process.stdout.write(
 			planId,
 			totals: {
 				leads: Object.keys(runtimeState.leads || {}).length,
+				productLeads: productLeads.length,
 				payments: payments.length,
 				accounts: accounts.length,
 				contentAssets: assets.length

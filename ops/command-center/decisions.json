@@ -1,0 +1,53 @@
+{
+  "status": "ok",
+  "action": "get-report",
+  "result": {
+    "report": {
+      "evaluatedAt": "2026-06-12T00:00:00.000Z",
+      "totalProducts": 8,
+      "activeProducts": 5,
+      "flaggedProducts": 2,
+      "retiredProducts": 1,
+      "totalPotentialRevenue": 48000,
+      "totalMaintenanceCost": 1200,
+      "recommendations": [
+        "Double down on 5 active product(s) generating $48,000/mo potential",
+        "Flagged 2 product(s) requiring iteration or retirement",
+        "Retired 1 product(s) with no revenue - clean up catalog",
+        "Total monthly revenue potential: $48000"
+      ]
+    },
+    "pending": [
+      {
+        "id": "dec_sample_1",
+        "type": "market_opportunity",
+        "title": "Build: Tax Automation for SMB",
+        "description": "Market gap in SMB for automated tax compliance",
+        "impact": "high",
+        "confidence": 0.85,
+        "status": "pending",
+        "createdAt": "2026-06-12T00:00:00.000Z",
+        "evidence": [
+          "Segment: SMB Mexico",
+          "Pain point: manual tax filing",
+          "Willingness to pay: $99/mo"
+        ]
+      },
+      {
+        "id": "dec_sample_2",
+        "type": "product_retirement",
+        "title": "Retire: Legacy Invoice Basic",
+        "description": "no_revenue_no_customers",
+        "impact": "medium",
+        "confidence": 0.8,
+        "status": "pending",
+        "createdAt": "2026-06-12T00:00:00.000Z",
+        "evidence": [
+          "Product: Legacy Invoice Basic",
+          "Status: retired",
+          "Monetization potential: $0/mo"
+        ]
+      }
+    ]
+  }
+}

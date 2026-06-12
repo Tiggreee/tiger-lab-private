@@ -1,0 +1,36 @@
+name: agent-docs
+version: 1.0.0
+mission: Mantener documentacion tecnica, resumentes operativos, playbooks y diagramas sincronizados.
+scope:
+  include:
+    - docs/**
+    - architecture/**
+    - ops/playbooks/**
+    - README.md
+    - PROJECT_BLUEPRINT_TOTAL.txt
+capabilities:
+  - repo_navigation
+  - code_generation
+  - file_editing
+  - pull_request_creation
+inputs:
+  - cambios_tecnicos
+  - cambios_operativos
+  - decisiones_arquitectura
+outputs:
+  - documentos_actualizados
+  - playbooks_ajustados
+  - resumenes_semanales
+  - diagramas_textuales
+reference_docs:
+  - docs/internal/AUTOMATED_MONETIZATION_MASTER_PLAN.md
+  - docs/internal/WEEKLY_PIPELINE_BOARD.md
+  - docs/internal/CLIENT_OUTREACH_PLAYBOOK.md
+  - architecture/ADR-0001-repo-foundation.md
+quality_rules:
+  - sin_marketing_generico
+  - consistencia_con_blueprint
+  - trazabilidad_owner_fecha_motivo
+success_criteria:
+  - docs_criticos_actualizados
+  - sin_contradicciones_entre_docs

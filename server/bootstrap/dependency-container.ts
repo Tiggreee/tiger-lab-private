@@ -41,12 +41,15 @@ import { PlanId } from '../../src/shared/domain/value-objects/PlanId';
 import { ProductId } from '../../src/shared/domain/value-objects/ProductId';
 import { Version } from '../../src/shared/domain/value-objects/Version';
 import { readRuntimeState, updateRuntimeState } from '../../src/shared/infrastructure/persistence/runtime-state';
+import { DecisionController } from '../http/controllers/DecisionController';
+import { CatalogController } from '../http/controllers/CatalogController';
 import { BillingController } from '../http/controllers/BillingController';
 import { BotController } from '../http/controllers/BotController';
 import { ContentController } from '../http/controllers/ContentController';
 import { HealthController } from '../http/controllers/HealthController';
 import { LinkedInIntegrationController } from '../http/controllers/LinkedInIntegrationController';
 import { ProductController } from '../http/controllers/ProductController';
+import { DecisionEngine } from '../../src/orchestration/engine/DecisionEngine';
 import { PayPalPaymentService } from './paypal-payment-service';
 import { FacturamaResendInvoiceAutomationService } from './invoice-automation-service';
 import { LinkedInOAuthService } from './linkedin-oauth-service';
@@ -450,6 +453,8 @@ export interface ServerDependencyContainer {
   readonly contentController: ContentController;
   readonly billingController: BillingController;
   readonly botController: BotController;
+  readonly catalogController: CatalogController;
+  readonly decisionController: DecisionController;
 }
 
 function assertRequiredEnv(keys: readonly string[]): void {
@@ -549,6 +554,8 @@ export function createServerDependencyContainer(): ServerDependencyContainer {
       payPalService,
       invoiceAutomationService
     ),
-    botController: new BotController(resolveOfferUseCase, captureLeadUseCase, scoreLeadUseCase)
+    botController: new BotController(resolveOfferUseCase, captureLeadUseCase, scoreLeadUseCase),
+    catalogController: new CatalogController(),
+    decisionController: new DecisionController(new DecisionEngine())
   };
 }

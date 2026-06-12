@@ -3,7 +3,8 @@
     {
       "id": "facturautentico-cloud",
       "name": "FacturAutentico Cloud",
-      "status": "active",
+      "status": "paused",
+      "statusReason": "Requiere PAC (Proveedor Autorizado de Certificacion) para CFDI. Sin PAC no opera. Pendiente de contratacion.",
       "planIds": [
         "starter",
         "pro",
@@ -39,7 +40,8 @@
     {
       "id": "facturautentico",
       "name": "FacturAutentica",
-      "status": "active",
+      "status": "paused",
+      "statusReason": "Requiere PAC (Proveedor Autorizado de Certificacion) para CFDI. Sin PAC no opera. Misma dependencia que FacturAutentico Cloud.",
       "planIds": [
         "starter",
         "pro"

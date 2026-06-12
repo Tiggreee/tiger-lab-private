@@ -19,8 +19,11 @@ import { readRequestBody } from '../http/request-utils';
 import { sendJson } from '../http/response';
 import { buildBillingRoutes } from '../http/routes/billing-routes';
 import { buildBotRoutes } from '../http/routes/bot-routes';
+import { buildCatalogRoutes } from '../http/routes/catalog-routes';
 import { buildContentRoutes } from '../http/routes/content-routes';
 import { buildConversationRoutes } from '../http/routes/conversation-routes';
+import { buildDecisionRoutes } from '../http/routes/decision-routes';
+import { buildDevAccessRoutes } from '../http/routes/dev-access-routes';
 import { buildHealthRoutes } from '../http/routes/health-routes';
 import { buildLinkedInIntegrationRoutes } from '../http/routes/linkedin-integration-routes';
 import { buildProductRoutes } from '../http/routes/product-routes';
@@ -42,6 +45,9 @@ function createRouter(): Router {
   router.registerMany(buildBillingRoutes(container.billingController));
   router.registerMany(buildBotRoutes(container.botController));
   router.registerMany(buildConversationRoutes(container.botController));
+  router.registerMany(buildDevAccessRoutes());
+  router.registerMany(buildCatalogRoutes(container.catalogController));
+  router.registerMany(buildDecisionRoutes(container.decisionController));
 
   return router;
 }
@@ -49,6 +55,7 @@ function createRouter(): Router {
 function shouldBypassAuth(route: HttpRoute): boolean {
   return (
     (route.path === '/health' && route.method === 'GET') ||
+    route.path.startsWith('/dev-access/') ||
     (route.method === 'GET' && route.path.startsWith('/integrations/linkedin/oauth/')) ||
     (route.method === 'POST' && route.path.startsWith('/billing/webhooks'))
   );

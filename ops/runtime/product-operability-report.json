@@ -1,0 +1,120 @@
+{
+  "generatedAt": "2026-06-12T07:50:00.000Z",
+  "scope": "product-operability",
+  "autoLaunchPolicy": {
+    "hasAutomaticProductLaunchFromProductionGate": false,
+    "reason": "Billing products (FacturAutentico Cloud, FacturAutentica) paused por PAC no contratada. Viable ahora: Docflow API, Script Premium Kit.",
+    "campaignSelector": "latest-social-pack-by-mtime",
+    "defaultProvisionProductId": "docflow-api"
+  },
+  "summary": {
+    "activeProducts": 2,
+    "productsOperableNow": 2,
+    "productsBlocked": 2,
+    "productsPlanned": 1
+  },
+  "products": [
+    {
+      "productId": "docflow-api",
+      "productName": "Docflow API",
+      "status": "active",
+      "planIds": ["starter", "pro"],
+      "hasGeneratedCampaign": true,
+      "campaignCount": 1,
+      "selectedCampaign": {
+        "campaign": "docflow-api-pilot",
+        "file": "ops/traffic/outbox/social-pack-docflow-api-pilot.json",
+        "modifiedAt": "2026-06-01T03:27:41.189Z",
+        "affinity": 100,
+        "readiness": {
+          "hasAllChannels": true,
+          "completeCopy": true,
+          "realLinks": true,
+          "qualityScore": 100,
+          "scoreOk": true,
+          "ready": true
+        },
+        "genericness": {
+          "generic": false,
+          "averageSpecificity": 97,
+          "lowSpecificityCount": 0,
+          "genericPatternCount": 0
+        }
+      },
+      "operableNow": true,
+      "viableNow": true,
+      "blockers": [],
+      "reasons": ["Product active, campaign ready, no external dependencies"]
+    },
+    {
+      "productId": "script-premium-kit",
+      "productName": "Script Premium Kit",
+      "status": "active",
+      "planIds": ["starter", "pro"],
+      "hasGeneratedCampaign": true,
+      "campaignCount": 1,
+      "selectedCampaign": {
+        "campaign": "script-premium-kit-pilot",
+        "file": "ops/traffic/outbox/social-pack-script-premium-kit-pilot.json",
+        "modifiedAt": "2026-06-01T03:27:41.195Z",
+        "affinity": 100,
+        "readiness": {
+          "hasAllChannels": true,
+          "completeCopy": true,
+          "realLinks": true,
+          "qualityScore": 100,
+          "scoreOk": true,
+          "ready": true
+        },
+        "genericness": {
+          "generic": false,
+          "averageSpecificity": 97,
+          "lowSpecificityCount": 0,
+          "genericPatternCount": 0
+        }
+      },
+      "operableNow": true,
+      "viableNow": true,
+      "blockers": [],
+      "reasons": ["Product active, campaign ready, no external dependencies"]
+    },
+    {
+      "productId": "facturautentico-cloud",
+      "productName": "FacturAutentico Cloud",
+      "status": "paused",
+      "planIds": ["starter", "pro", "enterprise"],
+      "hasGeneratedCampaign": true,
+      "campaignCount": 1,
+      "operableNow": false,
+      "viableNow": false,
+      "blockers": ["PAC (Proveedor Autorizado de Certificación) no contratado"],
+      "reasons": ["PAUSED: requiere PAC para CFDI. Sin PAC no puede operar."]
+    },
+    {
+      "productId": "facturautentico",
+      "productName": "FacturAutentica",
+      "status": "paused",
+      "planIds": ["starter", "pro"],
+      "hasGeneratedCampaign": true,
+      "campaignCount": 3,
+      "operableNow": false,
+      "viableNow": false,
+      "blockers": ["PAC (Proveedor Autorizado de Certificación) no contratado"],
+      "reasons": ["PAUSED: misma dependencia de PAC que FacturAutentico Cloud"]
+    },
+    {
+      "productId": "sentrylog-lite",
+      "productName": "Sentrylog Lite",
+      "status": "planned",
+      "planIds": ["starter"],
+      "hasGeneratedCampaign": false,
+      "campaignCount": 0,
+      "operableNow": false,
+      "viableNow": false,
+      "blockers": ["No hay código ni MVP", "Mercado con competidores establecidos"],
+      "reasons": ["Planned, requiere validación de mercado antes de invertir"]
+    }
+  ],
+  "recommendedNextAutoLaunchProduct": "docflow-api",
+  "recommendationRationale": "FacturAutentico Cloud era el default, pero requiere PAC. Docflow API es el producto viable con mayor potencial de revenue ($1,584/mes) y sin dependencias externas."
+}

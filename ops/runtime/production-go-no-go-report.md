@@ -1,13 +1,13 @@
 # Production Go/No-Go Report
 
-- generatedAt: 2026-06-11T07:18:55.956Z
+- generatedAt: 2026-06-12T07:49:41.342Z
 - gateStatus: GO
 - summary: PASS 11 | WARN 0 | FAIL 0
 
 ## Checks
 
 - P1 Catalogo activo y consistente: PASS
-  details: Activos: 4 productos.
+  details: Activos: 2 productos.
   ownerAction: Sin accion.
 - P2 Funnels y eventos trazables: PASS
   details: Eventos clave presentes.

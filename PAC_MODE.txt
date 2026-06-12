@@ -1,0 +1,25 @@
+# PAC_MODE — Control de integración PAC para productos de facturación
+
+## Estado actual
+PAC_MODE=off
+
+## Opciones disponibles
+# off      → Sin integración PAC. El producto no timbra CFDIs directamente.
+#            El cliente usa su propio PAC o el flujo es solo pre-validación.
+#            COSTO ADICIONAL: $0. Usar esta fase para validar mercado primero.
+#
+# byo      → Bring Your Own PAC. El cliente aporta sus credenciales PAC.
+#            El producto orquesta el timbrado pero el costo es del cliente.
+#            COSTO ADICIONAL: $0 para el operador del engine.
+#
+# managed  → PAC gestionado por sistemaLead. Se requiere contrato PAC propio,
+#            credenciales, certificado SAT, y absorción del costo por CFDI.
+#            ACTIVAR SOLO cuando haya ≥3 clientes pagos y caja confirmada.
+#            COSTO ESTIMADO: $99-299 USD/mes mínimo según volumen.
+
+## Regla de negocio
+# No activar PAC_MODE=managed antes de validar mercado con clientes reales.
+# Orden correcto: off → byo → managed
+
+## Para activar: cambiar la línea PAC_MODE= arriba y correr:
+# npm run prod:gate para verificar impacto antes de cualquier despliegue.

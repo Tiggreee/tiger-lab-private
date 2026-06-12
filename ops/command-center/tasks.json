@@ -3,8 +3,8 @@
     "timezone": "America/Mexico_City",
     "owner": "Victor",
     "project": "Monetization Engine",
-    "lastSupervisorSyncAt": "2026-05-29T03:26:21.136Z",
-    "lastSupervisorReport": "ops/supervisor/latest-supervisor-report.example.json"
+    "lastSupervisorSyncAt": "2026-06-12T07:31:00.000Z",
+    "lastSupervisorReport": "ops/sales/monetization-one-pager.md"
   },
   "tasks": [
     {
@@ -14,8 +14,8 @@
       "priority": "P0",
       "owner": "human",
       "status": "todo",
-      "dueDate": "2026-05-29",
-      "nextAction": "Publish case-style post with CTA to 20-min call"
+      "dueDate": "2026-06-13",
+      "nextAction": "Draft ready in ops/sales/linkedin-post-draft.md. Victor: choose EN or ES, publish, track comments."
     },
     {
       "id": "M-002",
@@ -24,8 +24,8 @@
       "priority": "P0",
       "owner": "human",
       "status": "todo",
-      "dueDate": "2026-05-30",
-      "nextAction": "Use CLIENT_OUTREACH_PLAYBOOK and send first wave"
+      "dueDate": "2026-06-14",
+      "nextAction": "Templates ready in ops/sales/outbound-templates.md. Victor: fill ICP list, send 5/day."
     },
     {
       "id": "M-003",
@@ -34,18 +34,18 @@
       "priority": "P0",
       "owner": "human",
       "status": "todo",
-      "dueDate": "2026-05-31",
-      "nextAction": "Offer 20-min audit and fixed-scope plan"
+      "dueDate": "2026-06-16",
+      "nextAction": "Use one-pager in ops/sales/monetization-one-pager.md. Victor: book 3 diagnostics this week."
     },
     {
       "id": "M-004",
       "title": "Create proposal template with 3 tiers",
       "area": "sales",
       "priority": "P1",
-      "owner": "human",
-      "status": "todo",
-      "dueDate": "2026-05-31",
-      "nextAction": "Define Basic/Standard/Premium deliverables and terms"
+      "owner": "ai",
+      "status": "done",
+      "dueDate": "2026-06-12",
+      "nextAction": "Built — saved in ops/sales/proposal-template-3-tiers.md."
     },
     {
       "id": "M-005",
@@ -54,8 +54,8 @@
       "priority": "P1",
       "owner": "ai",
       "status": "todo",
-      "dueDate": "2026-06-02",
-      "nextAction": "Implement integration tests and CI checks"
+      "dueDate": "2026-06-13",
+      "nextAction": "Add unit tests for pricing engine and funnel orchestrator"
     },
     {
       "id": "M-006",
@@ -63,9 +63,9 @@
       "area": "positioning",
       "priority": "P1",
       "owner": "ai",
-      "status": "todo",
-      "dueDate": "2026-06-01",
-      "nextAction": "Generate concise offer summary aligned with pricing"
+      "status": "done",
+      "dueDate": "2026-06-12",
+      "nextAction": "Built — saved in ops/sales/monetization-one-pager.md."
     },
     {
       "id": "M-007",
@@ -74,8 +74,8 @@
       "priority": "P0",
       "owner": "human",
       "status": "todo",
-      "dueDate": "2026-06-05",
-      "nextAction": "Convert strongest lead into signed fixed-scope sprint"
+      "dueDate": "2026-06-19",
+      "nextAction": "Proposal template ready. Victor: send to warmest lead today."
     },
     {
       "id": "M-008",
@@ -83,9 +83,9 @@
       "area": "operations",
       "priority": "P1",
       "owner": "human",
-      "status": "todo",
-      "dueDate": "2026-06-30",
-      "nextAction": "Mark task progress and reschedule overdue items"
+      "status": "done",
+      "dueDate": "2026-06-12",
+      "nextAction": "Updated by opencode."
     },
     {
       "id": "M-009",
@@ -94,7 +94,7 @@
       "priority": "P1",
       "owner": "ai",
       "status": "todo",
-      "dueDate": "2026-06-03",
+      "dueDate": "2026-06-13",
       "nextAction": "Add architecture, metrics, CI badges, and business outcomes"
     },
     {
@@ -104,7 +104,7 @@
       "priority": "P1",
       "owner": "human",
       "status": "todo",
-      "dueDate": "2026-06-04",
+      "dueDate": "2026-06-18",
       "nextAction": "Publish EN/ES case with problem, architecture, and KPI impact"
     },
     {
@@ -114,7 +114,7 @@
       "priority": "P1",
       "owner": "human",
       "status": "todo",
-      "dueDate": "2026-06-06",
+      "dueDate": "2026-06-18",
       "nextAction": "Tailor CV/portfolio packet to Node-React-AI roles"
     },
     {
@@ -124,19 +124,39 @@
       "priority": "P2",
       "owner": "ai",
       "status": "todo",
-      "dueDate": "2026-06-07",
+      "dueDate": "2026-06-14",
       "nextAction": "Create repo narratives with tradeoffs, risks, and architecture decisions"
+    },
+    {
+      "id": "M-013",
+      "title": "Configurar .env.production con secrets reales",
+      "area": "operations",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-13",
+      "nextAction": "Template ready in .env.production.example. Get PayPal API keys + Facturama + Resend."
+    },
+    {
+      "id": "M-014",
+      "title": "Ejecutar publish-packages.yml dry-run",
+      "area": "delivery",
+      "priority": "P1",
+      "owner": "ai",
+      "status": "todo",
+      "dueDate": "2026-06-13",
+      "nextAction": "Go to Actions → publish-packages → Run workflow (dry-run: true)"
     },
     {
       "id": "S-001",
       "title": "Fix high-risk CORS configuration in public API",
       "area": "security",
-      "priority": "P0",
+      "priority": "P1",
       "owner": "ai",
       "status": "todo",
-      "dueDate": "2026-05-31",
+      "dueDate": "2026-06-14",
       "nextAction": "Harden allowlist and add validation tests",
-      "repoPath": "web_project_api_full/server"
+      "repoPath": "external repo"
     },
     {
       "id": "S-002",
@@ -145,9 +165,8 @@
       "priority": "P0",
       "owner": "human",
       "status": "todo",
-      "dueDate": "2026-05-29",
-      "nextAction": "Send fixed-scope proposal with 3-tier options",
-      "repoPath": "sales/pipeline"
+      "dueDate": "2026-06-13",
+      "nextAction": "Use proposal template from ops/sales/. Send fixed-scope with 3 tiers."
     }
   ]
 }

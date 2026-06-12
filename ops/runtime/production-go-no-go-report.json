@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T07:18:55.956Z",
+  "generatedAt": "2026-06-12T07:49:41.342Z",
   "strict": false,
   "gateStatus": "GO",
   "summary": {
@@ -13,7 +13,7 @@
       "title": "Catalogo activo y consistente",
       "severity": "critical",
       "status": "PASS",
-      "details": "Activos: 4 productos.",
+      "details": "Activos: 2 productos.",
       "evidence": [
         "ops/catalog/products.json",
         "ops/catalog/plans.json",
