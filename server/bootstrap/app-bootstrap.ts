@@ -22,6 +22,7 @@ import { buildBotRoutes } from '../http/routes/bot-routes';
 import { buildContentRoutes } from '../http/routes/content-routes';
 import { buildConversationRoutes } from '../http/routes/conversation-routes';
 import { buildHealthRoutes } from '../http/routes/health-routes';
+import { buildLinkedInIntegrationRoutes } from '../http/routes/linkedin-integration-routes';
 import { buildProductRoutes } from '../http/routes/product-routes';
 import { Router } from '../http/routes/router';
 import { HttpRequestContext, HttpRoute } from '../http/types';
@@ -35,6 +36,7 @@ function createRouter(): Router {
   const router = new Router();
 
   router.registerMany(buildHealthRoutes(container.healthController));
+  router.registerMany(buildLinkedInIntegrationRoutes(container.linkedInIntegrationController));
   router.registerMany(buildProductRoutes(container.productController));
   router.registerMany(buildContentRoutes(container.contentController));
   router.registerMany(buildBillingRoutes(container.billingController));
@@ -47,6 +49,7 @@ function createRouter(): Router {
 function shouldBypassAuth(route: HttpRoute): boolean {
   return (
     (route.path === '/health' && route.method === 'GET') ||
+    (route.method === 'GET' && route.path.startsWith('/integrations/linkedin/oauth/')) ||
     (route.method === 'POST' && route.path.startsWith('/billing/webhooks'))
   );
 }

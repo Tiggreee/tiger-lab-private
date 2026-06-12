@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -20,7 +21,9 @@ function parseArgs(argv) {
     packPath: '',
     campaign: '',
     outDir: 'ops/traffic/outbox',
-    channels: CHANNELS
+    channels: CHANNELS,
+    githubRepo: '',
+    githubEnv: ''
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -59,10 +62,48 @@ function parseArgs(argv) {
         .map((channel) => channel.trim().toLowerCase())
         .filter(Boolean);
       index += 1;
+      continue;
+    }
+
+    if (key === 'githubRepo') {
+      options.githubRepo = value;
+      index += 1;
+      continue;
+    }
+
+    if (key === 'githubEnv') {
+      options.githubEnv = value;
+      index += 1;
     }
   }
 
   return options;
+}
+
+function loadGithubSecretNames(githubRepo, githubEnv) {
+  if (!githubRepo || !githubEnv) {
+    return new Set();
+  }
+
+  try {
+    const output = execFileSync(
+      'gh',
+      ['secret', 'list', '-R', githubRepo, '--env', githubEnv, '--json', 'name', '--jq', '.[].name'],
+      { encoding: 'utf8' }
+    );
+
+    return new Set(
+      output
+        .split('\n')
+        .map((line) => line.trim())
+        .filter(Boolean)
+    );
+  } catch (error) {
+    process.stderr.write(
+      `Warning: could not read GitHub environment secrets (${githubRepo}/${githubEnv}). Falling back to local env only.\n`
+    );
+    return new Set();
+  }
 }
 
 function safeCampaign(campaign) {
@@ -126,6 +167,15 @@ function isPlaceholderValue(value) {
   return PLACEHOLDER_PATTERNS.some((pattern) => pattern.test(trimmed));
 }
 
+function hasSecret(name, githubSecretNames) {
+  const localValue = process.env[name];
+  if (!isPlaceholderValue(localValue)) {
+    return true;
+  }
+
+  return githubSecretNames.has(name);
+}
+
 function isPlaceholderTrafficLink(value) {
   const normalized = String(value || '').trim().toLowerCase();
   if (!normalized) {
@@ -135,7 +185,7 @@ function isPlaceholderTrafficLink(value) {
   return normalized.includes('example.com') || normalized.includes('tu-landing-real.com');
 }
 
-function runChecks(pack, channels) {
+function runChecks(pack, channels, githubSecretNames) {
   const results = [];
 
   const destination = String(pack?.funnel?.trafficDestination || '').trim();
@@ -177,10 +227,11 @@ function runChecks(pack, channels) {
     const required = REQUIRED_BY_CHANNEL[channel] || [];
     for (const key of required) {
       const value = process.env[key];
+      const ok = hasSecret(key, githubSecretNames);
       results.push({
         check: `secret_${channel}_${key}`,
-        ok: !isPlaceholderValue(value),
-        detail: value ? 'set' : 'missing'
+        ok,
+        detail: ok ? 'set' : value ? 'placeholder-or-missing' : 'missing'
       });
     }
   }
@@ -200,6 +251,7 @@ function main() {
   const options = parseArgs(process.argv.slice(2));
   const packPath = resolvePackPath(options);
   const pack = loadPack(packPath);
+  const githubSecretNames = loadGithubSecretNames(options.githubRepo, options.githubEnv);
 
   const channels = options.channels.filter((channel) => CHANNELS.includes(channel));
   if (channels.length === 0) {
@@ -210,7 +262,13 @@ function main() {
   process.stdout.write(`Campaign: ${pack.campaign || '-'}\n`);
   process.stdout.write(`Channels: ${channels.join(', ')}\n\n`);
 
-  const results = runChecks(pack, channels);
+  if (options.githubRepo && options.githubEnv) {
+    process.stdout.write(
+      `GitHub secret source enabled: ${options.githubRepo} (${options.githubEnv})\n\n`
+    );
+  }
+
+  const results = runChecks(pack, channels, githubSecretNames);
   printResults(results);
 
   const failed = results.filter((item) => !item.ok);

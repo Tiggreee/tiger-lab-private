@@ -16,7 +16,8 @@ const DEV_FALLBACK_PROFILE: ApiKeyProfile = {
     'billing:provision',
     'billing:register',
     'billing:checkout',
-    'bot:query'
+    'bot:query',
+    'linkedin:analytics:read'
   ]
 };
 

@@ -86,6 +86,24 @@ export interface RuntimeInvoiceMcpAuditState {
   readonly finishedAt: string;
 }
 
+export interface RuntimeLinkedInOAuthPendingState {
+  readonly state: string;
+  readonly createdAt: string;
+  readonly expiresAt: string;
+}
+
+export interface RuntimeLinkedInOAuthState {
+  readonly accessToken?: string;
+  readonly tokenType?: string;
+  readonly expiresAt?: string;
+  readonly refreshToken?: string;
+  readonly orgId?: string;
+  readonly adAccountId?: string;
+  readonly connectedAt?: string;
+  readonly updatedAt?: string;
+  readonly pendingState?: RuntimeLinkedInOAuthPendingState;
+}
+
 export interface RuntimeState {
   readonly leads: Record<string, RuntimeLeadState>;
   readonly leadScores: Record<string, RuntimeLeadScoreState>;
@@ -95,6 +113,7 @@ export interface RuntimeState {
   readonly publications: Record<string, RuntimePublicationState>;
   readonly invoices: Record<string, RuntimeInvoiceState>;
   readonly invoiceMcpAudits: Record<string, RuntimeInvoiceMcpAuditState>;
+  readonly linkedinOAuth: RuntimeLinkedInOAuthState;
 }
 
 const DEFAULT_STATE: RuntimeState = {
@@ -105,7 +124,8 @@ const DEFAULT_STATE: RuntimeState = {
   assets: {},
   publications: {},
   invoices: {},
-  invoiceMcpAudits: {}
+  invoiceMcpAudits: {},
+  linkedinOAuth: {}
 };
 
 const IS_TEST_RUNTIME = process.env.VITEST === 'true' || process.env.NODE_ENV === 'test';
@@ -162,7 +182,8 @@ export async function readRuntimeState(): Promise<RuntimeState> {
           assets: fromPostgres.assets || {},
           publications: fromPostgres.publications || {},
           invoices: (fromPostgres as Partial<RuntimeState>).invoices || {},
-          invoiceMcpAudits: (fromPostgres as Partial<RuntimeState>).invoiceMcpAudits || {}
+          invoiceMcpAudits: (fromPostgres as Partial<RuntimeState>).invoiceMcpAudits || {},
+          linkedinOAuth: (fromPostgres as Partial<RuntimeState>).linkedinOAuth || {}
         };
       }
     } catch {
@@ -183,7 +204,8 @@ export async function readRuntimeState(): Promise<RuntimeState> {
       assets: parsed.assets || {},
       publications: parsed.publications || {},
       invoices: parsed.invoices || {},
-      invoiceMcpAudits: parsed.invoiceMcpAudits || {}
+      invoiceMcpAudits: parsed.invoiceMcpAudits || {},
+      linkedinOAuth: parsed.linkedinOAuth || {}
     };
   } catch {
     return DEFAULT_STATE;

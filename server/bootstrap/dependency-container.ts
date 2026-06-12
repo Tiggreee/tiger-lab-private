@@ -45,9 +45,11 @@ import { BillingController } from '../http/controllers/BillingController';
 import { BotController } from '../http/controllers/BotController';
 import { ContentController } from '../http/controllers/ContentController';
 import { HealthController } from '../http/controllers/HealthController';
+import { LinkedInIntegrationController } from '../http/controllers/LinkedInIntegrationController';
 import { ProductController } from '../http/controllers/ProductController';
 import { PayPalPaymentService } from './paypal-payment-service';
 import { FacturamaResendInvoiceAutomationService } from './invoice-automation-service';
+import { LinkedInOAuthService } from './linkedin-oauth-service';
 
 class InMemoryProductRepository implements ProductRepositoryPort {
   private readonly products = new Map<string, Product>();
@@ -443,6 +445,7 @@ class NoopContentChannelPublisherPort implements ContentChannelPublisherPort {
 
 export interface ServerDependencyContainer {
   readonly healthController: HealthController;
+  readonly linkedInIntegrationController: LinkedInIntegrationController;
   readonly productController: ProductController;
   readonly contentController: ContentController;
   readonly billingController: BillingController;
@@ -537,6 +540,7 @@ export function createServerDependencyContainer(): ServerDependencyContainer {
 
   return {
     healthController: new HealthController(),
+    linkedInIntegrationController: new LinkedInIntegrationController(new LinkedInOAuthService()),
     productController: new ProductController(createProductUseCase),
     contentController: new ContentController(generateContentUseCase, publishContentUseCase),
     billingController: new BillingController(

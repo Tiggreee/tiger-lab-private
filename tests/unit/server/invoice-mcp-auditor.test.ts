@@ -8,7 +8,8 @@ const runtimeState = {
   assets: {},
   publications: {},
   invoices: {},
-  invoiceMcpAudits: {}
+  invoiceMcpAudits: {},
+  linkedinOAuth: {}
 };
 
 vi.mock('../../../src/shared/infrastructure/persistence/runtime-state', () => ({

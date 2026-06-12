@@ -87,6 +87,25 @@ For same-day execution, prefer one-channel validation:
 
 npm run traffic:go-live -- --campaign "linkedin-today" --channels "linkedin"
 
+6.1. Use autopilot safe execution (recommended for same-day operation):
+
+- Auto-selects only channels that are ready (secrets + copy in pack).
+- Enforces go-live check on selected channels.
+- Runs dry publish always; live publish only when `--live` is set.
+- Stores an auditable report JSON in `ops/traffic/outbox`.
+
+Dry mode (default):
+
+npm run traffic:autopilot -- --campaign "linkedin-today" --channels "linkedin,x,facebook"
+
+Live mode (after human approval):
+
+npm run traffic:autopilot -- --campaign "linkedin-today" --channels "linkedin,x,facebook" --live
+
+Optional strict minimum channels gate:
+
+npm run traffic:autopilot -- --campaign "linkedin-today" --channels "linkedin,x,facebook" --minChannels 1
+
 This checklist fails fast if:
 - traffic destination is placeholder
 - close destination/link is invalid
@@ -123,6 +142,24 @@ curl -X POST http://localhost:8787/conversation-entry \
 	- `destination`
 	- `message`
 	- `entryLink`
+
+9. LinkedIn OAuth + analytics endpoint (server mode):
+
+- Start OAuth (returns authorization URL):
+
+curl -X GET http://localhost:8787/integrations/linkedin/oauth/start
+
+- Open `authorizeUrl` in browser, approve access, and LinkedIn will redirect to callback URL.
+- Callback endpoint handled by server:
+
+GET /integrations/linkedin/oauth/callback?code=...&state=...
+
+- Read campaign analytics (requires `x-api-key` with `linkedin:analytics:read` scope):
+
+curl -X GET "http://localhost:8787/integrations/linkedin/analytics?campaignId=123456&startDate=2026-06-01&endDate=2026-06-11" \
+  -H "x-api-key: dev-public-key"
+
+- Response totals include: impressions, clicks, ctr, spend, conversions.
 
 ## Secure secret placement
 
