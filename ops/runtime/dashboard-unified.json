@@ -979,17 +979,21 @@
     "gate": "GO"
   },
   "failuresMonitor": {
-    "lastAnalysis": "2026-06-12T15:38:05.301Z",
+    "lastAnalysis": "2026-06-12T17:25:24.142Z",
     "totalRuns": 100,
-    "failedToday": 18,
-    "successfulToday": 72,
+    "failedToday": 20,
+    "successfulToday": 79,
     "byType": {
-      "failure": 18
+      "failure": 20
     },
     "byWorkflow": [
       {
         "workflow": "Failures Monitor — 2h Cycle",
         "failures": 5
+      },
+      {
+        "workflow": "Social Publish",
+        "failures": 4
       },
       {
         "workflow": "Billing Reconciliation Daily",
@@ -998,10 +1002,6 @@
       {
         "workflow": "daily-sales-automation",
         "failures": 3
-      },
-      {
-        "workflow": "Social Publish",
-        "failures": 2
       },
       {
         "workflow": "Production Go No-Go",

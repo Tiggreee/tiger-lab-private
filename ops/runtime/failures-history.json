@@ -147,10 +147,29 @@
         "Product Development Engine — 2h Cycle": 1
       },
       "perm": "all"
+    },
+    {
+      "timestamp": "2026-06-12T17:25:24.142Z",
+      "totalRuns": 100,
+      "failed": 20,
+      "successful": 79,
+      "byType": {
+        "failure": 20
+      },
+      "byWorkflow": {
+        "Social Publish": 4,
+        "Billing Reconciliation Daily": 4,
+        "Failures Monitor — 2h Cycle": 5,
+        "Production Go No-Go": 2,
+        "Running Copilot cloud agent": 1,
+        "daily-sales-automation": 3,
+        "Product Development Engine — 2h Cycle": 1
+      },
+      "perm": "all"
     }
   ],
   "fixesApplied": [],
   "lastKnownPermission": "all",
-  "lastAnalysis": "2026-06-12T15:38:05.301Z",
-  "totalFailuresTracked": 279
+  "lastAnalysis": "2026-06-12T17:25:24.142Z",
+  "totalFailuresTracked": 299
 }
