@@ -979,41 +979,21 @@
     "gate": "GO"
   },
   "failuresMonitor": {
-    "lastAnalysis": "2026-06-12T19:13:07.963Z",
+    "lastAnalysis": "2026-06-12T21:06:00.345Z",
     "totalRuns": 100,
-    "failedToday": 20,
-    "successfulToday": 79,
+    "failedToday": 18,
+    "successfulToday": 78,
     "byType": {
-      "failure": 20
+      "failure": 18
     },
     "byWorkflow": [
       {
-        "workflow": "Failures Monitor — 2h Cycle",
-        "failures": 5
-      },
-      {
         "workflow": "Social Publish",
-        "failures": 4
+        "failures": 16
       },
       {
-        "workflow": "Billing Reconciliation Daily",
-        "failures": 4
-      },
-      {
-        "workflow": "daily-sales-automation",
-        "failures": 3
-      },
-      {
-        "workflow": "Production Go No-Go",
+        "workflow": "ui-host-pages",
         "failures": 2
-      },
-      {
-        "workflow": "Running Copilot cloud agent",
-        "failures": 1
-      },
-      {
-        "workflow": "Product Development Engine — 2h Cycle",
-        "failures": 1
       }
     ],
     "rootCauses": [
