@@ -1,0 +1,29 @@
+{
+  "snapshots": [
+    {
+      "timestamp": "2026-06-12T09:24:36.790Z",
+      "totalRuns": 100,
+      "failed": 72,
+      "successful": 28,
+      "byType": {
+        "startup_failure": 72
+      },
+      "byWorkflow": {
+        "CI": 13,
+        "Production Go No-Go": 6,
+        "e2e": 13,
+        "Copilot Agents Validation": 15,
+        "security": 2,
+        "Backend Production Readiness": 7,
+        "Deploy Backend to Railway": 8,
+        "contract-tests": 6,
+        "schema-validation": 2
+      },
+      "perm": "all"
+    }
+  ],
+  "fixesApplied": [],
+  "lastKnownPermission": "all",
+  "lastAnalysis": "2026-06-12T09:24:36.791Z",
+  "totalFailuresTracked": 72
+}

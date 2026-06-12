@@ -1123,5 +1123,61 @@
       ],
       "engineReady": []
     }
+  },
+  "failuresMonitor": {
+    "lastAnalysis": "2026-06-12T09:24:36.791Z",
+    "totalRuns": 100,
+    "failedToday": 72,
+    "successfulToday": 28,
+    "byType": {
+      "startup_failure": 72
+    },
+    "byWorkflow": [
+      {
+        "workflow": "Copilot Agents Validation",
+        "failures": 15
+      },
+      {
+        "workflow": "CI",
+        "failures": 13
+      },
+      {
+        "workflow": "e2e",
+        "failures": 13
+      },
+      {
+        "workflow": "Deploy Backend to Railway",
+        "failures": 8
+      },
+      {
+        "workflow": "Backend Production Readiness",
+        "failures": 7
+      },
+      {
+        "workflow": "Production Go No-Go",
+        "failures": 6
+      },
+      {
+        "workflow": "contract-tests",
+        "failures": 6
+      },
+      {
+        "workflow": "security",
+        "failures": 2
+      },
+      {
+        "workflow": "schema-validation",
+        "failures": 2
+      }
+    ],
+    "rootCauses": [
+      {
+        "cause": "Workflow failed to boot — likely uses marketplace actions not in allowed list",
+        "severity": "critical",
+        "fix": "Change to allowed_actions: all or rewrite workflows without external actions"
+      }
+    ],
+    "permFixed": false,
+    "currentPermission": "all"
   }
 }
