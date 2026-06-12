@@ -254,7 +254,7 @@ function extractLinkedInOrgId(input) {
 async function postLinkedIn(text) {
   requiredEnv(['LINKEDIN_ACCESS_TOKEN']);
   const token = process.env.LINKEDIN_ACCESS_TOKEN;
-  const headers = { Authorization: `Bearer ${token}`, 'X-Restli-Protocol-Version': '2.0.0', 'LinkedIn-Version': '202405', 'Content-Type': 'application/json' };
+  const headers = { Authorization: `Bearer ${token}`, 'X-Restli-Protocol-Version': '2.0.0', 'LinkedIn-Version': '202401', 'Content-Type': 'application/json' };
 
   if (process.env.LINKEDIN_ORG_ID) {
     const orgId = extractLinkedInOrgId(process.env.LINKEDIN_ORG_ID);
@@ -280,28 +280,23 @@ async function postLinkedIn(text) {
   const personId = me.id;
   if (!personId) throw new Error('Could not resolve LinkedIn person ID from /v2/me response');
 
-  const restResp = await fetch('https://api.linkedin.com/rest/posts', {
-    method: 'POST',
-    headers,
-    body: JSON.stringify({
-      author: `urn:li:person:${personId}`,
-      commentary: text,
-      visibility: 'PUBLIC',
-      distribution: { feedDistribution: 'MAIN_FEED', targetEntities: [], thirdPartyDistributionChannels: [] },
-      lifecycleState: 'PUBLISHED'
-    })
-  });
-  const restBody = await restResp.text();
-  if (restResp.ok) return restBody;
+  const versions = ['202401', '202404', '202407', '202301'];
+  for (const ver of versions) {
+    const restResp = await fetch('https://api.linkedin.com/rest/posts', {
+      method: 'POST',
+      headers: { ...headers, 'LinkedIn-Version': ver },
+      body: JSON.stringify({
+        author: `urn:li:person:${personId}`,
+        commentary: text,
+        visibility: 'PUBLIC',
+        distribution: { feedDistribution: 'MAIN_FEED', targetEntities: [], thirdPartyDistributionChannels: [] },
+        lifecycleState: 'PUBLISHED'
+      })
+    });
+    if (restResp.ok) return await restResp.text();
+  }
 
-  const sharesResp = await fetch('https://api.linkedin.com/v2/shares', {
-    method: 'POST',
-    headers: { ...headers, 'X-Restli-Protocol-Version': '2.0.0' },
-    body: JSON.stringify({ owner: `urn:li:person:${personId}`, subject: '', text: { text } })
-  });
-  const sharesBody = await sharesResp.text();
-  if (sharesResp.ok) return sharesBody;
-  throw new Error(`LinkedIn API (shares) ${sharesResp.status}: ${sharesBody}`);
+  throw new Error('LinkedIn API exhausted all version attempts. Ensure app has Share on LinkedIn product enabled.');
 }
 
 function buildOAuth1Header({ method, url, consumerKey, consumerSecret, token, tokenSecret }) {
