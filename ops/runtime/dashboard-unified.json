@@ -1125,13 +1125,13 @@
     }
   },
   "failuresMonitor": {
-    "lastAnalysis": "2026-06-12T09:29:55.648Z",
+    "lastAnalysis": "2026-06-12T09:33:22.135Z",
     "totalRuns": 100,
-    "failedToday": 69,
-    "successfulToday": 31,
+    "failedToday": 66,
+    "successfulToday": 32,
     "byType": {
-      "failure": 3,
-      "startup_failure": 66
+      "failure": 4,
+      "startup_failure": 62
     },
     "byWorkflow": [
       {
@@ -1140,19 +1140,19 @@
       },
       {
         "workflow": "CI",
-        "failures": 12
+        "failures": 11
       },
       {
         "workflow": "e2e",
-        "failures": 12
-      },
-      {
-        "workflow": "Backend Production Readiness",
-        "failures": 7
+        "failures": 11
       },
       {
         "workflow": "Deploy Backend to Railway",
-        "failures": 7
+        "failures": 8
+      },
+      {
+        "workflow": "Backend Production Readiness",
+        "failures": 6
       },
       {
         "workflow": "Production Go No-Go",
@@ -1160,7 +1160,7 @@
       },
       {
         "workflow": "contract-tests",
-        "failures": 6
+        "failures": 5
       },
       {
         "workflow": "security",

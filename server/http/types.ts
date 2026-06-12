@@ -36,7 +36,7 @@ export interface HttpRoute {
 }
 
 export interface JsonResponseBody {
-  readonly status: 'ok' | 'error';
+  readonly status: 'ok' | 'error' | 'degraded';
   readonly action?: string;
   readonly result?: Record<string, unknown>;
   readonly error?: string;

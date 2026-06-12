@@ -8,9 +8,9 @@ export interface BusinessDecision {
   readonly description: string;
   readonly impact: 'low' | 'medium' | 'high' | 'critical';
   readonly confidence: number;
-  readonly status: 'pending' | 'approved' | 'rejected' | 'executed';
+  status: 'pending' | 'approved' | 'rejected' | 'executed';
   readonly createdAt: Date;
-  readonly decidedAt?: Date;
+  decidedAt?: Date;
   readonly evidence: string[];
 }
 
@@ -35,7 +35,7 @@ export class DecisionEngine {
 
   public ingestSignal(signal: MarketSignal): void {
     this.researcher.ingestSignal(signal);
-    const opportunities = this.researcher.analyze(signal.segment || 'smb');
+    const opportunities = this.researcher.analyze(signal.topic || 'smb');
     for (const opp of opportunities) {
       this.createOpportunityDecision(opp);
     }

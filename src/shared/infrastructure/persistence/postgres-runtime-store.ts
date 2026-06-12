@@ -22,8 +22,7 @@ async function getPool(): Promise<any | null> {
     return null;
   }
 
-  const pg = await import('pg');
-  const { Pool } = pg as any;
+  const { Pool } = await import('pg');
   poolRef = new Pool({ connectionString: databaseUrl });
   return poolRef;
 }

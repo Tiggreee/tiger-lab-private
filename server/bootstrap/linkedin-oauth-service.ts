@@ -312,7 +312,7 @@ export class LinkedInOAuthService {
     const rows = Array.isArray(parsed.elements) ? parsed.elements : [];
 
     const totals = rows.reduce(
-      (accumulator, row) => {
+      (accumulator: { impressions: number; clicks: number; spend: number; conversions: number }, row) => {
         const impressions = asNumber(row.impressions);
         const clicks = asNumber(row.clicks);
         const spend = asNumber(row.costInLocalCurrency) || asNumber(row.costInUsd);

@@ -200,7 +200,8 @@ export class PayPalPaymentService implements PaymentGatewayPort {
       return null;
     }
 
-    const relatedIds = resource.supplementary_data?.related_ids as Record<string, unknown> | undefined;
+    const supplementaryData = resource.supplementary_data as Record<string, unknown> | undefined;
+    const relatedIds = supplementaryData?.related_ids as Record<string, unknown> | undefined;
     const orderId =
       (relatedIds?.order_id as string | undefined) ||
       (resource.order_id as string | undefined) ||
