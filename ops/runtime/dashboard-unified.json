@@ -977,5 +977,53 @@
     "dashboard": "success",
     "checkout": "success",
     "gate": "GO"
+  },
+  "failuresMonitor": {
+    "lastAnalysis": "2026-06-12T15:38:05.301Z",
+    "totalRuns": 100,
+    "failedToday": 18,
+    "successfulToday": 72,
+    "byType": {
+      "failure": 18
+    },
+    "byWorkflow": [
+      {
+        "workflow": "Failures Monitor — 2h Cycle",
+        "failures": 5
+      },
+      {
+        "workflow": "Billing Reconciliation Daily",
+        "failures": 4
+      },
+      {
+        "workflow": "daily-sales-automation",
+        "failures": 3
+      },
+      {
+        "workflow": "Social Publish",
+        "failures": 2
+      },
+      {
+        "workflow": "Production Go No-Go",
+        "failures": 2
+      },
+      {
+        "workflow": "Running Copilot cloud agent",
+        "failures": 1
+      },
+      {
+        "workflow": "Product Development Engine — 2h Cycle",
+        "failures": 1
+      }
+    ],
+    "rootCauses": [
+      {
+        "cause": "Check failures in workflow steps",
+        "severity": "high",
+        "fix": "Review logs for each failed run"
+      }
+    ],
+    "permFixed": false,
+    "currentPermission": "all"
   }
 }
