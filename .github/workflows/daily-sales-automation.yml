@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: '0 14 * * 1-5'
 
+permissions:
+  contents: write
+  deployments: write
+
 jobs:
   full-pipeline:
     runs-on: ubuntu-latest
