@@ -3,7 +3,7 @@
   "productName": "Script Premium Kit",
   "channelId": "twitter",
   "channelName": "X / Twitter",
-  "generatedAt": "2026-06-12T08:21:35.408Z",
+  "generatedAt": "2026-06-12T11:58:15.267Z",
   "status": "active",
   "seo": {
     "title": "Script Premium Kit en X / Twitter | Tiger Lab",
@@ -17,7 +17,7 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "Script Premium Kit para equipos que quieren crecer sin contratar mas gente.",
+    "headline": "Script Premium Kit ya esta aqui. Automatiza tu operacion en minutos.",
     "body": "Script Premium Kit esta vivo.\n\nAPI Access\nAutomation\n\n$39/mo · Sin equipo tecnico necesario\nDiagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
     "cta": "Agenda tu diagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
     "tone": "directo, punchy, con call-to-action"
@@ -25,11 +25,11 @@
   "tracking": {
     "utmSource": "twitter",
     "utmCampaign": "landing-script-premium-kit-twitter",
-    "utmContent": "social-landing-1781252495409"
+    "utmContent": "social-landing-1781265495267"
   },
   "metrics": {
     "targetChars": 280,
-    "actualChars": 301,
-    "qualityScore": 57
+    "actualChars": 294,
+    "qualityScore": 60
   }
 }

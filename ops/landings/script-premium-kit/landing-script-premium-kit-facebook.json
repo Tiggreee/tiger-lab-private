@@ -3,7 +3,7 @@
   "productName": "Script Premium Kit",
   "channelId": "facebook",
   "channelName": "Facebook",
-  "generatedAt": "2026-06-12T08:21:35.409Z",
+  "generatedAt": "2026-06-12T11:58:15.267Z",
   "status": "active",
   "seo": {
     "title": "Script Premium Kit en Facebook | Tiger Lab",
@@ -17,7 +17,7 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "Script Premium Kit ya esta disponible para equipos como el tuyo",
+    "headline": "🤖 Script Premium Kit - La historia de como dejamos de hacer procesos manuales",
     "body": " 🚀 Lanzamos Script Premium Kit para equipos pequenos en Mexico.\n\nHistoria rapida: Trabajamos con decenas de SMBs que nos decian \"no tenemos tiempo para implementar tecnologia\". Tienen el dinero, tienen la intencion, pero no el equipo interno.\n\nConstruimos Script Premium Kit para ellos.\n\n🔹 API Access\n🔹 Automation\n🔹 Reports\n\nDesde $39/mo. 14 dias de prueba gratis.\n\nAgenda tu diagnostico: https://cal.com/victor-tigerlab/diagnostic\n\nComparte este post con alguien que este creciendo su operacion.",
     "cta": "Agenda tu diagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
     "tone": "comunitario, testimonial, conversacional"
@@ -25,11 +25,11 @@
   "tracking": {
     "utmSource": "facebook",
     "utmCampaign": "landing-script-premium-kit-facebook",
-    "utmContent": "social-landing-1781252495409"
+    "utmContent": "social-landing-1781265495267"
   },
   "metrics": {
     "targetChars": 63206,
-    "actualChars": 635,
+    "actualChars": 650,
     "qualityScore": 21
   }
 }

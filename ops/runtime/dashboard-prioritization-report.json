@@ -1,12 +1,12 @@
 {
-  "prioritizedAt": "2026-06-12T08:06:31.138Z",
-  "totalActive": 11,
+  "prioritizedAt": "2026-06-12T11:58:15.195Z",
+  "totalActive": 12,
   "archivedCount": 0,
   "overdueCount": 0,
   "alerts": [],
   "recommendedFocus": [
     "Configurar Stripe live keys en GitHub Secrets",
     "Configurar PayPal live keys en GitHub Secrets",
-    "Publish 1 LinkedIn post anunciando Docflow API + Script Kit"
+    "Resolver: All Agents Active"
   ]
 }

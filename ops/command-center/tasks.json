@@ -4,33 +4,9 @@
     "owner": "Victor",
     "project": "Tiger Lab — Fully Automated",
     "lastSupervisorSyncAt": "2026-06-12T08:10:00.000Z",
-    "lastPrioritizedAt": "2026-06-12T08:10:00.000Z"
+    "lastPrioritizedAt": "2026-06-12T11:58:15.195Z"
   },
   "tasks": [
-    {
-      "id": "PL-001",
-      "title": "Configurar Stripe live keys en GitHub Secrets",
-      "area": "payments",
-      "priority": "P0",
-      "owner": "human",
-      "status": "todo",
-      "dueDate": "2026-06-13",
-      "nextAction": "Ir a GitHub → Settings → Secrets → Actions. Agregar STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET.",
-      "debtSettled": false,
-      "blocker": "No tengo las API keys"
-    },
-    {
-      "id": "PL-002",
-      "title": "Configurar PayPal live keys en GitHub Secrets",
-      "area": "payments",
-      "priority": "P0",
-      "owner": "human",
-      "status": "todo",
-      "dueDate": "2026-06-13",
-      "nextAction": "Agregar PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET de cuenta business (tiggreee@vmdev.lat).",
-      "debtSettled": false,
-      "blocker": "No tengo las API keys"
-    },
     {
       "id": "PL-003",
       "title": "Publicar LinkedIn post (Docflow API + Script Kit)",
@@ -43,7 +19,8 @@
       "debtSettled": true,
       "settledBy": "engine",
       "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json",
-      "debtNote": "Engine generó el contenido. Publicación real requiere secrets de LinkedIn que solo Victor puede configurar."
+      "debtNote": "Engine generó el contenido. Publicación real requiere secrets de LinkedIn que solo Victor puede configurar.",
+      "daysUntilDue": 1
     },
     {
       "id": "PL-004",
@@ -57,31 +34,21 @@
       "debtSettled": true,
       "settledBy": "engine",
       "evidence": "ops/sales/outreach/outreach-batch-2026-06-12.md",
-      "debtNote": "Engine generó leads desde ICP y creó los mensajes. Envío manual por LinkedIn DM requiere Victor."
+      "debtNote": "Engine generó leads desde ICP y creó los mensajes. Envío manual por LinkedIn DM requiere Victor.",
+      "daysUntilDue": 1
     },
     {
-      "id": "PL-005",
-      "title": "Conectar PAC Finkok para CFDI",
+      "id": "PL-010",
+      "title": "Activar PAC Finkok para desbloquear facturación",
       "area": "billing",
-      "priority": "P0",
+      "priority": "P1",
       "owner": "human",
       "status": "todo",
       "dueDate": "2026-06-19",
-      "nextAction": "Crear cuenta Finkok sandbox, obtener API key.",
+      "nextAction": "Una vez tengas API key, configurar GitHub secrets y activar productos.",
       "debtSettled": false,
-      "blocker": "Requiere que Victor contrate Finkok"
-    },
-    {
-      "id": "PL-006",
-      "title": "Book 3 discovery calls con leads calientes",
-      "area": "sales",
-      "priority": "P0",
-      "owner": "human",
-      "status": "todo",
-      "dueDate": "2026-06-16",
-      "nextAction": "Usar one-pager. Ofrecer diagnóstico 15 min.",
-      "debtSettled": false,
-      "blocker": "Requiere que Victor haga las llamadas"
+      "blocker": "Requiere PAC key de Victor",
+      "daysUntilDue": 8
     },
     {
       "id": "PL-007",
@@ -94,7 +61,8 @@
       "nextAction": "npm pack --dry-run ejecutado. Package listo (674 archivos, 544.5 kB). Workflow validado.",
       "debtSettled": true,
       "settledBy": "engine",
-      "evidence": "npm pack --dry-run OK"
+      "evidence": "npm pack --dry-run OK",
+      "daysUntilDue": 1
     },
     {
       "id": "PL-008",
@@ -107,31 +75,8 @@
       "nextAction": "Pipeline completo ejecutado localmente: leads → outreach → social pack → dashboard priorization.",
       "debtSettled": true,
       "settledBy": "engine",
-      "evidence": "scripts/lead-intelligence.mjs + scripts/dashboard-prioritize.mjs + scripts/traffic/generate-social-pack.mjs"
-    },
-    {
-      "id": "PL-009",
-      "title": "Cerrar primer sprint pagado (Docflow API o Script Kit)",
-      "area": "revenue",
-      "priority": "P0",
-      "owner": "human",
-      "status": "todo",
-      "dueDate": "2026-06-19",
-      "nextAction": "Propuesta lista. Victor: enviar a lead más caliente hoy.",
-      "debtSettled": false,
-      "blocker": "Requiere que Victor cierre el trato"
-    },
-    {
-      "id": "PL-010",
-      "title": "Activar PAC Finkok para desbloquear facturación",
-      "area": "billing",
-      "priority": "P1",
-      "owner": "human",
-      "status": "todo",
-      "dueDate": "2026-06-19",
-      "nextAction": "Una vez tengas API key, configurar GitHub secrets y activar productos.",
-      "debtSettled": false,
-      "blocker": "Requiere PAC key de Victor"
+      "evidence": "scripts/lead-intelligence.mjs + scripts/dashboard-prioritize.mjs + scripts/traffic/generate-social-pack.mjs",
+      "daysUntilDue": 1
     },
     {
       "id": "PL-011",
@@ -144,7 +89,34 @@
       "nextAction": "Social pack 'produccion-week1' generado con 24% lift proyectado.",
       "debtSettled": true,
       "settledBy": "engine",
-      "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json"
+      "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json",
+      "daysUntilDue": 1
+    },
+    {
+      "id": "PL-001",
+      "title": "Configurar Stripe live keys en GitHub Secrets",
+      "area": "payments",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-13",
+      "nextAction": "Ir a GitHub → Settings → Secrets → Actions. Agregar STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET.",
+      "debtSettled": false,
+      "blocker": "No tengo las API keys",
+      "daysUntilDue": 2
+    },
+    {
+      "id": "PL-002",
+      "title": "Configurar PayPal live keys en GitHub Secrets",
+      "area": "payments",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-13",
+      "nextAction": "Agregar PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET de cuenta business (tiggreee@vmdev.lat).",
+      "debtSettled": false,
+      "blocker": "No tengo las API keys",
+      "daysUntilDue": 2
     },
     {
       "id": "SYS-017",
@@ -154,7 +126,67 @@
       "owner": "human",
       "status": "todo",
       "dueDate": "2026-06-13",
-      "nextAction": "20/21 agents active"
+      "nextAction": "20/21 agents active",
+      "daysUntilDue": 2
+    },
+    {
+      "id": "PL-006",
+      "title": "Book 3 discovery calls con leads calientes",
+      "area": "sales",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-16",
+      "nextAction": "Usar one-pager. Ofrecer diagnóstico 15 min.",
+      "debtSettled": false,
+      "blocker": "Requiere que Victor haga las llamadas",
+      "daysUntilDue": 5
+    },
+    {
+      "id": "PL-005",
+      "title": "Conectar PAC Finkok para CFDI",
+      "area": "billing",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-19",
+      "nextAction": "Crear cuenta Finkok sandbox, obtener API key.",
+      "debtSettled": false,
+      "blocker": "Requiere que Victor contrate Finkok",
+      "daysUntilDue": 8
+    },
+    {
+      "id": "PL-009",
+      "title": "Cerrar primer sprint pagado (Docflow API o Script Kit)",
+      "area": "revenue",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-19",
+      "nextAction": "Propuesta lista. Victor: enviar a lead más caliente hoy.",
+      "debtSettled": false,
+      "blocker": "Requiere que Victor cierre el trato",
+      "daysUntilDue": 8
+    },
+    {
+      "id": "SYS-003",
+      "title": "Resolver: Stripe Live Keys Configured",
+      "area": "system",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-13",
+      "nextAction": ".env.production.example not found"
+    },
+    {
+      "id": "SYS-005",
+      "title": "Resolver: PayPal Live Keys Configured",
+      "area": "system",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-13",
+      "nextAction": ".env.production.example not found"
     }
   ]
 }

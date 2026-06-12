@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-06-12T09:05:57.617Z",
+  "generatedAt": "2026-06-12T11:58:15.720Z",
   "monetization": {
-    "leadsToday": 68,
+    "leadsToday": 10,
     "generatedContent": 10,
     "activeBots": 4,
     "averagePrice": "$69.00"
@@ -173,13 +173,13 @@
         "generatedAt": "2026-05-31T05:20:20.801Z"
       },
       {
-        "file": "social-pack-all-about-money-pilot.json",
-        "name": "all-about-money-pilot",
-        "topic": "14 rutas reales para monetizar IA sin humo",
+        "file": "social-pack-daily-2026-06-12.json",
+        "name": "daily-2026-06-12",
+        "topic": "Automatización de operaciones para SMBs",
         "avgScore": 100,
         "projectedLift": 24,
         "targetReached": true,
-        "mcpDecision": "unknown",
+        "mcpDecision": "apply",
         "channels": [
           "linkedin",
           "x",
@@ -187,7 +187,7 @@
           "telegram",
           "discord"
         ],
-        "generatedAt": "2026-05-31T05:20:20.100Z"
+        "generatedAt": "2026-06-12T11:58:14.970Z"
       }
     ]
   },
@@ -250,30 +250,6 @@
     "pending": 7,
     "items": [
       {
-        "id": "PL-001",
-        "title": "Configurar Stripe live keys en GitHub Secrets",
-        "area": "payments",
-        "priority": "P0",
-        "owner": "human",
-        "status": "todo",
-        "dueDate": "2026-06-13",
-        "nextAction": "Ir a GitHub → Settings → Secrets → Actions. Agregar STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET.",
-        "debtSettled": false,
-        "blocker": "No tengo las API keys"
-      },
-      {
-        "id": "PL-002",
-        "title": "Configurar PayPal live keys en GitHub Secrets",
-        "area": "payments",
-        "priority": "P0",
-        "owner": "human",
-        "status": "todo",
-        "dueDate": "2026-06-13",
-        "nextAction": "Agregar PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET de cuenta business (tiggreee@vmdev.lat).",
-        "debtSettled": false,
-        "blocker": "No tengo las API keys"
-      },
-      {
         "id": "PL-003",
         "title": "Publicar LinkedIn post (Docflow API + Script Kit)",
         "area": "positioning",
@@ -285,7 +261,8 @@
         "debtSettled": true,
         "settledBy": "engine",
         "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json",
-        "debtNote": "Engine generó el contenido. Publicación real requiere secrets de LinkedIn que solo Victor puede configurar."
+        "debtNote": "Engine generó el contenido. Publicación real requiere secrets de LinkedIn que solo Victor puede configurar.",
+        "daysUntilDue": 1
       },
       {
         "id": "PL-004",
@@ -299,31 +276,21 @@
         "debtSettled": true,
         "settledBy": "engine",
         "evidence": "ops/sales/outreach/outreach-batch-2026-06-12.md",
-        "debtNote": "Engine generó leads desde ICP y creó los mensajes. Envío manual por LinkedIn DM requiere Victor."
+        "debtNote": "Engine generó leads desde ICP y creó los mensajes. Envío manual por LinkedIn DM requiere Victor.",
+        "daysUntilDue": 1
       },
       {
-        "id": "PL-005",
-        "title": "Conectar PAC Finkok para CFDI",
+        "id": "PL-010",
+        "title": "Activar PAC Finkok para desbloquear facturación",
         "area": "billing",
-        "priority": "P0",
+        "priority": "P1",
         "owner": "human",
         "status": "todo",
         "dueDate": "2026-06-19",
-        "nextAction": "Crear cuenta Finkok sandbox, obtener API key.",
+        "nextAction": "Una vez tengas API key, configurar GitHub secrets y activar productos.",
         "debtSettled": false,
-        "blocker": "Requiere que Victor contrate Finkok"
-      },
-      {
-        "id": "PL-006",
-        "title": "Book 3 discovery calls con leads calientes",
-        "area": "sales",
-        "priority": "P0",
-        "owner": "human",
-        "status": "todo",
-        "dueDate": "2026-06-16",
-        "nextAction": "Usar one-pager. Ofrecer diagnóstico 15 min.",
-        "debtSettled": false,
-        "blocker": "Requiere que Victor haga las llamadas"
+        "blocker": "Requiere PAC key de Victor",
+        "daysUntilDue": 8
       },
       {
         "id": "PL-007",
@@ -336,7 +303,8 @@
         "nextAction": "npm pack --dry-run ejecutado. Package listo (674 archivos, 544.5 kB). Workflow validado.",
         "debtSettled": true,
         "settledBy": "engine",
-        "evidence": "npm pack --dry-run OK"
+        "evidence": "npm pack --dry-run OK",
+        "daysUntilDue": 1
       },
       {
         "id": "PL-008",
@@ -349,31 +317,8 @@
         "nextAction": "Pipeline completo ejecutado localmente: leads → outreach → social pack → dashboard priorization.",
         "debtSettled": true,
         "settledBy": "engine",
-        "evidence": "scripts/lead-intelligence.mjs + scripts/dashboard-prioritize.mjs + scripts/traffic/generate-social-pack.mjs"
-      },
-      {
-        "id": "PL-009",
-        "title": "Cerrar primer sprint pagado (Docflow API o Script Kit)",
-        "area": "revenue",
-        "priority": "P0",
-        "owner": "human",
-        "status": "todo",
-        "dueDate": "2026-06-19",
-        "nextAction": "Propuesta lista. Victor: enviar a lead más caliente hoy.",
-        "debtSettled": false,
-        "blocker": "Requiere que Victor cierre el trato"
-      },
-      {
-        "id": "PL-010",
-        "title": "Activar PAC Finkok para desbloquear facturación",
-        "area": "billing",
-        "priority": "P1",
-        "owner": "human",
-        "status": "todo",
-        "dueDate": "2026-06-19",
-        "nextAction": "Una vez tengas API key, configurar GitHub secrets y activar productos.",
-        "debtSettled": false,
-        "blocker": "Requiere PAC key de Victor"
+        "evidence": "scripts/lead-intelligence.mjs + scripts/dashboard-prioritize.mjs + scripts/traffic/generate-social-pack.mjs",
+        "daysUntilDue": 1
       },
       {
         "id": "PL-011",
@@ -386,7 +331,34 @@
         "nextAction": "Social pack 'produccion-week1' generado con 24% lift proyectado.",
         "debtSettled": true,
         "settledBy": "engine",
-        "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json"
+        "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json",
+        "daysUntilDue": 1
+      },
+      {
+        "id": "PL-001",
+        "title": "Configurar Stripe live keys en GitHub Secrets",
+        "area": "payments",
+        "priority": "P0",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-13",
+        "nextAction": "Ir a GitHub → Settings → Secrets → Actions. Agregar STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET.",
+        "debtSettled": false,
+        "blocker": "No tengo las API keys",
+        "daysUntilDue": 2
+      },
+      {
+        "id": "PL-002",
+        "title": "Configurar PayPal live keys en GitHub Secrets",
+        "area": "payments",
+        "priority": "P0",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-13",
+        "nextAction": "Agregar PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET de cuenta business (tiggreee@vmdev.lat).",
+        "debtSettled": false,
+        "blocker": "No tengo las API keys",
+        "daysUntilDue": 2
       },
       {
         "id": "SYS-017",
@@ -396,13 +368,53 @@
         "owner": "human",
         "status": "todo",
         "dueDate": "2026-06-13",
-        "nextAction": "20/21 agents active"
+        "nextAction": "20/21 agents active",
+        "daysUntilDue": 2
+      },
+      {
+        "id": "PL-006",
+        "title": "Book 3 discovery calls con leads calientes",
+        "area": "sales",
+        "priority": "P0",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-16",
+        "nextAction": "Usar one-pager. Ofrecer diagnóstico 15 min.",
+        "debtSettled": false,
+        "blocker": "Requiere que Victor haga las llamadas",
+        "daysUntilDue": 5
+      },
+      {
+        "id": "PL-005",
+        "title": "Conectar PAC Finkok para CFDI",
+        "area": "billing",
+        "priority": "P0",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-19",
+        "nextAction": "Crear cuenta Finkok sandbox, obtener API key.",
+        "debtSettled": false,
+        "blocker": "Requiere que Victor contrate Finkok",
+        "daysUntilDue": 8
+      },
+      {
+        "id": "PL-009",
+        "title": "Cerrar primer sprint pagado (Docflow API o Script Kit)",
+        "area": "revenue",
+        "priority": "P0",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-19",
+        "nextAction": "Propuesta lista. Victor: enviar a lead más caliente hoy.",
+        "debtSettled": false,
+        "blocker": "Requiere que Victor cierre el trato",
+        "daysUntilDue": 8
       }
     ]
   },
   "landings": {
     "title": "Tiger Lab - Social Landing Pages Index",
-    "generatedAt": "2026-06-12T08:21:35.419Z",
+    "generatedAt": "2026-06-12T11:58:15.270Z",
     "summary": {
       "totalProducts": 5,
       "activeProducts": 2,
@@ -491,15 +503,15 @@
     "note": "Cada landing page esta optimizada para el tono y formato de su canal social."
   },
   "agentMonitor": {
-    "generatedAt": "2026-06-12T08:39:18.147Z",
+    "generatedAt": "2026-06-12T11:58:15.450Z",
     "summary": {
-      "totalAgents": 21,
-      "activeAgents": 21,
+      "totalAgents": 22,
+      "activeAgents": 22,
       "inactiveAgents": 0,
       "directMonetization": 7,
-      "indirectMonetization": 9,
+      "indirectMonetization": 10,
       "supportGovernance": 5,
-      "monetizationContributing": 16
+      "monetizationContributing": 17
     },
     "agents": [
       {
@@ -596,12 +608,12 @@
         "contributionDetail": "Genera ingresos directamente (leads, ventas, pricing)",
         "monetizationType": "directa",
         "integrationChannels": [
-          "workflows: agent-monitor.yml, copilot-agents-validation.yml, daily-sales-automation.yml, product-release-pipeline.yml, production-go-no-go.yml, repo-intel-sync.yml",
+          "workflows: agent-monitor.yml, copilot-agents-validation.yml, daily-sales-automation.yml, product-engine-2h-cycle.yml, product-release-pipeline.yml, production-go-no-go.yml, repo-intel-sync.yml",
           "script",
           "ops evidence"
         ],
         "evidence": true,
-        "workflowCount": 6,
+        "workflowCount": 7,
         "hasScript": true
       },
       {
@@ -613,12 +625,12 @@
         "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
         "monetizationType": "indirecta",
         "integrationChannels": [
-          "workflows: agent-monitor.yml, billing-reconciliation-daily.yml, copilot-agents-validation.yml, daily-sales-automation.yml, github-policy-monitor.yml, production-go-no-go.yml, publish-packages.yml",
+          "workflows: agent-monitor.yml, billing-reconciliation-daily.yml, copilot-agents-validation.yml, daily-sales-automation.yml, failures-monitor-2h-cycle.yml, github-policy-monitor.yml, product-engine-2h-cycle.yml, production-go-no-go.yml, publish-packages.yml",
           "script",
           "ops evidence"
         ],
         "evidence": true,
-        "workflowCount": 7,
+        "workflowCount": 9,
         "hasScript": true
       },
       {
@@ -690,6 +702,22 @@
       {
         "id": "DashboardPrioritization",
         "name": "DashboardPrioritization",
+        "type": "Project Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+        "monetizationType": "indirecta",
+        "integrationChannels": [
+          "script",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 0,
+        "hasScript": true
+      },
+      {
+        "id": "FailuresMonitor",
+        "name": "FailuresMonitor",
         "type": "Project Agent",
         "active": true,
         "monetizationContribution": "si",
@@ -927,262 +955,5 @@
     "dashboard": "success",
     "checkout": "success",
     "gate": "GO"
-  },
-  "implementationTracker": {
-    "generatedAt": "2026-06-12T09:06:11.257Z",
-    "summary": {
-      "totalScripts": 51,
-      "productionScripts": 5,
-      "connectedScripts": 14,
-      "localOnlyScripts": 31,
-      "toyScripts": 1,
-      "npmCommands": 77,
-      "workflows": 25,
-      "agents": 11,
-      "bots": 9,
-      "products": 5,
-      "database": {
-        "companies": 68,
-        "contacts": 0,
-        "leads": 0
-      },
-      "gitCommits": 38,
-      "lastCommit": "456431c feat: 3 agent scripts + LED indicator + 25/25 system verify",
-      "implementationPercent": 98,
-      "connectedPercent": 37,
-      "engineViability": "VIABLE"
-    },
-    "tiers": {
-      "production": "5 scripts con lógica compleja y múltiples features",
-      "connected": "14 scripts con conexiones externas (API/DB)",
-      "local_only": "31 scripts que procesan archivos locales",
-      "toy": "1 scripts de juguete (datos hardcodeados, sin conexiones)"
-    },
-    "toyScripts": [
-      "scripts\\lead-intelligence.mjs"
-    ],
-    "githubCredits": {
-      "actionsMinutes": {
-        "limit": 50000,
-        "used": 0,
-        "pct": "0%",
-        "status": "GREEN"
-      },
-      "packagesStorage": {
-        "limit": "25 GB",
-        "used": "<1 GB",
-        "pct": "<4%",
-        "status": "GREEN"
-      },
-      "startupsBudget": {
-        "limit": "$4,982.40 USD",
-        "used": "$0",
-        "pct": "0%",
-        "status": "GREEN"
-      },
-      "note": "GitHub for Startups credits are currently unused. Monthly $4,982.40 budget is available."
-    },
-    "engineHealth": {
-      "ledStatus": "GREEN",
-      "monetizationProjection": {
-        "monthly": {
-          "activeProducts": 2,
-          "potentialRevenue": "$840/mo (10 plans across 5 products)",
-          "actualRevenue": "$0 (no payments configured)"
-        },
-        "leadEngine": {
-          "companies": 68,
-          "growthRate": "SEED_LOADED",
-          "nextStep": "Enrich with contacts and score"
-        },
-        "blockers": [
-          "Stripe/PayPal keys not configured in GitHub Secrets",
-          "PAC Finkok not contracted ($99/mo)",
-          "Social tokens not configured (LinkedIn, X, FB, TG, Discord)"
-        ]
-      }
-    },
-    "recommendations": [
-      {
-        "priority": "P0",
-        "action": "Configure STRIPE_SECRET_KEY and PAYPAL_CLIENT_ID in GitHub Secrets",
-        "impact": "Enables real payments"
-      },
-      {
-        "priority": "P0",
-        "action": "Run node scripts/lead-engine.mjs --mode seed to load seed companies",
-        "impact": "68 real MX companies loaded"
-      },
-      {
-        "priority": "P0",
-        "action": "Contratar PAC Finkok ($99/mo) for CFDI billing",
-        "impact": "Unlocks 2 paused products"
-      },
-      {
-        "priority": "P1",
-        "action": "Configure GOOGLE_MAPS_API_KEY for enriched lead data",
-        "impact": "Phone/website enrichment for 30k+/mo"
-      },
-      {
-        "priority": "P1",
-        "action": "Add social tokens for automated publishing",
-        "impact": "25 landings go live"
-      }
-    ]
-  },
-  "leadEngine": {
-    "generatedAt": "2026-06-12T09:06:25.904Z",
-    "stats": {
-      "companies": 68,
-      "byIndustry": {
-        "contabilidad": 26,
-        "facturación": 14,
-        "consultoría": 8,
-        "software": 7,
-        "financiero": 3,
-        "fintech": 3,
-        "automatización": 2,
-        "rrhh": 2,
-        "administración": 1,
-        "auditoría": 1,
-        "cobranza": 1
-      },
-      "byCity": {
-        "CDMX": 31,
-        "Monterrey": 10,
-        "Guadalajara": 8,
-        "Puebla": 5,
-        "Querétaro": 3,
-        "León": 2,
-        "San Luis Potosí": 2,
-        "Toluca": 2,
-        "Chihuahua": 1,
-        "Guanajuato": 1,
-        "Mérida": 1,
-        "Tijuana": 1,
-        "Veracruz": 1
-      },
-      "sources": [
-        "seed_denue",
-        "openstreetmap",
-        "manual_import"
-      ],
-      "exportDir": "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\database\\exports",
-      "oracleDDL": "ops/database/oracle-import-ddl.sql"
-    },
-    "ledStatus": "GREEN"
-  },
-  "productEngine": {
-    "generatedAt": "2026-06-12T09:19:26.090Z",
-    "engine": {
-      "averageScore": 64,
-      "productsAt95": 0,
-      "productsOnTrack95": 0,
-      "productsAt90plus": 0,
-      "productsAt75plus": 2,
-      "totalBenchmarks": 5,
-      "totalCompetitors": 20,
-      "estimatedTotalEffortHours": 146
-    },
-    "topProducts": [
-      {
-        "name": "Docflow API",
-        "score": 84,
-        "tier": "P3",
-        "status": "active"
-      },
-      {
-        "name": "Script Premium Kit",
-        "score": 84,
-        "tier": "P3",
-        "status": "active"
-      },
-      {
-        "name": "FacturAutentico Cloud",
-        "score": 56,
-        "tier": "P1",
-        "status": "paused"
-      },
-      {
-        "name": "FacturAutentica",
-        "score": 56,
-        "tier": "P1",
-        "status": "paused"
-      },
-      {
-        "name": "Sentrylog Lite",
-        "score": 38,
-        "tier": "P1",
-        "status": "planned"
-      }
-    ],
-    "priorityQueue": {
-      "target95": [
-        "Docflow API",
-        "Script Premium Kit"
-      ],
-      "engineReady": []
-    }
-  },
-  "failuresMonitor": {
-    "lastAnalysis": "2026-06-12T09:33:22.135Z",
-    "totalRuns": 100,
-    "failedToday": 66,
-    "successfulToday": 32,
-    "byType": {
-      "failure": 4,
-      "startup_failure": 62
-    },
-    "byWorkflow": [
-      {
-        "workflow": "Copilot Agents Validation",
-        "failures": 14
-      },
-      {
-        "workflow": "CI",
-        "failures": 11
-      },
-      {
-        "workflow": "e2e",
-        "failures": 11
-      },
-      {
-        "workflow": "Deploy Backend to Railway",
-        "failures": 8
-      },
-      {
-        "workflow": "Backend Production Readiness",
-        "failures": 6
-      },
-      {
-        "workflow": "Production Go No-Go",
-        "failures": 6
-      },
-      {
-        "workflow": "contract-tests",
-        "failures": 5
-      },
-      {
-        "workflow": "security",
-        "failures": 2
-      },
-      {
-        "workflow": "schema-validation",
-        "failures": 2
-      },
-      {
-        "workflow": "test-all",
-        "failures": 1
-      }
-    ],
-    "rootCauses": [
-      {
-        "cause": "Check failures in workflow steps",
-        "severity": "high",
-        "fix": "Review logs for each failed run"
-      }
-    ],
-    "permFixed": false,
-    "currentPermission": "all"
   }
 }

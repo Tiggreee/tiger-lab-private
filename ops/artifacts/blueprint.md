@@ -1,7 +1,7 @@
 # tiger-lab-private Blueprint
 
 Version: 0.1.0
-Generated: 2026-06-12T08:39:18.291Z
+Generated: 2026-06-12T11:58:15.585Z
 Product Type: SaaS
 
 ## Summary
@@ -38,11 +38,13 @@ graph TD
 ## Key Dependencies
 
 - pg
+- sql.js
 - tsx
 
 ## Development Dependencies
 
 - @types/node
+- @types/pg
 - @vitest/coverage-v8
 - typescript
 - vitest

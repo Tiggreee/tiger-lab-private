@@ -1,0 +1,99 @@
+{
+  "generatedAt": "2026-06-12T11:58:14.970Z",
+  "campaign": "daily-2026-06-12",
+  "topic": "Automatización de operaciones para SMBs",
+  "audience": "founders y operadores SMB",
+  "offer": "Diagnóstico de 15 min",
+  "brand": {
+    "productName": "Tiger Lab",
+    "problemDetail": "operaciones manuales que consumen 10+h/semana",
+    "primaryOutcome": "operaciones autónomas",
+    "proofPoint": "2 productos viables: Docflow API y Script Kit",
+    "domainTerms": [
+      "automatizacion",
+      "smb",
+      "docflow",
+      "scripts"
+    ]
+  },
+  "funnel": {
+    "trafficDestination": "https://cal.com/victor-tigerlab/diagnostic",
+    "closeChannel": "calendar",
+    "closeDestination": "https://cal.com/victor-tigerlab/diagnostic",
+    "prefilledMessage": "Hola, vengo de la campana y quiero activar el diagnostico express de 15 min.",
+    "finalCta": "Agenda aqui un diagnostico de Tiger Lab: https://cal.com/victor-tigerlab/diagnostic",
+    "closeLink": "https://cal.com/victor-tigerlab/diagnostic"
+  },
+  "quality": {
+    "averageScore": 100,
+    "projectedAverageLiftPct": 24,
+    "targetLiftPct": 15,
+    "targetReached": true
+  },
+  "channels": {
+    "linkedin": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Tiger Lab: Automatización de operaciones para SMBs.\n\nContexto operativo: founders y operadores SMB con foco en operaciones autónomas.\n\nSi hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab esta hecho para operaciones autónomas.\n\nEnfoque de esta solucion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: 2 productos viables: Docflow API y Script Kit\n\nSenales de encaje: automatizacion, smb, docflow, scripts.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nAgenda aqui un diagnostico de Tiger Lab: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=linkedin&utm_medium=social&utm_campaign=daily-2026-06-12",
+      "variants": {
+        "A": "Tiger Lab: Automatización de operaciones para SMBs.\n\nContexto operativo: founders y operadores SMB con foco en operaciones autónomas.\n\nSi hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab esta hecho para operaciones autónomas.\n\nEnfoque de esta solucion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: 2 productos viables: Docflow API y Script Kit\n\nSenales de encaje: automatizacion, smb, docflow, scripts.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nAgenda aqui un diagnostico de Tiger Lab: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=linkedin&utm_medium=social&utm_campaign=daily-2026-06-12",
+        "B": "Tiger Lab no existe para sonar futurista. Existe para quitar operaciones manuales que consumen 10+h/semana.\n\nContexto operativo: founders y operadores SMB con foco en operaciones autónomas.\n\nSi hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab esta hecho para operaciones autónomas.\n\nEnfoque de esta solucion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: 2 productos viables: Docflow API y Script Kit\n\nSenales de encaje: automatizacion, smb, docflow, scripts.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=linkedin&utm_medium=social&utm_campaign=daily-2026-06-12"
+      }
+    },
+    "x": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Tiger Lab: Automatización de operaciones para SMBs. Si hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible. 2 productos viables: Docflow API y Script Kit Agenda aqui un diagnostico de Tiger Lab: http...",
+      "variants": {
+        "A": "Tiger Lab: Automatización de operaciones para SMBs. Si hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible. 2 productos viables: Docflow API y Script Kit Agenda aqui un diagnostico de Tiger Lab: http...",
+        "B": "Tiger Lab no existe para sonar futurista. Existe para quitar operaciones manuales que consumen 10+h/semana. Si hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible. 2 productos viables: Docflow API y ..."
+      }
+    },
+    "facebook": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Tiger Lab: Automatización de operaciones para SMBs.\n\nEscenario real: founders y operadores SMB con foco en operaciones autónomas.\n\nSi hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab esta hecho para operaciones autónomas.\n\nFoco de implementacion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: 2 productos viables: Docflow API y Script Kit\n\nChecklist de encaje: automatizacion, smb, docflow, scripts.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nAgenda aqui un diagnostico de Tiger Lab: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=facebook&utm_medium=social&utm_campaign=daily-2026-06-12",
+      "variants": {
+        "A": "Tiger Lab: Automatización de operaciones para SMBs.\n\nEscenario real: founders y operadores SMB con foco en operaciones autónomas.\n\nSi hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab esta hecho para operaciones autónomas.\n\nFoco de implementacion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: 2 productos viables: Docflow API y Script Kit\n\nChecklist de encaje: automatizacion, smb, docflow, scripts.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nAgenda aqui un diagnostico de Tiger Lab: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=facebook&utm_medium=social&utm_campaign=daily-2026-06-12",
+        "B": "Tiger Lab no existe para sonar futurista. Existe para quitar operaciones manuales que consumen 10+h/semana.\n\nEscenario real: founders y operadores SMB con foco en operaciones autónomas.\n\nSi hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab esta hecho para operaciones autónomas.\n\nFoco de implementacion: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: 2 productos viables: Docflow API y Script Kit\n\nChecklist de encaje: automatizacion, smb, docflow, scripts.\n\nNo apto para: equipos sin tareas repetitivas ni necesidad de estandarizar ejecucion.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=facebook&utm_medium=social&utm_campaign=daily-2026-06-12"
+      }
+    },
+    "telegram": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Tiger Lab: Automatización de operaciones para SMBs.\n\nSi hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab esta hecho para operaciones autónomas.\n\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: 2 productos viables: Docflow API y Script Kit\n\nSenales de encaje: automatizacion, smb, docflow, scripts.\n\nAgenda aqui un diagnostico de Tiger Lab: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=telegram&utm_medium=social&utm_campaign=daily-2026-06-12",
+      "variants": {
+        "A": "Tiger Lab: Automatización de operaciones para SMBs.\n\nSi hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab esta hecho para operaciones autónomas.\n\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: 2 productos viables: Docflow API y Script Kit\n\nSenales de encaje: automatizacion, smb, docflow, scripts.\n\nAgenda aqui un diagnostico de Tiger Lab: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=telegram&utm_medium=social&utm_campaign=daily-2026-06-12",
+        "B": "Tiger Lab no existe para sonar futurista. Existe para quitar operaciones manuales que consumen 10+h/semana.\n\nSi hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\n\nTiger Lab esta hecho para operaciones autónomas.\n\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\n\nPrueba concreta: 2 productos viables: Docflow API y Script Kit\n\nSenales de encaje: automatizacion, smb, docflow, scripts.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=telegram&utm_medium=social&utm_campaign=daily-2026-06-12"
+      }
+    },
+    "discord": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "Tiger Lab: Automatización de operaciones para SMBs.\nSi hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\nTiger Lab esta hecho para operaciones autónomas.\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\nPrueba concreta: 2 productos viables: Docflow API y Script Kit\nSenales de encaje: automatizacion, smb, docflow, scripts.\nAgenda aqui un diagnostico de Tiger Lab: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=discord&utm_medium=social&utm_campaign=daily-2026-06-12",
+      "variants": {
+        "A": "Tiger Lab: Automatización de operaciones para SMBs.\nSi hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\nTiger Lab esta hecho para operaciones autónomas.\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\nPrueba concreta: 2 productos viables: Docflow API y Script Kit\nSenales de encaje: automatizacion, smb, docflow, scripts.\nAgenda aqui un diagnostico de Tiger Lab: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=discord&utm_medium=social&utm_campaign=daily-2026-06-12",
+        "B": "Tiger Lab no existe para sonar futurista. Existe para quitar operaciones manuales que consumen 10+h/semana.\nSi hoy founders y operadores SMB sigue resolviendo operaciones manuales que consumen 10+h/semana, el costo ya es operativo y visible.\nTiger Lab esta hecho para operaciones autónomas.\nFoco: runbooks ejecutables, menos tareas manuales y handoff ordenado.\nPrueba concreta: 2 productos viables: Docflow API y Script Kit\nSenales de encaje: automatizacion, smb, docflow, scripts.\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=discord&utm_medium=social&utm_campaign=daily-2026-06-12"
+      }
+    }
+  },
+  "mcpAudit": {
+    "enabled": true,
+    "auditedAt": "2026-06-12T11:58:14.970Z",
+    "benchmark": {
+      "averageScore": 100,
+      "minimumScoreForApply": 72,
+      "projectedLiftPct": 24,
+      "targetLiftPct": 15
+    },
+    "decision": "apply",
+    "findings": [
+      "Campana apta para ejecucion automatizada segun benchmark MCP."
+    ]
+  }
+}

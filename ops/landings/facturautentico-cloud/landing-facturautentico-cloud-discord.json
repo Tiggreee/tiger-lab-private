@@ -3,7 +3,7 @@
   "productName": "FacturAutentico Cloud",
   "channelId": "discord",
   "channelName": "Discord",
-  "generatedAt": "2026-06-12T08:21:35.397Z",
+  "generatedAt": "2026-06-12T11:58:15.260Z",
   "status": "paused",
   "seo": {
     "title": "FacturAutentico Cloud en Discord | Tiger Lab",
@@ -18,18 +18,18 @@
   },
   "copy": {
     "headline": "FacturAutentico Cloud - Release Notes & Tech Specs",
-    "body": "**FacturAutentico Cloud — Now Available**\n\n**Status**: Active | **Pricing**: $39/mo\n**Stack**: Node.js 20+, TypeScript, REST API\n**Auth**: API Key via header `X-API-Key`\n\n**Features**:\n• `api-access`\n• `automation`\n• `reports`\n• `support`\n\n**Docs**: https://tigerlab.dev/docs/facturautentico-cloud\n**Support**: Discord ticket or victor@tigerlab.dev\n\nTo get started, book a diagnostic: https://cal.com/victor-tigerlab/diagnostic",
+    "body": "**FacturAutentico Cloud Release**\n\nTarget: SMBs in Mexico (3-50 employees)\nPricing: $39/mo\nTrial: 14 days, no credit card required\n\n**Integration Guide**:\n1. Book diagnostic\n2. We configure your instance\n3. Start automating\n\nQuestions? Open a ticket.",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "tecnico, detallado, para early adopters"
   },
   "tracking": {
     "utmSource": "discord",
     "utmCampaign": "landing-facturautentico-cloud-discord",
-    "utmContent": "social-landing-1781252495397"
+    "utmContent": "social-landing-1781265495260"
   },
   "metrics": {
     "targetChars": 2000,
-    "actualChars": 525,
-    "qualityScore": 50
+    "actualChars": 348,
+    "qualityScore": 40
   }
 }

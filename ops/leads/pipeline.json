@@ -119,15 +119,75 @@
       "source": "linkedin",
       "status": "contacted",
       "capturedAt": "2026-06-12T08:15:50.229Z"
+    },
+    {
+      "id": "lead_1781265494844_0",
+      "name": "Valentina Cruz",
+      "company": "Valentina Tech Fin",
+      "industry": "fintech",
+      "pain": "deploy manual a produccion",
+      "process": "creacion de reportes",
+      "geo": "Merida",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T11:58:14.844Z"
+    },
+    {
+      "id": "lead_1781265494844_1",
+      "name": "Miguel Gonzalez",
+      "company": "Miguel Tech Ops",
+      "industry": "servicios profesionales",
+      "pain": "deploy manual a produccion",
+      "process": "creacion de reportes",
+      "geo": "Guadalajara",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T11:58:14.844Z"
+    },
+    {
+      "id": "lead_1781265494844_2",
+      "name": "Gabriela Garcia",
+      "company": "Gabriela Tech Ops",
+      "industry": "servicios profesionales",
+      "pain": "conciliacion manual",
+      "process": "generacion de facturas",
+      "geo": "CDMX",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T11:58:14.844Z"
+    },
+    {
+      "id": "lead_1781265494844_3",
+      "name": "Diego Gonzalez",
+      "company": "Diego Tech Ops",
+      "industry": "logistica",
+      "pain": "deploy manual a produccion",
+      "process": "generacion de facturas",
+      "geo": "CDMX",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T11:58:14.844Z"
+    },
+    {
+      "id": "lead_1781265494844_4",
+      "name": "Juan Ramirez",
+      "company": "Juan Tech Ops",
+      "industry": "servicios profesionales",
+      "pain": "reportes manuales",
+      "process": "deploys a produccion",
+      "geo": "Monterrey",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T11:58:14.844Z"
     }
   ],
   "stats": {
-    "total": 10,
+    "total": 15,
     "new": 0,
-    "contacted": 10,
+    "contacted": 15,
     "replied": 0,
     "converted": 0
   },
-  "lastOutreachGenerated": "2026-06-12T08:15:50.231Z",
-  "updatedAt": "2026-06-12T08:15:50.231Z"
+  "lastOutreachGenerated": "2026-06-12T11:58:14.845Z",
+  "updatedAt": "2026-06-12T11:58:14.845Z"
 }

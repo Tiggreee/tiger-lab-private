@@ -3,7 +3,7 @@
   "productName": "FacturAutentico Cloud",
   "channelId": "facebook",
   "channelName": "Facebook",
-  "generatedAt": "2026-06-12T08:21:35.395Z",
+  "generatedAt": "2026-06-12T11:58:15.259Z",
   "status": "paused",
   "seo": {
     "title": "FacturAutentico Cloud en Facebook | Tiger Lab",
@@ -18,18 +18,18 @@
   },
   "copy": {
     "headline": "🤖 FacturAutentico Cloud - La historia de como dejamos de hacer procesos manuales",
-    "body": " 🚀 Lanzamos FacturAutentico Cloud para equipos pequenos en Mexico.\n\nHistoria rapida: Trabajamos con decenas de SMBs que nos decian \"no tenemos tiempo para implementar tecnologia\". Tienen el dinero, tienen la intencion, pero no el equipo interno.\n\nConstruimos FacturAutentico Cloud para ellos.\n\n🔹 API Access\n🔹 Automation\n🔹 Reports\n\nDesde $39/mo. 14 dias de prueba gratis.\n\nAgenda tu diagnostico: https://cal.com/victor-tigerlab/diagnostic\n\nComparte este post con alguien que este creciendo su operacion.",
+    "body": "FacturAutentico Cloud ya esta disponible.\n\nSi tu equipo:\n• Pasa mas de 5 horas/semana en facturacion\n• No tiene area de tecnologia dedicada\n• Esta creciendo y los procesos se estan quedando atras\n\nEsto es para ti.\n\nAPI Access, Automation, Reports.\n\nDesde $39/mo. Diagnostico gratis.",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "comunitario, testimonial, conversacional"
   },
   "tracking": {
     "utmSource": "facebook",
     "utmCampaign": "landing-facturautentico-cloud-facebook",
-    "utmContent": "social-landing-1781252495395"
+    "utmContent": "social-landing-1781265495259"
   },
   "metrics": {
     "targetChars": 63206,
-    "actualChars": 635,
+    "actualChars": 411,
     "qualityScore": 21
   }
 }

@@ -82,10 +82,19 @@
     "packages:build": "npm pack",
     "packages:publish:dry": "npm run test:all && npm pack",
     "cost-guard:audit": "node -e \"console.log('Cost guard audit: OK - under 50% caps'); console.log('Actions min: ~800/25000 (3.2%)'); console.log('Packages: 0/50GB (0%)'); console.log('Storage: <1GB/25GB (4%)')\"",
+    "lead:seed": "node scripts/lead-engine.mjs --mode seed",
+    "lead:enrich": "node scripts/lead-engine.mjs --mode enrich",
+    "lead:export": "node scripts/lead-engine.mjs --mode export",
+    "lead:engine": "node scripts/lead-engine.mjs --mode auto",
+    "impl:track": "node scripts/implementation-tracker.mjs",
+    "db:init": "node scripts/init-database.mjs",
+    "prod:engine": "node scripts/product-development-engine.mjs",
+    "prod:engine:status": "node scripts/product-development-engine.mjs --summary-only",
     "package": "npm pack --dry-run"
   },
   "devDependencies": {
     "@types/node": "^24.12.3",
+    "@types/pg": "^8.20.0",
     "@vitest/coverage-v8": "^2.1.8",
     "typescript": "^6.0.3",
     "vitest": "^2.1.8"
@@ -95,6 +104,7 @@
   },
   "dependencies": {
     "pg": "^8.21.0",
+    "sql.js": "^1.14.1",
     "tsx": "^4.22.4"
   }
 }
