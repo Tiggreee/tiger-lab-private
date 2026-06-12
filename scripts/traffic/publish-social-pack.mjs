@@ -252,39 +252,43 @@ function extractLinkedInOrgId(input) {
 }
 
 async function postLinkedIn(text) {
-  requiredEnv(['LINKEDIN_ACCESS_TOKEN', 'LINKEDIN_ORG_ID']);
+  requiredEnv(['LINKEDIN_ACCESS_TOKEN']);
+  const token = process.env.LINKEDIN_ACCESS_TOKEN;
+  const headers = { Authorization: `Bearer ${token}`, 'X-Restli-Protocol-Version': '2.0.0', 'Content-Type': 'application/json' };
 
-  const orgId = extractLinkedInOrgId(process.env.LINKEDIN_ORG_ID);
-  const endpoint = 'https://api.linkedin.com/v2/ugcPosts';
-  const payload = {
-    author: `urn:li:organization:${orgId}`,
-    lifecycleState: 'PUBLISHED',
-    specificContent: {
-      'com.linkedin.ugc.ShareContent': {
-        shareCommentary: { text },
-        shareMediaCategory: 'NONE'
-      }
-    },
-    visibility: {
-      'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC'
-    }
-  };
-
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      Authorization: `Bearer ${process.env.LINKEDIN_ACCESS_TOKEN}`,
-      'X-Restli-Protocol-Version': '2.0.0',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(payload)
-  });
-
-  const body = await response.text();
-  if (!response.ok) {
-    throw new Error(`LinkedIn API ${response.status}: ${body}`);
+  if (process.env.LINKEDIN_ORG_ID) {
+    const orgId = extractLinkedInOrgId(process.env.LINKEDIN_ORG_ID);
+    const payload = {
+      author: `urn:li:organization:${orgId}`,
+      lifecycleState: 'PUBLISHED',
+      specificContent: { 'com.linkedin.ugc.ShareContent': { shareCommentary: { text }, shareMediaCategory: 'NONE' } },
+      visibility: { 'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC' }
+    };
+    const resp = await fetch('https://api.linkedin.com/v2/ugcPosts', { method: 'POST', headers, body: JSON.stringify(payload) });
+    const body = await resp.text();
+    if (resp.ok) return body;
+    if (resp.status === 401) console.log('Org post failed (401), falling back to member post...');
+    else throw new Error(`LinkedIn API ${resp.status}: ${body}`);
   }
 
+  const meResp = await fetch('https://api.linkedin.com/v2/me', { headers });
+  if (!meResp.ok) {
+    const errBody = await meResp.text();
+    throw new Error(`LinkedIn /me API ${meResp.status}: ${errBody}`);
+  }
+  const me = await meResp.json();
+  const personId = me.sub || me.id;
+  if (!personId) throw new Error('Could not resolve LinkedIn person ID from /me endpoint');
+
+  const payload = {
+    author: `urn:li:person:${personId}`,
+    lifecycleState: 'PUBLISHED',
+    specificContent: { 'com.linkedin.ugc.ShareContent': { shareCommentary: { text }, shareMediaCategory: 'NONE' } },
+    visibility: { 'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC' }
+  };
+  const resp = await fetch('https://api.linkedin.com/v2/ugcPosts', { method: 'POST', headers, body: JSON.stringify(payload) });
+  const body = await resp.text();
+  if (!resp.ok) throw new Error(`LinkedIn API ${resp.status}: ${body}`);
   return body;
 }
 
