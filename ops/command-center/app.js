@@ -368,6 +368,7 @@ async function render() {
   renderAgentMonitor(agentMonitorData);
   renderLeadEnginePanel(unified);
   renderImplTrackerPanel(unified);
+  renderProductEnginePanel(unified);
   renderLedIndicator(unified);
   triggerNotification(tasks);
 
@@ -431,15 +432,49 @@ function renderImplTrackerPanel(data) {
     </li>`;
 }
 
+function renderProductEnginePanel(data) {
+  const list = document.getElementById('prodEngineStats');
+  const badge = document.getElementById('prodEngineAvg');
+  if (!list) return;
+  const pe = data.productEngine;
+  if (!pe) { list.innerHTML = '<li class="task">No product engine data</li>'; return; }
+  if (badge) {
+    badge.textContent = `${pe.engine.averageScore} avg`;
+    badge.className = `badge ${pe.engine.averageScore >= 80 ? 'badge-go' : pe.engine.averageScore >= 50 ? 'badge-nogo' : 'badge-nogo'}`;
+  }
+  const top = pe.topProducts || [];
+  const pq = pe.priorityQueue || {};
+  list.innerHTML = `
+    <li class="task on-track">
+      <p><b>${pe.engine.averageScore}/100 avg</b> · ${pe.engine.productsAt95} at 95% · ${pe.engine.productsAt75plus} at 75%+</p>
+      <p><b>Benchmarks:</b> ${pe.engine.totalBenchmarks} categories · ${pe.engine.totalCompetitors} competitors analyzed</p>
+      <p><b>Total effort:</b> ${pe.engine.estimatedTotalEffortHours}h (${Math.ceil(pe.engine.estimatedTotalEffortHours / 8)} sprints)</p>
+    </li>
+    <li class="task on-track">
+      <p><b>Products by score:</b></p>
+      ${top.map(p => `<p>${p.score >= 95 ? '🟢' : p.score >= 75 ? '🟡' : '🔴'} <b>${p.name}</b> — ${p.score}/100 [${p.tier}] ${p.status}</p>`).join('')}
+    </li>
+    <li class="task on-track">
+      <p><b>Priority queue:</b></p>
+      ${pq.engineReady && pq.engineReady.length ? `<p>🟢 Engine Ready: ${pq.engineReady.join(', ')}</p>` : '<p>🔴 No products engine-ready yet</p>'}
+      ${pq.target95 && pq.target95.length ? `<p>🎯 Push to 95%: ${pq.target95.join(', ')}</p>` : ''}
+    </li>
+    <li class="task on-track">
+      <p><b>Cycle:</b> <code>npm run prod:engine</code> · <code>.github/workflows/product-engine-2h-cycle.yml</code></p>
+      <p><b>Data:</b> <a href="/runtime/product-scores.json" target="_blank">product-scores.json</a> · <a href="/runtime/product-roadmaps.json" target="_blank">product-roadmaps.json</a></p>
+    </li>`;
+}
+
 function renderLedIndicator(data) {
   const led = document.getElementById('engineLed');
   if (!led) return;
   const implOk = data.implementationTracker?.summary?.implementationPercent >= 80;
   const dbOk = (data.leadEngine?.stats?.companies || 0) > 0;
   const gateOk = data.systemStatus?.gate === 'GO';
-  const engineHealthy = implOk && dbOk && gateOk;
+  const prodOk = (data.productEngine?.engine?.averageScore || 0) >= 70;
+  const engineHealthy = implOk && dbOk && gateOk && prodOk;
   led.className = `led ${engineHealthy ? 'led-green' : 'led-red'}`;
-  led.title = engineHealthy ? 'Engine RUNNING — Implemented + DB active + Gate GO' : 'Engine STOPPED — Check systems';
+  led.title = engineHealthy ? 'Engine RUNNING — Impl + DB + Gate GO + Products ≥70' : 'Engine STOPPED — Check systems';
 }
 
 els.notifyBtn.addEventListener('click', async () => {

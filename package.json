@@ -87,8 +87,10 @@
     "lead:export": "node scripts/lead-engine.mjs --mode export",
     "lead:engine": "node scripts/lead-engine.mjs --mode auto",
     "impl:track": "node scripts/implementation-tracker.mjs",
-    "db:init": "node scripts/init-database.mjs"
-  },
+      "db:init": "node scripts/init-database.mjs",
+      "prod:engine": "node scripts/product-development-engine.mjs",
+      "prod:engine:status": "node scripts/product-development-engine.mjs --summary-only"
+    },
   "devDependencies": {
     "@types/node": "^24.12.3",
     "@vitest/coverage-v8": "^2.1.8",

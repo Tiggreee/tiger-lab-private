@@ -5,47 +5,52 @@
       "name": "FacturAutentico Cloud",
       "status": "paused",
       "statusReason": "Requiere PAC (Proveedor Autorizado de Certificacion) para CFDI. Sin PAC no opera. Pendiente de contratacion.",
-      "planIds": [
-        "starter",
-        "pro",
-        "enterprise"
-      ]
+      "planIds": ["starter", "pro", "enterprise"],
+      "score": 56,
+      "tier": "P1",
+      "targetTo95": "PAC contratado + integración + documentación",
+      "benchmarkCategory": "CFDI / Facturación Electrónica MX"
     },
     {
       "id": "docflow-api",
       "name": "Docflow API",
       "status": "active",
-      "planIds": [
-        "starter",
-        "pro"
-      ]
+      "planIds": ["starter", "pro"],
+      "score": 84,
+      "tier": "P3",
+      "targetTo95": "Integraciones + documentación + CI/CD",
+      "benchmarkCategory": "API de Flujos Documentales / Workflow Automation"
     },
     {
       "id": "sentrylog-lite",
       "name": "Sentrylog Lite",
       "status": "planned",
-      "planIds": [
-        "starter"
-      ]
+      "planIds": ["starter"],
+      "score": 38,
+      "tier": "P1",
+      "targetTo95": "Build completo + monetización + benchmarks",
+      "benchmarkCategory": "Logging / Observabilidad Ligero"
     },
     {
       "id": "script-premium-kit",
       "name": "Script Premium Kit",
       "status": "active",
-      "planIds": [
-        "starter",
-        "pro"
-      ]
+      "planIds": ["starter", "pro"],
+      "score": 84,
+      "tier": "P3",
+      "targetTo95": "Integraciones + documentación + automatización",
+      "benchmarkCategory": "Automatización / Scripts Premium para PyMEs"
     },
     {
       "id": "facturautentico",
       "name": "FacturAutentica",
       "status": "paused",
       "statusReason": "Requiere PAC (Proveedor Autorizado de Certificacion) para CFDI. Sin PAC no opera. Misma dependencia que FacturAutentico Cloud.",
-      "planIds": [
-        "starter",
-        "pro"
-      ]
+      "planIds": ["starter", "pro"],
+      "score": 56,
+      "tier": "P1",
+      "targetTo95": "PAC contratado + motor CFDI + documentación",
+      "benchmarkCategory": "Motor CFDI / PAC Management"
     }
   ]
 }

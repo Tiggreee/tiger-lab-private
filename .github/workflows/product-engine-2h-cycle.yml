@@ -1,0 +1,67 @@
+name: Product Development Engine — 2h Cycle
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+    inputs:
+      cycle_type:
+        description: 'Cycle type'
+        required: true
+        default: 'standard'
+        type: choice
+        options:
+          - standard
+          - deep-benchmark
+          - full-rescore
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  product-cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Install dependencies
+        run: npm ci
+      - name: Run Product Development Engine
+        run: node scripts/product-development-engine.mjs
+      - name: Verify scores and persist
+        run: |
+          echo "=== Engine Results ==="
+          node -e "
+            const s = require('./ops/runtime/product-scores.json');
+            console.log('Average:', s.engine.averageScore);
+            console.log('At 95%:', s.engine.productsAt95);
+            console.log('At 75%+:', s.engine.productsAt75plus);
+            console.log('Total effort:', s.engine.estimatedTotalEffortHours, 'h');
+            s.productResults.forEach(p => 
+              console.log(p.product.name + ':', p.score, p.classification.tier));
+          "
+      - name: Check for 95% target progress
+        run: |
+          node -e "
+            const s = require('./ops/runtime/product-scores.json');
+            const prods = s.productResults;
+            prods.sort((a,b) => b.score - a.score);
+            console.log('=== PRIORITY QUEUE ===');
+            console.log('Top 2 push targets:');
+            prods.slice(0,2).forEach(p => console.log('  ' + p.product.name + ' (' + p.score + ') → ' + p.roadmap.targetScore95));
+            console.log('Gaps to close:');
+            prods.forEach(p => {
+              if (p.gaps.length > 0) {
+                console.log('  ' + p.product.name + ': ' + p.gaps.map(g => g.dimension).join(', '));
+              }
+            });
+          "
+      - name: Commit updated scores
+        run: |
+          git config user.name "tigerlab-bot"
+          git config user.email "bot@tigerlab.ai"
+          git add ops/runtime/product-scores.json ops/runtime/product-roadmaps.json ops/runtime/product-score-history.json ops/runtime/dashboard-unified.json
+          git diff --cached --quiet || git commit -m "prod-engine: auto-cycle $(date -u '+%Y-%m-%dT%H:%M')"
+          git push

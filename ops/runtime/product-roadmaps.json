@@ -1,0 +1,281 @@
+{
+  "docflow-api": {
+    "currentScore": 84,
+    "targetScore95": 92,
+    "targetScore90": 90,
+    "steps": [
+      {
+        "priority": "P2",
+        "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Docflow API",
+        "effort": "medio",
+        "owner": "ai",
+        "gap": 10
+      },
+      {
+        "priority": "P2",
+        "action": "Crear README, API docs, onboarding guide para Docflow API",
+        "effort": "bajo",
+        "owner": "ai",
+        "gap": 5
+      },
+      {
+        "priority": "P2",
+        "action": "Revisión general de calidad para Docflow API",
+        "effort": "bajo",
+        "owner": "ai",
+        "gap": 0
+      },
+      {
+        "priority": "P2",
+        "action": "Actualizar documentación y ejemplos de Docflow API",
+        "effort": "bajo",
+        "owner": "ai",
+        "gap": 0
+      }
+    ],
+    "estimatedHours": 10,
+    "estimatedSprints": 2,
+    "status": "PROGRESSING",
+    "priorityProducts": "high"
+  },
+  "script-premium-kit": {
+    "currentScore": 84,
+    "targetScore95": 92,
+    "targetScore90": 90,
+    "steps": [
+      {
+        "priority": "P2",
+        "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Script Premium Kit",
+        "effort": "medio",
+        "owner": "ai",
+        "gap": 10
+      },
+      {
+        "priority": "P2",
+        "action": "Crear README, API docs, onboarding guide para Script Premium Kit",
+        "effort": "bajo",
+        "owner": "ai",
+        "gap": 5
+      },
+      {
+        "priority": "P2",
+        "action": "Revisión general de calidad para Script Premium Kit",
+        "effort": "bajo",
+        "owner": "ai",
+        "gap": 0
+      },
+      {
+        "priority": "P2",
+        "action": "Actualizar documentación y ejemplos de Script Premium Kit",
+        "effort": "bajo",
+        "owner": "ai",
+        "gap": 0
+      }
+    ],
+    "estimatedHours": 10,
+    "estimatedSprints": 2,
+    "status": "PROGRESSING",
+    "priorityProducts": "high"
+  },
+  "facturautentico-cloud": {
+    "currentScore": 56,
+    "targetScore95": 81,
+    "targetScore90": 68,
+    "steps": [
+      {
+        "priority": "P0",
+        "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para FacturAutentico Cloud",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Crear README, API docs, onboarding guide para FacturAutentico Cloud",
+        "effort": "bajo",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Automatizar CI/CD, tests, deploy para FacturAutentico Cloud",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 35
+      },
+      {
+        "priority": "P0",
+        "action": "Benchmark contra Facturapi: implementar features diferenciadores clave",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 28
+      },
+      {
+        "priority": "P0",
+        "action": "Completar features core faltantes de FacturAutentico Cloud: revisar backlog y priorizar",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 25
+      },
+      {
+        "priority": "P1",
+        "action": "Hardening técnico: tests, types, error handling, performance para FacturAutentico Cloud",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 20
+      },
+      {
+        "priority": "P1",
+        "action": "Configurar pricing + checkout + payment integration para FacturAutentico Cloud",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 20
+      },
+      {
+        "priority": "P2",
+        "action": "Investigar mercado para FacturAutentico Cloud: entrevistar 5 prospects, validar propuesta de valor",
+        "effort": "medio",
+        "owner": "ai",
+        "gap": 10
+      }
+    ],
+    "estimatedHours": 42,
+    "estimatedSprints": 6,
+    "status": "EARLY_STAGE",
+    "priorityProducts": "medium"
+  },
+  "facturautentico": {
+    "currentScore": 56,
+    "targetScore95": 81,
+    "targetScore90": 68,
+    "steps": [
+      {
+        "priority": "P0",
+        "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para FacturAutentica",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Crear README, API docs, onboarding guide para FacturAutentica",
+        "effort": "bajo",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Automatizar CI/CD, tests, deploy para FacturAutentica",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 35
+      },
+      {
+        "priority": "P0",
+        "action": "Benchmark contra Facturapi: implementar features diferenciadores clave",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 29
+      },
+      {
+        "priority": "P0",
+        "action": "Completar features core faltantes de FacturAutentica: revisar backlog y priorizar",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 25
+      },
+      {
+        "priority": "P1",
+        "action": "Hardening técnico: tests, types, error handling, performance para FacturAutentica",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 20
+      },
+      {
+        "priority": "P1",
+        "action": "Configurar pricing + checkout + payment integration para FacturAutentica",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 20
+      },
+      {
+        "priority": "P2",
+        "action": "Investigar mercado para FacturAutentica: entrevistar 5 prospects, validar propuesta de valor",
+        "effort": "medio",
+        "owner": "ai",
+        "gap": 10
+      }
+    ],
+    "estimatedHours": 42,
+    "estimatedSprints": 6,
+    "status": "EARLY_STAGE",
+    "priorityProducts": "medium"
+  },
+  "sentrylog-lite": {
+    "currentScore": 38,
+    "targetScore95": 63,
+    "targetScore90": 50,
+    "steps": [
+      {
+        "priority": "P0",
+        "action": "Completar features core faltantes de Sentrylog Lite: revisar backlog y priorizar",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 60
+      },
+      {
+        "priority": "P0",
+        "action": "Configurar pricing + checkout + payment integration para Sentrylog Lite",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 50
+      },
+      {
+        "priority": "P0",
+        "action": "Hardening técnico: tests, types, error handling, performance para Sentrylog Lite",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Sentrylog Lite",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Crear README, API docs, onboarding guide para Sentrylog Lite",
+        "effort": "bajo",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Investigar mercado para Sentrylog Lite: entrevistar 5 prospects, validar propuesta de valor",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 35
+      },
+      {
+        "priority": "P0",
+        "action": "Automatizar CI/CD, tests, deploy para Sentrylog Lite",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 35
+      },
+      {
+        "priority": "P0",
+        "action": "Benchmark contra Better Stack: implementar features diferenciadores clave",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 27
+      }
+    ],
+    "estimatedHours": 42,
+    "estimatedSprints": 6,
+    "status": "EARLY_STAGE",
+    "priorityProducts": "low"
+  }
+}

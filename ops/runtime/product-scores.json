@@ -1,0 +1,2161 @@
+{
+  "generatedAt": "2026-06-12T09:19:26.090Z",
+  "engine": {
+    "averageScore": 64,
+    "productsAt95": 0,
+    "productsOnTrack95": 0,
+    "productsAt90plus": 0,
+    "productsAt75plus": 2,
+    "totalBenchmarks": 5,
+    "totalCompetitors": 20,
+    "estimatedTotalEffortHours": 146
+  },
+  "productResults": [
+    {
+      "product": {
+        "id": "docflow-api",
+        "name": "Docflow API",
+        "status": "active"
+      },
+      "benchmark": {
+        "category": "API de Flujos Documentales / Workflow Automation",
+        "competitors": [
+          {
+            "name": "Documenso",
+            "url": "https://documenso.com",
+            "strengths": [
+              "Open source",
+              "API-first",
+              "Self-hostable"
+            ],
+            "price": "Gratis (self-host) / $15/mes cloud",
+            "rating": 91
+          },
+          {
+            "name": "Docuseal",
+            "url": "https://www.docuseal.co",
+            "strengths": [
+              "Open source",
+              "Plantillas",
+              "Firma electrónica"
+            ],
+            "price": "Gratis (self-host) / $20/mes cloud",
+            "rating": 89
+          },
+          {
+            "name": "Zapier Interfaces",
+            "url": "https://zapier.com",
+            "strengths": [
+              "5000+ integraciones",
+              "No-code",
+              "IA"
+            ],
+            "price": "Desde $30/mes",
+            "rating": 95
+          },
+          {
+            "name": "Nintex",
+            "url": "https://www.nintex.com",
+            "strengths": [
+              "Enterprise",
+              "Workflow automation",
+              "Doc generation"
+            ],
+            "price": "Desde $100/mes",
+            "rating": 88
+          }
+        ],
+        "avgCompetitorRating": 90.75,
+        "maxCompetitorRating": 95
+      },
+      "score": 84,
+      "classification": {
+        "tier": "P3",
+        "label": "Solid Foundation — Gaps remain",
+        "color": "🟡"
+      },
+      "dimensions": {
+        "market_fit": {
+          "score": 90,
+          "weight": 0.2,
+          "label": "Market Fit"
+        },
+        "technical_quality": {
+          "score": 88,
+          "weight": 0.15,
+          "label": "Technical Quality"
+        },
+        "monetization_readiness": {
+          "score": 80,
+          "weight": 0.15,
+          "label": "Monetization Readiness"
+        },
+        "completion_level": {
+          "score": 85,
+          "weight": 0.15,
+          "label": "Completion Level"
+        },
+        "competitiveness": {
+          "score": 85,
+          "weight": 0.15,
+          "label": "Competitiveness vs Benchmarks"
+        },
+        "automation_coverage": {
+          "score": 80,
+          "weight": 0.1,
+          "label": "Automation Coverage"
+        },
+        "documentation": {
+          "score": 75,
+          "weight": 0.05,
+          "label": "Documentation & Onboarding"
+        },
+        "integration_depth": {
+          "score": 70,
+          "weight": 0.05,
+          "label": "Integration Depth"
+        }
+      },
+      "gaps": [
+        {
+          "dimension": "Integration Depth",
+          "score": 70,
+          "gap": 10
+        },
+        {
+          "dimension": "Documentation & Onboarding",
+          "score": 75,
+          "gap": 5
+        }
+      ],
+      "roadmap": {
+        "currentScore": 84,
+        "targetScore95": 92,
+        "targetScore90": 90,
+        "steps": [
+          {
+            "priority": "P2",
+            "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Docflow API",
+            "effort": "medio",
+            "owner": "ai",
+            "gap": 10
+          },
+          {
+            "priority": "P2",
+            "action": "Crear README, API docs, onboarding guide para Docflow API",
+            "effort": "bajo",
+            "owner": "ai",
+            "gap": 5
+          },
+          {
+            "priority": "P2",
+            "action": "Revisión general de calidad para Docflow API",
+            "effort": "bajo",
+            "owner": "ai",
+            "gap": 0
+          },
+          {
+            "priority": "P2",
+            "action": "Actualizar documentación y ejemplos de Docflow API",
+            "effort": "bajo",
+            "owner": "ai",
+            "gap": 0
+          }
+        ],
+        "estimatedHours": 10,
+        "estimatedSprints": 2,
+        "status": "PROGRESSING",
+        "priorityProducts": "high"
+      }
+    },
+    {
+      "product": {
+        "id": "script-premium-kit",
+        "name": "Script Premium Kit",
+        "status": "active"
+      },
+      "benchmark": {
+        "category": "Automatización / Scripts Premium para PyMEs",
+        "competitors": [
+          {
+            "name": "Make (Integromat)",
+            "url": "https://www.make.com",
+            "strengths": [
+              "Visual builder",
+              "2000+ apps",
+              "Escenarios complejos"
+            ],
+            "price": "Desde $9/mes",
+            "rating": 94
+          },
+          {
+            "name": "n8n",
+            "url": "https://n8n.io",
+            "strengths": [
+              "Open source",
+              "Self-host",
+              "IA nodes"
+            ],
+            "price": "Gratis (self-host)",
+            "rating": 93
+          },
+          {
+            "name": "Actiondesk",
+            "url": "https://www.actiondesk.io",
+            "strengths": [
+              "Spreadsheet-native",
+              "Operaciones",
+              "No-code"
+            ],
+            "price": "Desde $39/mes",
+            "rating": 85
+          },
+          {
+            "name": "Pipedream",
+            "url": "https://pipedream.com",
+            "strengths": [
+              "Developer-first",
+              "1000+ integraciones",
+              "Gratis 10k eventos/mes"
+            ],
+            "price": "Gratis / $19/mes",
+            "rating": 91
+          }
+        ],
+        "avgCompetitorRating": 90.75,
+        "maxCompetitorRating": 94
+      },
+      "score": 84,
+      "classification": {
+        "tier": "P3",
+        "label": "Solid Foundation — Gaps remain",
+        "color": "🟡"
+      },
+      "dimensions": {
+        "market_fit": {
+          "score": 90,
+          "weight": 0.2,
+          "label": "Market Fit"
+        },
+        "technical_quality": {
+          "score": 85,
+          "weight": 0.15,
+          "label": "Technical Quality"
+        },
+        "monetization_readiness": {
+          "score": 80,
+          "weight": 0.15,
+          "label": "Monetization Readiness"
+        },
+        "completion_level": {
+          "score": 82,
+          "weight": 0.15,
+          "label": "Completion Level"
+        },
+        "competitiveness": {
+          "score": 85,
+          "weight": 0.15,
+          "label": "Competitiveness vs Benchmarks"
+        },
+        "automation_coverage": {
+          "score": 85,
+          "weight": 0.1,
+          "label": "Automation Coverage"
+        },
+        "documentation": {
+          "score": 75,
+          "weight": 0.05,
+          "label": "Documentation & Onboarding"
+        },
+        "integration_depth": {
+          "score": 70,
+          "weight": 0.05,
+          "label": "Integration Depth"
+        }
+      },
+      "gaps": [
+        {
+          "dimension": "Integration Depth",
+          "score": 70,
+          "gap": 10
+        },
+        {
+          "dimension": "Documentation & Onboarding",
+          "score": 75,
+          "gap": 5
+        }
+      ],
+      "roadmap": {
+        "currentScore": 84,
+        "targetScore95": 92,
+        "targetScore90": 90,
+        "steps": [
+          {
+            "priority": "P2",
+            "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Script Premium Kit",
+            "effort": "medio",
+            "owner": "ai",
+            "gap": 10
+          },
+          {
+            "priority": "P2",
+            "action": "Crear README, API docs, onboarding guide para Script Premium Kit",
+            "effort": "bajo",
+            "owner": "ai",
+            "gap": 5
+          },
+          {
+            "priority": "P2",
+            "action": "Revisión general de calidad para Script Premium Kit",
+            "effort": "bajo",
+            "owner": "ai",
+            "gap": 0
+          },
+          {
+            "priority": "P2",
+            "action": "Actualizar documentación y ejemplos de Script Premium Kit",
+            "effort": "bajo",
+            "owner": "ai",
+            "gap": 0
+          }
+        ],
+        "estimatedHours": 10,
+        "estimatedSprints": 2,
+        "status": "PROGRESSING",
+        "priorityProducts": "high"
+      }
+    },
+    {
+      "product": {
+        "id": "facturautentico-cloud",
+        "name": "FacturAutentico Cloud",
+        "status": "paused",
+        "statusReason": "Requiere PAC (Proveedor Autorizado de Certificacion) para CFDI. Sin PAC no opera. Pendiente de contratacion."
+      },
+      "benchmark": {
+        "category": "CFDI / Facturación Electrónica MX",
+        "competitors": [
+          {
+            "name": "Facturapi",
+            "url": "https://facturapi.io",
+            "strengths": [
+              "API-first CFDI",
+              "Multi-PAC",
+              "Webhooks"
+            ],
+            "price": "Desde $299/mes",
+            "rating": 92
+          },
+          {
+            "name": "Facturación.com",
+            "url": "https://facturacion.com",
+            "strengths": [
+              "SAT certified",
+              "30K+ clients",
+              "PAC Finkok native"
+            ],
+            "price": "Desde $399/mes",
+            "rating": 90
+          },
+          {
+            "name": "Contpaq Facturación",
+            "url": "https://www.contpaq.com",
+            "strengths": [
+              "Contabilidad integrada",
+              "On-premise + cloud",
+              "Nómina"
+            ],
+            "price": "Desde $199/mes",
+            "rating": 88
+          },
+          {
+            "name": "Aspel FACTU",
+            "url": "https://www.aspel.com.mx",
+            "strengths": [
+              "Mercado MX establecido",
+              "Multi-empresa",
+              "Inventarios"
+            ],
+            "price": "Desde $249/mes",
+            "rating": 86
+          }
+        ],
+        "avgCompetitorRating": 89,
+        "maxCompetitorRating": 92
+      },
+      "score": 56,
+      "classification": {
+        "tier": "P1",
+        "label": "Concept — Requires rebuild",
+        "color": "🔴"
+      },
+      "dimensions": {
+        "market_fit": {
+          "score": 70,
+          "weight": 0.2,
+          "label": "Market Fit"
+        },
+        "technical_quality": {
+          "score": 60,
+          "weight": 0.15,
+          "label": "Technical Quality"
+        },
+        "monetization_readiness": {
+          "score": 60,
+          "weight": 0.15,
+          "label": "Monetization Readiness"
+        },
+        "completion_level": {
+          "score": 55,
+          "weight": 0.15,
+          "label": "Completion Level"
+        },
+        "competitiveness": {
+          "score": 52,
+          "weight": 0.15,
+          "label": "Competitiveness vs Benchmarks"
+        },
+        "automation_coverage": {
+          "score": 45,
+          "weight": 0.1,
+          "label": "Automation Coverage"
+        },
+        "documentation": {
+          "score": 40,
+          "weight": 0.05,
+          "label": "Documentation & Onboarding"
+        },
+        "integration_depth": {
+          "score": 35,
+          "weight": 0.05,
+          "label": "Integration Depth"
+        }
+      },
+      "gaps": [
+        {
+          "dimension": "Integration Depth",
+          "score": 35,
+          "gap": 45
+        },
+        {
+          "dimension": "Documentation & Onboarding",
+          "score": 40,
+          "gap": 40
+        },
+        {
+          "dimension": "Automation Coverage",
+          "score": 45,
+          "gap": 35
+        },
+        {
+          "dimension": "Competitiveness vs Benchmarks",
+          "score": 52,
+          "gap": 28
+        },
+        {
+          "dimension": "Completion Level",
+          "score": 55,
+          "gap": 25
+        },
+        {
+          "dimension": "Technical Quality",
+          "score": 60,
+          "gap": 20
+        },
+        {
+          "dimension": "Monetization Readiness",
+          "score": 60,
+          "gap": 20
+        },
+        {
+          "dimension": "Market Fit",
+          "score": 70,
+          "gap": 10
+        }
+      ],
+      "roadmap": {
+        "currentScore": 56,
+        "targetScore95": 81,
+        "targetScore90": 68,
+        "steps": [
+          {
+            "priority": "P0",
+            "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para FacturAutentico Cloud",
+            "effort": "medio",
+            "owner": "human",
+            "gap": 45
+          },
+          {
+            "priority": "P0",
+            "action": "Crear README, API docs, onboarding guide para FacturAutentico Cloud",
+            "effort": "bajo",
+            "owner": "human",
+            "gap": 40
+          },
+          {
+            "priority": "P0",
+            "action": "Automatizar CI/CD, tests, deploy para FacturAutentico Cloud",
+            "effort": "medio",
+            "owner": "human",
+            "gap": 35
+          },
+          {
+            "priority": "P0",
+            "action": "Benchmark contra Facturapi: implementar features diferenciadores clave",
+            "effort": "alto",
+            "owner": "human",
+            "gap": 28
+          },
+          {
+            "priority": "P0",
+            "action": "Completar features core faltantes de FacturAutentico Cloud: revisar backlog y priorizar",
+            "effort": "alto",
+            "owner": "human",
+            "gap": 25
+          },
+          {
+            "priority": "P1",
+            "action": "Hardening técnico: tests, types, error handling, performance para FacturAutentico Cloud",
+            "effort": "alto",
+            "owner": "human",
+            "gap": 20
+          },
+          {
+            "priority": "P1",
+            "action": "Configurar pricing + checkout + payment integration para FacturAutentico Cloud",
+            "effort": "medio",
+            "owner": "human",
+            "gap": 20
+          },
+          {
+            "priority": "P2",
+            "action": "Investigar mercado para FacturAutentico Cloud: entrevistar 5 prospects, validar propuesta de valor",
+            "effort": "medio",
+            "owner": "ai",
+            "gap": 10
+          }
+        ],
+        "estimatedHours": 42,
+        "estimatedSprints": 6,
+        "status": "EARLY_STAGE",
+        "priorityProducts": "medium"
+      }
+    },
+    {
+      "product": {
+        "id": "facturautentico",
+        "name": "FacturAutentica",
+        "status": "paused",
+        "statusReason": "Requiere PAC (Proveedor Autorizado de Certificacion) para CFDI. Sin PAC no opera. Misma dependencia que FacturAutentico Cloud."
+      },
+      "benchmark": {
+        "category": "Motor CFDI / PAC Management",
+        "competitors": [
+          {
+            "name": "Facturapi",
+            "url": "https://facturapi.io",
+            "strengths": [
+              "API-first",
+              "Multi-PAC",
+              "Complementos"
+            ],
+            "price": "Desde $299/mes",
+            "rating": 92
+          },
+          {
+            "name": "División Facturación",
+            "url": "https://divisionfacturacion.com",
+            "strengths": [
+              "CFDI 4.0",
+              "PAC agnóstico",
+              "Batch"
+            ],
+            "price": "Desde $199/mes",
+            "rating": 88
+          },
+          {
+            "name": "Factura Rapid",
+            "url": "https://www.facturarapid.com",
+            "strengths": [
+              "Simplicidad",
+              "CFDI + nómina",
+              "Soporte MX"
+            ],
+            "price": "Desde $149/mes",
+            "rating": 85
+          },
+          {
+            "name": "SumUp Facturas",
+            "url": "https://sumup.com",
+            "strengths": [
+              "Pagos + facturas",
+              "App móvil",
+              "Sin mensualidad"
+            ],
+            "price": "Gratis + comisión",
+            "rating": 82
+          }
+        ],
+        "avgCompetitorRating": 86.75,
+        "maxCompetitorRating": 92
+      },
+      "score": 56,
+      "classification": {
+        "tier": "P1",
+        "label": "Concept — Requires rebuild",
+        "color": "🔴"
+      },
+      "dimensions": {
+        "market_fit": {
+          "score": 70,
+          "weight": 0.2,
+          "label": "Market Fit"
+        },
+        "technical_quality": {
+          "score": 60,
+          "weight": 0.15,
+          "label": "Technical Quality"
+        },
+        "monetization_readiness": {
+          "score": 60,
+          "weight": 0.15,
+          "label": "Monetization Readiness"
+        },
+        "completion_level": {
+          "score": 55,
+          "weight": 0.15,
+          "label": "Completion Level"
+        },
+        "competitiveness": {
+          "score": 51,
+          "weight": 0.15,
+          "label": "Competitiveness vs Benchmarks"
+        },
+        "automation_coverage": {
+          "score": 45,
+          "weight": 0.1,
+          "label": "Automation Coverage"
+        },
+        "documentation": {
+          "score": 40,
+          "weight": 0.05,
+          "label": "Documentation & Onboarding"
+        },
+        "integration_depth": {
+          "score": 35,
+          "weight": 0.05,
+          "label": "Integration Depth"
+        }
+      },
+      "gaps": [
+        {
+          "dimension": "Integration Depth",
+          "score": 35,
+          "gap": 45
+        },
+        {
+          "dimension": "Documentation & Onboarding",
+          "score": 40,
+          "gap": 40
+        },
+        {
+          "dimension": "Automation Coverage",
+          "score": 45,
+          "gap": 35
+        },
+        {
+          "dimension": "Competitiveness vs Benchmarks",
+          "score": 51,
+          "gap": 29
+        },
+        {
+          "dimension": "Completion Level",
+          "score": 55,
+          "gap": 25
+        },
+        {
+          "dimension": "Technical Quality",
+          "score": 60,
+          "gap": 20
+        },
+        {
+          "dimension": "Monetization Readiness",
+          "score": 60,
+          "gap": 20
+        },
+        {
+          "dimension": "Market Fit",
+          "score": 70,
+          "gap": 10
+        }
+      ],
+      "roadmap": {
+        "currentScore": 56,
+        "targetScore95": 81,
+        "targetScore90": 68,
+        "steps": [
+          {
+            "priority": "P0",
+            "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para FacturAutentica",
+            "effort": "medio",
+            "owner": "human",
+            "gap": 45
+          },
+          {
+            "priority": "P0",
+            "action": "Crear README, API docs, onboarding guide para FacturAutentica",
+            "effort": "bajo",
+            "owner": "human",
+            "gap": 40
+          },
+          {
+            "priority": "P0",
+            "action": "Automatizar CI/CD, tests, deploy para FacturAutentica",
+            "effort": "medio",
+            "owner": "human",
+            "gap": 35
+          },
+          {
+            "priority": "P0",
+            "action": "Benchmark contra Facturapi: implementar features diferenciadores clave",
+            "effort": "alto",
+            "owner": "human",
+            "gap": 29
+          },
+          {
+            "priority": "P0",
+            "action": "Completar features core faltantes de FacturAutentica: revisar backlog y priorizar",
+            "effort": "alto",
+            "owner": "human",
+            "gap": 25
+          },
+          {
+            "priority": "P1",
+            "action": "Hardening técnico: tests, types, error handling, performance para FacturAutentica",
+            "effort": "alto",
+            "owner": "human",
+            "gap": 20
+          },
+          {
+            "priority": "P1",
+            "action": "Configurar pricing + checkout + payment integration para FacturAutentica",
+            "effort": "medio",
+            "owner": "human",
+            "gap": 20
+          },
+          {
+            "priority": "P2",
+            "action": "Investigar mercado para FacturAutentica: entrevistar 5 prospects, validar propuesta de valor",
+            "effort": "medio",
+            "owner": "ai",
+            "gap": 10
+          }
+        ],
+        "estimatedHours": 42,
+        "estimatedSprints": 6,
+        "status": "EARLY_STAGE",
+        "priorityProducts": "medium"
+      }
+    },
+    {
+      "product": {
+        "id": "sentrylog-lite",
+        "name": "Sentrylog Lite",
+        "status": "planned"
+      },
+      "benchmark": {
+        "category": "Logging / Observabilidad Ligero",
+        "competitors": [
+          {
+            "name": "Better Stack",
+            "url": "https://betterstack.com",
+            "strengths": [
+              "Logs + uptime",
+              "Equipo pequeño friendly",
+              "Gratis 1GB/mes"
+            ],
+            "price": "Gratis / $29/mes",
+            "rating": 90
+          },
+          {
+            "name": "SigNoz",
+            "url": "https://signoz.io",
+            "strengths": [
+              "Open source",
+              "OpenTelemetry",
+              "Traces + metrics"
+            ],
+            "price": "Gratis (self-host)",
+            "rating": 93
+          },
+          {
+            "name": "Axiom",
+            "url": "https://axiom.co",
+            "strengths": [
+              "Sin índices",
+              "Rápido",
+              "5TB gratis"
+            ],
+            "price": "Gratis / $49/mes",
+            "rating": 88
+          },
+          {
+            "name": "Logtail",
+            "url": "https://logtail.com",
+            "strengths": [
+              "ClickHouse-based",
+              "SQL queries",
+              "Equipos pequeños"
+            ],
+            "price": "Gratis / $19/mes",
+            "rating": 86
+          }
+        ],
+        "avgCompetitorRating": 89.25,
+        "maxCompetitorRating": 93
+      },
+      "score": 38,
+      "classification": {
+        "tier": "P1",
+        "label": "Concept — Requires rebuild",
+        "color": "🔴"
+      },
+      "dimensions": {
+        "market_fit": {
+          "score": 45,
+          "weight": 0.2,
+          "label": "Market Fit"
+        },
+        "technical_quality": {
+          "score": 35,
+          "weight": 0.15,
+          "label": "Technical Quality"
+        },
+        "monetization_readiness": {
+          "score": 30,
+          "weight": 0.15,
+          "label": "Monetization Readiness"
+        },
+        "completion_level": {
+          "score": 20,
+          "weight": 0.15,
+          "label": "Completion Level"
+        },
+        "competitiveness": {
+          "score": 53,
+          "weight": 0.15,
+          "label": "Competitiveness vs Benchmarks"
+        },
+        "automation_coverage": {
+          "score": 45,
+          "weight": 0.1,
+          "label": "Automation Coverage"
+        },
+        "documentation": {
+          "score": 40,
+          "weight": 0.05,
+          "label": "Documentation & Onboarding"
+        },
+        "integration_depth": {
+          "score": 35,
+          "weight": 0.05,
+          "label": "Integration Depth"
+        }
+      },
+      "gaps": [
+        {
+          "dimension": "Completion Level",
+          "score": 20,
+          "gap": 60
+        },
+        {
+          "dimension": "Monetization Readiness",
+          "score": 30,
+          "gap": 50
+        },
+        {
+          "dimension": "Technical Quality",
+          "score": 35,
+          "gap": 45
+        },
+        {
+          "dimension": "Integration Depth",
+          "score": 35,
+          "gap": 45
+        },
+        {
+          "dimension": "Documentation & Onboarding",
+          "score": 40,
+          "gap": 40
+        },
+        {
+          "dimension": "Market Fit",
+          "score": 45,
+          "gap": 35
+        },
+        {
+          "dimension": "Automation Coverage",
+          "score": 45,
+          "gap": 35
+        },
+        {
+          "dimension": "Competitiveness vs Benchmarks",
+          "score": 53,
+          "gap": 27
+        }
+      ],
+      "roadmap": {
+        "currentScore": 38,
+        "targetScore95": 63,
+        "targetScore90": 50,
+        "steps": [
+          {
+            "priority": "P0",
+            "action": "Completar features core faltantes de Sentrylog Lite: revisar backlog y priorizar",
+            "effort": "alto",
+            "owner": "human",
+            "gap": 60
+          },
+          {
+            "priority": "P0",
+            "action": "Configurar pricing + checkout + payment integration para Sentrylog Lite",
+            "effort": "medio",
+            "owner": "human",
+            "gap": 50
+          },
+          {
+            "priority": "P0",
+            "action": "Hardening técnico: tests, types, error handling, performance para Sentrylog Lite",
+            "effort": "alto",
+            "owner": "human",
+            "gap": 45
+          },
+          {
+            "priority": "P0",
+            "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Sentrylog Lite",
+            "effort": "medio",
+            "owner": "human",
+            "gap": 45
+          },
+          {
+            "priority": "P0",
+            "action": "Crear README, API docs, onboarding guide para Sentrylog Lite",
+            "effort": "bajo",
+            "owner": "human",
+            "gap": 40
+          },
+          {
+            "priority": "P0",
+            "action": "Investigar mercado para Sentrylog Lite: entrevistar 5 prospects, validar propuesta de valor",
+            "effort": "medio",
+            "owner": "human",
+            "gap": 35
+          },
+          {
+            "priority": "P0",
+            "action": "Automatizar CI/CD, tests, deploy para Sentrylog Lite",
+            "effort": "medio",
+            "owner": "human",
+            "gap": 35
+          },
+          {
+            "priority": "P0",
+            "action": "Benchmark contra Better Stack: implementar features diferenciadores clave",
+            "effort": "alto",
+            "owner": "human",
+            "gap": 27
+          }
+        ],
+        "estimatedHours": 42,
+        "estimatedSprints": 6,
+        "status": "EARLY_STAGE",
+        "priorityProducts": "low"
+      }
+    }
+  ],
+  "priorityQueue": {
+    "p0_engine_ready": [],
+    "p1_target_95": [
+      {
+        "product": {
+          "id": "docflow-api",
+          "name": "Docflow API",
+          "status": "active"
+        },
+        "benchmark": {
+          "category": "API de Flujos Documentales / Workflow Automation",
+          "competitors": [
+            {
+              "name": "Documenso",
+              "url": "https://documenso.com",
+              "strengths": [
+                "Open source",
+                "API-first",
+                "Self-hostable"
+              ],
+              "price": "Gratis (self-host) / $15/mes cloud",
+              "rating": 91
+            },
+            {
+              "name": "Docuseal",
+              "url": "https://www.docuseal.co",
+              "strengths": [
+                "Open source",
+                "Plantillas",
+                "Firma electrónica"
+              ],
+              "price": "Gratis (self-host) / $20/mes cloud",
+              "rating": 89
+            },
+            {
+              "name": "Zapier Interfaces",
+              "url": "https://zapier.com",
+              "strengths": [
+                "5000+ integraciones",
+                "No-code",
+                "IA"
+              ],
+              "price": "Desde $30/mes",
+              "rating": 95
+            },
+            {
+              "name": "Nintex",
+              "url": "https://www.nintex.com",
+              "strengths": [
+                "Enterprise",
+                "Workflow automation",
+                "Doc generation"
+              ],
+              "price": "Desde $100/mes",
+              "rating": 88
+            }
+          ],
+          "avgCompetitorRating": 90.75,
+          "maxCompetitorRating": 95
+        },
+        "score": 84,
+        "classification": {
+          "tier": "P3",
+          "label": "Solid Foundation — Gaps remain",
+          "color": "🟡"
+        },
+        "dimensions": {
+          "market_fit": {
+            "score": 90,
+            "weight": 0.2,
+            "label": "Market Fit"
+          },
+          "technical_quality": {
+            "score": 88,
+            "weight": 0.15,
+            "label": "Technical Quality"
+          },
+          "monetization_readiness": {
+            "score": 80,
+            "weight": 0.15,
+            "label": "Monetization Readiness"
+          },
+          "completion_level": {
+            "score": 85,
+            "weight": 0.15,
+            "label": "Completion Level"
+          },
+          "competitiveness": {
+            "score": 85,
+            "weight": 0.15,
+            "label": "Competitiveness vs Benchmarks"
+          },
+          "automation_coverage": {
+            "score": 80,
+            "weight": 0.1,
+            "label": "Automation Coverage"
+          },
+          "documentation": {
+            "score": 75,
+            "weight": 0.05,
+            "label": "Documentation & Onboarding"
+          },
+          "integration_depth": {
+            "score": 70,
+            "weight": 0.05,
+            "label": "Integration Depth"
+          }
+        },
+        "gaps": [
+          {
+            "dimension": "Integration Depth",
+            "score": 70,
+            "gap": 10
+          },
+          {
+            "dimension": "Documentation & Onboarding",
+            "score": 75,
+            "gap": 5
+          }
+        ],
+        "roadmap": {
+          "currentScore": 84,
+          "targetScore95": 92,
+          "targetScore90": 90,
+          "steps": [
+            {
+              "priority": "P2",
+              "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Docflow API",
+              "effort": "medio",
+              "owner": "ai",
+              "gap": 10
+            },
+            {
+              "priority": "P2",
+              "action": "Crear README, API docs, onboarding guide para Docflow API",
+              "effort": "bajo",
+              "owner": "ai",
+              "gap": 5
+            },
+            {
+              "priority": "P2",
+              "action": "Revisión general de calidad para Docflow API",
+              "effort": "bajo",
+              "owner": "ai",
+              "gap": 0
+            },
+            {
+              "priority": "P2",
+              "action": "Actualizar documentación y ejemplos de Docflow API",
+              "effort": "bajo",
+              "owner": "ai",
+              "gap": 0
+            }
+          ],
+          "estimatedHours": 10,
+          "estimatedSprints": 2,
+          "status": "PROGRESSING",
+          "priorityProducts": "high"
+        }
+      },
+      {
+        "product": {
+          "id": "script-premium-kit",
+          "name": "Script Premium Kit",
+          "status": "active"
+        },
+        "benchmark": {
+          "category": "Automatización / Scripts Premium para PyMEs",
+          "competitors": [
+            {
+              "name": "Make (Integromat)",
+              "url": "https://www.make.com",
+              "strengths": [
+                "Visual builder",
+                "2000+ apps",
+                "Escenarios complejos"
+              ],
+              "price": "Desde $9/mes",
+              "rating": 94
+            },
+            {
+              "name": "n8n",
+              "url": "https://n8n.io",
+              "strengths": [
+                "Open source",
+                "Self-host",
+                "IA nodes"
+              ],
+              "price": "Gratis (self-host)",
+              "rating": 93
+            },
+            {
+              "name": "Actiondesk",
+              "url": "https://www.actiondesk.io",
+              "strengths": [
+                "Spreadsheet-native",
+                "Operaciones",
+                "No-code"
+              ],
+              "price": "Desde $39/mes",
+              "rating": 85
+            },
+            {
+              "name": "Pipedream",
+              "url": "https://pipedream.com",
+              "strengths": [
+                "Developer-first",
+                "1000+ integraciones",
+                "Gratis 10k eventos/mes"
+              ],
+              "price": "Gratis / $19/mes",
+              "rating": 91
+            }
+          ],
+          "avgCompetitorRating": 90.75,
+          "maxCompetitorRating": 94
+        },
+        "score": 84,
+        "classification": {
+          "tier": "P3",
+          "label": "Solid Foundation — Gaps remain",
+          "color": "🟡"
+        },
+        "dimensions": {
+          "market_fit": {
+            "score": 90,
+            "weight": 0.2,
+            "label": "Market Fit"
+          },
+          "technical_quality": {
+            "score": 85,
+            "weight": 0.15,
+            "label": "Technical Quality"
+          },
+          "monetization_readiness": {
+            "score": 80,
+            "weight": 0.15,
+            "label": "Monetization Readiness"
+          },
+          "completion_level": {
+            "score": 82,
+            "weight": 0.15,
+            "label": "Completion Level"
+          },
+          "competitiveness": {
+            "score": 85,
+            "weight": 0.15,
+            "label": "Competitiveness vs Benchmarks"
+          },
+          "automation_coverage": {
+            "score": 85,
+            "weight": 0.1,
+            "label": "Automation Coverage"
+          },
+          "documentation": {
+            "score": 75,
+            "weight": 0.05,
+            "label": "Documentation & Onboarding"
+          },
+          "integration_depth": {
+            "score": 70,
+            "weight": 0.05,
+            "label": "Integration Depth"
+          }
+        },
+        "gaps": [
+          {
+            "dimension": "Integration Depth",
+            "score": 70,
+            "gap": 10
+          },
+          {
+            "dimension": "Documentation & Onboarding",
+            "score": 75,
+            "gap": 5
+          }
+        ],
+        "roadmap": {
+          "currentScore": 84,
+          "targetScore95": 92,
+          "targetScore90": 90,
+          "steps": [
+            {
+              "priority": "P2",
+              "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Script Premium Kit",
+              "effort": "medio",
+              "owner": "ai",
+              "gap": 10
+            },
+            {
+              "priority": "P2",
+              "action": "Crear README, API docs, onboarding guide para Script Premium Kit",
+              "effort": "bajo",
+              "owner": "ai",
+              "gap": 5
+            },
+            {
+              "priority": "P2",
+              "action": "Revisión general de calidad para Script Premium Kit",
+              "effort": "bajo",
+              "owner": "ai",
+              "gap": 0
+            },
+            {
+              "priority": "P2",
+              "action": "Actualizar documentación y ejemplos de Script Premium Kit",
+              "effort": "bajo",
+              "owner": "ai",
+              "gap": 0
+            }
+          ],
+          "estimatedHours": 10,
+          "estimatedSprints": 2,
+          "status": "PROGRESSING",
+          "priorityProducts": "high"
+        }
+      }
+    ],
+    "p2_waiting_for_refinement": [
+      {
+        "product": {
+          "id": "facturautentico-cloud",
+          "name": "FacturAutentico Cloud",
+          "status": "paused",
+          "statusReason": "Requiere PAC (Proveedor Autorizado de Certificacion) para CFDI. Sin PAC no opera. Pendiente de contratacion."
+        },
+        "benchmark": {
+          "category": "CFDI / Facturación Electrónica MX",
+          "competitors": [
+            {
+              "name": "Facturapi",
+              "url": "https://facturapi.io",
+              "strengths": [
+                "API-first CFDI",
+                "Multi-PAC",
+                "Webhooks"
+              ],
+              "price": "Desde $299/mes",
+              "rating": 92
+            },
+            {
+              "name": "Facturación.com",
+              "url": "https://facturacion.com",
+              "strengths": [
+                "SAT certified",
+                "30K+ clients",
+                "PAC Finkok native"
+              ],
+              "price": "Desde $399/mes",
+              "rating": 90
+            },
+            {
+              "name": "Contpaq Facturación",
+              "url": "https://www.contpaq.com",
+              "strengths": [
+                "Contabilidad integrada",
+                "On-premise + cloud",
+                "Nómina"
+              ],
+              "price": "Desde $199/mes",
+              "rating": 88
+            },
+            {
+              "name": "Aspel FACTU",
+              "url": "https://www.aspel.com.mx",
+              "strengths": [
+                "Mercado MX establecido",
+                "Multi-empresa",
+                "Inventarios"
+              ],
+              "price": "Desde $249/mes",
+              "rating": 86
+            }
+          ],
+          "avgCompetitorRating": 89,
+          "maxCompetitorRating": 92
+        },
+        "score": 56,
+        "classification": {
+          "tier": "P1",
+          "label": "Concept — Requires rebuild",
+          "color": "🔴"
+        },
+        "dimensions": {
+          "market_fit": {
+            "score": 70,
+            "weight": 0.2,
+            "label": "Market Fit"
+          },
+          "technical_quality": {
+            "score": 60,
+            "weight": 0.15,
+            "label": "Technical Quality"
+          },
+          "monetization_readiness": {
+            "score": 60,
+            "weight": 0.15,
+            "label": "Monetization Readiness"
+          },
+          "completion_level": {
+            "score": 55,
+            "weight": 0.15,
+            "label": "Completion Level"
+          },
+          "competitiveness": {
+            "score": 52,
+            "weight": 0.15,
+            "label": "Competitiveness vs Benchmarks"
+          },
+          "automation_coverage": {
+            "score": 45,
+            "weight": 0.1,
+            "label": "Automation Coverage"
+          },
+          "documentation": {
+            "score": 40,
+            "weight": 0.05,
+            "label": "Documentation & Onboarding"
+          },
+          "integration_depth": {
+            "score": 35,
+            "weight": 0.05,
+            "label": "Integration Depth"
+          }
+        },
+        "gaps": [
+          {
+            "dimension": "Integration Depth",
+            "score": 35,
+            "gap": 45
+          },
+          {
+            "dimension": "Documentation & Onboarding",
+            "score": 40,
+            "gap": 40
+          },
+          {
+            "dimension": "Automation Coverage",
+            "score": 45,
+            "gap": 35
+          },
+          {
+            "dimension": "Competitiveness vs Benchmarks",
+            "score": 52,
+            "gap": 28
+          },
+          {
+            "dimension": "Completion Level",
+            "score": 55,
+            "gap": 25
+          },
+          {
+            "dimension": "Technical Quality",
+            "score": 60,
+            "gap": 20
+          },
+          {
+            "dimension": "Monetization Readiness",
+            "score": 60,
+            "gap": 20
+          },
+          {
+            "dimension": "Market Fit",
+            "score": 70,
+            "gap": 10
+          }
+        ],
+        "roadmap": {
+          "currentScore": 56,
+          "targetScore95": 81,
+          "targetScore90": 68,
+          "steps": [
+            {
+              "priority": "P0",
+              "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para FacturAutentico Cloud",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 45
+            },
+            {
+              "priority": "P0",
+              "action": "Crear README, API docs, onboarding guide para FacturAutentico Cloud",
+              "effort": "bajo",
+              "owner": "human",
+              "gap": 40
+            },
+            {
+              "priority": "P0",
+              "action": "Automatizar CI/CD, tests, deploy para FacturAutentico Cloud",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 35
+            },
+            {
+              "priority": "P0",
+              "action": "Benchmark contra Facturapi: implementar features diferenciadores clave",
+              "effort": "alto",
+              "owner": "human",
+              "gap": 28
+            },
+            {
+              "priority": "P0",
+              "action": "Completar features core faltantes de FacturAutentico Cloud: revisar backlog y priorizar",
+              "effort": "alto",
+              "owner": "human",
+              "gap": 25
+            },
+            {
+              "priority": "P1",
+              "action": "Hardening técnico: tests, types, error handling, performance para FacturAutentico Cloud",
+              "effort": "alto",
+              "owner": "human",
+              "gap": 20
+            },
+            {
+              "priority": "P1",
+              "action": "Configurar pricing + checkout + payment integration para FacturAutentico Cloud",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 20
+            },
+            {
+              "priority": "P2",
+              "action": "Investigar mercado para FacturAutentico Cloud: entrevistar 5 prospects, validar propuesta de valor",
+              "effort": "medio",
+              "owner": "ai",
+              "gap": 10
+            }
+          ],
+          "estimatedHours": 42,
+          "estimatedSprints": 6,
+          "status": "EARLY_STAGE",
+          "priorityProducts": "medium"
+        }
+      },
+      {
+        "product": {
+          "id": "facturautentico",
+          "name": "FacturAutentica",
+          "status": "paused",
+          "statusReason": "Requiere PAC (Proveedor Autorizado de Certificacion) para CFDI. Sin PAC no opera. Misma dependencia que FacturAutentico Cloud."
+        },
+        "benchmark": {
+          "category": "Motor CFDI / PAC Management",
+          "competitors": [
+            {
+              "name": "Facturapi",
+              "url": "https://facturapi.io",
+              "strengths": [
+                "API-first",
+                "Multi-PAC",
+                "Complementos"
+              ],
+              "price": "Desde $299/mes",
+              "rating": 92
+            },
+            {
+              "name": "División Facturación",
+              "url": "https://divisionfacturacion.com",
+              "strengths": [
+                "CFDI 4.0",
+                "PAC agnóstico",
+                "Batch"
+              ],
+              "price": "Desde $199/mes",
+              "rating": 88
+            },
+            {
+              "name": "Factura Rapid",
+              "url": "https://www.facturarapid.com",
+              "strengths": [
+                "Simplicidad",
+                "CFDI + nómina",
+                "Soporte MX"
+              ],
+              "price": "Desde $149/mes",
+              "rating": 85
+            },
+            {
+              "name": "SumUp Facturas",
+              "url": "https://sumup.com",
+              "strengths": [
+                "Pagos + facturas",
+                "App móvil",
+                "Sin mensualidad"
+              ],
+              "price": "Gratis + comisión",
+              "rating": 82
+            }
+          ],
+          "avgCompetitorRating": 86.75,
+          "maxCompetitorRating": 92
+        },
+        "score": 56,
+        "classification": {
+          "tier": "P1",
+          "label": "Concept — Requires rebuild",
+          "color": "🔴"
+        },
+        "dimensions": {
+          "market_fit": {
+            "score": 70,
+            "weight": 0.2,
+            "label": "Market Fit"
+          },
+          "technical_quality": {
+            "score": 60,
+            "weight": 0.15,
+            "label": "Technical Quality"
+          },
+          "monetization_readiness": {
+            "score": 60,
+            "weight": 0.15,
+            "label": "Monetization Readiness"
+          },
+          "completion_level": {
+            "score": 55,
+            "weight": 0.15,
+            "label": "Completion Level"
+          },
+          "competitiveness": {
+            "score": 51,
+            "weight": 0.15,
+            "label": "Competitiveness vs Benchmarks"
+          },
+          "automation_coverage": {
+            "score": 45,
+            "weight": 0.1,
+            "label": "Automation Coverage"
+          },
+          "documentation": {
+            "score": 40,
+            "weight": 0.05,
+            "label": "Documentation & Onboarding"
+          },
+          "integration_depth": {
+            "score": 35,
+            "weight": 0.05,
+            "label": "Integration Depth"
+          }
+        },
+        "gaps": [
+          {
+            "dimension": "Integration Depth",
+            "score": 35,
+            "gap": 45
+          },
+          {
+            "dimension": "Documentation & Onboarding",
+            "score": 40,
+            "gap": 40
+          },
+          {
+            "dimension": "Automation Coverage",
+            "score": 45,
+            "gap": 35
+          },
+          {
+            "dimension": "Competitiveness vs Benchmarks",
+            "score": 51,
+            "gap": 29
+          },
+          {
+            "dimension": "Completion Level",
+            "score": 55,
+            "gap": 25
+          },
+          {
+            "dimension": "Technical Quality",
+            "score": 60,
+            "gap": 20
+          },
+          {
+            "dimension": "Monetization Readiness",
+            "score": 60,
+            "gap": 20
+          },
+          {
+            "dimension": "Market Fit",
+            "score": 70,
+            "gap": 10
+          }
+        ],
+        "roadmap": {
+          "currentScore": 56,
+          "targetScore95": 81,
+          "targetScore90": 68,
+          "steps": [
+            {
+              "priority": "P0",
+              "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para FacturAutentica",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 45
+            },
+            {
+              "priority": "P0",
+              "action": "Crear README, API docs, onboarding guide para FacturAutentica",
+              "effort": "bajo",
+              "owner": "human",
+              "gap": 40
+            },
+            {
+              "priority": "P0",
+              "action": "Automatizar CI/CD, tests, deploy para FacturAutentica",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 35
+            },
+            {
+              "priority": "P0",
+              "action": "Benchmark contra Facturapi: implementar features diferenciadores clave",
+              "effort": "alto",
+              "owner": "human",
+              "gap": 29
+            },
+            {
+              "priority": "P0",
+              "action": "Completar features core faltantes de FacturAutentica: revisar backlog y priorizar",
+              "effort": "alto",
+              "owner": "human",
+              "gap": 25
+            },
+            {
+              "priority": "P1",
+              "action": "Hardening técnico: tests, types, error handling, performance para FacturAutentica",
+              "effort": "alto",
+              "owner": "human",
+              "gap": 20
+            },
+            {
+              "priority": "P1",
+              "action": "Configurar pricing + checkout + payment integration para FacturAutentica",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 20
+            },
+            {
+              "priority": "P2",
+              "action": "Investigar mercado para FacturAutentica: entrevistar 5 prospects, validar propuesta de valor",
+              "effort": "medio",
+              "owner": "ai",
+              "gap": 10
+            }
+          ],
+          "estimatedHours": 42,
+          "estimatedSprints": 6,
+          "status": "EARLY_STAGE",
+          "priorityProducts": "medium"
+        }
+      },
+      {
+        "product": {
+          "id": "sentrylog-lite",
+          "name": "Sentrylog Lite",
+          "status": "planned"
+        },
+        "benchmark": {
+          "category": "Logging / Observabilidad Ligero",
+          "competitors": [
+            {
+              "name": "Better Stack",
+              "url": "https://betterstack.com",
+              "strengths": [
+                "Logs + uptime",
+                "Equipo pequeño friendly",
+                "Gratis 1GB/mes"
+              ],
+              "price": "Gratis / $29/mes",
+              "rating": 90
+            },
+            {
+              "name": "SigNoz",
+              "url": "https://signoz.io",
+              "strengths": [
+                "Open source",
+                "OpenTelemetry",
+                "Traces + metrics"
+              ],
+              "price": "Gratis (self-host)",
+              "rating": 93
+            },
+            {
+              "name": "Axiom",
+              "url": "https://axiom.co",
+              "strengths": [
+                "Sin índices",
+                "Rápido",
+                "5TB gratis"
+              ],
+              "price": "Gratis / $49/mes",
+              "rating": 88
+            },
+            {
+              "name": "Logtail",
+              "url": "https://logtail.com",
+              "strengths": [
+                "ClickHouse-based",
+                "SQL queries",
+                "Equipos pequeños"
+              ],
+              "price": "Gratis / $19/mes",
+              "rating": 86
+            }
+          ],
+          "avgCompetitorRating": 89.25,
+          "maxCompetitorRating": 93
+        },
+        "score": 38,
+        "classification": {
+          "tier": "P1",
+          "label": "Concept — Requires rebuild",
+          "color": "🔴"
+        },
+        "dimensions": {
+          "market_fit": {
+            "score": 45,
+            "weight": 0.2,
+            "label": "Market Fit"
+          },
+          "technical_quality": {
+            "score": 35,
+            "weight": 0.15,
+            "label": "Technical Quality"
+          },
+          "monetization_readiness": {
+            "score": 30,
+            "weight": 0.15,
+            "label": "Monetization Readiness"
+          },
+          "completion_level": {
+            "score": 20,
+            "weight": 0.15,
+            "label": "Completion Level"
+          },
+          "competitiveness": {
+            "score": 53,
+            "weight": 0.15,
+            "label": "Competitiveness vs Benchmarks"
+          },
+          "automation_coverage": {
+            "score": 45,
+            "weight": 0.1,
+            "label": "Automation Coverage"
+          },
+          "documentation": {
+            "score": 40,
+            "weight": 0.05,
+            "label": "Documentation & Onboarding"
+          },
+          "integration_depth": {
+            "score": 35,
+            "weight": 0.05,
+            "label": "Integration Depth"
+          }
+        },
+        "gaps": [
+          {
+            "dimension": "Completion Level",
+            "score": 20,
+            "gap": 60
+          },
+          {
+            "dimension": "Monetization Readiness",
+            "score": 30,
+            "gap": 50
+          },
+          {
+            "dimension": "Technical Quality",
+            "score": 35,
+            "gap": 45
+          },
+          {
+            "dimension": "Integration Depth",
+            "score": 35,
+            "gap": 45
+          },
+          {
+            "dimension": "Documentation & Onboarding",
+            "score": 40,
+            "gap": 40
+          },
+          {
+            "dimension": "Market Fit",
+            "score": 45,
+            "gap": 35
+          },
+          {
+            "dimension": "Automation Coverage",
+            "score": 45,
+            "gap": 35
+          },
+          {
+            "dimension": "Competitiveness vs Benchmarks",
+            "score": 53,
+            "gap": 27
+          }
+        ],
+        "roadmap": {
+          "currentScore": 38,
+          "targetScore95": 63,
+          "targetScore90": 50,
+          "steps": [
+            {
+              "priority": "P0",
+              "action": "Completar features core faltantes de Sentrylog Lite: revisar backlog y priorizar",
+              "effort": "alto",
+              "owner": "human",
+              "gap": 60
+            },
+            {
+              "priority": "P0",
+              "action": "Configurar pricing + checkout + payment integration para Sentrylog Lite",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 50
+            },
+            {
+              "priority": "P0",
+              "action": "Hardening técnico: tests, types, error handling, performance para Sentrylog Lite",
+              "effort": "alto",
+              "owner": "human",
+              "gap": 45
+            },
+            {
+              "priority": "P0",
+              "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Sentrylog Lite",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 45
+            },
+            {
+              "priority": "P0",
+              "action": "Crear README, API docs, onboarding guide para Sentrylog Lite",
+              "effort": "bajo",
+              "owner": "human",
+              "gap": 40
+            },
+            {
+              "priority": "P0",
+              "action": "Investigar mercado para Sentrylog Lite: entrevistar 5 prospects, validar propuesta de valor",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 35
+            },
+            {
+              "priority": "P0",
+              "action": "Automatizar CI/CD, tests, deploy para Sentrylog Lite",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 35
+            },
+            {
+              "priority": "P0",
+              "action": "Benchmark contra Better Stack: implementar features diferenciadores clave",
+              "effort": "alto",
+              "owner": "human",
+              "gap": 27
+            }
+          ],
+          "estimatedHours": 42,
+          "estimatedSprints": 6,
+          "status": "EARLY_STAGE",
+          "priorityProducts": "low"
+        }
+      }
+    ],
+    "p3_potential_backlog": [
+      {
+        "product": {
+          "id": "sentrylog-lite",
+          "name": "Sentrylog Lite",
+          "status": "planned"
+        },
+        "benchmark": {
+          "category": "Logging / Observabilidad Ligero",
+          "competitors": [
+            {
+              "name": "Better Stack",
+              "url": "https://betterstack.com",
+              "strengths": [
+                "Logs + uptime",
+                "Equipo pequeño friendly",
+                "Gratis 1GB/mes"
+              ],
+              "price": "Gratis / $29/mes",
+              "rating": 90
+            },
+            {
+              "name": "SigNoz",
+              "url": "https://signoz.io",
+              "strengths": [
+                "Open source",
+                "OpenTelemetry",
+                "Traces + metrics"
+              ],
+              "price": "Gratis (self-host)",
+              "rating": 93
+            },
+            {
+              "name": "Axiom",
+              "url": "https://axiom.co",
+              "strengths": [
+                "Sin índices",
+                "Rápido",
+                "5TB gratis"
+              ],
+              "price": "Gratis / $49/mes",
+              "rating": 88
+            },
+            {
+              "name": "Logtail",
+              "url": "https://logtail.com",
+              "strengths": [
+                "ClickHouse-based",
+                "SQL queries",
+                "Equipos pequeños"
+              ],
+              "price": "Gratis / $19/mes",
+              "rating": 86
+            }
+          ],
+          "avgCompetitorRating": 89.25,
+          "maxCompetitorRating": 93
+        },
+        "score": 38,
+        "classification": {
+          "tier": "P1",
+          "label": "Concept — Requires rebuild",
+          "color": "🔴"
+        },
+        "dimensions": {
+          "market_fit": {
+            "score": 45,
+            "weight": 0.2,
+            "label": "Market Fit"
+          },
+          "technical_quality": {
+            "score": 35,
+            "weight": 0.15,
+            "label": "Technical Quality"
+          },
+          "monetization_readiness": {
+            "score": 30,
+            "weight": 0.15,
+            "label": "Monetization Readiness"
+          },
+          "completion_level": {
+            "score": 20,
+            "weight": 0.15,
+            "label": "Completion Level"
+          },
+          "competitiveness": {
+            "score": 53,
+            "weight": 0.15,
+            "label": "Competitiveness vs Benchmarks"
+          },
+          "automation_coverage": {
+            "score": 45,
+            "weight": 0.1,
+            "label": "Automation Coverage"
+          },
+          "documentation": {
+            "score": 40,
+            "weight": 0.05,
+            "label": "Documentation & Onboarding"
+          },
+          "integration_depth": {
+            "score": 35,
+            "weight": 0.05,
+            "label": "Integration Depth"
+          }
+        },
+        "gaps": [
+          {
+            "dimension": "Completion Level",
+            "score": 20,
+            "gap": 60
+          },
+          {
+            "dimension": "Monetization Readiness",
+            "score": 30,
+            "gap": 50
+          },
+          {
+            "dimension": "Technical Quality",
+            "score": 35,
+            "gap": 45
+          },
+          {
+            "dimension": "Integration Depth",
+            "score": 35,
+            "gap": 45
+          },
+          {
+            "dimension": "Documentation & Onboarding",
+            "score": 40,
+            "gap": 40
+          },
+          {
+            "dimension": "Market Fit",
+            "score": 45,
+            "gap": 35
+          },
+          {
+            "dimension": "Automation Coverage",
+            "score": 45,
+            "gap": 35
+          },
+          {
+            "dimension": "Competitiveness vs Benchmarks",
+            "score": 53,
+            "gap": 27
+          }
+        ],
+        "roadmap": {
+          "currentScore": 38,
+          "targetScore95": 63,
+          "targetScore90": 50,
+          "steps": [
+            {
+              "priority": "P0",
+              "action": "Completar features core faltantes de Sentrylog Lite: revisar backlog y priorizar",
+              "effort": "alto",
+              "owner": "human",
+              "gap": 60
+            },
+            {
+              "priority": "P0",
+              "action": "Configurar pricing + checkout + payment integration para Sentrylog Lite",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 50
+            },
+            {
+              "priority": "P0",
+              "action": "Hardening técnico: tests, types, error handling, performance para Sentrylog Lite",
+              "effort": "alto",
+              "owner": "human",
+              "gap": 45
+            },
+            {
+              "priority": "P0",
+              "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Sentrylog Lite",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 45
+            },
+            {
+              "priority": "P0",
+              "action": "Crear README, API docs, onboarding guide para Sentrylog Lite",
+              "effort": "bajo",
+              "owner": "human",
+              "gap": 40
+            },
+            {
+              "priority": "P0",
+              "action": "Investigar mercado para Sentrylog Lite: entrevistar 5 prospects, validar propuesta de valor",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 35
+            },
+            {
+              "priority": "P0",
+              "action": "Automatizar CI/CD, tests, deploy para Sentrylog Lite",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 35
+            },
+            {
+              "priority": "P0",
+              "action": "Benchmark contra Better Stack: implementar features diferenciadores clave",
+              "effort": "alto",
+              "owner": "human",
+              "gap": 27
+            }
+          ],
+          "estimatedHours": 42,
+          "estimatedSprints": 6,
+          "status": "EARLY_STAGE",
+          "priorityProducts": "low"
+        }
+      }
+    ]
+  }
+}
