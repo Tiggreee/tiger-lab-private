@@ -1,0 +1,58 @@
+{
+  "executedAt": "2026-06-12T15:13:04.152Z",
+  "campaign": "daily-2026-06-12",
+  "packPath": "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/social-pack-daily-2026-06-12.json",
+  "requestedChannels": [
+    "linkedin",
+    "x",
+    "facebook",
+    "telegram",
+    "discord"
+  ],
+  "readyChannels": [
+    "linkedin",
+    "x",
+    "facebook",
+    "telegram",
+    "discord"
+  ],
+  "liveRequested": false,
+  "minChannels": 0,
+  "readiness": [
+    {
+      "channel": "linkedin",
+      "hasCopy": true,
+      "missingSecrets": [],
+      "ready": true
+    },
+    {
+      "channel": "x",
+      "hasCopy": true,
+      "missingSecrets": [],
+      "ready": true
+    },
+    {
+      "channel": "facebook",
+      "hasCopy": true,
+      "missingSecrets": [],
+      "ready": true
+    },
+    {
+      "channel": "telegram",
+      "hasCopy": true,
+      "missingSecrets": [],
+      "ready": true
+    },
+    {
+      "channel": "discord",
+      "hasCopy": true,
+      "missingSecrets": [],
+      "ready": true
+    }
+  ],
+  "steps": {
+    "goLive": "passed",
+    "dryPublish": "passed",
+    "livePublish": "skipped"
+  }
+}

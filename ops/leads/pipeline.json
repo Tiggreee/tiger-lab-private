@@ -179,15 +179,75 @@
       "source": "linkedin",
       "status": "contacted",
       "capturedAt": "2026-06-12T11:58:14.844Z"
+    },
+    {
+      "id": "lead_1781277184000_0",
+      "name": "Alejandro Hernandez",
+      "company": "Alejandro Tech Ops",
+      "industry": "logistica",
+      "pain": "reportes manuales",
+      "process": "creacion de reportes",
+      "geo": "Queretaro",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T15:13:04.000Z"
+    },
+    {
+      "id": "lead_1781277184000_1",
+      "name": "Diego Martinez",
+      "company": "Diego Tech Shop",
+      "industry": "ecommerce",
+      "pain": "deploy manual a produccion",
+      "process": "gestion de inventarios",
+      "geo": "Monterrey",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T15:13:04.000Z"
+    },
+    {
+      "id": "lead_1781277184000_2",
+      "name": "Patricia Ramirez",
+      "company": "Patricia Tech Fin",
+      "industry": "fintech",
+      "pain": "sin equipo tecnico interno",
+      "process": "creacion de reportes",
+      "geo": "Guadalajara",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T15:13:04.000Z"
+    },
+    {
+      "id": "lead_1781277184000_3",
+      "name": "Pedro Martinez",
+      "company": "Pedro Tech Ops",
+      "industry": "servicios profesionales",
+      "pain": "facturacion manual",
+      "process": "generacion de facturas",
+      "geo": "Guadalajara",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T15:13:04.000Z"
+    },
+    {
+      "id": "lead_1781277184000_4",
+      "name": "Roberto Hernandez",
+      "company": "Roberto Tech Fin",
+      "industry": "fintech",
+      "pain": "facturacion manual",
+      "process": "deploys a produccion",
+      "geo": "Guadalajara",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-12T15:13:04.000Z"
     }
   ],
   "stats": {
-    "total": 15,
+    "total": 20,
     "new": 0,
-    "contacted": 15,
+    "contacted": 20,
     "replied": 0,
     "converted": 0
   },
-  "lastOutreachGenerated": "2026-06-12T11:58:14.845Z",
-  "updatedAt": "2026-06-12T11:58:14.845Z"
+  "lastOutreachGenerated": "2026-06-12T15:13:04.000Z",
+  "updatedAt": "2026-06-12T15:13:04.000Z"
 }

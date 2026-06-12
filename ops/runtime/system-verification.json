@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T11:58:15.780Z",
+  "generatedAt": "2026-06-12T15:13:04.832Z",
   "overallStatus": "FAILURES_DETECTED",
   "summary": {
     "total": 27,
@@ -55,7 +55,7 @@
     {
       "label": "Leads Generated",
       "status": "PASS",
-      "detail": "15 leads total, 15 contacted. Industries: servicios profesionales, fintech, logistica, ecommerce",
+      "detail": "20 leads total, 20 contacted. Industries: servicios profesionales, fintech, logistica, ecommerce",
       "evidence": [
         "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/leads/pipeline.json"
       ]
@@ -97,9 +97,10 @@
     {
       "label": "Autopilot Reports Generated",
       "status": "PASS",
-      "detail": "3 autopilot reports",
+      "detail": "4 autopilot reports",
       "evidence": [
         "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-12-1781265495133.json",
+        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-12-1781277184224.json",
         "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-linkedin-today-1781250279006.json",
         "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-produccion-week1-1781252149724.json"
       ]

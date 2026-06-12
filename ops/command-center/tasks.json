@@ -4,7 +4,7 @@
     "owner": "Victor",
     "project": "Tiger Lab — Fully Automated",
     "lastSupervisorSyncAt": "2026-06-12T08:10:00.000Z",
-    "lastPrioritizedAt": "2026-06-12T11:58:15.195Z"
+    "lastPrioritizedAt": "2026-06-12T15:13:04.294Z"
   },
   "tasks": [
     {
@@ -130,6 +130,28 @@
       "daysUntilDue": 2
     },
     {
+      "id": "SYS-003",
+      "title": "Resolver: Stripe Live Keys Configured",
+      "area": "system",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-13",
+      "nextAction": ".env.production.example not found",
+      "daysUntilDue": 2
+    },
+    {
+      "id": "SYS-005",
+      "title": "Resolver: PayPal Live Keys Configured",
+      "area": "system",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-13",
+      "nextAction": ".env.production.example not found",
+      "daysUntilDue": 2
+    },
+    {
       "id": "PL-006",
       "title": "Book 3 discovery calls con leads calientes",
       "area": "sales",
@@ -167,26 +189,6 @@
       "debtSettled": false,
       "blocker": "Requiere que Victor cierre el trato",
       "daysUntilDue": 8
-    },
-    {
-      "id": "SYS-003",
-      "title": "Resolver: Stripe Live Keys Configured",
-      "area": "system",
-      "priority": "P0",
-      "owner": "human",
-      "status": "todo",
-      "dueDate": "2026-06-13",
-      "nextAction": ".env.production.example not found"
-    },
-    {
-      "id": "SYS-005",
-      "title": "Resolver: PayPal Live Keys Configured",
-      "area": "system",
-      "priority": "P0",
-      "owner": "human",
-      "status": "todo",
-      "dueDate": "2026-06-13",
-      "nextAction": ".env.production.example not found"
     }
   ]
 }

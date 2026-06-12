@@ -3,7 +3,7 @@
   "productName": "Script Premium Kit",
   "channelId": "telegram",
   "channelName": "Telegram",
-  "generatedAt": "2026-06-12T11:58:15.267Z",
+  "generatedAt": "2026-06-12T15:13:04.369Z",
   "status": "active",
   "seo": {
     "title": "Script Premium Kit en Telegram | Tiger Lab",
@@ -17,19 +17,19 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "Script Premium Kit - Automatizacion para SMBs Mexicanas",
-    "body": "Script Premium Kit - Automatizacion directa para tu operacion.\n\n• API Access\n• Automation\n• Reports\n\nPrecio: $39/mo\nPrueba: 14 dias gratis\n\nAgenda: https://cal.com/victor-tigerlab/diagnostic",
+    "headline": "Script Premium Kit - Prueba gratis 14 dias",
+    "body": "Script Premium Kit disponible.\n\n• API Access\n• Automation\n\n$39/mes · 14 dias gratis\n→ https://cal.com/victor-tigerlab/diagnostic",
     "cta": "Agenda tu diagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
     "tone": "directo, propositivo, enlace directo"
   },
   "tracking": {
     "utmSource": "telegram",
     "utmCampaign": "landing-script-premium-kit-telegram",
-    "utmContent": "social-landing-1781265495267"
+    "utmContent": "social-landing-1781277184369"
   },
   "metrics": {
     "targetChars": 4096,
-    "actualChars": 317,
-    "qualityScore": 29
+    "actualChars": 242,
+    "qualityScore": 27
   }
 }

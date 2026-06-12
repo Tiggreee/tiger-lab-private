@@ -3,7 +3,7 @@
   "productName": "Script Premium Kit",
   "channelId": "linkedin",
   "channelName": "LinkedIn",
-  "generatedAt": "2026-06-12T11:58:15.267Z",
+  "generatedAt": "2026-06-12T15:13:04.368Z",
   "status": "active",
   "seo": {
     "title": "Script Premium Kit en LinkedIn | Tiger Lab",
@@ -17,7 +17,7 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "De lo manual a lo automatico: Script Premium Kit",
+    "headline": "Script Premium Kit: La herramienta que tu equipo necesita para dejar de hacer procesos manuales",
     "body": "Script Premium Kit no es solo software. Es la respuesta a \"no tenemos tiempo para implementar tecnologia\".\n\nConstruimos para el founder que hace de CTO, el COO que tapita incendios, el equipo que crece sin procesos.\n\n✅ API Access\n✅ Automation\n✅ Reports\n✅ Support\n\nResultados en semanas, no en meses. Desde $39/mo.",
     "cta": "Agenda tu diagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
     "tone": "thought-leadership, profesional, casos de uso"
@@ -25,11 +25,11 @@
   "tracking": {
     "utmSource": "linkedin",
     "utmCampaign": "landing-script-premium-kit-linkedin",
-    "utmContent": "social-landing-1781265495267"
+    "utmContent": "social-landing-1781277184368"
   },
   "metrics": {
     "targetChars": 2800,
-    "actualChars": 433,
-    "qualityScore": 38
+    "actualChars": 480,
+    "qualityScore": 40
   }
 }

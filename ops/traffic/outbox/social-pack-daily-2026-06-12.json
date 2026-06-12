@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T11:58:14.970Z",
+  "generatedAt": "2026-06-12T15:13:04.098Z",
   "campaign": "daily-2026-06-12",
   "topic": "Automatización de operaciones para SMBs",
   "audience": "founders y operadores SMB",
@@ -84,7 +84,7 @@
   },
   "mcpAudit": {
     "enabled": true,
-    "auditedAt": "2026-06-12T11:58:14.970Z",
+    "auditedAt": "2026-06-12T15:13:04.099Z",
     "benchmark": {
       "averageScore": 100,
       "minimumScoreForApply": 72,

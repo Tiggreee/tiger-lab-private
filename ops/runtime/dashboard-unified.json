@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T11:58:15.720Z",
+  "generatedAt": "2026-06-12T15:13:04.775Z",
   "monetization": {
     "leadsToday": 10,
     "generatedContent": 10,
@@ -187,7 +187,7 @@
           "telegram",
           "discord"
         ],
-        "generatedAt": "2026-06-12T11:58:14.970Z"
+        "generatedAt": "2026-06-12T15:13:04.098Z"
       }
     ]
   },
@@ -245,9 +245,9 @@
     ]
   },
   "tasks": {
-    "total": 12,
+    "total": 14,
     "done": 5,
-    "pending": 7,
+    "pending": 9,
     "items": [
       {
         "id": "PL-003",
@@ -372,6 +372,28 @@
         "daysUntilDue": 2
       },
       {
+        "id": "SYS-003",
+        "title": "Resolver: Stripe Live Keys Configured",
+        "area": "system",
+        "priority": "P0",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-13",
+        "nextAction": ".env.production.example not found",
+        "daysUntilDue": 2
+      },
+      {
+        "id": "SYS-005",
+        "title": "Resolver: PayPal Live Keys Configured",
+        "area": "system",
+        "priority": "P0",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-13",
+        "nextAction": ".env.production.example not found",
+        "daysUntilDue": 2
+      },
+      {
         "id": "PL-006",
         "title": "Book 3 discovery calls con leads calientes",
         "area": "sales",
@@ -414,7 +436,7 @@
   },
   "landings": {
     "title": "Tiger Lab - Social Landing Pages Index",
-    "generatedAt": "2026-06-12T11:58:15.270Z",
+    "generatedAt": "2026-06-12T15:13:04.372Z",
     "summary": {
       "totalProducts": 5,
       "activeProducts": 2,
@@ -503,7 +525,7 @@
     "note": "Cada landing page esta optimizada para el tono y formato de su canal social."
   },
   "agentMonitor": {
-    "generatedAt": "2026-06-12T11:58:15.450Z",
+    "generatedAt": "2026-06-12T15:13:04.507Z",
     "summary": {
       "totalAgents": 22,
       "activeAgents": 22,
@@ -955,109 +977,5 @@
     "dashboard": "success",
     "checkout": "success",
     "gate": "GO"
-  },
-  "productEngine": {
-    "generatedAt": "2026-06-12T15:10:40.835Z",
-    "engine": {
-      "averageScore": 64,
-      "productsAt95": 0,
-      "productsOnTrack95": 0,
-      "productsAt90plus": 0,
-      "productsAt75plus": 2,
-      "totalBenchmarks": 5,
-      "totalCompetitors": 20,
-      "estimatedTotalEffortHours": 146
-    },
-    "topProducts": [
-      {
-        "name": "Docflow API",
-        "score": 84,
-        "tier": "P3",
-        "status": "active"
-      },
-      {
-        "name": "Script Premium Kit",
-        "score": 84,
-        "tier": "P3",
-        "status": "active"
-      },
-      {
-        "name": "FacturAutentico Cloud",
-        "score": 56,
-        "tier": "P1",
-        "status": "paused"
-      },
-      {
-        "name": "FacturAutentica",
-        "score": 56,
-        "tier": "P1",
-        "status": "paused"
-      },
-      {
-        "name": "Sentrylog Lite",
-        "score": 38,
-        "tier": "P1",
-        "status": "planned"
-      }
-    ],
-    "priorityQueue": {
-      "target95": [
-        "Docflow API",
-        "Script Premium Kit"
-      ],
-      "engineReady": []
-    }
-  },
-  "failuresMonitor": {
-    "lastAnalysis": "2026-06-12T13:40:00.195Z",
-    "totalRuns": 100,
-    "failedToday": 17,
-    "successfulToday": 73,
-    "byType": {
-      "failure": 17
-    },
-    "byWorkflow": [
-      {
-        "workflow": "Failures Monitor — 2h Cycle",
-        "failures": 5
-      },
-      {
-        "workflow": "daily-sales-automation",
-        "failures": 3
-      },
-      {
-        "workflow": "Billing Reconciliation Daily",
-        "failures": 2
-      },
-      {
-        "workflow": "Production Go No-Go",
-        "failures": 2
-      },
-      {
-        "workflow": "Deploy Backend to Railway",
-        "failures": 2
-      },
-      {
-        "workflow": "Social Publish",
-        "failures": 1
-      },
-      {
-        "workflow": "Running Copilot cloud agent",
-        "failures": 1
-      },
-      {
-        "workflow": "Product Development Engine — 2h Cycle",
-        "failures": 1
-      }
-    ],
-    "rootCauses": [
-      {
-        "cause": "Check failures in workflow steps",
-        "severity": "high",
-        "fix": "Review logs for each failed run"
-      }
-    ],
-    "permFixed": false,
-    "currentPermission": "all"
   }
 }
