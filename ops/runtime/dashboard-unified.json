@@ -1009,12 +1009,12 @@
     }
   },
   "failuresMonitor": {
-    "lastAnalysis": "2026-06-12T13:14:50.088Z",
+    "lastAnalysis": "2026-06-12T13:40:00.195Z",
     "totalRuns": 100,
-    "failedToday": 19,
-    "successfulToday": 71,
+    "failedToday": 17,
+    "successfulToday": 73,
     "byType": {
-      "failure": 19
+      "failure": 17
     },
     "byWorkflow": [
       {
@@ -1026,15 +1026,15 @@
         "failures": 3
       },
       {
-        "workflow": "Deploy Backend to Railway",
-        "failures": 3
-      },
-      {
         "workflow": "Billing Reconciliation Daily",
         "failures": 2
       },
       {
         "workflow": "Production Go No-Go",
+        "failures": 2
+      },
+      {
+        "workflow": "Deploy Backend to Railway",
         "failures": 2
       },
       {
@@ -1047,10 +1047,6 @@
       },
       {
         "workflow": "Product Development Engine — 2h Cycle",
-        "failures": 1
-      },
-      {
-        "workflow": "ui-host-pages",
         "failures": 1
       }
     ],
