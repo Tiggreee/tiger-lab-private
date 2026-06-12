@@ -7,7 +7,6 @@ export function buildHealthRoutes(controller: HealthController): readonly HttpRo
     {
       method: 'GET',
       path: '/health',
-      requiredScopes: ['health:read'],
       handler: async (ctx) => {
         const body = await controller.getHealth();
         sendJson(ctx.res, 200, body);
