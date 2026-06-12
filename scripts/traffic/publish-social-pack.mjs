@@ -271,32 +271,28 @@ async function postLinkedIn(text) {
     else throw new Error(`LinkedIn API ${resp.status}: ${body}`);
   }
 
-  let personId = null;
-  const userinfoResp = await fetch('https://api.linkedin.com/v2/userinfo', { headers });
-  if (userinfoResp.ok) {
-    const info = await userinfoResp.json();
-    personId = (info.sub || '').replace(/^urn:li:person:/i, '');
-  }
-  if (!personId) {
-    const meResp = await fetch('https://api.linkedin.com/v2/me', { headers });
-    if (meResp.ok) {
-      const me = await meResp.json();
-      const rawId = me.sub || me.id;
-      if (rawId) personId = rawId.replace(/^urn:li:person:/i, '');
-    }
-  }
-  if (!personId) throw new Error('Could not resolve LinkedIn person ID. Ensure token has r_liteprofile or openid scope.');
+  const restBody = {
+    commentary: text,
+    visibility: 'PUBLIC',
+    distribution: { feedDistribution: 'MAIN_FEED', targetEntities: [], thirdPartyDistributionChannels: [] },
+    lifecycleState: 'PUBLISHED',
+    isReshareDisabledByAuthor: false
+  };
+  const restResp = await fetch('https://api.linkedin.com/rest/posts', {
+    method: 'POST', headers: { ...headers, 'LinkedIn-Version': '202405' }, body: JSON.stringify(restBody)
+  });
+  if (restResp.ok) return await restResp.text();
 
-  const payload = {
-    author: `urn:li:person:${personId}`,
+  const ugcPayload = {
+    author: `urn:li:person:${process.env.LINKEDIN_PERSON_ID || 'ME'}`,
     lifecycleState: 'PUBLISHED',
     specificContent: { 'com.linkedin.ugc.ShareContent': { shareCommentary: { text }, shareMediaCategory: 'NONE' } },
     visibility: { 'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC' }
   };
-  const resp = await fetch('https://api.linkedin.com/v2/ugcPosts', { method: 'POST', headers, body: JSON.stringify(payload) });
-  const body = await resp.text();
-  if (!resp.ok) throw new Error(`LinkedIn API ${resp.status}: ${body}`);
-  return body;
+  const ugcResp = await fetch('https://api.linkedin.com/v2/ugcPosts', { method: 'POST', headers, body: JSON.stringify(ugcPayload) });
+  const ugcBody = await ugcResp.text();
+  if (!ugcResp.ok) throw new Error(`LinkedIn API ${ugcResp.status}: ${ugcBody}`);
+  return ugcBody;
 }
 
 function buildOAuth1Header({ method, url, consumerKey, consumerSecret, token, tokenSecret }) {
