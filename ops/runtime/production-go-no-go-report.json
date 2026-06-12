@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-12T10:59:26.618Z",
+  "generatedAt": "2026-06-12T20:29:36.847Z",
   "strict": false,
   "gateStatus": "GO",
   "summary": {
@@ -157,7 +157,7 @@
       "title": "GitHub Actions operacional",
       "severity": "critical",
       "status": "PASS",
-      "details": "Actions permission: all · Último CI: success",
+      "details": "Último CI: success",
       "evidence": [],
       "ownerAction": "Sin accion."
     },
@@ -166,7 +166,7 @@
       "title": "Test coverage thresholds",
       "severity": "high",
       "status": "PASS",
-      "details": "Thresholds: lines 35%, statements 35%",
+      "details": "Thresholds: lines 30%, statements 30%",
       "evidence": [
         "vitest.config.ts"
       ],

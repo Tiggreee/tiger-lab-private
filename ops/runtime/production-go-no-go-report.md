@@ -1,6 +1,6 @@
 # Production Go/No-Go Report
 
-- generatedAt: 2026-06-12T10:59:26.618Z
+- generatedAt: 2026-06-12T20:29:36.847Z
 - gateStatus: GO
 - summary: PASS 14 | WARN 0 | FAIL 0
 
@@ -40,10 +40,10 @@
   details: Hardening clave de auth y checkout activo.
   ownerAction: Sin accion.
 - P12 GitHub Actions operacional: PASS
-  details: Actions permission: all · Último CI: success
+  details: Último CI: success
   ownerAction: Sin accion.
 - P13 Test coverage thresholds: PASS
-  details: Thresholds: lines 35%, statements 35%
+  details: Thresholds: lines 30%, statements 30%
   ownerAction: Sin accion.
 - P14 Railway deploy status: PASS
   details: Railway deploy OK

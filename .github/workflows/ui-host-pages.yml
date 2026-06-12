@@ -48,8 +48,9 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          status=$(gh api repos/${{ github.repository }}/pages --jq '.source.branch' 2>/dev/null || echo "")
-          if [ -n "$status" ] && [ "$status" != "null" ]; then
+          raw=$(gh api repos/${{ github.repository }}/pages 2>/dev/null || echo "")
+          status=$(echo "$raw" | jq -r '.source.branch // empty' 2>/dev/null || echo "")
+          if [ -n "$status" ]; then
             echo "enabled=true" >> "$GITHUB_OUTPUT"
             echo "GitHub Pages enabled: $status"
           else
