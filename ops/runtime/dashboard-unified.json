@@ -1007,5 +1007,61 @@
       ],
       "engineReady": []
     }
+  },
+  "failuresMonitor": {
+    "lastAnalysis": "2026-06-12T13:12:36.640Z",
+    "totalRuns": 100,
+    "failedToday": 18,
+    "successfulToday": 69,
+    "byType": {
+      "failure": 18
+    },
+    "byWorkflow": [
+      {
+        "workflow": "Failures Monitor — 2h Cycle",
+        "failures": 5
+      },
+      {
+        "workflow": "daily-sales-automation",
+        "failures": 3
+      },
+      {
+        "workflow": "Deploy Backend to Railway",
+        "failures": 3
+      },
+      {
+        "workflow": "Production Go No-Go",
+        "failures": 2
+      },
+      {
+        "workflow": "Social Publish",
+        "failures": 1
+      },
+      {
+        "workflow": "Billing Reconciliation Daily",
+        "failures": 1
+      },
+      {
+        "workflow": "Running Copilot cloud agent",
+        "failures": 1
+      },
+      {
+        "workflow": "Product Development Engine — 2h Cycle",
+        "failures": 1
+      },
+      {
+        "workflow": "ui-host-pages",
+        "failures": 1
+      }
+    ],
+    "rootCauses": [
+      {
+        "cause": "Check failures in workflow steps",
+        "severity": "high",
+        "fix": "Review logs for each failed run"
+      }
+    ],
+    "permFixed": false,
+    "currentPermission": "all"
   }
 }

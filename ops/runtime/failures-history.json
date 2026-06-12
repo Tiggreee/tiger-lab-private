@@ -66,10 +66,31 @@
         "schema-validation": 2
       },
       "perm": "all"
+    },
+    {
+      "timestamp": "2026-06-12T13:12:36.640Z",
+      "totalRuns": 100,
+      "failed": 18,
+      "successful": 69,
+      "byType": {
+        "failure": 18
+      },
+      "byWorkflow": {
+        "Failures Monitor — 2h Cycle": 5,
+        "Production Go No-Go": 2,
+        "Social Publish": 1,
+        "Billing Reconciliation Daily": 1,
+        "Running Copilot cloud agent": 1,
+        "daily-sales-automation": 3,
+        "Product Development Engine — 2h Cycle": 1,
+        "Deploy Backend to Railway": 3,
+        "ui-host-pages": 1
+      },
+      "perm": "all"
     }
   ],
   "fixesApplied": [],
   "lastKnownPermission": "all",
-  "lastAnalysis": "2026-06-12T09:33:22.135Z",
-  "totalFailuresTracked": 207
+  "lastAnalysis": "2026-06-12T13:12:36.640Z",
+  "totalFailuresTracked": 225
 }
