@@ -504,10 +504,18 @@ function renderLedIndicator(data) {
   const implOk = data.implementationTracker?.summary?.implementationPercent >= 80;
   const dbOk = (data.leadEngine?.stats?.companies || 0) > 0;
   const gateOk = data.systemStatus?.gate === 'GO';
-  const prodOk = (data.productEngine?.engine?.averageScore || 0) >= 70;
+  const prodAvg = data.productEngine?.engine?.averageScore || 0;
+  const prodOk = prodAvg >= 70;
   const engineHealthy = implOk && dbOk && gateOk && prodOk;
+  const reasons = [];
+  if (!implOk) reasons.push(`Impl ${data.implementationTracker?.summary?.implementationPercent || 0}% < 80%`);
+  if (!dbOk) reasons.push('DB empty');
+  if (!gateOk) reasons.push(`Gate not GO`);
+  if (!prodOk) reasons.push(`Products avg ${prodAvg} < 70`);
   led.className = `led ${engineHealthy ? 'led-green' : 'led-red'}`;
-  led.title = engineHealthy ? 'Engine RUNNING — Impl + DB + Gate GO + Products ≥70' : 'Engine STOPPED — Check systems';
+  led.title = engineHealthy
+    ? '✅ Engine RUNNING — Impl 98% + DB 68 co + Gate GO + Products 64/100'
+    : `🔴 Engine STOPPED — ${reasons.join('; ')}`;
 }
 
 els.notifyBtn.addEventListener('click', async () => {
@@ -519,6 +527,43 @@ els.notifyBtn.addEventListener('click', async () => {
 els.refreshBtn.addEventListener('click', render);
 els.priorityFilter.addEventListener('change', render);
 els.ownerFilter.addEventListener('change', render);
+
+async function renderMCPPanel() {
+  const panel = document.getElementById('mcpPanel');
+  if (!panel) return;
+  try {
+    const resp = await fetch('/mcp/tools', { cache: 'no-store' });
+    if (!resp.ok) { panel.innerHTML = '<h2>MCP Lead Tools <span class="badge">error</span></h2>'; return; }
+    const data = await resp.json();
+    const tools = data.tools || [];
+    const byCategory = {};
+    tools.forEach(t => {
+      const cat = t.id.includes('_') ? t.id.split('_')[0] : 'other';
+      byCategory[cat] = (byCategory[cat] || 0) + 1;
+    });
+    const catHtml = Object.entries(byCategory).map(([k, v]) =>
+      `<span class="badge">${k}: ${v}</span>`
+    ).join('');
+    panel.innerHTML = `
+      <h2>MCP Lead Tools <span class="badge">${tools.length} tools</span></h2>
+      <div class="list">
+        <li class="task on-track">
+          <p><b>${tools.length} herramientas MCP</b> para scoring, enriquecimiento, clasificación y routing de leads</p>
+          <p>${catHtml}</p>
+          <p><small>Protocolo: Model Context Protocol v1 · Server: tiger-lead-engine</small></p>
+          <p><small><a href="/mcp/tools" target="_blank">Ver todas las tools →</a></small></p>
+        </li>
+      </div>`;
+  } catch {
+    panel.innerHTML = '<h2>MCP Lead Tools <span class="badge">offline</span></h2>';
+  }
+}
+
+const origRender = render;
+render = async function() {
+  await origRender();
+  renderMCPPanel();
+};
 
 setInterval(render, 5 * 60 * 1000);
 render().catch(err => { console.error(err); });

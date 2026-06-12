@@ -1,0 +1,424 @@
+{
+  "protocol": "model-context-protocol/v1",
+  "server": "tiger-lead-engine",
+  "description": "Herramientas MCP para gestión y scoring de leads. Incluye 30+ skills de cualificación, priorización, detección y routing.",
+  "tools": [
+    {
+      "id": "lead_scoring_basic",
+      "name": "Lead Scoring Básico",
+      "description": "Prioriza leads según su nivel de interés.",
+      "inputs": [
+        { "name": "lead_profile", "type": "object", "description": "Datos del lead (rol, empresa, país, etc.)." },
+        { "name": "engagement_events", "type": "array", "description": "Lista de eventos de interacción (visitas, clics, respuestas)." }
+      ],
+      "outputs": [
+        { "name": "score", "type": "number", "description": "Score de 0 a 100." },
+        { "name": "segment", "type": "string", "description": "frio | tibio | caliente." }
+      ]
+    },
+    {
+      "id": "lead_enrichment_by_domain",
+      "name": "Enriquecimiento de Lead por Dominio",
+      "description": "Completa datos de empresa a partir del dominio del email.",
+      "inputs": [
+        { "name": "email", "type": "string", "description": "Email del lead." }
+      ],
+      "outputs": [
+        { "name": "company_size", "type": "string", "description": "Tamaño de empresa (ej. '1-10', '11-50')." },
+        { "name": "industry", "type": "string", "description": "Industria principal." },
+        { "name": "country", "type": "string", "description": "País de la empresa." },
+        { "name": "tech_stack", "type": "array", "description": "Tecnologías detectadas." }
+      ]
+    },
+    {
+      "id": "icp_fit_detection",
+      "name": "Detección de ICP Fit",
+      "description": "Evalúa si el lead encaja con el ICP definido.",
+      "inputs": [
+        { "name": "lead_company_data", "type": "object", "description": "Datos de la empresa del lead." },
+        { "name": "icp_criteria", "type": "object", "description": "Criterios de ICP (industrias, tamaños, países, ticket mínimo)." }
+      ],
+      "outputs": [
+        { "name": "icp_fit_score", "type": "number", "description": "Score de encaje ICP (0–100)." },
+        { "name": "icp_match", "type": "boolean", "description": "True si supera el umbral de encaje." }
+      ]
+    },
+    {
+      "id": "lead_stage_classification",
+      "name": "Clasificación de Etapa del Lead",
+      "description": "Asigna etapa del lead (nuevo, MQL, SQL, oportunidad).",
+      "inputs": [
+        { "name": "lead_score", "type": "number", "description": "Score del lead (0–100)." },
+        { "name": "icp_fit_score", "type": "number", "description": "Score de encaje ICP (0–100)." },
+        { "name": "sales_feedback", "type": "object", "description": "Señales de ventas (demo agendada, propuesta enviada, etc.)." }
+      ],
+      "outputs": [
+        { "name": "stage", "type": "string", "description": "nuevo | MQL | SQL | oportunidad." }
+      ]
+    },
+    {
+      "id": "intent_detection_from_message",
+      "name": "Detección de Intención por Mensaje",
+      "description": "Detecta nivel y tipo de intención de compra en texto.",
+      "inputs": [
+        { "name": "message_text", "type": "string", "description": "Texto del mensaje del lead." }
+      ],
+      "outputs": [
+        { "name": "intent_level", "type": "string", "description": "bajo | medio | alto." },
+        { "name": "intent_type", "type": "string", "description": "curiosidad | evaluación | compra | soporte." }
+      ]
+    },
+    {
+      "id": "pain_point_segmentation",
+      "name": "Segmentación por Dolor Principal",
+      "description": "Agrupa leads por problema principal detectado.",
+      "inputs": [
+        { "name": "survey_answers", "type": "array", "description": "Respuestas de formularios/encuestas." },
+        { "name": "call_notes", "type": "string", "description": "Notas de llamadas." },
+        { "name": "email_text", "type": "string", "description": "Contenido de correos del lead." }
+      ],
+      "outputs": [
+        { "name": "pain_point_category", "type": "string", "description": "Categoría de dolor (ej. 'falta_de_leads', 'alto_CAC', 'baja_conversion')." }
+      ]
+    },
+    {
+      "id": "urgency_prioritization",
+      "name": "Priorización por Urgencia",
+      "description": "Ordena leads según urgencia percibida.",
+      "inputs": [
+        { "name": "intent_level", "type": "string", "description": "Nivel de intención detectado." },
+        { "name": "time_constraints", "type": "string", "description": "Frases sobre tiempos o deadlines." },
+        { "name": "budget_signals", "type": "string", "description": "Señales de presupuesto disponible." }
+      ],
+      "outputs": [
+        { "name": "urgency_score", "type": "number", "description": "Score de urgencia (0–100)." }
+      ]
+    },
+    {
+      "id": "decision_maker_detection",
+      "name": "Detección de Decisor vs Influencer",
+      "description": "Clasifica al contacto como decisor, influencer o usuario.",
+      "inputs": [
+        { "name": "job_title", "type": "string", "description": "Puesto del contacto." },
+        { "name": "org_chart_data", "type": "object", "description": "Datos de jerarquía si existen." },
+        { "name": "conversation_text", "type": "string", "description": "Texto de conversaciones previas." }
+      ],
+      "outputs": [
+        { "name": "role_type", "type": "string", "description": "decisor | influencer | usuario." }
+      ]
+    },
+    {
+      "id": "bant_scoring",
+      "name": "Calificación BANT Simplificada",
+      "description": "Evalúa Budget, Authority, Need y Timeline.",
+      "inputs": [
+        { "name": "call_notes", "type": "string", "description": "Notas de llamadas." },
+        { "name": "email_threads", "type": "string", "description": "Hilos de correo relevantes." }
+      ],
+      "outputs": [
+        { "name": "bant_flags", "type": "object", "description": "Flags por cada dimensión (B, A, N, T)." },
+        { "name": "bant_score", "type": "number", "description": "Score total BANT (0–100)." }
+      ]
+    },
+    {
+      "id": "preferred_channel_detection",
+      "name": "Detección de Canal Preferido",
+      "description": "Identifica el canal de contacto preferido del lead.",
+      "inputs": [
+        { "name": "interaction_history", "type": "array", "description": "Eventos de interacción con canal y timestamps." }
+      ],
+      "outputs": [
+        { "name": "preferred_channel", "type": "string", "description": "email | whatsapp | llamada | linkedin | otro." }
+      ]
+    },
+    {
+      "id": "followup_scheduling",
+      "name": "Programación Óptima de Seguimiento",
+      "description": "Define el mejor momento para el siguiente follow-up.",
+      "inputs": [
+        { "name": "timezone", "type": "string", "description": "Zona horaria del lead." },
+        { "name": "past_open_times", "type": "array", "description": "Horas históricas de apertura/clic." },
+        { "name": "work_schedule_pattern", "type": "string", "description": "Patrones de horario laboral si se conocen." }
+      ],
+      "outputs": [
+        { "name": "next_followup_datetime", "type": "string", "description": "Fecha y hora recomendada para el siguiente contacto." }
+      ]
+    },
+    {
+      "id": "not_interested_detection",
+      "name": "Detección de 'No Interesado Real'",
+      "description": "Distingue entre 'no ahora' y 'no nunca'.",
+      "inputs": [
+        { "name": "reply_text", "type": "string", "description": "Respuesta del lead." },
+        { "name": "history", "type": "object", "description": "Historial de interacciones previas." }
+      ],
+      "outputs": [
+        { "name": "not_interested_type", "type": "string", "description": "temporal | definitivo." }
+      ]
+    },
+    {
+      "id": "account_grouping",
+      "name": "Agrupación de Leads por Cuenta",
+      "description": "Agrupa leads que pertenecen a la misma empresa.",
+      "inputs": [
+        { "name": "email_domain", "type": "string", "description": "Dominio del email del lead." },
+        { "name": "company_name", "type": "string", "description": "Nombre de la empresa." }
+      ],
+      "outputs": [
+        { "name": "account_id", "type": "string", "description": "ID único de la cuenta." },
+        { "name": "account_leads_list", "type": "array", "description": "Lista de IDs de leads asociados a la cuenta." }
+      ]
+    },
+    {
+      "id": "duplicate_lead_detection",
+      "name": "Detección de Duplicados",
+      "description": "Detecta leads duplicados y sugiere merge.",
+      "inputs": [
+        { "name": "email", "type": "string", "description": "Email del lead." },
+        { "name": "phone", "type": "string", "description": "Teléfono del lead." },
+        { "name": "name", "type": "string", "description": "Nombre del lead." },
+        { "name": "company", "type": "string", "description": "Empresa del lead." }
+      ],
+      "outputs": [
+        { "name": "duplicate_lead_ids", "type": "array", "description": "IDs de leads potencialmente duplicados." },
+        { "name": "merge_suggestion", "type": "boolean", "description": "True si se recomienda fusionar." }
+      ]
+    },
+    {
+      "id": "lead_assignment_routing",
+      "name": "Ruta de Asignación a SDR/Closer",
+      "description": "Decide a qué representante asignar el lead.",
+      "inputs": [
+        { "name": "territory", "type": "string", "description": "Región o país del lead." },
+        { "name": "language", "type": "string", "description": "Idioma preferido del lead." },
+        { "name": "deal_size", "type": "number", "description": "Tamaño potencial del deal." },
+        { "name": "rep_capacity", "type": "array", "description": "Capacidad y carga actual de cada representante." }
+      ],
+      "outputs": [
+        { "name": "assigned_rep_id", "type": "string", "description": "ID del representante asignado." }
+      ]
+    },
+    {
+      "id": "deal_value_prediction",
+      "name": "Predicción de Valor de Oportunidad",
+      "description": "Estima el valor potencial del deal.",
+      "inputs": [
+        { "name": "company_size", "type": "string", "description": "Tamaño de la empresa." },
+        { "name": "product_tier", "type": "string", "description": "Tier de producto de interés." },
+        { "name": "historical_deals", "type": "array", "description": "Deals históricos con tamaño y tier similares." }
+      ],
+      "outputs": [
+        { "name": "expected_deal_value", "type": "number", "description": "Valor estimado del deal." }
+      ]
+    },
+    {
+      "id": "early_churn_signals",
+      "name": "Detección de Señales de Churn Temprano",
+      "description": "Detecta si un lead se está enfriando.",
+      "inputs": [
+        { "name": "days_since_last_touch", "type": "number", "description": "Días desde el último contacto." },
+        { "name": "unopened_emails", "type": "number", "description": "Cantidad de correos no abiertos." },
+        { "name": "no_shows", "type": "number", "description": "Cantidad de no-shows a llamadas/reuniones." }
+      ],
+      "outputs": [
+        { "name": "churn_risk_level", "type": "string", "description": "bajo | medio | alto." }
+      ]
+    },
+    {
+      "id": "lead_source_classification",
+      "name": "Clasificación de Fuente de Lead",
+      "description": "Etiqueta la fuente real del lead.",
+      "inputs": [
+        { "name": "utm_params", "type": "object", "description": "Parámetros UTM de la sesión." },
+        { "name": "referrer", "type": "string", "description": "URL de referencia." },
+        { "name": "form_source", "type": "string", "description": "Origen del formulario (landing, popup, etc.)." }
+      ],
+      "outputs": [
+        { "name": "lead_source", "type": "string", "description": "ads | organico | referral | outbound | otro." }
+      ]
+    },
+    {
+      "id": "content_engagement_scoring",
+      "name": "Scoring por Engagement en Contenido",
+      "description": "Mide el interés del lead en el contenido.",
+      "inputs": [
+        { "name": "content_views", "type": "array", "description": "Vistas de contenido con IDs y timestamps." },
+        { "name": "time_on_page", "type": "array", "description": "Tiempo en página por contenido." },
+        { "name": "downloads", "type": "array", "description": "Descargas de recursos (PDFs, guías, etc.)." }
+      ],
+      "outputs": [
+        { "name": "content_engagement_score", "type": "number", "description": "Score de engagement (0–100)." }
+      ]
+    },
+    {
+      "id": "sub_niche_detection",
+      "name": "Detección de Nicho Específico",
+      "description": "Identifica el subnicho del lead dentro de su industria.",
+      "inputs": [
+        { "name": "website_text", "type": "string", "description": "Texto del sitio web de la empresa." },
+        { "name": "linkedin_company_description", "type": "string", "description": "Descripción de la empresa en LinkedIn." }
+      ],
+      "outputs": [
+        { "name": "sub_niche", "type": "string", "description": "Subnicho (ej. 'SaaS_B2B', 'agencia_marketing', 'ecommerce')." }
+      ]
+    },
+    {
+      "id": "digital_maturity_classification",
+      "name": "Clasificación de Madurez Digital",
+      "description": "Evalúa el nivel de madurez digital del lead.",
+      "inputs": [
+        { "name": "tech_stack", "type": "array", "description": "Herramientas tecnológicas usadas." },
+        { "name": "ad_platforms_used", "type": "array", "description": "Plataformas de anuncios usadas." },
+        { "name": "analytics_tools", "type": "array", "description": "Herramientas de analítica." }
+      ],
+      "outputs": [
+        { "name": "digital_maturity_level", "type": "string", "description": "basico | intermedio | avanzado." }
+      ]
+    },
+    {
+      "id": "key_objections_detection",
+      "name": "Detección de Objeciones Clave",
+      "description": "Identifica las objeciones principales del lead.",
+      "inputs": [
+        { "name": "call_transcripts", "type": "string", "description": "Transcripciones de llamadas." },
+        { "name": "email_replies", "type": "string", "description": "Respuestas por correo." }
+      ],
+      "outputs": [
+        { "name": "objection_categories", "type": "array", "description": "Lista de categorías de objeción (precio, tiempo, prioridad, confianza, etc.)." }
+      ]
+    },
+    {
+      "id": "close_probability_estimation",
+      "name": "Probabilidad de Cierre",
+      "description": "Estima la probabilidad de ganar el deal.",
+      "inputs": [
+        { "name": "lead_score", "type": "number", "description": "Score del lead (0–100)." },
+        { "name": "bant_score", "type": "number", "description": "Score BANT (0–100)." },
+        { "name": "engagement_score", "type": "number", "description": "Score de engagement (0–100)." },
+        { "name": "stage", "type": "string", "description": "Etapa actual del lead." }
+      ],
+      "outputs": [
+        { "name": "close_probability", "type": "number", "description": "Probabilidad de cierre (0–1)." }
+      ]
+    },
+    {
+      "id": "next_best_action",
+      "name": "Siguiente Mejor Acción (NBA)",
+      "description": "Recomienda el siguiente paso a ejecutar con el lead.",
+      "inputs": [
+        { "name": "stage", "type": "string", "description": "Etapa actual del lead." },
+        { "name": "engagement_history", "type": "array", "description": "Historial de interacciones." },
+        { "name": "preferred_channel", "type": "string", "description": "Canal preferido del lead." },
+        { "name": "objections", "type": "array", "description": "Objeciones detectadas." }
+      ],
+      "outputs": [
+        { "name": "next_best_action", "type": "string", "description": "Acción recomendada (ej. 'enviar_email_caso_estudio', 'agendar_llamada', etc.)." }
+      ]
+    },
+    {
+      "id": "language_and_tone_detection",
+      "name": "Detección de Lenguaje y Tono",
+      "description": "Detecta idioma y tono del lead para ajustar comunicaciones.",
+      "inputs": [
+        { "name": "lead_messages", "type": "string", "description": "Mensajes escritos por el lead." }
+      ],
+      "outputs": [
+        { "name": "language", "type": "string", "description": "Idioma detectado (es, en, etc.)." },
+        { "name": "tone_style", "type": "string", "description": "formal | casual | técnico." }
+      ]
+    },
+    {
+      "id": "primary_use_case_grouping",
+      "name": "Agrupación por Prioridad de Caso de Uso",
+      "description": "Determina el caso de uso principal a vender.",
+      "inputs": [
+        { "name": "pain_points", "type": "array", "description": "Dolores detectados del lead." },
+        { "name": "industry", "type": "string", "description": "Industria del lead." },
+        { "name": "size", "type": "string", "description": "Tamaño de la empresa." }
+      ],
+      "outputs": [
+        { "name": "primary_use_case", "type": "string", "description": "Caso de uso principal (ej. 'bajar_CAC', 'automatizar_prospeccion')." }
+      ]
+    },
+    {
+      "id": "contact_data_validation",
+      "name": "Validación de Datos de Contacto",
+      "description": "Valida email y teléfono del lead.",
+      "inputs": [
+        { "name": "email", "type": "string", "description": "Email del lead." },
+        { "name": "phone", "type": "string", "description": "Teléfono del lead." }
+      ],
+      "outputs": [
+        { "name": "email_valid", "type": "boolean", "description": "True si el email es válido." },
+        { "name": "phone_valid", "type": "boolean", "description": "True si el teléfono es válido." },
+        { "name": "validation_reason", "type": "string", "description": "Motivo principal de invalidez si aplica." }
+      ]
+    },
+    {
+      "id": "cross_sell_detection",
+      "name": "Detección de Multi-Interés (Cross-sell)",
+      "description": "Detecta oportunidades de cross-sell.",
+      "inputs": [
+        { "name": "products_interested", "type": "array", "description": "Productos o módulos de interés actual." },
+        { "name": "company_profile", "type": "object", "description": "Perfil de la empresa del lead." }
+      ],
+      "outputs": [
+        { "name": "cross_sell_opportunities", "type": "array", "description": "Lista de productos/módulos recomendados para cross-sell." }
+      ]
+    },
+    {
+      "id": "pipeline_type_classification",
+      "name": "Clasificación de Tipo de Pipeline",
+      "description": "Asigna el pipeline correcto al lead.",
+      "inputs": [
+        { "name": "product_line", "type": "string", "description": "Línea de producto de interés." },
+        { "name": "region", "type": "string", "description": "Región del lead." },
+        { "name": "deal_size", "type": "number", "description": "Tamaño potencial del deal." }
+      ],
+      "outputs": [
+        { "name": "pipeline_id", "type": "string", "description": "ID del pipeline asignado." }
+      ]
+    },
+    {
+      "id": "referral_potential_scoring",
+      "name": "Detección de Señales de Referencia",
+      "description": "Evalúa el potencial del lead para referir a otros.",
+      "inputs": [
+        { "name": "satisfaction_signals", "type": "string", "description": "Señales de satisfacción o entusiasmo." },
+        { "name": "network_size", "type": "string", "description": "Tamaño de la red del contacto (ej. seguidores, conexiones)." },
+        { "name": "role", "type": "string", "description": "Rol del contacto (ej. agencia, consultor, founder)." }
+      ],
+      "outputs": [
+        { "name": "referral_potential_score", "type": "number", "description": "Score de potencial de referencia (0–100)." }
+      ]
+    },
+    {
+      "id": "buying_window_prioritization",
+      "name": "Priorización por Ventana de Compra",
+      "description": "Clasifica al lead según su ventana de compra.",
+      "inputs": [
+        { "name": "timeline_info", "type": "string", "description": "Frases sobre cuándo planean comprar." },
+        { "name": "budget_cycle_data", "type": "string", "description": "Información sobre ciclos de presupuesto si existe." }
+      ],
+      "outputs": [
+        { "name": "buying_window_category", "type": "string", "description": "0_30_dias | 30_90_dias | mas_90_dias." }
+      ]
+    },
+    {
+      "id": "master_lead_score",
+      "name": "Score Compuesto de Lead (Master Score)",
+      "description": "Unifica múltiples señales en un solo score maestro.",
+      "inputs": [
+        { "name": "lead_score", "type": "number", "description": "Score de interés general (0–100)." },
+        { "name": "icp_fit_score", "type": "number", "description": "Score de encaje ICP (0–100)." },
+        { "name": "bant_score", "type": "number", "description": "Score BANT (0–100)." },
+        { "name": "engagement_score", "type": "number", "description": "Score de engagement (0–100)." },
+        { "name": "urgency_score", "type": "number", "description": "Score de urgencia (0–100)." },
+        { "name": "close_probability", "type": "number", "description": "Probabilidad de cierre (0–1)." }
+      ],
+      "outputs": [
+        { "name": "master_lead_score", "type": "number", "description": "Score maestro de 0 a 100." }
+      ]
+    }
+  ]
+}
