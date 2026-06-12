@@ -11,6 +11,10 @@ on:
       - '.github/copilot/agents/**'
       - '.github/workflows/production-go-no-go.yml'
 
+permissions:
+  contents: read
+  actions: read
+
 jobs:
   gate:
     runs-on: ubuntu-latest

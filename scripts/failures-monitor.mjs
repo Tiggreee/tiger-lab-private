@@ -9,13 +9,13 @@ const MAX_FAILURES = 100;
 
 function run(cmd) {
   try {
-    return execSync(cmd, { encoding: 'utf8', timeout: 30000, shell: 'powershell' }).trim();
+    return execSync(cmd, { encoding: 'utf8', timeout: 30000 }).trim();
   } catch (e) { return null; }
 }
 
 function runGh(cmd) {
   try {
-    return execSync(cmd, { encoding: 'utf8', timeout: 30000, shell: 'powershell' }).trim();
+    return execSync(cmd, { encoding: 'utf8', timeout: 30000 }).trim();
   } catch (e) { return null; }
 }
 
