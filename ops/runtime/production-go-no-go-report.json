@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-12T09:19:28.786Z",
+  "generatedAt": "2026-06-12T09:45:45.295Z",
   "strict": false,
-  "gateStatus": "GO",
+  "gateStatus": "GO_WITH_WARNINGS",
   "summary": {
-    "pass": 11,
-    "warn": 0,
+    "pass": 13,
+    "warn": 1,
     "fail": 0
   },
   "checks": [
@@ -151,7 +151,43 @@
         "ui-host/src/state/uiStore.ts"
       ],
       "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P12",
+      "title": "GitHub Actions operacional",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "Actions permission: all · Último CI: success",
+      "evidence": [],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P13",
+      "title": "Test coverage thresholds",
+      "severity": "high",
+      "status": "PASS",
+      "details": "Thresholds: lines 35%, statements 35%",
+      "evidence": [
+        "vitest.config.ts"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P14",
+      "title": "Railway deploy status",
+      "severity": "high",
+      "status": "WARN",
+      "details": "Último Railway deploy: failure",
+      "evidence": [
+        ".github/workflows/backend-railway-deploy.yml"
+      ],
+      "ownerAction": "Revisar Railway deploy logs."
     }
   ],
-  "ownerNextActions": []
+  "ownerNextActions": [
+    {
+      "id": "P14",
+      "action": "Revisar Railway deploy logs."
+    }
+  ]
 }

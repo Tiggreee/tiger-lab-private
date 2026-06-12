@@ -264,6 +264,57 @@ addCheck('P11', 'Hardening de seguridad y checkout', 'critical', () => {
   };
 });
 
+addCheck('P12', 'GitHub Actions operacional', 'critical', () => {
+  const permCmd = runCommand('gh', ['api', 'repos/Tiggreee/tiger-lab-private/actions/permissions', '--jq', '.allowed_actions']);
+  const permOk = permCmd.ok && permCmd.stdout.trim() === 'all';
+  if (!permOk) {
+    return { status: 'FAIL', details: `Actions permission: ${permCmd.stdout || 'unknown'} — debe ser "all"`, evidence: [], ownerAction: 'Ejecutar: gh api repos/Tiggreee/tiger-lab-private/actions/permissions -X PUT --field enabled=true --field allowed_actions=all' };
+  }
+  const runsCmd = runCommand('gh', ['run', 'list', '--workflow', 'ci.yml', '--limit', '3', '--json', 'conclusion', '--repo', 'Tiggreee/tiger-lab-private']);
+  if (!runsCmd.ok) {
+    return { status: 'WARN', details: 'No se pudieron consultar runs de CI', evidence: [], ownerAction: 'Verificar que gh CLI tenga acceso al repo.' };
+  }
+  const runs = JSON.parse(runsCmd.stdout);
+  const lastRun = runs[0]?.conclusion || 'unknown';
+  const latestOk = lastRun === 'success';
+  return {
+    status: latestOk ? 'PASS' : 'WARN',
+    details: latestOk ? `Actions permission: all · Último CI: ${lastRun}` : `Último CI: ${lastRun}`,
+    evidence: [],
+    ownerAction: latestOk ? 'Sin accion.' : 'Revisar logs de CI y corregir fallos.'
+  };
+});
+
+addCheck('P13', 'Test coverage thresholds', 'high', () => {
+  const vc = readText('vitest.config.ts');
+  const lineMatch = vc.match(/lines:\s*(\d+)/);
+  const stmtMatch = vc.match(/statements:\s*(\d+)/);
+  const linesThreshold = lineMatch ? parseInt(lineMatch[1]) : 0;
+  const stmtThreshold = stmtMatch ? parseInt(stmtMatch[1]) : 0;
+  const ok = linesThreshold >= 30 && stmtThreshold >= 30;
+  return {
+    status: ok ? 'PASS' : 'WARN',
+    details: ok ? `Thresholds: lines ${linesThreshold}%, statements ${stmtThreshold}%` : `Thresholds muy bajos: lines ${linesThreshold}%, stmts ${stmtThreshold}%`,
+    evidence: ['vitest.config.ts'],
+    ownerAction: ok ? 'Sin accion.' : 'Revisar thresholds en vitest.config.ts.'
+  };
+});
+
+addCheck('P14', 'Railway deploy status', 'high', () => {
+  const depCmd = runCommand('gh', ['run', 'list', '--workflow', 'backend-railway-deploy.yml', '--limit', '1', '--json', 'conclusion', '--repo', 'Tiggreee/tiger-lab-private']);
+  if (!depCmd.ok) {
+    return { status: 'WARN', details: 'No se pudo consultar Railway deploy', evidence: ['.github/workflows/backend-railway-deploy.yml'], ownerAction: 'Verificar gh CLI.' };
+  }
+  const deps = JSON.parse(depCmd.stdout);
+  const lastDep = deps[0]?.conclusion || 'unknown';
+  return {
+    status: lastDep === 'success' ? 'PASS' : 'WARN',
+    details: lastDep === 'success' ? 'Railway deploy OK' : `Último Railway deploy: ${lastDep}`,
+    evidence: ['.github/workflows/backend-railway-deploy.yml'],
+    ownerAction: lastDep === 'success' ? 'Sin accion.' : 'Revisar Railway deploy logs.'
+  };
+});
+
 const failCount = checks.filter((c) => c.status === 'FAIL').length;
 const warnCount = checks.filter((c) => c.status === 'WARN').length;
 const passCount = checks.filter((c) => c.status === 'PASS').length;
