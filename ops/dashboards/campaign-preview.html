@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Preview Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f0f0f;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #222;
+            padding-bottom: 20px;
+        }
+        h1 { font-size: 28px; margin-bottom: 5px; color: #fff; }
+        .subtitle { color: #888; font-size: 14px; }
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        select, input {
+            padding: 10px 15px;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            color: #e0e0e0;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        select { flex: 1; min-width: 250px; }
+        button {
+            padding: 10px 20px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        button:hover { background: #1d4ed8; }
+        button.secondary {
+            background: #666;
+        }
+        button.secondary:hover {
+            background: #777;
+        }
+        button.validate {
+            background: #059669;
+        }
+        button.validate:hover {
+            background: #047857;
+        }
+
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px; }
+        @media (max-width: 1024px) { .grid { grid-template-columns: 1fr; } }
+
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .card h2 {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+            font-size: 13px;
+        }
+
+        .meta-item {
+            background: #0f0f0f;
+            padding: 10px;
+            border-radius: 4px;
+            border-left: 3px solid #2563eb;
+        }
+
+        .meta-label { color: #888; font-weight: 500; }
+        .meta-value { color: #fff; margin-top: 5px; word-break: break-word; }
+
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .channel-card {
+            background: #0f0f0f;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .channel-card:hover {
+            border-color: #2563eb;
+            background: #1a1a1a;
+        }
+
+        .channel-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .channel-score {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .score-badge {
+            background: #2563eb;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .lift-badge {
+            background: #059669;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-weight: 600;
+        }
+
+        .channel-card.active {
+            border: 2px solid #2563eb;
+            background: #1a1a1a;
+        }
+
+        .full-width { grid-column: 1 / -1; }
+
+        .content-preview {
+            background: #0f0f0f;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-size: 13px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .variants-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .variants-container { grid-template-columns: 1fr; }
+        }
+
+        .variant-box {
+            background: #0f0f0f;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 12px;
+        }
+
+        .variant-label {
+            font-weight: 600;
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .funnel-section {
+            background: #0f0f0f;
+            border-left: 3px solid #2563eb;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .funnel-label {
+            color: #888;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .funnel-value {
+            color: #fff;
+            word-break: break-all;
+            font-size: 13px;
+        }
+
+        .quality-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .quality-metrics { grid-template-columns: 1fr; }
+        }
+
+        .metric-box {
+            background: #0f0f0f;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 5px;
+        }
+
+        .metric-label {
+            font-size: 12px;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .status-apply {
+            background: #059669;
+            color: white;
+        }
+
+        .status-review {
+            background: #d97706;
+            color: white;
+        }
+
+        .status-block {
+            background: #dc2626;
+            color: white;
+        }
+
+        .loading { text-align: center; padding: 40px; }
+        .error { background: #7f1d1d; border: 1px solid #dc2626; padding: 15px; border-radius: 6px; margin: 20px 0; }
+        .success { background: #0f3f2f; border: 1px solid #059669; padding: 15px; border-radius: 6px; margin: 20px 0; }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .action-buttons button {
+            flex: 1;
+        }
+
+        .scroll-hint {
+            color: #888;
+            font-size: 11px;
+            margin-top: 5px;
+            text-align: center;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px 20px;
+            color: #888;
+        }
+
+        .empty-state p { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Campaign Preview Dashboard</h1>
+            <p class="subtitle">Visualiza todas las campañas antes de lanzarlas a producción</p>
+        </header>
+
+        <div class="controls">
+            <select id="campaignSelect">
+                <option value="">Selecciona una campaña...</option>
+            </select>
+            <button onclick="loadCampaigns()">Recargar Campañas</button>
+            <button class="secondary" onclick="exportCampaign()">Exportar JSON</button>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <p>Cargando campañas...</p>
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+        <div id="success" class="success" style="display: none;"></div>
+
+        <div id="content" style="display: none;">
+            <!-- Campaign Overview -->
+            <div class="grid">
+                <div class="card">
+                    <h2>📋 Información de la Campaña</h2>
+                    <div class="meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Campaña ID</div>
+                            <div class="meta-value" id="campaignId"></div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Tema</div>
+                            <div class="meta-value" id="campaignTopic"></div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Oferta</div>
+                            <div class="meta-value" id="campaignOffer"></div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Audiencia</div>
+                            <div class="meta-value" id="campaignAudience"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>💼 Producto / Marca</h2>
+                    <div class="meta">
+                        <div class="meta-item">
+                            <div class="meta-label">Nombre</div>
+                            <div class="meta-value" id="productName"></div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Problema</div>
+                            <div class="meta-value" id="problemDetail"></div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Resultado Principal</div>
+                            <div class="meta-value" id="primaryOutcome"></div>
+                        </div>
+                        <div class="meta-item">
+                            <div class="meta-label">Punto de Prueba</div>
+                            <div class="meta-value" id="proofPoint"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quality Metrics -->
+            <div class="card">
+                <h2>📊 Métricas de Calidad</h2>
+                <div class="quality-metrics">
+                    <div class="metric-box">
+                        <div class="metric-value" id="metricAvgScore">-</div>
+                        <div class="metric-label">Score Promedio</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-value" id="metricLift">-</div>
+                        <div class="metric-label">Lift Proyectado</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-value" id="metricTarget">-</div>
+                        <div class="metric-label">Target Alcanzado</div>
+                    </div>
+                </div>
+                <div id="mcpDecision"></div>
+            </div>
+
+            <!-- Funnel Configuration -->
+            <div class="card">
+                <h2>🔗 Configuración del Embudo</h2>
+                <div class="funnel-section">
+                    <div class="funnel-label">Destino de Tráfico</div>
+                    <div class="funnel-value" id="trafficDest" style="font-family: monospace;"></div>
+                </div>
+                <div class="funnel-section">
+                    <div class="funnel-label">Canal de Cierre</div>
+                    <div class="funnel-value" id="closeChannel"></div>
+                </div>
+                <div class="funnel-section">
+                    <div class="funnel-label">Destino de Cierre</div>
+                    <div class="funnel-value" id="closeDest" style="font-family: monospace;"></div>
+                </div>
+                <div class="funnel-section">
+                    <div class="funnel-label">CTA Final</div>
+                    <div class="funnel-value" id="finalCta"></div>
+                </div>
+            </div>
+
+            <!-- Channels Overview -->
+            <div class="card full-width">
+                <h2>📱 Canales Disponibles</h2>
+                <div class="channels-grid" id="channelsGrid"></div>
+            </div>
+
+            <!-- Channel Content Preview -->
+            <div class="card full-width">
+                <h2 id="selectedChannelTitle">Selecciona un canal para previsualizar contenido</h2>
+                
+                <div id="channelContent" style="display: none;">
+                    <div class="funnel-section">
+                        <div class="funnel-label">Variante Seleccionada</div>
+                        <div class="funnel-value" id="selectedVariant"></div>
+                    </div>
+
+                    <div class="funnel-section">
+                        <div class="funnel-label">Score / Lift</div>
+                        <div class="funnel-value">
+                            Score: <strong id="channelScore"></strong> | Lift: <strong id="channelLift"></strong>
+                        </div>
+                    </div>
+
+                    <div class="funnel-section">
+                        <div class="funnel-label">URL con UTM</div>
+                        <div class="funnel-value" id="channelUTM" style="font-family: monospace; font-size: 11px;"></div>
+                    </div>
+
+                    <h3 style="margin-top: 20px; margin-bottom: 10px; font-size: 14px; color: #fff;">Contenido Principal (Variante Seleccionada)</h3>
+                    <div class="content-preview" id="mainContent"></div>
+                    <div class="scroll-hint">↕ Scroll para ver todo el contenido</div>
+
+                    <h3 style="margin-top: 20px; margin-bottom: 10px; font-size: 14px; color: #fff;">Variantes Alternativas</h3>
+                    <div class="variants-container" id="variantsContainer"></div>
+                </div>
+
+                <div id="emptyChannel" class="empty-state">
+                    <p>Haz clic en un canal para previsualizar su contenido</p>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="validate" onclick="validateCampaign()">✓ Validar Campaña</button>
+                <button class="secondary" onclick="copyToClipboard()">📋 Copiar Configuración</button>
+            </div>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+            <p>Selecciona una campaña del dropdown para comenzar</p>
+        </div>
+    </div>
+
+    <script>
+        const CAMPAIGNS_DIR = '../../ops/traffic/outbox/';
+        const CAMPAIGNS = [
+            'social-pack-trafico-activo-2026-05-29.json',
+            'social-pack-script-premium-kit-pilot.json',
+            'social-pack-mcp-leads-2026-06-11.json',
+            'social-pack-mcp-cfdi-2026-06-11.json',
+            'social-pack-launch-4-products.json',
+            'social-pack-facturautentico-cloud-pilot.json',
+            'social-pack-facturautentico-2026-05-29.json',
+            'social-pack-facturaautentica-railway-ready-2026-06-01.json',
+            'social-pack-facturaautentica-pilot.json',
+            'social-pack-docflow-api-pilot.json',
+            'social-pack-diagnostico-final-2026-05-30.json',
+            'social-pack-brand-auth-test.json',
+            'social-pack-all-about-money-pilot.json'
+        ];
+
+        let currentCampaign = null;
+        let selectedChannel = null;
+
+        function initializeCampaignSelect() {
+            const select = document.getElementById('campaignSelect');
+            CAMPAIGNS.forEach(campaign => {
+                const option = document.createElement('option');
+                option.value = campaign;
+                option.textContent = campaign.replace('social-pack-', '').replace('.json', '');
+                select.appendChild(option);
+            });
+            select.addEventListener('change', (e) => loadCampaignByFile(e.target.value));
+        }
+
+        function loadCampaigns() {
+            initializeCampaignSelect();
+            showSuccess('Campañas cargadas. Selecciona una del dropdown.');
+        }
+
+        function showError(msg) {
+            document.getElementById('error').textContent = msg;
+            document.getElementById('error').style.display = 'block';
+            document.getElementById('success').style.display = 'none';
+        }
+
+        function showSuccess(msg) {
+            document.getElementById('success').textContent = msg;
+            document.getElementById('success').style.display = 'block';
+            document.getElementById('error').style.display = 'none';
+        }
+
+        async function loadCampaignByFile(filename) {
+            if (!filename) {
+                document.getElementById('content').style.display = 'none';
+                document.getElementById('emptyState').style.display = 'block';
+                return;
+            }
+
+            try {
+                document.getElementById('loading').style.display = 'block';
+                const response = await fetch(CAMPAIGNS_DIR + filename);
+                if (!response.ok) throw new Error(`Error ${response.status}`);
+                const campaign = await response.json();
+                loadCampaign(campaign);
+                document.getElementById('loading').style.display = 'none';
+            } catch (error) {
+                showError(`Error cargando campaña: ${error.message}`);
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+
+        function loadCampaign(campaign) {
+            currentCampaign = campaign;
+            selectedChannel = null;
+
+            // Basic info
+            document.getElementById('campaignId').textContent = campaign.campaign || 'N/A';
+            document.getElementById('campaignTopic').textContent = campaign.topic || 'N/A';
+            document.getElementById('campaignOffer').textContent = campaign.offer || 'N/A';
+            document.getElementById('campaignAudience').textContent = campaign.audience || 'N/A';
+
+            // Brand
+            document.getElementById('productName').textContent = campaign.brand?.productName || 'N/A';
+            document.getElementById('problemDetail').textContent = campaign.brand?.problemDetail || 'N/A';
+            document.getElementById('primaryOutcome').textContent = campaign.brand?.primaryOutcome || 'N/A';
+            document.getElementById('proofPoint').textContent = campaign.brand?.proofPoint || 'N/A';
+
+            // Metrics
+            document.getElementById('metricAvgScore').textContent = campaign.quality?.averageScore || '-';
+            document.getElementById('metricLift').textContent = (campaign.quality?.projectedAverageLiftPct || 0) + '%';
+            document.getElementById('metricTarget').textContent = campaign.quality?.targetReached ? '✓ Sí' : 'No';
+
+            // MCP Decision
+            const mcpDecision = document.getElementById('mcpDecision');
+            if (campaign.mcpAudit) {
+                const decision = campaign.mcpAudit.decision || 'review';
+                const statusClass = decision === 'apply' ? 'status-apply' : (decision === 'block' ? 'status-block' : 'status-review');
+                mcpDecision.innerHTML = `<span class="status-badge ${statusClass}">MCP: ${decision.toUpperCase()}</span>`;
+            }
+
+            // Funnel
+            document.getElementById('trafficDest').textContent = campaign.funnel?.trafficDestination || 'N/A';
+            document.getElementById('closeChannel').textContent = campaign.funnel?.closeChannel || 'N/A';
+            document.getElementById('closeDest').textContent = campaign.funnel?.closeDestination || 'N/A';
+            document.getElementById('finalCta').textContent = campaign.funnel?.finalCta || 'N/A';
+
+            // Channels
+            renderChannels();
+            document.getElementById('content').style.display = 'block';
+            document.getElementById('emptyState').style.display = 'none';
+            showSuccess(`Campaña cargada: ${campaign.campaign}`);
+        }
+
+        function renderChannels() {
+            const grid = document.getElementById('channelsGrid');
+            grid.innerHTML = '';
+            const channels = ['linkedin', 'x', 'facebook', 'telegram', 'discord'];
+            
+            channels.forEach(channel => {
+                const data = currentCampaign.channels?.[channel];
+                if (!data) return;
+                
+                const card = document.createElement('div');
+                card.className = 'channel-card';
+                card.onclick = () => selectChannel(channel);
+                card.innerHTML = `
+                    <div class="channel-name">${channel}</div>
+                    <div class="channel-score">
+                        <div class="score-badge">${data.selectedScore || '-'}</div>
+                        <div class="lift-badge">${data.projectedLiftPct || '-'}%</div>
+                    </div>
+                    <div style="font-size: 11px; color: #888;">Var: ${data.selectedVariant || 'A'}</div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function selectChannel(channel) {
+            selectedChannel = channel;
+            const data = currentCampaign.channels?.[channel];
+            if (!data) return;
+
+            // Update active state
+            document.querySelectorAll('.channel-card').forEach((card, idx) => {
+                card.classList.remove('active');
+            });
+            event.target.closest('.channel-card').classList.add('active');
+
+            // Title
+            document.getElementById('selectedChannelTitle').textContent = `📱 ${channel.toUpperCase()} - Contenido`;
+
+            // Content
+            document.getElementById('selectedVariant').textContent = data.selectedVariant || 'A';
+            document.getElementById('channelScore').textContent = data.selectedScore || '-';
+            document.getElementById('channelLift').textContent = (data.projectedLiftPct || 0) + '%';
+            document.getElementById('channelUTM').textContent = data.utm || 'N/A';
+
+            // Main content (selected variant)
+            const variant = data.selectedVariant || 'A';
+            const content = data.variants?.[variant] || data.copyPaste || 'Sin contenido';
+            document.getElementById('mainContent').textContent = content;
+
+            // Variants
+            const variantsHtml = Object.keys(data.variants || {})
+                .filter(v => v !== variant)
+                .map(v => `
+                    <div class="variant-box">
+                        <div class="variant-label">Variante ${v}</div>
+                        <div class="content-preview" style="max-height: 150px;">${data.variants[v] || 'Sin contenido'}</div>
+                    </div>
+                `)
+                .join('');
+            
+            document.getElementById('variantsContainer').innerHTML = variantsHtml;
+
+            document.getElementById('channelContent').style.display = 'block';
+            document.getElementById('emptyChannel').style.display = 'none';
+        }
+
+        function validateCampaign() {
+            if (!currentCampaign) {
+                showError('Carga una campaña primero');
+                return;
+            }
+            const issues = [];
+            const channels = currentCampaign.channels || {};
+            
+            if (!currentCampaign.funnel?.trafficDestination) issues.push('❌ Sin destino de tráfico');
+            if (!currentCampaign.funnel?.closeDestination) issues.push('❌ Sin destino de cierre');
+            if (!currentCampaign.quality?.averageScore) issues.push('❌ Sin score de calidad');
+            
+            Object.keys(channels).forEach(ch => {
+                if (!channels[ch].copyPaste && !channels[ch].variants) {
+                    issues.push(`❌ ${ch}: Sin contenido`);
+                }
+            });
+
+            if (issues.length === 0) {
+                showSuccess(`✓ Campaña válida para lanzamiento en ${Object.keys(channels).length} canales`);
+            } else {
+                showError('Problemas encontrados:\n' + issues.join('\n'));
+            }
+        }
+
+        function copyToClipboard() {
+            if (!currentCampaign) return;
+            const json = JSON.stringify(currentCampaign, null, 2);
+            navigator.clipboard.writeText(json).then(() => {
+                showSuccess('Configuración copiada al portapapeles');
+            }).catch(() => {
+                showError('Error al copiar');
+            });
+        }
+
+        function exportCampaign() {
+            if (!currentCampaign) return;
+            const json = JSON.stringify(currentCampaign, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = currentCampaign.campaign + '.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        // Initialize on load
+        window.addEventListener('load', loadCampaigns);
+    </script>
+</body>
+</html>

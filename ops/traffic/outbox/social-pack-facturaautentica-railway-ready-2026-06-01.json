@@ -36,25 +36,45 @@
       "selectedVariant": "A",
       "selectedScore": 92,
       "projectedLiftPct": 18,
-      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=x&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01"
+      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=x&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01",
+      "copyPaste": "¿Timbrado manual? ¿Errores CFDI? Eso es costo operativo puro.\n\nFacturaAutentica valida tu captura ANTES de timbrar → menos rechazos SAT, menos retrabajo.\n\nDespachos contables SMB están reduciendo 40% del tiempo de facturación.\n\nDiagnostico operativo express 15 min: https://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica",
+      "variants": {
+        "A": "¿Timbrado manual? ¿Errores CFDI? Eso es costo operativo puro.\n\nFacturaAutentica valida tu captura ANTES de timbrar → menos rechazos SAT, menos retrabajo.\n\nDespachos contables SMB están reduciendo 40% del tiempo de facturación.\n\nDiagnostico operativo express 15 min: https://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica",
+        "B": "Tu error de CFDI no es por error tuyo. Es por falta de validacion previa.\n\nFacturaAutentica captura bien y timbra sin rechazos.\n\nTest gratis: 15 min de diagnostico operativo.\n\nhttps://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica"
+      }
     },
     "facebook": {
       "selectedVariant": "A",
       "selectedScore": 94,
       "projectedLiftPct": 19,
-      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=facebook&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01"
+      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=facebook&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01",
+      "copyPaste": "¿Tu despacho sigue timbrado facturas a mano?\n\nCada error de captura = rechazo SAT + 2h de retrabajo + cliente molesto.\n\nFacturaAutentica:\n✓ Valida antes de timbrar\n✓ Reduce errores 98%\n✓ Elimina retrabajo semanal\n✓ Integra con tu PAC en minutos\n\nDiagnostico operativo express (15 min, gratis).\nActiva FacturaAutentica aqui: https://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica",
+      "variants": {
+        "A": "¿Tu despacho sigue timbrado facturas a mano?\n\nCada error de captura = rechazo SAT + 2h de retrabajo + cliente molesto.\n\nFacturaAutentica:\n✓ Valida antes de timbrar\n✓ Reduce errores 98%\n✓ Elimina retrabajo semanal\n✓ Integra con tu PAC en minutos\n\nDiagnostico operativo express (15 min, gratis).\nActiva FacturaAutentica aqui: https://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica",
+        "B": "Si tu equipo de facturación sigue siendo un cuello de botella, aqui esta la raiz: falta validacion previa.\n\nFacturaAutentica es simple: capta bien, valida, timbra OK.\n\nSMBs reportan:\n→ Menos rechazos CFDI\n→ Menos horas de operaciones\n→ Clientes satisfechos\n\nDiagnostico gratis de 15 min. Agenda aqui: https://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica"
+      }
     },
     "telegram": {
       "selectedVariant": "A",
       "selectedScore": 95,
       "projectedLiftPct": 20,
-      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=telegram&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01"
+      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=telegram&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01",
+      "copyPaste": "FacturaAutentica: CFDI confiable sin retrabajo operativo\n\n🎯 Problema real: Timbrado manual → errores CFDI → rechazos SAT → 2h+ de retrabajo por semana.\n\n✓ Solución: Validacion previa = facturas que timbran OK a la primera.\n\n💼 Despachos contables y operaciones SMB reportan:\n- 98% menos rechazos\n- Operaciones 40% mas rapido\n- Cero retrabajo CFDI\n\n🔗 Diagnostico operativo express (15 min, gratis):\nhttps://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica",
+      "variants": {
+        "A": "FacturaAutentica: CFDI confiable sin retrabajo operativo\n\n🎯 Problema real: Timbrado manual → errores CFDI → rechazos SAT → 2h+ de retrabajo por semana.\n\n✓ Solución: Validacion previa = facturas que timbran OK a la primera.\n\n💼 Despachos contables y operaciones SMB reportan:\n- 98% menos rechazos\n- Operaciones 40% mas rapido\n- Cero retrabajo CFDI\n\n🔗 Diagnostico operativo express (15 min, gratis):\nhttps://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica",
+        "B": "Si tu despacho pierde 2h+ por semana en retrabajo CFDI, necesitas validacion previa.\n\nFacturaAutentica es exactamente eso: captura bien, valida, timbra.\n\nSin rechazos SAT. Sin retrabajo. Solo facturas OK.\n\nTest gratis en 15 minutos:\nhttps://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica"
+      }
     },
     "discord": {
       "selectedVariant": "A",
       "selectedScore": 92,
       "projectedLiftPct": 18,
-      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=discord&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01"
+      "utm": "https://tiger-lab-private-production.up.railway.app/?utm_source=discord&utm_medium=social&utm_campaign=facturaautentica-railway-ready-2026-06-01",
+      "copyPaste": "⚙️ **FacturaAutentica** - CFDI confiable sin retrabajo\n\n**Problema:** Timbrado manual, errores CFDI, retrabajo semanal.\n\n**Solucion:** Validacion previa antes de timbrar.\n\n**Resultado:**\n```\n✓ 98% menos rechazos SAT\n✓ 40% menos tiempo en operaciones\n✓ Cero retrabajo CFDI\n✓ Integra con tu PAC en minutos\n```\n\n**Para:** Despachos contables y operaciones SMB.\n\n**CTA:** Diagnostico operativo express (15 min, gratis):\nhttps://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica",
+      "variants": {
+        "A": "⚙️ **FacturaAutentica** - CFDI confiable sin retrabajo\n\n**Problema:** Timbrado manual, errores CFDI, retrabajo semanal.\n\n**Solucion:** Validacion previa antes de timbrar.\n\n**Resultado:**\n```\n✓ 98% menos rechazos SAT\n✓ 40% menos tiempo en operaciones\n✓ Cero retrabajo CFDI\n✓ Integra con tu PAC en minutos\n```\n\n**Para:** Despachos contables y operaciones SMB.\n\n**CTA:** Diagnostico operativo express (15 min, gratis):\nhttps://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica",
+        "B": "Si tu equipo pasa 2+ horas por semana en retrabajo CFDI, la raiz es simple: falta validacion previa.\n\n**FacturaAutentica** resuelve exactamente eso.\n\n- Captura bien\n- Valida\n- Timbra OK\n\nSin rechazos. Sin retrabajo. Solo facturas que funcionan.\n\nTest gratis (15 min):\nhttps://tiger-lab-private-production.up.railway.app/#/onboarding?product=facturaautentica"
+      }
     }
   }
 }
