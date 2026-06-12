@@ -267,7 +267,7 @@ async function postLinkedIn(text) {
     const resp = await fetch('https://api.linkedin.com/v2/ugcPosts', { method: 'POST', headers, body: JSON.stringify(payload) });
     const body = await resp.text();
     if (resp.ok) return body;
-    if (resp.status === 401) console.log('Org post failed (401), falling back to member post...');
+    if (resp.status === 401 || resp.status === 403) console.log('Org post failed, falling back to member post...');
     else throw new Error(`LinkedIn API ${resp.status}: ${body}`);
   }
 
@@ -277,8 +277,9 @@ async function postLinkedIn(text) {
     throw new Error(`LinkedIn /me API ${meResp.status}: ${errBody}`);
   }
   const me = await meResp.json();
-  const personId = me.sub || me.id;
-  if (!personId) throw new Error('Could not resolve LinkedIn person ID from /me endpoint');
+  const rawId = me.sub || me.id;
+  if (!rawId) throw new Error('Could not resolve LinkedIn person ID from /me endpoint');
+  const personId = rawId.replace(/^urn:li:person:/i, '');
 
   const payload = {
     author: `urn:li:person:${personId}`,
