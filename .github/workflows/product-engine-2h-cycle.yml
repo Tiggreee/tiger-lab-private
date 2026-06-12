@@ -18,6 +18,9 @@ on:
 env:
   NODE_VERSION: '20'
 
+permissions:
+  contents: write
+
 jobs:
   product-cycle:
     runs-on: ubuntu-latest

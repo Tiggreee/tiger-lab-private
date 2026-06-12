@@ -8,6 +8,10 @@ on:
 env:
   NODE_VERSION: '20'
 
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   scan-and-fix:
     runs-on: ubuntu-latest
