@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>TigerLab — Campaign Preview</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:13px/1.5 'Segoe UI',system-ui,sans-serif;background:#0c1117;color:#c9d1d9;padding:20px;max-width:900px;margin:0 auto}
+h1{font-size:1.1rem;color:#f0f6fc;margin-bottom:4px}
+h2{font-size:.8rem;color:#8b949e;text-transform:uppercase;letter-spacing:.5px;margin:16px 0 8px;padding-bottom:4px;border-bottom:1px solid #21262d}
+.meta{display:flex;gap:16px;font-size:.75rem;color:#8b949e;margin-bottom:16px}
+.meta b{color:#c9d1d9}
+.score-badge{display:inline-block;padding:2px 10px;border-radius:12px;font-weight:700;font-size:.75rem}
+.score-high{background:#1a3a2a;color:#3fb950}
+.score-mid{background:#3a2f1a;color:#d29922}
+.channel-card{background:#161b22;border:1px solid #21262d;border-radius:8px;padding:14px;margin:10px 0}
+.channel-card h3{font-size:.75rem;color:#58a6ff;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center}
+.channel-card .ch-info{font-size:.6rem;color:#8b949e}
+.copy-box{background:#0d1117;border:1px solid #30363d;border-radius:6px;padding:12px;font-size:.75rem;line-height:1.7;white-space:pre-wrap;font-family:'Segoe UI',system-ui,sans-serif;color:#c9d1d9;max-height:300px;overflow-y:auto}
+.approved{background:#1a3a2a;color:#3fb950;padding:2px 8px;border-radius:8px;font-size:.6rem;font-weight:600}
+.pending{background:#3a2f1a;color:#d29922;padding:2px 8px;border-radius:8px;font-size:.6rem;font-weight:600}
+.status-bar{display:flex;gap:12px;align-items:center;margin-bottom:16px}
+.actions{display:flex;gap:8px;margin-top:20px}
+.actions button{padding:8px 20px;border:none;border-radius:6px;font-size:.75rem;cursor:pointer;font-weight:600}
+.btn-approve{background:#238636;color:#fff}
+.btn-reject{background:#f85149;color:#fff}
+.btn-back{background:#21262d;color:#c9d1d9}
+footer{text-align:center;font-size:.65rem;color:#484f58;margin-top:30px;padding-top:10px;border-top:1px solid #21262d}
+</style>
+</head>
+<body>
+<h1 id="campaignTitle">🎯 Loading...</h1>
+<div class="status-bar">
+  <span id="statusBadge" class="pending">⏳ PENDING</span>
+  <span id="scoreBadge" class="score-badge score-high">0/100</span>
+  <span class="meta" id="metaInfo"></span>
+</div>
+<div id="channels"></div>
+<div class="actions">
+  <button class="btn-approve" onclick="approve()">✅ APPROVE</button>
+  <button class="btn-reject" onclick="reject()">❌ REJECT</button>
+  <button class="btn-back" onclick="window.close()">← Back</button>
+</div>
+<footer>TigerLab Campaign Preview — <span id="footerTime"></span></footer>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get('id');
+let campaign = null;
+
+async function load() {
+  if (!id) { document.body.innerHTML = '<h1>❌ No campaign ID provided</h1>'; return; }
+  
+  try {
+    // Load campaign index
+    const idx = await fetch('/runtime/campaigns/index.json');
+    const data = await idx.json();
+    campaign = data.campaigns?.find(c => c.id === id);
+    
+    if (!campaign) throw new Error('Campaign not found');
+    
+    document.title = `${campaign.product} — Campaign Preview`;
+    document.getElementById('campaignTitle').textContent = `🎯 ${campaign.product}`;
+    document.getElementById('scoreBadge').textContent = `${campaign.score}/100`;
+    document.getElementById('scoreBadge').className = `score-badge ${campaign.score >= 80 ? 'score-high' : 'score-mid'}`;
+    document.getElementById('statusBadge').textContent = campaign.status === 'approved' ? '✅ APPROVED' : '⏳ PENDING';
+    document.getElementById('statusBadge').className = campaign.status === 'approved' ? 'approved' : 'pending';
+    document.getElementById('metaInfo').innerHTML = `<b>Target:</b> ${campaign.target||'N/A'} | <b>Channels:</b> ${(campaign.channels||[]).join(', ')}`;
+    document.getElementById('footerTime').textContent = new Date().toLocaleString();
+    
+    // Load each channel's content
+    const channels = campaign.channels || ['email','linkedin','x','facebook','telegram','discord'];
+    const exts = { email:'html', linkedin:'txt', x:'txt', facebook:'txt', telegram:'md', discord:'md' };
+    const labels = { email:'📧 Email', linkedin:'💼 LinkedIn', x:'🐦 X/Twitter', facebook:'📘 Facebook', telegram:'📱 Telegram', discord:'💬 Discord' };
+    
+    let html = '';
+    for (const ch of channels) {
+      const ext = exts[ch] || 'txt';
+      try {
+        const r = await fetch(`/runtime/campaigns/${id}/${ch}.${ext}`);
+        const copy = r.ok ? await r.text() : 'Content not available';
+        html += `<div class="channel-card">
+          <h3>${labels[ch]||ch} <span class="ch-info">${ext} · ${copy.length} chars</span></h3>
+          <div class="copy-box">${copy.substring(0, 2000)}</div>
+        </div>`;
+      } catch {
+        html += `<div class="channel-card"><h3>${labels[ch]||ch}</h3><div class="copy-box">Loading...</div></div>`;
+      }
+    }
+    document.getElementById('channels').innerHTML = html;
+    
+  } catch (e) {
+    document.body.innerHTML = `<h1>❌ Error loading campaign</h1><p>${e.message}</p><p>Campaign ID: ${id}</p>`;
+  }
+}
+
+function approve() {
+  fetch('/runtime/campaigns/approve', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id,action:'approve'}) });
+  document.getElementById('statusBadge').textContent = '✅ APPROVED';
+  document.getElementById('statusBadge').className = 'approved';
+  if (window.opener) window.opener.location.reload();
+}
+
+function reject() {
+  if (confirm('Reject this campaign?')) {
+    document.getElementById('statusBadge').textContent = '❌ REJECTED';
+    document.getElementById('statusBadge').className = 'pending';
+    if (window.opener) window.opener.location.reload();
+  }
+}
+
+load();
+</script>
+</body>
+</html>

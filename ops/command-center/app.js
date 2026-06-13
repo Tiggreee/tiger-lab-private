@@ -98,7 +98,7 @@ async function renderCampaigns() {
   list.innerHTML = campaigns.map(c => {
     const color = colors[c.product] || '#1f6feb';
     const statusIcon = c.status === 'approved' ? '✅' : '⏳';
-    return `<button onclick="window.showRealCampaign('${c.id}')" style="display:block;width:100%;padding:6px 8px;border:none;border-radius:4px;background:${color};color:${color==='#d29922'?'#000':'#fff'};font-size:.7rem;cursor:pointer;margin:2px 0;font-weight:600;text-align:left;">
+    return `<button onclick="window.open('/command-center/campaign-preview.html?id=${c.id}','_blank')" style="display:block;width:100%;padding:6px 8px;border:none;border-radius:4px;background:${color};color:${color==='#d29922'?'#000':'#fff'};font-size:.7rem;cursor:pointer;margin:2px 0;font-weight:600;text-align:left;">
       ${statusIcon} ${c.product} <span style="opacity:.7;font-size:.6rem;">${c.score}/100</span>
     </button>`;
   }).join('');
