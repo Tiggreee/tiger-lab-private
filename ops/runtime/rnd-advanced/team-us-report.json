@@ -1,0 +1,102 @@
+{
+  "teamId": "rnd-us",
+  "market": "US",
+  "generatedAt": "2026-06-13T09:27:13.442Z",
+  "mission": "Develop ONE product based on real science not yet perceived by humanity",
+  "totalResearchLines": 5,
+  "productsIdentified": [
+    "BCI no invasiva con intención predictiva",
+    "Meta-material generativo para óptica cuántica",
+    "Diseño de proteínas de novo para terapias personalizadas",
+    "Agente autónomo multisistema con memoria federada",
+    "Sistema de gobernanza algorítmica para DAOs/cooperativas"
+  ],
+  "researchLines": [
+    {
+      "researchLine": "AI+Neurociencia",
+      "product": "BCI no invasiva con intención predictiva",
+      "feasibility": "2026: EEG consumer + LLM fine-tuning → viable prototype",
+      "adaptation": "Direct neural interface for productivity. Enterprise BCI for developers",
+      "regulation": "FDA 510(k) clearance pathway",
+      "marketOpportunity": "$6.2B BCI market by 2027",
+      "scientificBasis": [
+        "Nature Neuroscience",
+        "IEEE Trans Neural Systems",
+        "arXiv q-bio.NC",
+        "Stanford HAI",
+        "Neuralink Research"
+      ],
+      "status": "RESEARCHING",
+      "nextStep": "Validate scientific foundation in Nature Neuroscience"
+    },
+    {
+      "researchLine": "AI+Materiales",
+      "product": "Meta-material generativo para óptica cuántica",
+      "feasibility": "2026: diffusion models + DFT simulations → computational design validated",
+      "adaptation": "Quantum optics components for computing. Meta-lenses for AR/VR",
+      "regulation": "ITAR-controlled materials compliance",
+      "marketOpportunity": "$1.8B meta-materials market by 2028",
+      "scientificBasis": [
+        "Nature Materials",
+        "Science Advances",
+        "ACS Nano",
+        "MIT Materials",
+        "arXiv cond-mat.mtrl-sci"
+      ],
+      "status": "RESEARCHING",
+      "nextStep": "Validate scientific foundation in Nature Neuroscience"
+    },
+    {
+      "researchLine": "AI+Biotecnología",
+      "product": "Diseño de proteínas de novo para terapias personalizadas",
+      "feasibility": "2026: AlphaFold3 + RFdiffusion → validated in silico. Wet lab pending",
+      "adaptation": "Personalized cancer immunotherapy. Venture-backed biotech play",
+      "regulation": "FDA BLA (Biologics License Application)",
+      "marketOpportunity": "$120B biologics market",
+      "scientificBasis": [
+        "Cell",
+        "Nature Biotech",
+        "DeepMind AlphaFold",
+        "bioRxiv",
+        "NVIDIA BioNeMo"
+      ],
+      "status": "RESEARCHING",
+      "nextStep": "Validate scientific foundation in Nature Neuroscience"
+    },
+    {
+      "researchLine": "AI+Automatización",
+      "product": "Agente autónomo multisistema con memoria federada",
+      "feasibility": "2026: Multi-agent LLMs + vector DBs → functional prototype. Scaling challenge",
+      "adaptation": "Enterprise autonomous operations. Agent swarm for DevOps/SRE",
+      "regulation": "SOC 2 compliance",
+      "marketOpportunity": "$15B autonomous operations market",
+      "scientificBasis": [
+        "arXiv cs.AI",
+        "IEEE Autonomous Systems",
+        "Anthropic Research",
+        "OpenAI Papers",
+        "ACM SIGAI"
+      ],
+      "status": "RESEARCHING",
+      "nextStep": "Validate scientific foundation in Nature Neuroscience"
+    },
+    {
+      "researchLine": "AI+Economía Futura",
+      "product": "Sistema de gobernanza algorítmica para DAOs/cooperativas",
+      "feasibility": "2026: Smart contracts + LLM governance → prototype on testnet",
+      "adaptation": "DAO governance for investment clubs and venture DAOs",
+      "regulation": "SEC guidance on digital assets",
+      "marketOpportunity": "$27B DAO treasury market",
+      "scientificBasis": [
+        "arXiv econ.GN",
+        "MIT Tech Review",
+        "Stanford Digital Economy",
+        "WIPO Patent DB",
+        "USPTO AI Patents"
+      ],
+      "status": "RESEARCHING",
+      "nextStep": "Validate scientific foundation in Nature Neuroscience"
+    }
+  ],
+  "priorityAction": "BCI no invasiva con intención predictiva — 2026: EEG consumer + LLM fine-tuning → viable prototype"
+}

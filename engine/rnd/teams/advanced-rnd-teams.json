@@ -1,0 +1,50 @@
+{
+  "mission": "Develop products based on REAL SCIENCE that already exists in papers, patents, prototypes — but humanity does NOT yet perceive as possible or near. Achieve ONE functional product short-term.",
+  "researchLines": [
+    { "id":"rl-1", "name":"AI+Neurociencia — BCI no invasivas + modelos de intención", "sources":["Nature Neuroscience","IEEE Neural Systems","arXiv q-bio.NC","Stanford HAI BCI Lab","Neuralink Papers"], "mandatory":true },
+    { "id":"rl-2", "name":"AI+Materiales — Diseño molecular + metamateriales + nanofabricación", "sources":["Nature Materials","Science Advances","ACS Nano","MIT Materials Science","arXiv cond-mat.mtrl-sci"], "mandatory":true },
+    { "id":"rl-3", "name":"AI+Biotecnología — Diseño de proteínas + terapias personalizadas + biofabricación", "sources":["Cell","Nature Biotech","DeepMind AlphaFold Papers","bioRxiv","NVIDIA BioNeMo"], "mandatory":true },
+    { "id":"rl-4", "name":"AI+Automatización — Agentes autónomos multisistema + infraestructura auto-gestionada", "sources":["arXiv cs.AI","IEEE Autonomous Systems","Anthropic Research","OpenAI Papers","ACM SIGAI"], "mandatory":true },
+    { "id":"rl-5", "name":"AI+Economía Futura — Mercados autónomos + gobernanza algorítmica + predicción macro", "sources":["arXiv econ.GN","MIT Tech Review","Stanford Digital Economy Lab","WIPO Patent DB","USPTO AI Patents"], "mandatory":true }
+  ],
+  "teams": {
+    "teamA": {
+      "id": "rnd-mx",
+      "market": "Mexico",
+      "specialization": "LatAm — recursos limitados, prototipado rápido, oportunidades subestimadas, adaptación cultural MX, regulación MX (COFEPRIS, IFT, SAT)",
+      "members": [
+        { "role":"Director de Investigación Científica", "id":"mx-sci-dir", "focus":"Validación científica en contexto MX. Conexión con UNAM, IPN, Tec de Monterrey. Priorizar investigación applicable en LatAm." },
+        { "role":"Ingeniero Senior de IA Generativa", "id":"mx-ai-eng", "focus":"Modelos ligeros optimizados para hardware limitado. Edge AI. Fine-tuning con datos MX. Modelos bilingües ES/EN." },
+        { "role":"Especialista en Modelos Multimodales", "id":"mx-multi", "focus":"Modelos texto-imagen-audio para español latino. Datasets MX. Adaptación cultural visual." },
+        { "role":"Analista de Patentes y Prospectiva", "id":"mx-patent", "focus":"IMPI (MX), WIPO LatAm. Patentes subexplotadas en LatAm. Oportunidades de salto tecnológico." },
+        { "role":"Ingeniero de Producto Futurista", "id":"mx-future", "focus":"Productos viables en 12-24 meses para mercado MX. Prototipado rápido. MVP-first." },
+        { "role":"Científico de Datos Experimentales", "id":"mx-data", "focus":"Datos públicos MX (INEGI, CONACYT). Experimentación con datasets limitados. Validación estadística." },
+        { "role":"Especialista en Ética y Regulación", "id":"mx-ethics", "focus":"Ley Federal de Protección de Datos MX. COFEPRIS. Regulación IA México. Ética en LatAm." },
+        { "role":"Ingeniero de Integración y Automatización", "id":"mx-integration", "focus":"Integración con infraestructura limitada. APIs ligeras. Automatización de bajo costo." },
+        { "role":"Diseñador de Experimentos Tecnológicos", "id":"mx-experiment", "focus":"Diseño experimental con recursos limitados. A/B testing en entornos MX. Validación de campo." },
+        { "role":"Arquitecto de Sistemas Autónomos", "id":"mx-architect", "focus":"Sistemas autónomos para PyMEs MX. Auto-scaling mínimo. Resiliencia en infraestructura limitada." }
+      ]
+    },
+    "teamB": {
+      "id": "rnd-us",
+      "market": "USA",
+      "specialization": "Silicon Valley standards. Labs, universities, patents, VC ecosystem. Global scalability. Frontier competitiveness.",
+      "members": [
+        { "role":"Director of Scientific Research", "id":"us-sci-dir", "focus":"Validation via Stanford, MIT, Berkeley. NSF grants. DARPA connect. Publication pipeline." },
+        { "role":"Senior GenAI Engineer", "id":"us-ai-eng", "focus":"Large-scale models. GPU clusters. SOTA architectures. NVIDIA CUDA optimization. Cloud-native." },
+        { "role":"Multimodal Models Specialist", "id":"us-multi", "focus":"Frontier multimodal: video, 3D, audio, text. GPT-5/Claude integration. Synthetic data generation." },
+        { "role":"Patent & Tech Foresight Analyst", "id":"us-patent", "focus":"USPTO, WIPO global. Silicon Valley patent landscape. Competitive intel. Freedom-to-operate." },
+        { "role":"Futurist Product Engineer", "id":"us-future", "focus":"Products viable in 6-18 months. Series A ready. Pitch deck quality. Investor-grade specs." },
+        { "role":"Experimental Data Scientist", "id":"us-data", "focus":"Big data. A/B at scale. Causal inference. Synthetic experiments. Statistical rigor." },
+        { "role":"Ethics & Regulation Specialist", "id":"us-ethics", "focus":"FDA, FTC, EU AI Act compliance. Responsible AI. Bias auditing. Privacy-by-design." },
+        { "role":"Integration & Automation Engineer", "id":"us-integration", "focus":"Enterprise integration. API-first. MCP servers. Cloud automation. CI/CD at scale." },
+        { "role":"Technology Experiment Designer", "id":"us-experiment", "focus":"Lab-grade experiments. Reproducible research. Open source tooling. Academic partnerships." },
+        { "role":"Autonomous Systems Architect", "id":"us-architect", "focus":"Self-managing infrastructure. Kubernetes-native. Auto-scaling global. Edge-to-cloud continuum." }
+      ]
+    }
+  },
+  "deliverables": {
+    "weekly": ["Technology Opportunity Map", "Possible-but-unperceived Products List", "Scientific Foundation per Product", "Conceptual Prototype", "Development Roadmap", "Experimental Validation", "Weekly Progress Report"],
+    "priority": "Identify products with SCIENTIFIC FOUNDATION that are NOT yet materialized due to perception, technology, or infrastructure limitations."
+  }
+}
