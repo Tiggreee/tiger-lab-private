@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T07:35:47.466Z",
+  "generatedAt": "2026-06-13T07:43:33.400Z",
   "overallGrade": "A+ (Production Elite)",
   "comparativeScore": 92,
   "revenueProbability": "84%",
@@ -14,7 +14,7 @@
     "payments": 100,
     "implementation": 98,
     "dashboard": 90,
-    "startup": 92,
+    "startup": 100,
     "decisions": 90
   },
   "findings": [
@@ -27,11 +27,6 @@
       "severity": "warn",
       "agent": "Product Dev Engine",
       "issue": "Avg product score 64/100 (<70 threshold)"
-    },
-    {
-      "severity": "warn",
-      "agent": "Engine Startup",
-      "issue": "1 agents failed during startup"
     }
   ],
   "ambiguities": [

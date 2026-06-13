@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T07:15:57.296Z",
+  "generatedAt": "2026-06-13T07:43:23.847Z",
   "totalScanned": 10,
   "decisions": {
     "invest": 7,
@@ -8,7 +8,7 @@
   },
   "investIdeas": [
     {
-      "id": "RD-1781334957297-zd94",
+      "id": "RD-1781336603847-iqxf",
       "name": "DevTools GDPR Middleware",
       "category": "devtools",
       "euRelevance": "high",
@@ -28,7 +28,7 @@
       "status": "pending-review"
     },
     {
-      "id": "RD-1781334957297-elwg",
+      "id": "RD-1781336603847-1ffs",
       "name": "EU AI Act Readiness Platform",
       "category": "ailegal",
       "euRelevance": "critical",
@@ -48,7 +48,7 @@
       "status": "pending-review"
     },
     {
-      "id": "RD-1781334957297-xtfx",
+      "id": "RD-1781336603847-4lbc",
       "name": "GDPR Auto-Compliance Scanner",
       "category": "devtools",
       "euRelevance": "high",
@@ -69,7 +69,7 @@
       "status": "pending-review"
     },
     {
-      "id": "RD-1781334957297-s02p",
+      "id": "RD-1781336603847-gaug",
       "name": "SaaS Localization Engine EU",
       "category": "devtools",
       "euRelevance": "high",
@@ -90,7 +90,7 @@
       "status": "pending-review"
     },
     {
-      "id": "RD-1781334957297-am67",
+      "id": "RD-1781336603847-d1ns",
       "name": "Carbon Accounting API for EU SMEs",
       "category": "climatetech",
       "euRelevance": "mandatory",
@@ -111,7 +111,7 @@
       "status": "pending-review"
     },
     {
-      "id": "RD-1781334957297-1j0x",
+      "id": "RD-1781336603847-qu70",
       "name": "PSD3 Open Banking Connector",
       "category": "fintech",
       "euRelevance": "high",
@@ -132,7 +132,7 @@
       "status": "pending-review"
     },
     {
-      "id": "RD-1781334957297-cbxf",
+      "id": "RD-1781336603847-a92q",
       "name": "Cross-Border VAT Automator",
       "category": "fintech",
       "euRelevance": "high",
@@ -157,17 +157,17 @@
     {
       "name": "eIDAS Digital Identity Wallet",
       "totalScore": 77,
-      "reEvaluateAt": "2026-06-20T07:15:57.297Z"
+      "reEvaluateAt": "2026-06-20T07:43:23.847Z"
     },
     {
       "name": "EU Grant Discovery Platform",
       "totalScore": 77,
-      "reEvaluateAt": "2026-06-20T07:15:57.297Z"
+      "reEvaluateAt": "2026-06-20T07:43:23.847Z"
     },
     {
       "name": "Micro-SaaS Incubator EU",
       "totalScore": 72,
-      "reEvaluateAt": "2026-06-20T07:15:57.297Z"
+      "reEvaluateAt": "2026-06-20T07:43:23.847Z"
     }
   ],
   "killedIdeas": []

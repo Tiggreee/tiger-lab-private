@@ -5,12 +5,18 @@
       "reason": "Score 38/100 — no viable path",
       "action": "KILL",
       "severity": "permanent"
+    },
+    {
+      "product": "Sentrylog Lite",
+      "reason": "Score 38/100 — no viable path",
+      "action": "KILL",
+      "severity": "permanent"
     }
   ],
   "metrics": {
     "agentHealth": {
       "total": 12,
-      "passed": 11
+      "passed": 12
     },
     "uiRefinement": {
       "avgScore": 89,
@@ -63,7 +69,7 @@
     "engineHealth": {
       "agents": {
         "total": 12,
-        "passed": 11
+        "passed": 12
       },
       "uiRefinement": {
         "avgScore": 89,
@@ -119,16 +125,17 @@
         "zombie": 2,
         "killed": 1
       },
-      "decisions": 1,
-      "startups": 1,
+      "decisions": 2,
+      "startups": 2,
       "revenue": 0,
       "pipeline": "5000 contacts ready",
       "gate": "GO",
-      "uptime": "15s this cycle"
+      "uptime": "14s this cycle"
     }
   },
   "killedAgents": [
+    "Sentrylog Lite",
     "Sentrylog Lite"
   ],
-  "startupCount": 1
+  "startupCount": 2
 }

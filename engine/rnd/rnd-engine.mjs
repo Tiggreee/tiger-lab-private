@@ -131,22 +131,6 @@ function runRNDCycle() {
   writeFileSync(resolve(RND_DIR, `weekly-report-${report.week}.json`), JSON.stringify(report, null, 2), 'utf8');
   console.log(`📊 Weekly report: ops/runtime/rnd/weekly-report-${report.week}.json`);
   
-  // Feed INVEST ideas into product development engine
-  if (invest.length > 0) {
-    const { execSync } = await import('node:child_process');
-    console.log('\n🔗 Feeding INVEST ideas to Product Development Engine...');
-    try {
-      execSync('node scripts/product-development-engine.mjs --rnd-input ops/runtime/rnd-pipeline.json', { 
-        stdio: 'inherit', 
-        cwd: process.cwd(), 
-        timeout: 30000 
-      });
-    } catch (e) {
-      console.log('   Product engine integration skipped (--rnd-input not yet supported)');
-      console.log('   → INVEST ideas added to pipeline. Product Architect will review.');
-    }
-  }
-  
   return pipeline;
 }
 

@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-06-13T07:24:10.263Z",
+  "startedAt": "2026-06-13T07:43:10.252Z",
   "phases": [
     {
       "phase": "agent-health",
@@ -31,7 +31,7 @@
         },
         {
           "agent": "R&D Engine",
-          "status": "FAIL",
+          "status": "PASS",
           "critical": false
         },
         {
@@ -152,7 +152,7 @@
   "results": {
     "agents": {
       "total": 12,
-      "passed": 11
+      "passed": 12
     },
     "uiRefinement": {
       "avgScore": 89,
@@ -208,15 +208,15 @@
       "zombie": 2,
       "killed": 1
     },
-    "decisions": 1,
-    "startups": 1,
+    "decisions": 2,
+    "startups": 2,
     "revenue": 0,
     "pipeline": "5000 contacts ready",
     "gate": "GO",
-    "uptime": "15s this cycle"
+    "uptime": "14s this cycle"
   },
   "metrics": {},
   "decisions": [],
-  "endedAt": "2026-06-13T07:24:25.792Z",
-  "duration": 15.529
+  "endedAt": "2026-06-13T07:43:24.786Z",
+  "duration": 14.534
 }

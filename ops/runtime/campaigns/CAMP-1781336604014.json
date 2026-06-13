@@ -1,0 +1,71 @@
+{
+  "campaign": {
+    "id": "CAMP-1781336604014",
+    "generatedAt": "2026-06-13T07:43:24.014Z",
+    "config": {
+      "productName": "Docflow API",
+      "headline": "Automatiza tus documentos y ahorra 10h/semana",
+      "bodyCopy": "Cada hora que pasas gestionando documentos, facturas y procesos manuales es una hora perdida. Docflow API automatiza todo el flujo documental para que tú inviertas en hacer crecer tu negocio, no en papeleo.",
+      "bullets": [
+        "Automatización completa de documentos y flujos",
+        "Integración con tu stack actual en minutos",
+        "Facturación electrónica CFDI nativa MX",
+        "Soporte 24/7 en español"
+      ],
+      "colors": {
+        "header": "#6C47FF",
+        "accent": "#FF6B35"
+      }
+    },
+    "target": "contabilidad",
+    "channels": {
+      "email": {
+        "adapted": true,
+        "format": "html",
+        "preview": "Automatiza tus documentos y ahorra 10h/semana"
+      }
+    },
+    "prospects": [
+      {
+        "id": "PROSP-0001",
+        "name": "Demo Prospect",
+        "industry": "contabilidad",
+        "city": "CDMX"
+      }
+    ],
+    "metrics": {
+      "totalProspects": 1
+    },
+    "status": "pending_approval"
+  },
+  "approvalCard": {
+    "id": "CAMP-1781336604014",
+    "type": "campaign-approval",
+    "title": "🎯 CAMPAIGN: Docflow API",
+    "product": "Docflow API",
+    "headline": "Automatiza tus documentos y ahorra 10h/semana",
+    "bodyPreview": "Cada hora que pasas gestionando documentos, facturas y procesos manuales es una hora perdida. Docflow API automatiza todo el flujo documental para que...",
+    "prospects": 1,
+    "targetProspects": 1000,
+    "channels": "email",
+    "colors": {
+      "header": "#6C47FF",
+      "accent": "#FF6B35"
+    },
+    "bullets": [
+      "Automatización completa de documentos y flujos",
+      "Integración con tu stack actual en minutos",
+      "Facturación electrónica CFDI nativa MX",
+      "Soporte 24/7 en español"
+    ],
+    "imagePreview": "",
+    "generatedAt": "2026-06-13T07:43:24.015Z",
+    "status": "pending_approval",
+    "actions": [
+      "approve",
+      "edit",
+      "reject"
+    ],
+    "dashboardCard": true
+  }
+}
