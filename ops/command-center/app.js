@@ -99,20 +99,41 @@ function renderCampaigns() {
   const detail = $('campaignDetail');
   if (!list) return;
   
-  list.innerHTML = `<div class="kpi" style="text-align:left;padding:12px;">
-    <b style="font-size:0.9rem;">🎯 Campaign Designer</b>
-    <div style="margin-top:8px;font-size:.7rem;color:#8b949e;">Create and approve email campaigns for 5000 contacts</div>
-    <div style="margin-top:10px;display:flex;gap:6px;">
-      <button onclick="alert('Campaign: Docflow API → contabilidad → 5000 contacts')" style="flex:1;padding:6px;border:none;border-radius:4px;background:#238636;color:#fff;font-size:.7rem;cursor:pointer;">▶️ Docflow API</button>
-      <button onclick="alert('Campaign: Script Kit → software → 5000 contacts')" style="flex:1;padding:6px;border:none;border-radius:4px;background:#1f6feb;color:#fff;font-size:.7rem;cursor:pointer;">▶️ Script Kit</button>
-    </div>
-    <div style="margin-top:5px;display:flex;gap:6px;">
-      <button onclick="alert('Campaign: FacturAutentico → facturación → 5000 contacts')" style="flex:1;padding:6px;border:none;border-radius:4px;background:#d29922;color:#000;font-size:.7rem;cursor:pointer;">▶️ FacturAutentico</button>
-    </div>
-  </div>`;
+  const campaigns = [
+    { name:'Docflow API', industry:'contabilidad', prospects:5000, channels:'email, LinkedIn, FB', headline:'Automatiza documentos y ahorra 10h/semana', color:'#238636', revenue:'$69/mes × plan' },
+    { name:'Script Premium Kit', industry:'software', prospects:5000, channels:'email, LinkedIn, TG', headline:'Scripts listos en minutos, sin programar', color:'#1f6feb', revenue:'$89/mes × plan' },
+    { name:'FacturAutentico', industry:'facturación', prospects:5000, channels:'email, LinkedIn, FB', headline:'CFDI 4.0 sin estrés, sin contador extra', color:'#d29922', revenue:'$99/mes × plan' }
+  ];
   
-  if (detail) detail.innerHTML = '<div class="dim" style="padding:8px;font-size:.65rem;">Select a campaign to configure audience, copy, and channels.</div>';
+  list.innerHTML = campaigns.map(c => 
+    `<button onclick="window.showCampaign('${c.name}')" style="flex:1;padding:6px;border:none;border-radius:4px;background:${c.color};color:${c.color==='#d29922'?'#000':'#fff'};font-size:.7rem;cursor:pointer;margin:2px;font-weight:600;">▶️ ${c.name}</button>`
+  ).join('');
+  
+  window.campaignData = campaigns;
+  
+  if (detail) detail.innerHTML = '<div class="dim" style="padding:10px;font-size:.7rem;text-align:center;line-height:1.5;">📊 <b>5000 contacts × 5 personas/empresa</b><br>Pipeline: 25,000 reach potencial<br>💡 Selecciona un producto para ver preview</div>';
 }
+
+window.showCampaign = function(name) {
+  const c = window.campaignData.find(x => x.name === name);
+  const detail = document.getElementById('campaignDetail');
+  if (!c || !detail) return;
+  detail.innerHTML = `
+    <div style="padding:8px;font-size:.7rem;line-height:1.6;">
+      <b style="color:#3fb950;font-size:.8rem;">🎯 ${c.name}</b>
+      <div style="margin-top:4px;"><span class="lbl">Industria:</span> ${c.industry}</div>
+      <div><span class="lbl">Prospects:</span> <b>${c.prospects}</b> (25K reach)</div>
+      <div><span class="lbl">Canales:</span> ${c.channels}</div>
+      <div><span class="lbl">Revenue:</span> ${c.revenue}</div>
+      <div style="margin-top:6px;background:#1a2a1a;padding:6px;border-radius:4px;border-left:3px solid #3fb950;">
+        <span style="color:#8b949e;">Copy: </span>"${c.headline}"
+      </div>
+      <div style="margin-top:6px;display:flex;gap:4px;">
+        <button style="flex:1;padding:4px;border:none;border-radius:3px;background:#238636;color:#fff;font-size:.6rem;cursor:pointer;">✅ Approve</button>
+        <button style="flex:1;padding:4px;border:none;border-radius:3px;background:#d29922;color:#000;font-size:.6rem;cursor:pointer;">✏️ Edit</button>
+      </div>
+    </div>`;
+};
 
 async function render() {
   const unified = await fetchJSON(UNIFIED);
