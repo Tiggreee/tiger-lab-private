@@ -84,55 +84,66 @@ async function renderCampaigns() {
   const list = $('campaignList'), detail = $('campaignDetail');
   if (!list) return;
   
-  const dec = await fetchJSON(DECISIONS);
-  window._decisions = dec || {};
+  // Load real campaigns from index
+  const idx = await fetchJSON('/runtime/campaigns/index.json');
+  const campaigns = idx?.campaigns || [];
   
-  const invest = (dec?.investIdeas) || [
-    { name:'Docflow API', category:'contabilidad', totalScore:84 },
-    { name:'Script Premium Kit', category:'software', totalScore:84 }
-  ];
-  
-  const configs = {
-    'Docflow API': { color:'#238636', revenue:'$69/mes', headline:'Automatiza documentos y ahorra 10h/semana' },
-    'Script Premium Kit': { color:'#1f6feb', revenue:'$89/mes', headline:'Scripts listos en minutos, sin programar' },
-    'FacturAutentico Cloud': { color:'#d29922', revenue:'$99/mes', headline:'CFDI 4.0 sin estrés, sin contador extra' }
-  };
-  
-  if (!invest.length) {
-    list.innerHTML = '<div class="dim">No campaigns ready. Run R&D engine.</div>';
+  if (!campaigns.length) {
+    list.innerHTML = '<div class="dim">No campaigns yet. Pipeline will generate them.</div>';
     return;
   }
   
-  list.innerHTML = invest.slice(0,3).map(i => {
-    const cfg = configs[i.name] || { color:'#1f6feb', revenue:'$69/mes', headline:'' };
-    return `<button onclick="window.showCampaign('${i.name}')" style="flex:1;padding:6px;border:none;border-radius:4px;background:${cfg.color};color:${cfg.color==='#d29922'?'#000':'#fff'};font-size:.7rem;cursor:pointer;margin:2px;font-weight:600;">▶️ ${i.name} (${i.totalScore})</button>`;
+  const colors = { 'Docflow API':'#238636', 'Script Premium Kit':'#1f6feb', 'FacturAutentico Cloud':'#d29922' };
+  
+  list.innerHTML = campaigns.map(c => {
+    const color = colors[c.product] || '#1f6feb';
+    const statusIcon = c.status === 'approved' ? '✅' : '⏳';
+    return `<button onclick="window.showRealCampaign('${c.id}')" style="display:block;width:100%;padding:6px 8px;border:none;border-radius:4px;background:${color};color:${color==='#d29922'?'#000':'#fff'};font-size:.7rem;cursor:pointer;margin:2px 0;font-weight:600;text-align:left;">
+      ${statusIcon} ${c.product} <span style="opacity:.7;font-size:.6rem;">${c.score}/100</span>
+    </button>`;
   }).join('');
   
-  window.campaignConfigs = configs;
-  window.campaignInvest = invest;
+  window.realCampaigns = campaigns;
   
-  if (detail) detail.innerHTML = '<div class="dim" style="padding:10px;font-size:.7rem;text-align:center;line-height:1.5;">📊 <b>5000 contacts × 5 personas/empresa</b><br>Pipeline: 25,000 reach potencial<br>💡 Selecciona un producto para ver preview</div>';
+  if (detail) detail.innerHTML = '<div class="dim" style="padding:10px;font-size:.7rem;text-align:center;">📊 <b>4 campaigns ready</b><br>💡 Click to review and approve</div>';
 }
 
-window.showCampaign = function(name) {
-  const cfg = window.campaignConfigs[name] || {};
-  const inv = (window.campaignInvest||[]).find(i => i.name === name) || {};
+window.showRealCampaign = function(id) {
   const detail = document.getElementById('campaignDetail');
-  if (!detail) return;
+  const c = window.realCampaigns?.find(x => x.id === id);
+  if (!c || !detail) return;
+  
+  const statusIcon = c.status === 'approved' ? '✅ APPROVED' : '⏳ PENDING';
+  const color = c.status === 'approved' ? '#3fb950' : '#d29922';
+  
   detail.innerHTML = `
     <div style="padding:8px;font-size:.7rem;line-height:1.6;">
-      <b style="color:#3fb950;font-size:.8rem;">🎯 ${name}</b>
-      <div style="margin-top:4px;"><span class="lbl">Score:</span> <b>${inv.totalScore || cfg.score || 'N/A'}/100</b></div>
-      <div><span class="lbl">Category:</span> ${inv.category || 'SaaS'}</div>
-      <div><span class="lbl">Revenue:</span> ${cfg.revenue || '$69/mes'}</div>
-      <div style="margin-top:6px;background:#1a2a1a;padding:6px;border-radius:4px;border-left:3px solid #3fb950;">
-        <span style="color:#8b949e;">Copy: </span>"${cfg.headline || ''}"
-      </div>
-      <div style="margin-top:6px;display:flex;gap:4px;">
-        <button style="flex:1;padding:4px;border:none;border-radius:3px;background:#238636;color:#fff;font-size:.6rem;cursor:pointer;">✅ Approve</button>
-        <button style="flex:1;padding:4px;border:none;border-radius:3px;background:#d29922;color:#000;font-size:.6rem;cursor:pointer;">✏️ Edit</button>
+      <b style="font-size:.8rem;">🎯 ${c.product}</b>
+      <span style="float:right;color:${color};font-size:.65rem;font-weight:600;">${statusIcon}</span>
+      <div style="margin-top:4px;"><span class="lbl">Score:</span> <b>${c.score}/100</b></div>
+      <div><span class="lbl">Target:</span> ${c.target || 'contabilidad'}</div>
+      <div><span class="lbl">Channels:</span> ${(c.channels||[]).join(', ')}</div>
+      <div><span class="lbl">Created:</span> ${new Date(c.createdAt).toLocaleDateString()}</div>
+      <div style="margin-top:8px;display:flex;gap:4px;">
+        <button onclick="window.approveCampaign('${c.id}')" style="flex:1;padding:5px;border:none;border-radius:4px;background:#238636;color:#fff;font-size:.65rem;cursor:pointer;font-weight:600;">✅ APPROVE</button>
+        <button onclick="window.rejectCampaign('${c.id}')" style="flex:1;padding:5px;border:none;border-radius:4px;background:#f85149;color:#fff;font-size:.65rem;cursor:pointer;font-weight:600;">❌ REJECT</button>
       </div>
     </div>`;
+};
+
+window.approveCampaign = async function(id) {
+  try { await fetch('/runtime/campaigns/approve', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id,action:'approve'}) }); } catch {}
+  const c = window.realCampaigns?.find(x => x.id === id);
+  if (c) c.status = 'approved';
+  renderCampaigns();
+  alert(`✅ Campaign ${id} APPROVED. Ready to publish.`);
+};
+
+window.rejectCampaign = function(id) {
+  const c = window.realCampaigns?.find(x => x.id === id);
+  if (c) c.status = 'rejected';
+  renderCampaigns();
+  alert(`❌ Campaign ${id} REJECTED.`);
 };
 
 async function renderAgentEfficiency() {
