@@ -1037,7 +1037,7 @@
     }
   },
   "failuresMonitor": {
-    "lastAnalysis": "2026-06-13T09:35:46.268Z",
+    "lastAnalysis": "2026-06-13T11:14:29.679Z",
     "totalRuns": 100,
     "failedToday": 2,
     "successfulToday": 97,
