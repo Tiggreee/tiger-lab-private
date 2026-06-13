@@ -983,5 +983,57 @@
     "dashboard": "success",
     "checkout": "success",
     "gate": "GO"
+  },
+  "productEngine": {
+    "generatedAt": "2026-06-13T18:36:59.129Z",
+    "engine": {
+      "averageScore": 64,
+      "productsAt95": 0,
+      "productsOnTrack95": 0,
+      "productsAt90plus": 0,
+      "productsAt75plus": 2,
+      "totalBenchmarks": 5,
+      "totalCompetitors": 20,
+      "estimatedTotalEffortHours": 146
+    },
+    "topProducts": [
+      {
+        "name": "Docflow API",
+        "score": 84,
+        "tier": "P3",
+        "status": "active"
+      },
+      {
+        "name": "Script Premium Kit",
+        "score": 84,
+        "tier": "P3",
+        "status": "active"
+      },
+      {
+        "name": "FacturAutentico Cloud",
+        "score": 56,
+        "tier": "P1",
+        "status": "paused"
+      },
+      {
+        "name": "FacturAutentica",
+        "score": 56,
+        "tier": "P1",
+        "status": "paused"
+      },
+      {
+        "name": "Sentrylog Lite",
+        "score": 38,
+        "tier": "P1",
+        "status": "planned"
+      }
+    ],
+    "priorityQueue": {
+      "target95": [
+        "Docflow API",
+        "Script Premium Kit"
+      ],
+      "engineReady": []
+    }
   }
 }
