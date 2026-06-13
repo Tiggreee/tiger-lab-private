@@ -979,17 +979,17 @@
     "gate": "GO"
   },
   "failuresMonitor": {
-    "lastAnalysis": "2026-06-12T22:58:25.885Z",
+    "lastAnalysis": "2026-06-13T01:29:05.762Z",
     "totalRuns": 100,
-    "failedToday": 17,
-    "successfulToday": 79,
+    "failedToday": 16,
+    "successfulToday": 80,
     "byType": {
-      "failure": 17
+      "failure": 16
     },
     "byWorkflow": [
       {
         "workflow": "Social Publish",
-        "failures": 15
+        "failures": 14
       },
       {
         "workflow": "ui-host-pages",
