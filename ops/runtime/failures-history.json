@@ -381,10 +381,24 @@
         "Product Development Engine — 2h Cycle": 1
       },
       "perm": "all"
+    },
+    {
+      "timestamp": "2026-06-13T18:55:02.079Z",
+      "totalRuns": 100,
+      "failed": 3,
+      "successful": 96,
+      "byType": {
+        "failure": 3
+      },
+      "byWorkflow": {
+        "daily-sales-automation": 2,
+        "Product Development Engine — 2h Cycle": 1
+      },
+      "perm": "all"
     }
   ],
   "fixesApplied": [],
   "lastKnownPermission": "all",
-  "lastAnalysis": "2026-06-13T16:58:15.471Z",
-  "totalFailuresTracked": 411
+  "lastAnalysis": "2026-06-13T18:55:02.079Z",
+  "totalFailuresTracked": 414
 }
