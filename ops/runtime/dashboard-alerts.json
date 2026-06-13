@@ -1,45 +1,46 @@
 {
-  "checkedAt": "2026-06-13T05:20:05.144Z",
-  "status": "DEGRADED",
-  "summary": {
-    "critical": 2,
-    "warnings": 4,
-    "info": 0,
-    "ok": 0
+  "checkedAt": "2026-06-13T05:31:09.112Z",
+  "status": "HEALTHY",
+  "health": 90,
+  "gate": "GO",
+  "snapshot": {
+    "leads": 1000,
+    "agents": 22,
+    "products": 5,
+    "productAvg": 64,
+    "revenue": 69,
+    "campaigns": 10,
+    "failures": 0
+  },
+  "trends": {
+    "leads": 0,
+    "revenue": 0,
+    "campaigns": 0,
+    "scores": 0
   },
   "alerts": [
     {
-      "level": "WARN",
-      "msg": "Leads: 0 (< 100)"
-    },
-    {
-      "level": "CRITICAL",
-      "msg": "No leads in DB"
-    },
-    {
-      "level": "WARN",
-      "msg": "Product avg 0 < 70"
-    },
-    {
-      "level": "CRITICAL",
-      "msg": "Product avg 0 < 50"
-    },
-    {
-      "level": "WARN",
-      "msg": "22 inactive agents"
-    },
-    {
-      "level": "WARN",
-      "msg": "Implementation 0% < 80%"
+      "type": "products",
+      "msg": "Avg score 64/100",
+      "level": "info"
     }
   ],
-  "snapshot": {
-    "gate": "GO",
-    "leads": 0,
-    "agents": 22,
-    "products": 0,
-    "productAvg": 0,
-    "implementation": 0,
-    "failuresToday": 0
-  }
+  "revenueIntelligence": "💰 $69 revenue tracked. Pipeline: 5000 contacts ready.",
+  "predictions": [
+    "📬 10 campaigns active. Expect 3-5% conversion."
+  ],
+  "recommendations": [
+    {
+      "action": "dev",
+      "detail": "Focus Docflow API + Script Kit to push past 70 avg."
+    },
+    {
+      "action": "leads",
+      "detail": "Run inegi-seed-generator to expand to 2000 companies."
+    },
+    {
+      "action": "monitor",
+      "detail": "Dashboard healthy. Bot watching 24/7."
+    }
+  ]
 }
