@@ -3,7 +3,7 @@
   "productName": "FacturAutentica",
   "channelId": "discord",
   "channelName": "Discord",
-  "generatedAt": "2026-06-13T07:56:00.372Z",
+  "generatedAt": "2026-06-13T15:40:15.279Z",
   "status": "paused",
   "seo": {
     "title": "FacturAutentica en Discord | Tiger Lab",
@@ -25,7 +25,7 @@
   "tracking": {
     "utmSource": "discord",
     "utmCampaign": "landing-facturautentico-discord",
-    "utmContent": "social-landing-1781337360372"
+    "utmContent": "social-landing-1781365215279"
   },
   "metrics": {
     "targetChars": 2000,

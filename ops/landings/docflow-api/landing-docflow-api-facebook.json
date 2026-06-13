@@ -3,7 +3,7 @@
   "productName": "Docflow API",
   "channelId": "facebook",
   "channelName": "Facebook",
-  "generatedAt": "2026-06-13T07:56:00.355Z",
+  "generatedAt": "2026-06-13T15:40:15.273Z",
   "status": "active",
   "seo": {
     "title": "Docflow API en Facebook | Tiger Lab",
@@ -18,18 +18,18 @@
   },
   "copy": {
     "headline": "Docflow API ya esta disponible para equipos como el tuyo",
-    "body": "Docflow API ya esta disponible.\n\nSi tu equipo:\n• Pasa mas de 5 horas/semana en deploys\n• No tiene area de tecnologia dedicada\n• Esta creciendo y los procesos se estan quedando atras\n\nEsto es para ti.\n\nAPI Access, Automation, Reports.\n\nDesde $39/mo. Diagnostico gratis.",
+    "body": " 🚀 Lanzamos Docflow API para equipos pequenos en Mexico.\n\nHistoria rapida: Trabajamos con decenas de SMBs que nos decian \"no tenemos tiempo para implementar tecnologia\". Tienen el dinero, tienen la intencion, pero no el equipo interno.\n\nConstruimos Docflow API para ellos.\n\n🔹 API Access\n🔹 Automation\n🔹 Reports\n\nDesde $39/mo. 14 dias de prueba gratis.\n\nAgenda tu diagnostico: https://cal.com/victor-tigerlab/diagnostic\n\nComparte este post con alguien que este creciendo su operacion.",
     "cta": "Agenda tu diagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
     "tone": "comunitario, testimonial, conversacional"
   },
   "tracking": {
     "utmSource": "facebook",
     "utmCampaign": "landing-docflow-api-facebook",
-    "utmContent": "social-landing-1781337360356"
+    "utmContent": "social-landing-1781365215273"
   },
   "metrics": {
     "targetChars": 63206,
-    "actualChars": 396,
+    "actualChars": 614,
     "qualityScore": 21
   }
 }

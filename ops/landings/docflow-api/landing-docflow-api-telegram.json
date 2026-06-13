@@ -3,7 +3,7 @@
   "productName": "Docflow API",
   "channelId": "telegram",
   "channelName": "Telegram",
-  "generatedAt": "2026-06-13T07:56:00.357Z",
+  "generatedAt": "2026-06-13T15:40:15.273Z",
   "status": "active",
   "seo": {
     "title": "Docflow API en Telegram | Tiger Lab",
@@ -25,7 +25,7 @@
   "tracking": {
     "utmSource": "telegram",
     "utmCampaign": "landing-docflow-api-telegram",
-    "utmContent": "social-landing-1781337360357"
+    "utmContent": "social-landing-1781365215273"
   },
   "metrics": {
     "targetChars": 4096,

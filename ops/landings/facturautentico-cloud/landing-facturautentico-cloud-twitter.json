@@ -3,7 +3,7 @@
   "productName": "FacturAutentico Cloud",
   "channelId": "twitter",
   "channelName": "X / Twitter",
-  "generatedAt": "2026-06-13T07:58:10.032Z",
+  "generatedAt": "2026-06-13T15:40:15.269Z",
   "status": "paused",
   "seo": {
     "title": "FacturAutentico Cloud en X / Twitter | Tiger Lab",
@@ -17,7 +17,7 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "FacturAutentico Cloud ya esta aqui. Automatiza tu operacion en minutos.",
+    "headline": "FacturAutentico Cloud → Deja de perder tiempo en procesos manuales.",
     "body": "FacturAutentico Cloud para SMBs Mexicanas.\n\n✅ API Access\n✅ Automation\n✅ Reports\n\nDesde $39/mo · 14 dias gratis\n→ Agenda: https://cal.com/victor-tigerlab/diagnostic",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "directo, punchy, con call-to-action"
@@ -25,11 +25,11 @@
   "tracking": {
     "utmSource": "twitter",
     "utmCampaign": "landing-facturautentico-cloud-twitter",
-    "utmContent": "social-landing-1781337490032"
+    "utmContent": "social-landing-1781365215269"
   },
   "metrics": {
     "targetChars": 280,
-    "actualChars": 282,
-    "qualityScore": 65
+    "actualChars": 278,
+    "qualityScore": 67
   }
 }

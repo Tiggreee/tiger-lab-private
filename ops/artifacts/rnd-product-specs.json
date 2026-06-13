@@ -28,7 +28,7 @@
       "estimatedBuildWeeks": 4,
       "status": "planned-rd"
     },
-    "generatedAt": "2026-06-13T08:40:15.380Z"
+    "generatedAt": "2026-06-13T15:40:25.704Z"
   },
   "RD-1781340014828-mtb5": {
     "id": "RD-1781340014828-mtb5",
@@ -59,7 +59,7 @@
       "estimatedBuildWeeks": 4,
       "status": "planned-rd"
     },
-    "generatedAt": "2026-06-13T08:40:15.380Z"
+    "generatedAt": "2026-06-13T15:40:25.705Z"
   },
   "RD-1781340014828-msrk": {
     "id": "RD-1781340014828-msrk",
@@ -91,7 +91,7 @@
       "estimatedBuildWeeks": 6,
       "status": "planned-rd"
     },
-    "generatedAt": "2026-06-13T08:40:15.380Z"
+    "generatedAt": "2026-06-13T15:40:25.705Z"
   },
   "RD-1781340014828-32gq": {
     "id": "RD-1781340014828-32gq",
@@ -123,7 +123,7 @@
       "estimatedBuildWeeks": 6,
       "status": "planned-rd"
     },
-    "generatedAt": "2026-06-13T08:40:15.380Z"
+    "generatedAt": "2026-06-13T15:40:25.705Z"
   },
   "RD-1781340014828-r18v": {
     "id": "RD-1781340014828-r18v",
@@ -155,7 +155,7 @@
       "estimatedBuildWeeks": 6,
       "status": "planned-rd"
     },
-    "generatedAt": "2026-06-13T08:40:15.380Z"
+    "generatedAt": "2026-06-13T15:40:25.705Z"
   },
   "RD-1781340014828-1pl2": {
     "id": "RD-1781340014828-1pl2",
@@ -187,7 +187,7 @@
       "estimatedBuildWeeks": 6,
       "status": "planned-rd"
     },
-    "generatedAt": "2026-06-13T08:40:15.380Z"
+    "generatedAt": "2026-06-13T15:40:25.705Z"
   },
   "RD-1781340014828-5ebq": {
     "id": "RD-1781340014828-5ebq",
@@ -219,6 +219,6 @@
       "estimatedBuildWeeks": 6,
       "status": "planned-rd"
     },
-    "generatedAt": "2026-06-13T08:40:15.380Z"
+    "generatedAt": "2026-06-13T15:40:25.705Z"
   }
 }
