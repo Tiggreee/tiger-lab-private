@@ -1071,5 +1071,33 @@
       ],
       "engineReady": []
     }
+  },
+  "failuresMonitor": {
+    "lastAnalysis": "2026-06-13T03:44:30.808Z",
+    "totalRuns": 100,
+    "failedToday": 14,
+    "successfulToday": 82,
+    "byType": {
+      "failure": 14
+    },
+    "byWorkflow": [
+      {
+        "workflow": "Social Publish",
+        "failures": 12
+      },
+      {
+        "workflow": "ui-host-pages",
+        "failures": 2
+      }
+    ],
+    "rootCauses": [
+      {
+        "cause": "Check failures in workflow steps",
+        "severity": "high",
+        "fix": "Review logs for each failed run"
+      }
+    ],
+    "permFixed": false,
+    "currentPermission": "all"
   }
 }
