@@ -1,0 +1,74 @@
+{
+  "id": "CAMP-1781334207583",
+  "product": "Docflow API",
+  "target": "contabilidad",
+  "createdAt": "2026-06-13T07:03:27.584Z",
+  "channels": [
+    "email",
+    "linkedin",
+    "x",
+    "facebook",
+    "telegram",
+    "discord"
+  ],
+  "copies": {
+    "email": "Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. Docflow API automatiza todo tu flujo documental con integración nativa CFDI.\n\n✅ Automatización completa\n✅ Integración en minutos\n✅ CFDI 4.0 nativo\n✅ Soporte 24/7 en español\n\nPrueba gratis 7 días →",
+    "linkedin": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. Docflow API automatiza todo tu flujo documental con integración nativa CFDI.\n\n✅ Automatización completa\n✅ Integración en minutos\n✅ CFDI 4.0 nativo\n✅ Soporte 24/7 en español\n\n💡 Prueba gratis 7 días →",
+    "x": "🔥 Automatiza documentos. Ahorra 10h/semana.\n✅ Automatización completa\n✅ Integración en minutos\nPrueba gratis 7 días →...",
+    "facebook": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. Docflow API automatiza todo tu flujo documental con integración nativa CFDI....\n\n✅ Automatización completa\n✅ Integración en minutos\n✅ CFDI 4.0 nativo\n✅ Soporte 24/7 en español\n\nPrueba gratis 7 días →",
+    "telegram": "*Docflow API*\n\nAutomatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. Docflow API automatiza todo tu flujo documental con integración nativa CFDI....\n\n[Prueba gratis 7 días ](https://tigerlab.dev)",
+    "discord": "**Docflow API**\n\nAutomatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. Docflow API automatiza todo tu flujo documental con integración nativa CFDI....\n\n👉 tigerlab.dev"
+  },
+  "images": {
+    "email": {
+      "prompt": "Professional marketing image for \"Docflow API\". Automatiza documentos. Ahorra 10h/semana.. Clean modern design. #6C47FF gradient background. No text overlay. 600×300px. Business SaaS style. Latin American professional audience.",
+      "size": [
+        600,
+        300
+      ],
+      "generated": false
+    },
+    "linkedin": {
+      "prompt": "Professional marketing image for \"Docflow API\". Automatiza documentos. Ahorra 10h/semana.. Clean modern design. #6C47FF gradient background. No text overlay. 1200×627px. Business SaaS style. Latin American professional audience.",
+      "size": [
+        1200,
+        627
+      ],
+      "generated": false
+    },
+    "x": {
+      "prompt": "Professional marketing image for \"Docflow API\". Automatiza documentos. Ahorra 10h/semana.. Clean modern design. #6C47FF gradient background. No text overlay. 1200×675px. Business SaaS style. Latin American professional audience.",
+      "size": [
+        1200,
+        675
+      ],
+      "generated": false
+    },
+    "facebook": {
+      "prompt": "Professional marketing image for \"Docflow API\". Automatiza documentos. Ahorra 10h/semana.. Clean modern design. #6C47FF gradient background. No text overlay. 1200×630px. Business SaaS style. Latin American professional audience.",
+      "size": [
+        1200,
+        630
+      ],
+      "generated": false
+    },
+    "telegram": {
+      "prompt": "Professional marketing image for \"Docflow API\". Automatiza documentos. Ahorra 10h/semana.. Clean modern design. #6C47FF gradient background. No text overlay. 800×400px. Business SaaS style. Latin American professional audience.",
+      "size": [
+        800,
+        400
+      ],
+      "generated": false
+    },
+    "discord": {
+      "prompt": "Professional marketing image for \"Docflow API\". Automatiza documentos. Ahorra 10h/semana.. Clean modern design. #6C47FF gradient background. No text overlay. 800×400px. Business SaaS style. Latin American professional audience.",
+      "size": [
+        800,
+        400
+      ],
+      "generated": false
+    }
+  },
+  "score": 80,
+  "status": "draft"
+}
