@@ -169,19 +169,20 @@ async function renderAgentEfficiency() {
     const pct = Math.min(100, Math.round((a.base / a.target) * 100));
     const cls = pct >= 80 ? 'eff-high' : pct >= 50 ? 'eff-mid' : 'eff-low';
     const bar = pct >= 80 ? '#3fb950' : pct >= 50 ? '#d29922' : '#f85149';
-    return `<tr>
+    return { html: `<tr>
       <td class="agent-name" title="${a.func}">${a.name}</td>
       <td style="font-size:.55rem;color:#8b949e;max-width:120px;overflow:hidden;text-overflow:ellipsis;">${a.func}</td>
       <td><span class="eff-bar"><span class="eff-fill" style="width:${pct}%;background:${bar}"></span></span><span class="eff-val ${cls}">${pct}%</span></td>
-    </tr>`;
-  }).join('');
+    </tr>`, pct };
+  }).sort((a,b) => b.pct - a.pct);
   
   const avg = Math.round(agents.reduce((s,a) => s + Math.min(100, Math.round((a.base/a.target)*100)), 0) / agents.length);
+  const rowsHtml = rows.map(r => r.html).join('');
   const container = $('agentEfficiency');
   if (container) container.innerHTML = `
     <table class="agent-table">
       <thead><tr><th>Agent</th><th>Function</th><th style="width:120px">Efficiency</th></tr></thead>
-      <tbody>${rows}</tbody>
+      <tbody>${rowsHtml}</tbody>
     </table>
     <div style="margin-top:6px;font-size:.65rem;text-align:right;color:#8b949e;">
       Overall: <b style="color:${avg>=80?'#3fb950':avg>=50?'#d29922':'#f85149'}">${avg}%</b> — ${agents.length} agents
