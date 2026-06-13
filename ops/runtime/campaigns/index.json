@@ -1,28 +1,11 @@
 {
-  "updated": "2026-06-13T14:25:39.987Z",
+  "updated": "2026-06-13T15:05:18.699Z",
   "total": 2,
   "campaigns": [
     {
-      "id": "CAMP-1781360667087",
+      "id": "CAMP-MAT-1781363109068",
       "product": "Script Premium Kit",
-      "target": "software",
-      "score": 80,
-      "status": "draft",
-      "channels": [
-        "email",
-        "linkedin",
-        "x",
-        "facebook",
-        "telegram",
-        "discord"
-      ],
-      "createdAt": "2026-06-13T14:24:27.091Z",
-      "copyPreview": "🔥 Scripts listos. Resultados inmediatos.\n\n20+ scripts probados que automatizan contabilidad, facturación y administraci"
-    },
-    {
-      "id": "CAMP-1781360666993",
-      "product": "Docflow API",
-      "target": "contabilidad",
+      "target": "general",
       "score": 90,
       "status": "draft",
       "channels": [
@@ -33,8 +16,25 @@
         "telegram",
         "discord"
       ],
-      "createdAt": "2026-06-13T14:24:26.997Z",
-      "copyPreview": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. Docflow API automatiza todo tu flujo doc"
+      "createdAt": "2026-06-13T15:05:09.076Z",
+      "copyPreview": "🔥 20+ scripts probados. 0 programación. Resultados hoy.\n\nAutomatiza contabilidad, facturación y administración en minut"
+    },
+    {
+      "id": "CAMP-MAT-1781363108992",
+      "product": "Docflow API",
+      "target": "general",
+      "score": 90,
+      "status": "draft",
+      "channels": [
+        "email",
+        "linkedin",
+        "x",
+        "facebook",
+        "telegram",
+        "discord"
+      ],
+      "createdAt": "2026-06-13T15:05:09.003Z",
+      "copyPreview": "🔥 Deja de perder 10 horas por semana en papeleo.\n\nDocflow API automatiza todo tu flujo documental.\n\n✅ Automatización co"
     }
   ]
 }
