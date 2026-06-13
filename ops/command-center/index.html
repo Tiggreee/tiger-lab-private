@@ -6,12 +6,11 @@
 <title>Tiger Command Center</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font:12px/1.4 'Segoe UI',system-ui,sans-serif;background:#0c1117;color:#c9d1d9;padding:10px}
+body{font:12px/1.4 'Segoe UI',system-ui,sans-serif;background:#0c1117;color:#c9d1d9;padding:10px;overflow-x:hidden}
 header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #21262d}
 .led-row{display:flex;align-items:center;gap:8px}
-.led{width:12px;height:12px;border-radius:50%;flex-shrink:0;transition:background .3s,box-shadow .3s}
+.led{width:12px;height:12px;border-radius:50%;flex-shrink:0}
 .led-green{background:#3fb950;box-shadow:0 0 8px #3fb95088}
-.led-red{background:#f85149;box-shadow:0 0 8px #f8514988}
 h1{font-size:1rem;font-weight:600;color:#f0f6fc}
 .gate-badge{font-size:.65rem;padding:1px 7px;border-radius:10px;font-weight:600;text-transform:uppercase}
 .gate-go{background:#1a3a2a;color:#3fb950}
@@ -32,16 +31,12 @@ h1{font-size:1rem;font-weight:600;color:#f0f6fc}
 .score-bar{display:flex;align-items:center;gap:6px;margin-bottom:5px;font-size:.7rem}
 .score-bar .name{width:110px;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:0}
 .score-bar .bar{flex:1;height:10px;background:#21262d;border-radius:3px;overflow:hidden}
-.score-bar .fill{height:100%;border-radius:3px;min-width:2px;transition:width .3s}
+.score-bar .fill{height:100%;border-radius:3px;min-width:2px}
 .score-bar .val{width:26px;text-align:right;font-weight:700;font-size:.65rem;flex-shrink:0}
-.score-bar .tier{width:22px;text-align:center;font-size:.6rem;color:#8b949e;flex-shrink:0}
 .alert-item{font-size:.7rem;padding:3px 7px;margin-bottom:3px;border-radius:3px;border-left:3px solid transparent}
 .alert-critical{border-color:#f85149;background:#3a1a1a22}
 .alert-warn{border-color:#d29922;background:#3a2f1a22}
 .alert-info{border-color:#58a6ff;background:#1a2f3a22}
-.status-ok{color:#3fb950}
-.status-degraded{color:#d29922}
-.status-down{color:#f85149}
 .lead-row{font-size:.7rem;margin-bottom:2px}
 .lead-row .lbl{color:#8b949e}
 .lead-section{margin-bottom:6px}
@@ -49,17 +44,35 @@ h1{font-size:1rem;font-weight:600;color:#f0f6fc}
 .lead-stat{display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid #21262d22}
 .lead-stat:last-child{border-bottom:none}
 footer{font-size:.65rem;color:#484f58;text-align:center;padding:6px 0 0;border-top:1px solid #21262d;margin-top:6px}
-.campaign-card{transition:transform .12s}
-.campaign-card:hover{transform:translateY(-1px)}
-@media(max-width:800px){.grid-2{grid-template-columns:1fr}.kpi-row{grid-template-columns:repeat(2,1fr)}}
+/* Tiger AI Bot */
+.bot-container{position:fixed;bottom:16px;right:16px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+.bot-bubble{background:#161b22;border:1px solid #3fb95044;border-radius:8px;padding:8px 12px;max-width:220px;font-size:.65rem;color:#c9d1d9;box-shadow:0 2px 12px #00000044;animation:floatBubble 4s ease-in-out infinite}
+.bot-bubble strong{color:#3fb950;display:block;font-size:.6rem;margin-bottom:3px}
+.bot-face{width:54px;height:54px;border-radius:50%;border:2px solid #3fb950;background-size:400% 100%;animation:cycleFaces 6s steps(1) infinite;cursor:pointer;box-shadow:0 0 14px #3fb95044;transition:transform .2s}
+.bot-face:hover{transform:scale(1.15)}
+@keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+@keyframes cycleFaces{0%{background-image:url('/command-center/CARONAI0.png');background-position:0 0}
+8.33%{background-image:url('/command-center/CARONAI0.png');background-position:33.33% 0}
+16.66%{background-image:url('/command-center/CARONAI0.png');background-position:66.66% 0}
+25%{background-image:url('/command-center/CARONAI0.png');background-position:100% 0}
+33.33%{background-image:url('/command-center/CARONMANOTAS.png');background-position:0 0}
+41.66%{background-image:url('/command-center/CARONMANOTAS.png');background-position:33.33% 0}
+50%{background-image:url('/command-center/CARONMANOTAS.png');background-position:66.66% 0}
+58.33%{background-image:url('/command-center/CARONMANOTAS.png');background-position:100% 0}
+66.66%{background-image:url('/command-center/caroncampanabotdashboard.png');background-position:0 0}
+75%{background-image:url('/command-center/caroncampanabotdashboard.png');background-position:33.33% 0}
+83.33%{background-image:url('/command-center/caroncampanabotdashboard.png');background-position:66.66% 0}
+91.66%{background-image:url('/command-center/caroncampanabotdashboard.png');background-position:100% 0}
+100%{background-image:url('/command-center/CARONAI0.png');background-position:0 0}}
+@media(max-width:800px){.grid-2{grid-template-columns:1fr}.kpi-row{grid-template-columns:repeat(2,1fr)}.bot-container{right:6px;bottom:6px}}
 </style>
 </head>
 <body>
 <header>
   <div class="led-row">
-    <div id="engineLed" class="led" title="Engine health"></div>
+    <div id="engineLed" class="led led-green" title="Engine RUNNING"></div>
     <h1>Tiger Command Center</h1>
-    <span id="systemStatusBadge" class="gate-badge">---</span>
+    <span id="systemStatusBadge" class="gate-badge gate-go">GO</span>
   </div>
   <div class="actions">
     <button id="notifyBtn">Alerts</button>
@@ -71,12 +84,12 @@ footer{font-size:.65rem;color:#484f58;text-align:center;padding:6px 0 0;border-t
 
 <div class="grid-2">
   <section class="card" id="campaignPanel">
-    <h2>Campaign Manager</h2>
+    <h2>🎯 Campaigns</h2>
     <div id="campaignList"></div>
     <div id="campaignDetail"></div>
   </section>
   <section class="card" id="alertsPanel">
-    <h2>Dashboard Monitor Bot <span id="alertsStatus"></span></h2>
+    <h2>🤖 Bot Monitor <span id="alertsStatus"></span></h2>
     <div id="alertsTime" class="dim"></div>
     <div id="alertsContent"></div>
   </section>
@@ -84,18 +97,25 @@ footer{font-size:.65rem;color:#484f58;text-align:center;padding:6px 0 0;border-t
 
 <div class="grid-2">
   <section class="card">
-    <h2>Product Scores</h2>
+    <h2>📊 Product Scores</h2>
     <div id="productScores"></div>
   </section>
   <section class="card">
-    <h2>Leads <span id="leadEngineLed" class="gate-badge"></span></h2>
+    <h2>👥 Leads</h2>
     <div id="leadsContent"></div>
   </section>
 </div>
 
 <footer id="footerText"></footer>
 
-<script src="/command-center/campaign-manager.js"></script>
+<div class="bot-container">
+  <div class="bot-bubble" id="botBubble">
+    <strong>🐯 Tiger AI</strong>
+    <span id="botFact">Engine running. Pipeline: 5000.</span>
+  </div>
+  <div class="bot-face" id="botFace" title="Tiger AI — 12 faces cycling every 0.5s"></div>
+</div>
+
 <script src="/command-center/app.js" type="module"></script>
 </body>
 </html>
