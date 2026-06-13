@@ -179,7 +179,8 @@ async function renderAgentEfficiency() {
   const avg = Math.round(agents.reduce((s,a) => s + Math.min(100, Math.round((a.base/a.target)*100)), 0) / agents.length);
   const rowsHtml = rows.map(r => r.html).join('');
   const container = $('agentEfficiency');
-  if (container) container.innerHTML = `
+  if (container) {
+    container.innerHTML = `
     <table class="agent-table">
       <thead><tr><th>Agent</th><th>Function</th><th style="width:120px">Efficiency</th></tr></thead>
       <tbody>${rowsHtml}</tbody>
@@ -187,6 +188,15 @@ async function renderAgentEfficiency() {
     <div style="margin-top:6px;font-size:.65rem;text-align:right;color:#8b949e;">
       Overall: <b style="color:${avg>=80?'#3fb950':avg>=50?'#d29922':'#f85149'}">${avg}%</b> — ${agents.length} agents
     </div>`;
+    // Animate bars: start at 0, expand to target
+    requestAnimationFrame(() => {
+      container.querySelectorAll('.eff-fill').forEach(bar => {
+        const target = bar.style.width;
+        bar.style.width = '0';
+        requestAnimationFrame(() => { bar.style.width = target; bar.classList.add('done'); });
+      });
+    });
+  }
 }
 
 async function render() {
