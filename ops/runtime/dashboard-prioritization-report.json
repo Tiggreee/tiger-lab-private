@@ -1,12 +1,10 @@
 {
-  "prioritizedAt": "2026-06-12T15:13:04.294Z",
+  "prioritizedAt": "2026-06-13T07:24:25.215Z",
   "totalActive": 14,
   "archivedCount": 0,
   "overdueCount": 0,
   "alerts": [],
   "recommendedFocus": [
-    "Configurar Stripe live keys en GitHub Secrets",
-    "Configurar PayPal live keys en GitHub Secrets",
-    "Resolver: All Agents Active"
+    "Conectar PAC SW Sapien para CFDI"
   ]
 }

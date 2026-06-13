@@ -1,0 +1,134 @@
+{
+  "decisions": [
+    {
+      "product": "Sentrylog Lite",
+      "reason": "Score 38/100 — no viable path",
+      "action": "KILL",
+      "severity": "permanent"
+    }
+  ],
+  "metrics": {
+    "agentHealth": {
+      "total": 12,
+      "passed": 11
+    },
+    "uiRefinement": {
+      "avgScore": 89,
+      "products": [
+        {
+          "product": "Docflow API",
+          "recommendedEngines": [
+            "Chakra UI",
+            "Mantine"
+          ],
+          "uiScore": 80
+        },
+        {
+          "product": "Script Premium Kit",
+          "recommendedEngines": [
+            "daisyUI",
+            "Chakra UI",
+            "HeroUI/NextUI"
+          ],
+          "uiScore": 95
+        },
+        {
+          "product": "FacturAutentico Cloud",
+          "recommendedEngines": [
+            "daisyUI",
+            "Chakra UI",
+            "HeroUI/NextUI"
+          ],
+          "uiScore": 95
+        },
+        {
+          "product": "FacturAutentica",
+          "recommendedEngines": [
+            "Chakra UI",
+            "Mantine"
+          ],
+          "uiScore": 80
+        },
+        {
+          "product": "Sentrylog Lite",
+          "recommendedEngines": [
+            "daisyUI",
+            "Chakra UI",
+            "HeroUI/NextUI"
+          ],
+          "uiScore": 95
+        }
+      ]
+    },
+    "engineHealth": {
+      "agents": {
+        "total": 12,
+        "passed": 11
+      },
+      "uiRefinement": {
+        "avgScore": 89,
+        "products": [
+          {
+            "product": "Docflow API",
+            "recommendedEngines": [
+              "Chakra UI",
+              "Mantine"
+            ],
+            "uiScore": 80
+          },
+          {
+            "product": "Script Premium Kit",
+            "recommendedEngines": [
+              "daisyUI",
+              "Chakra UI",
+              "HeroUI/NextUI"
+            ],
+            "uiScore": 95
+          },
+          {
+            "product": "FacturAutentico Cloud",
+            "recommendedEngines": [
+              "daisyUI",
+              "Chakra UI",
+              "HeroUI/NextUI"
+            ],
+            "uiScore": 95
+          },
+          {
+            "product": "FacturAutentica",
+            "recommendedEngines": [
+              "Chakra UI",
+              "Mantine"
+            ],
+            "uiScore": 80
+          },
+          {
+            "product": "Sentrylog Lite",
+            "recommendedEngines": [
+              "daisyUI",
+              "Chakra UI",
+              "HeroUI/NextUI"
+            ],
+            "uiScore": 95
+          }
+        ]
+      },
+      "products": {
+        "total": 5,
+        "invest": 2,
+        "zombie": 2,
+        "killed": 1
+      },
+      "decisions": 1,
+      "startups": 1,
+      "revenue": 0,
+      "pipeline": "5000 contacts ready",
+      "gate": "GO",
+      "uptime": "15s this cycle"
+    }
+  },
+  "killedAgents": [
+    "Sentrylog Lite"
+  ],
+  "startupCount": 1
+}

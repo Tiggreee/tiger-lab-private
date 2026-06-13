@@ -1,8 +1,8 @@
 # Production Go/No-Go Report
 
-- generatedAt: 2026-06-13T04:44:17.285Z
-- gateStatus: GO_WITH_WARNINGS
-- summary: PASS 12 | WARN 2 | FAIL 0
+- generatedAt: 2026-06-13T07:24:24.467Z
+- gateStatus: GO
+- summary: PASS 14 | WARN 0 | FAIL 0
 
 ## Checks
 
@@ -42,14 +42,13 @@
 - P9 Build de backend y arranque: PASS
   details: build:server OK.
   ownerAction: Sin accion.
-- P12 GitHub Actions operacional: WARN
-  details: CI: unknown
-  ownerAction: Revisar CI.
-- P14 Railway deploy status: WARN
-  details: Railway: unknown
-  ownerAction: Revisar Railway logs.
+- P12 GitHub Actions operacional: PASS
+  details: CI: success
+  ownerAction: Sin accion.
+- P14 Railway deploy status: PASS
+  details: Railway: success
+  ownerAction: Sin accion.
 
 ## Owner Next Actions
 
-- P12: Revisar CI.
-- P14: Revisar Railway logs.
+- Ninguna.

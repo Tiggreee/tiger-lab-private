@@ -1,6 +1,6 @@
 {
   "agentId": "creative-agent",
-  "totalCampaigns": 1,
+  "totalCampaigns": 2,
   "campaigns": [
     {
       "id": "CAMP-1781334207583",
@@ -23,22 +23,46 @@
       "learnings": [],
       "ownerFeedback": "",
       "improvedInNext": false
+    },
+    {
+      "id": "CAMP-1781335464855",
+      "product": "Docflow API",
+      "createdAt": "2026-06-13T07:24:24.858Z",
+      "score": 90,
+      "copies": {
+        "email": "Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. Doc",
+        "linkedin": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "x": "🔥 Automatiza documentos. Ahorra 10h/semana.\n✅ Automatización completa\n✅ Integra",
+        "facebook": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "telegram": "*Docflow API*\n\nAutomatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo ",
+        "discord": "**Docflow API**\n\nAutomatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiemp"
+      },
+      "performance": {
+        "opens": 0,
+        "clicks": 0,
+        "conversions": 0
+      },
+      "learnings": [],
+      "ownerFeedback": "",
+      "improvedInNext": false
     }
   ],
   "patterns": {
     "bestHeadlines": [
+      "Automatiza documentos. Ahorra 10h/semana.",
       "Automatiza documentos. Ahorra 10h/semana."
     ],
     "bestCTAs": [
+      "Prueba gratis 7 días →",
       "Prueba gratis 7 días →"
     ],
     "bestChannels": [],
     "worstCopy": []
   },
   "evolution": {
-    "averageScore": 80,
+    "averageScore": 85,
     "scoreTrend": "improving",
-    "totalIterations": 1
+    "totalIterations": 2
   },
-  "version": 2
+  "version": 3
 }

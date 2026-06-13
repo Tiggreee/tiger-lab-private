@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-13T04:44:17.285Z",
+  "generatedAt": "2026-06-13T07:24:24.467Z",
   "strict": false,
-  "gateStatus": "GO_WITH_WARNINGS",
+  "gateStatus": "GO",
   "summary": {
-    "pass": 12,
-    "warn": 2,
+    "pass": 14,
+    "warn": 0,
     "fail": 0
   },
   "checks": [
@@ -167,31 +167,22 @@
       "id": "P12",
       "title": "GitHub Actions operacional",
       "severity": "critical",
-      "status": "WARN",
-      "details": "CI: unknown",
+      "status": "PASS",
+      "details": "CI: success",
       "evidence": [],
-      "ownerAction": "Revisar CI."
+      "ownerAction": "Sin accion."
     },
     {
       "id": "P14",
       "title": "Railway deploy status",
       "severity": "high",
-      "status": "WARN",
-      "details": "Railway: unknown",
+      "status": "PASS",
+      "details": "Railway: success",
       "evidence": [
         ".github/workflows/backend-railway-deploy.yml"
       ],
-      "ownerAction": "Revisar Railway logs."
+      "ownerAction": "Sin accion."
     }
   ],
-  "ownerNextActions": [
-    {
-      "id": "P12",
-      "action": "Revisar CI."
-    },
-    {
-      "id": "P14",
-      "action": "Revisar Railway logs."
-    }
-  ]
+  "ownerNextActions": []
 }

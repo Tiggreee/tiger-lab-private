@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## [0.1.0] - 2026-06-12
+## [0.1.0] - 2026-06-13
 
 ### Added
 - Stripe payment service with checkout, webhook, and signature verification

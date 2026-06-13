@@ -256,10 +256,23 @@
         "Social Publish": 5
       },
       "perm": "all"
+    },
+    {
+      "timestamp": "2026-06-13T07:24:20.999Z",
+      "totalRuns": 100,
+      "failed": 1,
+      "successful": 99,
+      "byType": {
+        "failure": 1
+      },
+      "byWorkflow": {
+        "security": 1
+      },
+      "perm": "all"
     }
   ],
   "fixesApplied": [],
   "lastKnownPermission": "all",
-  "lastAnalysis": "2026-06-13T05:58:27.647Z",
-  "totalFailuresTracked": 392
+  "lastAnalysis": "2026-06-13T07:24:20.999Z",
+  "totalFailuresTracked": 393
 }

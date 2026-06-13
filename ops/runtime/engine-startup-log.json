@@ -1,0 +1,222 @@
+{
+  "startedAt": "2026-06-13T07:24:10.263Z",
+  "phases": [
+    {
+      "phase": "agent-health",
+      "results": [
+        {
+          "agent": "Agent Monitor",
+          "status": "PASS",
+          "critical": true
+        },
+        {
+          "agent": "Product Development Engine",
+          "status": "PASS",
+          "critical": true
+        },
+        {
+          "agent": "Failures Monitor",
+          "status": "PASS",
+          "critical": true
+        },
+        {
+          "agent": "Production Gate",
+          "status": "PASS",
+          "critical": true
+        },
+        {
+          "agent": "Lead Engine",
+          "status": "PASS",
+          "critical": true
+        },
+        {
+          "agent": "R&D Engine",
+          "status": "FAIL",
+          "critical": false
+        },
+        {
+          "agent": "Creative Agent",
+          "status": "PASS",
+          "critical": false
+        },
+        {
+          "agent": "Campaign Designer",
+          "status": "PASS",
+          "critical": false
+        },
+        {
+          "agent": "Prospect Selector",
+          "status": "PASS",
+          "critical": false
+        },
+        {
+          "agent": "Monetization Engine",
+          "status": "PASS",
+          "critical": true
+        },
+        {
+          "agent": "Dashboard Prioritization",
+          "status": "PASS",
+          "critical": false
+        },
+        {
+          "agent": "Product Architect",
+          "status": "PASS",
+          "critical": false
+        }
+      ]
+    },
+    {
+      "phase": "product-refinement",
+      "scores": [
+        {
+          "product": "Docflow API",
+          "recommendedEngines": [
+            "Chakra UI",
+            "Mantine"
+          ],
+          "uiScore": 80
+        },
+        {
+          "product": "Script Premium Kit",
+          "recommendedEngines": [
+            "daisyUI",
+            "Chakra UI",
+            "HeroUI/NextUI"
+          ],
+          "uiScore": 95
+        },
+        {
+          "product": "FacturAutentico Cloud",
+          "recommendedEngines": [
+            "daisyUI",
+            "Chakra UI",
+            "HeroUI/NextUI"
+          ],
+          "uiScore": 95
+        },
+        {
+          "product": "FacturAutentica",
+          "recommendedEngines": [
+            "Chakra UI",
+            "Mantine"
+          ],
+          "uiScore": 80
+        },
+        {
+          "product": "Sentrylog Lite",
+          "recommendedEngines": [
+            "daisyUI",
+            "Chakra UI",
+            "HeroUI/NextUI"
+          ],
+          "uiScore": 95
+        }
+      ],
+      "avgScore": 89
+    },
+    {
+      "phase": "data-pipeline",
+      "steps": [
+        "Lead Engine Seed",
+        "Unified Dashboard",
+        "Dashboard Monitor",
+        "Decision DB"
+      ]
+    },
+    {
+      "phase": "kill-decisions",
+      "kills": [
+        {
+          "product": "Sentrylog Lite",
+          "reason": "Score 38/100 — no viable path",
+          "action": "KILL",
+          "severity": "permanent"
+        }
+      ],
+      "zombies": [
+        "FacturAutentico Cloud",
+        "FacturAutentica"
+      ],
+      "invest": [
+        "Docflow API",
+        "Script Premium Kit"
+      ]
+    },
+    {
+      "phase": "campaigns",
+      "status": "OFF",
+      "reason": "Manual approval pending"
+    }
+  ],
+  "results": {
+    "agents": {
+      "total": 12,
+      "passed": 11
+    },
+    "uiRefinement": {
+      "avgScore": 89,
+      "products": [
+        {
+          "product": "Docflow API",
+          "recommendedEngines": [
+            "Chakra UI",
+            "Mantine"
+          ],
+          "uiScore": 80
+        },
+        {
+          "product": "Script Premium Kit",
+          "recommendedEngines": [
+            "daisyUI",
+            "Chakra UI",
+            "HeroUI/NextUI"
+          ],
+          "uiScore": 95
+        },
+        {
+          "product": "FacturAutentico Cloud",
+          "recommendedEngines": [
+            "daisyUI",
+            "Chakra UI",
+            "HeroUI/NextUI"
+          ],
+          "uiScore": 95
+        },
+        {
+          "product": "FacturAutentica",
+          "recommendedEngines": [
+            "Chakra UI",
+            "Mantine"
+          ],
+          "uiScore": 80
+        },
+        {
+          "product": "Sentrylog Lite",
+          "recommendedEngines": [
+            "daisyUI",
+            "Chakra UI",
+            "HeroUI/NextUI"
+          ],
+          "uiScore": 95
+        }
+      ]
+    },
+    "products": {
+      "total": 5,
+      "invest": 2,
+      "zombie": 2,
+      "killed": 1
+    },
+    "decisions": 1,
+    "startups": 1,
+    "revenue": 0,
+    "pipeline": "5000 contacts ready",
+    "gate": "GO",
+    "uptime": "15s this cycle"
+  },
+  "metrics": {},
+  "decisions": [],
+  "endedAt": "2026-06-13T07:24:25.792Z",
+  "duration": 15.529
+}
