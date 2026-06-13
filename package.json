@@ -98,6 +98,7 @@
     "@types/node": "^24.12.3",
     "@types/pg": "^8.20.0",
     "@vitest/coverage-v8": "^4.1.8",
+    "sharp": "^0.35.1",
     "typescript": "^6.0.3",
     "vitest": "^4.1.8"
   },

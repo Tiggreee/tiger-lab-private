@@ -48,22 +48,22 @@ footer{font-size:.65rem;color:#484f58;text-align:center;padding:6px 0 0;border-t
 .bot-container{position:fixed;bottom:16px;right:16px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
 .bot-bubble{background:#161b22;border:1px solid #3fb95044;border-radius:8px;padding:8px 12px;max-width:220px;font-size:.65rem;color:#c9d1d9;box-shadow:0 2px 12px #00000044;animation:floatBubble 4s ease-in-out infinite}
 .bot-bubble strong{color:#3fb950;display:block;font-size:.6rem;margin-bottom:3px}
-.bot-face{width:54px;height:54px;border-radius:50%;border:2px solid #3fb950;background-size:400% 100%;animation:cycleFaces 6s steps(1) infinite;cursor:pointer;box-shadow:0 0 14px #3fb95044;transition:transform .2s}
+.bot-face{width:54px;height:54px;border-radius:50%;border:2px solid #3fb950;background-size:cover;background-position:center;animation:cycleFaces 6s steps(1) infinite;cursor:pointer;box-shadow:0 0 14px #3fb95044;transition:transform .2s}
 .bot-face:hover{transform:scale(1.15)}
 @keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-@keyframes cycleFaces{0%{background-image:url('/command-center/CARONAI0.png');background-position:0 0}
-8.33%{background-image:url('/command-center/CARONAI0.png');background-position:33.33% 0}
-16.66%{background-image:url('/command-center/CARONAI0.png');background-position:66.66% 0}
-25%{background-image:url('/command-center/CARONAI0.png');background-position:100% 0}
-33.33%{background-image:url('/command-center/CARONMANOTAS.png');background-position:0 0}
-41.66%{background-image:url('/command-center/CARONMANOTAS.png');background-position:33.33% 0}
-50%{background-image:url('/command-center/CARONMANOTAS.png');background-position:66.66% 0}
-58.33%{background-image:url('/command-center/CARONMANOTAS.png');background-position:100% 0}
-66.66%{background-image:url('/command-center/caroncampanabotdashboard.png');background-position:0 0}
-75%{background-image:url('/command-center/caroncampanabotdashboard.png');background-position:33.33% 0}
-83.33%{background-image:url('/command-center/caroncampanabotdashboard.png');background-position:66.66% 0}
-91.66%{background-image:url('/command-center/caroncampanabotdashboard.png');background-position:100% 0}
-100%{background-image:url('/command-center/CARONAI0.png');background-position:0 0}}
+@keyframes cycleFaces{0%{background-image:url('/command-center/faces/CARONAI0_face1.png')}
+8.33%{background-image:url('/command-center/faces/CARONAI0_face2.png')}
+16.66%{background-image:url('/command-center/faces/CARONAI0_face3.png')}
+25%{background-image:url('/command-center/faces/CARONAI0_face4.png')}
+33.33%{background-image:url('/command-center/faces/CARONMANOTAS_face1.png')}
+41.66%{background-image:url('/command-center/faces/CARONMANOTAS_face2.png')}
+50%{background-image:url('/command-center/faces/CARONMANOTAS_face3.png')}
+58.33%{background-image:url('/command-center/faces/CARONMANOTAS_face4.png')}
+66.66%{background-image:url('/command-center/faces/caroncampanabotdashboard_face1.png')}
+75%{background-image:url('/command-center/faces/caroncampanabotdashboard_face2.png')}
+83.33%{background-image:url('/command-center/faces/caroncampanabotdashboard_face3.png')}
+91.66%{background-image:url('/command-center/faces/caroncampanabotdashboard_face4.png')}
+100%{background-image:url('/command-center/faces/CARONAI0_face1.png')}}
 @media(max-width:800px){.grid-2{grid-template-columns:1fr}.kpi-row{grid-template-columns:repeat(2,1fr)}.bot-container{right:6px;bottom:6px}}
 </style>
 </head>
