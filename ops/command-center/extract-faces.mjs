@@ -9,8 +9,7 @@ const OUT = resolve('ops/command-center/faces');
 const FILES = [
   'Copilot_20260613_002326.png','Copilot_20260613_002457.png','Copilot_20260613_002729.png',
   'Copilot_20260613_002939.png','Copilot_20260613_003102.png','Copilot_20260613_003257.png',
-  'Copilot_20260613_003439.png','Copilot_20260613_003620.png','Copilot_20260613_003747.png',
-  'CARONAI0.png','CARONMANOTAS.png','caroncampanabotdashboard.png'
+  'Copilot_20260613_003439.png','Copilot_20260613_003620.png','Copilot_20260613_003747.png'
 ];
 
 mkdirSync(OUT, { recursive: true });

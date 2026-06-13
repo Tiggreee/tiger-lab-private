@@ -48,22 +48,20 @@ footer{font-size:.65rem;color:#484f58;text-align:center;padding:6px 0 0;border-t
 .bot-container{position:fixed;bottom:16px;right:16px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
 .bot-bubble{background:#161b22;border:1px solid #3fb95044;border-radius:8px;padding:8px 12px;max-width:220px;font-size:.65rem;color:#c9d1d9;box-shadow:0 2px 12px #00000044;animation:floatBubble 4s ease-in-out infinite}
 .bot-bubble strong{color:#3fb950;display:block;font-size:.6rem;margin-bottom:3px}
-.bot-face{width:64px;height:80px;border-radius:50%/45%;border:2px solid #3fb950;background-size:cover;background-position:center;animation:cycleFaces 6s steps(1) infinite;cursor:pointer;box-shadow:0 0 14px #3fb95044;transition:transform .2s}
+.bot-face{width:64px;height:80px;border-radius:50%/45%;border:2px solid #3fb950;background-size:cover;background-position:center;animation:cycleFaces 10s steps(1) infinite;cursor:pointer;box-shadow:0 0 14px #3fb95044;transition:transform .2s}
 .bot-face:hover{transform:scale(1.15)}
 @keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-@keyframes cycleFaces{0%{background-image:url('/command-center/faces/Copilot_20260613_002326_face.png')}
-8.33%{background-image:url('/command-center/faces/Copilot_20260613_002457_face.png')}
-16.66%{background-image:url('/command-center/faces/Copilot_20260613_002729_face.png')}
-25%{background-image:url('/command-center/faces/Copilot_20260613_002939_face.png')}
-33.33%{background-image:url('/command-center/faces/Copilot_20260613_003102_face.png')}
-41.66%{background-image:url('/command-center/faces/Copilot_20260613_003257_face.png')}
-50%{background-image:url('/command-center/faces/Copilot_20260613_003439_face.png')}
-58.33%{background-image:url('/command-center/faces/Copilot_20260613_003620_face.png')}
-66.66%{background-image:url('/command-center/faces/Copilot_20260613_003747_face.png')}
-75%{background-image:url('/command-center/faces/CARONAI0_face.png')}
-83.33%{background-image:url('/command-center/faces/CARONMANOTAS_face.png')}
-91.66%{background-image:url('/command-center/faces/Copilot_20260613_002326_face.png')}
-100%{background-image:url('/command-center/faces/Copilot_20260613_002457_face.png')}}
+@keyframes cycleFaces{
+0%{background-image:url('/command-center/faces/Copilot_20260613_002326_face.png')}
+11.11%{background-image:url('/command-center/faces/Copilot_20260613_002457_face.png')}
+22.22%{background-image:url('/command-center/faces/Copilot_20260613_002729_face.png')}
+33.33%{background-image:url('/command-center/faces/Copilot_20260613_002939_face.png')}
+44.44%{background-image:url('/command-center/faces/Copilot_20260613_003102_face.png')}
+55.55%{background-image:url('/command-center/faces/Copilot_20260613_003257_face.png')}
+66.66%{background-image:url('/command-center/faces/Copilot_20260613_003439_face.png')}
+77.77%{background-image:url('/command-center/faces/Copilot_20260613_003620_face.png')}
+88.88%{background-image:url('/command-center/faces/Copilot_20260613_003747_face.png')}
+100%{background-image:url('/command-center/faces/Copilot_20260613_002326_face.png')}}
 @media(max-width:800px){.grid-2{grid-template-columns:1fr}.kpi-row{grid-template-columns:repeat(2,1fr)}.bot-container{right:6px;bottom:6px}}
 </style>
 </head>
