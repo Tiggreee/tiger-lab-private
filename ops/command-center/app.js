@@ -139,8 +139,36 @@ $('notifyBtn').addEventListener('click', async () => {
 setInterval(renderAlerts, 60000);
 render().catch(console.error);
 
-// Bot fact cycler — real dashboard data
-const facts = ['Gate: GO', 'Pipeline: 5000 contacts', '1000 companies (INEGI)', 'Revenue: $69 avg', 'Health: 90/100', 'Stripe + PayPal LIVE', 'LinkedIn posting ACTIVE', '22 agents running', 'Pipeline: 6 AM daily'];
+// Bot fact cycler + click explosion
+const facts = ['Gate: GO', 'Pipeline: 5000 contacts', '1000 companies (INEGI)', 'Revenue: $69 avg', 'Health: 90/100', 'Stripe + PayPal LIVE', 'LinkedIn posting ACTIVE', '22 agents', '6 AM daily'];
+
+// Bot click = sound + 6 clicks = shit explosion
+let botClicks = 0;
+document.addEventListener('DOMContentLoaded', () => {
+  const face = document.getElementById('botFace');
+  if (!face) return;
+  face.addEventListener('click', () => {
+    botClicks++;
+    try { new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACAf39/f4B/f3+Af3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f38').play().catch(()=>{}) } catch {}
+    if (botClicks >= 6) {
+      botClicks = 0;
+      const emojis = ['💩','💩','💩','💩','💩','💩','💩','💩','🔥','💥','✨','💨'];
+      for (let i = 0; i < 20; i++) {
+        const e = document.createElement('span');
+        e.textContent = emojis[Math.floor(Math.random()*emojis.length)];
+        e.style.cssText = `position:fixed;font-size:${24+Math.random()*36}px;pointer-events:none;z-index:9999;left:${10+Math.random()*80}%;top:${10+Math.random()*80}%;animation:shitFall ${1+Math.random()*2}s ease-out forwards`;
+        document.body.appendChild(e);
+        setTimeout(() => e.remove(), 3000);
+      }
+      if (!document.getElementById('shitStyle')) {
+        const s = document.createElement('style');
+        s.id = 'shitStyle';
+        s.textContent = '@keyframes shitFall{0%{opacity:1;transform:translateY(0) rotate(0deg) scale(1)}100%{opacity:0;transform:translateY(-200px) rotate(720deg) scale(0)}}';
+        document.head.appendChild(s);
+      }
+    }
+  });
+});
 let factIdx = 0;
 function botCycle() {
   const el = $('botFact');
