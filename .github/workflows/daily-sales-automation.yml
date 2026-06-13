@@ -41,9 +41,9 @@ jobs:
           node-version: 22
           cache: npm
 
-      # 1. Lead Intelligence — genera leads desde ICP si no hay nuevos
-      - name: Lead Intelligence
-        run: node scripts/lead-intelligence.mjs
+      # 1. Lead Engine — seed + enrich + export (P2 checklist)
+      - name: Lead Engine
+        run: node scripts/lead-engine.mjs --mode seed && node scripts/lead-engine.mjs --mode enrich && node scripts/lead-engine.mjs --mode export
 
       # 2. Generate outreach desde leads nuevos
       - name: Generate outreach
