@@ -1035,5 +1035,33 @@
       ],
       "engineReady": []
     }
+  },
+  "failuresMonitor": {
+    "lastAnalysis": "2026-06-13T09:35:46.268Z",
+    "totalRuns": 100,
+    "failedToday": 2,
+    "successfulToday": 97,
+    "byType": {
+      "failure": 2
+    },
+    "byWorkflow": [
+      {
+        "workflow": "Product Development Engine — 2h Cycle",
+        "failures": 1
+      },
+      {
+        "workflow": "security",
+        "failures": 1
+      }
+    ],
+    "rootCauses": [
+      {
+        "cause": "Check failures in workflow steps",
+        "severity": "high",
+        "fix": "Review logs for each failed run"
+      }
+    ],
+    "permFixed": false,
+    "currentPermission": "all"
   }
 }
