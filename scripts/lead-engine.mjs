@@ -19,7 +19,7 @@ for (let i = 2; i < process.argv.length; i++) {
 
 async function getDB(dbBuf) {
   const SQL = await initSqlJs();
-  const db = new SQL.Database(dbBuf || fs.readFileSync(DB_PATH));
+  const db = new SQL.Database(dbBuf !== undefined ? dbBuf : (fs.existsSync(DB_PATH) ? fs.readFileSync(DB_PATH) : null));
   db.run('PRAGMA foreign_keys=ON');
   return db;
 }
@@ -121,7 +121,7 @@ async function main() {
 
   if (mode === 'seed' || (mode === 'auto' && beforeCount === 0)) {
     console.log(`\n=== LOADING SEED DATA ===`);
-    const seed = SEED_DATA;
+    const seed = loadJSON(SEED_PATH) || SEED_DATA;
     let loaded = 0;
     for (const c of seed.companies) {
       const existing = db.exec('SELECT id FROM companies WHERE name = ? AND city = ?', [c.name, c.city]);

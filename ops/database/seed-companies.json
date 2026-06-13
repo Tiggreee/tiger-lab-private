@@ -1,0 +1,7007 @@
+{
+  "generatedAt": "2026-06-13T02:56:11.990Z",
+  "source": "DENUE-INEGI patterns + Cámaras empresariales MX + Directorio Estadístico Nacional",
+  "totalCompanies": 1000,
+  "companies": [
+    {
+      "name": "Asesoría Fiscal Integral",
+      "industry": "cobranza",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Software San Luis Potosí",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en Línea Hermanos",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "CFDI Tijuana",
+      "industry": "facturacion",
+      "city": "Tuxtla Gutiérrez",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contaduría León",
+      "industry": "fintech",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma Digital Integral",
+      "industry": "contabilidad",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Estrategia",
+      "industry": "financiero",
+      "city": "Aguascalientes",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tecnología Solutions",
+      "industry": "facturacion",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización de Procesos Saltillo",
+      "industry": "facturacion",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Empresarial",
+      "industry": "fintech",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Process Automation Guadalajara",
+      "industry": "facturacion",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Automatizada",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad Premium",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Monterrey",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Electrónica CDMX",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Desarrollo",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Total del Pacífico",
+      "industry": "fintech",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Recuperación",
+      "industry": "software",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Fiscal Total",
+      "industry": "contabilidad",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en Línea Monterrey",
+      "industry": "software",
+      "city": "Tuxtla Gutiérrez",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Empresariales Guadalajara",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Grupo Contable Guadalajara",
+      "industry": "contabilidad",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Recursos Humanos del Golfo",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Advisory Aguascalientes",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría SC",
+      "industry": "consultoria",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobro Digital",
+      "industry": "logistica",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Planeación CDMX",
+      "industry": "contabilidad",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Planeación Financiera",
+      "industry": "financiero",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inteligencia SC",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Financieros San Luis Potosí",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Auditoría Contable Premium",
+      "industry": "cobranza",
+      "city": "Villahermosa",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contaduría y Asociados",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión de Personal del Bajío",
+      "industry": "consultoria",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Reclutamiento Services",
+      "industry": "consultoria",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Digital Toluca",
+      "industry": "logistica",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma Digital",
+      "industry": "facturacion",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech CDMX",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Electrónica del Golfo",
+      "industry": "facturacion",
+      "city": "Durango",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Contable",
+      "industry": "financiero",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Financiera Mérida",
+      "industry": "cobranza",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Smart Automation",
+      "industry": "contabilidad",
+      "city": "Durango",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Fiscal SC",
+      "industry": "automatizacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Públicos Consulting",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad",
+      "industry": "software",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Group",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Contables Plus",
+      "industry": "fintech",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Facturación SC",
+      "industry": "auditoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación Digital Guadalajara",
+      "industry": "contabilidad",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Contable",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inversiones Express",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones de Pago Puebla",
+      "industry": "consultoria",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesores Contables Corporativo",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contabilidad Integral",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Integral Solutions",
+      "industry": "financiero",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Contable",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría de Negocios Hermosillo",
+      "industry": "administracion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Almacenaje y Cía",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación",
+      "industry": "automatizacion",
+      "city": "Aguascalientes",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Inteligente Asociados",
+      "industry": "consultoria",
+      "city": "Villahermosa",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Consultora Express",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación Digital CDMX",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría Contable",
+      "industry": "rrhh",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable",
+      "industry": "facturacion",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Lending del Bajío",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Desarrollo SA de CV",
+      "industry": "fintech",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobro Digital Services",
+      "industry": "facturacion",
+      "city": "Aguascalientes",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Contable y Asociados",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Solutions SA de CV",
+      "industry": "facturacion",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Sistema de Facturación Puebla",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Estrategia y Cía",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Comprobantes Digitales",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría Contable del Pacífico",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Contable MX",
+      "industry": "auditoria",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Fiscal",
+      "industry": "contabilidad",
+      "city": "Torreón",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Data",
+      "industry": "auditoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Desarrollo del Norte",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Móvil",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad y Asociados",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Nómina",
+      "industry": "contabilidad",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad Monterrey",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobranza",
+      "industry": "contabilidad",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contaduría",
+      "industry": "software",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contabilidad Integral CDMX",
+      "industry": "consultoria",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Fiscales Contables",
+      "industry": "consultoria",
+      "city": "Culiacán",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Facturación y Cía",
+      "industry": "cobranza",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "SaaS Tijuana",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesores Contables San Luis Potosí",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría de Negocios Plus",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Transformación S de RL",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Contable Integral",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores Fiscales",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Fiscales Contables del Golfo",
+      "industry": "facturacion",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Facturación Group",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Contaduría",
+      "industry": "contabilidad",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Business Consulting SA de CV",
+      "industry": "software",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Apps Monterrey",
+      "industry": "software",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Pagos Digitales",
+      "industry": "facturacion",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Lending",
+      "industry": "contabilidad",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones CFDI Veracruz",
+      "industry": "facturacion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Compliance",
+      "industry": "contabilidad",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación Guanajuato",
+      "industry": "financiero",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Consultora Plus",
+      "industry": "cobranza",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Integral",
+      "industry": "logistica",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Grupo Contable",
+      "industry": "financiero",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría del Centro",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "RH Monterrey",
+      "industry": "facturacion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable Tijuana",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Inteligente Plus",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "SaaS CDMX",
+      "industry": "facturacion",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Empresariales",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría Contable CDMX",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Villahermosa",
+      "industry": "facturacion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Públicos",
+      "industry": "automatizacion",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Sistemas y Asociados",
+      "industry": "auditoria",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Ágil Services",
+      "industry": "consultoria",
+      "city": "Durango",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Integral Guadalajara",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Contable",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Consultora Torreón",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Última Milla Master",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en Línea Total",
+      "industry": "auditoria",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en Línea Empresarial",
+      "industry": "automatizacion",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobranza Judicial Pro",
+      "industry": "administracion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Bufete Contable Express",
+      "industry": "software",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Financiera Saltillo",
+      "industry": "consultoria",
+      "city": "Villahermosa",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Contables CDMX",
+      "industry": "contabilidad",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Electrónica",
+      "industry": "consultoria",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Tributaria Asociados",
+      "industry": "facturacion",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Factura Fácil Aguascalientes",
+      "industry": "financiero",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Automatizada CDMX",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contaduría Pro",
+      "industry": "consultoria",
+      "city": "Culiacán",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Software Development del Golfo",
+      "industry": "contabilidad",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Transformación",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión del Pacífico",
+      "industry": "consultoria",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Contable y Cía",
+      "industry": "automatizacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Solutions",
+      "industry": "software",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Fiscal",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Digital",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Total Pro",
+      "industry": "software",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Planeación",
+      "industry": "cobranza",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Mérida",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Contable Hermanos",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría de Negocios Mérida",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Patrimonial Veracruz",
+      "industry": "contabilidad",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Contables",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría Contable Profesional",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Contable Monterrey",
+      "industry": "fintech",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Financiera CDMX",
+      "industry": "automatizacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Contaduría Morelia",
+      "industry": "financiero",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Transformación CDMX",
+      "industry": "facturacion",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores Fiscales Profesional",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable CDMX",
+      "industry": "cobranza",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad SC",
+      "industry": "facturacion",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "IT Solutions Total",
+      "industry": "automatizacion",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría del Norte",
+      "industry": "financiero",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Factura Fácil",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Administración Veracruz",
+      "industry": "automatizacion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Públicos S de RL",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Oficina Chihuahua",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Lending Hermosillo",
+      "industry": "facturacion",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Digital Hermosillo",
+      "industry": "software",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Financieros",
+      "industry": "fintech",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Integral",
+      "industry": "administracion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Automatizada y Asociados",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Apps",
+      "industry": "contabilidad",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera y Cía",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Dev",
+      "industry": "contabilidad",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Inteligente",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "CFDI del Golfo",
+      "industry": "financiero",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría de Negocios Empresarial",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría de Negocios Hermosillo",
+      "industry": "rrhh",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Contables CDMX",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Certificados Empresarial",
+      "industry": "logistica",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Distribución Asociados",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma Digital del Pacífico",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría Contable Services",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización de Procesos Master",
+      "industry": "software",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contaduría Hermosillo",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Certificados Tuxtla Gutiérrez",
+      "industry": "automatizacion",
+      "city": "Tuxtla Gutiérrez",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Oficina Monterrey",
+      "industry": "facturacion",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Tributaria Guanajuato",
+      "industry": "facturacion",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "RPA",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría CDMX",
+      "industry": "fintech",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Bufete Contable",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Fiscal del Bajío",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Contable Chihuahua",
+      "industry": "software",
+      "city": "Villahermosa",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Factura Fácil del Centro",
+      "industry": "contabilidad",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad Guadalajara",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación Solutions",
+      "industry": "automatizacion",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Envíos del Golfo",
+      "industry": "facturacion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Software Monterrey",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobro Aguascalientes",
+      "industry": "consultoria",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Comprobantes Digitales Monterrey",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Contables Premium",
+      "industry": "contabilidad",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad Services",
+      "industry": "software",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Lending Veracruz",
+      "industry": "fintech",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Empresariales S de RL",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable del Centro",
+      "industry": "contabilidad",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contaduría Guadalajara",
+      "industry": "contabilidad",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Workflow",
+      "industry": "facturacion",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Digital MX",
+      "industry": "software",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "CFDI CDMX",
+      "industry": "fintech",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Factura Fácil Chihuahua",
+      "industry": "contabilidad",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría Interna Tuxtla Gutiérrez",
+      "industry": "facturacion",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "eFactura",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Tributaria",
+      "industry": "rrhh",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Contaduría Consulting",
+      "industry": "facturacion",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Reclutamiento del Norte",
+      "industry": "auditoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Integral Aguascalientes",
+      "industry": "software",
+      "city": "Villahermosa",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización de Procesos del Golfo",
+      "industry": "automatizacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría Interna",
+      "industry": "contabilidad",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Administrativa del Golfo",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Facturación",
+      "industry": "administracion",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Contables Services",
+      "industry": "software",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Facturación",
+      "industry": "administracion",
+      "city": "Torreón",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Planeación Financiera y Cía",
+      "industry": "contabilidad",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Facturación Torreón",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores del Bajío",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones de Pago del Golfo",
+      "industry": "contabilidad",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Pagos Hermanos",
+      "industry": "cobranza",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Oficina Consulting",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Financiera Master",
+      "industry": "logistica",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestoría Fiscal",
+      "industry": "fintech",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable Veracruz",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Desarrollo y Socios",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Code Hermanos",
+      "industry": "rrhh",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contabilidad Integral y Asociados",
+      "industry": "facturacion",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Factura Fácil CDMX",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "eFactura Group",
+      "industry": "fintech",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "SaaS Guadalajara",
+      "industry": "financiero",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cloud",
+      "industry": "financiero",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Consulting",
+      "industry": "consultoria",
+      "city": "Villahermosa",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Inteligente Total",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación Digital Monterrey",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesores Contables Group",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobranza Extrajudicial Guanajuato",
+      "industry": "auditoria",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Digital del Centro",
+      "industry": "facturacion",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Patrimonial Premium",
+      "industry": "consultoria",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en Línea",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Financieras Morelia",
+      "industry": "consultoria",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría Externa Guadalajara",
+      "industry": "software",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Fiscal Querétaro",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Digital Premium",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Patrimonial Hermanos",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Financieras",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Financiera Saltillo",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesores Contables Mérida",
+      "industry": "consultoria",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inversiones del Golfo",
+      "industry": "logistica",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Control Automático",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Bufete Contable Monterrey",
+      "industry": "consultoria",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Consultora",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "IT Solutions del Pacífico",
+      "industry": "financiero",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Billetera Digital SC",
+      "industry": "facturacion",
+      "city": "Oaxaca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Empresariales Group",
+      "industry": "facturacion",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Empresarial CDMX",
+      "industry": "facturacion",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "CFDI Guadalajara",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Tecnológicas Pro",
+      "industry": "contabilidad",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobranza Profesional",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Recuperación SA de CV",
+      "industry": "auditoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Total",
+      "industry": "consultoria",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Contables Monterrey",
+      "industry": "auditoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inteligencia Corporativo",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Headhunting",
+      "industry": "facturacion",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría",
+      "industry": "facturacion",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Talento",
+      "industry": "fintech",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestoría Fiscal y Cía",
+      "industry": "facturacion",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Open Banking",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Financiera CDMX",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tecnología SA de CV",
+      "industry": "financiero",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Facturación Services",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inteligencia S de RL",
+      "industry": "financiero",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Fiscales Contables Solutions",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en Línea Querétaro",
+      "industry": "facturacion",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "RH Solutions",
+      "industry": "contabilidad",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización Industrial Empresarial",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Financiera Master",
+      "industry": "consultoria",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Sistemas Group",
+      "industry": "consultoria",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Grupo Consultor",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automa Cancún",
+      "industry": "software",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Contable CDMX",
+      "industry": "consultoria",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Digital CDMX",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones de Pago Chihuahua",
+      "industry": "contabilidad",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría de Negocios",
+      "industry": "cobranza",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Tributaria Morelia",
+      "industry": "software",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Integral CDMX",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "RPA Guadalajara",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Compliance SC",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Fiscales Contables CDMX",
+      "industry": "software",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Contables Querétaro",
+      "industry": "software",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Desarrollo Corporativo",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contabilidad Integral del Pacífico",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contabilidad Integral del Bajío",
+      "industry": "contabilidad",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación Digital",
+      "industry": "software",
+      "city": "Torreón",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Fiscal Veracruz",
+      "industry": "cobranza",
+      "city": "Oaxaca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Digital",
+      "industry": "facturacion",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Total",
+      "industry": "automatizacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable Express",
+      "industry": "consultoria",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Solutions Integral",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en la Nube Monterrey",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestoría Fiscal Guadalajara",
+      "industry": "contabilidad",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobro Querétaro",
+      "industry": "automatizacion",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Tijuana",
+      "industry": "facturacion",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría de Negocios",
+      "industry": "automatizacion",
+      "city": "Culiacán",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Fiscales Contables Querétaro",
+      "industry": "software",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesores Contables Monterrey",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Robotics",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Contables del Centro",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Consultora Mérida",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Estrategia del Centro",
+      "industry": "administracion",
+      "city": "Aguascalientes",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Total Querétaro",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Financiera SA de CV",
+      "industry": "facturacion",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Inteligente Profesional",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Optimización Master",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "eFactura y Asociados",
+      "industry": "facturacion",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Certificados Corporativo",
+      "industry": "financiero",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Oficina",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automa Chihuahua",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría MX",
+      "industry": "administracion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Contables Corporativo",
+      "industry": "facturacion",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Business Consulting del Golfo",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Fiscal Durango",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Solutions MX",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma Digital CDMX",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Desarrollo Guadalajara",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Timbre Fiscal",
+      "industry": "administracion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Lending Guadalajara",
+      "industry": "contabilidad",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Finanzas",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Contable Guadalajara",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Finanzas Guadalajara",
+      "industry": "financiero",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría CDMX",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Control Automático Veracruz",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Públicos Services",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Software CDMX",
+      "industry": "facturacion",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones CFDI Tijuana",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Express",
+      "industry": "software",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesores Contables",
+      "industry": "consultoria",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Fiscales Contables y Socios",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Facturación Corporativo",
+      "industry": "consultoria",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Contable Tijuana",
+      "industry": "facturacion",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Headhunting del Norte",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Facturación CDMX",
+      "industry": "software",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma Digital Monterrey",
+      "industry": "facturacion",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Financieros Services",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Financieras Oaxaca",
+      "industry": "contabilidad",
+      "city": "Tuxtla Gutiérrez",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Master",
+      "industry": "rrhh",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "People",
+      "industry": "contabilidad",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad Group",
+      "industry": "facturacion",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Smart Automation Master",
+      "industry": "automatizacion",
+      "city": "Oaxaca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automa",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Ágil Express",
+      "industry": "facturacion",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "eFactura San Luis Potosí",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Solutions Veracruz",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Auditoría Contable Guadalajara",
+      "industry": "administracion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma de Auditoría",
+      "industry": "software",
+      "city": "Tuxtla Gutiérrez",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Data Toluca",
+      "industry": "software",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Desarrollo Organizacional y Asociados",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Inteligente Monterrey",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Contables Solutions",
+      "industry": "contabilidad",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Auditoría Contable CDMX",
+      "industry": "consultoria",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Auditoría Contable",
+      "industry": "cobranza",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Reclutamiento Consulting",
+      "industry": "administracion",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión de Cobranza",
+      "industry": "contabilidad",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inteligencia y Cía",
+      "industry": "administracion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Timbre Fiscal Solutions",
+      "industry": "contabilidad",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Públicos MX",
+      "industry": "consultoria",
+      "city": "Aguascalientes",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesores Contables y Asociados",
+      "industry": "logistica",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Tributaria CDMX",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Recuperación del Pacífico",
+      "industry": "contabilidad",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Oficina Plus",
+      "industry": "fintech",
+      "city": "Aguascalientes",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría MX",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Financiera",
+      "industry": "fintech",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Automatizada SA de CV",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera y Socios",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Certificados Guadalajara",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Advisory Querétaro",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Pagos Digitales Consulting",
+      "industry": "consultoria",
+      "city": "Aguascalientes",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Integral Aguascalientes",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Timbre Fiscal Guadalajara",
+      "industry": "financiero",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Facturación Services",
+      "industry": "fintech",
+      "city": "Durango",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Administración",
+      "industry": "fintech",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría Externa del Bajío",
+      "industry": "consultoria",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inteligencia",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Billetera Digital MX",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Grupo Consultor Guadalajara",
+      "industry": "facturacion",
+      "city": "Aguascalientes",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Digital Profesional",
+      "industry": "consultoria",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Facturación Puebla",
+      "industry": "facturacion",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Digital Pro",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Financiera",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión de Personal Puebla",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contabilidad Integral Guadalajara",
+      "industry": "facturacion",
+      "city": "Aguascalientes",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Insurtech",
+      "industry": "consultoria",
+      "city": "Villahermosa",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Planeación Financiera San Luis Potosí",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Factura Fácil Guadalajara",
+      "industry": "facturacion",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "SaaS Asociados",
+      "industry": "facturacion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inversiones",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Reclutamiento del Golfo",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automa Veracruz",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Timbre Fiscal CDMX",
+      "industry": "software",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Hermosillo",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Recursos Humanos del Norte",
+      "industry": "software",
+      "city": "Tuxtla Gutiérrez",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Móvil CDMX",
+      "industry": "facturacion",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Fiscal Integral Master",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automa SC",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Sistema de Facturación Asociados",
+      "industry": "facturacion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Data Saltillo",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "CFDI Veracruz",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable Monterrey",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Patrimonial",
+      "industry": "auditoria",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "IT Solutions CDMX",
+      "industry": "fintech",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Fiscal Integral",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Móvil Plus",
+      "industry": "logistica",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Automatizada Pro",
+      "industry": "fintech",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores Fiscales Integral",
+      "industry": "financiero",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores",
+      "industry": "software",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Financieras Consulting",
+      "industry": "software",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Patrimonial Saltillo",
+      "industry": "consultoria",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Facturación Monterrey",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Advisory SA de CV",
+      "industry": "software",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Business Consulting Tuxtla Gutiérrez",
+      "industry": "facturacion",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en la Nube Corporativo",
+      "industry": "contabilidad",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en Línea Solutions",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Bufete Contable Services",
+      "industry": "contabilidad",
+      "city": "Tuxtla Gutiérrez",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Contable y Asociados",
+      "industry": "facturacion",
+      "city": "Durango",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización de Procesos Tijuana",
+      "industry": "fintech",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Billetera Digital",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Factura Fácil Monterrey",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad Hermosillo",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "SaaS y Asociados",
+      "industry": "rrhh",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "RPA CDMX",
+      "industry": "facturacion",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Facturación Guadalajara",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Consultora y Socios",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Code Aguascalientes",
+      "industry": "consultoria",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tecnología",
+      "industry": "software",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesores Contables del Golfo",
+      "industry": "contabilidad",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Desarrollo Organizacional Express",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Software Factory Consulting",
+      "industry": "fintech",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Integral Hermanos",
+      "industry": "consultoria",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tecnología Aplicada CDMX",
+      "industry": "rrhh",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditores CDMX",
+      "industry": "facturacion",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Solutions Puebla",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Capital S de RL",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Empresarial y Asociados",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tecnología CDMX",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Back Office",
+      "industry": "contabilidad",
+      "city": "Durango",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Solutions Premium",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en la Nube Aguascalientes",
+      "industry": "rrhh",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Contable Premium",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Ágil CDMX",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Auditoría Contable Integral",
+      "industry": "auditoria",
+      "city": "Durango",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Fiscal Integral Corporativo",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Fulfillment Asociados",
+      "industry": "financiero",
+      "city": "Culiacán",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Services",
+      "industry": "automatizacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobranza del Norte",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Sistemas",
+      "industry": "fintech",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contabilidad Integral Pro",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesores Contables SA de CV",
+      "industry": "auditoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad Toluca",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad Puebla",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Total del Bajío",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Auditoría Contable y Cía",
+      "industry": "financiero",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Bufete Contable Integral",
+      "industry": "contabilidad",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Contable del Pacífico",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Software Development",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Contable Puebla",
+      "industry": "consultoria",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Finanzas Puebla",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores Fiscales Querétaro",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contabilidad Integral Asociados",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Móvil Premium",
+      "industry": "fintech",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Dev Express",
+      "industry": "cobranza",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Optimización CDMX",
+      "industry": "consultoria",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad del Pacífico",
+      "industry": "logistica",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Auditoría Contable Hermosillo",
+      "industry": "consultoria",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Express Morelia",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Inteligente CDMX",
+      "industry": "facturacion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Sistema de Facturación del Pacífico",
+      "industry": "administracion",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Software del Centro",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Fiscal Puebla",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Process Automation",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización del Centro",
+      "industry": "consultoria",
+      "city": "Villahermosa",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Finanzas Consulting",
+      "industry": "administracion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditores Master",
+      "industry": "software",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Estrategia Express",
+      "industry": "facturacion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Facturación Puebla",
+      "industry": "facturacion",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma Digital Cancún",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Integral Monterrey",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Certificados CDMX",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en la Nube Master",
+      "industry": "financiero",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Financiera Empresarial",
+      "industry": "contabilidad",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Advisory Corporativo",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en la Nube",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesores Contables y Cía",
+      "industry": "cobranza",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Bufete Contable Master",
+      "industry": "facturacion",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría",
+      "industry": "contabilidad",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en la Nube Asociados",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Integral del Bajío",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Bufete Contable y Asociados",
+      "industry": "cobranza",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Automatizada Monterrey",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Consultora CDMX",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable Solutions",
+      "industry": "contabilidad",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Capital",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones de Pago MX",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inteligencia Saltillo",
+      "industry": "facturacion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cloud Express",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Advisory",
+      "industry": "facturacion",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Contable San Luis Potosí",
+      "industry": "consultoria",
+      "city": "Oaxaca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Certificados",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Fulfillment del Pacífico",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Grupo Contable CDMX",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Chihuahua",
+      "industry": "software",
+      "city": "Aguascalientes",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Digital Monterrey",
+      "industry": "fintech",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Robotics y Socios",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Workflow Mérida",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización Industrial Profesional",
+      "industry": "consultoria",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Factura Fácil y Asociados",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Contaduría CDMX",
+      "industry": "contabilidad",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Contable Total",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Auditoría Contable SC",
+      "industry": "consultoria",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Electrónica Solutions",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Capital Humano y Cía",
+      "industry": "software",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Timbre Fiscal San Luis Potosí",
+      "industry": "contabilidad",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Empresariales Consulting",
+      "industry": "administracion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización Villahermosa",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Móvil Group",
+      "industry": "facturacion",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Electrónica Guadalajara",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en la Nube del Centro",
+      "industry": "consultoria",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Desarrollo Aguascalientes",
+      "industry": "consultoria",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Billetera Digital Empresarial",
+      "industry": "contabilidad",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en la Nube CDMX",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Integral del Bajío",
+      "industry": "contabilidad",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación Digital Pro",
+      "industry": "contabilidad",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "CFDI",
+      "industry": "contabilidad",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización Industrial",
+      "industry": "consultoria",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Transformación Hermanos",
+      "industry": "fintech",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cloud y Asociados",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Recursos Humanos Hermanos",
+      "industry": "consultoria",
+      "city": "Torreón",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización",
+      "industry": "fintech",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "RH",
+      "industry": "contabilidad",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "eFactura del Golfo",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Bufete Contable Guadalajara",
+      "industry": "administracion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestoría Fiscal Pro",
+      "industry": "contabilidad",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Financiera MX",
+      "industry": "consultoria",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Contable Querétaro",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Tecnológicas CDMX",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores Plus",
+      "industry": "financiero",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Fintech CDMX",
+      "industry": "rrhh",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Móvil SA de CV",
+      "industry": "financiero",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Contable Chihuahua",
+      "industry": "software",
+      "city": "Torreón",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Bufete Contable del Bajío",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría Contable MX",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad Cancún",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inteligencia CDMX",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Administrativa del Pacífico",
+      "industry": "facturacion",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobranza San Luis Potosí",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable SC",
+      "industry": "fintech",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable y Asociados",
+      "industry": "contabilidad",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Empresarial Guadalajara",
+      "industry": "consultoria",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones de Pago",
+      "industry": "facturacion",
+      "city": "Villahermosa",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Grupo Consultor Pro",
+      "industry": "consultoria",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Fiscales Contables Empresarial",
+      "industry": "contabilidad",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Facturación Chihuahua",
+      "industry": "software",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "IT Solutions Corporativo",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobro Hermanos",
+      "industry": "software",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Corporativo",
+      "industry": "consultoria",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Tributaria San Luis Potosí",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contabilidad Integral del Golfo",
+      "industry": "contabilidad",
+      "city": "Villahermosa",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Fintech Guadalajara",
+      "industry": "administracion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Digital Master",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Ágil",
+      "industry": "consultoria",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Software MX",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Administrativos Guadalajara",
+      "industry": "contabilidad",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores Fiscales CDMX",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría MX",
+      "industry": "fintech",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Pagos Digitales Guadalajara",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Advisory Guadalajara",
+      "industry": "contabilidad",
+      "city": "Culiacán",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Certificados del Centro",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Recaudación Guadalajara",
+      "industry": "cobranza",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Fiscal Integral SA de CV",
+      "industry": "software",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "eFactura y Socios",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría de Negocios Morelia",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Solutions CDMX",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión de Cobranza Mérida",
+      "industry": "cobranza",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Control Automático Morelia",
+      "industry": "contabilidad",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Apps Express",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Business Consulting del Norte",
+      "industry": "cobranza",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "RPA Monterrey",
+      "industry": "fintech",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobro Digital Corporativo",
+      "industry": "logistica",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Consultora Services",
+      "industry": "software",
+      "city": "Torreón",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Solutions",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Ágil Master",
+      "industry": "facturacion",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Financieros del Norte",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobranza Especializada CDMX",
+      "industry": "contabilidad",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Asociados",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Express",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización Industrial CDMX",
+      "industry": "automatizacion",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable Group",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Express Group",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Desarrollo Organizacional",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Puebla",
+      "industry": "consultoria",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestoría Fiscal Services",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "SaaS Total",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Contable del Bajío",
+      "industry": "cobranza",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Contable Toluca",
+      "industry": "logistica",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Timbre Fiscal Express",
+      "industry": "software",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Electrónica y Cía",
+      "industry": "financiero",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "eFactura Empresarial",
+      "industry": "financiero",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Ágil Total",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inversiones y Asociados",
+      "industry": "facturacion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Factura Fácil S de RL",
+      "industry": "contabilidad",
+      "city": "Durango",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Automatizada S de RL",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Software Factory",
+      "industry": "rrhh",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Finanzas Profesional",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Integral Mérida",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Neobanco y Asociados",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores Express",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Planeación Financiera Chihuahua",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Inteligente del Norte",
+      "industry": "contabilidad",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Facturación Tuxtla Gutiérrez",
+      "industry": "consultoria",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Smart Automation y Socios",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "IT Solutions León",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestoría Fiscal S de RL",
+      "industry": "rrhh",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Contable Guadalajara",
+      "industry": "contabilidad",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores Fiscales Puebla",
+      "industry": "facturacion",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Administración Querétaro",
+      "industry": "software",
+      "city": "Culiacán",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Total Puebla",
+      "industry": "facturacion",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Code y Asociados",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Públicos CDMX",
+      "industry": "facturacion",
+      "city": "Durango",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Facturación Solutions",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Data León",
+      "industry": "auditoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Comprobantes Digitales Guadalajara",
+      "industry": "contabilidad",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Back Office CDMX",
+      "industry": "contabilidad",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Advisory Express",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Planeación Financiera Toluca",
+      "industry": "fintech",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Desarrollo Organizacional Querétaro",
+      "industry": "consultoria",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Compliance del Norte",
+      "industry": "facturacion",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Fulfillment Profesional",
+      "industry": "rrhh",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Digital Group",
+      "industry": "contabilidad",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Talento Pro",
+      "industry": "software",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Distribución",
+      "industry": "consultoria",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Express del Bajío",
+      "industry": "auditoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Capital Humano",
+      "industry": "contabilidad",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Contable Integral",
+      "industry": "automatizacion",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Financiera Corporativo",
+      "industry": "fintech",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Bufete Contable y Socios",
+      "industry": "software",
+      "city": "Villahermosa",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión CDMX",
+      "industry": "facturacion",
+      "city": "Durango",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones CFDI",
+      "industry": "consultoria",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Empresarial Saltillo",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Fiscal Durango",
+      "industry": "fintech",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Tributaria Puebla",
+      "industry": "software",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría Contable Guadalajara",
+      "industry": "facturacion",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Headhunting del Golfo",
+      "industry": "administracion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Pagos y Asociados",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Planeación Financiera Guanajuato",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Financieros Asociados",
+      "industry": "rrhh",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Administrativa",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Transporte y Cía",
+      "industry": "automatizacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Integral Services",
+      "industry": "facturacion",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión de Personal Pro",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Estrategia y Asociados",
+      "industry": "financiero",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Móvil Solutions",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestoría Fiscal Puebla",
+      "industry": "contabilidad",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría Externa Hermanos",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tecnología Aplicada Chihuahua",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Tecnológicas",
+      "industry": "software",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Digital Puebla",
+      "industry": "consultoria",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Sistema de Facturación",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Monterrey",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Fulfillment Integral",
+      "industry": "financiero",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión León",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación Integral",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Auditoría Contable Group",
+      "industry": "auditoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Contable Monterrey",
+      "industry": "financiero",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Empresarial Solutions",
+      "industry": "fintech",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Data Guanajuato",
+      "industry": "rrhh",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Software Factory Puebla",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Headhunting CDMX",
+      "industry": "software",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Total Guadalajara",
+      "industry": "rrhh",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Móvil y Cía",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Recuperación CDMX",
+      "industry": "facturacion",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Contables S de RL",
+      "industry": "software",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones CFDI del Pacífico",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Facturación Total",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en Línea Consulting",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Recaudación Empresarial",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores Fiscales Monterrey",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Software Querétaro",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Fiscal Express",
+      "industry": "cobranza",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Timbre Fiscal Puebla",
+      "industry": "contabilidad",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Code Chihuahua",
+      "industry": "contabilidad",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "eFactura del Bajío",
+      "industry": "contabilidad",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "RPA Total",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma Digital Consulting",
+      "industry": "cobranza",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Integral Querétaro",
+      "industry": "facturacion",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Business Consulting Guadalajara",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Compliance Morelia",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores Fiscales del Bajío",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Almacenaje",
+      "industry": "cobranza",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Software Factory León",
+      "industry": "automatizacion",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesores Contables del Centro",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión de Cobranza MX",
+      "industry": "facturacion",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Sistema de Facturación Querétaro",
+      "industry": "automatizacion",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Contables",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Envíos Toluca",
+      "industry": "auditoria",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Smart Automation S de RL",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Factura Fácil Toluca",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesores Contables Cancún",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización de Procesos y Cía",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Fiscal Integral Profesional",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Electrónica Consulting",
+      "industry": "contabilidad",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación Digital del Golfo",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Financiera y Asociados",
+      "industry": "auditoria",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Process Automation CDMX",
+      "industry": "cobranza",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización Industrial del Norte",
+      "industry": "automatizacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Guanajuato",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Paquetería",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría del Bajío",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Timbre Fiscal y Socios",
+      "industry": "logistica",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "SaaS Premium",
+      "industry": "financiero",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Fiscal del Centro",
+      "industry": "software",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma Digital del Golfo",
+      "industry": "contabilidad",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Grupo Consultor Tijuana",
+      "industry": "consultoria",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría de Negocios Culiacán",
+      "industry": "administracion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Fiscal del Norte",
+      "industry": "rrhh",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en la Nube Solutions",
+      "industry": "contabilidad",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Compliance y Socios",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Auditoría Contable Querétaro",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Capital Humano Empresarial",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Recuperación del Golfo",
+      "industry": "consultoria",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación Aguascalientes",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Inteligente Consulting",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Patrimonial Guadalajara",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Software Cancún",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contabilidad Integral Express",
+      "industry": "automatizacion",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Compliance Puebla",
+      "industry": "software",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación Digital Premium",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Corporativo",
+      "industry": "facturacion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Contaduría Services",
+      "industry": "software",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Desarrollo Organizacional Monterrey",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Advisory CDMX",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización CDMX",
+      "industry": "administracion",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable Premium",
+      "industry": "financiero",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Contable CDMX",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Factura Fácil del Bajío",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inversiones Asociados",
+      "industry": "financiero",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Financieras CDMX",
+      "industry": "rrhh",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Consultora Hermanos",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Fiscal Solutions",
+      "industry": "software",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Outsourcing Administrativo",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Optimización Querétaro",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Robotics Group",
+      "industry": "fintech",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría Contable Hermanos",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Logística",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría de Negocios Oaxaca",
+      "industry": "software",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Sistemas Monterrey",
+      "industry": "facturacion",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Neobanco CDMX",
+      "industry": "consultoria",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobro Group",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Financiera y Cía",
+      "industry": "consultoria",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Contable Hermanos",
+      "industry": "administracion",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Recuperación Tuxtla Gutiérrez",
+      "industry": "facturacion",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Contables Monterrey",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable Corporativo",
+      "industry": "consultoria",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Contable del Bajío",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Planeación SC",
+      "industry": "consultoria",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Paquetería San Luis Potosí",
+      "industry": "facturacion",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Grupo Contable Group",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Neobanco Premium",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en Línea Corporativo",
+      "industry": "fintech",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Integral del Norte",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Neobanco",
+      "industry": "contabilidad",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Bufete Contable CDMX",
+      "industry": "consultoria",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Capital Humano Tuxtla Gutiérrez",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Advisory del Pacífico",
+      "industry": "fintech",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Grupo Contable y Asociados",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Empresariales Cancún",
+      "industry": "software",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Express Mérida",
+      "industry": "software",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Fiscal Consulting",
+      "industry": "cobranza",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría de Negocios Pro",
+      "industry": "financiero",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Process Automation Total",
+      "industry": "contabilidad",
+      "city": "Aguascalientes",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en la Nube del Pacífico",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tecnología Aplicada",
+      "industry": "financiero",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones CFDI Services",
+      "industry": "cobranza",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesores Contables CDMX",
+      "industry": "consultoria",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inversiones del Bajío",
+      "industry": "fintech",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Ágil San Luis Potosí",
+      "industry": "software",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Certificados y Socios",
+      "industry": "consultoria",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Timbre Fiscal SA de CV",
+      "industry": "consultoria",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contabilidad Integral Services",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Timbre Fiscal Asociados",
+      "industry": "software",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Grupo Consultor CDMX",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Planeación Financiera Premium",
+      "industry": "software",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Finanzas Mérida",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Business Consulting",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Contable Pro",
+      "industry": "financiero",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Auditoría Contable Corporativo",
+      "industry": "facturacion",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Digital del Bajío",
+      "industry": "financiero",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tecnología Aplicada y Cía",
+      "industry": "contabilidad",
+      "city": "Tuxtla Gutiérrez",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Financieros del Pacífico",
+      "industry": "fintech",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "IT Solutions Plus",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación y Cía",
+      "industry": "software",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Back Office San Luis Potosí",
+      "industry": "logistica",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización de Procesos Consulting",
+      "industry": "contabilidad",
+      "city": "Durango",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Desarrollo Chihuahua",
+      "industry": "contabilidad",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Business Consulting Monterrey",
+      "industry": "contabilidad",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Digital del Pacífico",
+      "industry": "contabilidad",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores Fiscales y Asociados",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "CFDI Profesional",
+      "industry": "consultoria",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "IT Solutions",
+      "industry": "contabilidad",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría de Negocios Plus",
+      "industry": "cobranza",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Optimización Chihuahua",
+      "industry": "contabilidad",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Móvil Pro",
+      "industry": "contabilidad",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Optimización Saltillo",
+      "industry": "contabilidad",
+      "city": "Aguascalientes",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable del Pacífico",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesores Contables Veracruz",
+      "industry": "consultoria",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Ágil Guadalajara",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Financieras León",
+      "industry": "contabilidad",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobro Digital Empresarial",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Públicos Cancún",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Robotics Guadalajara",
+      "industry": "cobranza",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Fiscales Contables Total",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Desarrollo CDMX",
+      "industry": "facturacion",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Back Office Oaxaca",
+      "industry": "facturacion",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización de Procesos Puebla",
+      "industry": "fintech",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría de Negocios CDMX",
+      "industry": "rrhh",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Facturación Profesional",
+      "industry": "contabilidad",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en la Nube del Norte",
+      "industry": "logistica",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones CFDI y Socios",
+      "industry": "software",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Administración Guadalajara",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobro Digital SC",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Data Mérida",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Estrategia CDMX",
+      "industry": "facturacion",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Contaduría Solutions",
+      "industry": "automatizacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Oficina y Cía",
+      "industry": "consultoria",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Grupo Contable Toluca",
+      "industry": "consultoria",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión y Cía",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Fiscales Contables Premium",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditores",
+      "industry": "financiero",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Tributaria Master",
+      "industry": "consultoria",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Bufete Contable MX",
+      "industry": "cobranza",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Empresarial Oaxaca",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Back Office y Socios",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Empresarial Pro",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Digital del Centro",
+      "industry": "fintech",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Fiscal Corporativo",
+      "industry": "fintech",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Recursos Humanos S de RL",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Express Querétaro",
+      "industry": "facturacion",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Oficina CDMX",
+      "industry": "financiero",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Automatizada Morelia",
+      "industry": "consultoria",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Facturación del Centro",
+      "industry": "consultoria",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría de Negocios Total",
+      "industry": "contabilidad",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Integral Puebla",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Contable y Cía",
+      "industry": "facturacion",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable Plus",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Data Guadalajara",
+      "industry": "facturacion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Auditoría Contable y Socios",
+      "industry": "facturacion",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría de Negocios del Pacífico",
+      "industry": "software",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Integral y Socios",
+      "industry": "auditoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Contables Integral",
+      "industry": "financiero",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Pagos",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Fiscal Tijuana",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cloud Veracruz",
+      "industry": "contabilidad",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Contable SA de CV",
+      "industry": "consultoria",
+      "city": "Villahermosa",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Contables Services",
+      "industry": "facturacion",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Capital Puebla",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Facturación Pro",
+      "industry": "administracion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Integral Asociados",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación Digital y Asociados",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Tributaria Integral",
+      "industry": "logistica",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "eFactura León",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Digital del Norte",
+      "industry": "financiero",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Firma Contable Querétaro",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Advisory Puebla",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización Puebla",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contaduría del Centro",
+      "industry": "facturacion",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Talento Guadalajara",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tecnología León",
+      "industry": "contabilidad",
+      "city": "Oaxaca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobro Digital Pro",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Ágil Empresarial",
+      "industry": "auditoria",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Fiscal del Centro",
+      "industry": "software",
+      "city": "Durango",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Fiscal Integral y Asociados",
+      "industry": "rrhh",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización de Procesos Plus",
+      "industry": "financiero",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Administración Profesional",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización de Procesos",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Querétaro",
+      "industry": "consultoria",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Insurtech del Norte",
+      "industry": "automatizacion",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Grupo Contable Consulting",
+      "industry": "software",
+      "city": "Tuxtla Gutiérrez",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Business Consulting y Cía",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Neobanco MX",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Fiscales Contables Monterrey",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación CDMX",
+      "industry": "auditoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Express Profesional",
+      "industry": "software",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Financiera Contable Empresarial",
+      "industry": "consultoria",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Comprobantes Digitales y Asociados",
+      "industry": "automatizacion",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Business Consulting Corporativo",
+      "industry": "consultoria",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Fiscal Integral CDMX",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Cobranza Especializada",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Timbre Fiscal del Centro",
+      "industry": "consultoria",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Administrativos",
+      "industry": "logistica",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Control Automático Express",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contaduría MX",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Digital y Cía",
+      "industry": "contabilidad",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Empresarial y Socios",
+      "industry": "consultoria",
+      "city": "Morelia",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Contaduría SC",
+      "industry": "contabilidad",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Timbre Fiscal Monterrey",
+      "industry": "consultoria",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Contable del Centro",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Financiera Premium",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Electrónica Corporativo",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Optimización Empresarial",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Ágil Plus",
+      "industry": "software",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores Fiscales Guadalajara",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Contadores Públicos SC",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Business Consulting del Bajío",
+      "industry": "facturacion",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Automatizada Master",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Automatizada Cancún",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Fiscal Monterrey",
+      "industry": "consultoria",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría Externa",
+      "industry": "financiero",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Business Consulting Pro",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Tributaria S de RL",
+      "industry": "facturacion",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Contable SA de CV",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones Empresariales Monterrey",
+      "industry": "facturacion",
+      "city": "Oaxaca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores Fiscales Total",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Data CDMX",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión SC",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría de Negocios CDMX",
+      "industry": "consultoria",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en Línea Toluca",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Planeación del Bajío",
+      "industry": "fintech",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Data SA de CV",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Contaduría Hermosillo",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Dev CDMX",
+      "industry": "auditoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Fiscales Contables SC",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión S de RL",
+      "industry": "fintech",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Móvil Tijuana",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Solutions del Norte",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Comprobantes Digitales Premium",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultores Fiscales SA de CV",
+      "industry": "consultoria",
+      "city": "Guanajuato",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en la Nube Profesional",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Comprobantes Digitales León",
+      "industry": "rrhh",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Fiscales Contables del Centro",
+      "industry": "software",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Envíos",
+      "industry": "software",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones CFDI CDMX",
+      "industry": "automatizacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho Contable Express",
+      "industry": "administracion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en Línea Master",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tecnología Aplicada Services",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Tributaria del Norte",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión Contable Guadalajara",
+      "industry": "software",
+      "city": "Saltillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Integral Plus",
+      "industry": "fintech",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Finanzas Asociados",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Reclutamiento CDMX",
+      "industry": "software",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Electrónica S de RL",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech Solutions y Socios",
+      "industry": "consultoria",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Soluciones de Pago Master",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Móvil MX",
+      "industry": "software",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Pagos Toluca",
+      "industry": "logistica",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Contaduría Asociados",
+      "industry": "contabilidad",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Automatizada del Pacífico",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización S de RL",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Fintech y Socios",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización SC",
+      "industry": "software",
+      "city": "Puebla",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "SaaS Aguascalientes",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automa Solutions",
+      "industry": "financiero",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Integral Monterrey",
+      "industry": "fintech",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Administrativos Cancún",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Transformación Pro",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Sistema de Facturación CDMX",
+      "industry": "automatizacion",
+      "city": "Toluca",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inversiones Hermosillo",
+      "industry": "consultoria",
+      "city": "León",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Lending Group",
+      "industry": "financiero",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación Ágil Hermosillo",
+      "industry": "consultoria",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Facturación Pro",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Logística Querétaro",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Tributaria del Bajío",
+      "industry": "facturacion",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Auditoría CDMX",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Fiscal Integral Plus",
+      "industry": "facturacion",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría de Negocios San Luis Potosí",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "CFDI Empresarial",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Logística Monterrey",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Fiscales Contables S de RL",
+      "industry": "fintech",
+      "city": "Cancún",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestoría Fiscal Monterrey",
+      "industry": "software",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Automatización de Procesos Tuxtla Gutiérrez",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Lending Premium",
+      "industry": "financiero",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Gestión",
+      "industry": "financiero",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Tributaria Monterrey",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios Financieros Mérida",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tecnología Guadalajara",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Despacho de Contaduría Aguascalientes",
+      "industry": "consultoria",
+      "city": "Mérida",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Facturación en Línea CDMX",
+      "industry": "consultoria",
+      "city": "Chihuahua",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad Guanajuato",
+      "industry": "consultoria",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Digital Saltillo",
+      "industry": "financiero",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Plataforma de Pagos del Centro",
+      "industry": "automatizacion",
+      "city": "Veracruz",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Contable Empresarial",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Tech SC",
+      "industry": "fintech",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Asesoría Contable Corporativo",
+      "industry": "automatizacion",
+      "city": "San Luis Potosí",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación del Centro",
+      "industry": "facturacion",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Business Consulting Total",
+      "industry": "facturacion",
+      "city": "Guadalajara",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Inversiones CDMX",
+      "industry": "consultoria",
+      "city": "Monterrey",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Servicios de Contabilidad CDMX",
+      "industry": "contabilidad",
+      "city": "Tijuana",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Recaudación",
+      "industry": "facturacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Transformación SA de CV",
+      "industry": "consultoria",
+      "city": "Querétaro",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Financiera Aguascalientes",
+      "industry": "automatizacion",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Innovación Digital Solutions",
+      "industry": "automatizacion",
+      "city": "Hermosillo",
+      "phone": "",
+      "website": ""
+    },
+    {
+      "name": "Consultoría Fiscal León",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "phone": "",
+      "website": ""
+    }
+  ]
+}

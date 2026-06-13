@@ -1,6 +1,6 @@
 # TigerLab Lead Database Export
-# Generated: 2026-06-13T02:51:20.394Z
-# Companies: 68
+# Generated: 2026-06-13T03:50:27.273Z
+# Companies: 1000
 #
 # Import to Oracle SQL Developer:
 # 1. Use ops/database/oracle-import-ddl.sql to create tables

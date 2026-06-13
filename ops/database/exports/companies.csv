@@ -1,69 +1,1001 @@
 id,name,rfc,industry,size,website,phone,address,city,state,country,geo_lat,geo_lng,source,source_url,created_at,updated_at
-1,Despacho Contable Gutiérrez y Asociados,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-2,Consultoría Fiscal Hernández SC,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-3,Contadores Públicos Martínez y Cía,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-4,Asesoría Empresarial Integral MX,,consultoría,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-5,Grupo Contable López y Asociados,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-6,Despacho Jurídico-Contable Rodríguez,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-7,Facturación Electrónica Total MX,,facturación,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-8,CFDI Express Solutions,,facturación,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-9,Despacho de Contabilidad Digital,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-10,Software Contable y Administrativo Pro,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-11,Integradora de Sistemas Fiscales,,facturación,,,,,Puebla,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-12,Consultores en Automatización de Procesos,,automatización,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-13,Despacho de Outsourcing Contable,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-14,Plataforma de Facturación en la Nube,,facturación,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-15,Grupo de Asesoría Financiera Integral,,financiero,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-16,Contadores Públicos Certificados MX,,contabilidad,,,,,Tijuana,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-17,Solución de Nómina y RH Automatizada,,rrhh,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-18,Despacho Virtual de Contabilidad,,contabilidad,,,,,León,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-19,Consultoría en Transformación Digital,,consultoría,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-20,Sistema de Gestión Empresarial ERP MX,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-21,Outsourcing de Facturación Electrónica,,facturación,,,,,Puebla,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-22,Despacho Contable San Pedro,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-23,Automatización de Facturas y Cobranza,,facturación,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-24,Grupo Empresarial de Servicios Fiscales,,contabilidad,,,,,Mérida,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-25,Tecnología Aplicada a la Contabilidad,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-26,Despacho de Auditoría y Consultoría,,auditoría,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-27,CFDI y Facturación para PyMEs,,facturación,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-28,Contadores Públicos Asociados del Norte,,contabilidad,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-29,Despacho de Asesoría Fiscal Integral,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-30,Plataforma de Pagos y Facturación MX,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-31,Grupo Consultor de Negocios MX,,consultoría,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-32,Solución Integral de Facturación CFDI,,facturación,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-33,Despacho Contable Profesional Zapopan,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-34,Consultoría en Cumplimiento Fiscal,,consultoría,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-35,Software de Facturación en Línea,,software,,,,,Querétaro,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-36,Despacho de Contabilidad Gubernamental,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-37,Centro de Servicios Contables y Fiscales,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-38,Facturación Móvil para PyMEs MX,,facturación,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-39,Despacho de Contadores Especializados,,contabilidad,,,,,Toluca,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-40,Asesoría Contable y Financiera Empresarial,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-41,Grupo de Automatización de Procesos MX,,automatización,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-42,Despacho Contable Santa Fe,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-43,Solución de Facturación para Constructoras,,facturación,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-44,Consultoría en Sistemas Contables,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-45,Outsourcing de Contabilidad General,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-46,Despacho de Gestión de Cobranza,,cobranza,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-47,Plataforma de Conciliación Automática,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-48,Despacho Virtual de Asesoría Empresarial,,consultoría,,,,,León,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-49,Grupo Contable del Bajío,,contabilidad,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-50,Contadores y Auditores del Golfo,,contabilidad,,,,,Veracruz,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-51,Solución Tecnológica para Despachos,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-52,Despacho de Facturación Electrónica SA,,facturación,,,,,Puebla,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-53,Innovación en Procesos Fiscales MX,,facturación,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-54,Consultoría en Optimización Operativa,,consultoría,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-55,Centro de Contabilidad Empresarial,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-56,Despacho de Asesoría Fiscal en Línea,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-57,Grupo de Servicios Administrativos MX,,administración,,,,,Toluca,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-58,Automatización de Procesos Financieros,,fintech,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-59,Despacho de Software Contable Integral,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-60,Consultoría en Normativas Fiscales MX,,consultoría,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-61,Despacho de Contabilidad para Startups,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-62,Solución de Facturación Internacional MX,,facturación,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-63,Integración de Sistemas de Nómina,,rrhh,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-64,Grupo Financiero Contable del Centro,,financiero,,,,,Puebla,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-65,Despacho de Contabilidad en la Nube,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-66,Consultoría de Eficiencia Operacional,,consultoría,,,,,Monterrey,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-67,Red de Despachos Contables MX,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
-68,Facturación Digital para Comercios MX,,facturación,,,,,CDMX,,MX,,,seed_denue,,2026-06-12 09:03:37,2026-06-12 09:03:37
+1,Asesoría Fiscal Integral,,cobranza,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+2,Software San Luis Potosí,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+3,Facturación en Línea Hermanos,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+4,CFDI Tijuana,,facturacion,,,,,Tuxtla Gutiérrez,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+5,Contaduría León,,fintech,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+6,Plataforma Digital Integral,,contabilidad,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+7,Estrategia,,financiero,,,,,Aguascalientes,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+8,Tecnología Solutions,,facturacion,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+9,Automatización de Procesos Saltillo,,facturacion,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+10,Consultoría Empresarial,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+11,Process Automation Guadalajara,,facturacion,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+12,Facturación Automatizada,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+13,Servicios de Contabilidad Premium,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+14,Asesoría Monterrey,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+15,Facturación Electrónica CDMX,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+16,Desarrollo,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+17,Facturación Total del Pacífico,,fintech,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+18,Recuperación,,software,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+19,Consultoría Fiscal Total,,contabilidad,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+20,Facturación en Línea Monterrey,,software,,,,,Tuxtla Gutiérrez,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+21,Soluciones Empresariales Guadalajara,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+22,Grupo Contable Guadalajara,,contabilidad,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+23,Recursos Humanos del Golfo,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+24,Advisory Aguascalientes,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+25,Asesoría SC,,consultoria,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+26,Cobro Digital,,logistica,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+27,Planeación CDMX,,contabilidad,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+28,Planeación Financiera,,financiero,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+29,Inteligencia SC,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+30,Servicios Financieros San Luis Potosí,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+31,Despacho de Auditoría Contable Premium,,cobranza,,,,,Villahermosa,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+32,Contaduría y Asociados,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+33,Gestión de Personal del Bajío,,consultoria,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+34,Reclutamiento Services,,consultoria,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+35,Facturación Digital Toluca,,logistica,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+36,Plataforma Digital,,facturacion,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+37,Tech CDMX,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+38,Facturación Electrónica del Golfo,,facturacion,,,,,Durango,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+39,Firma Contable,,financiero,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+40,Gestión Financiera Mérida,,cobranza,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+41,Smart Automation,,contabilidad,,,,,Durango,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+42,Consultoría Fiscal SC,,automatizacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+43,Contadores Públicos Consulting,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+44,Servicios de Contabilidad,,software,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+45,Asesoría Group,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+46,Servicios Contables Plus,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+47,Servicios de Facturación SC,,auditoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+48,Innovación Digital Guadalajara,,contabilidad,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+49,Asesoría Contable,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+50,Inversiones Express,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+51,Soluciones de Pago Puebla,,consultoria,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+52,Asesores Contables Corporativo,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+53,Contabilidad Integral,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+54,Facturación Integral Solutions,,financiero,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+55,Gestión Contable,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+56,Asesoría de Negocios Hermosillo,,administracion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+57,Almacenaje y Cía,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+58,Innovación,,automatizacion,,,,,Aguascalientes,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+59,Facturación Inteligente Asociados,,consultoria,,,,,Villahermosa,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+60,Firma Consultora Express,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+61,Innovación Digital CDMX,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+62,Auditoría Contable,,rrhh,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+63,Asesoría Financiera Contable,,facturacion,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+64,Lending del Bajío,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+65,Desarrollo SA de CV,,fintech,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+66,Cobro Digital Services,,facturacion,,,,,Aguascalientes,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+67,Despacho Contable y Asociados,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+68,Tech Solutions SA de CV,,facturacion,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+69,Sistema de Facturación Puebla,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+70,Estrategia y Cía,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+71,Comprobantes Digitales,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+72,Auditoría Contable del Pacífico,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+73,Gestión Contable MX,,auditoria,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+74,Consultoría Fiscal,,contabilidad,,,,,Torreón,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+75,Data,,auditoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+76,Desarrollo del Norte,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+77,Facturación Móvil,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+78,Servicios de Contabilidad y Asociados,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+79,Nómina,,contabilidad,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+80,Servicios de Contabilidad Monterrey,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+81,Cobranza,,contabilidad,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+82,Contaduría,,software,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+83,Contabilidad Integral CDMX,,consultoria,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+84,Servicios Fiscales Contables,,consultoria,,,,,Culiacán,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+85,Plataforma de Facturación y Cía,,cobranza,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+86,SaaS Tijuana,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+87,Asesores Contables San Luis Potosí,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+88,Consultoría de Negocios Plus,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+89,Transformación S de RL,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+90,Asesoría Contable Integral,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+91,Consultores Fiscales,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+92,Servicios Fiscales Contables del Golfo,,facturacion,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+93,Plataforma de Facturación Group,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+94,Despacho de Contaduría,,contabilidad,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+95,Business Consulting SA de CV,,software,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+96,Apps Monterrey,,software,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+97,Pagos Digitales,,facturacion,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+98,Lending,,contabilidad,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+99,Soluciones CFDI Veracruz,,facturacion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+100,Compliance,,contabilidad,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+101,Innovación Guanajuato,,financiero,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+102,Firma Consultora Plus,,cobranza,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+103,Facturación Integral,,logistica,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+104,Grupo Contable,,financiero,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+105,Consultoría del Centro,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+106,RH Monterrey,,facturacion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+107,Asesoría Financiera Contable Tijuana,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+108,Facturación Inteligente Plus,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+109,SaaS CDMX,,facturacion,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+110,Soluciones Empresariales,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+111,Auditoría Contable CDMX,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+112,Consultoría Villahermosa,,facturacion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+113,Contadores Públicos,,automatizacion,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+114,Sistemas y Asociados,,auditoria,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+115,Facturación Ágil Services,,consultoria,,,,,Durango,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+116,Consultoría Integral Guadalajara,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+117,Despacho Contable,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+118,Firma Consultora Torreón,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+119,Última Milla Master,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+120,Facturación en Línea Total,,auditoria,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+121,Facturación en Línea Empresarial,,automatizacion,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+122,Asesoría,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+123,Cobranza Judicial Pro,,administracion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+124,Bufete Contable Express,,software,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+125,Consultoría Financiera Saltillo,,consultoria,,,,,Villahermosa,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+126,Servicios Contables CDMX,,contabilidad,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+127,Facturación Electrónica,,consultoria,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+128,Consultoría Tributaria Asociados,,facturacion,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+129,Factura Fácil Aguascalientes,,financiero,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+130,Facturación Automatizada CDMX,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+131,Contaduría Pro,,consultoria,,,,,Culiacán,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+132,Software Development del Golfo,,contabilidad,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+133,Transformación,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+134,Gestión del Pacífico,,consultoria,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+135,Despacho Contable y Cía,,automatizacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+136,Tech Solutions,,software,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+137,Despacho Fiscal,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+138,Facturación Digital,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+139,Facturación Total Pro,,software,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+140,Planeación,,cobranza,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+141,Gestión Mérida,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+142,Gestión Contable Hermanos,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+143,Asesoría de Negocios Mérida,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+144,Patrimonial Veracruz,,contabilidad,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+145,Servicios Contables,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+146,Auditoría Contable Profesional,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+147,Despacho Contable Monterrey,,fintech,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+148,Consultoría Financiera CDMX,,automatizacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+149,Despacho de Contaduría Morelia,,financiero,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+150,Transformación CDMX,,facturacion,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+151,Consultores Fiscales Profesional,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+152,Asesoría Financiera Contable CDMX,,cobranza,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+153,Servicios de Contabilidad SC,,facturacion,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+154,IT Solutions Total,,automatizacion,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+155,Asesoría del Norte,,financiero,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+156,Factura Fácil,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+157,Administración Veracruz,,automatizacion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+158,Contadores Públicos S de RL,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+159,Servicios de Oficina Chihuahua,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+160,Lending Hermosillo,,facturacion,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+161,Digital Hermosillo,,software,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+162,Servicios Financieros,,fintech,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+163,Consultoría Integral,,administracion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+164,Facturación Automatizada y Asociados,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+165,Apps,,contabilidad,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+166,Asesoría Financiera y Cía,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+167,Dev,,contabilidad,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+168,Facturación Inteligente,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+169,CFDI del Golfo,,financiero,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+170,Consultoría de Negocios Empresarial,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+171,Consultoría de Negocios Hermosillo,,rrhh,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+172,Soluciones Contables CDMX,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+173,Contadores Certificados Empresarial,,logistica,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+174,Distribución Asociados,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+175,Plataforma Digital del Pacífico,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+176,Auditoría Contable Services,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+177,Automatización de Procesos Master,,software,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+178,Contaduría Hermosillo,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+179,Contadores Certificados Tuxtla Gutiérrez,,automatizacion,,,,,Tuxtla Gutiérrez,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+180,Servicios de Oficina Monterrey,,facturacion,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+181,Consultoría Tributaria Guanajuato,,facturacion,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+182,RPA,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+183,Asesoría CDMX,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+184,Bufete Contable,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+185,Despacho Fiscal del Bajío,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+186,Firma Contable Chihuahua,,software,,,,,Villahermosa,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+187,Factura Fácil del Centro,,contabilidad,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+188,Servicios de Contabilidad Guadalajara,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+189,Innovación Solutions,,automatizacion,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+190,Envíos del Golfo,,facturacion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+191,Software Monterrey,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+192,Cobro Aguascalientes,,consultoria,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+193,Comprobantes Digitales Monterrey,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+194,Soluciones Contables Premium,,contabilidad,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+195,Servicios de Contabilidad Services,,software,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+196,Lending Veracruz,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+197,Soluciones Empresariales S de RL,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+198,Asesoría Financiera Contable del Centro,,contabilidad,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+199,Contaduría Guadalajara,,contabilidad,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+200,Workflow,,facturacion,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+201,Digital MX,,software,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+202,CFDI CDMX,,fintech,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+203,Factura Fácil Chihuahua,,contabilidad,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+204,Auditoría Interna Tuxtla Gutiérrez,,facturacion,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+205,eFactura,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+206,Consultoría Tributaria,,rrhh,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+207,Despacho de Contaduría Consulting,,facturacion,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+208,Reclutamiento del Norte,,auditoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+209,Facturación Integral Aguascalientes,,software,,,,,Villahermosa,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+210,Automatización de Procesos del Golfo,,automatizacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+211,Auditoría Interna,,contabilidad,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+212,Gestión Administrativa del Golfo,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+213,Plataforma de Facturación,,administracion,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+214,Soluciones Contables Services,,software,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+215,Servicios de Facturación,,administracion,,,,,Torreón,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+216,Planeación Financiera y Cía,,contabilidad,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+217,Plataforma de Facturación Torreón,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+218,Consultores del Bajío,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+219,Soluciones de Pago del Golfo,,contabilidad,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+220,Plataforma de Pagos Hermanos,,cobranza,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+221,Servicios de Oficina Consulting,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+222,Consultoría Financiera Master,,logistica,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+223,Asesoría Financiera,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+224,Gestoría Fiscal,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+225,Asesoría Financiera Contable Veracruz,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+226,Desarrollo y Socios,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+227,Code Hermanos,,rrhh,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+228,Contabilidad Integral y Asociados,,facturacion,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+229,Factura Fácil CDMX,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+230,eFactura Group,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+231,SaaS Guadalajara,,financiero,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+232,Cloud,,financiero,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+233,Consultoría Consulting,,consultoria,,,,,Villahermosa,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+234,Facturación Inteligente Total,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+235,Innovación Digital Monterrey,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+236,Asesores Contables Group,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+237,Cobranza Extrajudicial Guanajuato,,auditoria,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+238,Facturación Digital del Centro,,facturacion,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+239,Patrimonial Premium,,consultoria,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+240,Facturación en Línea,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+241,Soluciones Financieras Morelia,,consultoria,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+242,Auditoría Externa Guadalajara,,software,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+243,Consultoría Fiscal Querétaro,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+244,Digital Premium,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+245,Patrimonial Hermanos,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+246,Soluciones Financieras,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+247,Gestión Financiera Saltillo,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+248,Asesores Contables Mérida,,consultoria,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+249,Inversiones del Golfo,,logistica,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+250,Control Automático,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+251,Bufete Contable Monterrey,,consultoria,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+252,Firma Consultora,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+253,IT Solutions del Pacífico,,financiero,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+254,Billetera Digital SC,,facturacion,,,,,Oaxaca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+255,Soluciones Empresariales Group,,facturacion,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+256,Consultoría Empresarial CDMX,,facturacion,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+257,CFDI Guadalajara,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+258,Soluciones Tecnológicas Pro,,contabilidad,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+259,Cobranza Profesional,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+260,Recuperación SA de CV,,auditoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+261,Tech Total,,consultoria,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+262,Soluciones Contables Monterrey,,auditoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+263,Inteligencia Corporativo,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+264,Headhunting,,facturacion,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+265,Auditoría,,facturacion,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+266,Talento,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+267,Gestoría Fiscal y Cía,,facturacion,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+268,Open Banking,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+269,Gestión Financiera CDMX,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+270,Tecnología SA de CV,,financiero,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+271,Tech,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+272,Servicios de Facturación Services,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+273,Inteligencia S de RL,,financiero,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+274,Servicios Fiscales Contables Solutions,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+275,Facturación en Línea Querétaro,,facturacion,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+276,RH Solutions,,contabilidad,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+277,Automatización Industrial Empresarial,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+278,Gestión Financiera Master,,consultoria,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+279,Sistemas Group,,consultoria,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+280,Grupo Consultor,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+281,Automa Cancún,,software,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+282,Despacho Contable CDMX,,consultoria,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+283,Digital CDMX,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+284,Soluciones de Pago Chihuahua,,contabilidad,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+285,Asesoría de Negocios,,cobranza,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+286,Consultoría Tributaria Morelia,,software,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+287,Facturación Integral CDMX,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+288,RPA Guadalajara,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+289,Compliance SC,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+290,Servicios Fiscales Contables CDMX,,software,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+291,Servicios Contables Querétaro,,software,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+292,Desarrollo Corporativo,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+293,Contabilidad Integral del Pacífico,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+294,Contabilidad Integral del Bajío,,contabilidad,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+295,Innovación Digital,,software,,,,,Torreón,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+296,Despacho Fiscal Veracruz,,cobranza,,,,,Oaxaca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+297,Digital,,facturacion,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+298,Facturación Total,,automatizacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+299,Asesoría Financiera Contable Express,,consultoria,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+300,Tech Solutions Integral,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+301,Facturación en la Nube Monterrey,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+302,Gestoría Fiscal Guadalajara,,contabilidad,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+303,Cobro Querétaro,,automatizacion,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+304,Gestión Tijuana,,facturacion,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+305,Consultoría de Negocios,,automatizacion,,,,,Culiacán,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+306,Servicios Fiscales Contables Querétaro,,software,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+307,Asesores Contables Monterrey,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+308,Robotics,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+309,Servicios Contables del Centro,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+310,Firma Consultora Mérida,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+311,Estrategia del Centro,,administracion,,,,,Aguascalientes,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+312,Facturación Total Querétaro,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+313,Consultoría Financiera SA de CV,,facturacion,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+314,Facturación Inteligente Profesional,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+315,Optimización Master,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+316,eFactura y Asociados,,facturacion,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+317,Contadores Certificados Corporativo,,financiero,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+318,Servicios de Oficina,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+319,Automa Chihuahua,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+320,Consultoría MX,,administracion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+321,Soluciones Contables Corporativo,,facturacion,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+322,Business Consulting del Golfo,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+323,Consultoría Fiscal Durango,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+324,Tech Solutions MX,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+325,Plataforma Digital CDMX,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+326,Desarrollo Guadalajara,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+327,Timbre Fiscal,,administracion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+328,Lending Guadalajara,,contabilidad,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+329,Finanzas,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+330,Asesoría Contable Guadalajara,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+331,Finanzas Guadalajara,,financiero,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+332,Consultoría CDMX,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+333,Control Automático Veracruz,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+334,Contadores Públicos Services,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+335,Software CDMX,,facturacion,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+336,Soluciones CFDI Tijuana,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+337,Asesoría Express,,software,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+338,Asesores Contables,,consultoria,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+339,Servicios Fiscales Contables y Socios,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+340,Plataforma de Facturación Corporativo,,consultoria,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+341,Asesoría Contable Tijuana,,facturacion,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+342,Headhunting del Norte,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+343,Plataforma de Facturación CDMX,,software,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+344,Plataforma Digital Monterrey,,facturacion,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+345,Servicios Financieros Services,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+346,Soluciones Financieras Oaxaca,,contabilidad,,,,,Tuxtla Gutiérrez,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+347,Tech Master,,rrhh,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+348,People,,contabilidad,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+349,Servicios de Contabilidad Group,,facturacion,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+350,Smart Automation Master,,automatizacion,,,,,Oaxaca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+351,Automa,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+352,Facturación Ágil Express,,facturacion,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+353,eFactura San Luis Potosí,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+354,Tech Solutions Veracruz,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+355,Despacho de Auditoría Contable Guadalajara,,administracion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+356,Firma de Auditoría,,software,,,,,Tuxtla Gutiérrez,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+357,Data Toluca,,software,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+358,Desarrollo Organizacional y Asociados,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+359,Facturación Inteligente Monterrey,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+360,Soluciones Contables Solutions,,contabilidad,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+361,Despacho de Auditoría Contable CDMX,,consultoria,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+362,Despacho de Auditoría Contable,,cobranza,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+363,Reclutamiento Consulting,,administracion,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+364,Gestión de Cobranza,,contabilidad,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+365,Inteligencia y Cía,,administracion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+366,Timbre Fiscal Solutions,,contabilidad,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+367,Contadores Públicos MX,,consultoria,,,,,Aguascalientes,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+368,Asesores Contables y Asociados,,logistica,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+369,Consultoría Tributaria CDMX,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+370,Recuperación del Pacífico,,contabilidad,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+371,Servicios de Oficina Plus,,fintech,,,,,Aguascalientes,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+372,Asesoría MX,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+373,Gestión Financiera,,fintech,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+374,Facturación Automatizada SA de CV,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+375,Asesoría Financiera y Socios,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+376,Contadores Certificados Guadalajara,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+377,Advisory Querétaro,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+378,Pagos Digitales Consulting,,consultoria,,,,,Aguascalientes,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+379,Consultoría Integral Aguascalientes,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+380,Timbre Fiscal Guadalajara,,financiero,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+381,Plataforma de Facturación Services,,fintech,,,,,Durango,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+382,Administración,,fintech,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+383,Auditoría Externa del Bajío,,consultoria,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+384,Inteligencia,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+385,Billetera Digital MX,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+386,Grupo Consultor Guadalajara,,facturacion,,,,,Aguascalientes,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+387,Digital Profesional,,consultoria,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+388,Servicios de Facturación Puebla,,facturacion,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+389,Digital Pro,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+390,Consultoría Financiera,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+391,Gestión de Personal Puebla,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+392,Contabilidad Integral Guadalajara,,facturacion,,,,,Aguascalientes,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+393,Insurtech,,consultoria,,,,,Villahermosa,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+394,Planeación Financiera San Luis Potosí,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+395,Factura Fácil Guadalajara,,facturacion,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+396,SaaS Asociados,,facturacion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+397,Inversiones,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+398,Reclutamiento del Golfo,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+399,Automa Veracruz,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+400,Timbre Fiscal CDMX,,software,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+401,Tech Hermosillo,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+402,Recursos Humanos del Norte,,software,,,,,Tuxtla Gutiérrez,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+403,Facturación Móvil CDMX,,facturacion,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+404,Asesoría Fiscal Integral Master,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+405,Automa SC,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+406,Sistema de Facturación Asociados,,facturacion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+407,Data Saltillo,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+408,CFDI Veracruz,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+409,Asesoría Financiera Contable Monterrey,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+410,Patrimonial,,auditoria,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+411,IT Solutions CDMX,,fintech,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+412,Consultoría Fiscal Integral,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+413,Facturación Móvil Plus,,logistica,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+414,Facturación Automatizada Pro,,fintech,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+415,Consultores Fiscales Integral,,financiero,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+416,Consultores,,software,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+417,Soluciones Financieras Consulting,,software,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+418,Patrimonial Saltillo,,consultoria,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+419,Plataforma de Facturación Monterrey,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+420,Advisory SA de CV,,software,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+421,Business Consulting Tuxtla Gutiérrez,,facturacion,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+422,Facturación en la Nube Corporativo,,contabilidad,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+423,Facturación en Línea Solutions,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+424,Bufete Contable Services,,contabilidad,,,,,Tuxtla Gutiérrez,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+425,Firma Contable y Asociados,,facturacion,,,,,Durango,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+426,Automatización de Procesos Tijuana,,fintech,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+427,Billetera Digital,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+428,Factura Fácil Monterrey,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+429,Servicios de Contabilidad Hermosillo,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+430,SaaS y Asociados,,rrhh,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+431,RPA CDMX,,facturacion,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+432,Plataforma de Facturación Guadalajara,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+433,Firma Consultora y Socios,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+434,Code Aguascalientes,,consultoria,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+435,Tecnología,,software,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+436,Asesores Contables del Golfo,,contabilidad,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+437,Desarrollo Organizacional Express,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+438,Software Factory Consulting,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+439,Consultoría Integral Hermanos,,consultoria,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+440,Tecnología Aplicada CDMX,,rrhh,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+441,Auditores CDMX,,facturacion,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+442,Tech Solutions Puebla,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+443,Capital S de RL,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+444,Consultoría Empresarial y Asociados,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+445,Tecnología CDMX,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+446,Back Office,,contabilidad,,,,,Durango,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+447,Tech Solutions Premium,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+448,Facturación en la Nube Aguascalientes,,rrhh,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+449,Despacho Contable Premium,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+450,Facturación Ágil CDMX,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+451,Despacho de Auditoría Contable Integral,,auditoria,,,,,Durango,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+452,Asesoría Fiscal Integral Corporativo,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+453,Fulfillment Asociados,,financiero,,,,,Culiacán,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+454,Asesoría Services,,automatizacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+455,Cobranza del Norte,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+456,Sistemas,,fintech,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+457,Contabilidad Integral Pro,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+458,Asesores Contables SA de CV,,auditoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+459,Servicios de Contabilidad Toluca,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+460,Servicios de Contabilidad Puebla,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+461,Facturación Total del Bajío,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+462,Despacho de Auditoría Contable y Cía,,financiero,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+463,Bufete Contable Integral,,contabilidad,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+464,Gestión Contable del Pacífico,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+465,Software Development,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+466,Gestión Contable Puebla,,consultoria,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+467,Finanzas Puebla,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+468,Consultores Fiscales Querétaro,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+469,Contabilidad Integral Asociados,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+470,Facturación Móvil Premium,,fintech,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+471,Dev Express,,cobranza,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+472,Optimización CDMX,,consultoria,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+473,Servicios de Contabilidad del Pacífico,,logistica,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+474,Despacho de Auditoría Contable Hermosillo,,consultoria,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+475,Facturación Express Morelia,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+476,Facturación Inteligente CDMX,,facturacion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+477,Sistema de Facturación del Pacífico,,administracion,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+478,Software del Centro,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+479,Despacho Fiscal Puebla,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+480,Process Automation,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+481,Automatización del Centro,,consultoria,,,,,Villahermosa,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+482,Finanzas Consulting,,administracion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+483,Auditores Master,,software,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+484,Estrategia Express,,facturacion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+485,Plataforma de Facturación Puebla,,facturacion,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+486,Plataforma Digital Cancún,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+487,Consultoría Integral Monterrey,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+488,Contadores Certificados CDMX,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+489,Facturación en la Nube Master,,financiero,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+490,Gestión Financiera Empresarial,,contabilidad,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+491,Advisory Corporativo,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+492,Facturación en la Nube,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+493,Asesores Contables y Cía,,cobranza,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+494,Bufete Contable Master,,facturacion,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+495,Consultoría,,contabilidad,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+496,Facturación en la Nube Asociados,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+497,Consultoría Integral del Bajío,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+498,Bufete Contable y Asociados,,cobranza,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+499,Facturación Automatizada Monterrey,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+500,Firma Consultora CDMX,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+501,Asesoría Financiera Contable Solutions,,contabilidad,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+502,Capital,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+503,Soluciones de Pago MX,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+504,Inteligencia Saltillo,,facturacion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+505,Cloud Express,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+506,Advisory,,facturacion,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+507,Despacho Contable San Luis Potosí,,consultoria,,,,,Oaxaca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+508,Contadores Certificados,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+509,Fulfillment del Pacífico,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+510,Grupo Contable CDMX,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+511,Consultoría Chihuahua,,software,,,,,Aguascalientes,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+512,Facturación Digital Monterrey,,fintech,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+513,Robotics y Socios,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+514,Workflow Mérida,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+515,Automatización Industrial Profesional,,consultoria,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+516,Factura Fácil y Asociados,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+517,Despacho de Contaduría CDMX,,contabilidad,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+518,Asesoría Contable Total,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+519,Despacho de Auditoría Contable SC,,consultoria,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+520,Facturación Electrónica Solutions,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+521,Capital Humano y Cía,,software,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+522,Timbre Fiscal San Luis Potosí,,contabilidad,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+523,Soluciones Empresariales Consulting,,administracion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+524,Automatización Villahermosa,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+525,Facturación Móvil Group,,facturacion,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+526,Facturación Electrónica Guadalajara,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+527,Facturación en la Nube del Centro,,consultoria,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+528,Desarrollo Aguascalientes,,consultoria,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+529,Billetera Digital Empresarial,,contabilidad,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+530,Facturación en la Nube CDMX,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+531,Facturación Integral del Bajío,,contabilidad,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+532,Innovación Digital Pro,,contabilidad,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+533,CFDI,,contabilidad,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+534,Automatización Industrial,,consultoria,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+535,Transformación Hermanos,,fintech,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+536,Cloud y Asociados,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+537,Recursos Humanos Hermanos,,consultoria,,,,,Torreón,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+538,Automatización,,fintech,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+539,RH,,contabilidad,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+540,eFactura del Golfo,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+541,Bufete Contable Guadalajara,,administracion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+542,Gestoría Fiscal Pro,,contabilidad,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+543,Consultoría Financiera MX,,consultoria,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+544,Asesoría Contable Querétaro,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+545,Soluciones Tecnológicas CDMX,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+546,Consultores Plus,,financiero,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+547,Fintech CDMX,,rrhh,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+548,Facturación Móvil SA de CV,,financiero,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+549,Asesoría Contable Chihuahua,,software,,,,,Torreón,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+550,Bufete Contable del Bajío,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+551,Auditoría Contable MX,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+552,Servicios de Contabilidad Cancún,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+553,Inteligencia CDMX,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+554,Gestión Administrativa del Pacífico,,facturacion,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+555,Cobranza San Luis Potosí,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+556,Asesoría Financiera Contable SC,,fintech,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+557,Asesoría Financiera Contable y Asociados,,contabilidad,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+558,Consultoría Empresarial Guadalajara,,consultoria,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+559,Soluciones de Pago,,facturacion,,,,,Villahermosa,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+560,Grupo Consultor Pro,,consultoria,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+561,Servicios Fiscales Contables Empresarial,,contabilidad,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+562,Plataforma de Facturación Chihuahua,,software,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+563,IT Solutions Corporativo,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+564,Cobro Hermanos,,software,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+565,Tech Corporativo,,consultoria,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+566,Consultoría Tributaria San Luis Potosí,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+567,Contabilidad Integral del Golfo,,contabilidad,,,,,Villahermosa,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+568,Fintech Guadalajara,,administracion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+569,Digital Master,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+570,Facturación Ágil,,consultoria,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+571,Software MX,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+572,Servicios Administrativos Guadalajara,,contabilidad,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+573,Consultores Fiscales CDMX,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+574,Auditoría MX,,fintech,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+575,Pagos Digitales Guadalajara,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+576,Advisory Guadalajara,,contabilidad,,,,,Culiacán,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+577,Contadores Certificados del Centro,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+578,Recaudación Guadalajara,,cobranza,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+579,Asesoría Fiscal Integral SA de CV,,software,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+580,eFactura y Socios,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+581,Asesoría de Negocios Morelia,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+582,Tech Solutions CDMX,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+583,Gestión de Cobranza Mérida,,cobranza,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+584,Control Automático Morelia,,contabilidad,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+585,Apps Express,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+586,Business Consulting del Norte,,cobranza,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+587,RPA Monterrey,,fintech,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+588,Cobro Digital Corporativo,,logistica,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+589,Firma Consultora Services,,software,,,,,Torreón,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+590,Asesoría Solutions,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+591,Facturación Ágil Master,,facturacion,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+592,Servicios Financieros del Norte,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+593,Cobranza Especializada CDMX,,contabilidad,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+594,Consultoría Asociados,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+595,Facturación Express,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+596,Automatización Industrial CDMX,,automatizacion,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+597,Asesoría Financiera Contable Group,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+598,Facturación Express Group,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+599,Desarrollo Organizacional,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+600,Gestión Puebla,,consultoria,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+601,Gestoría Fiscal Services,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+602,SaaS Total,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+603,Despacho Contable del Bajío,,cobranza,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+604,Despacho Contable Toluca,,logistica,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+605,Timbre Fiscal Express,,software,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+606,Facturación Electrónica y Cía,,financiero,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+607,eFactura Empresarial,,financiero,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+608,Facturación Ágil Total,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+609,Inversiones y Asociados,,facturacion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+610,Factura Fácil S de RL,,contabilidad,,,,,Durango,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+611,Facturación Automatizada S de RL,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+612,Software Factory,,rrhh,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+613,Finanzas Profesional,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+614,Facturación Integral Mérida,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+615,Neobanco y Asociados,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+616,Consultores Express,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+617,Planeación Financiera Chihuahua,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+618,Facturación Inteligente del Norte,,contabilidad,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+619,Servicios de Facturación Tuxtla Gutiérrez,,consultoria,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+620,Smart Automation y Socios,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+621,IT Solutions León,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+622,Gestoría Fiscal S de RL,,rrhh,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+623,Despacho Contable Guadalajara,,contabilidad,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+624,Consultores Fiscales Puebla,,facturacion,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+625,Administración Querétaro,,software,,,,,Culiacán,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+626,Facturación Total Puebla,,facturacion,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+627,Code y Asociados,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+628,Contadores Públicos CDMX,,facturacion,,,,,Durango,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+629,Plataforma de Facturación Solutions,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+630,Data León,,auditoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+631,Comprobantes Digitales Guadalajara,,contabilidad,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+632,Back Office CDMX,,contabilidad,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+633,Advisory Express,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+634,Planeación Financiera Toluca,,fintech,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+635,Desarrollo Organizacional Querétaro,,consultoria,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+636,Compliance del Norte,,facturacion,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+637,Fulfillment Profesional,,rrhh,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+638,Digital Group,,contabilidad,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+639,Talento Pro,,software,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+640,Distribución,,consultoria,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+641,Facturación Express del Bajío,,auditoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+642,Capital Humano,,contabilidad,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+643,Firma Contable Integral,,automatizacion,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+644,Consultoría Financiera Corporativo,,fintech,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+645,Bufete Contable y Socios,,software,,,,,Villahermosa,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+646,Gestión CDMX,,facturacion,,,,,Durango,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+647,Soluciones CFDI,,consultoria,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+648,Consultoría Empresarial Saltillo,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+649,Despacho Fiscal Durango,,fintech,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+650,Consultoría Tributaria Puebla,,software,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+651,Auditoría Contable Guadalajara,,facturacion,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+652,Headhunting del Golfo,,administracion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+653,Plataforma de Pagos y Asociados,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+654,Planeación Financiera Guanajuato,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+655,Servicios Financieros Asociados,,rrhh,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+656,Gestión Administrativa,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+657,Transporte y Cía,,automatizacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+658,Facturación Integral Services,,facturacion,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+659,Gestión de Personal Pro,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+660,Estrategia y Asociados,,financiero,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+661,Facturación Móvil Solutions,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+662,Gestoría Fiscal Puebla,,contabilidad,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+663,Auditoría Externa Hermanos,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+664,Tecnología Aplicada Chihuahua,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+665,Soluciones Tecnológicas,,software,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+666,Digital Puebla,,consultoria,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+667,Sistema de Facturación,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+668,Tech Monterrey,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+669,Fulfillment Integral,,financiero,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+670,Gestión León,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+671,Innovación Integral,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+672,Despacho de Auditoría Contable Group,,auditoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+673,Firma Contable Monterrey,,financiero,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+674,Consultoría Empresarial Solutions,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+675,Data Guanajuato,,rrhh,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+676,Software Factory Puebla,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+677,Headhunting CDMX,,software,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+678,Facturación Total Guadalajara,,rrhh,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+679,Facturación Móvil y Cía,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+680,Recuperación CDMX,,facturacion,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+681,Servicios Contables S de RL,,software,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+682,Soluciones CFDI del Pacífico,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+683,Plataforma de Facturación Total,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+684,Facturación en Línea Consulting,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+685,Recaudación Empresarial,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+686,Consultores Fiscales Monterrey,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+687,Software Querétaro,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+688,Despacho Fiscal Express,,cobranza,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+689,Timbre Fiscal Puebla,,contabilidad,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+690,Code Chihuahua,,contabilidad,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+691,eFactura del Bajío,,contabilidad,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+692,RPA Total,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+693,Plataforma Digital Consulting,,cobranza,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+694,Facturación Integral Querétaro,,facturacion,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+695,Business Consulting Guadalajara,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+696,Compliance Morelia,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+697,Consultores Fiscales del Bajío,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+698,Almacenaje,,cobranza,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+699,Software Factory León,,automatizacion,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+700,Asesores Contables del Centro,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+701,Gestión de Cobranza MX,,facturacion,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+702,Sistema de Facturación Querétaro,,automatizacion,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+703,Soluciones Contables,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+704,Envíos Toluca,,auditoria,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+705,Smart Automation S de RL,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+706,Factura Fácil Toluca,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+707,Asesores Contables Cancún,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+708,Automatización de Procesos y Cía,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+709,Asesoría Fiscal Integral Profesional,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+710,Facturación Electrónica Consulting,,contabilidad,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+711,Innovación Digital del Golfo,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+712,Gestión Financiera y Asociados,,auditoria,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+713,Process Automation CDMX,,cobranza,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+714,Automatización Industrial del Norte,,automatizacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+715,Tech Guanajuato,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+716,Paquetería,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+717,Auditoría del Bajío,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+718,Timbre Fiscal y Socios,,logistica,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+719,SaaS Premium,,financiero,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+720,Consultoría Fiscal del Centro,,software,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+721,Plataforma Digital del Golfo,,contabilidad,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+722,Grupo Consultor Tijuana,,consultoria,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+723,Asesoría de Negocios Culiacán,,administracion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+724,Despacho Fiscal del Norte,,rrhh,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+725,Facturación en la Nube Solutions,,contabilidad,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+726,Compliance y Socios,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+727,Despacho de Auditoría Contable Querétaro,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+728,Capital Humano Empresarial,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+729,Recuperación del Golfo,,consultoria,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+730,Innovación Aguascalientes,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+731,Facturación Inteligente Consulting,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+732,Patrimonial Guadalajara,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+733,Software Cancún,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+734,Contabilidad Integral Express,,automatizacion,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+735,Compliance Puebla,,software,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+736,Innovación Digital Premium,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+737,Gestión Corporativo,,facturacion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+738,Despacho de Contaduría Services,,software,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+739,Desarrollo Organizacional Monterrey,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+740,Advisory CDMX,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+741,Automatización CDMX,,administracion,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+742,Asesoría Financiera Contable Premium,,financiero,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+743,Asesoría Contable CDMX,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+744,Factura Fácil del Bajío,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+745,Inversiones Asociados,,financiero,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+746,Soluciones Financieras CDMX,,rrhh,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+747,Firma Consultora Hermanos,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+748,Despacho Fiscal Solutions,,software,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+749,Outsourcing Administrativo,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+750,Optimización Querétaro,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+751,Robotics Group,,fintech,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+752,Auditoría Contable Hermanos,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+753,Logística,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+754,Consultoría de Negocios Oaxaca,,software,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+755,Sistemas Monterrey,,facturacion,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+756,Neobanco CDMX,,consultoria,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+757,Cobro Group,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+758,Consultoría Financiera y Cía,,consultoria,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+759,Asesoría Contable Hermanos,,administracion,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+760,Recuperación Tuxtla Gutiérrez,,facturacion,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+761,Servicios Contables Monterrey,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+762,Asesoría Financiera Contable Corporativo,,consultoria,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+763,Asesoría Contable del Bajío,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+764,Planeación SC,,consultoria,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+765,Paquetería San Luis Potosí,,facturacion,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+766,Grupo Contable Group,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+767,Neobanco Premium,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+768,Facturación en Línea Corporativo,,fintech,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+769,Facturación Integral del Norte,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+770,Neobanco,,contabilidad,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+771,Bufete Contable CDMX,,consultoria,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+772,Capital Humano Tuxtla Gutiérrez,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+773,Advisory del Pacífico,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+774,Grupo Contable y Asociados,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+775,Soluciones Empresariales Cancún,,software,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+776,Facturación Express Mérida,,software,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+777,Consultoría Fiscal Consulting,,cobranza,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+778,Consultoría de Negocios Pro,,financiero,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+779,Process Automation Total,,contabilidad,,,,,Aguascalientes,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+780,Facturación en la Nube del Pacífico,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+781,Tecnología Aplicada,,financiero,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+782,Soluciones CFDI Services,,cobranza,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+783,Asesores Contables CDMX,,consultoria,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+784,Inversiones del Bajío,,fintech,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+785,Facturación Ágil San Luis Potosí,,software,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+786,Contadores Certificados y Socios,,consultoria,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+787,Timbre Fiscal SA de CV,,consultoria,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+788,Contabilidad Integral Services,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+789,Timbre Fiscal Asociados,,software,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+790,Grupo Consultor CDMX,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+791,Planeación Financiera Premium,,software,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+792,Finanzas Mérida,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+793,Business Consulting,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+794,Firma Contable Pro,,financiero,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+795,Despacho de Auditoría Contable Corporativo,,facturacion,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+796,Facturación Digital del Bajío,,financiero,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+797,Tecnología Aplicada y Cía,,contabilidad,,,,,Tuxtla Gutiérrez,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+798,Servicios Financieros del Pacífico,,fintech,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+799,IT Solutions Plus,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+800,Innovación y Cía,,software,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+801,Back Office San Luis Potosí,,logistica,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+802,Automatización de Procesos Consulting,,contabilidad,,,,,Durango,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+803,Desarrollo Chihuahua,,contabilidad,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+804,Business Consulting Monterrey,,contabilidad,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+805,Digital del Pacífico,,contabilidad,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+806,Consultores Fiscales y Asociados,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+807,CFDI Profesional,,consultoria,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+808,IT Solutions,,contabilidad,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+809,Asesoría de Negocios Plus,,cobranza,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+810,Optimización Chihuahua,,contabilidad,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+811,Facturación Móvil Pro,,contabilidad,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+812,Optimización Saltillo,,contabilidad,,,,,Aguascalientes,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+813,Asesoría Financiera Contable del Pacífico,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+814,Asesores Contables Veracruz,,consultoria,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+815,Facturación Ágil Guadalajara,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+816,Soluciones Financieras León,,contabilidad,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+817,Cobro Digital Empresarial,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+818,Contadores Públicos Cancún,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+819,Robotics Guadalajara,,cobranza,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+820,Servicios Fiscales Contables Total,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+821,Desarrollo CDMX,,facturacion,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+822,Back Office Oaxaca,,facturacion,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+823,Automatización de Procesos Puebla,,fintech,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+824,Asesoría de Negocios CDMX,,rrhh,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+825,Servicios de Facturación Profesional,,contabilidad,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+826,Facturación en la Nube del Norte,,logistica,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+827,Soluciones CFDI y Socios,,software,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+828,Administración Guadalajara,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+829,Cobro Digital SC,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+830,Data Mérida,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+831,Estrategia CDMX,,facturacion,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+832,Despacho de Contaduría Solutions,,automatizacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+833,Servicios de Oficina y Cía,,consultoria,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+834,Grupo Contable Toluca,,consultoria,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+835,Gestión y Cía,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+836,Servicios Fiscales Contables Premium,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+837,Auditores,,financiero,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+838,Consultoría Tributaria Master,,consultoria,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+839,Bufete Contable MX,,cobranza,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+840,Consultoría Empresarial Oaxaca,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+841,Back Office y Socios,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+842,Consultoría Empresarial Pro,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+843,Digital del Centro,,fintech,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+844,Despacho Fiscal Corporativo,,fintech,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+845,Recursos Humanos S de RL,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+846,Facturación Express Querétaro,,facturacion,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+847,Servicios de Oficina CDMX,,financiero,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+848,Facturación Automatizada Morelia,,consultoria,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+849,Servicios de Facturación del Centro,,consultoria,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+850,Asesoría de Negocios Total,,contabilidad,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+851,Consultoría Integral Puebla,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+852,Asesoría Contable y Cía,,facturacion,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+853,Asesoría Financiera Contable Plus,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+854,Data Guadalajara,,facturacion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+855,Despacho de Auditoría Contable y Socios,,facturacion,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+856,Consultoría de Negocios del Pacífico,,software,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+857,Facturación Integral y Socios,,auditoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+858,Soluciones Contables Integral,,financiero,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+859,Plataforma de Pagos,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+860,Despacho Fiscal Tijuana,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+861,Cloud Veracruz,,contabilidad,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+862,Firma Contable SA de CV,,consultoria,,,,,Villahermosa,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+863,Servicios Contables Services,,facturacion,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+864,Capital Puebla,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+865,Plataforma de Facturación Pro,,administracion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+866,Consultoría Integral Asociados,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+867,Innovación Digital y Asociados,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+868,Consultoría Tributaria Integral,,logistica,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+869,eFactura León,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+870,Facturación Digital del Norte,,financiero,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+871,Firma Contable Querétaro,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+872,Advisory Puebla,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+873,Automatización Puebla,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+874,Contaduría del Centro,,facturacion,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+875,Talento Guadalajara,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+876,Tecnología León,,contabilidad,,,,,Oaxaca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+877,Cobro Digital Pro,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+878,Facturación Ágil Empresarial,,auditoria,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+879,Despacho Fiscal del Centro,,software,,,,,Durango,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+880,Asesoría Fiscal Integral y Asociados,,rrhh,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+881,Automatización de Procesos Plus,,financiero,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+882,Administración Profesional,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+883,Automatización de Procesos,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+884,Asesoría Querétaro,,consultoria,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+885,Insurtech del Norte,,automatizacion,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+886,Grupo Contable Consulting,,software,,,,,Tuxtla Gutiérrez,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+887,Business Consulting y Cía,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+888,Neobanco MX,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+889,Servicios Fiscales Contables Monterrey,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+890,Innovación CDMX,,auditoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+891,Facturación Express Profesional,,software,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+892,Asesoría Financiera Contable Empresarial,,consultoria,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+893,Comprobantes Digitales y Asociados,,automatizacion,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+894,Business Consulting Corporativo,,consultoria,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+895,Asesoría Fiscal Integral CDMX,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+896,Cobranza Especializada,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+897,Timbre Fiscal del Centro,,consultoria,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+898,Servicios Administrativos,,logistica,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+899,Control Automático Express,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+900,Contaduría MX,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+901,Facturación Digital y Cía,,contabilidad,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+902,Consultoría Empresarial y Socios,,consultoria,,,,,Morelia,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+903,Despacho de Contaduría SC,,contabilidad,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+904,Timbre Fiscal Monterrey,,consultoria,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+905,Gestión Contable del Centro,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+906,Consultoría Financiera Premium,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+907,Facturación Electrónica Corporativo,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+908,Optimización Empresarial,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+909,Facturación Ágil Plus,,software,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+910,Consultores Fiscales Guadalajara,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+911,Contadores Públicos SC,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+912,Business Consulting del Bajío,,facturacion,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+913,Facturación Automatizada Master,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+914,Facturación Automatizada Cancún,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+915,Despacho Fiscal Monterrey,,consultoria,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+916,Auditoría Externa,,financiero,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+917,Business Consulting Pro,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+918,Consultoría Tributaria S de RL,,facturacion,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+919,Asesoría Contable SA de CV,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+920,Soluciones Empresariales Monterrey,,facturacion,,,,,Oaxaca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+921,Consultores Fiscales Total,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+922,Data CDMX,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+923,Gestión SC,,contabilidad,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+924,Consultoría de Negocios CDMX,,consultoria,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+925,Facturación en Línea Toluca,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+926,Planeación del Bajío,,fintech,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+927,Data SA de CV,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+928,Despacho de Contaduría Hermosillo,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+929,Dev CDMX,,auditoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+930,Servicios Fiscales Contables SC,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+931,Gestión S de RL,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+932,Facturación Móvil Tijuana,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+933,Tech Solutions del Norte,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+934,Comprobantes Digitales Premium,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+935,Consultores Fiscales SA de CV,,consultoria,,,,,Guanajuato,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+936,Facturación en la Nube Profesional,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+937,Comprobantes Digitales León,,rrhh,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+938,Servicios Fiscales Contables del Centro,,software,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+939,Envíos,,software,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+940,Soluciones CFDI CDMX,,automatizacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+941,Despacho Contable Express,,administracion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+942,Facturación en Línea Master,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+943,Tecnología Aplicada Services,,contabilidad,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+944,Consultoría Tributaria del Norte,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+945,Gestión Contable Guadalajara,,software,,,,,Saltillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+946,Consultoría Integral Plus,,fintech,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+947,Finanzas Asociados,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+948,Reclutamiento CDMX,,software,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+949,Facturación Electrónica S de RL,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+950,Tech Solutions y Socios,,consultoria,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+951,Soluciones de Pago Master,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+952,Facturación Móvil MX,,software,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+953,Plataforma de Pagos Toluca,,logistica,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+954,Despacho de Contaduría Asociados,,contabilidad,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+955,Facturación Automatizada del Pacífico,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+956,Automatización S de RL,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+957,Fintech y Socios,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+958,Automatización SC,,software,,,,,Puebla,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+959,SaaS Aguascalientes,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+960,Automa Solutions,,financiero,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+961,Facturación Integral Monterrey,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+962,Servicios Administrativos Cancún,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+963,Transformación Pro,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+964,Sistema de Facturación CDMX,,automatizacion,,,,,Toluca,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+965,Inversiones Hermosillo,,consultoria,,,,,León,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+966,Lending Group,,financiero,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+967,Facturación Ágil Hermosillo,,consultoria,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+968,Servicios de Facturación Pro,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+969,Logística Querétaro,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+970,Consultoría Tributaria del Bajío,,facturacion,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+971,Auditoría CDMX,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+972,Asesoría Fiscal Integral Plus,,facturacion,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+973,Asesoría de Negocios San Luis Potosí,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+974,CFDI Empresarial,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+975,Logística Monterrey,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+976,Servicios Fiscales Contables S de RL,,fintech,,,,,Cancún,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+977,Gestoría Fiscal Monterrey,,software,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+978,Automatización de Procesos Tuxtla Gutiérrez,,contabilidad,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+979,Lending Premium,,financiero,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+980,Gestión,,financiero,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+981,Consultoría Tributaria Monterrey,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+982,Servicios Financieros Mérida,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+983,Tecnología Guadalajara,,contabilidad,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+984,Despacho de Contaduría Aguascalientes,,consultoria,,,,,Mérida,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+985,Facturación en Línea CDMX,,consultoria,,,,,Chihuahua,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+986,Servicios de Contabilidad Guanajuato,,consultoria,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+987,Digital Saltillo,,financiero,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+988,Plataforma de Pagos del Centro,,automatizacion,,,,,Veracruz,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+989,Asesoría Contable Empresarial,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+990,Tech SC,,fintech,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+991,Asesoría Contable Corporativo,,automatizacion,,,,,San Luis Potosí,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+992,Innovación del Centro,,facturacion,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+993,Business Consulting Total,,facturacion,,,,,Guadalajara,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+994,Inversiones CDMX,,consultoria,,,,,Monterrey,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+995,Servicios de Contabilidad CDMX,,contabilidad,,,,,Tijuana,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+996,Recaudación,,facturacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+997,Transformación SA de CV,,consultoria,,,,,Querétaro,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+998,Consultoría Financiera Aguascalientes,,automatizacion,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+999,Innovación Digital Solutions,,automatizacion,,,,,Hermosillo,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58
+1000,Consultoría Fiscal León,,contabilidad,,,,,CDMX,,MX,,,seed_denue,,2026-06-13 03:49:58,2026-06-13 03:49:58

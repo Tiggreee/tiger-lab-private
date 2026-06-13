@@ -1,0 +1,81 @@
+{
+  "campaign": {
+    "id": "CAMP-1781322572013",
+    "generatedAt": "2026-06-13T03:49:32.013Z",
+    "config": {
+      "productName": "Docflow API",
+      "headline": "Automatiza tus documentos y ahorra 10h/semana",
+      "bodyCopy": "Cada hora que pasas gestionando documentos, facturas y procesos manuales es una hora perdida. Docflow API automatiza todo el flujo documental para que tú inviertas en hacer crecer tu negocio, no en papeleo.",
+      "bullets": [
+        "Automatización completa de documentos y flujos",
+        "Integración con tu stack actual en minutos",
+        "Facturación electrónica CFDI nativa MX",
+        "Soporte 24/7 en español"
+      ],
+      "colors": {
+        "header": "#6C47FF",
+        "accent": "#FF6B35"
+      }
+    },
+    "target": "contabilidad",
+    "channels": {
+      "email": {
+        "adapted": true,
+        "format": "html",
+        "preview": "Automatiza tus documentos y ahorra 10h/semana"
+      },
+      "linkedin": {
+        "adapted": true,
+        "format": "text",
+        "preview": "Automatiza tus documentos y ahorra 10h/semana"
+      },
+      "facebook": {
+        "adapted": true,
+        "format": "text",
+        "preview": "Automatiza tus documentos y ahorra 10h/semana"
+      }
+    },
+    "prospects": [
+      {
+        "id": "PROSP-0001",
+        "name": "Demo Prospect",
+        "industry": "contabilidad",
+        "city": "CDMX"
+      }
+    ],
+    "metrics": {
+      "totalProspects": 1
+    },
+    "status": "pending_approval"
+  },
+  "approvalCard": {
+    "id": "CAMP-1781322572013",
+    "type": "campaign-approval",
+    "title": "🎯 CAMPAIGN: Docflow API",
+    "product": "Docflow API",
+    "headline": "Automatiza tus documentos y ahorra 10h/semana",
+    "bodyPreview": "Cada hora que pasas gestionando documentos, facturas y procesos manuales es una hora perdida. Docflow API automatiza todo el flujo documental para que...",
+    "prospects": 1,
+    "targetProspects": 1000,
+    "channels": "email, linkedin, facebook",
+    "colors": {
+      "header": "#6C47FF",
+      "accent": "#FF6B35"
+    },
+    "bullets": [
+      "Automatización completa de documentos y flujos",
+      "Integración con tu stack actual en minutos",
+      "Facturación electrónica CFDI nativa MX",
+      "Soporte 24/7 en español"
+    ],
+    "imagePreview": "",
+    "generatedAt": "2026-06-13T03:49:32.014Z",
+    "status": "pending_approval",
+    "actions": [
+      "approve",
+      "edit",
+      "reject"
+    ],
+    "dashboardCard": true
+  }
+}
