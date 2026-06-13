@@ -1,59 +1,10 @@
 {
   "generatedAt": "2026-06-13T07:43:24.672Z",
   "monetization": {
-    "generatedAt": "2026-06-13T07:58:02.447Z",
-    "revenue": {
-      "totalMonthly": 276,
-      "projectedMonthly": 445.2,
-      "currency": "USD",
-      "activeProductCount": 4,
-      "productsInPipeline": 3
-    },
-    "recommendations": {
-      "increase": 0,
-      "maintain": 4,
-      "hold": 5,
-      "setLaunch": 1
-    },
-    "pipelineHealth": {
-      "connectedLeads": 25,
-      "convertedLeads": 0,
-      "conversionRate": 0,
-      "targetConversion": 15,
-      "status": "cold-start"
-    },
-    "topPlans": [
-      {
-        "product": "FacturAutentico Cloud",
-        "plan": "Starter",
-        "price": 39,
-        "status": "paused"
-      },
-      {
-        "product": "FacturAutentico Cloud",
-        "plan": "Pro",
-        "price": 99,
-        "status": "paused"
-      },
-      {
-        "product": "FacturAutentico Cloud",
-        "plan": "Enterprise",
-        "price": 249,
-        "status": "paused"
-      },
-      {
-        "product": "Docflow API",
-        "plan": "Starter",
-        "price": 39,
-        "status": "active"
-      },
-      {
-        "product": "Docflow API",
-        "plan": "Pro",
-        "price": 99,
-        "status": "active"
-      }
-    ]
+    "leadsToday": 10,
+    "generatedContent": 10,
+    "activeBots": 4,
+    "averagePrice": "$69.00"
   },
   "funnel": {
     "stages": [
@@ -1033,85 +984,32 @@
     "checkout": "success",
     "gate": "GO"
   },
-  "leadEngine": {
-    "generatedAt": "2026-06-13T07:56:48.296Z",
-    "stats": {
-      "companies": 1000,
-      "byIndustry": {
-        "contabilidad": 265,
-        "facturacion": 199,
-        "consultoria": 159,
-        "software": 127,
-        "financiero": 64,
-        "fintech": 47,
-        "automatizacion": 32,
-        "cobranza": 27,
-        "administracion": 22,
-        "auditoria": 21,
-        "rrhh": 20,
-        "logistica": 17
+  "failuresMonitor": {
+    "lastAnalysis": "2026-06-13T07:44:43.810Z",
+    "totalRuns": 100,
+    "failedToday": 2,
+    "successfulToday": 97,
+    "byType": {
+      "failure": 2
+    },
+    "byWorkflow": [
+      {
+        "workflow": "Product Development Engine — 2h Cycle",
+        "failures": 1
       },
-      "byCity": {
-        "CDMX": 268,
-        "Monterrey": 114,
-        "Guadalajara": 111,
-        "Puebla": 79,
-        "Querétaro": 53,
-        "Mérida": 38,
-        "León": 36,
-        "Toluca": 30,
-        "San Luis Potosí": 28,
-        "Cancún": 27,
-        "Chihuahua": 26,
-        "Hermosillo": 25,
-        "Guanajuato": 23,
-        "Saltillo": 23,
-        "Tijuana": 23,
-        "Morelia": 18,
-        "Veracruz": 15,
-        "Aguascalientes": 12,
-        "Durango": 12,
-        "Villahermosa": 12,
-        "Tuxtla Gutiérrez": 9,
-        "Culiacán": 6,
-        "Oaxaca": 6,
-        "Torreón": 6
-      },
-      "sources": [
-        "seed_denue",
-        "openstreetmap",
-        "manual_import"
-      ],
-      "exportDir": "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\database\\exports",
-      "oracleDDL": "ops/database/oracle-import-ddl.sql"
-    },
-    "ledStatus": "GREEN"
-  },
-  "productArchitect": {
-    "generatedAt": "2026-06-13T07:58:09.963Z",
-    "repoStats": {
-      "totalFiles": 227,
-      "dirCount": 4,
-      "depCount": 3,
-      "devDepCount": 6,
-      "productType": "SaaS"
-    },
-    "products": 5,
-    "rndSpecsGenerated": 7,
-    "artifactDir": "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\artifacts"
-  },
-  "leadIntelligence": {
-    "generatedAt": "2026-06-13T07:58:02.530Z",
-    "stats": {
-      "total": 25,
-      "new": 0,
-      "contacted": 20,
-      "replied": 0,
-      "converted": 5,
-      "conversionRate": 20
-    },
-    "pipelineHealth": "HEALTHY",
-    "targetLeads": 50,
-    "progressPct": 50
+      {
+        "workflow": "security",
+        "failures": 1
+      }
+    ],
+    "rootCauses": [
+      {
+        "cause": "Check failures in workflow steps",
+        "severity": "high",
+        "fix": "Review logs for each failed run"
+      }
+    ],
+    "permFixed": false,
+    "currentPermission": "all"
   }
 }
