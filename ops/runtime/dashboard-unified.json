@@ -1037,20 +1037,20 @@
     }
   },
   "failuresMonitor": {
-    "lastAnalysis": "2026-06-13T13:01:03.122Z",
+    "lastAnalysis": "2026-06-13T15:08:22.936Z",
     "totalRuns": 100,
-    "failedToday": 2,
-    "successfulToday": 97,
+    "failedToday": 3,
+    "successfulToday": 96,
     "byType": {
-      "failure": 2
+      "failure": 3
     },
     "byWorkflow": [
       {
-        "workflow": "Product Development Engine — 2h Cycle",
-        "failures": 1
+        "workflow": "daily-sales-automation",
+        "failures": 2
       },
       {
-        "workflow": "security",
+        "workflow": "Product Development Engine — 2h Cycle",
         "failures": 1
       }
     ],

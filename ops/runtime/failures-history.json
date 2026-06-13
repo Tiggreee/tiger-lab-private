@@ -353,10 +353,24 @@
         "security": 1
       },
       "perm": "all"
+    },
+    {
+      "timestamp": "2026-06-13T15:08:22.935Z",
+      "totalRuns": 100,
+      "failed": 3,
+      "successful": 96,
+      "byType": {
+        "failure": 3
+      },
+      "byWorkflow": {
+        "daily-sales-automation": 2,
+        "Product Development Engine — 2h Cycle": 1
+      },
+      "perm": "all"
     }
   ],
   "fixesApplied": [],
   "lastKnownPermission": "all",
-  "lastAnalysis": "2026-06-13T13:01:03.122Z",
-  "totalFailuresTracked": 405
+  "lastAnalysis": "2026-06-13T15:08:22.935Z",
+  "totalFailuresTracked": 408
 }
