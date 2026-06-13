@@ -3,7 +3,7 @@
   "productName": "Sentrylog Lite",
   "channelId": "twitter",
   "channelName": "X / Twitter",
-  "generatedAt": "2026-06-13T18:40:40.803Z",
+  "generatedAt": "2026-06-13T19:38:24.799Z",
   "status": "planned",
   "seo": {
     "title": "Sentrylog Lite en X / Twitter | Tiger Lab",
@@ -17,19 +17,19 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "Sentrylog Lite → Deja de perder tiempo en procesos manuales.",
-    "body": "Sentrylog Lite para SMBs Mexicanas.\n\n✅ API Access\n✅ Automation\n✅ Reports\n\nDesde $39/mo · 14 dias gratis\n→ Agenda: https://cal.com/victor-tigerlab/diagnostic",
+    "headline": "Sentrylog Lite ya esta aqui. Automatiza tu operacion en minutos.",
+    "body": "Sentrylog Lite esta vivo.\n\nAPI Access\nAutomation\n\n$39/mo · Sin equipo tecnico necesario\nDiagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "directo, punchy, con call-to-action"
   },
   "tracking": {
     "utmSource": "twitter",
     "utmCampaign": "landing-sentrylog-lite-twitter",
-    "utmContent": "social-landing-1781376040803"
+    "utmContent": "social-landing-1781379504799"
   },
   "metrics": {
     "targetChars": 280,
-    "actualChars": 264,
-    "qualityScore": 72
+    "actualChars": 262,
+    "qualityScore": 73
   }
 }

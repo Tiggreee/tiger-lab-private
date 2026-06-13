@@ -3,7 +3,7 @@
   "productName": "FacturAutentico Cloud",
   "channelId": "telegram",
   "channelName": "Telegram",
-  "generatedAt": "2026-06-13T18:40:40.799Z",
+  "generatedAt": "2026-06-13T19:38:24.795Z",
   "status": "paused",
   "seo": {
     "title": "FacturAutentico Cloud en Telegram | Tiger Lab",
@@ -25,7 +25,7 @@
   "tracking": {
     "utmSource": "telegram",
     "utmCampaign": "landing-facturautentico-cloud-telegram",
-    "utmContent": "social-landing-1781376040799"
+    "utmContent": "social-landing-1781379504795"
   },
   "metrics": {
     "targetChars": 4096,

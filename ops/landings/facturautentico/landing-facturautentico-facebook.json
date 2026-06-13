@@ -3,7 +3,7 @@
   "productName": "FacturAutentica",
   "channelId": "facebook",
   "channelName": "Facebook",
-  "generatedAt": "2026-06-13T18:40:40.807Z",
+  "generatedAt": "2026-06-13T19:38:24.803Z",
   "status": "paused",
   "seo": {
     "title": "FacturAutentica en Facebook | Tiger Lab",
@@ -17,19 +17,19 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "🤖 FacturAutentica - La historia de como dejamos de hacer procesos manuales",
-    "body": " 🚀 Lanzamos FacturAutentica para equipos pequenos en Mexico.\n\nHistoria rapida: Trabajamos con decenas de SMBs que nos decian \"no tenemos tiempo para implementar tecnologia\". Tienen el dinero, tienen la intencion, pero no el equipo interno.\n\nConstruimos FacturAutentica para ellos.\n\n🔹 API Access\n🔹 Automation\n🔹 Reports\n\nDesde $39/mo. 14 dias de prueba gratis.\n\nAgenda tu diagnostico: https://cal.com/victor-tigerlab/diagnostic\n\nComparte este post con alguien que este creciendo su operacion.",
+    "headline": "FacturAutentica ya esta disponible para equipos como el tuyo",
+    "body": "FacturAutentica ya esta disponible.\n\nSi tu equipo:\n• Pasa mas de 5 horas/semana en deploys\n• No tiene area de tecnologia dedicada\n• Esta creciendo y los procesos se estan quedando atras\n\nEsto es para ti.\n\nAPI Access, Automation, Reports.\n\nDesde $39/mo. Diagnostico gratis.",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "comunitario, testimonial, conversacional"
   },
   "tracking": {
     "utmSource": "facebook",
     "utmCampaign": "landing-facturautentico-facebook",
-    "utmContent": "social-landing-1781376040807"
+    "utmContent": "social-landing-1781379504803"
   },
   "metrics": {
     "targetChars": 63206,
-    "actualChars": 617,
+    "actualChars": 380,
     "qualityScore": 21
   }
 }

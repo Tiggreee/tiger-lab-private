@@ -3,7 +3,7 @@
   "productName": "FacturAutentico Cloud",
   "channelId": "facebook",
   "channelName": "Facebook",
-  "generatedAt": "2026-06-13T18:40:40.799Z",
+  "generatedAt": "2026-06-13T19:38:24.795Z",
   "status": "paused",
   "seo": {
     "title": "FacturAutentico Cloud en Facebook | Tiger Lab",
@@ -18,18 +18,18 @@
   },
   "copy": {
     "headline": "🤖 FacturAutentico Cloud - La historia de como dejamos de hacer procesos manuales",
-    "body": "FacturAutentico Cloud ya esta disponible.\n\nSi tu equipo:\n• Pasa mas de 5 horas/semana en deploys\n• No tiene area de tecnologia dedicada\n• Esta creciendo y los procesos se estan quedando atras\n\nEsto es para ti.\n\nAPI Access, Automation, Reports.\n\nDesde $39/mo. Diagnostico gratis.",
+    "body": "FacturAutentico Cloud ya esta disponible.\n\nSi tu equipo:\n• Pasa mas de 5 horas/semana en reportes manuales\n• No tiene area de tecnologia dedicada\n• Esta creciendo y los procesos se estan quedando atras\n\nEsto es para ti.\n\nAPI Access, Automation, Reports.\n\nDesde $39/mo. Diagnostico gratis.",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "comunitario, testimonial, conversacional"
   },
   "tracking": {
     "utmSource": "facebook",
     "utmCampaign": "landing-facturautentico-cloud-facebook",
-    "utmContent": "social-landing-1781376040799"
+    "utmContent": "social-landing-1781379504795"
   },
   "metrics": {
     "targetChars": 63206,
-    "actualChars": 407,
+    "actualChars": 417,
     "qualityScore": 21
   }
 }

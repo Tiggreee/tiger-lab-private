@@ -3,7 +3,7 @@
   "productName": "FacturAutentica",
   "channelId": "twitter",
   "channelName": "X / Twitter",
-  "generatedAt": "2026-06-13T18:40:40.807Z",
+  "generatedAt": "2026-06-13T19:38:24.802Z",
   "status": "paused",
   "seo": {
     "title": "FacturAutentica en X / Twitter | Tiger Lab",
@@ -18,18 +18,18 @@
   },
   "copy": {
     "headline": "FacturAutentica ya esta aqui. Automatiza tu operacion en minutos.",
-    "body": "FacturAutentica para SMBs Mexicanas.\n\n✅ API Access\n✅ Automation\n✅ Reports\n\nDesde $39/mo · 14 dias gratis\n→ Agenda: https://cal.com/victor-tigerlab/diagnostic",
+    "body": "FacturAutentica esta vivo.\n\nAPI Access\nAutomation\n\n$39/mo · Sin equipo tecnico necesario\nDiagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "directo, punchy, con call-to-action"
   },
   "tracking": {
     "utmSource": "twitter",
     "utmCampaign": "landing-facturautentico-twitter",
-    "utmContent": "social-landing-1781376040807"
+    "utmContent": "social-landing-1781379504802"
   },
   "metrics": {
     "targetChars": 280,
-    "actualChars": 270,
-    "qualityScore": 70
+    "actualChars": 264,
+    "qualityScore": 72
   }
 }
