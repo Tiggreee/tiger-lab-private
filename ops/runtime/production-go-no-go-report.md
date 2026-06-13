@@ -1,6 +1,6 @@
 # Production Go/No-Go Report
 
-- generatedAt: 2026-06-13T04:33:29.979Z
+- generatedAt: 2026-06-13T04:44:17.285Z
 - gateStatus: GO_WITH_WARNINGS
 - summary: PASS 12 | WARN 2 | FAIL 0
 
@@ -36,20 +36,20 @@
 - P13 Test coverage thresholds: PASS
   details: Thresholds: lines 30%, statements 30%
   ownerAction: Sin accion.
-- P8 Pruebas criticas de humo: WARN
-  details: No se ejecutaron comandos (--no-commands).
-  ownerAction: Ejecutar test:smoke.
-- P9 Build de backend y arranque: WARN
-  details: No se ejecutaron comandos (--no-commands).
-  ownerAction: Ejecutar build:server.
-- P12 GitHub Actions operacional: PASS
-  details: CI: success
+- P8 Pruebas criticas de humo: PASS
+  details: test:smoke OK.
   ownerAction: Sin accion.
-- P14 Railway deploy status: PASS
-  details: Railway: success
+- P9 Build de backend y arranque: PASS
+  details: build:server OK.
   ownerAction: Sin accion.
+- P12 GitHub Actions operacional: WARN
+  details: CI: unknown
+  ownerAction: Revisar CI.
+- P14 Railway deploy status: WARN
+  details: Railway: unknown
+  ownerAction: Revisar Railway logs.
 
 ## Owner Next Actions
 
-- P8: Ejecutar test:smoke.
-- P9: Ejecutar build:server.
+- P12: Revisar CI.
+- P14: Revisar Railway logs.

@@ -1,0 +1,41 @@
+{
+  "checkedAt": "2026-06-13T05:13:40.619Z",
+  "status": "DEGRADED",
+  "summary": {
+    "critical": 1,
+    "warnings": 4,
+    "info": 0,
+    "ok": 0
+  },
+  "alerts": [
+    {
+      "level": "WARN",
+      "msg": "Product avg 0 < 70"
+    },
+    {
+      "level": "CRITICAL",
+      "msg": "Product avg 0 < 50"
+    },
+    {
+      "level": "WARN",
+      "msg": "22 inactive agents"
+    },
+    {
+      "level": "WARN",
+      "msg": "14 failures today"
+    },
+    {
+      "level": "WARN",
+      "msg": "Implementation 0% < 80%"
+    }
+  ],
+  "snapshot": {
+    "gate": "GO",
+    "leads": 1000,
+    "agents": 22,
+    "products": 0,
+    "productAvg": 0,
+    "implementation": 0,
+    "failuresToday": 14
+  }
+}

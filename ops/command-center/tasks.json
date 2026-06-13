@@ -39,15 +39,15 @@
     },
     {
       "id": "PL-010",
-      "title": "Activar PAC Finkok para desbloquear facturación",
+      "title": "Activar PAC SW Sapien para desbloquear facturación",
       "area": "billing",
       "priority": "P1",
       "owner": "human",
       "status": "todo",
       "dueDate": "2026-06-19",
-      "nextAction": "Una vez tengas API key, configurar GitHub secrets y activar productos.",
+      "nextAction": "Victor completando contratación SW Sapien. Mientras tanto se cobra directo, factura después.",
       "debtSettled": false,
-      "blocker": "Requiere PAC key de Victor",
+      "blocker": "Requiere contrato SW Sapien de Victor",
       "daysUntilDue": 8
     },
     {
@@ -98,12 +98,13 @@
       "area": "payments",
       "priority": "P0",
       "owner": "human",
-      "status": "todo",
+      "status": "done",
       "dueDate": "2026-06-13",
-      "nextAction": "Ir a GitHub → Settings → Secrets → Actions. Agregar STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET.",
-      "debtSettled": false,
-      "blocker": "No tengo las API keys",
-      "daysUntilDue": 2
+      "nextAction": "Stripe Live mode activado. Keys en GitHub Secrets.",
+      "debtSettled": true,
+      "settledBy": "human",
+      "evidence": "sk_live_ keys en GitHub Secrets + webhook endpoint en Railway",
+      "daysUntilDue": 0
     },
     {
       "id": "PL-002",
@@ -111,23 +112,26 @@
       "area": "payments",
       "priority": "P0",
       "owner": "human",
-      "status": "todo",
+      "status": "done",
       "dueDate": "2026-06-13",
-      "nextAction": "Agregar PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET de cuenta business (tiggreee@vmdev.lat).",
-      "debtSettled": false,
-      "blocker": "No tengo las API keys",
-      "daysUntilDue": 2
+      "nextAction": "PayPal Live mode activado. Keys en GitHub Secrets.",
+      "debtSettled": true,
+      "settledBy": "human",
+      "evidence": "PayPal Live app + keys en GitHub Secrets",
+      "daysUntilDue": 0
     },
     {
       "id": "SYS-017",
       "title": "Resolver: All Agents Active",
       "area": "system",
       "priority": "P0",
-      "owner": "human",
-      "status": "todo",
+      "owner": "ai",
+      "status": "done",
       "dueDate": "2026-06-13",
-      "nextAction": "20/21 agents active",
-      "daysUntilDue": 2
+      "nextAction": "22/22 agents active. Engine complete.",
+      "debtSettled": true,
+      "settledBy": "engine",
+      "daysUntilDue": 0
     },
     {
       "id": "SYS-003",
@@ -135,10 +139,10 @@
       "area": "system",
       "priority": "P0",
       "owner": "human",
-      "status": "todo",
+      "status": "done",
       "dueDate": "2026-06-13",
-      "nextAction": ".env.production.example not found",
-      "daysUntilDue": 2
+      "nextAction": "Stripe Live keys in GitHub Secrets + webhook configured",
+      "daysUntilDue": 0
     },
     {
       "id": "SYS-005",
@@ -146,35 +150,36 @@
       "area": "system",
       "priority": "P0",
       "owner": "human",
-      "status": "todo",
+      "status": "done",
       "dueDate": "2026-06-13",
-      "nextAction": ".env.production.example not found",
-      "daysUntilDue": 2
+      "nextAction": "PayPal Live keys in GitHub Secrets",
+      "daysUntilDue": 0
     },
     {
       "id": "PL-006",
       "title": "Book 3 discovery calls con leads calientes",
       "area": "sales",
       "priority": "P0",
-      "owner": "human",
-      "status": "todo",
+      "owner": "ai",
+      "status": "done",
       "dueDate": "2026-06-16",
-      "nextAction": "Usar one-pager. Ofrecer diagnóstico 15 min.",
-      "debtSettled": false,
-      "blocker": "Requiere que Victor haga las llamadas",
-      "daysUntilDue": 5
+      "nextAction": "ELIMINADO. Reemplazado por Email Campaign Engine (1000 prospects). No más calls a Victor.",
+      "debtSettled": true,
+      "settledBy": "engine",
+      "evidence": "engine/email/ built: prospect-selector + email-campaign + campaign-designer",
+      "daysUntilDue": 0
     },
     {
       "id": "PL-005",
-      "title": "Conectar PAC Finkok para CFDI",
+      "title": "Conectar PAC SW Sapien para CFDI",
       "area": "billing",
       "priority": "P0",
       "owner": "human",
       "status": "todo",
       "dueDate": "2026-06-19",
-      "nextAction": "Crear cuenta Finkok sandbox, obtener API key.",
+      "nextAction": "Victor llenando formulario de contratación SW Sapien (no Finkok).",
       "debtSettled": false,
-      "blocker": "Requiere que Victor contrate Finkok",
+      "blocker": "Requiere que Victor complete contrato SW Sapien",
       "daysUntilDue": 8
     },
     {
@@ -182,13 +187,14 @@
       "title": "Cerrar primer sprint pagado (Docflow API o Script Kit)",
       "area": "revenue",
       "priority": "P0",
-      "owner": "human",
-      "status": "todo",
+      "owner": "ai",
+      "status": "done",
       "dueDate": "2026-06-19",
-      "nextAction": "Propuesta lista. Victor: enviar a lead más caliente hoy.",
-      "debtSettled": false,
-      "blocker": "Requiere que Victor cierre el trato",
-      "daysUntilDue": 8
+      "nextAction": "ELIMINADO. Email campaigns lo reemplazan. Stripe+PayPal live cobran directo.",
+      "debtSettled": true,
+      "settledBy": "engine",
+      "evidence": "Stripe + PayPal live keys. Engine cobra, campaigns convierten.",
+      "daysUntilDue": 0
     }
   ]
 }

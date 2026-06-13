@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T04:33:29.979Z",
+  "generatedAt": "2026-06-13T04:44:17.285Z",
   "strict": false,
   "gateStatus": "GO_WITH_WARNINGS",
   "summary": {
@@ -145,53 +145,53 @@
       "id": "P8",
       "title": "Pruebas criticas de humo",
       "severity": "critical",
-      "status": "WARN",
-      "details": "No se ejecutaron comandos (--no-commands).",
+      "status": "PASS",
+      "details": "test:smoke OK.",
       "evidence": [
         "npm run test:smoke"
       ],
-      "ownerAction": "Ejecutar test:smoke."
+      "ownerAction": "Sin accion."
     },
     {
       "id": "P9",
       "title": "Build de backend y arranque",
       "severity": "critical",
-      "status": "WARN",
-      "details": "No se ejecutaron comandos (--no-commands).",
+      "status": "PASS",
+      "details": "build:server OK.",
       "evidence": [
         "npm run build:server"
       ],
-      "ownerAction": "Ejecutar build:server."
+      "ownerAction": "Sin accion."
     },
     {
       "id": "P12",
       "title": "GitHub Actions operacional",
       "severity": "critical",
-      "status": "PASS",
-      "details": "CI: success",
+      "status": "WARN",
+      "details": "CI: unknown",
       "evidence": [],
-      "ownerAction": "Sin accion."
+      "ownerAction": "Revisar CI."
     },
     {
       "id": "P14",
       "title": "Railway deploy status",
       "severity": "high",
-      "status": "PASS",
-      "details": "Railway: success",
+      "status": "WARN",
+      "details": "Railway: unknown",
       "evidence": [
         ".github/workflows/backend-railway-deploy.yml"
       ],
-      "ownerAction": "Sin accion."
+      "ownerAction": "Revisar Railway logs."
     }
   ],
   "ownerNextActions": [
     {
-      "id": "P8",
-      "action": "Ejecutar test:smoke."
+      "id": "P12",
+      "action": "Revisar CI."
     },
     {
-      "id": "P9",
-      "action": "Ejecutar build:server."
+      "id": "P14",
+      "action": "Revisar Railway logs."
     }
   ]
 }
