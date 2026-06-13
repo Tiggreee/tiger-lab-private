@@ -11,6 +11,8 @@ header{display:flex;justify-content:space-between;align-items:center;margin-bott
 .led-row{display:flex;align-items:center;gap:8px}
 .led{width:12px;height:12px;border-radius:50%;flex-shrink:0}
 .led-green{background:#3fb950;box-shadow:0 0 8px #3fb95088}
+.neon-production{font-size:.6rem;font-weight:700;color:#0f0;text-shadow:0 0 5px #0f0,0 0 10px #0f0,0 0 20px #0f0,0 0 40px #0f0;animation:neonBlink 1.5s ease-in-out infinite;letter-spacing:3px;text-transform:uppercase;margin-left:6px;padding:2px 6px;border:1px solid #0f044;border-radius:3px}
+@keyframes neonBlink{0%,100%{opacity:1;text-shadow:0 0 5px #0f0,0 0 10px #0f0,0 0 20px #0f0}50%{opacity:.6;text-shadow:0 0 2px #0f0,0 0 5px #0f0,0 0 10px #0f0}}
 h1{font-size:1rem;font-weight:600;color:#f0f6fc}
 .gate-badge{font-size:.65rem;padding:1px 7px;border-radius:10px;font-weight:600;text-transform:uppercase}
 .gate-go{background:#1a3a2a;color:#3fb950}
@@ -68,8 +70,8 @@ footer{font-size:.65rem;color:#484f58;text-align:center;padding:6px 0 0;border-t
 <body>
 <header>
   <div class="led-row">
-    <div id="engineLed" class="led led-green" title="Engine RUNNING"></div>
     <h1>Tiger Command Center</h1>
+    <span class="neon-production">⚡ PRODUCTION ⚡</span>
     <span id="systemStatusBadge" class="gate-badge gate-go">GO</span>
   </div>
   <div class="actions">
