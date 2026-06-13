@@ -241,10 +241,25 @@
         "Social Publish": 12
       },
       "perm": "all"
+    },
+    {
+      "timestamp": "2026-06-13T05:58:27.647Z",
+      "totalRuns": 100,
+      "failed": 8,
+      "successful": 88,
+      "byType": {
+        "failure": 8
+      },
+      "byWorkflow": {
+        "security": 1,
+        "ui-host-pages": 2,
+        "Social Publish": 5
+      },
+      "perm": "all"
     }
   ],
   "fixesApplied": [],
   "lastKnownPermission": "all",
-  "lastAnalysis": "2026-06-13T03:44:30.808Z",
-  "totalFailuresTracked": 384
+  "lastAnalysis": "2026-06-13T05:58:27.647Z",
+  "totalFailuresTracked": 392
 }
