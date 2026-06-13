@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T07:58:02.447Z",
+  "generatedAt": "2026-06-13T08:40:15.179Z",
   "totalPlans": 10,
   "plans": [
     {
@@ -249,11 +249,11 @@
     "setLaunch": 1
   },
   "pipelineHealth": {
-    "connectedLeads": 25,
-    "convertedLeads": 0,
-    "conversionRate": 0,
+    "connectedLeads": 20,
+    "convertedLeads": 5,
+    "conversionRate": 25,
     "targetConversion": 15,
-    "status": "cold-start"
+    "status": "active"
   },
   "alerts": [
     {

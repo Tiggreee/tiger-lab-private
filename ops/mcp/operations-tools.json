@@ -1,0 +1,117 @@
+{
+  "protocol": "model-context-protocol/v1",
+  "server": "tiger-operations-mcp",
+  "description": "MCP Tools for Operations Agents — monetization, content, landings, leads, architecture",
+  "tools": [
+    {
+      "id": "revenue_tracker_live",
+      "name": "Revenue Tracker Live",
+      "description": "Track real-time revenue from Stripe/PayPal, projected vs actual.",
+      "inputs": [
+        { "name": "source", "type": "string", "description": "stripe | paypal | both" }
+      ],
+      "outputs": [
+        { "name": "activeRevenue", "type": "number", "description": "Current active MRR" },
+        { "name": "projectedRevenue", "type": "number", "description": "Projected MRR next 30 days" },
+        { "name": "pipelineValue", "type": "number", "description": "Total pipeline deal value" }
+      ]
+    },
+    {
+      "id": "pricing_optimizer",
+      "name": "Pricing Optimizer",
+      "description": "Compare pricing vs 10 EU competitors, suggest optimal price point.",
+      "inputs": [
+        { "name": "productId", "type": "string", "description": "Product to optimize" },
+        { "name": "competitorPrices", "type": "array", "description": "Competitor price points" }
+      ],
+      "outputs": [
+        { "name": "optimalPrice", "type": "number", "description": "Recommended price" },
+        { "name": "priceRange", "type": "object", "description": "Min/max viable range" },
+        { "name": "competitivePosition", "type": "string", "description": "premium | mid | budget" }
+      ]
+    },
+    {
+      "id": "landing_generator_batch",
+      "name": "Landing Generator Batch",
+      "description": "Generate landing pages for all products × all channels in one pass.",
+      "inputs": [
+        { "name": "products", "type": "array", "description": "Product IDs to generate for" },
+        { "name": "channels", "type": "array", "description": "Channels (linkedin, facebook, twitter, telegram, discord)" },
+        { "name": "template", "type": "string", "description": "Template style (modern | minimal | saas)" }
+      ],
+      "outputs": [
+        { "name": "landingsGenerated", "type": "number", "description": "Total landings created" },
+        { "name": "outputPaths", "type": "array", "description": "File paths for each landing" }
+      ]
+    },
+    {
+      "id": "lead_pipeline_accelerator",
+      "name": "Lead Pipeline Accelerator",
+      "description": "Progress leads through pipeline: contacted → replied → converted.",
+      "inputs": [
+        { "name": "pipelineFile", "type": "string", "description": "Path to pipeline JSON" },
+        { "name": "accelerationRate", "type": "number", "description": "% of leads to progress (default 20)" }
+      ],
+      "outputs": [
+        { "name": "progressed", "type": "number", "description": "Leads progressed" },
+        { "name": "newConversions", "type": "number", "description": "New conversions" },
+        { "name": "conversionRate", "type": "number", "description": "Current conversion %" }
+      ]
+    },
+    {
+      "id": "content_scheduler_batch",
+      "name": "Content Scheduler Batch",
+      "description": "Schedule content posts across channels for next 7 days.",
+      "inputs": [
+        { "name": "contentFiles", "type": "array", "description": "Content file paths" },
+        { "name": "schedule", "type": "string", "description": "Schedule type (daily | mwf | weekly)" }
+      ],
+      "outputs": [
+        { "name": "postsScheduled", "type": "number", "description": "Total posts scheduled" },
+        { "name": "calendar", "type": "array", "description": "Day-by-day posting calendar" }
+      ]
+    },
+    {
+      "id": "product_spec_from_rnd",
+      "name": "Product Spec from R&D",
+      "description": "Generate detailed product spec from R&D INVEST idea.",
+      "inputs": [
+        { "name": "rndIdeaId", "type": "string", "description": "R&D idea ID" },
+        { "name": "techStack", "type": "array", "description": "Available tech stack" }
+      ],
+      "outputs": [
+        { "name": "spec", "type": "object", "description": "Full product spec: features, architecture, timeline" },
+        { "name": "buildEstimate", "type": "number", "description": "Hours to MVP" },
+        { "name": "suggestedPricing", "type": "object", "description": "Pricing tiers" }
+      ]
+    },
+    {
+      "id": "agent_health_check_batch",
+      "name": "Agent Health Check Batch",
+      "description": "Run health check on all agents, return status + efficiency.",
+      "inputs": [
+        { "name": "agents", "type": "array", "description": "Agent list (optional, default all)" }
+      ],
+      "outputs": [
+        { "name": "healthy", "type": "number", "description": "Healthy agents" },
+        { "name": "degraded", "type": "number", "description": "Degraded agents" },
+        { "name": "dead", "type": "number", "description": "Dead agents" },
+        { "name": "overallEfficiency", "type": "number", "description": "Overall efficiency %" }
+      ]
+    },
+    {
+      "id": "channel_performance_matrix",
+      "name": "Channel Performance Matrix",
+      "description": "Score each social channel: reach, engagement, conversion, cost.",
+      "inputs": [
+        { "name": "channels", "type": "array", "description": "Channels to score" },
+        { "name": "period", "type": "string", "description": "Period (7d | 30d | 90d)" }
+      ],
+      "outputs": [
+        { "name": "bestChannel", "type": "string", "description": "Best performing channel" },
+        { "name": "matrix", "type": "array", "description": "Score per channel per metric" },
+        { "name": "recommendation", "type": "string", "description": "Where to focus budget" }
+      ]
+    }
+  ]
+}

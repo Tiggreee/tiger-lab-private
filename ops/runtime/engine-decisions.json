@@ -11,6 +11,12 @@
       "reason": "Score 38/100 — no viable path",
       "action": "KILL",
       "severity": "permanent"
+    },
+    {
+      "product": "Sentrylog Lite",
+      "reason": "Score 38/100 — no viable path",
+      "action": "KILL",
+      "severity": "permanent"
     }
   ],
   "metrics": {
@@ -125,8 +131,8 @@
         "zombie": 2,
         "killed": 1
       },
-      "decisions": 2,
-      "startups": 2,
+      "decisions": 3,
+      "startups": 3,
       "revenue": 0,
       "pipeline": "5000 contacts ready",
       "gate": "GO",
@@ -135,7 +141,8 @@
   },
   "killedAgents": [
     "Sentrylog Lite",
+    "Sentrylog Lite",
     "Sentrylog Lite"
   ],
-  "startupCount": 2
+  "startupCount": 3
 }

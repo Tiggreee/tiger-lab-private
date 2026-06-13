@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T07:43:24.672Z",
+  "generatedAt": "2026-06-13T08:40:15.774Z",
   "monetization": {
     "leadsToday": 10,
     "generatedContent": 10,
@@ -122,6 +122,23 @@
         "generatedAt": "2026-05-31T03:05:22.764Z"
       },
       {
+        "file": "social-pack-landing-social.json",
+        "name": "landing-social-2026-06-13",
+        "topic": "N/A",
+        "avgScore": 0,
+        "projectedLift": 0,
+        "targetReached": false,
+        "mcpDecision": "unknown",
+        "channels": [
+          "linkedin",
+          "twitter",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-06-13T07:56:00.374Z"
+      },
+      {
         "file": "social-pack-facturautentico-cloud-pilot.json",
         "name": "facturautentico-cloud-pilot",
         "topic": "Facturacion cloud lista para escalar sin caos",
@@ -171,23 +188,6 @@
           "discord"
         ],
         "generatedAt": "2026-05-31T05:20:20.801Z"
-      },
-      {
-        "file": "social-pack-daily-2026-06-12.json",
-        "name": "daily-2026-06-12",
-        "topic": "Automatización de operaciones para SMBs",
-        "avgScore": 100,
-        "projectedLift": 24,
-        "targetReached": true,
-        "mcpDecision": "apply",
-        "channels": [
-          "linkedin",
-          "x",
-          "facebook",
-          "telegram",
-          "discord"
-        ],
-        "generatedAt": "2026-06-12T15:13:04.098Z"
       }
     ]
   },
@@ -442,7 +442,7 @@
   },
   "landings": {
     "title": "Tiger Lab - Social Landing Pages Index",
-    "generatedAt": "2026-06-12T15:13:04.372Z",
+    "generatedAt": "2026-06-13T07:56:00.373Z",
     "summary": {
       "totalProducts": 5,
       "activeProducts": 2,
@@ -531,7 +531,7 @@
     "note": "Cada landing page esta optimizada para el tono y formato de su canal social."
   },
   "agentMonitor": {
-    "generatedAt": "2026-06-13T07:43:17.375Z",
+    "generatedAt": "2026-06-13T08:40:08.441Z",
     "summary": {
       "totalAgents": 22,
       "activeAgents": 22,
@@ -983,33 +983,5 @@
     "dashboard": "success",
     "checkout": "success",
     "gate": "GO"
-  },
-  "failuresMonitor": {
-    "lastAnalysis": "2026-06-13T07:44:43.810Z",
-    "totalRuns": 100,
-    "failedToday": 2,
-    "successfulToday": 97,
-    "byType": {
-      "failure": 2
-    },
-    "byWorkflow": [
-      {
-        "workflow": "Product Development Engine — 2h Cycle",
-        "failures": 1
-      },
-      {
-        "workflow": "security",
-        "failures": 1
-      }
-    ],
-    "rootCauses": [
-      {
-        "cause": "Check failures in workflow steps",
-        "severity": "high",
-        "fix": "Review logs for each failed run"
-      }
-    ],
-    "permFixed": false,
-    "currentPermission": "all"
   }
 }

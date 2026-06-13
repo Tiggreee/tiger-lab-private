@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 ## [0.1.0] - 2026-06-13
 
 ### Recent Commits (60d)
+- b174dce 2026-06-13 merge: accept remote dashboard data
+- 9cc750d 2026-06-13 fix(agents): all 5 bottom agents audited and fixed — efficiency restored
+- ca59d37 2026-06-13 failures-monitor: scan 2026-06-13T07:44
 - 53e71f5 2026-06-13 fix(rnd): R&D engine startup fixed — 12/12 agents PASS
 - a7ff69b 2026-06-13 feat(report): live production report 92/100 A+ + animated agent bars
 - e54085b 2026-06-13 fix(dash): agent efficiency sorted descending — best agents on top
@@ -32,9 +35,6 @@ All notable changes to this project will be documented in this file.
 - a3d39c4 2026-06-13 failures-monitor: scan 2026-06-13T05:58
 - 8cc6e45 2026-06-12 feat(bot): 12 individual face PNGs extracted with transparent backgrounds
 - 2558076 2026-06-12 feat(bot): bot bubble cycles real dashboard facts every 4.5s
-- cb3701c 2026-06-12 feat(bot): Tiger AI bot — 12 faces cycling, live dashboard data bubble
-- 5572a83 2026-06-12 ProStudioPicsForHelpAIBot
-- 2aa9071 2026-06-13 prod-engine: auto-cycle 2026-06-13T05:38
 
 ### Added
 - Stripe payment service with checkout, webhook, and signature verification
