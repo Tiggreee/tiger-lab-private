@@ -983,5 +983,33 @@
     "dashboard": "success",
     "checkout": "success",
     "gate": "GO"
+  },
+  "failuresMonitor": {
+    "lastAnalysis": "2026-06-13T20:52:20.382Z",
+    "totalRuns": 100,
+    "failedToday": 3,
+    "successfulToday": 96,
+    "byType": {
+      "failure": 3
+    },
+    "byWorkflow": [
+      {
+        "workflow": "daily-sales-automation",
+        "failures": 2
+      },
+      {
+        "workflow": "Product Development Engine — 2h Cycle",
+        "failures": 1
+      }
+    ],
+    "rootCauses": [
+      {
+        "cause": "Check failures in workflow steps",
+        "severity": "high",
+        "fix": "Review logs for each failed run"
+      }
+    ],
+    "permFixed": false,
+    "currentPermission": "all"
   }
 }
