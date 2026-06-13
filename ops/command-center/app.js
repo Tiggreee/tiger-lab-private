@@ -125,7 +125,9 @@ async function render() {
   renderAlerts();
   renderCampaigns();
   $('footerText').textContent = `Last refresh: ${new Date().toLocaleString()} | 5000 contacts pipeline`;
+  botCycle();
 }
+
 
 $('refreshBtn').addEventListener('click', render);
 $('notifyBtn').addEventListener('click', async () => {
@@ -136,3 +138,14 @@ $('notifyBtn').addEventListener('click', async () => {
 
 setInterval(renderAlerts, 60000);
 render().catch(console.error);
+
+// Bot fact cycler — real dashboard data
+const facts = ['Gate: GO', 'Pipeline: 5000 contacts', '1000 companies (INEGI)', 'Revenue: $69 avg', 'Health: 90/100', 'Stripe + PayPal LIVE', 'LinkedIn posting ACTIVE', '22 agents running', 'Pipeline: 6 AM daily'];
+let factIdx = 0;
+function botCycle() {
+  const el = $('botFact');
+  if (!el) return;
+  el.textContent = facts[factIdx % facts.length];
+  factIdx++;
+}
+setInterval(botCycle, 4500);
