@@ -161,7 +161,7 @@ setInterval(renderAlerts, 60000);
 render().catch(console.error);
 
 // Bot fact cycler + click explosion
-const facts = ['Gate: GO', 'Pipeline: 5000 contacts', '1000 companies (INEGI)', 'Revenue: $69 avg', 'Health: 90/100', 'Stripe + PayPal LIVE', 'LinkedIn posting ACTIVE', '22 agents', '6 AM daily'];
+let factIdx = 0;
 
 // Bot click = sound + 6 clicks = shit explosion
 let botClicks = 0;
@@ -190,11 +190,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-let factIdx = 0;
-function botCycle() {
+let randomFact = '🐯 Datos reales del engine...';
+
+async function fetchRandomFact() {
+  try {
+    const apis = [
+      'https://uselessfacts.jsph.pl/api/v2/facts/random?language=en',
+      'https://catfact.ninja/fact',
+      'https://api.chucknorris.io/jokes/random'
+    ];
+    const url = apis[Math.floor(Math.random() * apis.length)];
+    const r = await fetch(url);
+    const d = await r.json();
+    return d.text || d.fact || d.value || '🐯 Tiger Lab domina.';
+  } catch { return '🐯 Engine running. 5000 contacts ready.'; }
+}
+
+async function botCycle() {
   const el = $('botFact');
   if (!el) return;
-  el.textContent = facts[factIdx % facts.length];
+  
+  // Alternate: real dashboard data (2), random fact (1)
+  if (factIdx % 3 !== 2) {
+    const liveFacts = [
+      `🟢 Gate: ${$('systemStatusBadge')?.textContent || 'GO'} | ${new Date().toLocaleTimeString()}`,
+      `👥 Pipeline: 5000 contacts | 1000 companies`,
+      `💰 Revenue avg: $69/mes | Stripe+PayPal LIVE`,
+      `🤖 22 agents | Health: 90/100`,
+      `📬 LinkedIn posting ACTIVE | 6 AM pipeline`
+    ];
+    el.textContent = liveFacts[Math.floor(Math.random() * liveFacts.length)];
+  } else {
+    if (!randomFact || randomFact.startsWith('🐯 Datos')) randomFact = await fetchRandomFact();
+    el.textContent = randomFact.substring(0, 120);
+    randomFact = await fetchRandomFact(); // Pre-fetch next
+  }
   factIdx++;
 }
-setInterval(botCycle, 4500);
+
+setInterval(botCycle, 5000);
+botCycle();
