@@ -1,0 +1,16 @@
+{
+  "week": "2026-06-13",
+  "totalIdeas": 10,
+  "investRate": "70.0%",
+  "zombieRate": "30.0%",
+  "killRate": "0.0%",
+  "topCategories": [
+    "devtools",
+    "ailegal",
+    "climatetech",
+    "fintech",
+    "identity"
+  ],
+  "euRegulationImpact": "GDPR + AI Act + PSD3 creating massive regulatory tailwind for EU SaaS",
+  "recommendation": "Build DevTools GDPR Middleware first. EU regulatory tailwind + low competition."
+}

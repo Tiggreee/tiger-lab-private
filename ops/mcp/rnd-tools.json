@@ -1,0 +1,125 @@
+{
+  "protocol": "model-context-protocol/v1",
+  "server": "tiger-rnd-engine",
+  "description": "Product R&D MCP Tools — European SaaS market research, idea validation, competitor analysis, trend detection",
+  "tools": [
+    {
+      "id": "eu_market_scan",
+      "name": "EU Market Scanner",
+      "description": "Scan European tech sources for trending SaaS products and startup ideas.",
+      "inputs": [
+        { "name": "sources", "type": "array", "description": "Sources to scan (producthunt-eu, sifted, tech-eu, reddit-europe, github-eu)" },
+        { "name": "categories", "type": "array", "description": "Categories filter (devtools, fintech, healthtech, climatetech, ailegal)" },
+        { "name": "maxResults", "type": "number", "description": "Max results per source (default 5)" }
+      ],
+      "outputs": [
+        { "name": "ideas", "type": "array", "description": "Discovered product ideas with source links" },
+        { "name": "trends", "type": "array", "description": "Detected trends across sources" }
+      ]
+    },
+    {
+      "id": "competitor_analysis_eu",
+      "name": "EU Competitor Analysis",
+      "description": "Find and score top 5 EU competitors for a given product idea.",
+      "inputs": [
+        { "name": "ideaName", "type": "string", "description": "Product idea to analyze" },
+        { "name": "category", "type": "string", "description": "Product category" },
+        { "name": "region", "type": "string", "description": "Target EU region (default: all)" }
+      ],
+      "outputs": [
+        { "name": "competitors", "type": "array", "description": "Top 5 competitors with weakness scores" },
+        { "name": "gapScore", "type": "number", "description": "Market gap score 0-25" }
+      ]
+    },
+    {
+      "id": "demand_validation_eu",
+      "name": "EU Demand Validation",
+      "description": "Validate product demand using Reddit, HN, and EU community signals.",
+      "inputs": [
+        { "name": "keywords", "type": "array", "description": "Search keywords for the product idea" },
+        { "name": "sources", "type": "array", "description": "reddit-europe, reddit-saas, hn-showhn, indiehackers" }
+      ],
+      "outputs": [
+        { "name": "demandScore", "type": "number", "description": "Demand score 0-25" },
+        { "name": "signals", "type": "array", "description": "Posts/comments indicating demand" },
+        { "name": "sentiment", "type": "string", "description": "positive | neutral | negative" }
+      ]
+    },
+    {
+      "id": "feasibility_scoring",
+      "name": "Build Feasibility Scoring",
+      "description": "Score product idea on build feasibility — time, tech stack, complexity.",
+      "inputs": [
+        { "name": "ideaDescription", "type": "string", "description": "Product idea description" },
+        { "name": "availableTech", "type": "array", "description": "Tech stack available (node, python, API-first, no-code)" },
+        { "name": "teamSize", "type": "number", "description": "Available team size (default 1)" }
+      ],
+      "outputs": [
+        { "name": "feasibilityScore", "type": "number", "description": "Feasibility score 0-20" },
+        { "name": "estimatedBuildHours", "type": "number", "description": "Estimated hours to MVP" },
+        { "name": "complexity", "type": "string", "description": "low | medium | high" },
+        { "name": "recommendedStack", "type": "array", "description": "Recommended tech stack" }
+      ]
+    },
+    {
+      "id": "regulatory_tailwind_eu",
+      "name": "EU Regulatory Tailwind Detector",
+      "description": "Detect if EU regulations create tailwind for the product idea.",
+      "inputs": [
+        { "name": "productCategory", "type": "string", "description": "Product category" },
+        { "name": "euRegulations", "type": "array", "description": "Relevant EU regulations to check (GDPR, AI Act, PSD3, eIDAS, Gaia-X, DSA, DMA)" }
+      ],
+      "outputs": [
+        { "name": "tailwindScore", "type": "number", "description": "Regulatory tailwind score 0-10" },
+        { "name": "relevantRegulations", "type": "array", "description": "Relevant regulations with impact assessment" },
+        { "name": "complianceBurden", "type": "string", "description": "low | medium | high — how hard is compliance" }
+      ]
+    },
+    {
+      "id": "rnd_decision",
+      "name": "R&D Decision Engine",
+      "description": "Make INVEST / ZOMBIE / KILL decision based on all 5 criteria.",
+      "inputs": [
+        { "name": "marketDemand", "type": "number", "description": "Score 0-25" },
+        { "name": "competitionGap", "type": "number", "description": "Score 0-25" },
+        { "name": "feasibility", "type": "number", "description": "Score 0-20" },
+        { "name": "monetization", "type": "number", "description": "Score 0-20" },
+        { "name": "regulatory", "type": "number", "description": "Score 0-10" }
+      ],
+      "outputs": [
+        { "name": "totalScore", "type": "number", "description": "Total score 0-100" },
+        { "name": "decision", "type": "string", "description": "INVEST | ZOMBIE | KILL" },
+        { "name": "rationale", "type": "string", "description": "Why this decision was made" }
+      ]
+    },
+    {
+      "id": "mvp_spec_generator",
+      "name": "MVP Spec Generator",
+      "description": "Generate MVP specification for INVEST ideas.",
+      "inputs": [
+        { "name": "ideaDescription", "type": "string", "description": "Product idea" },
+        { "name": "competitors", "type": "array", "description": "Competitor analysis results" },
+        { "name": "targetEuMarket", "type": "string", "description": "Target EU country/region" }
+      ],
+      "outputs": [
+        { "name": "mvpSpec", "type": "object", "description": "MVP specification with features, timeline, stack" },
+        { "name": "firstCustomerProfile", "type": "string", "description": "Ideal first customer persona" },
+        { "name": "goToMarket", "type": "string", "description": "GTM strategy for EU launch" }
+      ]
+    },
+    {
+      "id": "eu_trend_report",
+      "name": "EU Trend Report Generator",
+      "description": "Generate weekly EU SaaS trend report from all sources.",
+      "inputs": [
+        { "name": "weekStart", "type": "string", "description": "ISO date of week start" },
+        { "name": "categories", "type": "array", "description": "Categories to include" }
+      ],
+      "outputs": [
+        { "name": "report", "type": "object", "description": "Weekly trend report" },
+        { "name": "topTrends", "type": "array", "description": "Top 5 trends with momentum scores" },
+        { "name": "emergingCategories", "type": "array", "description": "New categories gaining traction" }
+      ]
+    }
+  ]
+}

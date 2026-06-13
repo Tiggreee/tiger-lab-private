@@ -1,0 +1,174 @@
+{
+  "generatedAt": "2026-06-13T07:15:57.296Z",
+  "totalScanned": 10,
+  "decisions": {
+    "invest": 7,
+    "zombie": 3,
+    "killed": 0
+  },
+  "investIdeas": [
+    {
+      "id": "RD-1781334957297-zd94",
+      "name": "DevTools GDPR Middleware",
+      "category": "devtools",
+      "euRelevance": "high",
+      "totalScore": 88,
+      "scores": {
+        "marketDemand": 22,
+        "competitionGap": 22,
+        "feasibility": 18,
+        "monetization": 18,
+        "regulatory": 8
+      },
+      "competitors": [
+        "Skyflow",
+        "Evervault"
+      ],
+      "description": "Drop-in middleware that GDPR-proofs any API",
+      "status": "pending-review"
+    },
+    {
+      "id": "RD-1781334957297-elwg",
+      "name": "EU AI Act Readiness Platform",
+      "category": "ailegal",
+      "euRelevance": "critical",
+      "totalScore": 87,
+      "scores": {
+        "marketDemand": 24,
+        "competitionGap": 22,
+        "feasibility": 16,
+        "monetization": 15,
+        "regulatory": 10
+      },
+      "competitors": [
+        "Credo AI",
+        "Holistic AI"
+      ],
+      "description": "Compliance dashboard for EU AI Act requirements",
+      "status": "pending-review"
+    },
+    {
+      "id": "RD-1781334957297-xtfx",
+      "name": "GDPR Auto-Compliance Scanner",
+      "category": "devtools",
+      "euRelevance": "high",
+      "totalScore": 84,
+      "scores": {
+        "marketDemand": 22,
+        "competitionGap": 18,
+        "feasibility": 18,
+        "monetization": 18,
+        "regulatory": 8
+      },
+      "competitors": [
+        "DataGuard",
+        "OneTrust",
+        "PrivacyTools"
+      ],
+      "description": "API that scans codebases for GDPR gaps",
+      "status": "pending-review"
+    },
+    {
+      "id": "RD-1781334957297-s02p",
+      "name": "SaaS Localization Engine EU",
+      "category": "devtools",
+      "euRelevance": "high",
+      "totalScore": 84,
+      "scores": {
+        "marketDemand": 22,
+        "competitionGap": 18,
+        "feasibility": 18,
+        "monetization": 18,
+        "regulatory": 8
+      },
+      "competitors": [
+        "Lokalise",
+        "Phrase",
+        "Crowdin"
+      ],
+      "description": "Auto-translate + localize SaaS for 24 EU languages",
+      "status": "pending-review"
+    },
+    {
+      "id": "RD-1781334957297-am67",
+      "name": "Carbon Accounting API for EU SMEs",
+      "category": "climatetech",
+      "euRelevance": "mandatory",
+      "totalScore": 82,
+      "scores": {
+        "marketDemand": 23,
+        "competitionGap": 18,
+        "feasibility": 16,
+        "monetization": 15,
+        "regulatory": 10
+      },
+      "competitors": [
+        "Plan A",
+        "Sweep",
+        "Normative"
+      ],
+      "description": "CSRD-compliant carbon tracking for SMEs",
+      "status": "pending-review"
+    },
+    {
+      "id": "RD-1781334957297-1j0x",
+      "name": "PSD3 Open Banking Connector",
+      "category": "fintech",
+      "euRelevance": "high",
+      "totalScore": 80,
+      "scores": {
+        "marketDemand": 20,
+        "competitionGap": 18,
+        "feasibility": 14,
+        "monetization": 20,
+        "regulatory": 8
+      },
+      "competitors": [
+        "Tink",
+        "TrueLayer",
+        "Plaid EU"
+      ],
+      "description": "Single API for EU banks under PSD3 directive",
+      "status": "pending-review"
+    },
+    {
+      "id": "RD-1781334957297-cbxf",
+      "name": "Cross-Border VAT Automator",
+      "category": "fintech",
+      "euRelevance": "high",
+      "totalScore": 80,
+      "scores": {
+        "marketDemand": 20,
+        "competitionGap": 18,
+        "feasibility": 14,
+        "monetization": 20,
+        "regulatory": 8
+      },
+      "competitors": [
+        "Quaderno",
+        "TaxJar EU",
+        "Octobat"
+      ],
+      "description": "Automate VAT across 27 EU countries for digital products",
+      "status": "pending-review"
+    }
+  ],
+  "zombieIdeas": [
+    {
+      "name": "eIDAS Digital Identity Wallet",
+      "totalScore": 77,
+      "reEvaluateAt": "2026-06-20T07:15:57.297Z"
+    },
+    {
+      "name": "EU Grant Discovery Platform",
+      "totalScore": 77,
+      "reEvaluateAt": "2026-06-20T07:15:57.297Z"
+    },
+    {
+      "name": "Micro-SaaS Incubator EU",
+      "totalScore": 72,
+      "reEvaluateAt": "2026-06-20T07:15:57.297Z"
+    }
+  ],
+  "killedIdeas": []
+}
