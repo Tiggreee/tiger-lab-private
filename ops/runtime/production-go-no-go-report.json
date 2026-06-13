@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-13T02:40:33.186Z",
+  "generatedAt": "2026-06-13T04:33:29.979Z",
   "strict": false,
-  "gateStatus": "GO",
+  "gateStatus": "GO_WITH_WARNINGS",
   "summary": {
-    "pass": 14,
-    "warn": 0,
+    "pass": 12,
+    "warn": 2,
     "fail": 0
   },
   "checks": [
@@ -102,28 +102,6 @@
       "ownerAction": "Validar tokens/secretos por canal."
     },
     {
-      "id": "P8",
-      "title": "Pruebas criticas de humo",
-      "severity": "critical",
-      "status": "PASS",
-      "details": "test:smoke aprobado.",
-      "evidence": [
-        "npm run test:smoke"
-      ],
-      "ownerAction": "Sin accion."
-    },
-    {
-      "id": "P9",
-      "title": "Build de backend y arranque",
-      "severity": "critical",
-      "status": "PASS",
-      "details": "build:server aprobado.",
-      "evidence": [
-        "npm run build:server"
-      ],
-      "ownerAction": "Sin accion."
-    },
-    {
       "id": "P10",
       "title": "Gobernanza de produccion y tiggreeeon",
       "severity": "critical",
@@ -153,15 +131,6 @@
       "ownerAction": "Sin accion."
     },
     {
-      "id": "P12",
-      "title": "GitHub Actions operacional",
-      "severity": "critical",
-      "status": "PASS",
-      "details": "Último CI: success",
-      "evidence": [],
-      "ownerAction": "Sin accion."
-    },
-    {
       "id": "P13",
       "title": "Test coverage thresholds",
       "severity": "high",
@@ -173,16 +142,56 @@
       "ownerAction": "Sin accion."
     },
     {
+      "id": "P8",
+      "title": "Pruebas criticas de humo",
+      "severity": "critical",
+      "status": "WARN",
+      "details": "No se ejecutaron comandos (--no-commands).",
+      "evidence": [
+        "npm run test:smoke"
+      ],
+      "ownerAction": "Ejecutar test:smoke."
+    },
+    {
+      "id": "P9",
+      "title": "Build de backend y arranque",
+      "severity": "critical",
+      "status": "WARN",
+      "details": "No se ejecutaron comandos (--no-commands).",
+      "evidence": [
+        "npm run build:server"
+      ],
+      "ownerAction": "Ejecutar build:server."
+    },
+    {
+      "id": "P12",
+      "title": "GitHub Actions operacional",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "CI: success",
+      "evidence": [],
+      "ownerAction": "Sin accion."
+    },
+    {
       "id": "P14",
       "title": "Railway deploy status",
       "severity": "high",
       "status": "PASS",
-      "details": "Railway deploy OK",
+      "details": "Railway: success",
       "evidence": [
         ".github/workflows/backend-railway-deploy.yml"
       ],
       "ownerAction": "Sin accion."
     }
   ],
-  "ownerNextActions": []
+  "ownerNextActions": [
+    {
+      "id": "P8",
+      "action": "Ejecutar test:smoke."
+    },
+    {
+      "id": "P9",
+      "action": "Ejecutar build:server."
+    }
+  ]
 }

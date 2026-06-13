@@ -1,8 +1,8 @@
 # Production Go/No-Go Report
 
-- generatedAt: 2026-06-13T02:40:33.186Z
-- gateStatus: GO
-- summary: PASS 14 | WARN 0 | FAIL 0
+- generatedAt: 2026-06-13T04:33:29.979Z
+- gateStatus: GO_WITH_WARNINGS
+- summary: PASS 12 | WARN 2 | FAIL 0
 
 ## Checks
 
@@ -27,28 +27,29 @@
 - P7 Traffic multicanal preparado: PASS
   details: Scripts multicanal listos.
   ownerAction: Validar tokens/secretos por canal.
-- P8 Pruebas criticas de humo: PASS
-  details: test:smoke aprobado.
-  ownerAction: Sin accion.
-- P9 Build de backend y arranque: PASS
-  details: build:server aprobado.
-  ownerAction: Sin accion.
 - P10 Gobernanza de produccion y tiggreeeon: PASS
   details: Gobernanza y guardrails tiggreeeon activos.
   ownerAction: Sin accion.
 - P11 Hardening de seguridad y checkout: PASS
   details: Hardening clave de auth y checkout activo.
   ownerAction: Sin accion.
-- P12 GitHub Actions operacional: PASS
-  details: Último CI: success
-  ownerAction: Sin accion.
 - P13 Test coverage thresholds: PASS
   details: Thresholds: lines 30%, statements 30%
   ownerAction: Sin accion.
+- P8 Pruebas criticas de humo: WARN
+  details: No se ejecutaron comandos (--no-commands).
+  ownerAction: Ejecutar test:smoke.
+- P9 Build de backend y arranque: WARN
+  details: No se ejecutaron comandos (--no-commands).
+  ownerAction: Ejecutar build:server.
+- P12 GitHub Actions operacional: PASS
+  details: CI: success
+  ownerAction: Sin accion.
 - P14 Railway deploy status: PASS
-  details: Railway deploy OK
+  details: Railway: success
   ownerAction: Sin accion.
 
 ## Owner Next Actions
 
-- Ninguna.
+- P8: Ejecutar test:smoke.
+- P9: Ejecutar build:server.

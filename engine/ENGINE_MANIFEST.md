@@ -8,13 +8,23 @@ All business logic lives in `/engine/`. All platform adapters in `/integrations/
 
 ```
 /engine/
+  /runtime/            Gate checks, failure analysis, operational logic
+    failures-monitor.mjs   Failure classification & root cause analysis
+    production-gate.mjs    Structural checks, gate computation, reports
   /campaigns/          Campaign design, routing, execution
+    campaign-designer.mjs  Campaign template generation
+    campaign-router.mjs    Multi-channel campaign routing
   /email/              Email templates, prospect selection, AI images
-  /leads/              Lead scoring, enrichment, ICP matching
+    email-campaign.mjs
+    prospect-selector.mjs
+  /leads/              Lead scoring, enrichment, ICP matching, outreach
+    inegi-seed-generator.mjs  DENUE-INEGI company seed generation (1000+)
+    lead-engine.mjs           SQLite DB ops, seed loading, OSM enrichment, CSV export
+    lead-intelligence.mjs     ICP-based lead generation, outreach text, pipeline mgmt
   /agents/             Agent definitions, skills, orchestration
+    CampaignDesigner.agent.md
   /funnels/            Conversion funnels, landing pages, CTAs
   /analytics/          Dashboards, metrics, reports
-  /runtime/            Starters, entrypoints, config
 
 /integrations/
   /github/actions/     Workflow YAML wrappers (thin)
@@ -32,6 +42,15 @@ All business logic lives in `/engine/`. All platform adapters in `/integrations/
   /catalog/            Product catalog, pricing
   /command-center/     Dashboard UI
 ```
+
+## Script → Engine Mapping
+
+| Script (thin wrapper) | Engine Module | GitHub Deps in Wrapper |
+|---|---|---|
+| `scripts/failures-monitor.mjs` | `engine/runtime/failures-monitor.mjs` | `gh run list`, `gh run rerun` |
+| `scripts/production-go-no-go.mjs` | `engine/runtime/production-gate.mjs` | `gh run list` (P12, P14), `npm` (P8, P9) |
+| `scripts/lead-engine.mjs` | `engine/leads/lead-engine.mjs` | None |
+| `scripts/lead-intelligence.mjs` | `engine/leads/lead-intelligence.mjs` | None |
 
 ## Runtime Modes
 

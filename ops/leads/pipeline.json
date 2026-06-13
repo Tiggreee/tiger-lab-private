@@ -239,15 +239,75 @@
       "source": "linkedin",
       "status": "contacted",
       "capturedAt": "2026-06-12T15:13:04.000Z"
+    },
+    {
+      "id": "lead_1781325208894_0",
+      "name": "Patricia Cruz",
+      "company": "Patricia Tech Shop",
+      "industry": "ecommerce",
+      "pain": "conciliacion manual",
+      "process": "gestion de inventarios",
+      "geo": "CDMX",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-13T04:33:28.894Z"
+    },
+    {
+      "id": "lead_1781325208895_1",
+      "name": "Diana Cruz",
+      "company": "Diana Tech Shop",
+      "industry": "ecommerce",
+      "pain": "conciliacion manual",
+      "process": "deploys a produccion",
+      "geo": "Monterrey",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-13T04:33:28.895Z"
+    },
+    {
+      "id": "lead_1781325208895_2",
+      "name": "Diego Cruz",
+      "company": "Diego Tech Shop",
+      "industry": "ecommerce",
+      "pain": "sin equipo tecnico interno",
+      "process": "generacion de facturas",
+      "geo": "Monterrey",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-13T04:33:28.895Z"
+    },
+    {
+      "id": "lead_1781325208895_3",
+      "name": "Juan Perez",
+      "company": "Juan Tech Ops",
+      "industry": "logistica",
+      "pain": "facturacion manual",
+      "process": "generacion de facturas",
+      "geo": "Merida",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-13T04:33:28.895Z"
+    },
+    {
+      "id": "lead_1781325208895_4",
+      "name": "Pedro Ramirez",
+      "company": "Pedro Tech Ops",
+      "industry": "servicios profesionales",
+      "pain": "reportes manuales",
+      "process": "deploys a produccion",
+      "geo": "Merida",
+      "source": "linkedin",
+      "status": "contacted",
+      "capturedAt": "2026-06-13T04:33:28.895Z"
     }
   ],
   "stats": {
-    "total": 20,
+    "total": 25,
     "new": 0,
-    "contacted": 20,
+    "contacted": 25,
     "replied": 0,
     "converted": 0
   },
-  "lastOutreachGenerated": "2026-06-12T15:13:04.000Z",
-  "updatedAt": "2026-06-12T15:13:04.000Z"
+  "lastOutreachGenerated": "2026-06-13T04:33:28.896Z",
+  "updatedAt": "2026-06-13T04:33:28.896Z"
 }
