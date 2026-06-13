@@ -339,10 +339,24 @@
         "security": 1
       },
       "perm": "all"
+    },
+    {
+      "timestamp": "2026-06-13T13:01:03.122Z",
+      "totalRuns": 100,
+      "failed": 2,
+      "successful": 97,
+      "byType": {
+        "failure": 2
+      },
+      "byWorkflow": {
+        "Product Development Engine — 2h Cycle": 1,
+        "security": 1
+      },
+      "perm": "all"
     }
   ],
   "fixesApplied": [],
   "lastKnownPermission": "all",
-  "lastAnalysis": "2026-06-13T11:14:29.679Z",
-  "totalFailuresTracked": 403
+  "lastAnalysis": "2026-06-13T13:01:03.122Z",
+  "totalFailuresTracked": 405
 }
