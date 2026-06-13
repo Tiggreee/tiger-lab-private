@@ -1,0 +1,74 @@
+{
+  "id": "CAMP-1781360667087",
+  "product": "Script Premium Kit",
+  "target": "software",
+  "createdAt": "2026-06-13T14:24:27.091Z",
+  "channels": [
+    "email",
+    "linkedin",
+    "x",
+    "facebook",
+    "telegram",
+    "discord"
+  ],
+  "copies": {
+    "email": "Scripts listos. Resultados inmediatos.\n\n20+ scripts probados que automatizan contabilidad, facturación y administración. Sin programar. Sin dolores de cabeza.\n\n✅ 20+ scripts listos\n✅ Personalización total\n✅ Actualizaciones trimestrales\n✅ Soporte prioritario\n\nDescarga el kit gratis →",
+    "linkedin": "🔥 Scripts listos. Resultados inmediatos.\n\n20+ scripts probados que automatizan contabilidad, facturación y administración. Sin programar. Sin dolores de cabeza.\n\n✅ 20+ scripts listos\n✅ Personalización total\n✅ Actualizaciones trimestrales\n✅ Soporte prioritario\n\n💡 Descarga el kit gratis →",
+    "x": "🔥 Scripts listos. Resultados inmediatos.\n✅ 20+ scripts listos\n✅ Personalización total\nDescarga el kit gratis →...",
+    "facebook": "🔥 Scripts listos. Resultados inmediatos.\n\n20+ scripts probados que automatizan contabilidad, facturación y administración. Sin programar. Sin dolores de cabeza....\n\n✅ 20+ scripts listos\n✅ Personalización total\n✅ Actualizaciones trimestrales\n✅ Soporte prioritario\n\nDescarga el kit gratis →",
+    "telegram": "*Script Premium Kit*\n\nScripts listos. Resultados inmediatos.\n\n20+ scripts probados que automatizan contabilidad, facturación y administración. Sin programar. Sin dolores de cabeza....\n\n[Descarga el kit gratis ](https://tigerlab.dev)",
+    "discord": "**Script Premium Kit**\n\nScripts listos. Resultados inmediatos.\n\n20+ scripts probados que automatizan contabilidad, facturación y administración. Sin programar. Sin dolores de cabeza....\n\n👉 tigerlab.dev"
+  },
+  "images": {
+    "email": {
+      "prompt": "Professional marketing image for \"Script Premium Kit\". Scripts listos. Resultados inmediatos.. Clean modern design. #00C853 gradient background. No text overlay. 600×300px. Business SaaS style. Latin American professional audience.",
+      "size": [
+        600,
+        300
+      ],
+      "generated": false
+    },
+    "linkedin": {
+      "prompt": "Professional marketing image for \"Script Premium Kit\". Scripts listos. Resultados inmediatos.. Clean modern design. #00C853 gradient background. No text overlay. 1200×627px. Business SaaS style. Latin American professional audience.",
+      "size": [
+        1200,
+        627
+      ],
+      "generated": false
+    },
+    "x": {
+      "prompt": "Professional marketing image for \"Script Premium Kit\". Scripts listos. Resultados inmediatos.. Clean modern design. #00C853 gradient background. No text overlay. 1200×675px. Business SaaS style. Latin American professional audience.",
+      "size": [
+        1200,
+        675
+      ],
+      "generated": false
+    },
+    "facebook": {
+      "prompt": "Professional marketing image for \"Script Premium Kit\". Scripts listos. Resultados inmediatos.. Clean modern design. #00C853 gradient background. No text overlay. 1200×630px. Business SaaS style. Latin American professional audience.",
+      "size": [
+        1200,
+        630
+      ],
+      "generated": false
+    },
+    "telegram": {
+      "prompt": "Professional marketing image for \"Script Premium Kit\". Scripts listos. Resultados inmediatos.. Clean modern design. #00C853 gradient background. No text overlay. 800×400px. Business SaaS style. Latin American professional audience.",
+      "size": [
+        800,
+        400
+      ],
+      "generated": false
+    },
+    "discord": {
+      "prompt": "Professional marketing image for \"Script Premium Kit\". Scripts listos. Resultados inmediatos.. Clean modern design. #00C853 gradient background. No text overlay. 800×400px. Business SaaS style. Latin American professional audience.",
+      "size": [
+        800,
+        400
+      ],
+      "generated": false
+    }
+  },
+  "score": 80,
+  "status": "draft"
+}

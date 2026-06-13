@@ -1,11 +1,11 @@
 {
-  "updated": "2026-06-13T14:22:36.662Z",
-  "total": 4,
+  "updated": "2026-06-13T14:24:38.868Z",
+  "total": 3,
   "campaigns": [
     {
-      "id": "CAMP-1781334207583",
-      "product": "Docflow API",
-      "target": "contabilidad",
+      "id": "CAMP-1781360667180",
+      "product": "FacturAutentico Cloud",
+      "target": "facturación",
       "score": 80,
       "status": "draft",
       "channels": [
@@ -16,10 +16,28 @@
         "telegram",
         "discord"
       ],
-      "createdAt": "2026-06-13T07:03:27.584Z"
+      "createdAt": "2026-06-13T14:24:27.184Z",
+      "copyPreview": "🔥 CFDI 4.0 sin estrés. Sin contador extra.\n\nEmite facturas electrónicas en segundos. Cumple con el SAT. Timbra ilimitad"
     },
     {
-      "id": "CAMP-1781335464855",
+      "id": "CAMP-1781360667087",
+      "product": "Script Premium Kit",
+      "target": "software",
+      "score": 80,
+      "status": "draft",
+      "channels": [
+        "email",
+        "linkedin",
+        "x",
+        "facebook",
+        "telegram",
+        "discord"
+      ],
+      "createdAt": "2026-06-13T14:24:27.091Z",
+      "copyPreview": "🔥 Scripts listos. Resultados inmediatos.\n\n20+ scripts probados que automatizan contabilidad, facturación y administraci"
+    },
+    {
+      "id": "CAMP-1781360666993",
       "product": "Docflow API",
       "target": "contabilidad",
       "score": 90,
@@ -32,39 +50,8 @@
         "telegram",
         "discord"
       ],
-      "createdAt": "2026-06-13T07:24:24.858Z"
-    },
-    {
-      "id": "CAMP-1781336603930",
-      "product": "Docflow API",
-      "target": "contabilidad",
-      "score": 90,
-      "status": "draft",
-      "channels": [
-        "email",
-        "linkedin",
-        "x",
-        "facebook",
-        "telegram",
-        "discord"
-      ],
-      "createdAt": "2026-06-13T07:43:23.932Z"
-    },
-    {
-      "id": "CAMP-1781340014915",
-      "product": "Docflow API",
-      "target": "contabilidad",
-      "score": 90,
-      "status": "draft",
-      "channels": [
-        "email",
-        "linkedin",
-        "x",
-        "facebook",
-        "telegram",
-        "discord"
-      ],
-      "createdAt": "2026-06-13T08:40:14.918Z"
+      "createdAt": "2026-06-13T14:24:26.997Z",
+      "copyPreview": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. Docflow API automatiza todo tu flujo doc"
     }
   ]
 }

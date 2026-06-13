@@ -115,6 +115,7 @@ window.showRealCampaign = function(id) {
   
   const statusIcon = c.status === 'approved' ? '✅ APPROVED' : '⏳ PENDING';
   const color = c.status === 'approved' ? '#3fb950' : '#d29922';
+  const copyText = c.copyPreview || 'No copy loaded';
   
   detail.innerHTML = `
     <div style="padding:8px;font-size:.7rem;line-height:1.6;">
@@ -123,7 +124,9 @@ window.showRealCampaign = function(id) {
       <div style="margin-top:4px;"><span class="lbl">Score:</span> <b>${c.score}/100</b></div>
       <div><span class="lbl">Target:</span> ${c.target || 'contabilidad'}</div>
       <div><span class="lbl">Channels:</span> ${(c.channels||[]).join(', ')}</div>
-      <div><span class="lbl">Created:</span> ${new Date(c.createdAt).toLocaleDateString()}</div>
+      <div style="margin-top:6px;background:#1a2a1a;padding:6px;border-radius:4px;border-left:3px solid #3fb950;">
+        <span style="color:#8b949e;">Copy: </span><span style="color:#c9d1d9;">"${copyText}..."</span>
+      </div>
       <div style="margin-top:8px;display:flex;gap:4px;">
         <button onclick="window.approveCampaign('${c.id}')" style="flex:1;padding:5px;border:none;border-radius:4px;background:#238636;color:#fff;font-size:.65rem;cursor:pointer;font-weight:600;">✅ APPROVE</button>
         <button onclick="window.rejectCampaign('${c.id}')" style="flex:1;padding:5px;border:none;border-radius:4px;background:#f85149;color:#fff;font-size:.65rem;cursor:pointer;font-weight:600;">❌ REJECT</button>
