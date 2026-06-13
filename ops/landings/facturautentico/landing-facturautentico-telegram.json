@@ -3,7 +3,7 @@
   "productName": "FacturAutentica",
   "channelId": "telegram",
   "channelName": "Telegram",
-  "generatedAt": "2026-06-13T19:38:24.803Z",
+  "generatedAt": "2026-06-13T20:37:01.811Z",
   "status": "paused",
   "seo": {
     "title": "FacturAutentica en Telegram | Tiger Lab",
@@ -17,7 +17,7 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "FacturAutentica: Precio accesible, resultados reales",
+    "headline": "FacturAutentica - Automatizacion para SMBs Mexicanas",
     "body": "FacturAutentica disponible.\n\n• API Access\n• Automation\n\n$39/mes · 14 dias gratis\n→ https://cal.com/victor-tigerlab/diagnostic",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "directo, propositivo, enlace directo"
@@ -25,7 +25,7 @@
   "tracking": {
     "utmSource": "telegram",
     "utmCampaign": "landing-facturautentico-telegram",
-    "utmContent": "social-landing-1781379504803"
+    "utmContent": "social-landing-1781383021811"
   },
   "metrics": {
     "targetChars": 4096,

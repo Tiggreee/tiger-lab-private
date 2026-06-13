@@ -3,7 +3,7 @@
   "productName": "FacturAutentico Cloud",
   "channelId": "linkedin",
   "channelName": "LinkedIn",
-  "generatedAt": "2026-06-13T19:38:24.792Z",
+  "generatedAt": "2026-06-13T20:37:01.800Z",
   "status": "paused",
   "seo": {
     "title": "FacturAutentico Cloud en LinkedIn | Tiger Lab",
@@ -17,7 +17,7 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "De lo manual a lo automatico: FacturAutentico Cloud",
+    "headline": "Como facturautentico cloud esta transformando la operacion de SMBs en Mexico",
     "body": "En Tiger Lab construimos FacturAutentico Cloud para resolver los problemas reales de las SMBs en Mexico.\n\nSabemos que la mayoria de los equipos pequenos no tienen un area de tecnologia dedicada. Por eso creamos una herramienta que:\n• API Access\n• Automation\n• Reports\n\nCon $39/mo empiezas. Sin contratos largos. Sin equipo tecnico.\n\nLa pregunta no es si necesitas automatizar. Es cuanto tiempo mas puedes permitirte no hacerlo.\n\nAgenda un diagnostico gratuito de 15 min y descubre como FacturAutentico Cloud puede transformar tu operacion.",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "thought-leadership, profesional, casos de uso"
@@ -25,11 +25,11 @@
   "tracking": {
     "utmSource": "linkedin",
     "utmCampaign": "landing-facturautentico-cloud-linkedin",
-    "utmContent": "social-landing-1781379504794"
+    "utmContent": "social-landing-1781383021800"
   },
   "metrics": {
     "targetChars": 2800,
-    "actualChars": 638,
-    "qualityScore": 46
+    "actualChars": 663,
+    "qualityScore": 47
   }
 }

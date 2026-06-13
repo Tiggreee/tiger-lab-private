@@ -3,7 +3,7 @@
   "productName": "FacturAutentica",
   "channelId": "discord",
   "channelName": "Discord",
-  "generatedAt": "2026-06-13T19:38:24.803Z",
+  "generatedAt": "2026-06-13T20:37:01.811Z",
   "status": "paused",
   "seo": {
     "title": "FacturAutentica en Discord | Tiger Lab",
@@ -17,7 +17,7 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "FacturAutentica - Para devs que construyen el futuro de las SMBs",
+    "headline": "FacturAutentica esta disponible. Integracion tecnica y API docs.",
     "body": "**FacturAutentica Release**\n\nTarget: SMBs in Mexico (3-50 employees)\nPricing: $39/mo\nTrial: 14 days, no credit card required\n\n**Integration Guide**:\n1. Book diagnostic\n2. We configure your instance\n3. Start automating\n\nQuestions? Open a ticket.",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "tecnico, detallado, para early adopters"
@@ -25,7 +25,7 @@
   "tracking": {
     "utmSource": "discord",
     "utmCampaign": "landing-facturautentico-discord",
-    "utmContent": "social-landing-1781379504803"
+    "utmContent": "social-landing-1781383021811"
   },
   "metrics": {
     "targetChars": 2000,

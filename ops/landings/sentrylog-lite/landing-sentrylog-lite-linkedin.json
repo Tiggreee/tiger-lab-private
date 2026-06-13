@@ -3,7 +3,7 @@
   "productName": "Sentrylog Lite",
   "channelId": "linkedin",
   "channelName": "LinkedIn",
-  "generatedAt": "2026-06-13T19:38:24.799Z",
+  "generatedAt": "2026-06-13T20:37:01.806Z",
   "status": "planned",
   "seo": {
     "title": "Sentrylog Lite en LinkedIn | Tiger Lab",
@@ -17,7 +17,7 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "Como sentrylog lite esta transformando la operacion de SMBs en Mexico",
+    "headline": "Sentrylog Lite: La herramienta que tu equipo necesita para dejar de hacer procesos manuales",
     "body": "En Tiger Lab construimos Sentrylog Lite para resolver los problemas reales de las SMBs en Mexico.\n\nSabemos que la mayoria de los equipos pequenos no tienen un area de tecnologia dedicada. Por eso creamos una herramienta que:\n• API Access\n• Automation\n• Reports\n\nCon $39/mo empiezas. Sin contratos largos. Sin equipo tecnico.\n\nLa pregunta no es si necesitas automatizar. Es cuanto tiempo mas puedes permitirte no hacerlo.\n\nAgenda un diagnostico gratuito de 15 min y descubre como Sentrylog Lite puede transformar tu operacion.",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "thought-leadership, profesional, casos de uso"
@@ -25,11 +25,11 @@
   "tracking": {
     "utmSource": "linkedin",
     "utmCampaign": "landing-sentrylog-lite-linkedin",
-    "utmContent": "social-landing-1781379504799"
+    "utmContent": "social-landing-1781383021806"
   },
   "metrics": {
     "targetChars": 2800,
-    "actualChars": 642,
-    "qualityScore": 46
+    "actualChars": 664,
+    "qualityScore": 47
   }
 }

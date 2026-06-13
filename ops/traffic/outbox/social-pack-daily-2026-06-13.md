@@ -1,6 +1,6 @@
 # Social Pack - daily-2026-06-13
 
-Generated at: 2026-06-13T19:38:24.562Z
+Generated at: 2026-06-13T20:37:01.563Z
 Topic: Automatización de operaciones para SMBs
 Audience: founders y operadores SMB
 Offer: Diagnóstico de 15 min
