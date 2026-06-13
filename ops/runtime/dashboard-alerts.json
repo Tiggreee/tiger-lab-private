@@ -1,13 +1,21 @@
 {
-  "checkedAt": "2026-06-13T05:13:40.619Z",
+  "checkedAt": "2026-06-13T05:20:05.144Z",
   "status": "DEGRADED",
   "summary": {
-    "critical": 1,
+    "critical": 2,
     "warnings": 4,
     "info": 0,
     "ok": 0
   },
   "alerts": [
+    {
+      "level": "WARN",
+      "msg": "Leads: 0 (< 100)"
+    },
+    {
+      "level": "CRITICAL",
+      "msg": "No leads in DB"
+    },
     {
       "level": "WARN",
       "msg": "Product avg 0 < 70"
@@ -22,20 +30,16 @@
     },
     {
       "level": "WARN",
-      "msg": "14 failures today"
-    },
-    {
-      "level": "WARN",
       "msg": "Implementation 0% < 80%"
     }
   ],
   "snapshot": {
     "gate": "GO",
-    "leads": 1000,
+    "leads": 0,
     "agents": 22,
     "products": 0,
     "productAvg": 0,
     "implementation": 0,
-    "failuresToday": 14
+    "failuresToday": 0
   }
 }
