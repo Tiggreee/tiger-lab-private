@@ -1,0 +1,686 @@
+{
+  "generatedAt": "2026-06-13T02:51:56.300Z",
+  "total": 68,
+  "prospects": [
+    {
+      "id": "PROSP-0001",
+      "name": "Facturación Electrónica Total MX",
+      "industry": "facturación",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 70,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0002",
+      "name": "Plataforma de Facturación en la Nube",
+      "industry": "facturación",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 70,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0003",
+      "name": "Automatización de Facturas y Cobranza",
+      "industry": "facturación",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 70,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0004",
+      "name": "CFDI y Facturación para PyMEs",
+      "industry": "facturación",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 70,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0005",
+      "name": "Facturación Móvil para PyMEs MX",
+      "industry": "facturación",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 70,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0006",
+      "name": "Innovación en Procesos Fiscales MX",
+      "industry": "facturación",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 70,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0007",
+      "name": "Facturación Digital para Comercios MX",
+      "industry": "facturación",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 70,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0008",
+      "name": "Despacho Contable Gutiérrez y Asociados",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 65,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0009",
+      "name": "Consultoría Fiscal Hernández SC",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 65,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0010",
+      "name": "Contadores Públicos Martínez y Cía",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 65,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0011",
+      "name": "CFDI Express Solutions",
+      "industry": "facturación",
+      "city": "Guadalajara",
+      "website": "",
+      "phone": "",
+      "score": 65,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0012",
+      "name": "Despacho de Asesoría Fiscal Integral",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 65,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0013",
+      "name": "Solución Integral de Facturación CFDI",
+      "industry": "facturación",
+      "city": "Guadalajara",
+      "website": "",
+      "phone": "",
+      "score": 65,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0014",
+      "name": "Despacho de Contabilidad Gubernamental",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 65,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0015",
+      "name": "Despacho Contable Santa Fe",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 65,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0016",
+      "name": "Solución de Facturación para Constructoras",
+      "industry": "facturación",
+      "city": "Monterrey",
+      "website": "",
+      "phone": "",
+      "score": 65,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0017",
+      "name": "Despacho de Asesoría Fiscal en Línea",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 65,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0018",
+      "name": "Despacho de Contabilidad para Startups",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 65,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0019",
+      "name": "Solución de Facturación Internacional MX",
+      "industry": "facturación",
+      "city": "Monterrey",
+      "website": "",
+      "phone": "",
+      "score": 65,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0020",
+      "name": "Red de Despachos Contables MX",
+      "industry": "contabilidad",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 65,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0021",
+      "name": "Grupo Contable López y Asociados",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "website": "",
+      "phone": "",
+      "score": 60,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0022",
+      "name": "Despacho Jurídico-Contable Rodríguez",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "website": "",
+      "phone": "",
+      "score": 60,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0023",
+      "name": "Despacho de Contabilidad Digital",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "website": "",
+      "phone": "",
+      "score": 60,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0024",
+      "name": "Despacho Contable San Pedro",
+      "industry": "contabilidad",
+      "city": "Monterrey",
+      "website": "",
+      "phone": "",
+      "score": 60,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0025",
+      "name": "Despacho Contable Profesional Zapopan",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "website": "",
+      "phone": "",
+      "score": 60,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0026",
+      "name": "Outsourcing de Contabilidad General",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "website": "",
+      "phone": "",
+      "score": 60,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0027",
+      "name": "Despacho de Contabilidad en la Nube",
+      "industry": "contabilidad",
+      "city": "Guadalajara",
+      "website": "",
+      "phone": "",
+      "score": 60,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0028",
+      "name": "Plataforma de Pagos y Facturación MX",
+      "industry": "fintech",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 55,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0029",
+      "name": "Asesoría Contable y Financiera Empresarial",
+      "industry": "financiero",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 55,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0030",
+      "name": "Plataforma de Conciliación Automática",
+      "industry": "fintech",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 55,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0031",
+      "name": "Grupo de Asesoría Financiera Integral",
+      "industry": "financiero",
+      "city": "Monterrey",
+      "website": "",
+      "phone": "",
+      "score": 50,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0032",
+      "name": "Automatización de Procesos Financieros",
+      "industry": "fintech",
+      "city": "Monterrey",
+      "website": "",
+      "phone": "",
+      "score": 50,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0033",
+      "name": "Integradora de Sistemas Fiscales",
+      "industry": "facturación",
+      "city": "Puebla",
+      "website": "",
+      "phone": "",
+      "score": 45,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0034",
+      "name": "Outsourcing de Facturación Electrónica",
+      "industry": "facturación",
+      "city": "Puebla",
+      "website": "",
+      "phone": "",
+      "score": 45,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0035",
+      "name": "Despacho de Facturación Electrónica SA",
+      "industry": "facturación",
+      "city": "Puebla",
+      "website": "",
+      "phone": "",
+      "score": 45,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0036",
+      "name": "Despacho de Outsourcing Contable",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "website": "",
+      "phone": "",
+      "score": 40,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0037",
+      "name": "Contadores Públicos Certificados MX",
+      "industry": "contabilidad",
+      "city": "Tijuana",
+      "website": "",
+      "phone": "",
+      "score": 40,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0038",
+      "name": "Despacho Virtual de Contabilidad",
+      "industry": "contabilidad",
+      "city": "León",
+      "website": "",
+      "phone": "",
+      "score": 40,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0039",
+      "name": "Grupo Empresarial de Servicios Fiscales",
+      "industry": "contabilidad",
+      "city": "Mérida",
+      "website": "",
+      "phone": "",
+      "score": 40,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0040",
+      "name": "Contadores Públicos Asociados del Norte",
+      "industry": "contabilidad",
+      "city": "Chihuahua",
+      "website": "",
+      "phone": "",
+      "score": 40,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0041",
+      "name": "Centro de Servicios Contables y Fiscales",
+      "industry": "contabilidad",
+      "city": "Puebla",
+      "website": "",
+      "phone": "",
+      "score": 40,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0042",
+      "name": "Despacho de Contadores Especializados",
+      "industry": "contabilidad",
+      "city": "Toluca",
+      "website": "",
+      "phone": "",
+      "score": 40,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0043",
+      "name": "Grupo Contable del Bajío",
+      "industry": "contabilidad",
+      "city": "Guanajuato",
+      "website": "",
+      "phone": "",
+      "score": 40,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0044",
+      "name": "Contadores y Auditores del Golfo",
+      "industry": "contabilidad",
+      "city": "Veracruz",
+      "website": "",
+      "phone": "",
+      "score": 40,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0045",
+      "name": "Centro de Contabilidad Empresarial",
+      "industry": "contabilidad",
+      "city": "Querétaro",
+      "website": "",
+      "phone": "",
+      "score": 40,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0046",
+      "name": "Grupo Financiero Contable del Centro",
+      "industry": "financiero",
+      "city": "Puebla",
+      "website": "",
+      "phone": "",
+      "score": 30,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0047",
+      "name": "Asesoría Empresarial Integral MX",
+      "industry": "consultoría",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 25,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0048",
+      "name": "Software Contable y Administrativo Pro",
+      "industry": "software",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 25,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0049",
+      "name": "Consultores en Automatización de Procesos",
+      "industry": "automatización",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 25,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0050",
+      "name": "Solución de Nómina y RH Automatizada",
+      "industry": "rrhh",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 25,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0051",
+      "name": "Consultoría en Transformación Digital",
+      "industry": "consultoría",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 25,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0052",
+      "name": "Tecnología Aplicada a la Contabilidad",
+      "industry": "software",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 25,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0053",
+      "name": "Consultoría en Cumplimiento Fiscal",
+      "industry": "consultoría",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 25,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0054",
+      "name": "Consultoría en Sistemas Contables",
+      "industry": "software",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 25,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0055",
+      "name": "Despacho de Gestión de Cobranza",
+      "industry": "cobranza",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 25,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0056",
+      "name": "Solución Tecnológica para Despachos",
+      "industry": "software",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 25,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0057",
+      "name": "Despacho de Software Contable Integral",
+      "industry": "software",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 25,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0058",
+      "name": "Integración de Sistemas de Nómina",
+      "industry": "rrhh",
+      "city": "CDMX",
+      "website": "",
+      "phone": "",
+      "score": 25,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0059",
+      "name": "Sistema de Gestión Empresarial ERP MX",
+      "industry": "software",
+      "city": "Guadalajara",
+      "website": "",
+      "phone": "",
+      "score": 20,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0060",
+      "name": "Grupo Consultor de Negocios MX",
+      "industry": "consultoría",
+      "city": "Monterrey",
+      "website": "",
+      "phone": "",
+      "score": 20,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0061",
+      "name": "Grupo de Automatización de Procesos MX",
+      "industry": "automatización",
+      "city": "Monterrey",
+      "website": "",
+      "phone": "",
+      "score": 20,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0062",
+      "name": "Consultoría en Normativas Fiscales MX",
+      "industry": "consultoría",
+      "city": "Guadalajara",
+      "website": "",
+      "phone": "",
+      "score": 20,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0063",
+      "name": "Consultoría de Eficiencia Operacional",
+      "industry": "consultoría",
+      "city": "Monterrey",
+      "website": "",
+      "phone": "",
+      "score": 20,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0064",
+      "name": "Despacho de Auditoría y Consultoría",
+      "industry": "auditoría",
+      "city": "San Luis Potosí",
+      "website": "",
+      "phone": "",
+      "score": 0,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0065",
+      "name": "Software de Facturación en Línea",
+      "industry": "software",
+      "city": "Querétaro",
+      "website": "",
+      "phone": "",
+      "score": 0,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0066",
+      "name": "Despacho Virtual de Asesoría Empresarial",
+      "industry": "consultoría",
+      "city": "León",
+      "website": "",
+      "phone": "",
+      "score": 0,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0067",
+      "name": "Consultoría en Optimización Operativa",
+      "industry": "consultoría",
+      "city": "San Luis Potosí",
+      "website": "",
+      "phone": "",
+      "score": 0,
+      "campaignReady": true
+    },
+    {
+      "id": "PROSP-0068",
+      "name": "Grupo de Servicios Administrativos MX",
+      "industry": "administración",
+      "city": "Toluca",
+      "website": "",
+      "phone": "",
+      "score": 0,
+      "campaignReady": true
+    }
+  ]
+}

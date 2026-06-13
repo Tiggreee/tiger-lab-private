@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-06-13T02:40:23.912Z",
   "monetization": {
-    "leadsToday": 10,
+    "leadsToday": 68,
     "generatedContent": 10,
     "activeBots": 4,
     "averagePrice": "$69.00"
@@ -977,5 +977,47 @@
     "dashboard": "success",
     "checkout": "success",
     "gate": "GO"
+  },
+  "leadEngine": {
+    "generatedAt": "2026-06-13T02:51:20.399Z",
+    "stats": {
+      "companies": 68,
+      "byIndustry": {
+        "contabilidad": 26,
+        "facturación": 14,
+        "consultoría": 8,
+        "software": 7,
+        "financiero": 3,
+        "fintech": 3,
+        "automatización": 2,
+        "rrhh": 2,
+        "administración": 1,
+        "auditoría": 1,
+        "cobranza": 1
+      },
+      "byCity": {
+        "CDMX": 31,
+        "Monterrey": 10,
+        "Guadalajara": 8,
+        "Puebla": 5,
+        "Querétaro": 3,
+        "León": 2,
+        "San Luis Potosí": 2,
+        "Toluca": 2,
+        "Chihuahua": 1,
+        "Guanajuato": 1,
+        "Mérida": 1,
+        "Tijuana": 1,
+        "Veracruz": 1
+      },
+      "sources": [
+        "seed_denue",
+        "openstreetmap",
+        "manual_import"
+      ],
+      "exportDir": "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\database\\exports",
+      "oracleDDL": "ops/database/oracle-import-ddl.sql"
+    },
+    "ledStatus": "GREEN"
   }
 }

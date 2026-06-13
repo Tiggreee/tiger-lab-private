@@ -45,7 +45,19 @@ jobs:
       - name: Lead Engine
         run: node scripts/lead-engine.mjs --mode seed && node scripts/lead-engine.mjs --mode enrich && node scripts/lead-engine.mjs --mode export
 
-      # 2. Generate outreach desde leads nuevos
+      # 2. Prospect Selector — selecciona prospects de la DB
+      - name: Prospect Selector
+        run: node engine/email/prospect-selector.mjs general && node engine/email/prospect-selector.mjs facturacion
+
+      # 3. Email Campaign — diseña campaña de email
+      - name: Email Campaign
+        run: node engine/email/email-campaign.mjs --dry-run
+
+      # 4. Campaign Designer — diseño y aprobación
+      - name: Campaign Designer
+        run: node engine/campaigns/campaign-designer.mjs --product "Docflow API" --target contabilidad --channels email,linkedin --dry-run
+
+      # 5. Generate outreach desde leads nuevos
       - name: Generate outreach
         run: |
           node scripts/generate-outreach.mjs --leads ops/leads/pipeline.json || \

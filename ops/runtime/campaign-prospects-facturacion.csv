@@ -1,0 +1,69 @@
+id,name,industry,city,website,phone,score,campaignReady
+PROSP-0001,"Facturación Electrónica Total MX",facturación,CDMX,,,70,true
+PROSP-0002,"Plataforma de Facturación en la Nube",facturación,CDMX,,,70,true
+PROSP-0003,"Automatización de Facturas y Cobranza",facturación,CDMX,,,70,true
+PROSP-0004,"CFDI y Facturación para PyMEs",facturación,CDMX,,,70,true
+PROSP-0005,"Facturación Móvil para PyMEs MX",facturación,CDMX,,,70,true
+PROSP-0006,"Innovación en Procesos Fiscales MX",facturación,CDMX,,,70,true
+PROSP-0007,"Facturación Digital para Comercios MX",facturación,CDMX,,,70,true
+PROSP-0008,"Despacho Contable Gutiérrez y Asociados",contabilidad,CDMX,,,65,true
+PROSP-0009,"Consultoría Fiscal Hernández SC",contabilidad,CDMX,,,65,true
+PROSP-0010,"Contadores Públicos Martínez y Cía",contabilidad,CDMX,,,65,true
+PROSP-0011,"CFDI Express Solutions",facturación,Guadalajara,,,65,true
+PROSP-0012,"Despacho de Asesoría Fiscal Integral",contabilidad,CDMX,,,65,true
+PROSP-0013,"Solución Integral de Facturación CFDI",facturación,Guadalajara,,,65,true
+PROSP-0014,"Despacho de Contabilidad Gubernamental",contabilidad,CDMX,,,65,true
+PROSP-0015,"Despacho Contable Santa Fe",contabilidad,CDMX,,,65,true
+PROSP-0016,"Solución de Facturación para Constructoras",facturación,Monterrey,,,65,true
+PROSP-0017,"Despacho de Asesoría Fiscal en Línea",contabilidad,CDMX,,,65,true
+PROSP-0018,"Despacho de Contabilidad para Startups",contabilidad,CDMX,,,65,true
+PROSP-0019,"Solución de Facturación Internacional MX",facturación,Monterrey,,,65,true
+PROSP-0020,"Red de Despachos Contables MX",contabilidad,CDMX,,,65,true
+PROSP-0021,"Grupo Contable López y Asociados",contabilidad,Monterrey,,,60,true
+PROSP-0022,"Despacho Jurídico-Contable Rodríguez",contabilidad,Monterrey,,,60,true
+PROSP-0023,"Despacho de Contabilidad Digital",contabilidad,Guadalajara,,,60,true
+PROSP-0024,"Despacho Contable San Pedro",contabilidad,Monterrey,,,60,true
+PROSP-0025,"Despacho Contable Profesional Zapopan",contabilidad,Guadalajara,,,60,true
+PROSP-0026,"Outsourcing de Contabilidad General",contabilidad,Guadalajara,,,60,true
+PROSP-0027,"Despacho de Contabilidad en la Nube",contabilidad,Guadalajara,,,60,true
+PROSP-0028,"Plataforma de Pagos y Facturación MX",fintech,CDMX,,,55,true
+PROSP-0029,"Asesoría Contable y Financiera Empresarial",financiero,CDMX,,,55,true
+PROSP-0030,"Plataforma de Conciliación Automática",fintech,CDMX,,,55,true
+PROSP-0031,"Grupo de Asesoría Financiera Integral",financiero,Monterrey,,,50,true
+PROSP-0032,"Automatización de Procesos Financieros",fintech,Monterrey,,,50,true
+PROSP-0033,"Integradora de Sistemas Fiscales",facturación,Puebla,,,45,true
+PROSP-0034,"Outsourcing de Facturación Electrónica",facturación,Puebla,,,45,true
+PROSP-0035,"Despacho de Facturación Electrónica SA",facturación,Puebla,,,45,true
+PROSP-0036,"Despacho de Outsourcing Contable",contabilidad,Querétaro,,,40,true
+PROSP-0037,"Contadores Públicos Certificados MX",contabilidad,Tijuana,,,40,true
+PROSP-0038,"Despacho Virtual de Contabilidad",contabilidad,León,,,40,true
+PROSP-0039,"Grupo Empresarial de Servicios Fiscales",contabilidad,Mérida,,,40,true
+PROSP-0040,"Contadores Públicos Asociados del Norte",contabilidad,Chihuahua,,,40,true
+PROSP-0041,"Centro de Servicios Contables y Fiscales",contabilidad,Puebla,,,40,true
+PROSP-0042,"Despacho de Contadores Especializados",contabilidad,Toluca,,,40,true
+PROSP-0043,"Grupo Contable del Bajío",contabilidad,Guanajuato,,,40,true
+PROSP-0044,"Contadores y Auditores del Golfo",contabilidad,Veracruz,,,40,true
+PROSP-0045,"Centro de Contabilidad Empresarial",contabilidad,Querétaro,,,40,true
+PROSP-0046,"Grupo Financiero Contable del Centro",financiero,Puebla,,,30,true
+PROSP-0047,"Asesoría Empresarial Integral MX",consultoría,CDMX,,,25,true
+PROSP-0048,"Software Contable y Administrativo Pro",software,CDMX,,,25,true
+PROSP-0049,"Consultores en Automatización de Procesos",automatización,CDMX,,,25,true
+PROSP-0050,"Solución de Nómina y RH Automatizada",rrhh,CDMX,,,25,true
+PROSP-0051,"Consultoría en Transformación Digital",consultoría,CDMX,,,25,true
+PROSP-0052,"Tecnología Aplicada a la Contabilidad",software,CDMX,,,25,true
+PROSP-0053,"Consultoría en Cumplimiento Fiscal",consultoría,CDMX,,,25,true
+PROSP-0054,"Consultoría en Sistemas Contables",software,CDMX,,,25,true
+PROSP-0055,"Despacho de Gestión de Cobranza",cobranza,CDMX,,,25,true
+PROSP-0056,"Solución Tecnológica para Despachos",software,CDMX,,,25,true
+PROSP-0057,"Despacho de Software Contable Integral",software,CDMX,,,25,true
+PROSP-0058,"Integración de Sistemas de Nómina",rrhh,CDMX,,,25,true
+PROSP-0059,"Sistema de Gestión Empresarial ERP MX",software,Guadalajara,,,20,true
+PROSP-0060,"Grupo Consultor de Negocios MX",consultoría,Monterrey,,,20,true
+PROSP-0061,"Grupo de Automatización de Procesos MX",automatización,Monterrey,,,20,true
+PROSP-0062,"Consultoría en Normativas Fiscales MX",consultoría,Guadalajara,,,20,true
+PROSP-0063,"Consultoría de Eficiencia Operacional",consultoría,Monterrey,,,20,true
+PROSP-0064,"Despacho de Auditoría y Consultoría",auditoría,San Luis Potosí,,,0,true
+PROSP-0065,"Software de Facturación en Línea",software,Querétaro,,,0,true
+PROSP-0066,"Despacho Virtual de Asesoría Empresarial",consultoría,León,,,0,true
+PROSP-0067,"Consultoría en Optimización Operativa",consultoría,San Luis Potosí,,,0,true
+PROSP-0068,"Grupo de Servicios Administrativos MX",administración,Toluca,,,0,true
