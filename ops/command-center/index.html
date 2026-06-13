@@ -45,6 +45,14 @@ h1{font-size:1rem;font-weight:600;color:#f0f6fc}
 .lead-section h3{font-size:.65rem;font-weight:600;color:#8b949e;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px}
 .lead-stat{display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid #21262d22}
 .lead-stat:last-child{border-bottom:none}
+.agent-table{width:100%;border-collapse:collapse;font-size:.65rem}
+.agent-table th{text-align:left;padding:3px 6px;color:#8b949e;font-weight:600;font-size:.6rem;text-transform:uppercase;border-bottom:1px solid #21262d}
+.agent-table td{padding:3px 6px;border-bottom:1px solid #21262d22;white-space:nowrap}
+.agent-table .agent-name{max-width:200px;overflow:hidden;text-overflow:ellipsis}
+.agent-table .eff-bar{width:60px;height:8px;background:#21262d;border-radius:3px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:4px}
+.agent-table .eff-fill{height:100%;border-radius:3px;transition:width .5s}
+.agent-table .eff-val{font-weight:700;font-size:.6rem}
+.eff-high{color:#3fb950}.eff-mid{color:#d29922}.eff-low{color:#f85149}
 footer{font-size:.65rem;color:#484f58;text-align:center;padding:6px 0 0;border-top:1px solid #21262d;margin-top:6px}
 /* Tiger AI Bot */
 .bot-container{position:fixed;bottom:16px;right:16px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
@@ -105,6 +113,11 @@ footer{font-size:.65rem;color:#484f58;text-align:center;padding:6px 0 0;border-t
     <div id="leadsContent"></div>
   </section>
 </div>
+
+<section class="card" style="margin-bottom:8px;">
+  <h2>🤖 Agent Efficiency <span id="agentEffTime" class="dim"></span></h2>
+  <div id="agentEfficiency"></div>
+</section>
 
 <footer id="footerText"></footer>
 

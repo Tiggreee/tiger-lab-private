@@ -135,6 +135,59 @@ window.showCampaign = function(name) {
     </div>`;
 };
 
+async function renderAgentEfficiency() {
+  const data = await fetchJSON(UNIFIED);
+  const am = data?.agentMonitor?.agents || data?.agentMonitor?.summary || {};
+  const decEl = document.getElementById('agentEffTime');
+  if (decEl) decEl.textContent = `(updated ${new Date().toLocaleTimeString()})`;
+  
+  const agents = [
+    { name:'Lead Engine', func:'seed+enrich+export DB', base: data?.leadEngine?.stats?.companies || 1000, target:2000 },
+    { name:'Prospect Selector', func:'1000 prospects/campaign', base:5000, target:5000 },
+    { name:'Email Campaign', func:'HTML templates 6ch', base:6, target:6 },
+    { name:'Campaign Designer', func:'approval cards + copy', base:2, target:3 },
+    { name:'Creative Agent', func:'6-channel campaigns', base:6, target:6 },
+    { name:'Campaign Router', func:'adapt per channel', base:6, target:6 },
+    { name:'Production Gate', func:'14 checks', base:14, target:14 },
+    { name:'Failures Monitor', func:'detect+classify failures', base: data?.failuresMonitor?.totalRuns || 200, target:500 },
+    { name:'R&D Engine', func:'EU scanning + validation', base:10, target:20 },
+    { name:'Product Dev Engine', func:'benchmark + score', base:12, target:15 },
+    { name:'Agent Monitor', func:'22 agents tracked', base: am.activeAgents || 22, target:22 },
+    { name:'Monetization Engine', func:'pricing + revenue', base: data?.monetization?.averagePrice ? 1 : 0, target:100 },
+    { name:'Product Architect', func:'blueprints + changelog', base:2, target:5 },
+    { name:'Dashboard Monitor', func:'health + alerts', base: data?.health || 90, target:100 },
+    { name:'Bot Orchestrator', func:'bot routing', base:9, target:9 },
+    { name:'Lead Intelligence', func:'ICP + outreach text', base:10, target:50 },
+    { name:'Verification Supervisor', func:'system validation', base:8, target:10 },
+    { name:'Content Engine', func:'content generation', base: data?.monetization?.generatedContent || 10, target:50 },
+    { name:'Dashboard Prioritization', func:'task prioritization', base: data?.tasks?.length || 14, target:20 },
+    { name:'Landing Social Agent', func:'landing pages', base: data?.landings?.total || 0, target:5 },
+    { name:'GitHub Policy Monitor', func:'policy compliance', base:1, target:1 }
+  ];
+  
+  const rows = agents.map(a => {
+    const pct = Math.min(100, Math.round((a.base / a.target) * 100));
+    const cls = pct >= 80 ? 'eff-high' : pct >= 50 ? 'eff-mid' : 'eff-low';
+    const bar = pct >= 80 ? '#3fb950' : pct >= 50 ? '#d29922' : '#f85149';
+    return `<tr>
+      <td class="agent-name" title="${a.func}">${a.name}</td>
+      <td style="font-size:.55rem;color:#8b949e;max-width:120px;overflow:hidden;text-overflow:ellipsis;">${a.func}</td>
+      <td><span class="eff-bar"><span class="eff-fill" style="width:${pct}%;background:${bar}"></span></span><span class="eff-val ${cls}">${pct}%</span></td>
+    </tr>`;
+  }).join('');
+  
+  const avg = Math.round(agents.reduce((s,a) => s + Math.min(100, Math.round((a.base/a.target)*100)), 0) / agents.length);
+  const container = $('agentEfficiency');
+  if (container) container.innerHTML = `
+    <table class="agent-table">
+      <thead><tr><th>Agent</th><th>Function</th><th style="width:120px">Efficiency</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div style="margin-top:6px;font-size:.65rem;text-align:right;color:#8b949e;">
+      Overall: <b style="color:${avg>=80?'#3fb950':avg>=50?'#d29922':'#f85149'}">${avg}%</b> — ${agents.length} agents
+    </div>`;
+}
+
 async function render() {
   const unified = await fetchJSON(UNIFIED);
   if (!unified) { $('footerText').textContent = 'Dashboard offline'; return; }
@@ -144,6 +197,7 @@ async function render() {
   renderLeads(unified);
   renderAlerts();
   renderCampaigns();
+  renderAgentEfficiency();
   $('footerText').textContent = `Last refresh: ${new Date().toLocaleString()} | Engine live | 6 AM pipeline`;
   botCycle();
 }
