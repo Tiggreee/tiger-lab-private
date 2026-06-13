@@ -157,6 +157,25 @@ $('notifyBtn').addEventListener('click', async () => {
   alert(p === 'granted' ? 'Alerts enabled' : 'Alerts not enabled');
 });
 
+// Production toggle — click neon sign to switch
+let isProduction = true;
+const neonEl = document.getElementById('neonProd');
+if (neonEl) {
+  neonEl.style.cursor = 'pointer';
+  neonEl.title = 'Click to toggle Production/Development';
+  neonEl.addEventListener('click', () => {
+    isProduction = !isProduction;
+    neonEl.textContent = isProduction ? '⚡ PRODUCTION ⚡' : '🔧 DEVELOPMENT 🔧';
+    neonEl.style.color = isProduction ? '#0f0' : '#f0883e';
+    neonEl.style.textShadow = isProduction ? '0 0 5px #0f0,0 0 10px #0f0,0 0 20px #0f0' : '0 0 5px #f0883e,0 0 10px #f0883e';
+    neonEl.style.borderColor = isProduction ? '#0f044' : '#f0883e44';
+    document.title = isProduction ? 'Tiger Command Center — PRODUCTION' : 'Tiger Command Center — DEV';
+  });
+}
+
+// Real-time refresh: full dashboard every 30s
+setInterval(render, 30000);
+
 setInterval(renderAlerts, 60000);
 render().catch(console.error);
 
