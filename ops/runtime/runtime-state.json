@@ -1173,6 +1173,146 @@
       "productId": "autonomous-product-1",
       "body": "Audience: Founders. First automation: weekly-summary.",
       "generatedAt": "2026-06-07T12:17:37.020Z"
+    },
+    "asset-6c0613c0": {
+      "assetId": "asset-6c0613c0",
+      "productId": "docflow-api",
+      "channel": "web",
+      "type": "blog",
+      "generatedAt": "2026-06-13T07:56:02.259Z"
+    },
+    "asset-62a1f989": {
+      "assetId": "asset-62a1f989",
+      "productId": "docflow-api",
+      "channel": "linkedin",
+      "type": "post",
+      "generatedAt": "2026-06-13T07:56:02.259Z"
+    },
+    "asset-32bb3dab": {
+      "assetId": "asset-32bb3dab",
+      "productId": "docflow-api",
+      "channel": "docs",
+      "type": "changelog",
+      "generatedAt": "2026-06-13T07:56:02.259Z"
+    },
+    "asset-2db1b070": {
+      "assetId": "asset-2db1b070",
+      "productId": "docflow-api",
+      "channel": "twitter",
+      "type": "tweet",
+      "generatedAt": "2026-06-13T07:56:02.259Z"
+    },
+    "asset-a76d7011": {
+      "assetId": "asset-a76d7011",
+      "productId": "docflow-api",
+      "channel": "telegram",
+      "type": "mensaje",
+      "generatedAt": "2026-06-13T07:56:02.259Z"
+    },
+    "asset-f964eebe": {
+      "assetId": "asset-f964eebe",
+      "productId": "script-premium-kit",
+      "channel": "web",
+      "type": "blog",
+      "generatedAt": "2026-06-13T07:56:02.259Z"
+    },
+    "asset-b36c3b39": {
+      "assetId": "asset-b36c3b39",
+      "productId": "script-premium-kit",
+      "channel": "linkedin",
+      "type": "post",
+      "generatedAt": "2026-06-13T07:56:02.259Z"
+    },
+    "asset-a511e542": {
+      "assetId": "asset-a511e542",
+      "productId": "script-premium-kit",
+      "channel": "docs",
+      "type": "changelog",
+      "generatedAt": "2026-06-13T07:56:02.259Z"
+    },
+    "asset-8719ac75": {
+      "assetId": "asset-8719ac75",
+      "productId": "script-premium-kit",
+      "channel": "twitter",
+      "type": "tweet",
+      "generatedAt": "2026-06-13T07:56:02.259Z"
+    },
+    "asset-9f9a90e5": {
+      "assetId": "asset-9f9a90e5",
+      "productId": "script-premium-kit",
+      "channel": "telegram",
+      "type": "mensaje",
+      "generatedAt": "2026-06-13T07:56:02.259Z"
+    },
+    "asset-516fedcb": {
+      "assetId": "asset-516fedcb",
+      "productId": "docflow-api",
+      "channel": "web",
+      "type": "blog",
+      "generatedAt": "2026-06-13T07:58:09.770Z"
+    },
+    "asset-ac9de00c": {
+      "assetId": "asset-ac9de00c",
+      "productId": "docflow-api",
+      "channel": "linkedin",
+      "type": "post",
+      "generatedAt": "2026-06-13T07:58:09.770Z"
+    },
+    "asset-7b9cd426": {
+      "assetId": "asset-7b9cd426",
+      "productId": "docflow-api",
+      "channel": "docs",
+      "type": "changelog",
+      "generatedAt": "2026-06-13T07:58:09.770Z"
+    },
+    "asset-7440c16a": {
+      "assetId": "asset-7440c16a",
+      "productId": "docflow-api",
+      "channel": "twitter",
+      "type": "tweet",
+      "generatedAt": "2026-06-13T07:58:09.770Z"
+    },
+    "asset-aed85ffd": {
+      "assetId": "asset-aed85ffd",
+      "productId": "docflow-api",
+      "channel": "telegram",
+      "type": "mensaje",
+      "generatedAt": "2026-06-13T07:58:09.770Z"
+    },
+    "asset-870bc5ba": {
+      "assetId": "asset-870bc5ba",
+      "productId": "script-premium-kit",
+      "channel": "web",
+      "type": "blog",
+      "generatedAt": "2026-06-13T07:58:09.770Z"
+    },
+    "asset-8bbbe398": {
+      "assetId": "asset-8bbbe398",
+      "productId": "script-premium-kit",
+      "channel": "linkedin",
+      "type": "post",
+      "generatedAt": "2026-06-13T07:58:09.770Z"
+    },
+    "asset-3e47d153": {
+      "assetId": "asset-3e47d153",
+      "productId": "script-premium-kit",
+      "channel": "docs",
+      "type": "changelog",
+      "generatedAt": "2026-06-13T07:58:09.770Z"
+    },
+    "asset-cb7bf02e": {
+      "assetId": "asset-cb7bf02e",
+      "productId": "script-premium-kit",
+      "channel": "twitter",
+      "type": "tweet",
+      "generatedAt": "2026-06-13T07:58:09.770Z"
+    },
+    "asset-67373664": {
+      "assetId": "asset-67373664",
+      "productId": "script-premium-kit",
+      "channel": "telegram",
+      "type": "mensaje",
+      "generatedAt": "2026-06-13T07:58:09.770Z"
     }
   },
   "publications": {

@@ -1,0 +1,224 @@
+{
+  "RD-1781336603847-iqxf": {
+    "id": "RD-1781336603847-iqxf",
+    "name": "DevTools GDPR Middleware",
+    "category": "devtools",
+    "euRelevance": "high",
+    "investScore": 88,
+    "competitors": [
+      "Skyflow",
+      "Evervault"
+    ],
+    "description": "Drop-in middleware that GDPR-proofs any API",
+    "spec": {
+      "targetMarket": "EU SMBs con requisitos regulatorios",
+      "revenueModel": "SaaS subscription",
+      "suggestedPriceMonthly": 99,
+      "stack": [
+        "Node.js 20+",
+        "TypeScript",
+        "REST API",
+        "PostgreSQL"
+      ],
+      "integrationPoints": [
+        "Stripe",
+        "GitHub Packages",
+        "EU Data Residency"
+      ],
+      "estimatedBuildWeeks": 4,
+      "status": "planned-rd"
+    },
+    "generatedAt": "2026-06-13T07:58:09.871Z"
+  },
+  "RD-1781336603847-1ffs": {
+    "id": "RD-1781336603847-1ffs",
+    "name": "EU AI Act Readiness Platform",
+    "category": "ailegal",
+    "euRelevance": "critical",
+    "investScore": 87,
+    "competitors": [
+      "Credo AI",
+      "Holistic AI"
+    ],
+    "description": "Compliance dashboard for EU AI Act requirements",
+    "spec": {
+      "targetMarket": "Empresas EU con compliance obligatorio",
+      "revenueModel": "SaaS subscription",
+      "suggestedPriceMonthly": 99,
+      "stack": [
+        "Node.js 20+",
+        "TypeScript",
+        "REST API",
+        "PostgreSQL"
+      ],
+      "integrationPoints": [
+        "Stripe",
+        "GitHub Packages",
+        "EU Data Residency"
+      ],
+      "estimatedBuildWeeks": 4,
+      "status": "planned-rd"
+    },
+    "generatedAt": "2026-06-13T07:58:09.872Z"
+  },
+  "RD-1781336603847-4lbc": {
+    "id": "RD-1781336603847-4lbc",
+    "name": "GDPR Auto-Compliance Scanner",
+    "category": "devtools",
+    "euRelevance": "high",
+    "investScore": 84,
+    "competitors": [
+      "DataGuard",
+      "OneTrust",
+      "PrivacyTools"
+    ],
+    "description": "API that scans codebases for GDPR gaps",
+    "spec": {
+      "targetMarket": "EU SMBs con requisitos regulatorios",
+      "revenueModel": "SaaS subscription",
+      "suggestedPriceMonthly": 49,
+      "stack": [
+        "Node.js 20+",
+        "TypeScript",
+        "REST API",
+        "PostgreSQL"
+      ],
+      "integrationPoints": [
+        "Stripe",
+        "GitHub Packages",
+        "EU Data Residency"
+      ],
+      "estimatedBuildWeeks": 6,
+      "status": "planned-rd"
+    },
+    "generatedAt": "2026-06-13T07:58:09.872Z"
+  },
+  "RD-1781336603847-gaug": {
+    "id": "RD-1781336603847-gaug",
+    "name": "SaaS Localization Engine EU",
+    "category": "devtools",
+    "euRelevance": "high",
+    "investScore": 84,
+    "competitors": [
+      "Lokalise",
+      "Phrase",
+      "Crowdin"
+    ],
+    "description": "Auto-translate + localize SaaS for 24 EU languages",
+    "spec": {
+      "targetMarket": "EU SMBs con requisitos regulatorios",
+      "revenueModel": "SaaS subscription",
+      "suggestedPriceMonthly": 49,
+      "stack": [
+        "Node.js 20+",
+        "TypeScript",
+        "REST API",
+        "PostgreSQL"
+      ],
+      "integrationPoints": [
+        "Stripe",
+        "GitHub Packages",
+        "EU Data Residency"
+      ],
+      "estimatedBuildWeeks": 6,
+      "status": "planned-rd"
+    },
+    "generatedAt": "2026-06-13T07:58:09.872Z"
+  },
+  "RD-1781336603847-d1ns": {
+    "id": "RD-1781336603847-d1ns",
+    "name": "Carbon Accounting API for EU SMEs",
+    "category": "climatetech",
+    "euRelevance": "mandatory",
+    "investScore": 82,
+    "competitors": [
+      "Plan A",
+      "Sweep",
+      "Normative"
+    ],
+    "description": "CSRD-compliant carbon tracking for SMEs",
+    "spec": {
+      "targetMarket": "Global SMBs",
+      "revenueModel": "SaaS subscription",
+      "suggestedPriceMonthly": 49,
+      "stack": [
+        "Node.js 20+",
+        "TypeScript",
+        "REST API",
+        "PostgreSQL"
+      ],
+      "integrationPoints": [
+        "Stripe",
+        "GitHub Packages",
+        "EU Data Residency"
+      ],
+      "estimatedBuildWeeks": 6,
+      "status": "planned-rd"
+    },
+    "generatedAt": "2026-06-13T07:58:09.872Z"
+  },
+  "RD-1781336603847-qu70": {
+    "id": "RD-1781336603847-qu70",
+    "name": "PSD3 Open Banking Connector",
+    "category": "fintech",
+    "euRelevance": "high",
+    "investScore": 80,
+    "competitors": [
+      "Tink",
+      "TrueLayer",
+      "Plaid EU"
+    ],
+    "description": "Single API for EU banks under PSD3 directive",
+    "spec": {
+      "targetMarket": "EU SMBs con requisitos regulatorios",
+      "revenueModel": "Per-transaction + subscription",
+      "suggestedPriceMonthly": 49,
+      "stack": [
+        "Node.js 20+",
+        "TypeScript",
+        "REST API",
+        "PostgreSQL"
+      ],
+      "integrationPoints": [
+        "Stripe",
+        "GitHub Packages",
+        "EU Data Residency"
+      ],
+      "estimatedBuildWeeks": 6,
+      "status": "planned-rd"
+    },
+    "generatedAt": "2026-06-13T07:58:09.872Z"
+  },
+  "RD-1781336603847-a92q": {
+    "id": "RD-1781336603847-a92q",
+    "name": "Cross-Border VAT Automator",
+    "category": "fintech",
+    "euRelevance": "high",
+    "investScore": 80,
+    "competitors": [
+      "Quaderno",
+      "TaxJar EU",
+      "Octobat"
+    ],
+    "description": "Automate VAT across 27 EU countries for digital products",
+    "spec": {
+      "targetMarket": "EU SMBs con requisitos regulatorios",
+      "revenueModel": "Per-transaction + subscription",
+      "suggestedPriceMonthly": 49,
+      "stack": [
+        "Node.js 20+",
+        "TypeScript",
+        "REST API",
+        "PostgreSQL"
+      ],
+      "integrationPoints": [
+        "Stripe",
+        "GitHub Packages",
+        "EU Data Residency"
+      ],
+      "estimatedBuildWeeks": 6,
+      "status": "planned-rd"
+    },
+    "generatedAt": "2026-06-13T07:58:09.872Z"
+  }
+}

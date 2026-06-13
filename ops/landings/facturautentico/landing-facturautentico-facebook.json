@@ -3,7 +3,7 @@
   "productName": "FacturAutentica",
   "channelId": "facebook",
   "channelName": "Facebook",
-  "generatedAt": "2026-06-12T15:13:04.371Z",
+  "generatedAt": "2026-06-13T07:56:00.370Z",
   "status": "paused",
   "seo": {
     "title": "FacturAutentica en Facebook | Tiger Lab",
@@ -17,19 +17,19 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "Tu negocio merece herramientas profesionales. FacturAutentica",
-    "body": "FacturAutentica ya esta disponible.\n\nSi tu equipo:\n• Pasa mas de 5 horas/semana en reportes manuales\n• No tiene area de tecnologia dedicada\n• Esta creciendo y los procesos se estan quedando atras\n\nEsto es para ti.\n\nAPI Access, Automation, Reports.\n\nDesde $39/mo. Diagnostico gratis.",
+    "headline": "🤖 FacturAutentica - La historia de como dejamos de hacer procesos manuales",
+    "body": "FacturAutentica ya esta disponible.\n\nSi tu equipo:\n• Pasa mas de 5 horas/semana en deploys\n• No tiene area de tecnologia dedicada\n• Esta creciendo y los procesos se estan quedando atras\n\nEsto es para ti.\n\nAPI Access, Automation, Reports.\n\nDesde $39/mo. Diagnostico gratis.",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "comunitario, testimonial, conversacional"
   },
   "tracking": {
     "utmSource": "facebook",
     "utmCampaign": "landing-facturautentico-facebook",
-    "utmContent": "social-landing-1781277184371"
+    "utmContent": "social-landing-1781337360370"
   },
   "metrics": {
     "targetChars": 63206,
-    "actualChars": 391,
+    "actualChars": 395,
     "qualityScore": 21
   }
 }

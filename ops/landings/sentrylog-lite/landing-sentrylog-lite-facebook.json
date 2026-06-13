@@ -3,7 +3,7 @@
   "productName": "Sentrylog Lite",
   "channelId": "facebook",
   "channelName": "Facebook",
-  "generatedAt": "2026-06-12T15:13:04.365Z",
+  "generatedAt": "2026-06-13T07:56:00.361Z",
   "status": "planned",
   "seo": {
     "title": "Sentrylog Lite en Facebook | Tiger Lab",
@@ -17,7 +17,7 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "Sentrylog Lite ya esta disponible para equipos como el tuyo",
+    "headline": "🤖 Sentrylog Lite - La historia de como dejamos de hacer procesos manuales",
     "body": " 🚀 Lanzamos Sentrylog Lite para equipos pequenos en Mexico.\n\nHistoria rapida: Trabajamos con decenas de SMBs que nos decian \"no tenemos tiempo para implementar tecnologia\". Tienen el dinero, tienen la intencion, pero no el equipo interno.\n\nConstruimos Sentrylog Lite para ellos.\n\n🔹 API Access\n🔹 Automation\n🔹 Reports\n\nDesde $39/mo. 14 dias de prueba gratis.\n\nAgenda tu diagnostico: https://cal.com/victor-tigerlab/diagnostic\n\nComparte este post con alguien que este creciendo su operacion.",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "comunitario, testimonial, conversacional"
@@ -25,11 +25,11 @@
   "tracking": {
     "utmSource": "facebook",
     "utmCampaign": "landing-sentrylog-lite-facebook",
-    "utmContent": "social-landing-1781277184368"
+    "utmContent": "social-landing-1781337360361"
   },
   "metrics": {
     "targetChars": 63206,
-    "actualChars": 599,
+    "actualChars": 614,
     "qualityScore": 21
   }
 }

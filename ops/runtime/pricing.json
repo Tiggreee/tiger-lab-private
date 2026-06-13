@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T07:43:24.197Z",
+  "generatedAt": "2026-06-13T07:58:02.447Z",
   "totalPlans": 10,
   "plans": [
     {
@@ -12,7 +12,9 @@
       "tier": 1,
       "status": "paused",
       "suggestedPrice": 39,
-      "justification": "Starter (Tier 1) para FacturAutentico Cloud. Precio de mercado para SMBs en Mexico."
+      "marketRate": 39,
+      "productScore": 56,
+      "justification": ""
     },
     {
       "productId": "facturautentico-cloud",
@@ -24,7 +26,9 @@
       "tier": 2,
       "status": "paused",
       "suggestedPrice": 99,
-      "justification": "Pro (Tier 2) para FacturAutentico Cloud. Precio de mercado para SMBs en Mexico."
+      "marketRate": 99,
+      "productScore": 56,
+      "justification": ""
     },
     {
       "productId": "facturautentico-cloud",
@@ -36,7 +40,9 @@
       "tier": 3,
       "status": "paused",
       "suggestedPrice": 249,
-      "justification": "Enterprise (Tier 3) para FacturAutentico Cloud. Precio de mercado para SMBs en Mexico."
+      "marketRate": 249,
+      "productScore": 56,
+      "justification": ""
     },
     {
       "productId": "docflow-api",
@@ -48,7 +54,9 @@
       "tier": 1,
       "status": "active",
       "suggestedPrice": 39,
-      "justification": "Starter (Tier 1) para Docflow API. Precio de mercado para SMBs en Mexico."
+      "marketRate": 39,
+      "productScore": 84,
+      "justification": ""
     },
     {
       "productId": "docflow-api",
@@ -60,7 +68,9 @@
       "tier": 2,
       "status": "active",
       "suggestedPrice": 99,
-      "justification": "Pro (Tier 2) para Docflow API. Precio de mercado para SMBs en Mexico."
+      "marketRate": 99,
+      "productScore": 84,
+      "justification": ""
     },
     {
       "productId": "sentrylog-lite",
@@ -72,7 +82,9 @@
       "tier": 1,
       "status": "planned",
       "suggestedPrice": 39,
-      "justification": "Starter (Tier 1) para Sentrylog Lite. Precio de mercado para SMBs en Mexico."
+      "marketRate": 39,
+      "productScore": 38,
+      "justification": ""
     },
     {
       "productId": "script-premium-kit",
@@ -84,7 +96,9 @@
       "tier": 1,
       "status": "active",
       "suggestedPrice": 39,
-      "justification": "Starter (Tier 1) para Script Premium Kit. Precio de mercado para SMBs en Mexico."
+      "marketRate": 39,
+      "productScore": 84,
+      "justification": ""
     },
     {
       "productId": "script-premium-kit",
@@ -96,7 +110,9 @@
       "tier": 2,
       "status": "active",
       "suggestedPrice": 99,
-      "justification": "Pro (Tier 2) para Script Premium Kit. Precio de mercado para SMBs en Mexico."
+      "marketRate": 99,
+      "productScore": 84,
+      "justification": ""
     },
     {
       "productId": "facturautentico",
@@ -108,7 +124,9 @@
       "tier": 1,
       "status": "paused",
       "suggestedPrice": 39,
-      "justification": "Starter (Tier 1) para FacturAutentica. Precio de mercado para SMBs en Mexico."
+      "marketRate": 39,
+      "productScore": 56,
+      "justification": ""
     },
     {
       "productId": "facturautentico",
@@ -120,39 +138,123 @@
       "tier": 2,
       "status": "paused",
       "suggestedPrice": 99,
-      "justification": "Pro (Tier 2) para FacturAutentica. Precio de mercado para SMBs en Mexico."
+      "marketRate": 99,
+      "productScore": 56,
+      "justification": ""
     }
   ],
   "revenue": {
-    "totalMonthly": 840,
-    "currency": "USD"
+    "totalMonthly": 276,
+    "projectedMonthly": 445.2,
+    "currency": "USD",
+    "activeProductCount": 4,
+    "productsInPipeline": 3
   },
   "recommendations": [
     {
+      "product": "FacturAutentico Cloud",
+      "plan": "Starter",
+      "action": "hold",
+      "currentPrice": 39,
+      "suggestedPrice": 39,
+      "reason": "Producto pausado — habilitar pricing al resolver blocker (PAC Finkok)",
+      "confidence": 100
+    },
+    {
+      "product": "FacturAutentico Cloud",
+      "plan": "Pro",
+      "action": "hold",
+      "currentPrice": 99,
+      "suggestedPrice": 99,
+      "reason": "Producto pausado — habilitar pricing al resolver blocker (PAC Finkok)",
+      "confidence": 100
+    },
+    {
+      "product": "FacturAutentico Cloud",
+      "plan": "Enterprise",
+      "action": "hold",
+      "currentPrice": 249,
+      "suggestedPrice": 249,
+      "reason": "Producto pausado — habilitar pricing al resolver blocker (PAC Finkok)",
+      "confidence": 100
+    },
+    {
       "product": "Docflow API",
       "plan": "Starter",
       "action": "maintain",
-      "reason": "Precio activo y dentro del rango de mercado"
+      "currentPrice": 39,
+      "suggestedPrice": 39,
+      "reason": "Precio competitivo. Monitorear conversion y demanda. Score: 84/100",
+      "confidence": 90
     },
     {
       "product": "Docflow API",
       "plan": "Pro",
       "action": "maintain",
-      "reason": "Precio activo y dentro del rango de mercado"
+      "currentPrice": 99,
+      "suggestedPrice": 99,
+      "reason": "Precio competitivo. Monitorear conversion y demanda. Score: 84/100",
+      "confidence": 90
+    },
+    {
+      "product": "Sentrylog Lite",
+      "plan": "Starter",
+      "action": "set-launch",
+      "currentPrice": 0,
+      "suggestedPrice": 39,
+      "reason": "Precio de lanzamiento alineado a mercado: $39/mo. Ajustar tras 3 meses.",
+      "confidence": 85
     },
     {
       "product": "Script Premium Kit",
       "plan": "Starter",
       "action": "maintain",
-      "reason": "Precio activo y dentro del rango de mercado"
+      "currentPrice": 39,
+      "suggestedPrice": 39,
+      "reason": "Precio competitivo. Monitorear conversion y demanda. Score: 84/100",
+      "confidence": 90
     },
     {
       "product": "Script Premium Kit",
       "plan": "Pro",
       "action": "maintain",
-      "reason": "Precio activo y dentro del rango de mercado"
+      "currentPrice": 99,
+      "suggestedPrice": 99,
+      "reason": "Precio competitivo. Monitorear conversion y demanda. Score: 84/100",
+      "confidence": 90
+    },
+    {
+      "product": "FacturAutentica",
+      "plan": "Starter",
+      "action": "hold",
+      "currentPrice": 39,
+      "suggestedPrice": 39,
+      "reason": "Producto pausado — habilitar pricing al resolver blocker (PAC Finkok)",
+      "confidence": 100
+    },
+    {
+      "product": "FacturAutentica",
+      "plan": "Pro",
+      "action": "hold",
+      "currentPrice": 99,
+      "suggestedPrice": 99,
+      "reason": "Producto pausado — habilitar pricing al resolver blocker (PAC Finkok)",
+      "confidence": 100
     }
   ],
+  "actions": {
+    "increase": 0,
+    "maintain": 4,
+    "hold": 5,
+    "setLaunch": 1
+  },
+  "pipelineHealth": {
+    "connectedLeads": 25,
+    "convertedLeads": 0,
+    "conversionRate": 0,
+    "targetConversion": 15,
+    "status": "cold-start"
+  },
   "alerts": [
     {
       "product": "FacturAutentico Cloud",
