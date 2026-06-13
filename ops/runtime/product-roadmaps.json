@@ -277,5 +277,474 @@
     "estimatedSprints": 6,
     "status": "EARLY_STAGE",
     "priorityProducts": "low"
+  },
+  "RD-1781334957297-zd94": {
+    "currentScore": 36,
+    "targetScore95": 61,
+    "targetScore90": 48,
+    "steps": [
+      {
+        "priority": "P0",
+        "action": "Completar features core faltantes de DevTools GDPR Middleware: revisar backlog y priorizar",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 60
+      },
+      {
+        "priority": "P0",
+        "action": "Configurar pricing + checkout + payment integration para DevTools GDPR Middleware",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 50
+      },
+      {
+        "priority": "P0",
+        "action": "Hardening técnico: tests, types, error handling, performance para DevTools GDPR Middleware",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para DevTools GDPR Middleware",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Investigar mercado para DevTools GDPR Middleware: entrevistar 5 prospects, validar propuesta de valor",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Crear README, API docs, onboarding guide para DevTools GDPR Middleware",
+        "effort": "bajo",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Automatizar CI/CD, tests, deploy para DevTools GDPR Middleware",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 35
+      },
+      {
+        "priority": "P0",
+        "action": "Benchmark contra competidores: implementar features diferenciadores clave",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 33
+      }
+    ],
+    "estimatedHours": 42,
+    "estimatedSprints": 6,
+    "status": "EARLY_STAGE",
+    "priorityProducts": "low"
+  },
+  "RD-1781334957297-elwg": {
+    "currentScore": 36,
+    "targetScore95": 61,
+    "targetScore90": 48,
+    "steps": [
+      {
+        "priority": "P0",
+        "action": "Completar features core faltantes de EU AI Act Readiness Platform: revisar backlog y priorizar",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 60
+      },
+      {
+        "priority": "P0",
+        "action": "Configurar pricing + checkout + payment integration para EU AI Act Readiness Platform",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 50
+      },
+      {
+        "priority": "P0",
+        "action": "Hardening técnico: tests, types, error handling, performance para EU AI Act Readiness Platform",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para EU AI Act Readiness Platform",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Investigar mercado para EU AI Act Readiness Platform: entrevistar 5 prospects, validar propuesta de valor",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Crear README, API docs, onboarding guide para EU AI Act Readiness Platform",
+        "effort": "bajo",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Automatizar CI/CD, tests, deploy para EU AI Act Readiness Platform",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 35
+      },
+      {
+        "priority": "P0",
+        "action": "Benchmark contra competidores: implementar features diferenciadores clave",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 33
+      }
+    ],
+    "estimatedHours": 42,
+    "estimatedSprints": 6,
+    "status": "EARLY_STAGE",
+    "priorityProducts": "low"
+  },
+  "RD-1781334957297-xtfx": {
+    "currentScore": 36,
+    "targetScore95": 61,
+    "targetScore90": 48,
+    "steps": [
+      {
+        "priority": "P0",
+        "action": "Completar features core faltantes de GDPR Auto-Compliance Scanner: revisar backlog y priorizar",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 60
+      },
+      {
+        "priority": "P0",
+        "action": "Configurar pricing + checkout + payment integration para GDPR Auto-Compliance Scanner",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 50
+      },
+      {
+        "priority": "P0",
+        "action": "Hardening técnico: tests, types, error handling, performance para GDPR Auto-Compliance Scanner",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para GDPR Auto-Compliance Scanner",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Investigar mercado para GDPR Auto-Compliance Scanner: entrevistar 5 prospects, validar propuesta de valor",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Crear README, API docs, onboarding guide para GDPR Auto-Compliance Scanner",
+        "effort": "bajo",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Automatizar CI/CD, tests, deploy para GDPR Auto-Compliance Scanner",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 35
+      },
+      {
+        "priority": "P0",
+        "action": "Benchmark contra competidores: implementar features diferenciadores clave",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 33
+      }
+    ],
+    "estimatedHours": 42,
+    "estimatedSprints": 6,
+    "status": "EARLY_STAGE",
+    "priorityProducts": "low"
+  },
+  "RD-1781334957297-s02p": {
+    "currentScore": 36,
+    "targetScore95": 61,
+    "targetScore90": 48,
+    "steps": [
+      {
+        "priority": "P0",
+        "action": "Completar features core faltantes de SaaS Localization Engine EU: revisar backlog y priorizar",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 60
+      },
+      {
+        "priority": "P0",
+        "action": "Configurar pricing + checkout + payment integration para SaaS Localization Engine EU",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 50
+      },
+      {
+        "priority": "P0",
+        "action": "Hardening técnico: tests, types, error handling, performance para SaaS Localization Engine EU",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para SaaS Localization Engine EU",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Investigar mercado para SaaS Localization Engine EU: entrevistar 5 prospects, validar propuesta de valor",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Crear README, API docs, onboarding guide para SaaS Localization Engine EU",
+        "effort": "bajo",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Automatizar CI/CD, tests, deploy para SaaS Localization Engine EU",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 35
+      },
+      {
+        "priority": "P0",
+        "action": "Benchmark contra competidores: implementar features diferenciadores clave",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 33
+      }
+    ],
+    "estimatedHours": 42,
+    "estimatedSprints": 6,
+    "status": "EARLY_STAGE",
+    "priorityProducts": "low"
+  },
+  "RD-1781334957297-am67": {
+    "currentScore": 36,
+    "targetScore95": 61,
+    "targetScore90": 48,
+    "steps": [
+      {
+        "priority": "P0",
+        "action": "Completar features core faltantes de Carbon Accounting API for EU SMEs: revisar backlog y priorizar",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 60
+      },
+      {
+        "priority": "P0",
+        "action": "Configurar pricing + checkout + payment integration para Carbon Accounting API for EU SMEs",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 50
+      },
+      {
+        "priority": "P0",
+        "action": "Hardening técnico: tests, types, error handling, performance para Carbon Accounting API for EU SMEs",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Carbon Accounting API for EU SMEs",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Investigar mercado para Carbon Accounting API for EU SMEs: entrevistar 5 prospects, validar propuesta de valor",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Crear README, API docs, onboarding guide para Carbon Accounting API for EU SMEs",
+        "effort": "bajo",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Automatizar CI/CD, tests, deploy para Carbon Accounting API for EU SMEs",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 35
+      },
+      {
+        "priority": "P0",
+        "action": "Benchmark contra competidores: implementar features diferenciadores clave",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 33
+      }
+    ],
+    "estimatedHours": 42,
+    "estimatedSprints": 6,
+    "status": "EARLY_STAGE",
+    "priorityProducts": "low"
+  },
+  "RD-1781334957297-1j0x": {
+    "currentScore": 36,
+    "targetScore95": 61,
+    "targetScore90": 48,
+    "steps": [
+      {
+        "priority": "P0",
+        "action": "Completar features core faltantes de PSD3 Open Banking Connector: revisar backlog y priorizar",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 60
+      },
+      {
+        "priority": "P0",
+        "action": "Configurar pricing + checkout + payment integration para PSD3 Open Banking Connector",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 50
+      },
+      {
+        "priority": "P0",
+        "action": "Hardening técnico: tests, types, error handling, performance para PSD3 Open Banking Connector",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para PSD3 Open Banking Connector",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Investigar mercado para PSD3 Open Banking Connector: entrevistar 5 prospects, validar propuesta de valor",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Crear README, API docs, onboarding guide para PSD3 Open Banking Connector",
+        "effort": "bajo",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Automatizar CI/CD, tests, deploy para PSD3 Open Banking Connector",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 35
+      },
+      {
+        "priority": "P0",
+        "action": "Benchmark contra competidores: implementar features diferenciadores clave",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 33
+      }
+    ],
+    "estimatedHours": 42,
+    "estimatedSprints": 6,
+    "status": "EARLY_STAGE",
+    "priorityProducts": "low"
+  },
+  "RD-1781334957297-cbxf": {
+    "currentScore": 36,
+    "targetScore95": 61,
+    "targetScore90": 48,
+    "steps": [
+      {
+        "priority": "P0",
+        "action": "Completar features core faltantes de Cross-Border VAT Automator: revisar backlog y priorizar",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 60
+      },
+      {
+        "priority": "P0",
+        "action": "Configurar pricing + checkout + payment integration para Cross-Border VAT Automator",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 50
+      },
+      {
+        "priority": "P0",
+        "action": "Hardening técnico: tests, types, error handling, performance para Cross-Border VAT Automator",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Cross-Border VAT Automator",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 45
+      },
+      {
+        "priority": "P0",
+        "action": "Investigar mercado para Cross-Border VAT Automator: entrevistar 5 prospects, validar propuesta de valor",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Crear README, API docs, onboarding guide para Cross-Border VAT Automator",
+        "effort": "bajo",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Automatizar CI/CD, tests, deploy para Cross-Border VAT Automator",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 35
+      },
+      {
+        "priority": "P0",
+        "action": "Benchmark contra competidores: implementar features diferenciadores clave",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 33
+      }
+    ],
+    "estimatedHours": 42,
+    "estimatedSprints": 6,
+    "status": "EARLY_STAGE",
+    "priorityProducts": "low"
   }
 }

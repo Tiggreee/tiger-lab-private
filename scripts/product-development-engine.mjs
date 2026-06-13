@@ -214,15 +214,36 @@ function generateRoadmap(product, score, benchmarks) {
 }
 
 async function main() {
+  // Support R&D pipeline input — score INVEST ideas alongside existing products
+  const rndInput = process.argv.includes('--rnd-input') ? process.argv[process.argv.indexOf('--rnd-input') + 1] : null;
+  let rndProducts = [];
+  
+  if (rndInput) {
+    const rnd = loadJSON(path.resolve(rndInput));
+    if (rnd?.investIdeas?.length) {
+      rndProducts = rnd.investIdeas.map(idea => ({
+        id: idea.id || `rnd-${idea.name.toLowerCase().replace(/[^a-z0-9]+/g,'-')}`,
+        name: idea.name,
+        status: 'planned',
+        plans: 'starter',
+        description: idea.description,
+        rndScore: idea.totalScore,
+        rndCategory: idea.category,
+        euRelevance: idea.euRelevance
+      }));
+      console.log(`\n🔬 R&D Pipeline detected: ${rndProducts.length} INVEST ideas to score`);
+    }
+  }
+  
   const catalog = loadJSON(CATALOG_PATH);
   if (!catalog || !catalog.products) { console.error('No products catalog found'); process.exit(1); }
 
-  const products = catalog.products;
+  const products = [...catalog.products, ...rndProducts];
   const history = loadJSON(HISTORY_PATH) || { snapshots: [] };
   const currentSnapshot = { generatedAt: new Date().toISOString(), scores: {} };
 
   console.log(`\n=== PRODUCT DEVELOPMENT ENGINE ===`);
-  console.log(`Products to score: ${products.length}`);
+  console.log(`Products to score: ${products.length}${rndProducts.length ? ` (${catalog.products.length} existing + ${rndProducts.length} R&D)` : ''}`);
 
   const allResults = [];
   let highScoreCount = 0;
