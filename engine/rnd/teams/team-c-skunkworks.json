@@ -1,0 +1,66 @@
+{
+  "teamId": "rnd-intl",
+  "name": "Team C — International Skunkworks",
+  "profile": "low-profile",
+  "members": 5,
+  "scope": "limited — scientific/technological discovery only. No market context.",
+  "developmentTime": "extended — no sprint pressure",
+  "mission": "2 products: one deliverable + profitable, one SURPRISE",
+  "researchBots": {
+    "enabled": true,
+    "sources": [
+      "https://arxiv.org/search/?searchtype=all&query=provisioning+autonomous+systems",
+      "https://scholar.google.com/scholar?q=autonomous+resource+allocation+ai",
+      "https://pubmed.ncbi.nlm.nih.gov/?term=self-organizing+systems",
+      "https://patents.google.com/?q=autonomous+provisioning&language=EN",
+      "https://github.com/topics/self-hosted?o=desc&s=stars",
+      "https://news.ycombinator.com/"
+    ],
+    "frequency": "daily",
+    "method": "Pattern extraction from scientific + patent + OSS data"
+  },
+  "products": [
+    {
+      "id": "intl-p1",
+      "name": "Autonomous Provisioning Mesh (APM)",
+      "description": "Self-assembling infrastructure mesh that provisions compute, storage, and networking from idle resources across any connected devices. Zero-config. Peer-to-peer resource sharing. Pay-per-use crypto settlement.",
+      "scientificBasis": [
+        "Swarm intelligence algorithms (Nature, 2024)",
+        "Federated resource allocation (IEEE TPDS, 2025)",
+        "Edge-to-cloud continuum (ACM Computing Surveys, 2025)",
+        "Byzantine fault tolerance in heterogeneous networks (arXiv, 2026)"
+      ],
+      "deliverable": "Yes — Node.js agent that runs on any device. Discovers peers. Shares idle CPU/RAM/storage. Built on libp2p + WebRTC.",
+      "profitable": "Yes — take 5% of crypto microtransactions between peers. No upfront cost. Monetizes idle hardware.",
+      "whatWeHave": "Node.js engine, Railway deploy, GitHub Actions, Stripe crypto, P2P libs available",
+      "status": "RESEARCHING",
+      "viabilityScore": 85
+    },
+    {
+      "id": "intl-p2",
+      "name": "Temporal Causality Engine (TCE)",
+      "description": "AI system that ingests global scientific publications, patent filings, and technology adoption curves to PREDICT the NEXT 5 years of technological convergence. Not forecasting — CAUSAL INFERENCE on technology evolution. Answers: 'What will be possible in 3 years that nobody sees today?'",
+      "scientificBasis": [
+        "Causal inference in complex systems (Science, 2025)",
+        "Technology S-curve prediction (Nature Scientific Reports, 2024)",
+        "Patent citation networks as innovation predictors (Research Policy, 2026)",
+        "Granger causality in technological convergence (MIT Sloan, 2025)"
+      ],
+      "deliverable": "Yes — API endpoint that returns top 10 predicted convergences with confidence scores and scientific basis.",
+      "surprise": "PREDICTS the future from scientific causality, not from trend extrapolation. No other tool does this.",
+      "whatWeHave": "arXiv API, patent DBs, LLM for text mining, causal inference libs",
+      "status": "RESEARCHING",
+      "viabilityScore": 78
+    }
+  ],
+  "patternDetection": {
+    "focus": [
+      "Technology convergence clusters",
+      "Scientific paper citation cascades",
+      "Patent filing acceleration curves",
+      "OSS repository growth anomalies",
+      "Research funding pattern shifts"
+    ],
+    "output": "Weekly convergence report → feeds Product 2 (TCE)"
+  }
+}
