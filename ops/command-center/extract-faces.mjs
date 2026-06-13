@@ -52,7 +52,7 @@ async function smartCropFace(imagePath, baseName, faceIndex, stripTop, stripHeig
   const outPath = resolve(OUT, `${baseName}_face${faceIndex + 1}.png`);
   await sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } })
     .extract({ left: cropL, top: cropT, width: cropS, height: cropS })
-    .resize(273, 273, { fit: 'cover', position: 'center' })
+    .resize(273, 340, { fit: 'cover', position: 'center' })
     .png().toFile(outPath);
 
   console.log(`   ✅ Face ${faceIndex + 1}: bounds=[${minX}-${maxX},${minY}-${maxY}], crop=${cropS}×${cropS}, content=${content}`);
