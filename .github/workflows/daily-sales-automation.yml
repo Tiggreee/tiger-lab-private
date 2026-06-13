@@ -3,7 +3,7 @@ name: daily-sales-automation
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 14 * * 1-5'
+    - cron: '0 12 * * 1-5'
 
 permissions:
   contents: write
