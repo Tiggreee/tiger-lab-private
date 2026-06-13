@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T16:39:51.704Z",
+  "generatedAt": "2026-06-13T17:37:23.880Z",
   "overallStatus": "FAILURES_DETECTED",
   "summary": {
     "total": 27,
@@ -98,12 +98,13 @@
     {
       "label": "Autopilot Reports Generated",
       "status": "PASS",
-      "detail": "6 autopilot reports",
+      "detail": "7 autopilot reports",
       "evidence": [
         "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-12-1781265495133.json",
         "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-12-1781277184224.json",
         "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-13-1781365215124.json",
         "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-13-1781368780013.json",
+        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-13-1781372231557.json",
         "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-linkedin-today-1781250279006.json",
         "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-produccion-week1-1781252149724.json"
       ]

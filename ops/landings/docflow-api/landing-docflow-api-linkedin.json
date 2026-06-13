@@ -3,7 +3,7 @@
   "productName": "Docflow API",
   "channelId": "linkedin",
   "channelName": "LinkedIn",
-  "generatedAt": "2026-06-13T16:39:40.128Z",
+  "generatedAt": "2026-06-13T17:37:11.696Z",
   "status": "active",
   "seo": {
     "title": "Docflow API en LinkedIn | Tiger Lab",
@@ -17,19 +17,19 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "Docflow API: La herramienta que tu equipo necesita para dejar de hacer procesos manuales",
-    "body": "Docflow API no es solo software. Es la respuesta a \"no tenemos tiempo para implementar tecnologia\".\n\nConstruimos para el founder que hace de CTO, el COO que tapita incendios, el equipo que crece sin procesos.\n\n✅ API Access\n✅ Automation\n✅ Reports\n✅ Support\n\nResultados en semanas, no en meses. Desde $39/mo.",
+    "headline": "De lo manual a lo automatico: Docflow API",
+    "body": "En Tiger Lab construimos Docflow API para resolver los problemas reales de las SMBs en Mexico.\n\nSabemos que la mayoria de los equipos pequenos no tienen un area de tecnologia dedicada. Por eso creamos una herramienta que:\n• API Access\n• Automation\n• Reports\n\nCon $39/mo empiezas. Sin contratos largos. Sin equipo tecnico.\n\nLa pregunta no es si necesitas automatizar. Es cuanto tiempo mas puedes permitirte no hacerlo.\n\nAgenda un diagnostico gratuito de 15 min y descubre como Docflow API puede transformar tu operacion.",
     "cta": "Agenda tu diagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
     "tone": "thought-leadership, profesional, casos de uso"
   },
   "tracking": {
     "utmSource": "linkedin",
     "utmCampaign": "landing-docflow-api-linkedin",
-    "utmContent": "social-landing-1781368780128"
+    "utmContent": "social-landing-1781372231696"
   },
   "metrics": {
     "targetChars": 2800,
-    "actualChars": 466,
-    "qualityScore": 39
+    "actualChars": 632,
+    "qualityScore": 46
   }
 }

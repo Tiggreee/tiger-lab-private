@@ -3,7 +3,7 @@
   "productName": "FacturAutentica",
   "channelId": "twitter",
   "channelName": "X / Twitter",
-  "generatedAt": "2026-06-13T16:39:40.139Z",
+  "generatedAt": "2026-06-13T17:37:11.707Z",
   "status": "paused",
   "seo": {
     "title": "FacturAutentica en X / Twitter | Tiger Lab",
@@ -17,7 +17,7 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "FacturAutentica para equipos que quieren crecer sin contratar mas gente.",
+    "headline": "FacturAutentica → Deja de perder tiempo en procesos manuales.",
     "body": "FacturAutentica esta vivo.\n\nAPI Access\nAutomation\n\n$39/mo · Sin equipo tecnico necesario\nDiagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "directo, punchy, con call-to-action"
@@ -25,11 +25,11 @@
   "tracking": {
     "utmSource": "twitter",
     "utmCampaign": "landing-facturautentico-twitter",
-    "utmContent": "social-landing-1781368780139"
+    "utmContent": "social-landing-1781372231707"
   },
   "metrics": {
     "targetChars": 280,
-    "actualChars": 271,
-    "qualityScore": 69
+    "actualChars": 260,
+    "qualityScore": 74
   }
 }

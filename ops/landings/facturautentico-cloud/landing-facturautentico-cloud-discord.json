@@ -3,7 +3,7 @@
   "productName": "FacturAutentico Cloud",
   "channelId": "discord",
   "channelName": "Discord",
-  "generatedAt": "2026-06-13T16:39:40.127Z",
+  "generatedAt": "2026-06-13T17:37:11.695Z",
   "status": "paused",
   "seo": {
     "title": "FacturAutentico Cloud en Discord | Tiger Lab",
@@ -17,7 +17,7 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "FacturAutentico Cloud - Para devs que construyen el futuro de las SMBs",
+    "headline": "FacturAutentico Cloud - Release Notes & Tech Specs",
     "body": "**FacturAutentico Cloud Release**\n\nTarget: SMBs in Mexico (3-50 employees)\nPricing: $39/mo\nTrial: 14 days, no credit card required\n\n**Integration Guide**:\n1. Book diagnostic\n2. We configure your instance\n3. Start automating\n\nQuestions? Open a ticket.",
     "cta": "Proximamente. Notificame cuando este disponible.",
     "tone": "tecnico, detallado, para early adopters"
@@ -25,11 +25,11 @@
   "tracking": {
     "utmSource": "discord",
     "utmCampaign": "landing-facturautentico-cloud-discord",
-    "utmContent": "social-landing-1781368780127"
+    "utmContent": "social-landing-1781372231695"
   },
   "metrics": {
     "targetChars": 2000,
-    "actualChars": 368,
-    "qualityScore": 41
+    "actualChars": 348,
+    "qualityScore": 40
   }
 }
