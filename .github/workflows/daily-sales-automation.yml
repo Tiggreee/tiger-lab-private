@@ -42,6 +42,10 @@ jobs:
           node-version: 22
           cache: npm
 
+      # 0. Install dependencies
+      - name: Install deps
+        run: npm ci
+
       # 1. Lead Engine — seed + enrich + export (P2 checklist)
       - name: Lead Engine
         run: node scripts/lead-engine.mjs --mode seed && node scripts/lead-engine.mjs --mode enrich && node scripts/lead-engine.mjs --mode export
