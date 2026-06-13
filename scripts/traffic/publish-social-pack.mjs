@@ -254,49 +254,65 @@ function extractLinkedInOrgId(input) {
 async function postLinkedIn(text) {
   requiredEnv(['LINKEDIN_ACCESS_TOKEN']);
   const token = process.env.LINKEDIN_ACCESS_TOKEN;
-  const headers = { Authorization: `Bearer ${token}`, 'X-Restli-Protocol-Version': '2.0.0', 'LinkedIn-Version': '202401', 'Content-Type': 'application/json' };
-
-  if (process.env.LINKEDIN_ORG_ID) {
-    const orgId = extractLinkedInOrgId(process.env.LINKEDIN_ORG_ID);
-    const payload = {
-      author: `urn:li:organization:${orgId}`,
-      lifecycleState: 'PUBLISHED',
-      specificContent: { 'com.linkedin.ugc.ShareContent': { shareCommentary: { text }, shareMediaCategory: 'NONE' } },
-      visibility: { 'com.linkedin.ugc.MemberNetworkVisibility': 'PUBLIC' }
-    };
-    const resp = await fetch('https://api.linkedin.com/v2/ugcPosts', { method: 'POST', headers, body: JSON.stringify(payload) });
-    const body = await resp.text();
-    if (resp.ok) return body;
-    if (resp.status === 401 || resp.status === 403) console.log('Org post failed, falling back to member post...');
-    else throw new Error(`LinkedIn API ${resp.status}: ${body}`);
-  }
-
-  const meResp = await fetch('https://api.linkedin.com/v2/me', { headers: { ...headers, 'X-Restli-Protocol-Version': '2.0.0' } });
+  
+  // Step 1: Get Person ID from /v2/me (uses r_basicprofile)
+  const meResp = await fetch('https://api.linkedin.com/v2/me', {
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'X-Restli-Protocol-Version': '2.0.0',
+      'Linkedin-Version': '202506'
+    }
+  });
+  
   if (!meResp.ok) {
     const meErr = await meResp.text();
-    throw new Error(`LinkedIn /v2/me API ${meResp.status}: ${meErr}`);
+    throw new Error(`LinkedIn /v2/me ${meResp.status}: ${meErr}`);
   }
+  
   const me = await meResp.json();
   const personId = me.id;
   if (!personId) throw new Error('Could not resolve LinkedIn person ID from /v2/me response');
-
-  const versions = ['202401', '202404', '202407', '202301'];
-  for (const ver of versions) {
-    const restResp = await fetch('https://api.linkedin.com/rest/posts', {
-      method: 'POST',
-      headers: { ...headers, 'LinkedIn-Version': ver },
-      body: JSON.stringify({
-        author: `urn:li:person:${personId}`,
-        commentary: text,
-        visibility: 'PUBLIC',
-        distribution: { feedDistribution: 'MAIN_FEED', targetEntities: [], thirdPartyDistributionChannels: [] },
-        lifecycleState: 'PUBLISHED'
-      })
-    });
-    if (restResp.ok) return await restResp.text();
+  
+  // Step 2: Post using the REST API (not deprecated v2/ugcPosts)
+  // Documentation: https://learn.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/posts-api
+  const postResp = await fetch('https://api.linkedin.com/rest/posts', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${token}`,
+      'X-Restli-Protocol-Version': '2.0.0',
+      'Linkedin-Version': '202506',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      author: `urn:li:person:${personId}`,
+      commentary: text,
+      visibility: 'PUBLIC',
+      distribution: {
+        feedDistribution: 'MAIN_FEED',
+        targetEntities: [],
+        thirdPartyDistributionChannels: []
+      },
+      lifecycleState: 'PUBLISHED',
+      isReshareDisabledByAuthor: false
+    })
+  });
+  
+  const body = await postResp.text();
+  
+  if (postResp.ok) {
+    return body;
   }
-
-  throw new Error('LinkedIn API exhausted all version attempts. Ensure app has Share on LinkedIn product enabled.');
+  
+  // Parse error for better diagnostics
+  let errorCode = '';
+  let errorMessage = '';
+  try {
+    const parsed = JSON.parse(body);
+    errorCode = parsed.status || parsed.errorCode || parsed.serviceErrorCode || '';
+    errorMessage = parsed.message || parsed.errorMessage || parsed.title || '';
+  } catch {}
+  
+  throw new Error(`LinkedIn API ${postResp.status} ${errorCode}: ${errorMessage}`);
 }
 
 function buildOAuth1Header({ method, url, consumerKey, consumerSecret, token, tokenSecret }) {
