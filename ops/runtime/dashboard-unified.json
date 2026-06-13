@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T15:40:25.824Z",
+  "generatedAt": "2026-06-13T16:39:51.642Z",
   "monetization": {
     "leadsToday": 10,
     "generatedContent": 10,
@@ -136,7 +136,7 @@
           "telegram",
           "discord"
         ],
-        "generatedAt": "2026-06-13T15:40:15.280Z"
+        "generatedAt": "2026-06-13T16:39:40.141Z"
       },
       {
         "file": "social-pack-facturautentico-cloud-pilot.json",
@@ -442,7 +442,7 @@
   },
   "landings": {
     "title": "Tiger Lab - Social Landing Pages Index",
-    "generatedAt": "2026-06-13T15:40:15.279Z",
+    "generatedAt": "2026-06-13T16:39:40.140Z",
     "summary": {
       "totalProducts": 5,
       "activeProducts": 2,
@@ -531,7 +531,7 @@
     "note": "Cada landing page esta optimizada para el tono y formato de su canal social."
   },
   "agentMonitor": {
-    "generatedAt": "2026-06-13T15:40:25.582Z",
+    "generatedAt": "2026-06-13T16:39:51.451Z",
     "summary": {
       "totalAgents": 22,
       "activeAgents": 22,
@@ -983,57 +983,5 @@
     "dashboard": "success",
     "checkout": "success",
     "gate": "GO"
-  },
-  "productEngine": {
-    "generatedAt": "2026-06-13T16:37:06.506Z",
-    "engine": {
-      "averageScore": 64,
-      "productsAt95": 0,
-      "productsOnTrack95": 0,
-      "productsAt90plus": 0,
-      "productsAt75plus": 2,
-      "totalBenchmarks": 5,
-      "totalCompetitors": 20,
-      "estimatedTotalEffortHours": 146
-    },
-    "topProducts": [
-      {
-        "name": "Docflow API",
-        "score": 84,
-        "tier": "P3",
-        "status": "active"
-      },
-      {
-        "name": "Script Premium Kit",
-        "score": 84,
-        "tier": "P3",
-        "status": "active"
-      },
-      {
-        "name": "FacturAutentico Cloud",
-        "score": 56,
-        "tier": "P1",
-        "status": "paused"
-      },
-      {
-        "name": "FacturAutentica",
-        "score": 56,
-        "tier": "P1",
-        "status": "paused"
-      },
-      {
-        "name": "Sentrylog Lite",
-        "score": 38,
-        "tier": "P1",
-        "status": "planned"
-      }
-    ],
-    "priorityQueue": {
-      "target95": [
-        "Docflow API",
-        "Script Premium Kit"
-      ],
-      "engineReady": []
-    }
   }
 }

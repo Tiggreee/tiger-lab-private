@@ -3,7 +3,7 @@
   "productName": "Script Premium Kit",
   "channelId": "discord",
   "channelName": "Discord",
-  "generatedAt": "2026-06-13T15:40:15.276Z",
+  "generatedAt": "2026-06-13T16:39:40.137Z",
   "status": "active",
   "seo": {
     "title": "Script Premium Kit en Discord | Tiger Lab",
@@ -17,7 +17,7 @@
     "ogImage": null
   },
   "copy": {
-    "headline": "Script Premium Kit - Para devs que construyen el futuro de las SMBs",
+    "headline": "Script Premium Kit - Release Notes & Tech Specs",
     "body": "**Script Premium Kit — Now Available**\n\n**Status**: Active | **Pricing**: $39/mo\n**Stack**: Node.js 20+, TypeScript, REST API\n**Auth**: API Key via header `X-API-Key`\n\n**Features**:\n• `api-access`\n• `automation`\n• `reports`\n• `support`\n\n**Docs**: https://tigerlab.dev/docs/script-premium-kit\n**Support**: Discord ticket or victor@tigerlab.dev\n\nTo get started, book a diagnostic: https://cal.com/victor-tigerlab/diagnostic",
     "cta": "Agenda tu diagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
     "tone": "tecnico, detallado, para early adopters"
@@ -25,11 +25,11 @@
   "tracking": {
     "utmSource": "discord",
     "utmCampaign": "landing-script-premium-kit-discord",
-    "utmContent": "social-landing-1781365215276"
+    "utmContent": "social-landing-1781368780137"
   },
   "metrics": {
     "targetChars": 2000,
-    "actualChars": 560,
-    "qualityScore": 52
+    "actualChars": 540,
+    "qualityScore": 51
   }
 }

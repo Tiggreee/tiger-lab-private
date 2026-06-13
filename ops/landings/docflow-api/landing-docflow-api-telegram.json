@@ -3,7 +3,7 @@
   "productName": "Docflow API",
   "channelId": "telegram",
   "channelName": "Telegram",
-  "generatedAt": "2026-06-13T15:40:15.273Z",
+  "generatedAt": "2026-06-13T16:39:40.129Z",
   "status": "active",
   "seo": {
     "title": "Docflow API en Telegram | Tiger Lab",
@@ -18,18 +18,18 @@
   },
   "copy": {
     "headline": "Docflow API: Precio accesible, resultados reales",
-    "body": "Docflow API disponible.\n\n• API Access\n• Automation\n\n$39/mes · 14 dias gratis\n→ https://cal.com/victor-tigerlab/diagnostic",
+    "body": "Docflow API - Automatizacion directa para tu operacion.\n\n• API Access\n• Automation\n• Reports\n\nPrecio: $39/mo\nPrueba: 14 dias gratis\n\nAgenda: https://cal.com/victor-tigerlab/diagnostic",
     "cta": "Agenda tu diagnostico gratis: https://cal.com/victor-tigerlab/diagnostic",
     "tone": "directo, propositivo, enlace directo"
   },
   "tracking": {
     "utmSource": "telegram",
     "utmCampaign": "landing-docflow-api-telegram",
-    "utmContent": "social-landing-1781365215273"
+    "utmContent": "social-landing-1781368780130"
   },
   "metrics": {
     "targetChars": 4096,
-    "actualChars": 241,
-    "qualityScore": 27
+    "actualChars": 303,
+    "qualityScore": 28
   }
 }
