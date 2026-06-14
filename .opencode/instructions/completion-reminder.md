@@ -8,6 +8,7 @@ After EVERY response, append this 2-column dashboard in plain text:
 ▸ RECURSOS: [modelo aplicado totalmente: si/no]
 ▸ FACTIBLE: [si/no]
 ▸ CÓDIGO: [aplicado en engine/: si/no — archivos reales modificados]
+▸ SEGUIMIENTO: [pendientes del día — qué falta para cerrar]
 ```
 
 RULES (no exceptions):
