@@ -1,0 +1,26 @@
+{
+  "executedAt": "2026-06-14T19:18:21.965Z",
+  "campaign": "first-payment",
+  "packPath": "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\social-pack-first-payment.json",
+  "requestedChannels": [
+    "linkedin"
+  ],
+  "readyChannels": [],
+  "liveRequested": true,
+  "minChannels": 1,
+  "readiness": [
+    {
+      "channel": "linkedin",
+      "hasCopy": true,
+      "missingSecrets": [
+        "LINKEDIN_ACCESS_TOKEN"
+      ],
+      "ready": false
+    }
+  ],
+  "steps": {
+    "goLive": "not-run",
+    "dryPublish": "not-run",
+    "livePublish": "not-run"
+  }
+}
