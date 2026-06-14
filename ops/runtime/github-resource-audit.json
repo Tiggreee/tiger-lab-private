@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-06-13T16:25:39.580Z",
+  "repo": "Tiggreee/tiger-lab-private",
+  "period": {
+    "start": "2026-06-01T00:00:00.000Z",
+    "end": "2026-06-13T16:25:39.208Z"
+  },
+  "actions": {
+    "cap50": 25000,
+    "minutesRepoEstimate": 0,
+    "usagePctOfCap": 0,
+    "status": "UNKNOWN",
+    "accessError": "Failed to fetch workflow runs 404: {\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/actions/workflow-runs#list-workflow-runs-for-a-repository\",\"status\":\"404\"}",
+    "byWorkflow": []
+  },
+  "startupCredits": {
+    "cap50USD": 4982.4,
+    "known": false,
+    "availableUSD": null,
+    "status": "UNKNOWN"
+  },
+  "aiPolicy": {
+    "status": "ENFORCE_ZERO_AI",
+    "detail": "Day > 5 UTC: AI usage must remain zero according to repo policy."
+  },
+  "notes": [
+    "Actions minutes are estimated from run_started_at and updated_at for this repository only.",
+    "GitHub for Startups remaining credits are not exposed by standard repository APIs; value stays UNKNOWN unless a billing source is integrated.",
+    "Use this report as a guardrail signal, not as a legal/billing statement.",
+    "Actions API access unavailable in current context; report produced with UNKNOWN action status."
+  ]
+}

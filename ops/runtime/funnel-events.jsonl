@@ -1922,9 +1922,6 @@
 {"type":"lead_scored","occurredAt":"2026-06-09T06:43:31.732Z","payload":{"leadId":"stress_lead_99","score":79}}
 {"type":"lead_captured","occurredAt":"2026-06-09T06:43:31.736Z","payload":{"leadId":"auto_lead_0","source":"autonomous:web"}}
 {"type":"lead_captured","occurredAt":"2026-06-09T06:43:31.737Z","payload":{"leadId":"auto_lead_1","source":"autonomous:web"}}
-{"type":"payment_succeeded","occurredAt":"2026-06-09T08:40:11.498Z","payload":{"paymentId":"pay_sample_1","customerId":"cust_sample_1","productId":"facturautentico-cloud","planId":"starter","amount":39,"currency":"USD"}}
-{"type":"payment_succeeded","occurredAt":"2026-06-09T08:40:11.557Z","payload":{"paymentId":"pay_sample_2","customerId":"cust_sample_2","productId":"facturautentico-cloud","planId":"starter","amount":39,"currency":"USD"}}
-{"type":"payment_succeeded","occurredAt":"2026-06-09T08:40:11.613Z","payload":{"paymentId":"pay_sample_3","customerId":"cust_sample_3","productId":"facturautentico-cloud","planId":"starter","amount":39,"currency":"USD"}}
 {"type":"payment_succeeded","occurredAt":"2026-06-09T14:29:50.982Z","payload":{"paymentId":"pay_manual_1","customerId":"cust_manual_1","productId":"facturautentico-cloud","planId":"starter","amount":39,"currency":"USD"}}
 {"type":"lead_captured","occurredAt":"2026-06-10T04:44:44.850Z","payload":{"leadId":"lead-funnel-1","source":"web-visit"}}
 {"type":"lead_captured","occurredAt":"2026-06-10T04:44:44.849Z","payload":{"leadId":"lead-e2e-1","source":"campaign-web"}}

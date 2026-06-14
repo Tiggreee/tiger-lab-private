@@ -1,0 +1,447 @@
+{
+  "generatedAt": "2026-06-14T13:48:30.643Z",
+  "source": "github-search-issues",
+  "queries": [
+    "\"small business\" automation invoice workflow is:issue",
+    "\"manual process\" \"small business\" operations is:issue",
+    "\"billing\" automation \"small business\" is:issue",
+    "\"lead\" \"manual\" process automation is:issue"
+  ],
+  "quality": {
+    "minComments": 1,
+    "minBodyChars": 80,
+    "selectedThreads": 15
+  },
+  "insights": {
+    "topKeywords": [
+      {
+        "keyword": "business",
+        "count": 7
+      },
+      {
+        "keyword": "invoice",
+        "count": 6
+      },
+      {
+        "keyword": "avoid",
+        "count": 5
+      },
+      {
+        "keyword": "small",
+        "count": 5
+      },
+      {
+        "keyword": "invoices",
+        "count": 4
+      },
+      {
+        "keyword": "supplier",
+        "count": 4
+      },
+      {
+        "keyword": "lose",
+        "count": 4
+      },
+      {
+        "keyword": "zero",
+        "count": 4
+      },
+      {
+        "keyword": "freelancers",
+        "count": 3
+      },
+      {
+        "keyword": "income",
+        "count": 3
+      },
+      {
+        "keyword": "right",
+        "count": 3
+      },
+      {
+        "keyword": "change",
+        "count": 3
+      }
+    ],
+    "topPainCandidates": [
+      "Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously",
+      "Problem: Freelancers can't easily prove irregular income for loan applications",
+      "Problem: AP clerks chase missing approvals before invoices age",
+      "Problem: Specialty contractors lose change-order proof before payment",
+      "Problem: Israeli freelancers lose payment when invoices lack allocation numbers"
+    ],
+    "totalComments": 1409
+  },
+  "threads": [
+    {
+      "id": 4247526452,
+      "title": "Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously",
+      "url": "https://github.com/muaddibco/RealWorldProblems/issues/1516",
+      "apiUrl": "https://api.github.com/repos/muaddibco/RealWorldProblems/issues/1516",
+      "repository": "muaddibco/RealWorldProblems",
+      "comments": 134,
+      "createdAt": "2026-04-12T10:04:32Z",
+      "updatedAt": "2026-05-09T17:41:23Z",
+      "sourceQuery": "\"small business\" automation invoice workflow is:issue",
+      "snippet": "**JTBD:** When two clients each reschedule in-person meetings into the same travel window, I want to track cancellation fees and rebooking options across each trip, so I can minimize out-of-pocket losses and still honor both commitments. --- **Context & fre...",
+      "relevanceScore": 11,
+      "relevanceHits": [
+        "small business",
+        "smb",
+        "invoice",
+        "billing",
+        "workflow",
+        "operations",
+        "automation",
+        "lead",
+        "sales",
+        "customer",
+        "onboarding"
+      ],
+      "exclusionHits": []
+    },
+    {
+      "id": 4469685164,
+      "title": "Problem: Freelancers can't easily prove irregular income for loan applications",
+      "url": "https://github.com/muaddibco/RealWorldProblems/issues/1856",
+      "apiUrl": "https://api.github.com/repos/muaddibco/RealWorldProblems/issues/1856",
+      "repository": "muaddibco/RealWorldProblems",
+      "comments": 22,
+      "createdAt": "2026-05-18T13:52:28Z",
+      "updatedAt": "2026-06-03T21:52:30Z",
+      "sourceQuery": "\"small business\" automation invoice workflow is:issue",
+      "snippet": "**JTBD:** When I apply for a mortgage or major loan as a freelancer, I want to assemble a coherent proof-of-income package from my irregular client payments and invoices, so the lender doesn't reject my application because my income looks inconsistent or un...",
+      "relevanceScore": 11,
+      "relevanceHits": [
+        "small business",
+        "smb",
+        "invoice",
+        "workflow",
+        "operations",
+        "automation",
+        "lead",
+        "customer",
+        "funnel",
+        "onboarding",
+        "reconciliation"
+      ],
+      "exclusionHits": []
+    },
+    {
+      "id": 4513781386,
+      "title": "Problem: AP clerks chase missing approvals before invoices age",
+      "url": "https://github.com/muaddibco/RealWorldProblems/issues/1898",
+      "apiUrl": "https://api.github.com/repos/muaddibco/RealWorldProblems/issues/1898",
+      "repository": "muaddibco/RealWorldProblems",
+      "comments": 21,
+      "createdAt": "2026-05-25T02:08:38Z",
+      "updatedAt": "2026-05-25T03:03:03Z",
+      "sourceQuery": "\"small business\" automation invoice workflow is:issue",
+      "snippet": "**JTBD:** When a supplier invoice arrives without clear PO match or owner approval, I want to identify the right approver, missing backup and next action quickly, so I can pay on time without duplicate chasing, late fees or strained supplier relationships. ...",
+      "relevanceScore": 11,
+      "relevanceHits": [
+        "small business",
+        "smb",
+        "invoice",
+        "manual process",
+        "workflow",
+        "operations",
+        "automation",
+        "lead",
+        "sales",
+        "customer",
+        "funnel"
+      ],
+      "exclusionHits": []
+    },
+    {
+      "id": 4513781345,
+      "title": "Problem: Specialty contractors lose change-order proof before payment",
+      "url": "https://github.com/muaddibco/RealWorldProblems/issues/1896",
+      "apiUrl": "https://api.github.com/repos/muaddibco/RealWorldProblems/issues/1896",
+      "repository": "muaddibco/RealWorldProblems",
+      "comments": 28,
+      "createdAt": "2026-05-25T02:08:37Z",
+      "updatedAt": "2026-05-25T10:11:13Z",
+      "sourceQuery": "\"small business\" automation invoice workflow is:issue",
+      "snippet": "**JTBD:** When field conditions create extra construction work, I want to preserve the photos, time tickets, notices, cost impact and approval trail before crews move on, so I can get paid for the change order without months of rework, disputes or cash-flow...",
+      "relevanceScore": 10,
+      "relevanceHits": [
+        "small business",
+        "smb",
+        "invoice",
+        "billing",
+        "workflow",
+        "operations",
+        "automation",
+        "lead",
+        "sales",
+        "customer"
+      ],
+      "exclusionHits": []
+    },
+    {
+      "id": 4516453261,
+      "title": "Problem: Israeli freelancers lose payment when invoices lack allocation numbers",
+      "url": "https://github.com/muaddibco/RealWorldProblems/issues/1921",
+      "apiUrl": "https://api.github.com/repos/muaddibco/RealWorldProblems/issues/1921",
+      "repository": "muaddibco/RealWorldProblems",
+      "comments": 21,
+      "createdAt": "2026-05-25T11:10:39Z",
+      "updatedAt": "2026-06-03T22:16:00Z",
+      "sourceQuery": "\"small business\" automation invoice workflow is:issue",
+      "snippet": "**JTBD:** When I issue a higher-value B2B tax invoice in Israel, I want to know whether an Israel Tax Authority allocation number is required and attach it before sending the invoice, so I can avoid client rejection, VAT-deduction disputes and delayed payme...",
+      "relevanceScore": 10,
+      "relevanceHits": [
+        "small business",
+        "smb",
+        "invoice",
+        "billing",
+        "workflow",
+        "operations",
+        "automation",
+        "sales",
+        "customer",
+        "reconciliation"
+      ],
+      "exclusionHits": []
+    },
+    {
+      "id": 4595107291,
+      "title": "Problem: SMBs verify changed invoice bank details too late",
+      "url": "https://github.com/muaddibco/RealWorldProblems/issues/1947",
+      "apiUrl": "https://api.github.com/repos/muaddibco/RealWorldProblems/issues/1947",
+      "repository": "muaddibco/RealWorldProblems",
+      "comments": 20,
+      "createdAt": "2026-06-05T07:27:32Z",
+      "updatedAt": "2026-06-05T08:22:53Z",
+      "sourceQuery": "\"manual process\" \"small business\" operations is:issue",
+      "snippet": "**JTBD:** When a supplier or customer emails changed bank details on an invoice, I want a repeatable verification trail before anyone pays, so I can avoid sending legitimate business money to a scammer. --- **Context & frequency:** Small businesses in Austr...",
+      "relevanceScore": 10,
+      "relevanceHits": [
+        "small business",
+        "smb",
+        "invoice",
+        "workflow",
+        "operations",
+        "automation",
+        "lead",
+        "sales",
+        "customer",
+        "onboarding"
+      ],
+      "exclusionHits": []
+    },
+    {
+      "id": 4591603898,
+      "title": "Problem: Small businesses lose control of marketing accounts after outsourced handoffs",
+      "url": "https://github.com/muaddibco/RealWorldProblems/issues/1944",
+      "apiUrl": "https://api.github.com/repos/muaddibco/RealWorldProblems/issues/1944",
+      "repository": "muaddibco/RealWorldProblems",
+      "comments": 25,
+      "createdAt": "2026-06-04T19:33:58Z",
+      "updatedAt": "2026-06-05T08:24:09Z",
+      "sourceQuery": "\"small business\" automation invoice workflow is:issue",
+      "snippet": "**JTBD:** When I replace or leave a marketing agency, I want to confirm that my business still owns and can control its key marketing accounts, so I can keep ads, reviews, and customer communication running without a lockout. --- **Context & frequency:** Sm...",
+      "relevanceScore": 9,
+      "relevanceHits": [
+        "small business",
+        "smb",
+        "invoice",
+        "workflow",
+        "operations",
+        "automation",
+        "lead",
+        "customer",
+        "onboarding"
+      ],
+      "exclusionHits": []
+    },
+    {
+      "id": 4415104037,
+      "title": "Problem: Home repair stalls invisibly after technician orders a part",
+      "url": "https://github.com/muaddibco/RealWorldProblems/issues/1756",
+      "apiUrl": "https://api.github.com/repos/muaddibco/RealWorldProblems/issues/1756",
+      "repository": "muaddibco/RealWorldProblems",
+      "comments": 21,
+      "createdAt": "2026-05-10T08:22:57Z",
+      "updatedAt": "2026-05-10T14:49:42Z",
+      "sourceQuery": "\"small business\" automation invoice workflow is:issue",
+      "snippet": "**JTBD:** When a repair technician visits my home and says \"we need to order a part and come back,\" I want to know when the part arrives and when the follow-up visit will be scheduled, so the repair doesn't silently stall for weeks while I'm left without a ...",
+      "relevanceScore": 9,
+      "relevanceHits": [
+        "smb",
+        "invoice",
+        "workflow",
+        "automation",
+        "lead",
+        "sales",
+        "crm",
+        "customer",
+        "onboarding"
+      ],
+      "exclusionHits": []
+    },
+    {
+      "id": 4595107244,
+      "title": "Problem: SMBs lose cash runway chasing overdue invoices",
+      "url": "https://github.com/muaddibco/RealWorldProblems/issues/1946",
+      "apiUrl": "https://api.github.com/repos/muaddibco/RealWorldProblems/issues/1946",
+      "repository": "muaddibco/RealWorldProblems",
+      "comments": 20,
+      "createdAt": "2026-06-05T07:27:31Z",
+      "updatedAt": "2026-06-05T08:28:18Z",
+      "sourceQuery": "\"small business\" automation invoice workflow is:issue",
+      "snippet": "**JTBD:** When a small business invoice passes its due date, I want one place to see who owns the follow-up, what has already been promised, and which payment risk is becoming urgent, so I can protect payroll and supplier cash without damaging customer rela...",
+      "relevanceScore": 9,
+      "relevanceHits": [
+        "small business",
+        "smb",
+        "invoice",
+        "billing",
+        "workflow",
+        "operations",
+        "automation",
+        "lead",
+        "customer"
+      ],
+      "exclusionHits": []
+    },
+    {
+      "id": 4511871581,
+      "title": "Problem: Local businesses mishandle Google profile suspension evidence appeals",
+      "url": "https://github.com/muaddibco/RealWorldProblems/issues/1892",
+      "apiUrl": "https://api.github.com/repos/muaddibco/RealWorldProblems/issues/1892",
+      "repository": "muaddibco/RealWorldProblems",
+      "comments": 27,
+      "createdAt": "2026-05-24T14:16:06Z",
+      "updatedAt": "2026-05-25T08:16:20Z",
+      "sourceQuery": "\"manual process\" \"small business\" operations is:issue",
+      "snippet": "**JTBD:** When my Google Business Profile is suspended or disabled, I want to prepare the right evidence before starting the appeal flow, so I can avoid losing local-search visibility because my first appeal was incomplete or mismatched. --- **Context & fre...",
+      "relevanceScore": 8,
+      "relevanceHits": [
+        "smb",
+        "manual process",
+        "workflow",
+        "operations",
+        "lead",
+        "sales",
+        "customer",
+        "onboarding"
+      ],
+      "exclusionHits": []
+    },
+    {
+      "id": 4516611533,
+      "title": "Problem: Shop tenants miss arnona handoff after moving premises",
+      "url": "https://github.com/muaddibco/RealWorldProblems/issues/1927",
+      "apiUrl": "https://api.github.com/repos/muaddibco/RealWorldProblems/issues/1927",
+      "repository": "muaddibco/RealWorldProblems",
+      "comments": 25,
+      "createdAt": "2026-05-25T11:38:25Z",
+      "updatedAt": "2026-05-26T07:37:00Z",
+      "sourceQuery": "\"small business\" automation invoice workflow is:issue",
+      "snippet": "**JTBD:** When my small business moves into or out of an Israeli commercial space, I want the municipal arnona holder change, lease documents and business-license notification steps tracked together, so I can avoid being billed for the wrong premises or dis...",
+      "relevanceScore": 8,
+      "relevanceHits": [
+        "small business",
+        "smb",
+        "invoice",
+        "billing",
+        "manual process",
+        "workflow",
+        "operations",
+        "automation"
+      ],
+      "exclusionHits": []
+    },
+    {
+      "id": 4516453220,
+      "title": "Problem: Israeli shop openings stall on municipal licensing packets",
+      "url": "https://github.com/muaddibco/RealWorldProblems/issues/1920",
+      "apiUrl": "https://api.github.com/repos/muaddibco/RealWorldProblems/issues/1920",
+      "repository": "muaddibco/RealWorldProblems",
+      "comments": 23,
+      "createdAt": "2026-05-25T11:10:38Z",
+      "updatedAt": "2026-05-26T09:39:53Z",
+      "sourceQuery": "\"small business\" automation invoice workflow is:issue",
+      "snippet": "**JTBD:** When I am opening a physical shop or small service business in Israel, I want the municipal license packet, required approver documents and status follow-ups organized before lease and opening commitments, so I can avoid failed submissions, inspec...",
+      "relevanceScore": 8,
+      "relevanceHits": [
+        "smb",
+        "invoice",
+        "workflow",
+        "operations",
+        "automation",
+        "lead",
+        "sales",
+        "onboarding"
+      ],
+      "exclusionHits": []
+    },
+    {
+      "id": 1372399320,
+      "title": "DWVSCPS ENERGY INC ™️ ©️ INFRASTRUCTURE FORMULA SYSTEM 🔐 ARBITRATION ",
+      "url": "https://github.com/dwvshell/Richard/issues/1",
+      "apiUrl": "https://api.github.com/repos/dwvshell/Richard/issues/1",
+      "repository": "dwvshell/Richard",
+      "comments": 905,
+      "createdAt": "2022-09-14T06:09:06Z",
+      "updatedAt": "2026-06-14T03:41:15Z",
+      "sourceQuery": "\"small business\" automation invoice workflow is:issue",
+      "snippet": "DWVSCPS-ENERGY-MASTER999-PAYLOAD VERSION: 2026-QR-BACKUP-REV-A OWNER: RICHARD EVAN STOCKFORD JR CORPORATION: 15389089 CANADA INC. BRAND: DWVSCPS ENERGY™ VIN: A1B02CEE8B1FC86E1 PIID: a1b02cee8b1fc86e15785ea7734d5cb80e55df39e68cad1e32466255da05237e PRIMARY RI...",
+      "relevanceScore": 6,
+      "relevanceHits": [
+        "billing",
+        "workflow",
+        "operations",
+        "automation",
+        "lead",
+        "customer"
+      ],
+      "exclusionHits": []
+    },
+    {
+      "id": 4511871554,
+      "title": "Problem: Hosts miss guest-damage claim evidence windows after checkout",
+      "url": "https://github.com/muaddibco/RealWorldProblems/issues/1890",
+      "apiUrl": "https://api.github.com/repos/muaddibco/RealWorldProblems/issues/1890",
+      "repository": "muaddibco/RealWorldProblems",
+      "comments": 41,
+      "createdAt": "2026-05-24T14:16:06Z",
+      "updatedAt": "2026-05-25T02:52:36Z",
+      "sourceQuery": "\"manual process\" \"small business\" operations is:issue",
+      "snippet": "**JTBD:** When a short-term rental guest checks out and I discover damage, I want to capture the right photos, estimates, guest messages, and platform claim steps before the platform deadline, so I can recover legitimate costs without losing the claim on pr...",
+      "relevanceScore": 4,
+      "relevanceHits": [
+        "smb",
+        "workflow",
+        "operations",
+        "customer"
+      ],
+      "exclusionHits": []
+    },
+    {
+      "id": 4525015280,
+      "title": "🚨 Zero Day Pulse — Active Vulnerability Tracker",
+      "url": "https://github.com/peleduri/zero-day-pulse/issues/7",
+      "apiUrl": "https://api.github.com/repos/peleduri/zero-day-pulse/issues/7",
+      "repository": "peleduri/zero-day-pulse",
+      "comments": 76,
+      "createdAt": "2026-05-26T14:37:26Z",
+      "updatedAt": "2026-06-14T13:26:16Z",
+      "sourceQuery": "\"billing\" automation \"small business\" is:issue",
+      "snippet": "# Zero Day Pulse > **Generated:** 2026-05-26 14:37 UTC &nbsp;|&nbsp; **Total:** 15 &nbsp;|&nbsp; 🔴 KEV: 0 &nbsp;|&nbsp; 🟠 Zero-Day: 13 &nbsp;|&nbsp; 🟡 High: 2 &nbsp;|&nbsp; ✨ Enriched: 10 --- ## 1. 🟠 Zero-Day — Ransomware Actors Exploit Unpatched Simple...",
+      "relevanceScore": 3,
+      "relevanceHits": [
+        "billing",
+        "lead",
+        "customer",
+        "campaign"
+      ],
+      "exclusionHits": [
+        "firmware"
+      ]
+    }
+  ]
+}

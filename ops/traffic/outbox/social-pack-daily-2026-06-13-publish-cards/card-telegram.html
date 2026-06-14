@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{
+    width:1200px;height:630px;
+    background:#229ED9;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+    color:#FFFFFF;
+    display:flex;flex-direction:column;overflow:hidden;position:relative;
+  }
+  .noise{
+    position:absolute;inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events:none;z-index:0;
+  }
+  .gradient{
+    position:absolute;inset:0;
+    background:linear-gradient(135deg,rgba(255,255,255,0.10) 0%,rgba(0,0,0,0.25) 100%);
+    pointer-events:none;z-index:0;
+  }
+  .content{
+    position:relative;z-index:1;
+    display:flex;flex-direction:column;height:100%;padding:52px 64px 40px;
+  }
+  .header{
+    display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;
+  }
+  .logo{
+    font-size:22px;font-weight:800;letter-spacing:-0.5px;
+    opacity:0.95;
+  }
+  .badge{
+    font-size:13px;font-weight:600;letter-spacing:1px;text-transform:uppercase;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.25);
+    border-radius:20px;padding:5px 14px;
+    backdrop-filter:blur(4px);
+  }
+  .headline{
+    font-size:42px;font-weight:800;line-height:1.15;
+    letter-spacing:-1px;max-width:80%;
+    flex:1;display:flex;align-items:center;
+    text-shadow:0 2px 12px rgba(0,0,0,0.18);
+  }
+  .body{
+    font-size:18px;line-height:1.55;opacity:0.88;
+    margin-top:18px;max-width:75%;
+  }
+  .body p{margin-bottom:4px}
+  .proof{
+    margin-top:18px;font-size:14px;opacity:0.72;
+    font-style:italic;max-width:70%;
+  }
+  .footer{
+    display:flex;align-items:flex-end;justify-content:space-between;margin-top:auto;padding-top:24px;
+    border-top:1px solid rgba(255,255,255,0.15);
+  }
+  .cta-block{}
+  .cta-label{font-size:12px;text-transform:uppercase;letter-spacing:1px;opacity:0.65;margin-bottom:4px}
+  .cta-url{
+    font-size:16px;font-weight:700;
+    background:rgba(255,255,255,0.18);
+    border:1px solid rgba(255,255,255,0.3);
+    border-radius:8px;padding:8px 18px;display:inline-block;
+    backdrop-filter:blur(4px);
+  }
+  .meta{
+    text-align:right;font-size:12px;opacity:0.55;line-height:1.6;
+  }
+  .score-pill{
+    display:inline-flex;align-items:center;gap:6px;
+    background:rgba(255,255,255,0.12);border-radius:20px;padding:4px 12px;
+    font-size:13px;font-weight:600;margin-top:6px;
+  }
+  .score-pill .dot{width:8px;height:8px;border-radius:50%;background:#4ade80}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<div class="gradient"></div>
+<div class="content">
+  <div class="header">
+    <div class="logo">Tiger Lab</div>
+    <div class="badge">Telegram</div>
+  </div>
+  <div class="headline">TigerLabOps: Automatizacion con evidencia real de fricciones SMB: business, invoice, avoi…</div>
+  <div class="body"><p>Si hoy founders, operators and dev leads SMB sigue resolviendo friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: "Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously" y "Problem: Freelancers can't easily prove irregular income for loan applications", el costo ya es operativo y visible.</p><p>TigerLabOps esta hecho para mejorar business y invoice con automatizacion medible.</p><p>Foco: resultado operativo medible en menos ciclos de prueba.</p><p>Prueba concreta: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously (134 comentarios).</p></div>
+  <div class="proof">6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelanc…</div>
+  <div class="footer">
+    <div class="cta-block">
+      <div class="cta-label">Agenda ahora</div>
+      <div class="cta-url">Agenda aqui un diagnostico de TigerLabOps: https://cal.com/victor-tigerlab/diagnostic</div>
+    </div>
+    <div class="meta">
+      daily-2026-06-13-publish<br>2026-06-13
+      <div class="score-pill"><span class="dot"></span>Score 100/100 · Lift 24%</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

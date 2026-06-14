@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-06-13T20:19:39.060Z",
+  "campaign": "docflow-api-2026-06-13",
+  "packPath": "ops\\traffic\\outbox\\social-pack-docflow-api-2026-06-13.json",
+  "cards": [
+    {
+      "channel": "linkedin",
+      "png": "ops\\traffic\\outbox\\social-pack-docflow-api-2026-06-13-cards\\card-linkedin.png"
+    },
+    {
+      "channel": "x",
+      "png": "ops\\traffic\\outbox\\social-pack-docflow-api-2026-06-13-cards\\card-x.png"
+    },
+    {
+      "channel": "facebook",
+      "png": "ops\\traffic\\outbox\\social-pack-docflow-api-2026-06-13-cards\\card-facebook.png"
+    },
+    {
+      "channel": "telegram",
+      "png": "ops\\traffic\\outbox\\social-pack-docflow-api-2026-06-13-cards\\card-telegram.png"
+    },
+    {
+      "channel": "discord",
+      "png": "ops\\traffic\\outbox\\social-pack-docflow-api-2026-06-13-cards\\card-discord.png"
+    }
+  ]
+}

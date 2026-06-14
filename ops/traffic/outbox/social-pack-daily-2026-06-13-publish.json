@@ -1,0 +1,153 @@
+{
+  "generatedAt": "2026-06-13T16:32:06.394Z",
+  "campaign": "daily-2026-06-13-publish",
+  "topic": "Automatizacion con evidencia real de fricciones SMB: business, invoice, avoid",
+  "audience": "founders, operators and dev leads SMB",
+  "offer": "Diagnostic in 15 min with activation plan in 24h",
+  "brand": {
+    "productName": "TigerLabOps",
+    "problemDetail": "friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\"",
+    "primaryOutcome": "mejorar business y invoice con automatizacion medible",
+    "proofPoint": "6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously (134 comentarios).",
+    "domainTerms": [
+      "business",
+      "invoice",
+      "avoid",
+      "small",
+      "invoices",
+      "supplier",
+      "lose",
+      "zero"
+    ]
+  },
+  "funnel": {
+    "trafficDestination": "https://cal.com/victor-tigerlab/diagnostic",
+    "closeChannel": "calendar",
+    "closeDestination": "https://cal.com/victor-tigerlab/diagnostic",
+    "prefilledMessage": "Hola, vengo de la campana y quiero activar el diagnostico express de 15 min.",
+    "finalCta": "Agenda aqui un diagnostico de TigerLabOps: https://cal.com/victor-tigerlab/diagnostic",
+    "closeLink": "https://cal.com/victor-tigerlab/diagnostic"
+  },
+  "quality": {
+    "averageScore": 100,
+    "projectedAverageLiftPct": 24,
+    "targetLiftPct": 15,
+    "targetReached": true
+  },
+  "channels": {
+    "linkedin": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "TigerLabOps: Automatizacion con evidencia real de fricciones SMB: business, invoice, avoid.\n\nContexto operativo: founders, operators and dev leads SMB con foco en mejorar business y invoice con automatizacion medible.\n\nSi hoy founders, operators and dev leads SMB sigue resolviendo friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\", el costo ya es operativo y visible.\n\nTigerLabOps esta hecho para mejorar business y invoice con automatizacion medible.\n\nEnfoque de esta solucion: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously (134 comentarios).\n\nSenales de encaje: business, invoice, avoid, small.\n\nNo apto para: equipos sin urgencia operativa en este trimestre.\n\nAgenda aqui un diagnostico de TigerLabOps: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=linkedin&utm_medium=social&utm_campaign=daily-2026-06-13-publish",
+      "variants": {
+        "A": "TigerLabOps: Automatizacion con evidencia real de fricciones SMB: business, invoice, avoid.\n\nContexto operativo: founders, operators and dev leads SMB con foco en mejorar business y invoice con automatizacion medible.\n\nSi hoy founders, operators and dev leads SMB sigue resolviendo friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\", el costo ya es operativo y visible.\n\nTigerLabOps esta hecho para mejorar business y invoice con automatizacion medible.\n\nEnfoque de esta solucion: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously (134 comentarios).\n\nSenales de encaje: business, invoice, avoid, small.\n\nNo apto para: equipos sin urgencia operativa en este trimestre.\n\nAgenda aqui un diagnostico de TigerLabOps: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=linkedin&utm_medium=social&utm_campaign=daily-2026-06-13-publish",
+        "B": "TigerLabOps no existe para sonar futurista. Existe para quitar friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\".\n\nContexto operativo: founders, operators and dev leads SMB con foco en mejorar business y invoice con automatizacion medible.\n\nSi hoy founders, operators and dev leads SMB sigue resolviendo friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\", el costo ya es operativo y visible.\n\nTigerLabOps esta hecho para mejorar business y invoice con automatizacion medible.\n\nEnfoque de esta solucion: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously (134 comentarios).\n\nSenales de encaje: business, invoice, avoid, small.\n\nNo apto para: equipos sin urgencia operativa en este trimestre.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=linkedin&utm_medium=social&utm_campaign=daily-2026-06-13-publish"
+      }
+    },
+    "x": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "TigerLabOps: Automatizacion con evidencia real de fricciones SMB: business, invoice, avoid. Prueba: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados.... https://cal.com/victor-tigerlab/diagnostic?utm_source=x&utm_medium=social&utm_campaign=daily-2026-06-13-publish",
+      "variants": {
+        "A": "TigerLabOps: Automatizacion con evidencia real de fricciones SMB: business, invoice, avoid. Prueba: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados.... https://cal.com/victor-tigerlab/diagnostic?utm_source=x&utm_medium=social&utm_campaign=daily-2026-06-13-publish",
+        "B": "TigerLabOps no existe para sonar futurista. Existe para quitar friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can... https://cal.com/victor-tigerlab/diagnostic?utm_source=x&utm_medium=social&utm_campaign=daily-2026-06-13-publish"
+      }
+    },
+    "facebook": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "TigerLabOps: Automatizacion con evidencia real de fricciones SMB: business, invoice, avoid.\n\nEscenario real: founders, operators and dev leads SMB con foco en mejorar business y invoice con automatizacion medible.\n\nSi hoy founders, operators and dev leads SMB sigue resolviendo friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\", el costo ya es operativo y visible.\n\nTigerLabOps esta hecho para mejorar business y invoice con automatizacion medible.\n\nFoco de implementacion: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously (134 comentarios).\n\nChecklist de encaje: business, invoice, avoid, small.\n\nNo apto para: equipos sin urgencia operativa en este trimestre.\n\nAgenda aqui un diagnostico de TigerLabOps: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=facebook&utm_medium=social&utm_campaign=daily-2026-06-13-publish",
+      "variants": {
+        "A": "TigerLabOps: Automatizacion con evidencia real de fricciones SMB: business, invoice, avoid.\n\nEscenario real: founders, operators and dev leads SMB con foco en mejorar business y invoice con automatizacion medible.\n\nSi hoy founders, operators and dev leads SMB sigue resolviendo friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\", el costo ya es operativo y visible.\n\nTigerLabOps esta hecho para mejorar business y invoice con automatizacion medible.\n\nFoco de implementacion: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously (134 comentarios).\n\nChecklist de encaje: business, invoice, avoid, small.\n\nNo apto para: equipos sin urgencia operativa en este trimestre.\n\nAgenda aqui un diagnostico de TigerLabOps: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=facebook&utm_medium=social&utm_campaign=daily-2026-06-13-publish",
+        "B": "TigerLabOps no existe para sonar futurista. Existe para quitar friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\".\n\nEscenario real: founders, operators and dev leads SMB con foco en mejorar business y invoice con automatizacion medible.\n\nSi hoy founders, operators and dev leads SMB sigue resolviendo friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\", el costo ya es operativo y visible.\n\nTigerLabOps esta hecho para mejorar business y invoice con automatizacion medible.\n\nFoco de implementacion: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously (134 comentarios).\n\nChecklist de encaje: business, invoice, avoid, small.\n\nNo apto para: equipos sin urgencia operativa en este trimestre.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=facebook&utm_medium=social&utm_campaign=daily-2026-06-13-publish"
+      }
+    },
+    "telegram": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "TigerLabOps: Automatizacion con evidencia real de fricciones SMB: business, invoice, avoid.\n\nSi hoy founders, operators and dev leads SMB sigue resolviendo friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\", el costo ya es operativo y visible.\n\nTigerLabOps esta hecho para mejorar business y invoice con automatizacion medible.\n\nFoco: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously (134 comentarios).\n\nSenales de encaje: business, invoice, avoid, small.\n\nAgenda aqui un diagnostico de TigerLabOps: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=telegram&utm_medium=social&utm_campaign=daily-2026-06-13-publish",
+      "variants": {
+        "A": "TigerLabOps: Automatizacion con evidencia real de fricciones SMB: business, invoice, avoid.\n\nSi hoy founders, operators and dev leads SMB sigue resolviendo friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\", el costo ya es operativo y visible.\n\nTigerLabOps esta hecho para mejorar business y invoice con automatizacion medible.\n\nFoco: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously (134 comentarios).\n\nSenales de encaje: business, invoice, avoid, small.\n\nAgenda aqui un diagnostico de TigerLabOps: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=telegram&utm_medium=social&utm_campaign=daily-2026-06-13-publish",
+        "B": "TigerLabOps no existe para sonar futurista. Existe para quitar friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\".\n\nSi hoy founders, operators and dev leads SMB sigue resolviendo friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\", el costo ya es operativo y visible.\n\nTigerLabOps esta hecho para mejorar business y invoice con automatizacion medible.\n\nFoco: resultado operativo medible en menos ciclos de prueba.\n\nPrueba concreta: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously (134 comentarios).\n\nSenales de encaje: business, invoice, avoid, small.\n\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=telegram&utm_medium=social&utm_campaign=daily-2026-06-13-publish"
+      }
+    },
+    "discord": {
+      "selectedVariant": "A",
+      "selectedScore": 100,
+      "projectedLiftPct": 24,
+      "copyPaste": "TigerLabOps: Automatizacion con evidencia real de fricciones SMB: business, invoice, avoid.\nSi hoy founders, operators and dev leads SMB sigue resolviendo friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\", el costo ya es operativo y visible.\nTigerLabOps esta hecho para mejorar business y invoice con automatizacion medible.\nFoco: resultado operativo medible en menos ciclos de prueba.\nPrueba concreta: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously (134 comentarios).\nSenales de encaje: business, invoice, avoid, small.\nAgenda aqui un diagnostico de TigerLabOps: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=discord&utm_medium=social&utm_campaign=daily-2026-06-13-publish",
+      "variants": {
+        "A": "TigerLabOps: Automatizacion con evidencia real de fricciones SMB: business, invoice, avoid.\nSi hoy founders, operators and dev leads SMB sigue resolviendo friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\", el costo ya es operativo y visible.\nTigerLabOps esta hecho para mejorar business y invoice con automatizacion medible.\nFoco: resultado operativo medible en menos ciclos de prueba.\nPrueba concreta: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously (134 comentarios).\nSenales de encaje: business, invoice, avoid, small.\nAgenda aqui un diagnostico de TigerLabOps: https://cal.com/victor-tigerlab/diagnostic\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=discord&utm_medium=social&utm_campaign=daily-2026-06-13-publish",
+        "B": "TigerLabOps no existe para sonar futurista. Existe para quitar friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\".\nSi hoy founders, operators and dev leads SMB sigue resolviendo friccion reportada en hilos reales sobre business, invoice, avoid; ejemplos: \"Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously\" y \"Problem: Freelancers can't easily prove irregular income for loan applications\", el costo ya es operativo y visible.\nTigerLabOps esta hecho para mejorar business y invoice con automatizacion medible.\nFoco: resultado operativo medible en menos ciclos de prueba.\nPrueba concreta: 6 hilos reales de GitHub analizados, 1355 comentarios acumulados. Referencia top: Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously (134 comentarios).\nSenales de encaje: business, invoice, avoid, small.\nSi tu equipo vive esto, respondeme con el cuello de botella exacto y te contesto con un caso concreto.\nhttps://cal.com/victor-tigerlab/diagnostic?utm_source=discord&utm_medium=social&utm_campaign=daily-2026-06-13-publish"
+      }
+    }
+  },
+  "mcpAudit": {
+    "enabled": true,
+    "auditedAt": "2026-06-13T16:32:06.394Z",
+    "benchmark": {
+      "averageScore": 100,
+      "minimumScoreForApply": 72,
+      "projectedLiftPct": 24,
+      "targetLiftPct": 15
+    },
+    "decision": "apply",
+    "findings": [
+      "Campana apta para ejecucion automatizada segun benchmark MCP."
+    ]
+  },
+  "evidence": {
+    "source": "github-threads",
+    "sourceFile": "ops/traffic/research/real-threads-latest.json",
+    "generatedAt": "2026-06-13T16:32:06.408Z",
+    "threadCount": 6,
+    "threads": [
+      {
+        "title": "Problem: Freelancers can't manage cascading rebooking costs when two clients shift in-person visit timing simultaneously",
+        "url": "https://github.com/muaddibco/RealWorldProblems/issues/1516",
+        "repository": "muaddibco/RealWorldProblems",
+        "comments": 134,
+        "updatedAt": "2026-05-09T17:41:23Z"
+      },
+      {
+        "title": "Problem: Freelancers can't easily prove irregular income for loan applications",
+        "url": "https://github.com/muaddibco/RealWorldProblems/issues/1856",
+        "repository": "muaddibco/RealWorldProblems",
+        "comments": 22,
+        "updatedAt": "2026-06-03T21:52:30Z"
+      },
+      {
+        "title": "Problem: AP clerks chase missing approvals before invoices age",
+        "url": "https://github.com/muaddibco/RealWorldProblems/issues/1898",
+        "repository": "muaddibco/RealWorldProblems",
+        "comments": 21,
+        "updatedAt": "2026-05-25T03:03:03Z"
+      },
+      {
+        "title": "Problem: Specialty contractors lose change-order proof before payment",
+        "url": "https://github.com/muaddibco/RealWorldProblems/issues/1896",
+        "repository": "muaddibco/RealWorldProblems",
+        "comments": 28,
+        "updatedAt": "2026-05-25T10:11:13Z"
+      },
+      {
+        "title": "Problem: Israeli freelancers lose payment when invoices lack allocation numbers",
+        "url": "https://github.com/muaddibco/RealWorldProblems/issues/1921",
+        "repository": "muaddibco/RealWorldProblems",
+        "comments": 21,
+        "updatedAt": "2026-06-03T22:16:00Z"
+      },
+      {
+        "title": "Problem: SMBs verify changed invoice bank details too late",
+        "url": "https://github.com/muaddibco/RealWorldProblems/issues/1947",
+        "repository": "muaddibco/RealWorldProblems",
+        "comments": 20,
+        "updatedAt": "2026-06-05T08:22:53Z"
+      }
+    ]
+  }
+}

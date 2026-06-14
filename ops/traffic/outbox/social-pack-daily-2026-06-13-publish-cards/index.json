@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-06-13T20:04:06.596Z",
+  "campaign": "daily-2026-06-13-publish",
+  "packPath": "ops\\traffic\\outbox\\social-pack-daily-2026-06-13-publish.json",
+  "cards": [
+    {
+      "channel": "linkedin",
+      "png": "ops\\traffic\\outbox\\social-pack-daily-2026-06-13-publish-cards\\card-linkedin.png"
+    },
+    {
+      "channel": "x",
+      "png": "ops\\traffic\\outbox\\social-pack-daily-2026-06-13-publish-cards\\card-x.png"
+    },
+    {
+      "channel": "facebook",
+      "png": "ops\\traffic\\outbox\\social-pack-daily-2026-06-13-publish-cards\\card-facebook.png"
+    },
+    {
+      "channel": "telegram",
+      "png": "ops\\traffic\\outbox\\social-pack-daily-2026-06-13-publish-cards\\card-telegram.png"
+    },
+    {
+      "channel": "discord",
+      "png": "ops\\traffic\\outbox\\social-pack-daily-2026-06-13-publish-cards\\card-discord.png"
+    }
+  ]
+}

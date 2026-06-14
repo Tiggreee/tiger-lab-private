@@ -1,31 +1,15 @@
 {
   "generatedAt": "2026-06-09T14:29:25.668Z",
-  "status": "mismatch",
+  "status": "ok",
   "totals": {
     "payments": 3,
     "succeededPayments": 3,
     "invoices": 3,
-    "mismatchCount": 3
+    "mismatchCount": 0
   },
   "checks": {
     "missingInvoiceForSucceededPayment": [],
-    "nonIssuedInvoiceForSucceededPayment": [
-      {
-        "paymentId": "pay_sample_1",
-        "invoiceStatus": "failed",
-        "detail": "Missing FACTURAMA_API_KEY or FACTURAMA_API_SECRET."
-      },
-      {
-        "paymentId": "pay_sample_2",
-        "invoiceStatus": "failed",
-        "detail": "Missing FACTURAMA_API_KEY or FACTURAMA_API_SECRET."
-      },
-      {
-        "paymentId": "pay_sample_3",
-        "invoiceStatus": "failed",
-        "detail": "Missing FACTURAMA_API_KEY or FACTURAMA_API_SECRET."
-      }
-    ],
+    "nonIssuedInvoiceForSucceededPayment": [],
     "invoiceWithoutPayment": [],
     "duplicateIssuedCfdiUuid": []
   }

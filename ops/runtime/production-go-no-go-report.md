@@ -1,8 +1,8 @@
 # Production Go/No-Go Report
 
-- generatedAt: 2026-06-13T08:40:14.532Z
+- generatedAt: 2026-06-13T16:18:37.125Z
 - gateStatus: GO
-- summary: PASS 14 | WARN 0 | FAIL 0
+- summary: PASS 15 | WARN 0 | FAIL 0
 
 ## Checks
 
@@ -35,6 +35,9 @@
   ownerAction: Sin accion.
 - P13 Test coverage thresholds: PASS
   details: Thresholds: lines 30%, statements 30%
+  ownerAction: Sin accion.
+- P15 Integridad de evidencia runtime (sin placeholders/samples): PASS
+  details: No se detectaron placeholders ni IDs sample en evidencia operativa.
   ownerAction: Sin accion.
 - P8 Pruebas criticas de humo: PASS
   details: test:smoke OK.

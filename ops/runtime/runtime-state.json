@@ -1125,36 +1125,6 @@
     }
   },
   "payments": {
-    "pay_sample_1": {
-      "paymentId": "pay_sample_1",
-      "customerId": "cust_sample_1",
-      "productId": "facturautentico-cloud",
-      "planId": "starter",
-      "amount": 39,
-      "currency": "USD",
-      "createdAt": "2026-06-09T08:40:11.480Z",
-      "status": "succeeded"
-    },
-    "pay_sample_2": {
-      "paymentId": "pay_sample_2",
-      "customerId": "cust_sample_2",
-      "productId": "facturautentico-cloud",
-      "planId": "starter",
-      "amount": 39,
-      "currency": "USD",
-      "createdAt": "2026-06-09T08:40:11.552Z",
-      "status": "succeeded"
-    },
-    "pay_sample_3": {
-      "paymentId": "pay_sample_3",
-      "customerId": "cust_sample_3",
-      "productId": "facturautentico-cloud",
-      "planId": "starter",
-      "amount": 39,
-      "currency": "USD",
-      "createdAt": "2026-06-09T08:40:11.610Z",
-      "status": "succeeded"
-    },
     "pay_manual_1": {
       "paymentId": "pay_manual_1",
       "customerId": "cust_manual_1",
@@ -1324,48 +1294,6 @@
     }
   },
   "invoices": {
-    "pay_sample_1": {
-      "paymentId": "pay_sample_1",
-      "customerId": "cust_sample_1",
-      "productId": "facturautentico-cloud",
-      "planId": "starter",
-      "amount": 39,
-      "currency": "USD",
-      "status": "failed",
-      "detail": "Missing FACTURAMA_API_KEY or FACTURAMA_API_SECRET.",
-      "recipients": [
-        "buyer1@example.com"
-      ],
-      "issuedAt": "2026-06-09T08:40:11.500Z"
-    },
-    "pay_sample_2": {
-      "paymentId": "pay_sample_2",
-      "customerId": "cust_sample_2",
-      "productId": "facturautentico-cloud",
-      "planId": "starter",
-      "amount": 39,
-      "currency": "USD",
-      "status": "failed",
-      "detail": "Missing FACTURAMA_API_KEY or FACTURAMA_API_SECRET.",
-      "recipients": [
-        "buyer2@example.com"
-      ],
-      "issuedAt": "2026-06-09T08:40:11.559Z"
-    },
-    "pay_sample_3": {
-      "paymentId": "pay_sample_3",
-      "customerId": "cust_sample_3",
-      "productId": "facturautentico-cloud",
-      "planId": "starter",
-      "amount": 39,
-      "currency": "USD",
-      "status": "failed",
-      "detail": "Missing FACTURAMA_API_KEY or FACTURAMA_API_SECRET.",
-      "recipients": [
-        "buyer3@example.com"
-      ],
-      "issuedAt": "2026-06-09T08:40:11.614Z"
-    },
     "pay_manual_1": {
       "paymentId": "pay_manual_1",
       "customerId": "cust_manual_1",

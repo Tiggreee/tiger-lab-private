@@ -219,16 +219,16 @@ function formatLinkedIn(structure, link, variant) {
 }
 
 function formatX(structure, link, variant) {
-  const hook = variant === 'A'
-    ? `${structure.hookA}`
-    : `${structure.hookB}`;
+  const hook = variant === 'A' ? structure.hookA : structure.hookB;
+  const proof = fitToLimit(`Prueba: ${structure.proof}`, 90);
+  const cta = variant === 'A' ? 'Agenda diagnostico ahora.' : 'Responde y revisamos tu cuello de botella.';
 
-  const cta = variant === 'A'
-    ? structure.ctaA
-    : structure.ctaB;
-
-  const compact = `${hook} ${structure.pain} ${structure.proof} ${cta} ${link}`;
-  return fitToLimit(compact, CHAR_LIMITS.x);
+  // Keep the tracked URL intact to preserve attribution and avoid UTM loss.
+  const fixedUrl = link;
+  const base = `${hook} ${proof} ${cta}`.replace(/\s+/g, ' ').trim();
+  const available = CHAR_LIMITS.x - fixedUrl.length - 1;
+  const trimmedBase = available > 16 ? fitToLimit(base, available) : fitToLimit(base, 16);
+  return `${trimmedBase} ${fixedUrl}`;
 }
 
 function formatFacebook(structure, link, variant) {

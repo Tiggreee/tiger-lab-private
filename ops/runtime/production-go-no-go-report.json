@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-13T08:40:14.532Z",
+  "generatedAt": "2026-06-13T16:18:37.125Z",
   "strict": false,
   "gateStatus": "GO",
   "summary": {
-    "pass": 14,
+    "pass": 15,
     "warn": 0,
     "fail": 0
   },
@@ -138,6 +138,22 @@
       "details": "Thresholds: lines 30%, statements 30%",
       "evidence": [
         "vitest.config.ts"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P15",
+      "title": "Integridad de evidencia runtime (sin placeholders/samples)",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "No se detectaron placeholders ni IDs sample en evidencia operativa.",
+      "evidence": [
+        "ops/runtime/funnel-events.jsonl",
+        "ops/runtime/runtime-state.json",
+        "ops/runtime/invoice-pending-report.json",
+        "ops/runtime/billing-reconciliation-report.json",
+        "ops/runtime/billing-reconciliation-report.md",
+        "ops/traffic/outbox/social-pack-landing-social.json"
       ],
       "ownerAction": "Sin accion."
     },

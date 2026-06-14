@@ -1,0 +1,68 @@
+{
+  "executedAt": "2026-06-13T16:32:12.142Z",
+  "campaign": "daily-2026-06-13-publish",
+  "packPath": "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\social-pack-daily-2026-06-13-publish.json",
+  "requestedChannels": [
+    "linkedin",
+    "x",
+    "facebook",
+    "telegram",
+    "discord"
+  ],
+  "readyChannels": [],
+  "liveRequested": false,
+  "minChannels": 0,
+  "readiness": [
+    {
+      "channel": "linkedin",
+      "hasCopy": true,
+      "missingSecrets": [
+        "LINKEDIN_ACCESS_TOKEN"
+      ],
+      "ready": false
+    },
+    {
+      "channel": "x",
+      "hasCopy": true,
+      "missingSecrets": [
+        "X_API_KEY",
+        "X_API_SECRET",
+        "X_ACCESS_TOKEN",
+        "X_ACCESS_TOKEN_SECRET"
+      ],
+      "ready": false
+    },
+    {
+      "channel": "facebook",
+      "hasCopy": true,
+      "missingSecrets": [
+        "FACEBOOK_PAGE_ID",
+        "FACEBOOK_PAGE_ACCESS_TOKEN"
+      ],
+      "ready": false
+    },
+    {
+      "channel": "telegram",
+      "hasCopy": true,
+      "missingSecrets": [
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "ready": false
+    },
+    {
+      "channel": "discord",
+      "hasCopy": true,
+      "missingSecrets": [
+        "DISCORD_BOT_TOKEN",
+        "DISCORD_CHANNEL_ID"
+      ],
+      "ready": false
+    }
+  ],
+  "steps": {
+    "goLive": "skipped",
+    "dryPublish": "skipped",
+    "livePublish": "skipped"
+  }
+}

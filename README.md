@@ -1,10 +1,10 @@
 # TigerLab — Motor Autónomo de Monetización y Operación
 
-> *"Ni tú, ni este sistema, ni yo somos sombra de nadie. Ni menos, ni más. Lo que sí puede serlo son nuestros resultados."*
+> *"Ni yo, ni tú, ni nuestros sistemas somos mejores que nadie — eso nadie lo puede comprobar. Lo que sí puede hacerlo son nuestros resultados."*
 >
-> Construido desde cero, con recursos limitados, ignorado por el mercado tradicional. Diseñado para demostrar que se puede lograr software de primer nivel mundial sin presupuestos millonarios. Cada pago, cada lead, cada línea de código es un resultado que habla por sí mismo.
+> Construido desde cero, con recursos limitados. El engine es un generador, no un consumidor de dinero.
 
-**Versión única.** No más forks, no más ramas de features.
+**Versión única.**
 
 ## Comparativa: Inicio vs Hoy (13 Junio 2026)
 

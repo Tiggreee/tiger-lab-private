@@ -1,0 +1,21 @@
+{
+  "pipelineRunAt": "2026-06-13T20:19:47.732Z",
+  "today": "2026-06-13",
+  "dryRun": false,
+  "activeProducts": [
+    "Docflow API",
+    "Script Premium Kit"
+  ],
+  "campaigns": [
+    {
+      "product": "Docflow API",
+      "campaign": "docflow-api-2026-06-13",
+      "packPath": "ops/traffic/outbox/social-pack-docflow-api-2026-06-13.json"
+    },
+    {
+      "product": "Script Premium Kit",
+      "campaign": "script-premium-kit-2026-06-13",
+      "packPath": "ops/traffic/outbox/social-pack-script-premium-kit-2026-06-13.json"
+    }
+  ]
+}

@@ -13,6 +13,16 @@ function exists(root, relPath) { return fs.existsSync(p(root, relPath)); }
 function readText(root, relPath) { return fs.readFileSync(p(root, relPath), 'utf8'); }
 function readJson(root, relPath) { return JSON.parse(readText(root, relPath)); }
 
+function countPatternMatches(root, relPath, patterns) {
+  if (!exists(root, relPath)) return { file: relPath, matches: 0 };
+  const text = readText(root, relPath);
+  const matchCount = patterns.reduce((total, pattern) => {
+    const found = text.match(pattern);
+    return total + (found ? found.length : 0);
+  }, 0);
+  return { file: relPath, matches: matchCount };
+}
+
 export function buildStructuralChecks(rootPath) {
   const checks = [];
 
@@ -193,6 +203,36 @@ export function buildStructuralChecks(rootPath) {
       details: ok ? `Thresholds: lines ${linesThreshold}%, statements ${stmtThreshold}%` : `Thresholds muy bajos: lines ${linesThreshold}%, stmts ${stmtThreshold}%`,
       evidence: ['vitest.config.ts'],
       ownerAction: ok ? 'Sin accion.' : 'Revisar thresholds en vitest.config.ts.'
+    };
+  });
+
+  addCheck('P15', 'Integridad de evidencia runtime (sin placeholders/samples)', 'critical', () => {
+    const targets = [
+      'ops/runtime/funnel-events.jsonl',
+      'ops/runtime/runtime-state.json',
+      'ops/runtime/invoice-pending-report.json',
+      'ops/runtime/billing-reconciliation-report.json',
+      'ops/runtime/billing-reconciliation-report.md',
+      'ops/traffic/outbox/social-pack-landing-social.json',
+    ];
+
+    const placeholderPatterns = [/example\.com/gi, /placeholder/gi];
+    const samplePatterns = [/pay_sample_/gi, /cust_sample_/gi];
+    const allPatterns = [...placeholderPatterns, ...samplePatterns];
+
+    const findings = targets.map((target) => countPatternMatches(rootPath, target, allPatterns));
+    const offenders = findings.filter((f) => f.matches > 0);
+    const totalMatches = offenders.reduce((sum, f) => sum + f.matches, 0);
+
+    return {
+      status: totalMatches === 0 ? 'PASS' : 'FAIL',
+      details: totalMatches === 0
+        ? 'No se detectaron placeholders ni IDs sample en evidencia operativa.'
+        : `Se detectaron ${totalMatches} matches en ${offenders.length} archivos de evidencia runtime.`,
+      evidence: targets,
+      ownerAction: totalMatches === 0
+        ? 'Sin accion.'
+        : 'Eliminar placeholders/IDs sample en runtime y regenerar evidencia real antes de go-live.',
     };
   });
 
