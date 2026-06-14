@@ -1,0 +1,38 @@
+name: Deploy Dashboard to Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [ops/command-center/**]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+      
+      # Copy runtime JSON data so dashboard works as static site
+      - name: Copy runtime data
+        run: |
+          cp ops/runtime/dashboard-unified.json ops/command-center/runtime/dashboard-unified.json 2>/dev/null || echo "No dashboard data yet"
+          cp ops/runtime/dashboard-alerts.json ops/command-center/runtime/dashboard-alerts.json 2>/dev/null || echo "No alerts yet"
+          cp ops/runtime/product-scores.json ops/command-center/runtime/product-scores.json 2>/dev/null || echo "No scores yet"
+          cp ops/runtime/engine-decisions.json ops/command-center/runtime/engine-decisions.json 2>/dev/null || echo "No decisions yet"
+          cp -r ops/runtime/campaigns ops/command-center/runtime/campaigns 2>/dev/null || echo "No campaigns yet"
+          cp ops/runtime/campaigns/index.json ops/command-center/runtime/campaigns/index.json 2>/dev/null || echo "No index yet"
+          echo "Data copied for static deployment"
+      
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: ops/command-center
+      - uses: actions/deploy-pages@v5
