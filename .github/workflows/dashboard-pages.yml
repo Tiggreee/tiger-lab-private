@@ -36,3 +36,5 @@ jobs:
         with:
           path: ops/command-center
       - uses: actions/deploy-pages@v5
+        with:
+          enablement: true
