@@ -985,21 +985,17 @@
     "gate": "GO"
   },
   "failuresMonitor": {
-    "lastAnalysis": "2026-06-14T09:43:29.877Z",
+    "lastAnalysis": "2026-06-14T11:18:32.102Z",
     "totalRuns": 100,
-    "failedToday": 3,
-    "successfulToday": 96,
+    "failedToday": 2,
+    "successfulToday": 97,
     "byType": {
-      "failure": 3
+      "failure": 2
     },
     "byWorkflow": [
       {
         "workflow": "daily-sales-automation",
         "failures": 2
-      },
-      {
-        "workflow": "Product Development Engine — 2h Cycle",
-        "failures": 1
       }
     ],
     "rootCauses": [
