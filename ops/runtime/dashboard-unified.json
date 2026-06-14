@@ -985,7 +985,7 @@
     "gate": "GO"
   },
   "failuresMonitor": {
-    "lastAnalysis": "2026-06-14T18:54:21.213Z",
+    "lastAnalysis": "2026-06-14T20:52:32.032Z",
     "totalRuns": 100,
     "failedToday": 3,
     "successfulToday": 96,
@@ -995,14 +995,10 @@
     "byWorkflow": [
       {
         "workflow": "Deploy Dashboard to Pages",
-        "failures": 1
+        "failures": 2
       },
       {
         "workflow": "security",
-        "failures": 1
-      },
-      {
-        "workflow": "daily-sales-automation",
         "failures": 1
       }
     ],
