@@ -1009,16 +1009,16 @@
     "currentPermission": "all"
   },
   "productEngine": {
-    "generatedAt": "2026-06-14T13:54:29.391Z",
+    "generatedAt": "2026-06-14T14:51:31.703Z",
     "engine": {
-      "averageScore": 48,
+      "averageScore": 64,
       "productsAt95": 0,
       "productsOnTrack95": 0,
       "productsAt90plus": 0,
       "productsAt75plus": 2,
       "totalBenchmarks": 5,
       "totalCompetitors": 20,
-      "estimatedTotalEffortHours": 440
+      "estimatedTotalEffortHours": 146
     },
     "topProducts": [
       {
