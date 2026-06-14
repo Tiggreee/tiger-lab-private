@@ -985,7 +985,7 @@
     "gate": "GO"
   },
   "failuresMonitor": {
-    "lastAnalysis": "2026-06-14T06:05:53.832Z",
+    "lastAnalysis": "2026-06-14T08:00:18.442Z",
     "totalRuns": 100,
     "failedToday": 3,
     "successfulToday": 96,
