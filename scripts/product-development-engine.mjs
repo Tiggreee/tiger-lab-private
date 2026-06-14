@@ -257,7 +257,17 @@ async function main() {
       name: product.name,
       score: scoreData.finalScore,
       tier: scoreData.classification.tier,
-      status: product.status
+      status: product.status,
+      dimensions: {
+        documentation: scoreData.dimensions?.find(d => d.id === 'documentation')?.score || 0,
+        integration_depth: scoreData.dimensions?.find(d => d.id === 'integration_depth')?.score || 0,
+        automation_coverage: scoreData.dimensions?.find(d => d.id === 'automation_coverage')?.score || 0,
+        monetization_readiness: scoreData.dimensions?.find(d => d.id === 'monetization_readiness')?.score || 0,
+        market_fit: scoreData.dimensions?.find(d => d.id === 'market_fit')?.score || 0,
+        technical_quality: scoreData.dimensions?.find(d => d.id === 'technical_quality')?.score || 0,
+        completion_level: scoreData.dimensions?.find(d => d.id === 'completion_level')?.score || 0,
+        competitiveness: scoreData.dimensions?.find(d => d.id === 'competitiveness')?.score || 0
+      }
     };
 
     allResults.push({

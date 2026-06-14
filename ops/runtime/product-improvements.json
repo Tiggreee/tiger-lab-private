@@ -1,109 +1,15 @@
 {
-  "generatedAt": "2026-06-14T14:41:03.895Z",
-  "totalProducts": 12,
+  "generatedAt": "2026-06-14T14:52:59.561Z",
+  "totalProducts": 3,
   "improvements": [
     {
-      "product": "Docflow API",
-      "currentScore": 0,
-      "projectedScore": 40,
-      "gaps": [
-        {
-          "area": "documentation",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Generate README, API docs, and onboarding guide for Docflow API",
-          "tool": "free — markdown auto-generation",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "integration_depth",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Build integration examples for Docflow API: Zapier, Make.com, REST API",
-          "tool": "free — OpenAPI spec + webhook templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "automation_coverage",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Add GitHub Actions workflows for Docflow API deployment and testing",
-          "tool": "free — GitHub Actions YAML templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "monetization_readiness",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Create Stripe checkout link + pricing page for Docflow API",
-          "tool": "free — Stripe Payment Links",
-          "impact": "+20 points",
-          "autoFix": true
-        }
-      ],
-      "totalGaps": 4,
-      "estimatedImprovement": "+40 points",
-      "autoFixable": 4,
-      "manualRequired": 0
-    },
-    {
-      "product": "Script Premium Kit",
-      "currentScore": 0,
-      "projectedScore": 40,
-      "gaps": [
-        {
-          "area": "documentation",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Generate README, API docs, and onboarding guide for Script Premium Kit",
-          "tool": "free — markdown auto-generation",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "integration_depth",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Build integration examples for Script Premium Kit: Zapier, Make.com, REST API",
-          "tool": "free — OpenAPI spec + webhook templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "automation_coverage",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Add GitHub Actions workflows for Script Premium Kit deployment and testing",
-          "tool": "free — GitHub Actions YAML templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "monetization_readiness",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Create Stripe checkout link + pricing page for Script Premium Kit",
-          "tool": "free — Stripe Payment Links",
-          "impact": "+20 points",
-          "autoFix": true
-        }
-      ],
-      "totalGaps": 4,
-      "estimatedImprovement": "+40 points",
-      "autoFixable": 4,
-      "manualRequired": 0
-    },
-    {
       "product": "FacturAutentico Cloud",
-      "currentScore": 0,
-      "projectedScore": 40,
+      "currentScore": 56,
+      "projectedScore": 96,
       "gaps": [
         {
           "area": "documentation",
-          "currentScore": 0,
+          "currentScore": 40,
           "targetScore": 90,
           "action": "Generate README, API docs, and onboarding guide for FacturAutentico Cloud",
           "tool": "free — markdown auto-generation",
@@ -112,7 +18,7 @@
         },
         {
           "area": "integration_depth",
-          "currentScore": 0,
+          "currentScore": 35,
           "targetScore": 85,
           "action": "Build integration examples for FacturAutentico Cloud: Zapier, Make.com, REST API",
           "tool": "free — OpenAPI spec + webhook templates",
@@ -121,7 +27,7 @@
         },
         {
           "area": "automation_coverage",
-          "currentScore": 0,
+          "currentScore": 45,
           "targetScore": 85,
           "action": "Add GitHub Actions workflows for FacturAutentico Cloud deployment and testing",
           "tool": "free — GitHub Actions YAML templates",
@@ -130,7 +36,7 @@
         },
         {
           "area": "monetization_readiness",
-          "currentScore": 0,
+          "currentScore": 60,
           "targetScore": 90,
           "action": "Create Stripe checkout link + pricing page for FacturAutentico Cloud",
           "tool": "free — Stripe Payment Links",
@@ -145,12 +51,12 @@
     },
     {
       "product": "FacturAutentica",
-      "currentScore": 0,
-      "projectedScore": 40,
+      "currentScore": 56,
+      "projectedScore": 96,
       "gaps": [
         {
           "area": "documentation",
-          "currentScore": 0,
+          "currentScore": 40,
           "targetScore": 90,
           "action": "Generate README, API docs, and onboarding guide for FacturAutentica",
           "tool": "free — markdown auto-generation",
@@ -159,7 +65,7 @@
         },
         {
           "area": "integration_depth",
-          "currentScore": 0,
+          "currentScore": 35,
           "targetScore": 85,
           "action": "Build integration examples for FacturAutentica: Zapier, Make.com, REST API",
           "tool": "free — OpenAPI spec + webhook templates",
@@ -168,7 +74,7 @@
         },
         {
           "area": "automation_coverage",
-          "currentScore": 0,
+          "currentScore": 45,
           "targetScore": 85,
           "action": "Add GitHub Actions workflows for FacturAutentica deployment and testing",
           "tool": "free — GitHub Actions YAML templates",
@@ -177,7 +83,7 @@
         },
         {
           "area": "monetization_readiness",
-          "currentScore": 0,
+          "currentScore": 60,
           "targetScore": 90,
           "action": "Create Stripe checkout link + pricing page for FacturAutentica",
           "tool": "free — Stripe Payment Links",
@@ -192,12 +98,12 @@
     },
     {
       "product": "Sentrylog Lite",
-      "currentScore": 0,
-      "projectedScore": 40,
+      "currentScore": 38,
+      "projectedScore": 78,
       "gaps": [
         {
           "area": "documentation",
-          "currentScore": 0,
+          "currentScore": 40,
           "targetScore": 90,
           "action": "Generate README, API docs, and onboarding guide for Sentrylog Lite",
           "tool": "free — markdown auto-generation",
@@ -206,7 +112,7 @@
         },
         {
           "area": "integration_depth",
-          "currentScore": 0,
+          "currentScore": 35,
           "targetScore": 85,
           "action": "Build integration examples for Sentrylog Lite: Zapier, Make.com, REST API",
           "tool": "free — OpenAPI spec + webhook templates",
@@ -215,7 +121,7 @@
         },
         {
           "area": "automation_coverage",
-          "currentScore": 0,
+          "currentScore": 45,
           "targetScore": 85,
           "action": "Add GitHub Actions workflows for Sentrylog Lite deployment and testing",
           "tool": "free — GitHub Actions YAML templates",
@@ -224,338 +130,9 @@
         },
         {
           "area": "monetization_readiness",
-          "currentScore": 0,
+          "currentScore": 30,
           "targetScore": 90,
           "action": "Create Stripe checkout link + pricing page for Sentrylog Lite",
-          "tool": "free — Stripe Payment Links",
-          "impact": "+20 points",
-          "autoFix": true
-        }
-      ],
-      "totalGaps": 4,
-      "estimatedImprovement": "+40 points",
-      "autoFixable": 4,
-      "manualRequired": 0
-    },
-    {
-      "product": "DevTools GDPR Middleware",
-      "currentScore": 0,
-      "projectedScore": 40,
-      "gaps": [
-        {
-          "area": "documentation",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Generate README, API docs, and onboarding guide for DevTools GDPR Middleware",
-          "tool": "free — markdown auto-generation",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "integration_depth",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Build integration examples for DevTools GDPR Middleware: Zapier, Make.com, REST API",
-          "tool": "free — OpenAPI spec + webhook templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "automation_coverage",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Add GitHub Actions workflows for DevTools GDPR Middleware deployment and testing",
-          "tool": "free — GitHub Actions YAML templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "monetization_readiness",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Create Stripe checkout link + pricing page for DevTools GDPR Middleware",
-          "tool": "free — Stripe Payment Links",
-          "impact": "+20 points",
-          "autoFix": true
-        }
-      ],
-      "totalGaps": 4,
-      "estimatedImprovement": "+40 points",
-      "autoFixable": 4,
-      "manualRequired": 0
-    },
-    {
-      "product": "EU AI Act Readiness Platform",
-      "currentScore": 0,
-      "projectedScore": 40,
-      "gaps": [
-        {
-          "area": "documentation",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Generate README, API docs, and onboarding guide for EU AI Act Readiness Platform",
-          "tool": "free — markdown auto-generation",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "integration_depth",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Build integration examples for EU AI Act Readiness Platform: Zapier, Make.com, REST API",
-          "tool": "free — OpenAPI spec + webhook templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "automation_coverage",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Add GitHub Actions workflows for EU AI Act Readiness Platform deployment and testing",
-          "tool": "free — GitHub Actions YAML templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "monetization_readiness",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Create Stripe checkout link + pricing page for EU AI Act Readiness Platform",
-          "tool": "free — Stripe Payment Links",
-          "impact": "+20 points",
-          "autoFix": true
-        }
-      ],
-      "totalGaps": 4,
-      "estimatedImprovement": "+40 points",
-      "autoFixable": 4,
-      "manualRequired": 0
-    },
-    {
-      "product": "GDPR Auto-Compliance Scanner",
-      "currentScore": 0,
-      "projectedScore": 40,
-      "gaps": [
-        {
-          "area": "documentation",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Generate README, API docs, and onboarding guide for GDPR Auto-Compliance Scanner",
-          "tool": "free — markdown auto-generation",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "integration_depth",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Build integration examples for GDPR Auto-Compliance Scanner: Zapier, Make.com, REST API",
-          "tool": "free — OpenAPI spec + webhook templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "automation_coverage",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Add GitHub Actions workflows for GDPR Auto-Compliance Scanner deployment and testing",
-          "tool": "free — GitHub Actions YAML templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "monetization_readiness",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Create Stripe checkout link + pricing page for GDPR Auto-Compliance Scanner",
-          "tool": "free — Stripe Payment Links",
-          "impact": "+20 points",
-          "autoFix": true
-        }
-      ],
-      "totalGaps": 4,
-      "estimatedImprovement": "+40 points",
-      "autoFixable": 4,
-      "manualRequired": 0
-    },
-    {
-      "product": "SaaS Localization Engine EU",
-      "currentScore": 0,
-      "projectedScore": 40,
-      "gaps": [
-        {
-          "area": "documentation",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Generate README, API docs, and onboarding guide for SaaS Localization Engine EU",
-          "tool": "free — markdown auto-generation",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "integration_depth",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Build integration examples for SaaS Localization Engine EU: Zapier, Make.com, REST API",
-          "tool": "free — OpenAPI spec + webhook templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "automation_coverage",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Add GitHub Actions workflows for SaaS Localization Engine EU deployment and testing",
-          "tool": "free — GitHub Actions YAML templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "monetization_readiness",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Create Stripe checkout link + pricing page for SaaS Localization Engine EU",
-          "tool": "free — Stripe Payment Links",
-          "impact": "+20 points",
-          "autoFix": true
-        }
-      ],
-      "totalGaps": 4,
-      "estimatedImprovement": "+40 points",
-      "autoFixable": 4,
-      "manualRequired": 0
-    },
-    {
-      "product": "Carbon Accounting API for EU SMEs",
-      "currentScore": 0,
-      "projectedScore": 40,
-      "gaps": [
-        {
-          "area": "documentation",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Generate README, API docs, and onboarding guide for Carbon Accounting API for EU SMEs",
-          "tool": "free — markdown auto-generation",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "integration_depth",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Build integration examples for Carbon Accounting API for EU SMEs: Zapier, Make.com, REST API",
-          "tool": "free — OpenAPI spec + webhook templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "automation_coverage",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Add GitHub Actions workflows for Carbon Accounting API for EU SMEs deployment and testing",
-          "tool": "free — GitHub Actions YAML templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "monetization_readiness",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Create Stripe checkout link + pricing page for Carbon Accounting API for EU SMEs",
-          "tool": "free — Stripe Payment Links",
-          "impact": "+20 points",
-          "autoFix": true
-        }
-      ],
-      "totalGaps": 4,
-      "estimatedImprovement": "+40 points",
-      "autoFixable": 4,
-      "manualRequired": 0
-    },
-    {
-      "product": "PSD3 Open Banking Connector",
-      "currentScore": 0,
-      "projectedScore": 40,
-      "gaps": [
-        {
-          "area": "documentation",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Generate README, API docs, and onboarding guide for PSD3 Open Banking Connector",
-          "tool": "free — markdown auto-generation",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "integration_depth",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Build integration examples for PSD3 Open Banking Connector: Zapier, Make.com, REST API",
-          "tool": "free — OpenAPI spec + webhook templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "automation_coverage",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Add GitHub Actions workflows for PSD3 Open Banking Connector deployment and testing",
-          "tool": "free — GitHub Actions YAML templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "monetization_readiness",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Create Stripe checkout link + pricing page for PSD3 Open Banking Connector",
-          "tool": "free — Stripe Payment Links",
-          "impact": "+20 points",
-          "autoFix": true
-        }
-      ],
-      "totalGaps": 4,
-      "estimatedImprovement": "+40 points",
-      "autoFixable": 4,
-      "manualRequired": 0
-    },
-    {
-      "product": "Cross-Border VAT Automator",
-      "currentScore": 0,
-      "projectedScore": 40,
-      "gaps": [
-        {
-          "area": "documentation",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Generate README, API docs, and onboarding guide for Cross-Border VAT Automator",
-          "tool": "free — markdown auto-generation",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "integration_depth",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Build integration examples for Cross-Border VAT Automator: Zapier, Make.com, REST API",
-          "tool": "free — OpenAPI spec + webhook templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "automation_coverage",
-          "currentScore": 0,
-          "targetScore": 85,
-          "action": "Add GitHub Actions workflows for Cross-Border VAT Automator deployment and testing",
-          "tool": "free — GitHub Actions YAML templates",
-          "impact": "+15 points",
-          "autoFix": true
-        },
-        {
-          "area": "monetization_readiness",
-          "currentScore": 0,
-          "targetScore": 90,
-          "action": "Create Stripe checkout link + pricing page for Cross-Border VAT Automator",
           "tool": "free — Stripe Payment Links",
           "impact": "+20 points",
           "autoFix": true

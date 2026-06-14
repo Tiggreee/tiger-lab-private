@@ -18,15 +18,16 @@ function analyzeGaps() {
   
   for (const result of products) {
     const name = result.product?.name || 'Unknown';
-    const score = result.score?.finalScore || 0;
-    const dimensions = result.score?.dimensions || {};
+    const score = result.score || 0;
+    const dimensions = result.dimensions || {};
     const gaps = [];
     
     // Documentation gap
-    if ((dimensions.documentation || 0) < 70) {
+    const docScore = (dimensions.documentation?.score || dimensions.documentation || 0);
+    if (docScore < 70) {
       gaps.push({
         area: 'documentation',
-        currentScore: dimensions.documentation || 0,
+        currentScore: docScore,
         targetScore: 90,
         action: `Generate README, API docs, and onboarding guide for ${name}`,
         tool: 'free — markdown auto-generation',
@@ -36,10 +37,11 @@ function analyzeGaps() {
     }
     
     // Integration gap
-    if ((dimensions.integration_depth || 0) < 70) {
+    const intScore = (dimensions.integration_depth?.score || dimensions.integration_depth || 0);
+    if (intScore < 70) {
       gaps.push({
         area: 'integration_depth',
-        currentScore: dimensions.integration_depth || 0,
+        currentScore: intScore,
         targetScore: 85,
         action: `Build integration examples for ${name}: Zapier, Make.com, REST API`,
         tool: 'free — OpenAPI spec + webhook templates',
@@ -49,10 +51,11 @@ function analyzeGaps() {
     }
     
     // Automation coverage
-    if ((dimensions.automation_coverage || 0) < 70) {
+    const autoScore = (dimensions.automation_coverage?.score || dimensions.automation_coverage || 0);
+    if (autoScore < 70) {
       gaps.push({
         area: 'automation_coverage',
-        currentScore: dimensions.automation_coverage || 0,
+        currentScore: autoScore,
         targetScore: 85,
         action: `Add GitHub Actions workflows for ${name} deployment and testing`,
         tool: 'free — GitHub Actions YAML templates',
@@ -62,10 +65,11 @@ function analyzeGaps() {
     }
     
     // Monetization
-    if ((dimensions.monetization_readiness || 0) < 70) {
+    const monScore = (dimensions.monetization_readiness?.score || dimensions.monetization_readiness || 0);
+    if (monScore < 70) {
       gaps.push({
         area: 'monetization_readiness',
-        currentScore: dimensions.monetization_readiness || 0,
+        currentScore: monScore,
         targetScore: 90,
         action: `Create Stripe checkout link + pricing page for ${name}`,
         tool: 'free — Stripe Payment Links',
