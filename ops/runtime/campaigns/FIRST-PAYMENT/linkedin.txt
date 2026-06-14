@@ -1,0 +1,11 @@
+🔥 Recupera 10h/semana en papeleo.
+
+Docflow API automatiza tu flujo documental completo:
+✅ Workflows automatizados
+✅ CFDI 4.0 nativo MX
+✅ API-first. Sin fricción.
+
+💡 Primer mes: $69 USD
+👉 https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter
+
+#Automatización #SaaS #PyMEs #Productividad

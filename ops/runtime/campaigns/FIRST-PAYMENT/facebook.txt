@@ -1,0 +1,12 @@
+🔥 Deja de perder 10 horas por semana en papeleo.
+
+Docflow API automatiza todo tu flujo documental:
+✅ Workflows inteligentes
+✅ Facturación electrónica CFDI 4.0 nativa
+✅ Integración en minutos, no meses
+
+💡 Primer mes a solo $69 USD.
+
+👉 https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter
+
+Tu tiempo vale más. Automatízalo.
