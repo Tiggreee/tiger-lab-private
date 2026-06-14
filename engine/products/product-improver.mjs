@@ -13,11 +13,14 @@ const OUT_PATH = resolve('ops/runtime/product-improvements.json');
 
 function analyzeGaps() {
   const scores = JSON.parse(readFileSync(SCORES_PATH, 'utf8'));
+  const products = scores.productResults || [];
   const improvements = [];
   
-  for (const [name, data] of Object.entries(scores.products || {})) {
+  for (const result of products) {
+    const name = result.product?.name || 'Unknown';
+    const score = result.score?.finalScore || 0;
+    const dimensions = result.score?.dimensions || {};
     const gaps = [];
-    const dimensions = data.dimensions || {};
     
     // Documentation gap
     if ((dimensions.documentation || 0) < 70) {
@@ -72,14 +75,14 @@ function analyzeGaps() {
     }
     
     if (gaps.length > 0) {
-      const newScore = Math.min(100, (data.finalScore || data.score || 0) + gaps.length * 10);
+      const newScore = Math.min(100, score + gaps.length * 10);
       improvements.push({
         product: name,
-        currentScore: data.finalScore || data.score || 0,
+        currentScore: score,
         projectedScore: newScore,
         gaps,
         totalGaps: gaps.length,
-        estimatedImprovement: `+${newScore - (data.finalScore || data.score || 0)} points`,
+        estimatedImprovement: `+${newScore - score} points`,
         autoFixable: gaps.filter(g => g.autoFix).length,
         manualRequired: gaps.filter(g => !g.autoFix).length
       });
