@@ -519,10 +519,24 @@
         "daily-sales-automation": 2
       },
       "perm": "all"
+    },
+    {
+      "timestamp": "2026-06-14T15:12:35.453Z",
+      "totalRuns": 100,
+      "failed": 3,
+      "successful": 96,
+      "byType": {
+        "failure": 3
+      },
+      "byWorkflow": {
+        "security": 1,
+        "daily-sales-automation": 2
+      },
+      "perm": "all"
     }
   ],
   "fixesApplied": [],
   "lastKnownPermission": "all",
-  "lastAnalysis": "2026-06-14T13:05:22.489Z",
-  "totalFailuresTracked": 439
+  "lastAnalysis": "2026-06-14T15:12:35.454Z",
+  "totalFailuresTracked": 442
 }
