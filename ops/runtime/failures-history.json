@@ -548,10 +548,25 @@
         "daily-sales-automation": 2
       },
       "perm": "all"
+    },
+    {
+      "timestamp": "2026-06-14T18:54:21.213Z",
+      "totalRuns": 100,
+      "failed": 3,
+      "successful": 96,
+      "byType": {
+        "failure": 3
+      },
+      "byWorkflow": {
+        "Deploy Dashboard to Pages": 1,
+        "security": 1,
+        "daily-sales-automation": 1
+      },
+      "perm": "all"
     }
   ],
   "fixesApplied": [],
   "lastKnownPermission": "all",
-  "lastAnalysis": "2026-06-14T16:57:57.295Z",
-  "totalFailuresTracked": 446
+  "lastAnalysis": "2026-06-14T18:54:21.213Z",
+  "totalFailuresTracked": 449
 }
