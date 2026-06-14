@@ -59,9 +59,8 @@ footer{font-size:.65rem;color:#484f58;text-align:center;padding:6px 0 0;border-t
 .bot-container{position:fixed;bottom:16px;right:16px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
 .bot-bubble{background:#161b22;border:1px solid #3fb95044;border-radius:8px;padding:8px 12px;max-width:220px;font-size:.65rem;color:#c9d1d9;box-shadow:0 2px 12px #00000044;animation:floatBubble 4s ease-in-out infinite}
 .bot-bubble strong{color:#3fb950;display:block;font-size:.6rem;margin-bottom:3px}
-.bot-face{width:80px;height:100px;border-radius:50%/45%;border:1px solid #0ff;background-size:cover;background-position:center;animation:cycleFaces 10s steps(1) infinite,hologramPulse 2s ease-in-out infinite;cursor:pointer;box-shadow:0 0 8px #0ff44,0 0 20px #0ff22,inset 0 0 8px #0ff11;transition:transform .2s}
-.bot-face:hover{transform:scale(1.15);box-shadow:0 0 16px #0ff88,0 0 32px #0ff44}
-@keyframes hologramPulse{0%,100%{box-shadow:0 0 8px #0ff44,0 0 20px #0ff22}50%{box-shadow:0 0 14px #0ff66,0 0 30px #0ff44}}
+.bot-face{width:80px;height:100px;border-radius:50%/45%;border:1px solid #3fb950;background-size:cover;background-position:center;animation:cycleFaces 10s steps(1) infinite;cursor:pointer;box-shadow:0 0 8px #3fb95022;transition:transform .2s}
+.bot-face:hover{transform:scale(1.15)}
 @keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
 @keyframes cycleFaces{
 0%{background-image:url('/command-center/faces/Copilot_20260613_002326.png')}
