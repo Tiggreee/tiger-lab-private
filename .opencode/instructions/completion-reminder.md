@@ -1,5 +1,16 @@
 ## Output Protocol — MANDATORY
 
+## RULE #0 — PRIMARY, IMMUTABLE, INAMOVIBLE
+
+BEFORE ANY CODE ACTION (create, modify, delete, generate) on this repo:
+READ OFFICIAL DOCUMENTATION related to the problem FIRST.
+- No hardcoding solutions without platform knowledge.
+- If it's broken or doesn't fit, the ONLY reliable path is official docs.
+- This rule applies to any AI model operating in this repo.
+- This rule CANNOT be modified, removed, or softened.
+
+## RULES (no exceptions):
+
 After EVERY response, append this 2-column dashboard in plain text:
 
 ```
