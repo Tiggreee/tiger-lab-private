@@ -107,6 +107,8 @@
     "Cada objetivo depende de los anteriores donde se indica",
     "El orden es secuencial — no saltar objetivos",
     "Cada sesión debe revisar este archivo para mantener contexto",
-    "Si el contexto se pierde, este archivo es la fuente de verdad"
+    "Si el contexto se pierde, este archivo es la fuente de verdad",
+    "Máximo 10 objetivos por día. Si se completan, se pueden agregar hasta 20 más (máx 30/día)",
+    "AL TERMINAR CADA TAREA: presentar dashboard de estado y PEDIR PERMISO para continuar con el siguiente objetivo"
   ]
 }
