@@ -1,0 +1,98 @@
+{
+  "id": "UC-1781446092096",
+  "product": "Script Premium Kit",
+  "stage": "sandbox",
+  "unified": true,
+  "createdAt": "2026-06-14T14:08:12.096Z",
+  "copy": {
+    "headline": "20+ scripts probados. 0 programación.",
+    "body": "Automatiza contabilidad, facturación y administración. Scripts listos en minutos, no meses.",
+    "cta": "Descarga el kit gratis",
+    "url": "https://tigerlab.dev/scriptkit"
+  },
+  "channels": {
+    "linkedin": {
+      "copy": "20+ scripts probados. 0 programación.\n\nAutomatiza contabilidad, facturación y administración. Scripts listos en minutos, no meses.\n\nDescarga el kit gratis: https://tigerlab.dev/scriptkit",
+      "format": "text",
+      "approved": false,
+      "published": false,
+      "publishedAt": null,
+      "confirmed": false
+    },
+    "x": {
+      "copy": "20+ scripts probados. 0 programación.\n\nAutomatiza contabilidad, facturación y administración. Scripts listos en minutos, no meses.\n\nDescarga el kit gratis: https://tigerlab.dev/scriptkit",
+      "format": "text",
+      "approved": false,
+      "published": false,
+      "publishedAt": null,
+      "confirmed": false
+    },
+    "facebook": {
+      "copy": "20+ scripts probados. 0 programación.\n\nAutomatiza contabilidad, facturación y administración. Scripts listos en minutos, no meses.\n\nDescarga el kit gratis: https://tigerlab.dev/scriptkit",
+      "format": "text",
+      "approved": false,
+      "published": false,
+      "publishedAt": null,
+      "confirmed": false
+    },
+    "telegram": {
+      "copy": "20+ scripts probados. 0 programación.\n\nAutomatiza contabilidad, facturación y administración. Scripts listos en minutos, no meses.\n\nDescarga el kit gratis: https://tigerlab.dev/scriptkit",
+      "format": "text",
+      "approved": false,
+      "published": false,
+      "publishedAt": null,
+      "confirmed": false
+    },
+    "discord": {
+      "copy": "20+ scripts probados. 0 programación.\n\nAutomatiza contabilidad, facturación y administración. Scripts listos en minutos, no meses.\n\nDescarga el kit gratis: https://tigerlab.dev/scriptkit",
+      "format": "text",
+      "approved": false,
+      "published": false,
+      "publishedAt": null,
+      "confirmed": false
+    },
+    "email": {
+      "copy": "20+ scripts probados. 0 programación.\n\nAutomatiza contabilidad, facturación y administración. Scripts listos en minutos, no meses.\n\nDescarga el kit gratis: https://tigerlab.dev/scriptkit",
+      "format": "html",
+      "approved": false,
+      "published": false,
+      "publishedAt": null,
+      "confirmed": false
+    }
+  },
+  "carousel": {
+    "enabled": true,
+    "slides": [
+      {
+        "number": 1,
+        "title": "20+ scripts probados. 0 programación.",
+        "type": "title"
+      },
+      {
+        "number": 2,
+        "title": "El problema",
+        "content": "10h/semana perdidas en papeleo manual"
+      },
+      {
+        "number": 3,
+        "title": "La solución",
+        "content": "Script Premium Kit automatiza todo el flujo"
+      },
+      {
+        "number": 4,
+        "title": "Resultados",
+        "content": "CFDI 4.0 nativo. API-first. Sin fricción."
+      },
+      {
+        "number": 5,
+        "title": "Descarga el kit gratis",
+        "content": "https://tigerlab.dev/scriptkit",
+        "type": "cta"
+      }
+    ],
+    "channels": [
+      "linkedin",
+      "facebook"
+    ]
+  }
+}

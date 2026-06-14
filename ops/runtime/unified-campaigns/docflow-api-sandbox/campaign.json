@@ -1,0 +1,98 @@
+{
+  "id": "UC-1781446092068",
+  "product": "Docflow API",
+  "stage": "sandbox",
+  "unified": true,
+  "createdAt": "2026-06-14T14:08:12.068Z",
+  "copy": {
+    "headline": "Deja de perder 10h/semana en papeleo.",
+    "body": "Docflow API automatiza tu flujo documental. CFDI 4.0 nativo. API-first. Integración en minutos.",
+    "cta": "Prueba 7 días gratis",
+    "url": "https://tigerlab.dev/docflow"
+  },
+  "channels": {
+    "linkedin": {
+      "copy": "Deja de perder 10h/semana en papeleo.\n\nDocflow API automatiza tu flujo documental. CFDI 4.0 nativo. API-first. Integración en minutos.\n\nPrueba 7 días gratis: https://tigerlab.dev/docflow",
+      "format": "text",
+      "approved": false,
+      "published": false,
+      "publishedAt": null,
+      "confirmed": false
+    },
+    "x": {
+      "copy": "Deja de perder 10h/semana en papeleo.\n\nDocflow API automatiza tu flujo documental. CFDI 4.0 nativo. API-first. Integración en minutos.\n\nPrueba 7 días gratis: https://tigerlab.dev/docflow",
+      "format": "text",
+      "approved": false,
+      "published": false,
+      "publishedAt": null,
+      "confirmed": false
+    },
+    "facebook": {
+      "copy": "Deja de perder 10h/semana en papeleo.\n\nDocflow API automatiza tu flujo documental. CFDI 4.0 nativo. API-first. Integración en minutos.\n\nPrueba 7 días gratis: https://tigerlab.dev/docflow",
+      "format": "text",
+      "approved": false,
+      "published": false,
+      "publishedAt": null,
+      "confirmed": false
+    },
+    "telegram": {
+      "copy": "Deja de perder 10h/semana en papeleo.\n\nDocflow API automatiza tu flujo documental. CFDI 4.0 nativo. API-first. Integración en minutos.\n\nPrueba 7 días gratis: https://tigerlab.dev/docflow",
+      "format": "text",
+      "approved": false,
+      "published": false,
+      "publishedAt": null,
+      "confirmed": false
+    },
+    "discord": {
+      "copy": "Deja de perder 10h/semana en papeleo.\n\nDocflow API automatiza tu flujo documental. CFDI 4.0 nativo. API-first. Integración en minutos.\n\nPrueba 7 días gratis: https://tigerlab.dev/docflow",
+      "format": "text",
+      "approved": false,
+      "published": false,
+      "publishedAt": null,
+      "confirmed": false
+    },
+    "email": {
+      "copy": "Deja de perder 10h/semana en papeleo.\n\nDocflow API automatiza tu flujo documental. CFDI 4.0 nativo. API-first. Integración en minutos.\n\nPrueba 7 días gratis: https://tigerlab.dev/docflow",
+      "format": "html",
+      "approved": false,
+      "published": false,
+      "publishedAt": null,
+      "confirmed": false
+    }
+  },
+  "carousel": {
+    "enabled": true,
+    "slides": [
+      {
+        "number": 1,
+        "title": "Deja de perder 10h/semana en papeleo.",
+        "type": "title"
+      },
+      {
+        "number": 2,
+        "title": "El problema",
+        "content": "10h/semana perdidas en papeleo manual"
+      },
+      {
+        "number": 3,
+        "title": "La solución",
+        "content": "Docflow API automatiza todo el flujo"
+      },
+      {
+        "number": 4,
+        "title": "Resultados",
+        "content": "CFDI 4.0 nativo. API-first. Sin fricción."
+      },
+      {
+        "number": 5,
+        "title": "Prueba 7 días gratis",
+        "content": "https://tigerlab.dev/docflow",
+        "type": "cta"
+      }
+    ],
+    "channels": [
+      "linkedin",
+      "facebook"
+    ]
+  }
+}
