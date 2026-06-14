@@ -1,4 +1,6 @@
 import { createServer, IncomingMessage, Server, ServerResponse } from 'node:http';
+import { existsSync, readFileSync, statSync } from 'node:fs';
+import { resolve, extname, join } from 'node:path';
 import { bootstrapApplication as bootstrapSharedApplication } from '../../src/shared/infrastructure/bootstrap/app-bootstrap';
 import { createServerDependencyContainer } from './dependency-container';
 import { HttpError } from '../http/errors';
@@ -61,10 +63,72 @@ function shouldBypassAuth(route: HttpRoute): boolean {
   );
 }
 
+// Dashboard static files
+const COMMAND_CENTER_ROOT = resolve('ops/command-center');
+const CONTENT_TYPES: Record<string, string> = {
+  '.html': 'text/html; charset=utf-8',
+  '.css': 'text/css; charset=utf-8',
+  '.js': 'application/javascript; charset=utf-8',
+  '.json': 'application/json; charset=utf-8',
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml',
+  '.ico': 'image/x-icon'
+};
+
+function serveStaticFile(res: ServerResponse, urlPath: string): boolean {
+  // Map dashboard root to index.html
+  if (urlPath === '/' || urlPath === '/index.html') {
+    urlPath = '/index.html';
+  }
+  
+  const cleanPath = urlPath.startsWith('/command-center/') ? urlPath.replace('/command-center/', '') : null;
+  if (!cleanPath && urlPath !== '/index.html' && !urlPath.startsWith('/faces/') && !urlPath.startsWith('/runtime/') && !urlPath.startsWith('/app.js') && !urlPath.startsWith('/campaign-manager.js') && !urlPath.startsWith('/campaign-preview.html')) {
+    return false;
+  }
+  
+  const filePath = resolve(COMMAND_CENTER_ROOT, cleanPath || urlPath.replace('/', ''));
+  if (!existsSync(filePath) || !statSync(filePath).isFile()) {
+    return false;
+  }
+  
+  const ext = extname(filePath).toLowerCase();
+  const contentType = CONTENT_TYPES[ext] || 'application/octet-stream';
+  
+  try {
+    const data = readFileSync(filePath);
+    res.writeHead(200, { 'Content-Type': contentType, 'Cache-Control': 'no-cache' });
+    res.end(data);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function handleDashboardRoute(res: ServerResponse, urlPath: string): boolean {
+  // Serve runtime data files
+  if (urlPath.startsWith('/runtime/')) {
+    const dataFile = resolve('ops', urlPath.replace(/^\//, ''));
+    if (existsSync(dataFile)) {
+      const data = readFileSync(dataFile, 'utf8');
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8', 'Cache-Control': 'no-store' });
+      res.end(data);
+      return true;
+    }
+    return false;
+  }
+  
+  return serveStaticFile(res, urlPath);
+}
+
 async function handleRequest(req: IncomingMessage, res: ServerResponse, router: Router): Promise<void> {
   const method = (req.method || 'GET').toUpperCase();
   const url = new URL(req.url || '/', 'http://localhost');
   const pathname = url.pathname;
+
+  // Dashboard static files — bypass router
+  if (method === 'GET' && handleDashboardRoute(res, pathname)) {
+    return;
+  }
   const route = router.resolve(method, pathname);
 
   if (!route) {
