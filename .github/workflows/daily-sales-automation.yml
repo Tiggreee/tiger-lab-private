@@ -96,17 +96,18 @@ jobs:
       - name: Product architect
         run: node scripts/product-architect.mjs
 
-      # 8. Run autopilot — genera reporte pero NO publica (approval requerido)
-      - name: Run autopilot (dry)
+      # 8. Run autopilot — LIVE publish usando el último pack generado
+      - name: Run autopilot LIVE
         run: |
           LATEST=$(ls -t ops/traffic/outbox/social-pack-*.json 2>/dev/null | head -1)
           if [ -n "$LATEST" ]; then
             node scripts/traffic/run-autopilot.mjs \
               --packPath "$LATEST" \
               --channels linkedin,x,facebook,telegram,discord \
-              --minChannels 0
+              --live \
+              --minChannels 1
           else
-            echo "No social pack found."
+            echo "No social pack found. Skipping autopilot."
           fi
 
       # 9. Supervisor decisions — product evaluation report
