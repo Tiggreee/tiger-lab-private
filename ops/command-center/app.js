@@ -18,10 +18,18 @@ function renderGate(data){const g=data.systemStatus?.gate||'---',el=$('systemSta
 
 async function renderProducts(){
   const s=await fetchJSON(SCORES);
-  let items=[];
+  let items=[],labels=[],scores=[],colors=[];
   if(s?.productResults){items=s.productResults.map(r=>({name:r.product?.name||'?',score:r.score||0}))}
-  items.sort((a,b)=>b.score-a.score);
-  $('productScores').innerHTML=items.slice(0,5).map(p=>{const sc=p.score,c=sc>=95?'#3fb950':sc>=75?'#d29922':sc>=50?'#f0883e':'#f85149';return`<div class="score-bar"><span class="name">${p.name}</span><div class="bar"><div class="fill" style="width:${sc}%;background:${c}"></div></div><span class="val">${sc}</span></div>`}).join('')||'<div class="dim">Run product engine</div>'
+  items.sort((a,b)=>b.score-a.score);items=items.slice(0,5);
+  items.forEach(p=>{labels.push(p.name);scores.push(p.score);colors.push(p.score>=95?'#3fb950':p.score>=75?'#d29922':p.score>=50?'#f0883e':'#f85149')});
+
+  const canvas=document.createElement('canvas');
+  canvas.id='productChart';
+  $('productScores').innerHTML='';
+  $('productScores').appendChild(canvas);
+  
+  if(window._productChart)window._productChart.destroy();
+  window._productChart=new Chart(canvas,{type:'bar',data:{labels,datasets:[{data:scores,backgroundColor:colors,borderRadius:4,borderSkipped:false}]},options:{indexAxis:'y',responsive:!0,maintainAspectRatio:!1,plugins:{legend:{display:!1}},scales:{x:{max:100,grid:{color:'#21262d'},ticks:{color:'#8b949e',font:{size:9}}},y:{grid:{display:!1},ticks:{color:'#c9d1d9',font:{size:10}}}}}});
 }
 
 async function renderLeads(){

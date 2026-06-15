@@ -7,12 +7,17 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 
+// Optional MJML support for professional email templates
+let mjml2html = null;
+try { mjml2html = (await import('mjml')).default; } catch {}
+
 const CAMPAIGNS_DIR = resolve('ops/runtime/campaigns');
 
 const PRODUCTS = {
   'Docflow API': {
     color: '#6C47FF',
     logo: '📄',
+    unsplash: 'document+automation+technology',
     headline: 'Deja de perder 10 horas por semana en papeleo.',
     subhead: 'Docflow API automatiza todo tu flujo documental.',
     bullets: ['Automatización completa de documentos y flujos', 'Integración con tu stack en minutos, no meses', 'CFDI 4.0 nativo — facturación electrónica MX', 'API-first. Conecta con lo que ya usas.'],
@@ -24,6 +29,7 @@ const PRODUCTS = {
   'Script Premium Kit': {
     color: '#00C853',
     logo: '⚡',
+    unsplash: 'code+automation+productivity',
     headline: '20+ scripts probados. 0 programación. Resultados hoy.',
     subhead: 'Automatiza contabilidad, facturación y administración en minutos.',
     bullets: ['20+ scripts listos para usar, probados en producción', 'Personalización total para tu industria', 'Actualizaciones trimestrales incluidas', 'Soporte prioritario en español 24/7'],
