@@ -661,10 +661,25 @@
         "security": 1
       },
       "perm": "all"
+    },
+    {
+      "timestamp": "2026-06-15T16:15:41.159Z",
+      "totalRuns": 100,
+      "failed": 9,
+      "successful": 90,
+      "byType": {
+        "failure": 9
+      },
+      "byWorkflow": {
+        "Deploy Dashboard to Pages": 6,
+        "security": 1,
+        "daily-sales-automation": 2
+      },
+      "perm": "all"
     }
   ],
   "fixesApplied": [],
   "lastKnownPermission": "all",
-  "lastAnalysis": "2026-06-15T12:40:06.432Z",
-  "totalFailuresTracked": 485
+  "lastAnalysis": "2026-06-15T16:15:41.159Z",
+  "totalFailuresTracked": 494
 }
