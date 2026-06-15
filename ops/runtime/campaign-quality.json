@@ -1,0 +1,724 @@
+{
+  "generatedAt": "2026-06-15T14:20:38.079Z",
+  "total": 9,
+  "ready": 3,
+  "notReady": 6,
+  "productionReadiness": "33%",
+  "results": [
+    {
+      "dir": "CAMP-1781334207583",
+      "product": "Docflow API",
+      "score": 83,
+      "channels": {
+        "email": {
+          "status": "NEEDS_WORK",
+          "score": 65,
+          "length": 273,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link",
+            "Plain text, not HTML"
+          ]
+        },
+        "linkedin": {
+          "status": "READY",
+          "score": 70,
+          "length": 279,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link",
+            "No hashtags"
+          ]
+        },
+        "x": {
+          "status": "READY",
+          "score": 80,
+          "length": 121,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link"
+          ]
+        },
+        "facebook": {
+          "status": "READY",
+          "score": 80,
+          "length": 279,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link"
+          ]
+        },
+        "telegram": {
+          "status": "READY",
+          "score": 100,
+          "length": 218,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": false,
+          "issues": []
+        },
+        "discord": {
+          "status": "READY",
+          "score": 100,
+          "length": 190,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": false,
+          "issues": []
+        }
+      },
+      "issues": [
+        "email: No CTA/link; Plain text, not HTML",
+        "linkedin: No CTA/link; No hashtags",
+        "x: No CTA/link",
+        "facebook: No CTA/link"
+      ],
+      "ready": false
+    },
+    {
+      "dir": "CAMP-1781335464855",
+      "product": "Docflow API",
+      "score": 83,
+      "channels": {
+        "email": {
+          "status": "NEEDS_WORK",
+          "score": 65,
+          "length": 273,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link",
+            "Plain text, not HTML"
+          ]
+        },
+        "linkedin": {
+          "status": "READY",
+          "score": 70,
+          "length": 279,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link",
+            "No hashtags"
+          ]
+        },
+        "x": {
+          "status": "READY",
+          "score": 80,
+          "length": 121,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link"
+          ]
+        },
+        "facebook": {
+          "status": "READY",
+          "score": 80,
+          "length": 279,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link"
+          ]
+        },
+        "telegram": {
+          "status": "READY",
+          "score": 100,
+          "length": 218,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": false,
+          "issues": []
+        },
+        "discord": {
+          "status": "READY",
+          "score": 100,
+          "length": 190,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": false,
+          "issues": []
+        }
+      },
+      "issues": [
+        "email: No CTA/link; Plain text, not HTML",
+        "linkedin: No CTA/link; No hashtags",
+        "x: No CTA/link",
+        "facebook: No CTA/link"
+      ],
+      "ready": false
+    },
+    {
+      "dir": "CAMP-1781336603930",
+      "product": "Docflow API",
+      "score": 83,
+      "channels": {
+        "email": {
+          "status": "NEEDS_WORK",
+          "score": 65,
+          "length": 273,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link",
+            "Plain text, not HTML"
+          ]
+        },
+        "linkedin": {
+          "status": "READY",
+          "score": 70,
+          "length": 279,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link",
+            "No hashtags"
+          ]
+        },
+        "x": {
+          "status": "READY",
+          "score": 80,
+          "length": 121,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link"
+          ]
+        },
+        "facebook": {
+          "status": "READY",
+          "score": 80,
+          "length": 279,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link"
+          ]
+        },
+        "telegram": {
+          "status": "READY",
+          "score": 100,
+          "length": 218,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": false,
+          "issues": []
+        },
+        "discord": {
+          "status": "READY",
+          "score": 100,
+          "length": 190,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": false,
+          "issues": []
+        }
+      },
+      "issues": [
+        "email: No CTA/link; Plain text, not HTML",
+        "linkedin: No CTA/link; No hashtags",
+        "x: No CTA/link",
+        "facebook: No CTA/link"
+      ],
+      "ready": false
+    },
+    {
+      "dir": "CAMP-1781340014915",
+      "product": "Docflow API",
+      "score": 83,
+      "channels": {
+        "email": {
+          "status": "NEEDS_WORK",
+          "score": 65,
+          "length": 273,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link",
+            "Plain text, not HTML"
+          ]
+        },
+        "linkedin": {
+          "status": "READY",
+          "score": 70,
+          "length": 279,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link",
+            "No hashtags"
+          ]
+        },
+        "x": {
+          "status": "READY",
+          "score": 80,
+          "length": 121,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link"
+          ]
+        },
+        "facebook": {
+          "status": "READY",
+          "score": 80,
+          "length": 279,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link"
+          ]
+        },
+        "telegram": {
+          "status": "READY",
+          "score": 100,
+          "length": 218,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": false,
+          "issues": []
+        },
+        "discord": {
+          "status": "READY",
+          "score": 100,
+          "length": 190,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": false,
+          "issues": []
+        }
+      },
+      "issues": [
+        "email: No CTA/link; Plain text, not HTML",
+        "linkedin: No CTA/link; No hashtags",
+        "x: No CTA/link",
+        "facebook: No CTA/link"
+      ],
+      "ready": false
+    },
+    {
+      "dir": "CAMP-1781360666993",
+      "product": "Docflow API",
+      "score": 83,
+      "channels": {
+        "email": {
+          "status": "NEEDS_WORK",
+          "score": 65,
+          "length": 273,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link",
+            "Plain text, not HTML"
+          ]
+        },
+        "linkedin": {
+          "status": "READY",
+          "score": 70,
+          "length": 279,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link",
+            "No hashtags"
+          ]
+        },
+        "x": {
+          "status": "READY",
+          "score": 80,
+          "length": 121,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link"
+          ]
+        },
+        "facebook": {
+          "status": "READY",
+          "score": 80,
+          "length": 279,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link"
+          ]
+        },
+        "telegram": {
+          "status": "READY",
+          "score": 100,
+          "length": 218,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": false,
+          "issues": []
+        },
+        "discord": {
+          "status": "READY",
+          "score": 100,
+          "length": 190,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": false,
+          "issues": []
+        }
+      },
+      "issues": [
+        "email: No CTA/link; Plain text, not HTML",
+        "linkedin: No CTA/link; No hashtags",
+        "x: No CTA/link",
+        "facebook: No CTA/link"
+      ],
+      "ready": false
+    },
+    {
+      "dir": "CAMP-1781360667087",
+      "product": "Script Premium Kit",
+      "score": 83,
+      "channels": {
+        "email": {
+          "status": "NEEDS_WORK",
+          "score": 65,
+          "length": 283,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link",
+            "Plain text, not HTML"
+          ]
+        },
+        "linkedin": {
+          "status": "READY",
+          "score": 70,
+          "length": 289,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link",
+            "No hashtags"
+          ]
+        },
+        "x": {
+          "status": "READY",
+          "score": 80,
+          "length": 114,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link"
+          ]
+        },
+        "facebook": {
+          "status": "READY",
+          "score": 80,
+          "length": 289,
+          "overLimit": false,
+          "hasCTA": false,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "No CTA/link"
+          ]
+        },
+        "telegram": {
+          "status": "READY",
+          "score": 100,
+          "length": 232,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": false,
+          "issues": []
+        },
+        "discord": {
+          "status": "READY",
+          "score": 100,
+          "length": 202,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": false,
+          "issues": []
+        }
+      },
+      "issues": [
+        "email: No CTA/link; Plain text, not HTML",
+        "linkedin: No CTA/link; No hashtags",
+        "x: No CTA/link",
+        "facebook: No CTA/link"
+      ],
+      "ready": false
+    },
+    {
+      "dir": "CAMP-MAT-1781363108992",
+      "product": "Docflow API",
+      "score": 100,
+      "channels": {
+        "email": {
+          "status": "READY",
+          "score": 100,
+          "length": 3221,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": true,
+          "issues": []
+        },
+        "linkedin": {
+          "status": "READY",
+          "score": 100,
+          "length": 493,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": []
+        },
+        "x": {
+          "status": "READY",
+          "score": 100,
+          "length": 187,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": false,
+          "issues": []
+        },
+        "facebook": {
+          "status": "READY",
+          "score": 100,
+          "length": 439,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": []
+        },
+        "telegram": {
+          "status": "READY",
+          "score": 100,
+          "length": 454,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": []
+        },
+        "discord": {
+          "status": "READY",
+          "score": 100,
+          "length": 346,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": []
+        }
+      },
+      "issues": [],
+      "ready": true
+    },
+    {
+      "dir": "CAMP-MAT-1781363109068",
+      "product": "Script Premium Kit",
+      "score": 100,
+      "channels": {
+        "email": {
+          "status": "READY",
+          "score": 100,
+          "length": 3259,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": []
+        },
+        "linkedin": {
+          "status": "READY",
+          "score": 100,
+          "length": 525,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": []
+        },
+        "x": {
+          "status": "READY",
+          "score": 100,
+          "length": 215,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": false,
+          "issues": []
+        },
+        "facebook": {
+          "status": "READY",
+          "score": 100,
+          "length": 471,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": []
+        },
+        "telegram": {
+          "status": "READY",
+          "score": 100,
+          "length": 493,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": []
+        },
+        "discord": {
+          "status": "READY",
+          "score": 100,
+          "length": 370,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": []
+        }
+      },
+      "issues": [],
+      "ready": true
+    },
+    {
+      "dir": "FIRST-PAYMENT",
+      "product": "Docflow API",
+      "score": 98,
+      "channels": {
+        "email": {
+          "status": "READY",
+          "score": 85,
+          "length": 414,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": [
+            "Plain text, not HTML"
+          ]
+        },
+        "linkedin": {
+          "status": "READY",
+          "score": 100,
+          "length": 328,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": []
+        },
+        "x": {
+          "status": "READY",
+          "score": 100,
+          "length": 187,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": false,
+          "hasBullets": true,
+          "issues": []
+        },
+        "facebook": {
+          "status": "READY",
+          "score": 100,
+          "length": 365,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": []
+        },
+        "telegram": {
+          "status": "READY",
+          "score": 100,
+          "length": 231,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": []
+        },
+        "discord": {
+          "status": "READY",
+          "score": 100,
+          "length": 222,
+          "overLimit": false,
+          "hasCTA": true,
+          "hasEmoji": true,
+          "hasBullets": true,
+          "issues": []
+        }
+      },
+      "issues": [
+        "email: Plain text, not HTML"
+      ],
+      "ready": true
+    }
+  ]
+}
