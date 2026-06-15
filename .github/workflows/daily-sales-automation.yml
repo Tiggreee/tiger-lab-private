@@ -58,6 +58,10 @@ jobs:
       - name: Email Campaign
         run: node engine/email/email-campaign.mjs --dry-run
 
+      # 3.5 Campaign Cleaner — 1 per product, no duplicates
+      - name: Campaign Cleaner
+        run: node engine/campaigns/campaign-cleaner.mjs
+
       # 4. Campaign Designer — diseño y aprobación
       - name: Campaign Designer
         run: node engine/campaigns/campaign-designer.mjs --product "Docflow API" --target contabilidad --channels email,linkedin --dry-run
