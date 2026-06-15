@@ -122,9 +122,10 @@ function discordPost(product) {
 
 function imagePrompt(product, channel) {
   const p = PRODUCTS[product];
-  const sizes = { email:[600,300], linkedin:[1200,627], x:[1200,675], facebook:[1200,630] };
-  const [w,h] = sizes[channel] || [800,400];
-  return `AI Image Prompt: Professional SaaS marketing image. Product "${product}". Clean modern design. ${p.color} gradient background with subtle geometric patterns. White icon representing document automation. No text. ${w}x${h}px. Professional, trustworthy, Mexican tech company aesthetic.`;
+  const sizes = { email:'600x300', linkedin:'1200x627', x:'1200x675', facebook:'1200x630' };
+  const size = sizes[channel] || '800x400';
+  const query = encodeURIComponent(p.unsplash || 'technology+automation');
+  return `https://source.unsplash.com/${size}/?${query}`;
 }
 
 function main() {

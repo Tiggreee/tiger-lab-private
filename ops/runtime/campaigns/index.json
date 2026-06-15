@@ -3,6 +3,21 @@
   "total": 9,
   "campaigns": [
     {
+      "id": "CAMP-MAT-1781562499366",
+      "product": "Docflow API",
+      "score": 100,
+      "status": "approved",
+      "channels": [
+        "email",
+        "linkedin",
+        "x",
+        "facebook",
+        "telegram",
+        "discord"
+      ],
+      "createdAt": "2026-06-15T22:28:30.497Z"
+    },
+    {
       "id": "CAMP-1781334207583",
       "product": "Docflow API",
       "target": "contabilidad",

@@ -1,0 +1,24 @@
+{
+  "id": "CAMP-MAT-1781562499366",
+  "product": "Docflow API",
+  "target": "general",
+  "score": 90,
+  "status": "draft",
+  "channels": [
+    "email",
+    "linkedin",
+    "x",
+    "facebook",
+    "telegram",
+    "discord"
+  ],
+  "createdAt": "2026-06-15T22:28:19.375Z",
+  "copies": {
+    "email": "<!DOCTYPE html>\n<html lang=\"es\">\n<head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width,initial-s",
+    "linkedin": "🔥 Deja de perder 10 horas por semana en papeleo.\n\nDocflow API automatiza todo tu flujo documental.\n\n✅ Automatización co",
+    "x": "🔥 Deja de perder 10 horas por semana en papeleo.\n\nDocflow API automatiza todo tu flujo documental.\n\nPrueba 7 días grati",
+    "facebook": "🔥 Deja de perder 10 horas por semana en papeleo.\n\nDocflow API automatiza todo tu flujo documental.\n\n✅ Automatización co",
+    "telegram": "*Docflow API* 🔥\n\nDeja de perder 10 horas por semana en papeleo.\n\nDocflow API automatiza todo tu flujo documental.\n\n✅ Au",
+    "discord": "**Docflow API** 🔥\n\nDeja de perder 10 horas por semana en papeleo.\n\nDocflow API automatiza todo tu flujo documental.\n\n✅ "
+  }
+}
