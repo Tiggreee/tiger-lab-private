@@ -70,7 +70,15 @@ async function renderCampaigns(){
   list.innerHTML=campaigns.map(c=>{const cl=colors[c.product]||'#1f6feb';return`<div style="display:flex;gap:4px;margin:2px 0"><button onclick="window.open('/command-center/campaign-preview.html?id=${c.id}','_blank')" style="flex:1;padding:6px 8px;border:none;border-radius:4px;background:${cl};color:${cl==='#d29922'?'#000':'#fff'};font-size:.7rem;cursor:pointer;font-weight:600;text-align:left;">${c.status==='approved'?'✅':'⏳'} ${c.product} <span style="opacity:.7;font-size:.6rem;">${c.score}/100</span></button><button onclick="window.approveNow('${c.id}')" style="padding:4px 8px;border:none;border-radius:4px;background:#238636;color:#fff;font-size:.6rem;cursor:pointer;font-weight:700;">▶</button></div>`}).join('');
   if(detail)detail.innerHTML='<div class="dim" style="padding:10px;font-size:.7rem;text-align:center;">📊 <b>'+campaigns.length+' campaigns</b><br>💡 Click to preview | ▶ to approve &amp; publish</div>'
 }
-window.approveNow=function(id){alert('✅ Publishing campaign '+id+' to 5 social networks.\n\nTrack: https://github.com/Tiggreee/tiger-lab-private/actions');};
+window.approveNow=function(id){
+  const c=window._campaigns?.find(x=>x.id===id);
+  if(!c)return;
+  fetch('/runtime/campaigns/approve',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id})})
+    .then(r=>r.json()).then(d=>{
+      alert(`✅ APPROVED: ${d.product}\n📢 Publishing to LinkedIn, Facebook, X, Telegram, Discord\n🔗 ${d.funnelUrl}\n\nTrack: https://github.com/Tiggreee/tiger-lab-private/actions`);
+      render();
+    }).catch(()=>alert('❌ Approval needs local server. Run: npm run command-center'));
+};
 
 async function renderAgentEfficiency(){
   const data=await fetchJSON(UNIFIED);

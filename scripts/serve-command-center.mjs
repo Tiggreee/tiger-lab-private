@@ -84,6 +84,54 @@ function handleMCP(req, res) {
     return;
   }
 
+  // POST /runtime/campaigns/:id/approve — approve campaign
+  if (pathname.startsWith('/runtime/campaigns/approve') && req.method === 'POST') {
+    const approval = require('./engine/campaigns/approval-engine.mjs');
+    // Simple inline approval for dashboard
+    const fs = require('fs');
+    const path = require('path');
+    const idxPath = path.resolve('ops/runtime/campaigns/index.json');
+    const idx = fs.existsSync(idxPath) ? JSON.parse(fs.readFileSync(idxPath, 'utf8')) : { campaigns: [] };
+    
+    readRequestBodyJSON(req).then(body => {
+      const campaignId = (body || {}).id;
+      const entry = (idx.campaigns || []).find(c => c.id === campaignId);
+      if (entry) {
+        entry.status = 'approved';
+        entry.approvedAt = new Date().toISOString();
+        idx.updated = new Date().toISOString();
+        fs.writeFileSync(idxPath, JSON.stringify(idx, null, 2));
+        
+        // Build social pack
+        const product = entry.product || 'Docflow API';
+        const funnelUrl = `https://tiger-backend-production.up.railway.app/api/checkout?product=${encodeURIComponent(product.toLowerCase().replace(/\s+/g,'-'))}&plan=starter`;
+        const outboxDir = path.resolve('ops/traffic/outbox');
+        fs.mkdirSync(outboxDir, { recursive: true });
+        
+        const packName = `social-pack-${product.toLowerCase().replace(/[^a-z0-9]+/g,'-')}-approved`;
+        const pack = {
+          campaign: packName, generatedAt: new Date().toISOString(), approved: true,
+          product, campaignId, funnel: { trafficDestination: funnelUrl, closeChannel: 'landing', closeDestination: funnelUrl, closeLink: funnelUrl },
+          channels: {}
+        };
+        
+        const campaignDir = path.resolve('ops/runtime/campaigns', campaignId);
+        const exts = { email:'html', linkedin:'txt', x:'txt', facebook:'txt', telegram:'md', discord:'md' };
+        for (const [ch, ext] of Object.entries(exts)) {
+          const f = path.join(campaignDir, `${ch}.${ext}`);
+          if (fs.existsSync(f)) pack.channels[ch] = { copyPaste: fs.readFileSync(f, 'utf8') };
+        }
+        
+        fs.writeFileSync(path.join(outboxDir, `${packName}.json`), JSON.stringify(pack, null, 2));
+        
+        serveJson(res, 200, { status: 'approved', product, funnelUrl, channels: Object.keys(pack.channels).length, message: 'Campaign approved. Social pack generated. Trigger publish manually or via pipeline.' });
+      } else {
+        serveJson(res, 404, { error: 'Campaign not found' });
+      }
+    }).catch(() => serveJson(res, 500, { error: 'Failed to process approval' }));
+    return;
+  }
+
   serveJson(res, 404, { error: 'MCP endpoint not found' });
 }
 
