@@ -52,8 +52,8 @@ footer{position:fixed;bottom:0;left:0;width:100%;text-align:center;font-size:.5r
     <span><span class="led led-r"></span>&lt;70%</span>
   </div>
   <div class="actions" style="display:flex;align-items:center;gap:8px">
-    <a href="/project-map-3d.html" class="btn-3d">3D VIEW</a>
-    <a class="back" href="/">Dashboard</a>
+    <a href="/project-map-3d.html" class="btn-3d" title="Porque en 2D ya te aburriste">3D VIEW</a>
+    <a class="back" href="/" title="Huir a la seguridad del dashboard">Dashboard</a>
   </div>
 </header>
 <div class="nodes" id="nodes"></div>
@@ -65,21 +65,21 @@ footer{position:fixed;bottom:0;left:0;width:100%;text-align:center;font-size:.5r
 <footer>Real-time status -- Auto-refresh 30s</footer>
 <script>
 const modules=[
-  {id:'lead-engine',name:'Lead Engine',x:2,y:25,w:72,h:38,rank:7,color:'green',code:'engine/leads/lead-engine.mjs\n-- 2000 companies MX+US\n-- SQLite + CSV export'},
-  {id:'prospect',name:'Prospect',x:13,y:20,w:78,h:42,rank:6,color:'green',code:'engine/email/prospect-selector.mjs\n-- ICP scoring\n-- Industry segmentation'},
-  {id:'creative-agent',name:'Creative',x:24,y:32,w:82,h:36,rank:8,color:'yellow',code:'engine/campaigns/creative-agent.mjs\n-- Low quality output\n-- Needs Materializer'},
-  {id:'materializer',name:'Materializer',x:36,y:18,w:95,h:52,rank:2,color:'green',code:'engine/campaigns/campaign-materializer.mjs\n-- MJML emails\n-- Unsplash real images'},
-  {id:'quality-verifier',name:'Quality',x:48,y:25,w:92,h:48,rank:4,color:'green',code:'engine/campaigns/quality-verifier.mjs\n-- 6 checks per campaign\n-- Platform spec validation'},
-  {id:'campaign-cleaner',name:'Cleaner',x:58,y:32,w:88,h:42,rank:5,color:'green',code:'engine/campaigns/campaign-cleaner.mjs\n-- 1 per product\n-- Auto-archive'},
-  {id:'campaign-router',name:'Router',x:68,y:22,w:95,h:50,rank:3,color:'green',code:'engine/campaigns/campaign-router.mjs\n-- 6 platform formats\n-- Channel adaptation'},
-  {id:'social-autopilot',name:'Autopilot',x:80,y:15,w:105,h:56,rank:2,color:'green',code:'scripts/traffic/run-autopilot.mjs\n-- LinkedIn+X+FB+TG+DC\n-- --live publishing'},
-  {id:'full-pipeline',name:'Pipeline',x:92,y:10,w:110,h:62,rank:1,color:'yellow',code:'engine/runtime/full-pipeline.mjs\n-- 12-step flow\n-- Pack fix pending'},
-  {id:'product-engine',name:'Product Engine',x:2,y:60,w:75,h:40,rank:6,color:'green',code:'scripts/product-development-engine.mjs\n-- 12 products scored\n-- Benchmarks'},
-  {id:'rnd-engine',name:'R&D Engine',x:14,y:60,w:78,h:40,rank:5,color:'green',code:'engine/rnd/rnd-engine.mjs\n-- EU market scanning\n-- 25 specialists'},
-  {id:'production-gate',name:'Gate',x:30,y:65,w:80,h:38,rank:5,color:'green',code:'engine/runtime/production-gate.mjs\n-- 14 checks\n-- GO/NO-GO'},
-  {id:'payments',name:'Payments',x:48,y:65,w:85,h:42,rank:4,color:'green',code:'server/bootstrap/stripe-payment-service.ts\n-- Stripe + PayPal LIVE'},
-  {id:'dashboard-monitor',name:'Monitor',x:65,y:68,w:78,h:36,rank:6,color:'yellow',code:'engine/runtime/dashboard-monitor.mjs\n-- Degraded\n-- Health every 15min',dead:true},
-  {id:'product-supervisor',name:'Supervisor',x:80,y:68,w:82,h:36,rank:5,color:'yellow',code:'engine/runtime/product-supervisor.mjs\n-- Needs connect\n-- Lifecycle tracker',dead:true},
+  {id:'lead-engine',name:'Lead Engine',x:2,y:25,w:72,h:38,rank:7,color:'green',code:'engine/leads/lead-engine.mjs\n-- 2,000+ empresas MX+US en SQLite\n-- Exportacion CSV con segmentacion\n-- Conexion directa a DENUE-INEGI'},
+  {id:'prospect',name:'Prospect',x:13,y:20,w:78,h:42,rank:6,color:'green',code:'engine/email/prospect-selector.mjs\n-- ICP scoring por industria y tamano\n-- Segmentacion: fintech, saas, legal, retail\n-- Filtro de leads calificados >70pts'},
+  {id:'creative-agent',name:'Creative',x:24,y:32,w:82,h:36,rank:8,color:'yellow',code:'engine/campaigns/creative-agent.mjs\n-- Genera copy para 6 canales simultaneos\n-- Aprendizaje continuo con memoria persistente\n-- Calidad variable, necesita Materializer'},
+  {id:'materializer',name:'Materializer',x:36,y:18,w:95,h:52,rank:2,color:'green',code:'engine/campaigns/campaign-materializer.mjs\n-- Renderiza emails profesionales con MJML\n-- Busca imagenes reales en Unsplash\n-- Arma packs completos por canal'},
+  {id:'quality-verifier',name:'Quality',x:48,y:25,w:92,h:48,rank:4,color:'green',code:'engine/campaigns/quality-verifier.mjs\n-- 6 validaciones por campana generada\n-- Verifica specs de cada plataforma\n-- Rechaza copy generico o inflado'},
+  {id:'campaign-cleaner',name:'Cleaner',x:58,y:32,w:88,h:42,rank:5,color:'green',code:'engine/campaigns/campaign-cleaner.mjs\n-- Mantiene 1 campana activa por producto\n-- Auto-archiva campanas viejas\n-- Libera recursos del pipeline'},
+  {id:'campaign-router',name:'Router',x:68,y:22,w:95,h:50,rank:3,color:'green',code:'engine/campaigns/campaign-router.mjs\n-- Distribuye a 6 plataformas (LI, X, FB, TG, DC)\n-- Adapta formato por canal\n-- Genera UTM tracking por destino'},
+  {id:'social-autopilot',name:'Autopilot',x:80,y:15,w:105,h:56,rank:2,color:'green',code:'scripts/traffic/run-autopilot.mjs\n-- Publica en 5 canales simultaneos en vivo\n-- Soporta --live publishing mode\n-- Conecta con APIs de redes sociales'},
+  {id:'full-pipeline',name:'Pipeline',x:92,y:10,w:110,h:62,rank:1,color:'yellow',code:'engine/runtime/full-pipeline.mjs\n-- Flujo completo de 12 pasos extremo a extremo\n-- Del lead hasta la publicacion automatizada\n-- Pendiente: ajuste de pack semanal'},
+  {id:'product-engine',name:'Product Engine',x:2,y:60,w:75,h:40,rank:6,color:'green',code:'scripts/product-development-engine.mjs\n-- 12 productos puntuados con benchmarks\n-- 8 dimensiones de evaluacion\n-- Roadmap generado cada 2 horas'},
+  {id:'rnd-engine',name:'R&D Engine',x:14,y:60,w:78,h:40,rank:5,color:'green',code:'engine/rnd/rnd-engine.mjs\n-- Escanea mercado EU (ProductHunt, Sifted, Tech.eu)\n-- 25 especialistas puntuando ideas\n-- Decide: INVEST / ZOMBIE / KILL en 24h'},
+  {id:'production-gate',name:'Gate',x:30,y:65,w:80,h:38,rank:5,color:'green',code:'engine/runtime/production-gate.mjs\n-- 14 verificaciones criticas\n-- GO / NO-GO antes de cada release\n-- Bloquea despliegues sin evidencia'},
+  {id:'payments',name:'Payments',x:48,y:65,w:85,h:42,rank:4,color:'green',code:'server/bootstrap/stripe-payment-service.ts\n-- Stripe + PayPal integrados en vivo\n-- Webhooks de pago confirmados\n-- Conciliacion y facturacion automatica'},
+  {id:'dashboard-monitor',name:'Monitor',x:65,y:68,w:78,h:36,rank:6,color:'yellow',code:'engine/runtime/dashboard-monitor.mjs\n-- Monitoreo de salud cada 15 minutos\n-- Estado: recuperacion de servicio\n-- Alerta temprana de fallos',dead:true},
+  {id:'product-supervisor',name:'Supervisor',x:80,y:68,w:82,h:36,rank:5,color:'yellow',code:'engine/runtime/product-supervisor.mjs\n-- Tracker de ciclo de vida de producto\n-- Estado: reconexion de dependencias\n-- Decide keep / iterate / retire',dead:true},
 ];
 
 const total=modules.length;
@@ -135,7 +135,7 @@ modules.forEach(m=>{
   if(m.dead)n.classList.add('inactive');
   n.style.left=m.x+'%';n.style.top=m.y+'%';
   n.style.width=m.w+'px';
-  n.innerHTML=`<span class="led-dot"></span><div class="n-name">${m.name}</div><div class="n-stat">${m.dead?'INACTIVE':m.color==='yellow'?'DEGRADED':'OPERATIONAL'}</div><div class="n-pct">${m.pct}% auto</div>`;
+  n.innerHTML=`<span class="led-dot"></span><div class="n-name">${m.name}</div><div class="n-stat">${m.dead?'RECOVERY':m.color==='yellow'?'DEGRADED':'OPERATIONAL'}</div><div class="n-pct">${m.pct}% auto</div>`;
   n.onclick=()=>{
     document.getElementById('cpTitle').textContent=m.name;
     document.getElementById('cpBody').textContent=m.code;

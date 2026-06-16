@@ -57,10 +57,23 @@ h1{font-size:.9rem;font-weight:500;color:var(--text);letter-spacing:1px;text-tra
 .agent-table .eff-val{font-weight:600;font-size:.6rem}
 .eff-high{color:var(--accent)}.eff-mid{color:var(--warn)}.eff-low{color:var(--danger)}
 footer{font-size:.6rem;color:var(--text-dim);text-align:center;padding:8px 0 0;border-top:1px solid var(--border);margin-top:8px}
-.bot-container{position:fixed;bottom:16px;right:16px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
-.bot-bubble{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:8px 12px;max-width:220px;font-size:.65rem;color:var(--text);backdrop-filter:blur(10px);box-shadow:0 2px 16px rgba(0,0,0,.4);animation:floatBubble 5s ease-in-out infinite}
-.bot-bubble strong{color:var(--accent);display:block;font-size:.6rem;margin-bottom:3px;font-weight:500}
+.bot-container{position:fixed;bottom:14px;right:14px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.bot-bubble{background:var(--card-bg);border:1px solid var(--border);border-radius:7px;padding:6px 10px;max-width:180px;font-size:.6rem;color:var(--text);backdrop-filter:blur(10px);box-shadow:0 2px 14px rgba(0,0,0,.4);animation:floatBubble 5s ease-in-out infinite;line-height:1.3}
+.bot-bubble strong{color:var(--accent);display:block;font-size:.55rem;margin-bottom:2px;font-weight:500}
+.bot-face{width:50px;height:65px;border-radius:50%/45%;border:1px solid var(--border);background-color:var(--deep);background-size:cover;background-position:center;animation:cycleFaces 10s steps(1) infinite;cursor:pointer;opacity:.85;transition:opacity .2s,transform .2s;overflow:hidden}
+.bot-face:hover{opacity:1;transform:scale(1.1)}
 @keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes cycleFaces{
+0%{background-image:url('/command-center/faces/Copilot_20260613_002326.png')}
+11.11%{background-image:url('/command-center/faces/Copilot_20260613_002457.png')}
+22.22%{background-image:url('/command-center/faces/Copilot_20260613_002729.png')}
+33.33%{background-image:url('/command-center/faces/Copilot_20260613_002939.png')}
+44.44%{background-image:url('/command-center/faces/Copilot_20260613_003102.png')}
+55.55%{background-image:url('/command-center/faces/Copilot_20260613_003257.png')}
+66.66%{background-image:url('/command-center/faces/Copilot_20260613_003439.png')}
+77.77%{background-image:url('/command-center/faces/Copilot_20260613_003620.png')}
+88.88%{background-image:url('/command-center/faces/Copilot_20260613_003747.png')}
+100%{background-image:url('/command-center/faces/Copilot_20260613_002326.png')}}
 @media(max-width:800px){.grid-2{grid-template-columns:1fr}.kpi-row{grid-template-columns:repeat(2,1fr)}.bot-container{right:6px;bottom:6px}}
 </style>
 </head>
@@ -72,9 +85,9 @@ footer{font-size:.6rem;color:var(--text-dim);text-align:center;padding:8px 0 0;b
     <span id="systemStatusBadge" class="gate-badge gate-go">GO</span>
   </div>
   <div class="actions">
-    <button id="notifyBtn">Alerts</button>
-    <button id="mapBtn" class="btn-map" onclick="window.open('/project-map.html','_blank')">Mapa</button>
-    <button id="refreshBtn" class="btn-refresh">Refresh</button>
+    <button id="notifyBtn" title="Spoiler: todo esta bien... o no">Alerts</button>
+    <button id="mapBtn" class="btn-map" onclick="window.open('/project-map.html','_blank')" title="A ver si encuentras algo util aqui">Mapa</button>
+    <button id="refreshBtn" class="btn-refresh" title="Actualizar para ver casi lo mismo">Refresh</button>
   </div>
 </header>
 
@@ -110,6 +123,14 @@ footer{font-size:.6rem;color:var(--text-dim);text-align:center;padding:8px 0 0;b
 </section>
 
 <footer id="footerText"></footer>
+
+<div class="bot-container">
+  <div class="bot-bubble" id="botBubble">
+    <strong>Tiger AI</strong>
+    <span id="botFact">Engine running. Pipeline: active.</span>
+  </div>
+  <div class="bot-face" id="botFace" title="Tiger AI -- 12 faces"></div>
+</div>
 
 <script src="/command-center/app.js" type="module"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
