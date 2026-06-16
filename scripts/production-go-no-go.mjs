@@ -25,14 +25,14 @@ ac(checks, 'P9', 'Build de backend y arranque', 'critical', () => {
 });
 
 ac(checks, 'P12', 'GitHub Actions operacional', 'critical', () => {
-  const r = sh('gh', ['run','list','--workflow','ci.yml','--limit','3','--json','conclusion','--repo','Tiggreee/tiger-lab-private']);
+  const r = sh('gh', ['run','list','--workflow','ci.yml','--limit','3','--json','conclusion','--repo','Tigre-Labs/tiger-lab-private']);
   if (!r.ok) return { status: 'FAIL', details: 'gh CLI sin acceso al repo', evidence: [], ownerAction: 'Verificar gh CLI y GITHUB_TOKEN.' };
   const last = JSON.parse(r.stdout)[0]?.conclusion || 'unknown';
   return { status: last === 'success' ? 'PASS' : 'WARN', details: `CI: ${last}`, evidence: [], ownerAction: last === 'success' ? 'Sin accion.' : 'Revisar CI.' };
 });
 
 ac(checks, 'P14', 'Railway deploy status', 'high', () => {
-  const r = sh('gh', ['run','list','--workflow','backend-railway-deploy.yml','--limit','1','--json','conclusion','--repo','Tiggreee/tiger-lab-private']);
+  const r = sh('gh', ['run','list','--workflow','backend-railway-deploy.yml','--limit','1','--json','conclusion','--repo','Tigre-Labs/tiger-lab-private']);
   if (!r.ok) return { status: 'WARN', details: 'No se pudo consultar Railway deploy', evidence: ['.github/workflows/backend-railway-deploy.yml'], ownerAction: 'Verificar gh CLI.' };
   const last = JSON.parse(r.stdout)[0]?.conclusion || 'unknown';
   return { status: last === 'success' ? 'PASS' : 'WARN', details: `Railway: ${last}`, evidence: ['.github/workflows/backend-railway-deploy.yml'], ownerAction: last === 'success' ? 'Sin accion.' : 'Revisar Railway logs.' };

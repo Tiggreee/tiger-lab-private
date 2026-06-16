@@ -14,7 +14,7 @@ function gh(cmd) { try { return execSync(cmd, { encoding: 'utf8', timeout: 30000
 async function main() {
   const history = load(HP) || { snapshots: [], fixesApplied: [] };
   const perm = 'all';
-  const raw = gh(`gh run list --limit ${MAX} --json name,conclusion,status,createdAt,databaseId,url,headBranch,workflowDatabaseId,displayTitle --repo Tiggreee/tiger-lab-private 2>&1`);
+  const raw = gh(`gh run list --limit ${MAX} --json name,conclusion,status,createdAt,databaseId,url,headBranch,workflowDatabaseId,displayTitle --repo Tigre-Labs/tiger-lab-private 2>&1`);
   if (!raw) { console.error('Cannot fetch runs'); process.exit(1); }
 
   const analysis = analyzeFailures({ runs: JSON.parse(raw) });
@@ -22,7 +22,7 @@ async function main() {
 
   if (permChanged) {
     const ids = analysis.failedRuns.slice(0, 10).map(r => r.databaseId);
-    for (const id of ids) gh(`gh run rerun ${id} --repo Tiggreee/tiger-lab-private 2>&1`);
+    for (const id of ids) gh(`gh run rerun ${id} --repo Tigre-Labs/tiger-lab-private 2>&1`);
     history.reran = [...(history.reran || []), ...ids];
   }
 

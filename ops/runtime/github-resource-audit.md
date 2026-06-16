@@ -1,7 +1,7 @@
 # GitHub Resource Audit
 
 - generatedAt: 2026-06-13T16:25:39.580Z
-- repo: Tiggreee/tiger-lab-private
+- repo: Tigre-Labs/tiger-lab-private
 - periodStart: 2026-06-01T00:00:00.000Z
 - periodEnd: 2026-06-13T16:25:39.208Z
 - actionsMinutesRepoEstimate: 0.00

@@ -164,8 +164,8 @@ export class PacService {
 ### Fase 3: Credenciales + Testing (Semana 2-3)
 ```bash
 # Agregar secretos a GitHub
-gh secret set FINKOK_API_KEY -R Tiggreee/tiger-lab-private --env production-billing
-gh secret set FINKOK_ENVIRONMENT -R Tiggreee/tiger-lab-private --env production-billing
+gh secret set FINKOK_API_KEY -R Tigre-Labs/tiger-lab-private --env production-billing
+gh secret set FINKOK_ENVIRONMENT -R Tigre-Labs/tiger-lab-private --env production-billing
 
 # Archivo: .env.production.billing
 FINKOK_API_KEY=xxx

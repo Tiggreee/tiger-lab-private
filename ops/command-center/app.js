@@ -75,7 +75,7 @@ window.approveNow=function(id){
   if(!c)return;
   fetch('/runtime/campaigns/approve',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id})})
     .then(r=>r.json()).then(d=>{
-      alert(`✅ APPROVED: ${d.product}\n📢 Publishing to LinkedIn, Facebook, X, Telegram, Discord\n🔗 ${d.funnelUrl}\n\nTrack: https://github.com/Tiggreee/tiger-lab-private/actions`);
+      alert(`✅ APPROVED: ${d.product}\n📢 Publishing to LinkedIn, Facebook, X, Telegram, Discord\n🔗 ${d.funnelUrl}\n\nTrack: https://github.com/Tigre-Labs/tiger-lab-private/actions`);
       render();
     }).catch(()=>alert('❌ Approval needs local server. Run: npm run command-center'));
 };

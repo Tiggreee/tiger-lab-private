@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const DEFAULT_REPO = process.env.GITHUB_REPOSITORY || 'Tiggreee/tiger-lab-private';
+const DEFAULT_REPO = process.env.GITHUB_REPOSITORY || 'Tigre-Labs/tiger-lab-private';
 const ACTIONS_CAP_50 = 25000;
 const STARTUP_BUDGET_CAP_50 = 4982.40;
 
