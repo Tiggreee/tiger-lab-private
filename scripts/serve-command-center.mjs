@@ -11,8 +11,8 @@ function defaultIndex(urlPath) {
   if (urlPath === '/' || urlPath === '/index.html') {
     return '/command-center/index.html';
   }
-  if (urlPath === '/project-map.html') {
-    return '/command-center/project-map.html';
+  if (urlPath === '/project-map.html' || urlPath === '/project-map-b.html') {
+    return '/command-center' + urlPath;
   }
   if (urlPath === '/campaign-preview.html') {
     return '/command-center/campaign-preview.html';
