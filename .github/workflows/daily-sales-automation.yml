@@ -62,6 +62,14 @@ jobs:
       - name: Campaign Cleaner
         run: node engine/campaigns/campaign-cleaner.mjs
 
+      # 3.6 Discovery Agent — busca nuevos productos EU+MX+US
+      - name: Discovery Agent
+        run: node engine/rnd/discovery-agent.mjs
+
+      # 3.7 Design Agent — genera CSS, emails, social images
+      - name: Design Agent
+        run: node engine/design/design-agent.mjs --all --product "Docflow API" && node engine/design/design-agent.mjs --all --product "Script Premium Kit"
+
       # 4. Campaign Designer — diseño y aprobación
       - name: Campaign Designer
         run: node engine/campaigns/campaign-designer.mjs --product "Docflow API" --target contabilidad --channels email,linkedin --dry-run

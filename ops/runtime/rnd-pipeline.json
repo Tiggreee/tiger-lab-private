@@ -1,173 +1,84 @@
 {
-  "generatedAt": "2026-06-13T08:40:14.826Z",
-  "totalScanned": 10,
-  "decisions": {
-    "invest": 7,
-    "zombie": 3,
-    "killed": 0
-  },
+  "generatedAt": "2026-06-16T23:05:00.085Z",
+  "source": "Discovery Agent",
+  "totalIdeas": 10,
   "investIdeas": [
     {
-      "id": "RD-1781340014828-ol88",
-      "name": "DevTools GDPR Middleware",
-      "category": "devtools",
-      "euRelevance": "high",
-      "totalScore": 88,
-      "scores": {
-        "marketDemand": 22,
-        "competitionGap": 22,
-        "feasibility": 18,
-        "monetization": 18,
-        "regulatory": 8
-      },
-      "competitors": [
-        "Skyflow",
-        "Evervault"
-      ],
-      "description": "Drop-in middleware that GDPR-proofs any API",
-      "status": "pending-review"
+      "id": "DISC-1781651100085-0x6l",
+      "name": "CFDI Auto-Reconciliation",
+      "market": "MX",
+      "score": 85,
+      "viability": 82,
+      "description": "Automated SAT reconciliation for SMBs. Detects discrepancies between issued and received CFDI."
     },
     {
-      "id": "RD-1781340014828-mtb5",
-      "name": "EU AI Act Readiness Platform",
-      "category": "ailegal",
-      "euRelevance": "critical",
-      "totalScore": 87,
-      "scores": {
-        "marketDemand": 24,
-        "competitionGap": 22,
-        "feasibility": 16,
-        "monetization": 15,
-        "regulatory": 10
-      },
-      "competitors": [
-        "Credo AI",
-        "Holistic AI"
-      ],
-      "description": "Compliance dashboard for EU AI Act requirements",
-      "status": "pending-review"
+      "id": "DISC-1781651100085-zotp",
+      "name": "SMB Credit Score API",
+      "market": "MX+US",
+      "score": 82,
+      "viability": 80,
+      "description": "Alternative credit scoring using SAT data, bank statements, and cash flow."
     },
     {
-      "id": "RD-1781340014828-msrk",
-      "name": "GDPR Auto-Compliance Scanner",
-      "category": "devtools",
-      "euRelevance": "high",
-      "totalScore": 84,
-      "scores": {
-        "marketDemand": 22,
-        "competitionGap": 18,
-        "feasibility": 18,
-        "monetization": 18,
-        "regulatory": 8
-      },
-      "competitors": [
-        "DataGuard",
-        "OneTrust",
-        "PrivacyTools"
-      ],
-      "description": "API that scans codebases for GDPR gaps",
-      "status": "pending-review"
+      "id": "DISC-1781651100085-qprn",
+      "name": "Automated Compliance Reporter",
+      "market": "EU",
+      "score": 88,
+      "viability": 85,
+      "description": "GDPR + AI Act compliance reports auto-generated from codebase analysis."
     },
     {
-      "id": "RD-1781340014828-32gq",
-      "name": "SaaS Localization Engine EU",
-      "category": "devtools",
-      "euRelevance": "high",
-      "totalScore": 84,
-      "scores": {
-        "marketDemand": 22,
-        "competitionGap": 18,
-        "feasibility": 18,
-        "monetization": 18,
-        "regulatory": 8
-      },
-      "competitors": [
-        "Lokalise",
-        "Phrase",
-        "Crowdin"
-      ],
-      "description": "Auto-translate + localize SaaS for 24 EU languages",
-      "status": "pending-review"
+      "id": "DISC-1781651100085-x05t",
+      "name": "Cross-Border Payment Router",
+      "market": "US+MX",
+      "score": 80,
+      "viability": 78,
+      "description": "Routes payments through cheapest corridor (SPEI, SWIFT, crypto). Saves 2-5% per transaction."
     },
     {
-      "id": "RD-1781340014828-r18v",
-      "name": "Carbon Accounting API for EU SMEs",
-      "category": "climatetech",
-      "euRelevance": "mandatory",
-      "totalScore": 82,
-      "scores": {
-        "marketDemand": 23,
-        "competitionGap": 18,
-        "feasibility": 16,
-        "monetization": 15,
-        "regulatory": 10
-      },
-      "competitors": [
-        "Plan A",
-        "Sweep",
-        "Normative"
-      ],
-      "description": "CSRD-compliant carbon tracking for SMEs",
-      "status": "pending-review"
-    },
-    {
-      "id": "RD-1781340014828-1pl2",
-      "name": "PSD3 Open Banking Connector",
-      "category": "fintech",
-      "euRelevance": "high",
-      "totalScore": 80,
-      "scores": {
-        "marketDemand": 20,
-        "competitionGap": 18,
-        "feasibility": 14,
-        "monetization": 20,
-        "regulatory": 8
-      },
-      "competitors": [
-        "Tink",
-        "TrueLayer",
-        "Plaid EU"
-      ],
-      "description": "Single API for EU banks under PSD3 directive",
-      "status": "pending-review"
-    },
-    {
-      "id": "RD-1781340014828-5ebq",
-      "name": "Cross-Border VAT Automator",
-      "category": "fintech",
-      "euRelevance": "high",
-      "totalScore": 80,
-      "scores": {
-        "marketDemand": 20,
-        "competitionGap": 18,
-        "feasibility": 14,
-        "monetization": 20,
-        "regulatory": 8
-      },
-      "competitors": [
-        "Quaderno",
-        "TaxJar EU",
-        "Octobat"
-      ],
-      "description": "Automate VAT across 27 EU countries for digital products",
-      "status": "pending-review"
+      "id": "DISC-1781651100085-fnzj",
+      "name": "Supplier Risk Monitor",
+      "market": "US",
+      "score": 83,
+      "viability": 80,
+      "description": "Real-time monitoring of supplier financial health. Predicts disruptions."
     }
   ],
   "zombieIdeas": [
     {
-      "name": "eIDAS Digital Identity Wallet",
-      "totalScore": 77,
-      "reEvaluateAt": "2026-06-20T08:40:14.828Z"
+      "name": "Invoice Factoring Bot",
+      "market": "MX",
+      "score": 78,
+      "description": "AI-powered invoice factoring for SMBs. Predicts payment probability and offers advance.",
+      "viability": 75
     },
     {
-      "name": "EU Grant Discovery Platform",
-      "totalScore": 77,
-      "reEvaluateAt": "2026-06-20T08:40:14.828Z"
+      "name": "Carbon Credit Marketplace",
+      "market": "EU+US",
+      "score": 75,
+      "description": "API for SMBs to buy/sell carbon credits. Auto-calculates footprint.",
+      "viability": 70
     },
     {
-      "name": "Micro-SaaS Incubator EU",
-      "totalScore": 72,
-      "reEvaluateAt": "2026-06-20T08:40:14.828Z"
+      "name": "Micro-SaaS Incubator",
+      "market": "MX",
+      "score": 72,
+      "description": "Community + tools for Mexican indie hackers building SaaS for LATAM.",
+      "viability": 68
+    },
+    {
+      "name": "AI Document Translator",
+      "market": "EU",
+      "score": 79,
+      "description": "Legal/technical document translation with EU regulatory compliance validation.",
+      "viability": 76
+    },
+    {
+      "name": "Employee Retention Credit API",
+      "market": "US",
+      "score": 77,
+      "description": "Automated ERC claims for SMBs. Retroactive to 2020.",
+      "viability": 73
     }
   ],
   "killedIdeas": []

@@ -1,0 +1,83 @@
+{
+  "scannedAt": "2026-06-16T23:05:00.084Z",
+  "sources": {
+    "eu": 6,
+    "mx": 4,
+    "us": 5
+  },
+  "totalSources": 15,
+  "ideasDiscovered": 10,
+  "ideas": [
+    {
+      "name": "CFDI Auto-Reconciliation",
+      "market": "MX",
+      "score": 85,
+      "description": "Automated SAT reconciliation for SMBs. Detects discrepancies between issued and received CFDI.",
+      "viability": 82
+    },
+    {
+      "name": "Invoice Factoring Bot",
+      "market": "MX",
+      "score": 78,
+      "description": "AI-powered invoice factoring for SMBs. Predicts payment probability and offers advance.",
+      "viability": 75
+    },
+    {
+      "name": "SMB Credit Score API",
+      "market": "MX+US",
+      "score": 82,
+      "description": "Alternative credit scoring using SAT data, bank statements, and cash flow.",
+      "viability": 80
+    },
+    {
+      "name": "Automated Compliance Reporter",
+      "market": "EU",
+      "score": 88,
+      "description": "GDPR + AI Act compliance reports auto-generated from codebase analysis.",
+      "viability": 85
+    },
+    {
+      "name": "Carbon Credit Marketplace",
+      "market": "EU+US",
+      "score": 75,
+      "description": "API for SMBs to buy/sell carbon credits. Auto-calculates footprint.",
+      "viability": 70
+    },
+    {
+      "name": "Cross-Border Payment Router",
+      "market": "US+MX",
+      "score": 80,
+      "description": "Routes payments through cheapest corridor (SPEI, SWIFT, crypto). Saves 2-5% per transaction.",
+      "viability": 78
+    },
+    {
+      "name": "Micro-SaaS Incubator",
+      "market": "MX",
+      "score": 72,
+      "description": "Community + tools for Mexican indie hackers building SaaS for LATAM.",
+      "viability": 68
+    },
+    {
+      "name": "AI Document Translator",
+      "market": "EU",
+      "score": 79,
+      "description": "Legal/technical document translation with EU regulatory compliance validation.",
+      "viability": 76
+    },
+    {
+      "name": "Supplier Risk Monitor",
+      "market": "US",
+      "score": 83,
+      "description": "Real-time monitoring of supplier financial health. Predicts disruptions.",
+      "viability": 80
+    },
+    {
+      "name": "Employee Retention Credit API",
+      "market": "US",
+      "score": 77,
+      "description": "Automated ERC claims for SMBs. Retroactive to 2020.",
+      "viability": 73
+    }
+  ],
+  "summary": "10 ideas from 15 sources across EU, MX, US markets"
+}
