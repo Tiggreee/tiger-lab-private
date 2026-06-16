@@ -48,6 +48,8 @@ handoffs:
   runtime: agent-runtime
   bots: agent-bots
   audit: agent-audit
+  dev-engine: agent-dev-engine
+  dev-portfolio: agent-dev-portfolio
 success_criteria:
   - reglas_globales_cumplidas
   - contratos_validos

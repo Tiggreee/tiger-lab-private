@@ -1,0 +1,43 @@
+name: agent-dev-portfolio
+version: 1.0.0
+mission: Construir y mantener el portfolio web, landings, UI/UX y experiencia visual del lab — frontend limpio, rapido y orientado a conversion.
+scope:
+  include:
+    - ui-host/**
+    - src/ui/**
+    - ops/dashboards/**
+    - ops/traffic/**
+    - public/**
+    - static/**
+capabilities:
+  - repo_navigation
+  - code_generation
+  - file_editing
+  - pull_request_creation
+inputs:
+  - requerimiento_visual
+  - brief_landing
+  - metricas_conversion
+  - identidad_marca
+outputs:
+  - pagina_publicable
+  - landing_optimizada
+  - reporte_cta_conversion
+  - pr_portfolio
+dependencies:
+  - ui-host/src/App.tsx
+  - ui-host/src/components/Dashboard.tsx
+  - ui-host/src/components/LandingPage.tsx
+  - ui-host/src/styles/dashboard.css
+  - ops/command-center/index.html
+hard_rules:
+  - mobile_first_siempre
+  - cta_claro_en_cada_pagina
+  - no_generar_copy_generico_sin_prueba
+  - lighthouse_score_minimo_85
+  - conservar_utm_y_tracking_para_analitica
+success_criteria:
+  - build_frontend_exitoso
+  - responsive_en_3_breakpoints
+  - cta_visible_y_funcional
+  - identidad_de_marca_consistente

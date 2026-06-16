@@ -18,6 +18,8 @@ h1{font-size:.85rem;font-weight:700;color:#e0e0ff;letter-spacing:2px}
 .led-r{background:#f85149;box-shadow:0 0 5px #f8514988;filter:blur(1.5px)}
 .back{color:#48486a;font-size:.5rem;text-decoration:none;cursor:pointer}
 .back:hover{color:#6C47FF}
+.btn-3d{background:linear-gradient(135deg,#6C47FF,#0ff);color:#000;padding:6px 16px;border-radius:6px;font-size:.7rem;font-weight:800;text-decoration:none;cursor:pointer;letter-spacing:1px;border:none;text-shadow:0 0 6px rgba(0,255,255,.5);box-shadow:0 0 12px rgba(108,71,255,.4);transition:all .2s}
+.btn-3d:hover{transform:scale(1.08);box-shadow:0 0 20px rgba(108,71,255,.7),0 0 30px rgba(0,255,255,.3)}
 /* Canvas layer */
 canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
 /* Node cards positioned absolutely */
@@ -46,12 +48,15 @@ footer{position:fixed;bottom:0;left:0;width:100%;text-align:center;font-size:.5r
 <body>
 <header>
 <h1>TIGERLAB INFRASTRUCTURE</h1>
-<div class="legend">
-<span><span class="led led-g"></span>95%+</span>
-<span><span class="led led-y"></span>70-94%</span>
-<span><span class="led led-r"></span>&lt;70%</span>
-</div>
-<a class="back" href="/">← Dashboard</a>
+  <div class="legend">
+    <span><span class="led led-g"></span>95%+</span>
+    <span><span class="led led-y"></span>70-94%</span>
+    <span><span class="led led-r"></span>&lt;70%</span>
+  </div>
+  <div class="actions" style="display:flex;align-items:center;gap:8px">
+    <a href="/project-map-3d.html" class="btn-3d">🧊 3D VIEW</a>
+    <a class="back" href="/">← Dashboard</a>
+  </div>
 </header>
 <div class="nodes" id="nodes"></div>
 <canvas id="bg"></canvas>

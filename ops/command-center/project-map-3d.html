@@ -5,15 +5,15 @@
 <title>TigerLab — 3D Arrow Map</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#060610;overflow:hidden;height:100vh;font:11px 'Segoe UI',system-ui,sans-serif;perspective:1400px;cursor:grab;user-select:none}
+body{background:#060610;overflow:hidden;height:100vh;font:11px 'Segoe UI',system-ui,sans-serif;perspective:1200px;cursor:grab;user-select:none}
 body:active{cursor:grabbing}
 body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at center,#0a1020 0%,#060610 70%),repeating-linear-gradient(45deg,transparent,transparent 80px,rgba(108,71,255,.015)80px,rgba(108,71,255,.015)81px);z-index:-1}
 header{position:fixed;top:0;left:0;width:100%;padding:8px 16px;z-index:10;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,#060610,transparent)}
 h1{font-size:.75rem;font-weight:700;color:#e0e0ff;letter-spacing:2px}
 .hint{font-size:.5rem;color:#48486a}
 .back{color:#3a3a5a;font-size:.5rem;text-decoration:none}.back:hover{color:#6C47FF}
-/* Everything inside scene rotates together */
-#scene{position:fixed;top:50%;left:50%;width:900px;height:600px;margin-left:-450px;margin-top:-300px;transform-style:preserve-3d;transition:transform .08s linear}
+/* Everything inside scene rotates together — centered, 15% viewport margin */
+#scene{position:fixed;top:50%;left:50%;width:70vw;height:70vh;transform-style:preserve-3d;transition:transform .08s linear}
 .node{position:absolute;transform-style:preserve-3d;cursor:pointer}
 .node .card{background:linear-gradient(135deg,rgba(20,20,50,.93),rgba(10,10,30,.93));border:1px solid rgba(108,71,255,.35);border-radius:14px 5px 14px 5px;padding:8px 10px;text-align:center;color:#c9d1d9;min-width:80px}
 .node:hover .card{border-color:#6C47FF;box-shadow:0 0 20px rgba(108,71,255,.5)}
@@ -33,11 +33,11 @@ footer{position:fixed;bottom:0;left:0;width:100%;text-align:center;font-size:.5r
 <body>
 <header>
 <h1>3D INFRASTRUCTURE — ARROW MAP</h1>
-<span class="hint">🖱️ Drag to rotate · Scroll to zoom · Everything moves together</span>
-<a class="back" href="/">← Dashboard</a>
+  <span class="hint">Drag to rotate · Scroll to zoom · Rotation clamped ±45° · Scale locked 35%-130%</span>
+  <a class="back" href="/project-map.html">← Infrastructure</a>
 </header>
 <div id="scene">
-<svg id="connLayer"></svg>
+  <svg id="connLayer" width="900" height="600"></svg>
 </div>
 <footer>3D Arrow View · Modules + Connections — unified rotation</footer>
 <script>
@@ -58,7 +58,8 @@ const modules=[
 
 const scene=document.getElementById('scene');
 const svg=document.getElementById('connLayer');
-let rotX=-20,rotY=-30,scale=1,dragging=false,lx=0,ly=0;
+const W=900,H=600;
+let rotX=-15,rotY=-25,scale=0.85,dragging=false,lx=0,ly=0;
 
 function updateConnections(){
   svg.innerHTML='';
@@ -101,13 +102,18 @@ modules.forEach(m=>{
   scene.appendChild(n);
 });
 
-function render(){scene.style.transform=`translate(-50%,-50%) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(${scale})`}
+function render(){
+  const clampedX=Math.max(-45,Math.min(45,rotX));
+  const clampedY=Math.max(-45,Math.min(45,rotY));
+  const clampedScale=Math.max(.35,Math.min(1.3,scale));
+  scene.style.transform=`translate(-50%,-50%) rotateX(${clampedX}deg) rotateY(${clampedY}deg) scale(${clampedScale})`;
+}
 updateConnections();render();
 
 document.addEventListener('mousedown',e=>{dragging=true;lx=e.clientX;ly=e.clientY});
-document.addEventListener('mousemove',e=>{if(!dragging)return;rotY+=(e.clientX-lx)*.4;rotX-=(e.clientY-ly)*.4;lx=e.clientX;ly=e.clientY;render()});
+document.addEventListener('mousemove',e=>{if(!dragging)return;rotY+=(e.clientX-lx)*.35;rotX-=(e.clientY-ly)*.35;lx=e.clientX;ly=e.clientY;render()});
 document.addEventListener('mouseup',()=>dragging=false);
-document.addEventListener('wheel',e=>{e.preventDefault();scale=Math.max(.4,Math.min(2.5,scale-e.deltaY*.0008));render()},{passive:false});
+document.addEventListener('wheel',e=>{e.preventDefault();scale=Math.max(.35,Math.min(1.3,scale-e.deltaY*.0006));render()},{passive:false});
 </script>
 </body>
 </html>

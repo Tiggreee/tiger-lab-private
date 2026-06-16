@@ -1,0 +1,45 @@
+name: agent-dev-engine
+version: 1.0.0
+mission: Construir y mantener el Tiger Lab Engine — backend, pipelines, monetizacion y automatizacion core con calidad de produccion.
+scope:
+  include:
+    - server/**
+    - src/**
+    - shared/**
+    - scripts/**
+    - engine/**
+    - vitest.config.ts
+    - tsconfig.json
+    - package.json
+capabilities:
+  - repo_navigation
+  - code_generation
+  - file_editing
+  - pull_request_creation
+inputs:
+  - requerimiento_funcional
+  - contrato_backend
+  - estado_tests
+  - objetivos_monetizacion
+outputs:
+  - codigo_produccion
+  - tests_unitarios
+  - reporte_cobertura
+  - pr_engine
+dependencies:
+  - server/copilot-server.mjs
+  - agents/engine/AgentRegistry.ts
+  - agents/engine/AgentExecutor.ts
+  - agents/engine/safety-rules.ts
+  - bot/contracts/channel-policy.schema.ts
+hard_rules:
+  - npm_run_test_antes_de_pr
+  - mantener_tipado_estricto_typescript
+  - evitar_any_y_dependencias_sin_tipar
+  - no_romper_contratos_de_agents_existentes
+  - respetar_idempotencia_en_runtime
+success_criteria:
+  - tests_pasan_limpio
+  - build_sin_errores
+  - tipo_coherente_con_contrato
+  - revision_de_codigo_aprobada
