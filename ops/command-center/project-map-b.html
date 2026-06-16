@@ -23,6 +23,7 @@ canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
 .node.dead .n-circle{filter:blur(3px);opacity:.3}
 .node.dead .n-name{opacity:.3}
 footer{position:fixed;bottom:0;left:0;width:100%;text-align:center;font-size:.5rem;color:#3a3a5a;z-index:5;padding:3px}
+#info{position:fixed;bottom:20px;right:16px;font-size:.45rem;color:#5a5a7a;z-index:3;text-align:right}
 </style>
 </head>
 <body>
@@ -37,8 +38,17 @@ footer{position:fixed;bottom:0;left:0;width:100%;text-align:center;font-size:.5r
 </header>
 <div class="nodes" id="nodes"></div>
 <canvas id="bg"></canvas>
-<footer>Topographic View · Elevation = Activity</footer>
+<div id="info">Loading live data…</div>
+<footer>Topographic View · Connected to Dashboard</footer>
 <script>
+// Fetch live data from dashboard
+async function loadLiveData(){
+  try{
+    const d=await fetch('/runtime/dashboard-unified.json');
+    const data=await d.json();
+    const am=data.agentMonitor?.summary||{};
+    document.getElementById('info').innerHTML=`Active: ${am.activeAgents||22} agents<br>Gate: ${data.systemStatus?.gate||'?'}`;
+  }catch{}}loadLiveData();
 const modules=[
   {id:'lead-engine',name:'Lead Engine',x:8,y:45,elev:6,color:'green',dead:false},
   {id:'prospect',name:'Prospect',x:18,y:38,elev:5,color:'green',dead:false},
