@@ -42,6 +42,10 @@
     "check:secrets:all": "npm run check:secrets && npm run check:secrets:social",
     "traffic:ready": "node scripts/traffic/check-social-ready.mjs",
     "traffic:pack": "node scripts/traffic/generate-social-pack.mjs",
+    "traffic:threads:fetch": "node scripts/traffic/fetch-real-threads.mjs",
+    "traffic:pack:threaded": "node scripts/traffic/generate-thread-backed-social-pack.mjs",
+    "traffic:cards": "node scripts/traffic/generate-campaign-cards.mjs",
+    "traffic:threads:build": "node scripts/traffic/build-research-threads.mjs",
     "traffic:pack:audit": "node scripts/traffic/generate-audit-campaigns.mjs",
     "traffic:publish": "node scripts/traffic/publish-social-pack.mjs",
     "traffic:publish:dry": "node scripts/traffic/publish-social-pack.mjs --dry-run",
@@ -50,6 +54,8 @@
     "traffic:go-live:gh": "node scripts/traffic/check-go-live.mjs --githubRepo Tigre-Labs/tiger-lab-private --githubEnv production-social",
     "traffic:validate:gh": "npm run traffic:ready:gh && npm run traffic:go-live:gh",
     "traffic:autopilot": "node scripts/traffic/run-autopilot.mjs",
+    "traffic:pipeline": "node scripts/traffic/run-full-campaign-pipeline.mjs",
+    "traffic:pipeline:dry": "node scripts/traffic/run-full-campaign-pipeline.mjs --dryRun",
     "traffic:validate": "node scripts/validate-campaigns.mjs",
     "product:operability": "node scripts/product-operability-report.mjs",
     "traffic:setup": "bash scripts/traffic/setup-social-secrets.sh",
@@ -90,6 +96,7 @@
     "db:init": "node scripts/init-database.mjs",
     "prod:engine": "node scripts/product-development-engine.mjs",
     "prod:engine:status": "node scripts/product-development-engine.mjs --summary-only",
+    "github:resource:audit": "node scripts/github-resource-audit.mjs",
     "package": "npm pack --dry-run"
   },
   "overrides": {
@@ -99,6 +106,8 @@
     "@types/node": "^24.12.3",
     "@types/pg": "^8.20.0",
     "@vitest/coverage-v8": "^4.1.8",
+    "mjml": "^5.3.0",
+    "puppeteer": "^25.1.0",
     "sharp": "^0.35.1",
     "typescript": "^6.0.3",
     "vitest": "^4.1.8"

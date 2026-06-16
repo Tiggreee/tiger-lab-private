@@ -779,10 +779,31 @@
         "daily-sales-automation": 2
       },
       "perm": "all"
+    },
+    {
+      "timestamp": "2026-06-16T23:24:18.785Z",
+      "totalRuns": 100,
+      "failed": 25,
+      "successful": 73,
+      "byType": {
+        "failure": 25
+      },
+      "byWorkflow": {
+        "Failures Monitor — 2h Cycle": 5,
+        "Product Development Engine — 2h Cycle": 4,
+        "Deploy Dashboard to Pages": 4,
+        "security": 1,
+        "Copilot Agents Validation": 4,
+        "Production Go No-Go": 2,
+        "CI": 2,
+        "e2e": 2,
+        "daily-sales-automation": 1
+      },
+      "perm": "all"
     }
   ],
   "fixesApplied": [],
   "lastKnownPermission": "all",
-  "lastAnalysis": "2026-06-16T06:18:30.558Z",
-  "totalFailuresTracked": 573
+  "lastAnalysis": "2026-06-16T23:24:18.786Z",
+  "totalFailuresTracked": 598
 }

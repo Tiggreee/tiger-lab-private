@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-06-13T20:37:12.812Z",
+  "generatedAt": "2026-06-16T23:24:15.779Z",
   "summary": {
-    "totalAgents": 22,
-    "activeAgents": 22,
+    "totalAgents": 24,
+    "activeAgents": 24,
     "inactiveAgents": 0,
     "directMonetization": 7,
-    "indirectMonetization": 10,
+    "indirectMonetization": 12,
     "supportGovernance": 5,
-    "monetizationContributing": 17
+    "monetizationContributing": 19
   },
   "agents": [
     {
@@ -43,6 +43,38 @@
       "evidence": true,
       "workflowCount": 4,
       "hasScript": true
+    },
+    {
+      "id": "agent-dev-engine",
+      "name": "Dev Engine",
+      "type": "Copilot Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+      "monetizationType": "indirecta",
+      "integrationChannels": [
+        "workflows: agent-monitor.yml, copilot-agents-validation.yml, daily-sales-automation.yml, dashboard-pages.yml, product-engine-2h-cycle.yml, production-go-no-go.yml",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 6,
+      "hasScript": false
+    },
+    {
+      "id": "agent-dev-portfolio",
+      "name": "Dev Portfolio",
+      "type": "Copilot Agent",
+      "active": true,
+      "monetizationContribution": "si",
+      "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+      "monetizationType": "indirecta",
+      "integrationChannels": [
+        "workflows: agent-monitor.yml, copilot-agents-validation.yml, daily-sales-automation.yml, production-go-no-go.yml",
+        "ops evidence"
+      ],
+      "evidence": true,
+      "workflowCount": 4,
+      "hasScript": false
     },
     {
       "id": "agent-docs",
@@ -121,12 +153,12 @@
       "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
       "monetizationType": "indirecta",
       "integrationChannels": [
-        "workflows: agent-monitor.yml, billing-reconciliation-daily.yml, copilot-agents-validation.yml, daily-sales-automation.yml, failures-monitor-2h-cycle.yml, github-policy-monitor.yml, product-engine-2h-cycle.yml, production-go-no-go.yml, publish-packages.yml",
+        "workflows: agent-monitor.yml, billing-reconciliation-daily.yml, copilot-agents-validation.yml, daily-sales-automation.yml, dashboard-pages.yml, failures-monitor-2h-cycle.yml, github-policy-monitor.yml, product-engine-2h-cycle.yml, production-go-no-go.yml, publish-packages.yml",
         "script",
         "ops evidence"
       ],
       "evidence": true,
-      "workflowCount": 9,
+      "workflowCount": 10,
       "hasScript": true
     },
     {

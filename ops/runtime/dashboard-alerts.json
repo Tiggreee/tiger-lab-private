@@ -1,11 +1,11 @@
 {
-  "checkedAt": "2026-06-13T08:40:15.853Z",
+  "checkedAt": "2026-06-16T23:24:23.599Z",
   "status": "HEALTHY",
   "health": 90,
   "gate": "GO",
   "snapshot": {
     "leads": 1000,
-    "agents": 22,
+    "agents": 24,
     "products": 5,
     "productAvg": 64,
     "revenue": 69,

@@ -1,5 +1,5 @@
 {
-  "startedAt": "2026-06-13T08:40:01.251Z",
+  "startedAt": "2026-06-16T23:24:05.503Z",
   "phases": [
     {
       "phase": "agent-health",
@@ -208,15 +208,15 @@
       "zombie": 2,
       "killed": 1
     },
-    "decisions": 3,
-    "startups": 3,
+    "decisions": 4,
+    "startups": 4,
     "revenue": 0,
     "pipeline": "5000 contacts ready",
     "gate": "GO",
-    "uptime": "14s this cycle"
+    "uptime": "18s this cycle"
   },
   "metrics": {},
   "decisions": [],
-  "endedAt": "2026-06-13T08:40:15.890Z",
-  "duration": 14.639
+  "endedAt": "2026-06-16T23:24:23.631Z",
+  "duration": 18.128
 }

@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-06-16T06:08:12.338Z",
+  "generatedAt": "2026-06-16T23:24:34.880Z",
   "total": 2,
   "ready": 2,
   "notReady": 0,
   "productionReadiness": "100%",
   "results": [
     {
-      "dir": "CAMP-MAT-1781590091438",
+      "dir": "CAMP-MAT-1781652274084",
       "product": "Docflow API",
       "score": 100,
       "channels": {
@@ -75,7 +75,7 @@
       "ready": true
     },
     {
-      "dir": "CAMP-MAT-1781590092139",
+      "dir": "CAMP-MAT-1781652274702",
       "product": "Script Premium Kit",
       "score": 100,
       "channels": {

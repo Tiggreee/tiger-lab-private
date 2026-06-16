@@ -1,9 +1,9 @@
 {
-  "updated": "2026-06-16T06:08:12.265Z",
+  "updated": "2026-06-16T23:24:34.823Z",
   "total": 2,
   "campaigns": [
     {
-      "id": "CAMP-MAT-1781590091438",
+      "id": "CAMP-MAT-1781652274084",
       "product": "Docflow API",
       "score": 90,
       "status": "draft",
@@ -15,10 +15,10 @@
         "telegram",
         "discord"
       ],
-      "createdAt": "2026-06-16T06:08:11.446Z"
+      "createdAt": "2026-06-16T23:24:34.090Z"
     },
     {
-      "id": "CAMP-MAT-1781590092139",
+      "id": "CAMP-MAT-1781652274702",
       "product": "Script Premium Kit",
       "score": 90,
       "status": "draft",
@@ -30,7 +30,7 @@
         "telegram",
         "discord"
       ],
-      "createdAt": "2026-06-16T06:08:12.146Z"
+      "createdAt": "2026-06-16T23:24:34.709Z"
     }
   ]
 }

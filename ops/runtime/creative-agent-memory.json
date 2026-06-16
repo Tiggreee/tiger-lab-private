@@ -1,6 +1,6 @@
 {
   "agentId": "creative-agent",
-  "totalCampaigns": 7,
+  "totalCampaigns": 8,
   "campaigns": [
     {
       "id": "CAMP-1781334207583",
@@ -155,6 +155,28 @@
       "learnings": [],
       "ownerFeedback": "",
       "improvedInNext": false
+    },
+    {
+      "id": "CAMP-1781652262739",
+      "product": "Docflow API",
+      "createdAt": "2026-06-16T23:24:22.741Z",
+      "score": 90,
+      "copies": {
+        "email": "Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. Doc",
+        "linkedin": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "x": "🔥 Automatiza documentos. Ahorra 10h/semana.\n✅ Automatización completa\n✅ Integra",
+        "facebook": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "telegram": "*Docflow API*\n\nAutomatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo ",
+        "discord": "**Docflow API**\n\nAutomatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiemp"
+      },
+      "performance": {
+        "opens": 0,
+        "clicks": 0,
+        "conversions": 0
+      },
+      "learnings": [],
+      "ownerFeedback": "",
+      "improvedInNext": false
     }
   ],
   "patterns": {
@@ -165,7 +187,8 @@
       "Automatiza documentos. Ahorra 10h/semana.",
       "Automatiza documentos. Ahorra 10h/semana.",
       "Scripts listos. Resultados inmediatos.",
-      "CFDI 4.0 sin estrés. Sin contador extra."
+      "CFDI 4.0 sin estrés. Sin contador extra.",
+      "Automatiza documentos. Ahorra 10h/semana."
     ],
     "bestCTAs": [
       "Prueba gratis 7 días →",
@@ -174,7 +197,8 @@
       "Prueba gratis 7 días →",
       "Prueba gratis 7 días →",
       "Descarga el kit gratis →",
-      "Empieza gratis →"
+      "Empieza gratis →",
+      "Prueba gratis 7 días →"
     ],
     "bestChannels": [],
     "worstCopy": []
@@ -182,7 +206,7 @@
   "evolution": {
     "averageScore": 86,
     "scoreTrend": "improving",
-    "totalIterations": 7
+    "totalIterations": 8
   },
-  "version": 8
+  "version": 9
 }

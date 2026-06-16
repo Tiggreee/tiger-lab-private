@@ -4,7 +4,7 @@
     "owner": "Victor",
     "project": "Tiger Lab — Fully Automated",
     "lastSupervisorSyncAt": "2026-06-12T08:10:00.000Z",
-    "lastPrioritizedAt": "2026-06-13T20:37:01.749Z"
+    "lastPrioritizedAt": "2026-06-16T23:24:23.029Z"
   },
   "tasks": [
     {
@@ -20,7 +20,7 @@
       "settledBy": "engine",
       "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json",
       "debtNote": "Engine generó el contenido. Publicación real requiere secrets de LinkedIn que solo Victor puede configurar.",
-      "daysUntilDue": 0
+      "daysUntilDue": -3
     },
     {
       "id": "PL-004",
@@ -35,7 +35,7 @@
       "settledBy": "engine",
       "evidence": "ops/sales/outreach/outreach-batch-2026-06-12.md",
       "debtNote": "Engine generó leads desde ICP y creó los mensajes. Envío manual por LinkedIn DM requiere Victor.",
-      "daysUntilDue": 0
+      "daysUntilDue": -3
     },
     {
       "id": "PL-010",
@@ -48,7 +48,7 @@
       "nextAction": "Victor completando contratación SW Sapien. Mientras tanto se cobra directo, factura después.",
       "debtSettled": false,
       "blocker": "Requiere contrato SW Sapien de Victor",
-      "daysUntilDue": 7
+      "daysUntilDue": 4
     },
     {
       "id": "PL-007",
@@ -62,7 +62,7 @@
       "debtSettled": true,
       "settledBy": "engine",
       "evidence": "npm pack --dry-run OK",
-      "daysUntilDue": 0
+      "daysUntilDue": -3
     },
     {
       "id": "PL-008",
@@ -76,7 +76,7 @@
       "debtSettled": true,
       "settledBy": "engine",
       "evidence": "scripts/lead-intelligence.mjs + scripts/dashboard-prioritize.mjs + scripts/traffic/generate-social-pack.mjs",
-      "daysUntilDue": 0
+      "daysUntilDue": -3
     },
     {
       "id": "PL-011",
@@ -90,7 +90,7 @@
       "debtSettled": true,
       "settledBy": "engine",
       "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json",
-      "daysUntilDue": 0
+      "daysUntilDue": -3
     },
     {
       "id": "PL-001",
@@ -104,7 +104,7 @@
       "debtSettled": true,
       "settledBy": "human",
       "evidence": "sk_live_ keys en GitHub Secrets + webhook endpoint en Railway",
-      "daysUntilDue": 1
+      "daysUntilDue": -2
     },
     {
       "id": "PL-002",
@@ -118,7 +118,7 @@
       "debtSettled": true,
       "settledBy": "human",
       "evidence": "PayPal Live app + keys en GitHub Secrets",
-      "daysUntilDue": 1
+      "daysUntilDue": -2
     },
     {
       "id": "SYS-017",
@@ -131,7 +131,7 @@
       "nextAction": "22/22 agents active. Engine complete.",
       "debtSettled": true,
       "settledBy": "engine",
-      "daysUntilDue": 1
+      "daysUntilDue": -2
     },
     {
       "id": "SYS-003",
@@ -142,7 +142,7 @@
       "status": "done",
       "dueDate": "2026-06-13",
       "nextAction": "Stripe Live keys in GitHub Secrets + webhook configured",
-      "daysUntilDue": 1
+      "daysUntilDue": -2
     },
     {
       "id": "SYS-005",
@@ -153,7 +153,7 @@
       "status": "done",
       "dueDate": "2026-06-13",
       "nextAction": "PayPal Live keys in GitHub Secrets",
-      "daysUntilDue": 1
+      "daysUntilDue": -2
     },
     {
       "id": "PL-006",
@@ -167,7 +167,7 @@
       "debtSettled": true,
       "settledBy": "engine",
       "evidence": "engine/email/ built: prospect-selector + email-campaign + campaign-designer",
-      "daysUntilDue": 4
+      "daysUntilDue": 1
     },
     {
       "id": "PL-005",
@@ -180,7 +180,7 @@
       "nextAction": "Victor llenando formulario de contratación SW Sapien (no Finkok).",
       "debtSettled": false,
       "blocker": "Requiere que Victor complete contrato SW Sapien",
-      "daysUntilDue": 7
+      "daysUntilDue": 4
     },
     {
       "id": "PL-009",
@@ -194,7 +194,7 @@
       "debtSettled": true,
       "settledBy": "engine",
       "evidence": "Stripe + PayPal live keys. Engine cobra, campaigns convierten.",
-      "daysUntilDue": 7
+      "daysUntilDue": 4
     }
   ]
 }

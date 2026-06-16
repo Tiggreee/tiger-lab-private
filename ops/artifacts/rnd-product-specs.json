@@ -1,6 +1,6 @@
 {
-  "RD-1781340014828-ol88": {
-    "id": "RD-1781340014828-ol88",
+  "RD-1781652262666-9f9w": {
+    "id": "RD-1781652262666-9f9w",
     "name": "DevTools GDPR Middleware",
     "category": "devtools",
     "euRelevance": "high",
@@ -28,10 +28,10 @@
       "estimatedBuildWeeks": 4,
       "status": "planned-rd"
     },
-    "generatedAt": "2026-06-13T20:37:12.934Z"
+    "generatedAt": "2026-06-16T23:24:23.156Z"
   },
-  "RD-1781340014828-mtb5": {
-    "id": "RD-1781340014828-mtb5",
+  "RD-1781652262666-gfbz": {
+    "id": "RD-1781652262666-gfbz",
     "name": "EU AI Act Readiness Platform",
     "category": "ailegal",
     "euRelevance": "critical",
@@ -59,10 +59,10 @@
       "estimatedBuildWeeks": 4,
       "status": "planned-rd"
     },
-    "generatedAt": "2026-06-13T20:37:12.935Z"
+    "generatedAt": "2026-06-16T23:24:23.157Z"
   },
-  "RD-1781340014828-msrk": {
-    "id": "RD-1781340014828-msrk",
+  "RD-1781652262666-l8jj": {
+    "id": "RD-1781652262666-l8jj",
     "name": "GDPR Auto-Compliance Scanner",
     "category": "devtools",
     "euRelevance": "high",
@@ -91,10 +91,10 @@
       "estimatedBuildWeeks": 6,
       "status": "planned-rd"
     },
-    "generatedAt": "2026-06-13T20:37:12.935Z"
+    "generatedAt": "2026-06-16T23:24:23.157Z"
   },
-  "RD-1781340014828-32gq": {
-    "id": "RD-1781340014828-32gq",
+  "RD-1781652262666-rjv9": {
+    "id": "RD-1781652262666-rjv9",
     "name": "SaaS Localization Engine EU",
     "category": "devtools",
     "euRelevance": "high",
@@ -123,10 +123,10 @@
       "estimatedBuildWeeks": 6,
       "status": "planned-rd"
     },
-    "generatedAt": "2026-06-13T20:37:12.935Z"
+    "generatedAt": "2026-06-16T23:24:23.157Z"
   },
-  "RD-1781340014828-r18v": {
-    "id": "RD-1781340014828-r18v",
+  "RD-1781652262666-a5v3": {
+    "id": "RD-1781652262666-a5v3",
     "name": "Carbon Accounting API for EU SMEs",
     "category": "climatetech",
     "euRelevance": "mandatory",
@@ -155,10 +155,10 @@
       "estimatedBuildWeeks": 6,
       "status": "planned-rd"
     },
-    "generatedAt": "2026-06-13T20:37:12.935Z"
+    "generatedAt": "2026-06-16T23:24:23.157Z"
   },
-  "RD-1781340014828-1pl2": {
-    "id": "RD-1781340014828-1pl2",
+  "RD-1781652262666-5b72": {
+    "id": "RD-1781652262666-5b72",
     "name": "PSD3 Open Banking Connector",
     "category": "fintech",
     "euRelevance": "high",
@@ -187,10 +187,10 @@
       "estimatedBuildWeeks": 6,
       "status": "planned-rd"
     },
-    "generatedAt": "2026-06-13T20:37:12.935Z"
+    "generatedAt": "2026-06-16T23:24:23.157Z"
   },
-  "RD-1781340014828-5ebq": {
-    "id": "RD-1781340014828-5ebq",
+  "RD-1781652262666-tze4": {
+    "id": "RD-1781652262666-tze4",
     "name": "Cross-Border VAT Automator",
     "category": "fintech",
     "euRelevance": "high",
@@ -219,6 +219,6 @@
       "estimatedBuildWeeks": 6,
       "status": "planned-rd"
     },
-    "generatedAt": "2026-06-13T20:37:12.935Z"
+    "generatedAt": "2026-06-16T23:24:23.157Z"
   }
 }

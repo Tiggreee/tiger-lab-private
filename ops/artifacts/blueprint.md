@@ -1,7 +1,7 @@
 # tiger-lab-private Blueprint
 
 Version: 0.1.0
-Generated: 2026-06-13T20:37:12.941Z
+Generated: 2026-06-16T23:24:23.297Z
 Product Type: SaaS
 
 ## Summary
@@ -46,6 +46,8 @@ graph TD
 - @types/node
 - @types/pg
 - @vitest/coverage-v8
+- mjml
+- puppeteer
 - sharp
 - typescript
 - vitest

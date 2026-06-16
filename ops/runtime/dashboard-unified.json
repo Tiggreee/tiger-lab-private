@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T20:37:13.040Z",
+  "generatedAt": "2026-06-16T23:24:23.533Z",
   "monetization": {
     "leadsToday": 10,
     "generatedContent": 10,
@@ -35,6 +35,23 @@
           "discord"
         ],
         "generatedAt": "2026-05-31T05:20:21.500Z"
+      },
+      {
+        "file": "social-pack-script-premium-kit-2026-06-13.json",
+        "name": "script-premium-kit-2026-06-13",
+        "topic": "Script Premium Kit: runbooks ejecutables y scripts listos para produccion que eliminan trabajo manual recurrente",
+        "avgScore": 100,
+        "projectedLift": 24,
+        "targetReached": true,
+        "mcpDecision": "apply",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-06-13T20:19:39.161Z"
       },
       {
         "file": "social-pack-produccion-week1.json",
@@ -139,6 +156,24 @@
         "generatedAt": "2026-06-13T20:37:01.812Z"
       },
       {
+        "file": "social-pack-first-payment.json",
+        "name": "first-payment",
+        "topic": "N/A",
+        "avgScore": 0,
+        "projectedLift": 0,
+        "targetReached": false,
+        "mcpDecision": "unknown",
+        "channels": [
+          "email",
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-06-14T19:18:14.454Z"
+      },
+      {
         "file": "social-pack-facturautentico-cloud-pilot.json",
         "name": "facturautentico-cloud-pilot",
         "topic": "Facturacion cloud lista para escalar sin caos",
@@ -154,40 +189,6 @@
           "discord"
         ],
         "generatedAt": "2026-05-31T04:56:16.558Z"
-      },
-      {
-        "file": "social-pack-facturaautentica-railway-ready-2026-06-01.json",
-        "name": "facturaautentica-railway-ready-2026-06-01",
-        "topic": "CFDI confiable sin retrabajo operativo",
-        "avgScore": 95,
-        "projectedLift": 20,
-        "targetReached": true,
-        "mcpDecision": "unknown",
-        "channels": [
-          "linkedin",
-          "x",
-          "facebook",
-          "telegram",
-          "discord"
-        ],
-        "generatedAt": "2026-06-01T00:00:00.000Z"
-      },
-      {
-        "file": "social-pack-docflow-api-pilot.json",
-        "name": "docflow-api-pilot",
-        "topic": "Flujos documentales API-first sin cuellos de botella",
-        "avgScore": 100,
-        "projectedLift": 24,
-        "targetReached": true,
-        "mcpDecision": "unknown",
-        "channels": [
-          "linkedin",
-          "x",
-          "facebook",
-          "telegram",
-          "discord"
-        ],
-        "generatedAt": "2026-05-31T05:20:20.801Z"
       }
     ]
   },
@@ -262,7 +263,7 @@
         "settledBy": "engine",
         "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json",
         "debtNote": "Engine generó el contenido. Publicación real requiere secrets de LinkedIn que solo Victor puede configurar.",
-        "daysUntilDue": 0
+        "daysUntilDue": -3
       },
       {
         "id": "PL-004",
@@ -277,7 +278,7 @@
         "settledBy": "engine",
         "evidence": "ops/sales/outreach/outreach-batch-2026-06-12.md",
         "debtNote": "Engine generó leads desde ICP y creó los mensajes. Envío manual por LinkedIn DM requiere Victor.",
-        "daysUntilDue": 0
+        "daysUntilDue": -3
       },
       {
         "id": "PL-010",
@@ -290,7 +291,7 @@
         "nextAction": "Victor completando contratación SW Sapien. Mientras tanto se cobra directo, factura después.",
         "debtSettled": false,
         "blocker": "Requiere contrato SW Sapien de Victor",
-        "daysUntilDue": 7
+        "daysUntilDue": 4
       },
       {
         "id": "PL-007",
@@ -304,7 +305,7 @@
         "debtSettled": true,
         "settledBy": "engine",
         "evidence": "npm pack --dry-run OK",
-        "daysUntilDue": 0
+        "daysUntilDue": -3
       },
       {
         "id": "PL-008",
@@ -318,7 +319,7 @@
         "debtSettled": true,
         "settledBy": "engine",
         "evidence": "scripts/lead-intelligence.mjs + scripts/dashboard-prioritize.mjs + scripts/traffic/generate-social-pack.mjs",
-        "daysUntilDue": 0
+        "daysUntilDue": -3
       },
       {
         "id": "PL-011",
@@ -332,7 +333,7 @@
         "debtSettled": true,
         "settledBy": "engine",
         "evidence": "ops/traffic/outbox/social-pack-produccion-week1.json",
-        "daysUntilDue": 0
+        "daysUntilDue": -3
       },
       {
         "id": "PL-001",
@@ -346,7 +347,7 @@
         "debtSettled": true,
         "settledBy": "human",
         "evidence": "sk_live_ keys en GitHub Secrets + webhook endpoint en Railway",
-        "daysUntilDue": 1
+        "daysUntilDue": -2
       },
       {
         "id": "PL-002",
@@ -360,7 +361,7 @@
         "debtSettled": true,
         "settledBy": "human",
         "evidence": "PayPal Live app + keys en GitHub Secrets",
-        "daysUntilDue": 1
+        "daysUntilDue": -2
       },
       {
         "id": "SYS-017",
@@ -373,7 +374,7 @@
         "nextAction": "22/22 agents active. Engine complete.",
         "debtSettled": true,
         "settledBy": "engine",
-        "daysUntilDue": 1
+        "daysUntilDue": -2
       },
       {
         "id": "SYS-003",
@@ -384,7 +385,7 @@
         "status": "done",
         "dueDate": "2026-06-13",
         "nextAction": "Stripe Live keys in GitHub Secrets + webhook configured",
-        "daysUntilDue": 1
+        "daysUntilDue": -2
       },
       {
         "id": "SYS-005",
@@ -395,7 +396,7 @@
         "status": "done",
         "dueDate": "2026-06-13",
         "nextAction": "PayPal Live keys in GitHub Secrets",
-        "daysUntilDue": 1
+        "daysUntilDue": -2
       },
       {
         "id": "PL-006",
@@ -409,7 +410,7 @@
         "debtSettled": true,
         "settledBy": "engine",
         "evidence": "engine/email/ built: prospect-selector + email-campaign + campaign-designer",
-        "daysUntilDue": 4
+        "daysUntilDue": 1
       },
       {
         "id": "PL-005",
@@ -422,7 +423,7 @@
         "nextAction": "Victor llenando formulario de contratación SW Sapien (no Finkok).",
         "debtSettled": false,
         "blocker": "Requiere que Victor complete contrato SW Sapien",
-        "daysUntilDue": 7
+        "daysUntilDue": 4
       },
       {
         "id": "PL-009",
@@ -436,7 +437,7 @@
         "debtSettled": true,
         "settledBy": "engine",
         "evidence": "Stripe + PayPal live keys. Engine cobra, campaigns convierten.",
-        "daysUntilDue": 7
+        "daysUntilDue": 4
       }
     ]
   },
@@ -531,15 +532,15 @@
     "note": "Cada landing page esta optimizada para el tono y formato de su canal social."
   },
   "agentMonitor": {
-    "generatedAt": "2026-06-13T20:37:12.812Z",
+    "generatedAt": "2026-06-16T23:24:15.779Z",
     "summary": {
-      "totalAgents": 22,
-      "activeAgents": 22,
+      "totalAgents": 24,
+      "activeAgents": 24,
       "inactiveAgents": 0,
       "directMonetization": 7,
-      "indirectMonetization": 10,
+      "indirectMonetization": 12,
       "supportGovernance": 5,
-      "monetizationContributing": 17
+      "monetizationContributing": 19
     },
     "agents": [
       {
@@ -575,6 +576,38 @@
         "evidence": true,
         "workflowCount": 4,
         "hasScript": true
+      },
+      {
+        "id": "agent-dev-engine",
+        "name": "Dev Engine",
+        "type": "Copilot Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+        "monetizationType": "indirecta",
+        "integrationChannels": [
+          "workflows: agent-monitor.yml, copilot-agents-validation.yml, daily-sales-automation.yml, dashboard-pages.yml, product-engine-2h-cycle.yml, production-go-no-go.yml",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 6,
+        "hasScript": false
+      },
+      {
+        "id": "agent-dev-portfolio",
+        "name": "Dev Portfolio",
+        "type": "Copilot Agent",
+        "active": true,
+        "monetizationContribution": "si",
+        "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
+        "monetizationType": "indirecta",
+        "integrationChannels": [
+          "workflows: agent-monitor.yml, copilot-agents-validation.yml, daily-sales-automation.yml, production-go-no-go.yml",
+          "ops evidence"
+        ],
+        "evidence": true,
+        "workflowCount": 4,
+        "hasScript": false
       },
       {
         "id": "agent-docs",
@@ -653,12 +686,12 @@
         "contributionDetail": "Soporta infraestructura de monetizacion (automacion, pipelines, contenido)",
         "monetizationType": "indirecta",
         "integrationChannels": [
-          "workflows: agent-monitor.yml, billing-reconciliation-daily.yml, copilot-agents-validation.yml, daily-sales-automation.yml, failures-monitor-2h-cycle.yml, github-policy-monitor.yml, product-engine-2h-cycle.yml, production-go-no-go.yml, publish-packages.yml",
+          "workflows: agent-monitor.yml, billing-reconciliation-daily.yml, copilot-agents-validation.yml, daily-sales-automation.yml, dashboard-pages.yml, failures-monitor-2h-cycle.yml, github-policy-monitor.yml, product-engine-2h-cycle.yml, production-go-no-go.yml, publish-packages.yml",
           "script",
           "ops evidence"
         ],
         "evidence": true,
-        "workflowCount": 9,
+        "workflowCount": 10,
         "hasScript": true
       },
       {
@@ -983,85 +1016,5 @@
     "dashboard": "success",
     "checkout": "success",
     "gate": "GO"
-  },
-  "failuresMonitor": {
-    "lastAnalysis": "2026-06-16T06:18:30.558Z",
-    "totalRuns": 100,
-    "failedToday": 19,
-    "successfulToday": 80,
-    "byType": {
-      "failure": 19
-    },
-    "byWorkflow": [
-      {
-        "workflow": "Deploy Dashboard to Pages",
-        "failures": 17
-      },
-      {
-        "workflow": "daily-sales-automation",
-        "failures": 2
-      }
-    ],
-    "rootCauses": [
-      {
-        "cause": "Check failures in workflow steps",
-        "severity": "high",
-        "fix": "Review logs for each failed run"
-      }
-    ],
-    "permFixed": false,
-    "currentPermission": "all"
-  },
-  "productEngine": {
-    "generatedAt": "2026-06-16T05:58:30.140Z",
-    "engine": {
-      "averageScore": 64,
-      "productsAt95": 0,
-      "productsOnTrack95": 0,
-      "productsAt90plus": 0,
-      "productsAt75plus": 2,
-      "totalBenchmarks": 5,
-      "totalCompetitors": 20,
-      "estimatedTotalEffortHours": 146
-    },
-    "topProducts": [
-      {
-        "name": "Docflow API",
-        "score": 84,
-        "tier": "P3",
-        "status": "active"
-      },
-      {
-        "name": "Script Premium Kit",
-        "score": 84,
-        "tier": "P3",
-        "status": "active"
-      },
-      {
-        "name": "FacturAutentico Cloud",
-        "score": 56,
-        "tier": "P1",
-        "status": "paused"
-      },
-      {
-        "name": "FacturAutentica",
-        "score": 56,
-        "tier": "P1",
-        "status": "paused"
-      },
-      {
-        "name": "Sentrylog Lite",
-        "score": 38,
-        "tier": "P1",
-        "status": "planned"
-      }
-    ],
-    "priorityQueue": {
-      "target95": [
-        "Docflow API",
-        "Script Premium Kit"
-      ],
-      "engineReady": []
-    }
   }
 }
