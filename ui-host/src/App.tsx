@@ -16,68 +16,20 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<AccessGate />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/workspace" element={<Landing />} />
+        <Route path="/onboarding" element={<Onboarding />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/checkout/success" element={<CheckoutSuccess />} />
+        <Route path="/checkout/cancel" element={<CheckoutCancel />} />
+        <Route path="/automation" element={<Automation />} />
+        <Route path="/access" element={<AccessGate />} />
         <Route
           path="/dev/ops"
           element={(
             <RequireDevAccess>
               <DeveloperOps />
-            </RequireDevAccess>
-          )}
-        />
-        <Route
-          path="/workspace"
-          element={(
-            <RequireDevAccess>
-              <Landing />
-            </RequireDevAccess>
-          )}
-        />
-        <Route
-          path="/onboarding"
-          element={(
-            <RequireDevAccess>
-              <Onboarding />
-            </RequireDevAccess>
-          )}
-        />
-        <Route
-          path="/dashboard"
-          element={(
-            <RequireDevAccess>
-              <Dashboard />
-            </RequireDevAccess>
-          )}
-        />
-        <Route
-          path="/checkout"
-          element={(
-            <RequireDevAccess>
-              <Checkout />
-            </RequireDevAccess>
-          )}
-        />
-        <Route
-          path="/checkout/success"
-          element={(
-            <RequireDevAccess>
-              <CheckoutSuccess />
-            </RequireDevAccess>
-          )}
-        />
-        <Route
-          path="/checkout/cancel"
-          element={(
-            <RequireDevAccess>
-              <CheckoutCancel />
-            </RequireDevAccess>
-          )}
-        />
-        <Route
-          path="/automation"
-          element={(
-            <RequireDevAccess>
-              <Automation />
             </RequireDevAccess>
           )}
         />
