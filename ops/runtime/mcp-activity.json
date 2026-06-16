@@ -1,0 +1,213 @@
+{
+  "tracked": {},
+  "history": [],
+  "report": {
+    "generatedAt": "2026-06-16T04:02:09.244Z",
+    "total": 20,
+    "active": 0,
+    "totalUses": 0,
+    "topServer": "Memory MCP",
+    "servers": [
+      {
+        "id": "mcp-memory",
+        "name": "Memory MCP",
+        "category": "brain",
+        "enabled": false,
+        "uses": 0,
+        "impact": "high",
+        "score": 40,
+        "rank": 1
+      },
+      {
+        "id": "mcp-filesystem",
+        "name": "Filesystem MCP",
+        "category": "code",
+        "enabled": false,
+        "uses": 0,
+        "impact": "high",
+        "score": 40,
+        "rank": 2
+      },
+      {
+        "id": "mcp-github",
+        "name": "GitHub MCP",
+        "category": "code",
+        "enabled": false,
+        "uses": 0,
+        "impact": "high",
+        "score": 40,
+        "rank": 3
+      },
+      {
+        "id": "mcp-sqlite",
+        "name": "SQLite MCP",
+        "category": "data",
+        "enabled": false,
+        "uses": 0,
+        "impact": "high",
+        "score": 40,
+        "rank": 4
+      },
+      {
+        "id": "mcp-fetch",
+        "name": "Fetch MCP",
+        "category": "research",
+        "enabled": false,
+        "uses": 0,
+        "impact": "high",
+        "score": 40,
+        "rank": 5
+      },
+      {
+        "id": "mcp-email",
+        "name": "Email SMTP MCP",
+        "category": "comm",
+        "enabled": false,
+        "uses": 0,
+        "impact": "high",
+        "score": 40,
+        "rank": 6
+      },
+      {
+        "id": "mcp-sequential",
+        "name": "Sequential Thinking MCP",
+        "category": "brain",
+        "enabled": false,
+        "uses": 0,
+        "impact": "medium",
+        "score": 25,
+        "rank": 7
+      },
+      {
+        "id": "mcp-git",
+        "name": "Git MCP",
+        "category": "code",
+        "enabled": false,
+        "uses": 0,
+        "impact": "medium",
+        "score": 25,
+        "rank": 8
+      },
+      {
+        "id": "mcp-csv",
+        "name": "CSV MCP",
+        "category": "data",
+        "enabled": false,
+        "uses": 0,
+        "impact": "medium",
+        "score": 25,
+        "rank": 9
+      },
+      {
+        "id": "mcp-puppeteer",
+        "name": "Puppeteer MCP",
+        "category": "research",
+        "enabled": false,
+        "uses": 0,
+        "impact": "medium",
+        "score": 25,
+        "rank": 10
+      },
+      {
+        "id": "mcp-time",
+        "name": "Time MCP",
+        "category": "automation",
+        "enabled": false,
+        "uses": 0,
+        "impact": "medium",
+        "score": 25,
+        "rank": 11
+      },
+      {
+        "id": "mcp-cron",
+        "name": "Cron MCP",
+        "category": "automation",
+        "enabled": false,
+        "uses": 0,
+        "impact": "medium",
+        "score": 25,
+        "rank": 12
+      },
+      {
+        "id": "mcp-markdown",
+        "name": "Markdown MCP",
+        "category": "docs",
+        "enabled": false,
+        "uses": 0,
+        "impact": "medium",
+        "score": 25,
+        "rank": 13
+      },
+      {
+        "id": "mcp-pdf",
+        "name": "PDF MCP",
+        "category": "docs",
+        "enabled": false,
+        "uses": 0,
+        "impact": "medium",
+        "score": 25,
+        "rank": 14
+      },
+      {
+        "id": "mcp-slack",
+        "name": "Slack MCP",
+        "category": "comm",
+        "enabled": false,
+        "uses": 0,
+        "impact": "medium",
+        "score": 25,
+        "rank": 15
+      },
+      {
+        "id": "mcp-rss",
+        "name": "RSS MCP",
+        "category": "research",
+        "enabled": false,
+        "uses": 0,
+        "impact": "low",
+        "score": 10,
+        "rank": 16
+      },
+      {
+        "id": "mcp-docker",
+        "name": "Docker MCP",
+        "category": "automation",
+        "enabled": false,
+        "uses": 0,
+        "impact": "low",
+        "score": 10,
+        "rank": 17
+      },
+      {
+        "id": "mcp-screenshot",
+        "name": "Screenshot MCP",
+        "category": "docs",
+        "enabled": false,
+        "uses": 0,
+        "impact": "low",
+        "score": 10,
+        "rank": 18
+      },
+      {
+        "id": "mcp-json",
+        "name": "JSON MCP",
+        "category": "utility",
+        "enabled": false,
+        "uses": 0,
+        "impact": "low",
+        "score": 10,
+        "rank": 19
+      },
+      {
+        "id": "mcp-image",
+        "name": "Image MCP",
+        "category": "utility",
+        "enabled": false,
+        "uses": 0,
+        "impact": "low",
+        "score": 10,
+        "rank": 20
+      }
+    ]
+  }
+}

@@ -135,11 +135,28 @@ window.toggleMcp=function(id,on){
   fetch('/mcp/toggle',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id,enabled:on})}).catch(()=>{});
 };
 
+async function renderMcpRanking(){
+  const data=await fetchJSON('/runtime/mcp-activity.json');
+  const container=$('mcpRanking');
+  if(!data?.report?.servers||!container)return;
+  const servers=data.report.servers.slice(0,10);
+  $('mcpRankTime').textContent=`(updated ${new Date(data.generatedAt).toLocaleTimeString()})`;
+  let html='<table class="agent-table"><thead><tr><th>#</th><th>MCP Server</th><th>Uses</th><th style="width:100px">Score</th></tr></thead><tbody>';
+  servers.forEach(s=>{
+    const cls=s.score>=80?'eff-high':s.score>=50?'eff-mid':'eff-low';
+    const bar=s.score>=80?'#3fb950':s.score>=50?'#d29922':'#f85149';
+    html+=`<tr><td style="color:#484f58">${s.rank}</td><td>${s.name}<br><span style="font-size:.45rem;color:#484f58">${s.impact} impact · ${s.enabled?'🟢 on':'⚫ off'}</span></td><td>${s.uses}</td><td><span class="eff-bar"><span class="eff-fill" style="width:${s.score}%;background:${bar}"></span></span><span class="eff-val ${cls}">${s.score}%</span></td></tr>`;
+  });
+  html+='</tbody></table>';
+  container.innerHTML=html;
+  requestAnimationFrame(()=>{container.querySelectorAll('.eff-fill').forEach(b=>{const t=b.style.width;b.style.width='0';requestAnimationFrame(()=>{b.style.width=t})})});
+}
+
 async function render(){
   const unified=await fetchJSON(UNIFIED);
   if(!unified){$('footerText').textContent='Dashboard offline';return}
   renderKPIs(unified);renderGate(unified);renderProducts(unified);renderLeads(unified);
-  renderAlerts();renderCampaigns();renderAgentEfficiency();renderMcpToggles();renderFooter();botCycle();
+  renderAlerts();renderCampaigns();renderAgentEfficiency();renderMcpToggles();renderMcpRanking();renderFooter();botCycle();
   // Tooltips
   document.querySelectorAll('.card').forEach(c=>{
     const h=c.querySelector('h2');if(!h||c._hasTip)return;c._hasTip=true;
