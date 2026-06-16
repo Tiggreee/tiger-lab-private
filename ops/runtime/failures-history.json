@@ -765,10 +765,24 @@
         "security": 1
       },
       "perm": "all"
+    },
+    {
+      "timestamp": "2026-06-16T06:18:30.558Z",
+      "totalRuns": 100,
+      "failed": 19,
+      "successful": 80,
+      "byType": {
+        "failure": 19
+      },
+      "byWorkflow": {
+        "Deploy Dashboard to Pages": 17,
+        "daily-sales-automation": 2
+      },
+      "perm": "all"
     }
   ],
   "fixesApplied": [],
   "lastKnownPermission": "all",
-  "lastAnalysis": "2026-06-16T03:45:21.385Z",
-  "totalFailuresTracked": 554
+  "lastAnalysis": "2026-06-16T06:18:30.558Z",
+  "totalFailuresTracked": 573
 }
