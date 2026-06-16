@@ -9,10 +9,11 @@
       "package": "@modelcontextprotocol/server-memory",
       "category": "brain",
       "description": "Persistent memory between sessions. Creative Agent remembers past campaigns.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "high",
-      "command": "npx @modelcontextprotocol/server-memory"
+      "command": "npx @modelcontextprotocol/server-memory",
+      "functional": false
     },
     "sequential-thinking": {
       "id": "mcp-sequential",
@@ -20,10 +21,11 @@
       "package": "@modelcontextprotocol/server-sequential-thinking",
       "category": "brain",
       "description": "Step-by-step reasoning. Better decisions from the engine.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "medium",
-      "command": "npx @modelcontextprotocol/server-sequential-thinking"
+      "command": "npx @modelcontextprotocol/server-sequential-thinking",
+      "functional": false
     },
     "filesystem": {
       "id": "mcp-filesystem",
@@ -31,10 +33,11 @@
       "package": "@modelcontextprotocol/server-filesystem",
       "category": "code",
       "description": "Secure file access. Agents read/write code safely.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "high",
-      "command": "npx @modelcontextprotocol/server-filesystem"
+      "command": "npx @modelcontextprotocol/server-filesystem",
+      "functional": false
     },
     "github": {
       "id": "mcp-github",
@@ -42,11 +45,12 @@
       "package": "@github/mcp-server",
       "category": "code",
       "description": "Full repo control. Auto-PRs, commits, issues from agents.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "needsToken": true,
       "impact": "high",
-      "command": "npx @github/mcp-server"
+      "command": "npx @github/mcp-server",
+      "functional": false
     },
     "git": {
       "id": "mcp-git",
@@ -54,10 +58,11 @@
       "package": "mcp-server-git",
       "category": "code",
       "description": "Local git operations. Branch, diff, log from agents.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "medium",
-      "command": "uvx mcp-server-git"
+      "command": "uvx mcp-server-git",
+      "functional": false
     },
     "sqlite": {
       "id": "mcp-sqlite",
@@ -65,10 +70,11 @@
       "package": "@modelcontextprotocol/server-sqlite",
       "category": "data",
       "description": "Direct DB queries. Dashboard reads leads.db live.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "high",
-      "command": "npx @modelcontextprotocol/server-sqlite"
+      "command": "npx @modelcontextprotocol/server-sqlite",
+      "functional": false
     },
     "csv": {
       "id": "mcp-csv",
@@ -76,10 +82,11 @@
       "package": "mcp-csv-server",
       "category": "data",
       "description": "Process CSV exports. Pipeline reads/writes leads seamlessly.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "medium",
-      "command": "npx mcp-csv-server"
+      "command": "npx mcp-csv-server",
+      "functional": false
     },
     "fetch": {
       "id": "mcp-fetch",
@@ -87,10 +94,11 @@
       "package": "@modelcontextprotocol/server-fetch",
       "category": "research",
       "description": "Web content fetching. R&D Engine researches with live data.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "high",
-      "command": "npx @modelcontextprotocol/server-fetch"
+      "command": "npx @modelcontextprotocol/server-fetch",
+      "functional": false
     },
     "puppeteer": {
       "id": "mcp-puppeteer",
@@ -98,10 +106,11 @@
       "package": "@modelcontextprotocol/server-puppeteer",
       "category": "research",
       "description": "Headless browser. Scrape leads, screenshot campaigns.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "medium",
-      "command": "npx @modelcontextprotocol/server-puppeteer"
+      "command": "npx @modelcontextprotocol/server-puppeteer",
+      "functional": false
     },
     "rss": {
       "id": "mcp-rss",
@@ -109,10 +118,11 @@
       "package": "mcp-rss-server",
       "category": "research",
       "description": "RSS feed reader. Monitor competitors, industry news.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "low",
-      "command": "npx mcp-rss-server"
+      "command": "npx mcp-rss-server",
+      "functional": false
     },
     "time": {
       "id": "mcp-time",
@@ -120,10 +130,11 @@
       "package": "@modelcontextprotocol/server-time",
       "category": "automation",
       "description": "Timezone handling. Pipeline respects MX/US/EU schedules.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "medium",
-      "command": "npx @modelcontextprotocol/server-time"
+      "command": "npx @modelcontextprotocol/server-time",
+      "functional": false
     },
     "cron": {
       "id": "mcp-cron",
@@ -131,10 +142,11 @@
       "package": "mcp-cron-server",
       "category": "automation",
       "description": "Task scheduling. Auto-backups, reports, maintenance.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "medium",
-      "command": "npx mcp-cron-server"
+      "command": "npx mcp-cron-server",
+      "functional": false
     },
     "docker": {
       "id": "mcp-docker",
@@ -142,10 +154,11 @@
       "package": "mcp-docker-server",
       "category": "automation",
       "description": "Container management. Scale engine across environments.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "low",
-      "command": "npx mcp-docker-server"
+      "command": "npx mcp-docker-server",
+      "functional": false
     },
     "markdown": {
       "id": "mcp-markdown",
@@ -153,10 +166,11 @@
       "package": "mcp-markdown-server",
       "category": "docs",
       "description": "Generate docs, specs, reports in MD. Product Architect writes real specs.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "medium",
-      "command": "npx mcp-markdown-server"
+      "command": "npx mcp-markdown-server",
+      "functional": false
     },
     "pdf": {
       "id": "mcp-pdf",
@@ -164,10 +178,11 @@
       "package": "mcp-pdf-server",
       "category": "docs",
       "description": "Generate PDF proposals from campaigns. Professional client docs.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "medium",
-      "command": "npx mcp-pdf-server"
+      "command": "npx mcp-pdf-server",
+      "functional": false
     },
     "screenshot": {
       "id": "mcp-screenshot",
@@ -175,10 +190,11 @@
       "package": "mcp-screenshot-server",
       "category": "docs",
       "description": "Capture landing previews. Quality Verifier sees campaign output.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "low",
-      "command": "npx mcp-screenshot-server"
+      "command": "npx mcp-screenshot-server",
+      "functional": false
     },
     "slack": {
       "id": "mcp-slack",
@@ -186,10 +202,11 @@
       "package": "@modelcontextprotocol/server-slack",
       "category": "comm",
       "description": "Slack notifications. Pipeline alerts, payment confirmations.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "medium",
-      "command": "npx @modelcontextprotocol/server-slack"
+      "command": "npx @modelcontextprotocol/server-slack",
+      "functional": false
     },
     "email": {
       "id": "mcp-email",
@@ -197,10 +214,11 @@
       "package": "mcp-email-server",
       "category": "comm",
       "description": "Send real campaign emails. No more dead templates.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "high",
-      "command": "npx mcp-email-server"
+      "command": "npx mcp-email-server",
+      "functional": false
     },
     "json": {
       "id": "mcp-json",
@@ -208,10 +226,11 @@
       "package": "mcp-json-server",
       "category": "utility",
       "description": "Validate/transform JSON. TigerLab MCP tools self-validate.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "low",
-      "command": "npx mcp-json-server"
+      "command": "npx mcp-json-server",
+      "functional": false
     },
     "image": {
       "id": "mcp-image",
@@ -219,10 +238,11 @@
       "package": "mcp-image-server",
       "category": "utility",
       "description": "Local image processing. Resize for social media without API.",
-      "enabled": true,
+      "enabled": false,
       "free": true,
       "impact": "low",
-      "command": "npx mcp-image-server"
+      "command": "npx mcp-image-server",
+      "functional": false
     }
   },
   "categories": {
@@ -234,5 +254,10 @@
     "docs": "📄 Documentation",
     "comm": "📢 Communication",
     "utility": "🔧 Utility"
+  },
+  "memory": {
+    "totalKeys": 2,
+    "lastWrite": "2026-06-16T04:18:04.535Z",
+    "file": "ops/runtime/mcp-memory.json"
   }
 }
