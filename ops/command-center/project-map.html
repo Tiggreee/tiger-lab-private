@@ -3,152 +3,146 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>TigerLab — Infrastructure Map</title>
+<title>TigerLab — Infrastructure</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#0a0a14;color:#c9d1d9;font:11px/1.4 'Segoe UI',system-ui,sans-serif;overflow-x:hidden;min-height:100vh}
-/* Railway-style geometric background */
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:
-  radial-gradient(circle at 20% 50%,#1a1040 0%,transparent 50%),
-  radial-gradient(circle at 80% 20%,#0a1a30 0%,transparent 50%),
-  radial-gradient(circle at 50% 80%,#100a20 0%,transparent 50%),
-  repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(108,71,255,0.03) 40px,rgba(108,71,255,0.03) 41px),
-  repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(0,200,255,0.02) 40px,rgba(0,200,255,0.02) 41px);
-z-index:-1}
-header{text-align:center;padding:16px 0 8px;border-bottom:1px solid #1a1040;margin-bottom:16px}
-h1{font-size:.9rem;font-weight:600;color:#e0e0ff;letter-spacing:2px}
-.sub{font-size:.6rem;color:#6b6b8a;margin-top:2px}
-.legend{display:flex;justify-content:center;gap:16px;font-size:.55rem;color:#6b6b8a;margin-top:6px}
-.legend span{display:flex;align-items:center;gap:4px}
-.led{width:7px;height:7px;border-radius:50%;display:inline-block}
-.led-green{background:#3fb950;box-shadow:0 0 6px #3fb95088}
-.led-yellow{background:#d29922;box-shadow:0 0 6px #d2992288}
-.led-red{background:#f85149;box-shadow:0 0 6px #f8514988;filter:blur(1px)}
-/* Layout: left=primary, right=secondary */
-.map{display:flex;gap:8px;padding:0 12px 20px;position:relative;max-width:1100px;margin:0 auto}
-.col{flex:1;display:flex;flex-direction:column;gap:6px;position:relative}
-.col.left{flex:1.2}
-.col.mid{flex:1}
-.col.right{flex:0.8}
-/* Cloud-shaped node */
-.node{position:relative;background:linear-gradient(135deg,#151530,#0e0e22);border:1px solid #2a2a50;border-radius:20px 8px 20px 8px / 16px 8px 16px 8px;padding:10px 12px;transition:all .25s;text-decoration:none;color:inherit;display:block}
-.node:hover{background:linear-gradient(135deg,#1e1e40,#12122e);border-color:#6C47FF;box-shadow:0 0 16px #6C47FF22;transform:translateY(-1px)}
-.node .status{position:absolute;top:8px;right:8px;width:7px;height:7px;border-radius:50%}
-.node .status.green{background:#3fb950;box-shadow:0 0 6px #3fb95088}
-.node .status.yellow{background:#d29922;box-shadow:0 0 6px #d2992288}
-.node .status.red{background:#f85149;box-shadow:0 0 6px #f8514988;filter:blur(1.5px)}
-.node .name{font-size:.7rem;font-weight:600;color:#e0e0ff;margin-bottom:2px;padding-right:12px}
-.node .desc{font-size:.55rem;color:#6b6b8a;line-height:1.3}
-.node.inactive{opacity:.4;filter:blur(.5px)}
-.node.inactive:hover{opacity:.7;filter:none}
-/* SVG connection layer */
-svg.connections{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
-svg.connections line{stroke:#6C47FF;stroke-width:1;opacity:.3;stroke-dasharray:4 2}
-svg.connections line.active{stroke:#3fb950;opacity:.4;stroke-dasharray:none;filter:drop-shadow(0 0 3px #3fb95044)}
-.col-label{font-size:.55rem;color:#48486a;text-transform:uppercase;letter-spacing:2px;margin-bottom:4px;text-align:center}
-.gap-col{width:20px;flex-shrink:0;position:relative}
-footer{text-align:center;font-size:.55rem;color:#48486a;padding:8px;border-top:1px solid #1a1040}
-@media(max-width:800px){.map{flex-direction:column}}
+body{background:#060610;color:#c9d1d9;font:11px/1.3 'Segoe UI',system-ui,sans-serif;overflow:hidden;height:100vh;width:100vw}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 30% 40%,#1a1040 0%,transparent 60%),radial-gradient(ellipse at 70% 60%,#0a1a30 0%,transparent 60%),repeating-linear-gradient(45deg,transparent,transparent 60px,rgba(108,71,255,.02)60px,rgba(108,71,255,.02)61px),repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(0,200,255,.015)60px,rgba(0,200,255,.015)61px);z-index:-1}
+header{position:fixed;top:0;left:0;width:100%;padding:8px 16px;background:linear-gradient(180deg,#0a0a18,transparent);z-index:10;display:flex;justify-content:space-between;align-items:center}
+h1{font-size:.85rem;font-weight:700;color:#e0e0ff;letter-spacing:2px}
+.legend{display:flex;gap:12px;font-size:.5rem;color:#5a5a7a}
+.legend span{display:flex;align-items:center;gap:3px}
+.led{width:6px;height:6px;border-radius:50%}
+.led-g{background:#3fb950;box-shadow:0 0 5px #3fb95088}
+.led-y{background:#d29922;box-shadow:0 0 5px #d2992288}
+.led-r{background:#f85149;box-shadow:0 0 5px #f8514988;filter:blur(1.5px)}
+.back{color:#48486a;font-size:.5rem;text-decoration:none;cursor:pointer}
+.back:hover{color:#6C47FF}
+/* Canvas layer */
+canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
+/* Node cards positioned absolutely */
+.nodes{position:fixed;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.node{position:absolute;pointer-events:all;cursor:pointer;transition:all .3s;border-radius:16px 6px 16px 6px;padding:8px 10px;background:linear-gradient(135deg,rgba(20,20,50,.95),rgba(10,10,30,.95));border:1px solid rgba(108,71,255,.3);min-width:100px}
+.node:hover{z-index:20;transform:scale(1.08);border-color:#6C47FF;box-shadow:0 0 20px rgba(108,71,255,.3)}
+.node .n-name{font-size:.65rem;font-weight:700;color:#e0e0ff;white-space:nowrap}
+.node .n-stat{font-size:.5rem;margin-top:1px;font-weight:600}
+.node .n-pct{font-size:.45rem;color:#6b6b8a;margin-top:1px}
+.node .led-dot{position:absolute;top:6px;right:6px;width:6px;height:6px;border-radius:50%}
+.node.green .led-dot{background:#3fb950;box-shadow:0 0 6px #3fb95088}
+.node.yellow .led-dot{background:#d29922;box-shadow:0 0 6px #d2992288}
+.node.red .led-dot{background:#f85149;box-shadow:0 0 6px #f8514988}
+.node.green .n-stat{color:#3fb950}
+.node.yellow .n-stat{color:#d29922}
+.node.red .n-stat{color:#f85149}
+/* Code panel */
+#codePanel{position:fixed;bottom:0;left:0;width:100%;height:25vh;background:#0a0a18;border-top:1px solid #2a2a50;z-index:30;display:none;flex-direction:column}
+#codePanel.open{display:flex}
+#codePanel .cp-header{display:flex;justify-content:space-between;padding:6px 12px;background:#111130;font-size:.6rem;color:#6C47FF}
+#codePanel .cp-close{background:none;border:none;color:#f85149;cursor:pointer;font-size:.7rem}
+#codePanel .cp-body{flex:1;overflow:auto;padding:8px 12px;font-family:'Cascadia Code','Fira Code',monospace;font-size:.55rem;color:#8b949e;white-space:pre-wrap}
+footer{position:fixed;bottom:0;left:0;width:100%;text-align:center;font-size:.5rem;color:#3a3a5a;z-index:5;padding:3px}
 </style>
 </head>
 <body>
 <header>
 <h1>TIGERLAB INFRASTRUCTURE</h1>
-<div class="sub">97% Autonomous — Railway-style Architecture</div>
 <div class="legend">
-<span><span class="led led-green"></span>Operational</span>
-<span><span class="led led-yellow"></span>Degraded</span>
-<span><span class="led led-red"></span>Inactive</span>
+<span><span class="led led-g"></span>95%+</span>
+<span><span class="led led-y"></span>70-94%</span>
+<span><span class="led led-r"></span>&lt;70%</span>
 </div>
+<a class="back" href="/">← Dashboard</a>
 </header>
-
-<div class="map" id="map">
-  <!-- Left: Primary / Core -->
-  <div class="col left" id="colCore">
-    <div class="col-label">CORE ENGINE</div>
-  </div>
-  
-  <!-- Middle: Creation & Quality -->
-  <div class="col mid" id="colMid">
-    <div class="col-label">CREATION & QA</div>
-  </div>
-  
-  <!-- Right: Distribution & Monitoring -->
-  <div class="col right" id="colRight">
-    <div class="col-label">DISTRIBUTION</div>
-  </div>
+<div class="nodes" id="nodes"></div>
+<canvas id="bg"></canvas>
+<div id="codePanel">
+<div class="cp-header"><span id="cpTitle">Module</span><button class="cp-close" onclick="document.getElementById('codePanel').classList.remove('open')">✕</button></div>
+<div class="cp-body" id="cpBody"></div>
 </div>
-
-<footer>TigerLab Infrastructure Map · Live Status · Auto-refresh 60s</footer>
-
+<footer>Real-time status · Auto-refresh 30s</footer>
 <script>
 const modules=[
-  {col:'left',name:'Lead Engine',desc:'2000 companies. INEGI + US.',status:'green'},
-  {col:'left',name:'Prospect Selector',desc:'Scores & segments prospects.',status:'green'},
-  {col:'left',name:'Product Engine',desc:'Benchmarks vs 20 competitors.',status:'green'},
-  {col:'left',name:'R&D Engine',desc:'EU market scanning. 25 specialists.',status:'green'},
-  {col:'left',name:'Production Gate',desc:'14 checks. GO/NO-GO.',status:'green'},
-  {col:'left',name:'Payments',desc:'Stripe + PayPal LIVE.',status:'green'},
-  {col:'mid',name:'Creative Agent',desc:'6-channel campaigns. Mem tool.',status:'green'},
-  {col:'mid',name:'Campaign Materializer',desc:'MJML emails + Unsplash images.',status:'green'},
-  {col:'mid',name:'Quality Verifier',desc:'Scores campaigns per platform.',status:'green'},
-  {col:'mid',name:'Campaign Cleaner',desc:'1 per product. No duplicates.',status:'green'},
-  {col:'right',name:'Campaign Router',desc:'Adapts per channel.',status:'green'},
-  {col:'right',name:'Social Autopilot',desc:'Publish linkedin,x,fb,tg,dc.',status:'green'},
-  {col:'right',name:'Dashboard Monitor',desc:'Health every 15min.',status:'green'},
-  {col:'right',name:'Product Supervisor',desc:'Lifecycle tracker.',status:'green'},
-  {col:'right',name:'Full Pipeline',desc:'Daily 6:00 AM CDT.',status:'yellow'}
+  {id:'lead-engine',name:'Lead Engine',x:5,y:10,w:120,h:55,rank:3,color:'green',code:'engine/leads/lead-engine.mjs\n→ 2000 companies MX+US\n→ SQLite + CSV + Oracle DDL'},
+  {id:'prospect',name:'Prospect Selector',x:5,y:28,w:110,h:50,rank:4,color:'green',code:'engine/email/prospect-selector.mjs\n→ Scores & segments\n→ Industry + city filters'},
+  {id:'product-engine',name:'Product Engine',x:5,y:46,w:115,h:52,rank:5,color:'green',code:'scripts/product-development-engine.mjs\n→ 12 products scored\n→ 20 competitors benchmarked'},
+  {id:'rnd-engine',name:'R&D Engine',x:5,y:64,w:105,h:50,rank:4,color:'green',code:'engine/rnd/rnd-engine.mjs\n→ EU market scanning\n→ 25 specialists, 7 regs'},
+  {id:'production-gate',name:'Production Gate',x:5,y:80,w:110,h:50,rank:3,color:'green',code:'engine/runtime/production-gate.mjs\n→ 14 checks\n→ GO/NO-GO report'},
+  {id:'payments',name:'Payments',x:22,y:10,w:100,h:48,rank:4,color:'green',code:'server/bootstrap/stripe-payment-service.ts\n→ Stripe + PayPal LIVE\n→ No revenue yet'},
+  {id:'creative-agent',name:'Creative Agent',x:22,y:28,w:100,h:42,rank:7,color:'yellow',code:'engine/campaigns/creative-agent.mjs\n→ 6-channel campaigns\n⚠️ Needs attention: low quality output'},
+  {id:'materializer',name:'Materializer',x:22,y:44,w:108,h:55,rank:2,color:'green',code:'engine/campaigns/campaign-materializer.mjs\n→ MJML emails\n→ Unsplash real images'},
+  {id:'quality-verifier',name:'Quality Verifier',x:22,y:60,w:105,h:50,rank:5,color:'green',code:'engine/campaigns/quality-verifier.mjs\n→ Scores per platform spec\n→ 6 checks per campaign'},
+  {id:'campaign-cleaner',name:'Campaign Cleaner',x:22,y:76,w:100,h:48,rank:6,color:'green',code:'engine/campaigns/campaign-cleaner.mjs\n→ 1 per product\n→ Auto-archive duplicates'},
+  {id:'campaign-router',name:'Router',x:40,y:18,w:90,h:45,rank:6,color:'green',code:'engine/campaigns/campaign-router.mjs\n→ Adapts copy per channel\n→ 6 platform formats'},
+  {id:'social-autopilot',name:'Autopilot',x:40,y:38,w:100,h:52,rank:2,color:'green',code:'scripts/traffic/run-autopilot.mjs\n→ LinkedIn+X+FB+TG+DC\n→ --live publishing'},
+  {id:'dashboard-monitor',name:'Monitor Bot',x:40,y:56,w:98,h:48,rank:4,color:'green',code:'engine/runtime/dashboard-monitor.mjs\n→ Health every 15min\n→ Trends + predictions'},
+  {id:'product-supervisor',name:'Supervisor',x:40,y:72,w:98,h:48,rank:5,color:'green',code:'engine/runtime/product-supervisor.mjs\n→ Lifecycle tracker\n→ Project map'},
+  {id:'full-pipeline',name:'Full Pipeline',x:56,y:20,w:110,h:58,rank:1,color:'yellow',code:'engine/runtime/full-pipeline.mjs\n→ 12-step automated flow\n⚠️ Autopilot fix pending'},
 ];
 
-const containers={left:document.getElementById('colCore'),mid:document.getElementById('colMid'),right:document.getElementById('colRight')};
-
+// Automation % per module (based on ranking 1=best)
+const total=modules.length;
+const maxRank=Math.max(...modules.map(m=>m.rank));
 modules.forEach(m=>{
-  const node=document.createElement('a');
-  node.className='node'+(m.status==='red'?' inactive':'');
-  node.href='/';
-  node.innerHTML=`<span class="status ${m.status}"></span><div class="name">${m.name}</div><div class="desc">${m.desc}</div>`;
-  node.title=`${m.name}: ${m.status==='green'?'Operational':m.status==='yellow'?'Degraded':'Inactive'} — ${m.desc}`;
-  const col=m.col==='left'?'left':m.col==='mid'?'mid':'right';
-  containers[col].appendChild(node);
+  m.pct=Math.round(100-((m.rank-1)/maxRank)*35);
+  m.w=Math.max(80,Math.min(160,m.w+(maxRank-m.rank+1)*10));
+  m.h=Math.max(40,Math.min(70,m.h+(maxRank-m.rank+1)*5));
 });
 
-// Connection lines via SVG
-setTimeout(()=>{
-  const map=document.getElementById('map');
-  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
-  svg.setAttribute('class','connections');
-  svg.style.cssText='position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0';
-  map.style.position='relative';
-  map.appendChild(svg);
-  
-  const nodes=document.querySelectorAll('.node');
-  const connections=[
-    ['Lead Engine','Prospect Selector'],['Prospect Selector','Creative Agent'],
-    ['Creative Agent','Campaign Materializer'],['Campaign Materializer','Quality Verifier'],
-    ['Quality Verifier','Campaign Cleaner'],['Campaign Cleaner','Campaign Router'],
-    ['Campaign Router','Social Autopilot'],['Social Autopilot','Full Pipeline'],
-    ['Product Engine','Quality Verifier'],['R&D Engine','Creative Agent'],
-    ['Production Gate','Full Pipeline'],['Payments','Full Pipeline'],
-    ['Dashboard Monitor','Product Supervisor'],['Product Supervisor','Full Pipeline']
-  ];
-  
-  connections.forEach(([from,to])=>{
-    const a=Array.from(nodes).find(n=>n.querySelector('.name').textContent===from);
-    const b=Array.from(nodes).find(n=>n.querySelector('.name').textContent===to);
-    if(!a||!b)return;
-    const ra=a.getBoundingClientRect(),rb=b.getBoundingClientRect();
-    const mr=map.getBoundingClientRect();
-    const x1=ra.right-mr.left,y1=ra.top+ra.height/2-mr.top;
-    const x2=rb.left-mr.left,y2=rb.top+rb.height/2-mr.top;
-    const line=document.createElementNS('http://www.w3.org/2000/svg','line');
-    line.setAttribute('x1',x1);line.setAttribute('y1',y1);
-    line.setAttribute('x2',x2);line.setAttribute('y2',y2);
-    line.setAttribute('class','active');
-    svg.appendChild(line);
-  });
-},100);
+// Draw connections via Canvas
+const canvas=document.getElementById('bg');
+canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+const ctx=canvas.getContext('2d');
 
-setTimeout(()=>location.reload(),60000);
+function drawConnections(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  const conns=[
+    ['lead-engine','prospect'],['prospect','creative-agent'],['creative-agent','materializer'],
+    ['materializer','quality-verifier'],['quality-verifier','campaign-cleaner'],
+    ['campaign-cleaner','campaign-router'],['campaign-router','social-autopilot'],
+    ['social-autopilot','full-pipeline'],['product-engine','quality-verifier'],
+    ['rnd-engine','creative-agent'],['production-gate','full-pipeline'],
+    ['payments','full-pipeline'],['dashboard-monitor','product-supervisor'],
+    ['product-supervisor','full-pipeline']
+  ];
+  conns.forEach(([from,to])=>{
+    const a=modules.find(m=>m.id===from);
+    const b=modules.find(m=>m.id===to);
+    if(!a||!b)return;
+    const ax=(a.x/100)*canvas.width+a.w/2,ay=(a.y/100)*canvas.height+a.h/2;
+    const bx=(b.x/100)*canvas.width,by=(b.y/100)*canvas.height+b.h/2;
+    // Superconductor style: glow + dash + connector dots
+    ctx.save();
+    ctx.strokeStyle=a.color==='green'?'rgba(63,185,80,.3)':'rgba(108,71,255,.25)';
+    ctx.lineWidth=1.5;ctx.shadowColor=a.color==='green'?'#3fb950':'#6C47FF';ctx.shadowBlur=4;
+    ctx.setLineDash([6,4]);ctx.beginPath();ctx.moveTo(ax,ay);ctx.lineTo(bx,by);ctx.stroke();
+    // Connector dot at midpoint
+    const mx=(ax+bx)/2,my=(ay+by)/2;
+    ctx.setLineDash([]);ctx.shadowBlur=8;
+    ctx.beginPath();ctx.arc(mx,my,2.5,0,Math.PI*2);
+    ctx.fillStyle='rgba(108,71,255,.6)';ctx.fill();ctx.strokeStyle='rgba(108,71,255,.8)';ctx.stroke();
+    ctx.restore();
+  });
+}
+
+// Render nodes
+const container=document.getElementById('nodes');
+modules.forEach(m=>{
+  const n=document.createElement('div');
+  n.className=`node ${m.color}`;
+  n.style.left=m.x+'%';n.style.top=m.y+'%';
+  n.style.width=m.w+'px';
+  n.innerHTML=`<span class="led-dot"></span><div class="n-name">${m.name}</div><div class="n-stat">${m.color==='red'?'⏳ INACTIVE':m.color==='yellow'?'⚠️ ATTENTION':'● OPERATIONAL'}</div><div class="n-pct">${m.pct}% automation</div>`;
+  n.onclick=()=>{
+    document.getElementById('cpTitle').textContent=m.name+' — '+m.id;
+    document.getElementById('cpBody').textContent=m.code;
+    document.getElementById('codePanel').classList.add('open');
+  };
+  container.appendChild(n);
+});
+
+drawConnections();
+window.onresize=()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;drawConnections()};
+setTimeout(()=>location.reload(),30000);
 </script>
 </body>
 </html>
