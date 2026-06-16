@@ -108,11 +108,38 @@ async function renderAgentEfficiency(){
 
 function renderFooter(){const jokes=['Engine vivo. Como yo después de 3 cafés.','Pipeline corriendo. Más confiable que mi WiFi.','Dashboard actualizado. Sin hardcodeos. Casi.','Bot con tus caras. Lo demás es código.'];$('footerText').textContent=jokes[Math.floor(Math.random()*jokes.length)]+' | '+new Date().toLocaleString()}
 
+async function renderMcpToggles(){
+  const data=await fetchJSON('/mcp/external-registry.json');
+  const container=$('mcpToggles');
+  if(!data||!container)return;
+  const servers=Object.values(data.servers||{});
+  const enabled=servers.filter(s=>s.enabled).length;
+  $('mcpCount').textContent=`${enabled}/${servers.length} active`;
+  const cats={};
+  servers.forEach(s=>{if(!cats[s.category])cats[s.category]=[];cats[s.category].push(s)});
+  let html='';
+  Object.entries(cats).forEach(([cat,items])=>{
+    html+=`<div style="margin-bottom:4px;font-size:.6rem;color:#8b949e;text-transform:uppercase;letter-spacing:.5px">${(data.categories||{})[cat]||cat}</div>`;
+    items.forEach(s=>{
+      html+=`<label style="display:flex;align-items:center;gap:6px;padding:2px 4px;font-size:.6rem;cursor:pointer;border-radius:3px" title="${s.description}">
+        <input type="checkbox" ${s.enabled?'checked':''} onchange="window.toggleMcp('${s.id}',this.checked)" style="accent-color:#3fb950">
+        <span style="flex:1;color:${s.enabled?'#c9d1d9':'#484f58'}">${s.name}</span>
+        <span style="font-size:.5rem;color:#484f58">${s.free?'FREE':'$'}</span>
+        <span style="font-size:.45rem;color:${s.impact==='high'?'#3fb950':s.impact==='medium'?'#d29922':'#8b949e'}">${s.impact.toUpperCase()}</span>
+      </label>`;
+    });
+  });
+  container.innerHTML=html;
+}
+window.toggleMcp=function(id,on){
+  fetch('/mcp/toggle',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id,enabled:on})}).catch(()=>{});
+};
+
 async function render(){
   const unified=await fetchJSON(UNIFIED);
   if(!unified){$('footerText').textContent='Dashboard offline';return}
   renderKPIs(unified);renderGate(unified);renderProducts(unified);renderLeads(unified);
-  renderAlerts();renderCampaigns();renderAgentEfficiency();renderFooter();botCycle();
+  renderAlerts();renderCampaigns();renderAgentEfficiency();renderMcpToggles();renderFooter();botCycle();
   // Tooltips
   document.querySelectorAll('.card').forEach(c=>{
     const h=c.querySelector('h2');if(!h||c._hasTip)return;c._hasTip=true;

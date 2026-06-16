@@ -1,0 +1,238 @@
+{
+  "protocol": "model-context-protocol/v1",
+  "server": "tigerlab-mcp-registry",
+  "description": "External MCP servers available for TigerLab. Toggleable from dashboard.",
+  "servers": {
+    "memory": {
+      "id": "mcp-memory",
+      "name": "Memory MCP",
+      "package": "@modelcontextprotocol/server-memory",
+      "category": "brain",
+      "description": "Persistent memory between sessions. Creative Agent remembers past campaigns.",
+      "enabled": false,
+      "free": true,
+      "impact": "high",
+      "command": "npx @modelcontextprotocol/server-memory"
+    },
+    "sequential-thinking": {
+      "id": "mcp-sequential",
+      "name": "Sequential Thinking MCP",
+      "package": "@modelcontextprotocol/server-sequential-thinking",
+      "category": "brain",
+      "description": "Step-by-step reasoning. Better decisions from the engine.",
+      "enabled": false,
+      "free": true,
+      "impact": "medium",
+      "command": "npx @modelcontextprotocol/server-sequential-thinking"
+    },
+    "filesystem": {
+      "id": "mcp-filesystem",
+      "name": "Filesystem MCP",
+      "package": "@modelcontextprotocol/server-filesystem",
+      "category": "code",
+      "description": "Secure file access. Agents read/write code safely.",
+      "enabled": false,
+      "free": true,
+      "impact": "high",
+      "command": "npx @modelcontextprotocol/server-filesystem"
+    },
+    "github": {
+      "id": "mcp-github",
+      "name": "GitHub MCP",
+      "package": "@github/mcp-server",
+      "category": "code",
+      "description": "Full repo control. Auto-PRs, commits, issues from agents.",
+      "enabled": false,
+      "free": true,
+      "needsToken": true,
+      "impact": "high",
+      "command": "npx @github/mcp-server"
+    },
+    "git": {
+      "id": "mcp-git",
+      "name": "Git MCP",
+      "package": "mcp-server-git",
+      "category": "code",
+      "description": "Local git operations. Branch, diff, log from agents.",
+      "enabled": false,
+      "free": true,
+      "impact": "medium",
+      "command": "uvx mcp-server-git"
+    },
+    "sqlite": {
+      "id": "mcp-sqlite",
+      "name": "SQLite MCP",
+      "package": "@modelcontextprotocol/server-sqlite",
+      "category": "data",
+      "description": "Direct DB queries. Dashboard reads leads.db live.",
+      "enabled": false,
+      "free": true,
+      "impact": "high",
+      "command": "npx @modelcontextprotocol/server-sqlite"
+    },
+    "csv": {
+      "id": "mcp-csv",
+      "name": "CSV MCP",
+      "package": "mcp-csv-server",
+      "category": "data",
+      "description": "Process CSV exports. Pipeline reads/writes leads seamlessly.",
+      "enabled": false,
+      "free": true,
+      "impact": "medium",
+      "command": "npx mcp-csv-server"
+    },
+    "fetch": {
+      "id": "mcp-fetch",
+      "name": "Fetch MCP",
+      "package": "@modelcontextprotocol/server-fetch",
+      "category": "research",
+      "description": "Web content fetching. R&D Engine researches with live data.",
+      "enabled": false,
+      "free": true,
+      "impact": "high",
+      "command": "npx @modelcontextprotocol/server-fetch"
+    },
+    "puppeteer": {
+      "id": "mcp-puppeteer",
+      "name": "Puppeteer MCP",
+      "package": "@modelcontextprotocol/server-puppeteer",
+      "category": "research",
+      "description": "Headless browser. Scrape leads, screenshot campaigns.",
+      "enabled": false,
+      "free": true,
+      "impact": "medium",
+      "command": "npx @modelcontextprotocol/server-puppeteer"
+    },
+    "rss": {
+      "id": "mcp-rss",
+      "name": "RSS MCP",
+      "package": "mcp-rss-server",
+      "category": "research",
+      "description": "RSS feed reader. Monitor competitors, industry news.",
+      "enabled": false,
+      "free": true,
+      "impact": "low",
+      "command": "npx mcp-rss-server"
+    },
+    "time": {
+      "id": "mcp-time",
+      "name": "Time MCP",
+      "package": "@modelcontextprotocol/server-time",
+      "category": "automation",
+      "description": "Timezone handling. Pipeline respects MX/US/EU schedules.",
+      "enabled": false,
+      "free": true,
+      "impact": "medium",
+      "command": "npx @modelcontextprotocol/server-time"
+    },
+    "cron": {
+      "id": "mcp-cron",
+      "name": "Cron MCP",
+      "package": "mcp-cron-server",
+      "category": "automation",
+      "description": "Task scheduling. Auto-backups, reports, maintenance.",
+      "enabled": false,
+      "free": true,
+      "impact": "medium",
+      "command": "npx mcp-cron-server"
+    },
+    "docker": {
+      "id": "mcp-docker",
+      "name": "Docker MCP",
+      "package": "mcp-docker-server",
+      "category": "automation",
+      "description": "Container management. Scale engine across environments.",
+      "enabled": false,
+      "free": true,
+      "impact": "low",
+      "command": "npx mcp-docker-server"
+    },
+    "markdown": {
+      "id": "mcp-markdown",
+      "name": "Markdown MCP",
+      "package": "mcp-markdown-server",
+      "category": "docs",
+      "description": "Generate docs, specs, reports in MD. Product Architect writes real specs.",
+      "enabled": false,
+      "free": true,
+      "impact": "medium",
+      "command": "npx mcp-markdown-server"
+    },
+    "pdf": {
+      "id": "mcp-pdf",
+      "name": "PDF MCP",
+      "package": "mcp-pdf-server",
+      "category": "docs",
+      "description": "Generate PDF proposals from campaigns. Professional client docs.",
+      "enabled": false,
+      "free": true,
+      "impact": "medium",
+      "command": "npx mcp-pdf-server"
+    },
+    "screenshot": {
+      "id": "mcp-screenshot",
+      "name": "Screenshot MCP",
+      "package": "mcp-screenshot-server",
+      "category": "docs",
+      "description": "Capture landing previews. Quality Verifier sees campaign output.",
+      "enabled": false,
+      "free": true,
+      "impact": "low",
+      "command": "npx mcp-screenshot-server"
+    },
+    "slack": {
+      "id": "mcp-slack",
+      "name": "Slack MCP",
+      "package": "@modelcontextprotocol/server-slack",
+      "category": "comm",
+      "description": "Slack notifications. Pipeline alerts, payment confirmations.",
+      "enabled": false,
+      "free": true,
+      "impact": "medium",
+      "command": "npx @modelcontextprotocol/server-slack"
+    },
+    "email": {
+      "id": "mcp-email",
+      "name": "Email SMTP MCP",
+      "package": "mcp-email-server",
+      "category": "comm",
+      "description": "Send real campaign emails. No more dead templates.",
+      "enabled": false,
+      "free": true,
+      "impact": "high",
+      "command": "npx mcp-email-server"
+    },
+    "json": {
+      "id": "mcp-json",
+      "name": "JSON MCP",
+      "package": "mcp-json-server",
+      "category": "utility",
+      "description": "Validate/transform JSON. TigerLab MCP tools self-validate.",
+      "enabled": false,
+      "free": true,
+      "impact": "low",
+      "command": "npx mcp-json-server"
+    },
+    "image": {
+      "id": "mcp-image",
+      "name": "Image MCP",
+      "package": "mcp-image-server",
+      "category": "utility",
+      "description": "Local image processing. Resize for social media without API.",
+      "enabled": false,
+      "free": true,
+      "impact": "low",
+      "command": "npx mcp-image-server"
+    }
+  },
+  "categories": {
+    "brain": "🧠 Memory & Knowledge",
+    "code": "💻 Code & Repo",
+    "data": "🗄️ Data & DB",
+    "research": "🔍 Research & Web",
+    "automation": "⏰ Automation",
+    "docs": "📄 Documentation",
+    "comm": "📢 Communication",
+    "utility": "🔧 Utility"
+  }
+}
