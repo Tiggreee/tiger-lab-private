@@ -2,107 +2,112 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>TigerLab — 3D Map</title>
+<title>TigerLab — 3D Arrow Map</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:#060610;overflow:hidden;height:100vh;font:11px 'Segoe UI',system-ui,sans-serif;perspective:1200px;cursor:grab}
+body{background:#060610;overflow:hidden;height:100vh;font:11px 'Segoe UI',system-ui,sans-serif;perspective:1400px;cursor:grab;user-select:none}
 body:active{cursor:grabbing}
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at center,#0a1020 0%,#060610 70%);z-index:-1}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at center,#0a1020 0%,#060610 70%),repeating-linear-gradient(45deg,transparent,transparent 80px,rgba(108,71,255,.015)80px,rgba(108,71,255,.015)81px);z-index:-1}
 header{position:fixed;top:0;left:0;width:100%;padding:8px 16px;z-index:10;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,#060610,transparent)}
 h1{font-size:.75rem;font-weight:700;color:#e0e0ff;letter-spacing:2px}
-.back{color:#3a3a5a;font-size:.5rem;text-decoration:none}.back:hover{color:#6C47FF}
 .hint{font-size:.5rem;color:#48486a}
-#scene{position:fixed;top:50%;left:50%;transform-style:preserve-3d;transition:transform .1s linear}
-.node{position:absolute;transform-style:preserve-3d;cursor:pointer;transition:filter .3s}
-.node .card{background:linear-gradient(135deg,rgba(20,20,50,.95),rgba(10,10,30,.95));border:1px solid rgba(108,71,255,.3);border-radius:12px 4px 12px 4px;padding:6px 8px;text-align:center;color:#c9d1d9;min-width:80px}
-.node:hover .card{border-color:#6C47FF;box-shadow:0 0 20px rgba(108,71,255,.4)}
-.node .n-name{font-size:.6rem;font-weight:700;color:#e0e0ff;white-space:nowrap}
-.node .n-stat{font-size:.45rem;margin-top:1px}
-.node.green .n-stat{color:#3fb950}
-.node.yellow .n-stat{color:#d29922}
-.node.red .n-stat{color:#f85149}
-.node.dead{filter:blur(3px);opacity:.3}
-.node.dead:hover{filter:none;opacity:1}
-.led-dot{width:6px;height:6px;border-radius:50%;margin:0 auto 2px}
-.green .led-dot{background:#3fb950;box-shadow:0 0 6px#3fb95088}
-.yellow .led-dot{background:#d29922;box-shadow:0 0 6px#d2992288}
-.red .led-dot,.dead .led-dot{background:#f85149;box-shadow:0 0 6px#f8514988}
-svg.connections{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:5}
-svg line{stroke:#6C47FF;stroke-width:1.5;opacity:.4;stroke-dasharray:6 3}
-svg line.dead{stroke:#f85149;opacity:.2}
-svg circle.connector{fill:#6C47FF;opacity:.6}
+.back{color:#3a3a5a;font-size:.5rem;text-decoration:none}.back:hover{color:#6C47FF}
+/* Everything inside scene rotates together */
+#scene{position:fixed;top:50%;left:50%;width:900px;height:600px;margin-left:-450px;margin-top:-300px;transform-style:preserve-3d;transition:transform .08s linear}
+.node{position:absolute;transform-style:preserve-3d;cursor:pointer}
+.node .card{background:linear-gradient(135deg,rgba(20,20,50,.93),rgba(10,10,30,.93));border:1px solid rgba(108,71,255,.35);border-radius:14px 5px 14px 5px;padding:8px 10px;text-align:center;color:#c9d1d9;min-width:80px}
+.node:hover .card{border-color:#6C47FF;box-shadow:0 0 20px rgba(108,71,255,.5)}
+.node .n-name{font-size:.55rem;font-weight:700;color:#e0e0ff;white-space:nowrap}
+.node .n-pct{font-size:.4rem;color:#6b6b8a}
+.led{width:5px;height:5px;border-radius:50%;margin:0 auto 2px}
+.led-g{background:#3fb950;box-shadow:0 0 5px#3fb95088}
+.led-y{background:#d29922;box-shadow:0 0 5px#d2992288}
+.led-r{background:#f85149;box-shadow:0 0 5px#f8514988}
+.node.dead{filter:blur(2px);opacity:.3}.node.dead:hover{filter:none;opacity:1}
+/* SVG connections inside scene */
+#connLayer{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
+#connLayer line{stroke-width:1.5}
 footer{position:fixed;bottom:0;left:0;width:100%;text-align:center;font-size:.5rem;color:#3a3a5a;z-index:5;padding:3px}
 </style>
 </head>
 <body>
 <header>
-<h1>3D INFRASTRUCTURE MAP</h1>
-<span class="hint">🖱️ Drag to rotate · Scroll to zoom</span>
+<h1>3D INFRASTRUCTURE — ARROW MAP</h1>
+<span class="hint">🖱️ Drag to rotate · Scroll to zoom · Everything moves together</span>
 <a class="back" href="/">← Dashboard</a>
 </header>
-<div id="scene"></div>
-<svg class="connections" id="connSvg"></svg>
-<footer>3D View · Drag to explore</footer>
+<div id="scene">
+<svg id="connLayer"></svg>
+</div>
+<footer>3D Arrow View · Modules + Connections — unified rotation</footer>
 <script>
 const modules=[
-  {name:'Lead Engine',x:0,y:60,z:-80,color:'green',dead:false,desc:'2K companies'},
-  {name:'Prospect',x:120,y:40,z:-60,color:'green',dead:false,desc:'ICP scoring'},
-  {name:'Creative',x:220,y:80,z:-40,color:'yellow',dead:false,desc:'6-channel'},
-  {name:'Materializer',x:340,y:30,z:-20,color:'green',dead:false,desc:'MJML+Unsplash'},
-  {name:'Quality',x:440,y:50,z:0,color:'green',dead:false,desc:'6 checks'},
-  {name:'Cleaner',x:540,y:70,z:20,color:'green',dead:false,desc:'1/product'},
-  {name:'Router',x:640,y:40,z:40,color:'green',dead:false,desc:'6 platforms'},
-  {name:'Autopilot',x:760,y:20,z:60,color:'green',dead:false,desc:'--live'},
-  {name:'Pipeline',x:880,y:10,z:100,color:'yellow',dead:false,desc:'12-step'},
-  {name:'Payments',x:700,y:130,z:30,color:'green',dead:false,desc:'Stripe+PP'},
-  {name:'Monitor',x:550,y:140,z:-30,color:'yellow',dead:true,desc:'Degraded'},
-  {name:'Supervisor',x:650,y:140,z:-50,color:'yellow',dead:true,desc:'Needs fix'},
+  {name:'Lead Engine',x:40,y:280,z:0,color:'green',dead:false,pct:'95%',desc:'2K companies'},
+  {name:'Prospect',x:130,y:260,z:20,color:'green',dead:false,pct:'90%',desc:'ICP scoring'},
+  {name:'Creative',x:210,y:300,z:10,color:'yellow',dead:false,pct:'70%',desc:'6-channel ⚠️'},
+  {name:'Materializer',x:310,y:240,z:40,color:'green',dead:false,pct:'98%',desc:'MJML+Unsplash'},
+  {name:'Quality',x:400,y:260,z:30,color:'green',dead:false,pct:'92%',desc:'6 checks'},
+  {name:'Cleaner',x:490,y:290,z:20,color:'green',dead:false,pct:'88%',desc:'1/product'},
+  {name:'Router',x:580,y:250,z:50,color:'green',dead:false,pct:'90%',desc:'6 platforms'},
+  {name:'Autopilot',x:680,y:220,z:70,color:'green',dead:false,pct:'95%',desc:'--live 5ch'},
+  {name:'Pipeline',x:790,y:200,z:100,color:'yellow',dead:false,pct:'82%',desc:'12-step ⚠️'},
+  {name:'Payments',x:650,y:370,z:30,color:'green',dead:false,pct:'88%',desc:'Stripe+PP'},
+  {name:'Monitor',x:520,y:390,z:-20,color:'yellow',dead:true,pct:'40%',desc:'Degraded 💀'},
+  {name:'Supervisor',x:600,y:380,z:-10,color:'yellow',dead:true,pct:'50%',desc:'Needs fix 💀'},
 ];
 
 const scene=document.getElementById('scene');
-let rotX=-15,rotY=-20,scale=1;
-let dragging=false,lastX=0,lastY=0;
+const svg=document.getElementById('connLayer');
+let rotX=-20,rotY=-30,scale=1,dragging=false,lx=0,ly=0;
 
-function render(){
-  scene.style.transform=`translate(-50%,-50%) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(${scale})`;
-  // Update connection lines
-  const svg=document.getElementById('connSvg');
+function updateConnections(){
   svg.innerHTML='';
   const conns=[['Lead Engine','Prospect'],['Prospect','Creative'],['Creative','Materializer'],['Materializer','Quality'],['Quality','Cleaner'],['Cleaner','Router'],['Router','Autopilot'],['Autopilot','Pipeline'],['Payments','Pipeline'],['Monitor','Supervisor'],['Supervisor','Pipeline']];
+  const ns='http://www.w3.org/2000/svg';
   conns.forEach(([from,to])=>{
     const a=modules.find(m=>m.name===from),b=modules.find(m=>m.name===to);
     if(!a||!b)return;
-    const ax=window.innerWidth/2+(a.x-440)*scale,ay=window.innerHeight/2+(a.y-70)*scale;
-    const bx=window.innerWidth/2+(b.x-440)*scale,by=window.innerHeight/2+(b.y-70)*scale;
-    const line=document.createElementNS('http://www.w3.org/2000/svg','line');
+    const ax=a.x+40,ay=a.y+15,bx=b.x+40,by=b.y+15;
+    const line=document.createElementNS(ns,'line');
     line.setAttribute('x1',ax);line.setAttribute('y1',ay);
     line.setAttribute('x2',bx);line.setAttribute('y2',by);
-    if(b.dead)line.classList.add('dead');
+    line.setAttribute('stroke',b.dead?'#f85149':'#3fb950');
+    line.setAttribute('opacity',b.dead?'.2':'.5');
+    line.setAttribute('stroke-dasharray',b.dead?'3 5':'6 3');
+    line.setAttribute('filter',b.dead?'':'url(#glow)');
     svg.appendChild(line);
-    const c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    // Connector dot
+    const c=document.createElementNS(ns,'circle');
     c.setAttribute('cx',(ax+bx)/2);c.setAttribute('cy',(ay+by)/2);
-    c.setAttribute('r','3');c.classList.add('connector');
-    svg.appendChild(c);
+    c.setAttribute('r','4');c.setAttribute('fill',b.dead?'#f85149':'#3fb950');
+    c.setAttribute('opacity','.7');svg.appendChild(c);
   });
+  // Add glow filter
+  if(!document.getElementById('glow')){
+    const defs=document.createElementNS(ns,'defs');
+    const filter=document.createElementNS(ns,'filter');filter.id='glow';
+    filter.innerHTML='<feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>';
+    defs.appendChild(filter);svg.appendChild(defs);
+  }
 }
 
+// Render all modules
 modules.forEach(m=>{
   const n=document.createElement('div');
-  n.className=`node ${m.color}${m.dead?' dead':''}`;
-  n.style.left=m.x+'px';n.style.top=m.y+'px';
-  n.style.transform=`translateZ(${m.z}px)`;
-  n.innerHTML=`<div class="card"><div class="led-dot"></div><div class="n-name">${m.name}</div><div class="n-stat">${m.dead?'💀 INACTIVE':m.color==='yellow'?'⚠️':'●'} ${m.desc}</div></div>`;
-  n.title=m.name+(m.dead?' (INACTIVE)':'');
+  n.className=`node${m.dead?' dead':''}`;
+  n.style.cssText=`left:${m.x}px;top:${m.y}px;transform:translateZ(${m.z}px)`;
+  n.innerHTML=`<div class="card"><div class="led ${m.color==='green'?'led-g':m.color==='yellow'?'led-y':'led-r'}"></div><div class="n-name">${m.name}</div><div class="n-pct">${m.pct} ${m.dead?'💀':''}</div></div>`;
+  n.title=`${m.name}: ${m.desc} (${m.pct})`;
   scene.appendChild(n);
 });
 
-render();
+function render(){scene.style.transform=`translate(-50%,-50%) rotateX(${rotX}deg) rotateY(${rotY}deg) scale(${scale})`}
+updateConnections();render();
 
-// Drag to rotate
-document.addEventListener('mousedown',e=>{dragging=true;lastX=e.clientX;lastY=e.clientY});
-document.addEventListener('mousemove',e=>{if(!dragging)return;rotY+=(e.clientX-lastX)*.5;rotX-=(e.clientY-lastY)*.5;lastX=e.clientX;lastY=e.clientY;render()});
+document.addEventListener('mousedown',e=>{dragging=true;lx=e.clientX;ly=e.clientY});
+document.addEventListener('mousemove',e=>{if(!dragging)return;rotY+=(e.clientX-lx)*.4;rotX-=(e.clientY-ly)*.4;lx=e.clientX;ly=e.clientY;render()});
 document.addEventListener('mouseup',()=>dragging=false);
-document.addEventListener('wheel',e=>{e.preventDefault();scale=Math.max(.5,Math.min(2,scale-e.deltaY*.001));render()},{passive:false});
+document.addEventListener('wheel',e=>{e.preventDefault();scale=Math.max(.4,Math.min(2.5,scale-e.deltaY*.0008));render()},{passive:false});
 </script>
 </body>
 </html>
