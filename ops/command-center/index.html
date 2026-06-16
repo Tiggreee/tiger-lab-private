@@ -5,87 +5,75 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Tiger Command Center</title>
 <style>
+:root{--deep:#040b14;--card-bg:rgba(10,16,30,.7);--border:rgba(90,110,160,.15);--text:#bcc8dd;--text-dim:#5a6a8a;--accent:#6378b0;--accent-glow:rgba(99,120,176,.35);--grad-1:#3f5490;--grad-2:#408090;--bar-bg:rgba(60,80,120,.2);--danger:rgba(180,100,100,.6);--warn:rgba(160,140,80,.6);--info:rgba(90,130,180,.6)}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font:12px/1.4 'Segoe UI',system-ui,sans-serif;background:#0c1117;color:#c9d1d9;padding:10px;overflow-x:hidden}
-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #21262d}
-.led-row{display:flex;align-items:center;gap:8px}
-.led{width:12px;height:12px;border-radius:50%;flex-shrink:0}
-.led-green{background:#3fb950;box-shadow:0 0 8px #3fb95088}
-.neon-production{font-size:.6rem;font-weight:700;color:#0f0;text-shadow:0 0 5px #0f0,0 0 10px #0f0,0 0 20px #0f0,0 0 40px #0f0;animation:neonBlink 1.5s ease-in-out infinite;letter-spacing:3px;text-transform:uppercase;margin-left:6px;padding:2px 6px;border:1px solid #0f044;border-radius:3px}
-@keyframes neonBlink{0%,100%{opacity:1;text-shadow:0 0 5px #0f0,0 0 10px #0f0,0 0 20px #0f0}50%{opacity:.6;text-shadow:0 0 2px #0f0,0 0 5px #0f0,0 0 10px #0f0}}
-h1{font-size:1rem;font-weight:600;color:#f0f6fc}
-.gate-badge{font-size:.65rem;padding:1px 7px;border-radius:10px;font-weight:600;text-transform:uppercase}
-.gate-go{background:#1a3a2a;color:#3fb950}
-.gate-nogo{background:#3a1a1a;color:#f85149}
-.actions{display:flex;gap:5px}
-.actions button{border:none;padding:4px 10px;border-radius:4px;font-size:.7rem;cursor:pointer;background:#21262d;color:#c9d1d9;font-weight:500}
-.actions button:hover{background:#30363d}
-.actions .btn-refresh{background:#1f6feb;color:#fff}
-.actions .btn-refresh:hover{background:#388bfd}
+body{font:12px/1.4 'Segoe UI',system-ui,sans-serif;background:var(--deep);color:var(--text);padding:10px;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 30% 20%,rgba(40,55,100,.12),transparent),radial-gradient(ellipse 60% 70% at 70% 60%,rgba(30,70,80,.08),transparent);z-index:-1;pointer-events:none}
+header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding:8px 12px;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.led-row{display:flex;align-items:center;gap:10px}
+.status-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent-glow);animation:pulse 3s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:.7;box-shadow:0 0 6px var(--accent-glow)}50%{opacity:1;box-shadow:0 0 14px var(--accent-glow)}}
+h1{font-size:.9rem;font-weight:500;color:var(--text);letter-spacing:1px;text-transform:uppercase}
+.gate-badge{font-size:.6rem;padding:2px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px}
+.gate-go{background:rgba(80,120,160,.15);color:var(--accent);border:1px solid var(--border)}
+.gate-nogo{background:rgba(140,80,80,.15);color:var(--danger);border:1px solid rgba(140,80,80,.25)}
+.actions{display:flex;gap:6px}
+.actions button{border:1px solid var(--border);padding:5px 12px;border-radius:5px;font-size:.7rem;cursor:pointer;background:var(--card-bg);color:var(--text);font-weight:500;backdrop-filter:blur(8px);transition:all .2s}
+.actions button:hover{background:rgba(50,65,100,.25);border-color:var(--accent)}
+.actions .btn-map{background:rgba(60,100,130,.15);border-color:rgba(90,150,180,.3);color:#c0d8f0;font-weight:600}
+.actions .btn-map:hover{background:rgba(60,100,130,.3)}
+.actions .btn-refresh{background:rgba(70,90,130,.2);color:var(--text)}
+.actions .btn-refresh:hover{background:rgba(70,90,130,.35)}
 .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:8px}
-.kpi{background:#161b22;border:1px solid #21262d;border-radius:5px;padding:8px 10px;text-align:center}
-.kpi small{display:block;font-size:.6rem;color:#8b949e;text-transform:uppercase;letter-spacing:.4px;margin-bottom:2px}
-.kpi b{font-size:1.3rem;font-weight:700;color:#f0f6fc}
+.kpi{background:var(--card-bg);border:1px solid var(--border);border-radius:7px;padding:10px 12px;text-align:center;backdrop-filter:blur(8px)}
+.kpi small{display:block;font-size:.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.6px;margin-bottom:3px}
+.kpi b{font-size:1.4rem;font-weight:500;color:var(--text)}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
-.card{background:#161b22;border:1px solid #21262d;border-radius:6px;padding:10px;overflow:hidden}
-.card h2{font-size:.7rem;font-weight:600;color:#8b949e;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
-.dim{font-size:.65rem;color:#484f58;margin-bottom:4px}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:12px;overflow:hidden;backdrop-filter:blur(10px)}
+.card h2{font-size:.7rem;font-weight:500;color:var(--text-dim);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px}
+.dim{font-size:.6rem;color:var(--text-dim);margin-bottom:4px}
 .score-bar{display:flex;align-items:center;gap:6px;margin-bottom:5px;font-size:.7rem}
 .score-bar .name{width:110px;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:0}
-.score-bar .bar{flex:1;height:10px;background:#21262d;border-radius:3px;overflow:hidden}
-.score-bar .fill{height:100%;border-radius:3px;min-width:2px}
-.score-bar .val{width:26px;text-align:right;font-weight:700;font-size:.65rem;flex-shrink:0}
-.alert-item{font-size:.7rem;padding:3px 7px;margin-bottom:3px;border-radius:3px;border-left:3px solid transparent}
-.alert-critical{border-color:#f85149;background:#3a1a1a22}
-.alert-warn{border-color:#d29922;background:#3a2f1a22}
-.alert-info{border-color:#58a6ff;background:#1a2f3a22}
-.lead-row{font-size:.7rem;margin-bottom:2px}
-.lead-row .lbl{color:#8b949e}
-.lead-section{margin-bottom:6px}
-.lead-section h3{font-size:.65rem;font-weight:600;color:#8b949e;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px}
-.lead-stat{display:flex;justify-content:space-between;padding:2px 0;border-bottom:1px solid #21262d22}
+.score-bar .bar{flex:1;height:8px;background:var(--bar-bg);border-radius:4px;overflow:hidden}
+.score-bar .fill{height:100%;border-radius:4px;min-width:2px;background:linear-gradient(90deg,var(--grad-1),var(--grad-2))}
+.score-bar .val{width:28px;text-align:right;font-weight:600;font-size:.65rem;flex-shrink:0}
+.alert-item{font-size:.7rem;padding:4px 8px;margin-bottom:3px;border-radius:4px;border-left:3px solid transparent;background:rgba(15,20,35,.4)}
+.alert-critical{border-color:var(--danger);background:rgba(120,60,60,.1)}
+.alert-warn{border-color:var(--warn);background:rgba(100,80,40,.1)}
+.alert-info{border-color:var(--info);background:rgba(50,70,110,.1)}
+.lead-section{margin-bottom:8px}
+.lead-section h3{font-size:.65rem;font-weight:500;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.lead-row{font-size:.7rem;margin-bottom:3px}
+.lead-row .lbl{color:var(--text-dim)}
+.lead-stat{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(60,80,120,.1);font-size:.7rem}
 .lead-stat:last-child{border-bottom:none}
 .agent-table{width:100%;border-collapse:collapse;font-size:.65rem}
-.agent-table th{text-align:left;padding:3px 6px;color:#8b949e;font-weight:600;font-size:.6rem;text-transform:uppercase;border-bottom:1px solid #21262d}
-.agent-table td{padding:3px 6px;border-bottom:1px solid #21262d22;white-space:nowrap}
+.agent-table th{text-align:left;padding:4px 8px;color:var(--text-dim);font-weight:500;font-size:.6rem;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border)}
+.agent-table td{padding:4px 8px;border-bottom:1px solid rgba(50,70,110,.08);white-space:nowrap}
 .agent-table .agent-name{max-width:200px;overflow:hidden;text-overflow:ellipsis}
-.agent-table .eff-bar{width:60px;height:8px;background:#21262d;border-radius:3px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:4px}
-.agent-table .eff-fill{height:100%;border-radius:3px;transition:width 1.2s ease-out;width:0!important}
+.agent-table .eff-bar{width:60px;height:6px;background:var(--bar-bg);border-radius:3px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:4px}
+.agent-table .eff-fill{height:100%;border-radius:3px;width:0!important;background:linear-gradient(90deg,var(--grad-1),var(--grad-2))}
 .agent-table .eff-fill.done{transition:width 1.2s ease-out}
-.agent-table .eff-val{font-weight:700;font-size:.6rem}
-.eff-high{color:#3fb950}.eff-mid{color:#d29922}.eff-low{color:#f85149}
-footer{font-size:.65rem;color:#484f58;text-align:center;padding:6px 0 0;border-top:1px solid #21262d;margin-top:6px}
-/* Tiger AI Bot */
+.agent-table .eff-val{font-weight:600;font-size:.6rem}
+.eff-high{color:var(--accent)}.eff-mid{color:var(--warn)}.eff-low{color:var(--danger)}
+footer{font-size:.6rem;color:var(--text-dim);text-align:center;padding:8px 0 0;border-top:1px solid var(--border);margin-top:8px}
 .bot-container{position:fixed;bottom:16px;right:16px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:6px}
-.bot-bubble{background:#161b22;border:1px solid #3fb95044;border-radius:8px;padding:8px 12px;max-width:220px;font-size:.65rem;color:#c9d1d9;box-shadow:0 2px 12px #00000044;animation:floatBubble 4s ease-in-out infinite}
-.bot-bubble strong{color:#3fb950;display:block;font-size:.6rem;margin-bottom:3px}
-.bot-face{width:80px;height:100px;border-radius:50%/45%;border:2px solid #3fb950;background-color:#0c1117;background-size:cover;background-position:center;animation:cycleFaces 10s steps(1) infinite;cursor:pointer;box-shadow:0 0 8px #3fb95044;transition:transform .2s;overflow:hidden}
-.bot-face:hover{transform:scale(1.12)}
-@keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-@keyframes cycleFaces{
-0%{background-image:url('/command-center/faces/Copilot_20260613_002326.png')}
-11.11%{background-image:url('/command-center/faces/Copilot_20260613_002457.png')}
-22.22%{background-image:url('/command-center/faces/Copilot_20260613_002729.png')}
-33.33%{background-image:url('/command-center/faces/Copilot_20260613_002939.png')}
-44.44%{background-image:url('/command-center/faces/Copilot_20260613_003102.png')}
-55.55%{background-image:url('/command-center/faces/Copilot_20260613_003257.png')}
-66.66%{background-image:url('/command-center/faces/Copilot_20260613_003439.png')}
-77.77%{background-image:url('/command-center/faces/Copilot_20260613_003620.png')}
-88.88%{background-image:url('/command-center/faces/Copilot_20260613_003747.png')}
-100%{background-image:url('/command-center/faces/Copilot_20260613_002326.png')}}
+.bot-bubble{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:8px 12px;max-width:220px;font-size:.65rem;color:var(--text);backdrop-filter:blur(10px);box-shadow:0 2px 16px rgba(0,0,0,.4);animation:floatBubble 5s ease-in-out infinite}
+.bot-bubble strong{color:var(--accent);display:block;font-size:.6rem;margin-bottom:3px;font-weight:500}
+@keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 @media(max-width:800px){.grid-2{grid-template-columns:1fr}.kpi-row{grid-template-columns:repeat(2,1fr)}.bot-container{right:6px;bottom:6px}}
 </style>
 </head>
 <body>
 <header>
   <div class="led-row">
-    <span class="neon-production" id="neonProd">⚡ PRODUCTION ⚡</span>
+    <span class="status-dot"></span>
     <h1>Tiger Command Center</h1>
     <span id="systemStatusBadge" class="gate-badge gate-go">GO</span>
   </div>
   <div class="actions">
     <button id="notifyBtn">Alerts</button>
-    <button id="mapBtn" onclick="window.open('/project-map.html','_blank')" style="background:#0ff;color:#000;font-weight:700">Mapa</button>
+    <button id="mapBtn" class="btn-map" onclick="window.open('/project-map.html','_blank')">Mapa</button>
     <button id="refreshBtn" class="btn-refresh">Refresh</button>
   </div>
 </header>
@@ -94,12 +82,12 @@ footer{font-size:.65rem;color:#484f58;text-align:center;padding:6px 0 0;border-t
 
 <div class="grid-2">
   <section class="card" id="campaignPanel">
-    <h2>🎯 Campaigns</h2>
+    <h2>Campaigns</h2>
     <div id="campaignList"></div>
     <div id="campaignDetail"></div>
   </section>
   <section class="card" id="alertsPanel">
-    <h2>🤖 Bot Monitor <span id="alertsStatus"></span></h2>
+    <h2>Bot Monitor <span id="alertsStatus"></span></h2>
     <div id="alertsTime" class="dim"></div>
     <div id="alertsContent"></div>
   </section>
@@ -107,29 +95,21 @@ footer{font-size:.65rem;color:#484f58;text-align:center;padding:6px 0 0;border-t
 
 <div class="grid-2">
   <section class="card">
-    <h2>📊 Product Scores</h2>
+    <h2>Product Scores</h2>
     <div id="productScores"></div>
   </section>
   <section class="card">
-    <h2>👥 Leads</h2>
+    <h2>Leads</h2>
     <div id="leadsContent"></div>
   </section>
 </div>
 
 <section class="card" style="margin-bottom:8px;">
-  <h2>🤖 Agent Efficiency <span id="agentEffTime" class="dim"></span></h2>
+  <h2>Agent Efficiency <span id="agentEffTime" class="dim"></span></h2>
   <div id="agentEfficiency"></div>
 </section>
 
 <footer id="footerText"></footer>
-
-<div class="bot-container">
-  <div class="bot-bubble" id="botBubble">
-    <strong>🐯 Tiger AI</strong>
-    <span id="botFact">Engine running. Pipeline: 5000.</span>
-  </div>
-  <div class="bot-face" id="botFace" title="Tiger AI — 12 faces cycling every 0.5s"></div>
-</div>
 
 <script src="/command-center/app.js" type="module"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
