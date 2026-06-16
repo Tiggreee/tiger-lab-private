@@ -112,7 +112,19 @@ async function render(){
   const unified=await fetchJSON(UNIFIED);
   if(!unified){$('footerText').textContent='Dashboard offline';return}
   renderKPIs(unified);renderGate(unified);renderProducts(unified);renderLeads(unified);
-  renderAlerts();renderCampaigns();renderAgentEfficiency();renderFooter();botCycle()
+  renderAlerts();renderCampaigns();renderAgentEfficiency();renderFooter();botCycle();
+  // Tooltips
+  document.querySelectorAll('.card').forEach(c=>{
+    const h=c.querySelector('h2');if(!h||c._hasTip)return;c._hasTip=true;
+    const tips={KPI:'Live data from unified dashboard. Refreshes every 30s.',Product:'Real scores from product engine. Chart.js bars.','Campaign Manager':'Approve campaigns here. Click ▶ to publish.','Bot Monitor':'Dashboard health. Updates every 60s from alerts.json.',Leads:'Real data from companies.csv export. Live count.'};
+    let tip='Live engine data. Click to explore.';
+    if(h.textContent.includes('Product'))tip=tips.Product;
+    else if(h.textContent.includes('Campaign'))tip=tips['Campaign Manager'];
+    else if(h.textContent.includes('Monitor'))tip=tips['Bot Monitor'];
+    else if(h.textContent.includes('Efficiency'))tip='Agent efficiency from active monitoring. Top agents first.';
+    else if(h.textContent.includes('Leads'))tip=tips.Leads;
+    c.title=tip;c.style.cursor='help';
+  });
 }
 
 $('refreshBtn').addEventListener('click',render);
