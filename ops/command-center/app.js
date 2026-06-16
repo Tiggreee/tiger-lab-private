@@ -78,20 +78,37 @@ async function renderAgentEfficiency(){
   const mon=await fetchJSON(MONITOR);
   $('agentEffTime').textContent=`(updated ${new Date().toLocaleTimeString()})`;
   
-  const baseAgents=[
-    {name:'Lead Engine',func:'seed+enrich DB',base:data?.leadEngine?.stats?.companies||1000, target:2000},
-    {name:'Creative Agent',func:'6-channel campaigns',base:6,target:6},
-    {name:'Product Engine',func:'benchmark+score',base:data?.products?.total||5,target:12},
-    {name:'Production Gate',func:'14 checks',base:14,target:14},
-    {name:'R&D Engine',func:'EU scanning',base:10,target:20},
-    {name:'Agent Monitor',func:'agents tracked',base:am.activeAgents||22,target:22},
-    {name:'Dashboard Monitor',func:'health+alerts',base:90,target:100},
-    {name:'Content Engine',func:'content gen',base:data?.monetization?.generatedContent||10,target:50},
-    {name:'Lead Intelligence',func:'ICP+outreach',base:data?.monetization?.leadsToday||10,target:50},
-    {name:'Product Architect',func:'blueprints',base:mon?.summary?.totalAgents?2:2,target:5}
-  ];
+  // Real agents from monitor — not hardcoded 10
+  const monAgents=mon?.agents||[];
+  let agents=[];
+  if(monAgents.length>0){
+    agents=monAgents.map(a=>({name:a.name||a.id||'?',func:a.role||a.type||'agent',base:a.status==='active'?100:50,target:100}));
+  } else {
+    agents=[
+      {name:'Lead Engine',func:'seed+enrich DB',base:data?.leadEngine?.stats?.companies||1000,target:2000},
+      {name:'Creative Agent',func:'6-channel campaigns',base:6,target:6},
+      {name:'Product Engine',func:'benchmark+score',base:data?.products?.total||5,target:12},
+      {name:'Production Gate',func:'14 checks',base:14,target:14},
+      {name:'R&D Engine',func:'EU scanning',base:10,target:20},
+      {name:'Agent Monitor',func:'agents tracked',base:am.activeAgents||22,target:22},
+      {name:'Dashboard Monitor',func:'health+alerts',base:90,target:100},
+      {name:'Content Engine',func:'content gen',base:data?.monetization?.generatedContent||10,target:50},
+      {name:'Lead Intelligence',func:'ICP+outreach',base:data?.monetization?.leadsToday||10,target:50},
+      {name:'Product Architect',func:'blueprints',base:2,target:5},
+      {name:'Campaign Materializer',func:'MJML+Unsplash',base:6,target:6},
+      {name:'Quality Verifier',func:'6 checks',base:3,target:9},
+      {name:'Campaign Cleaner',func:'1/product',base:9,target:9},
+      {name:'Campaign Router',func:'6 platforms',base:6,target:6},
+      {name:'Social Autopilot',func:'5ch publishing',base:5,target:5},
+      {name:'Payments',func:'Stripe+PayPal',base:2,target:2},
+      {name:'Product Supervisor',func:'lifecycle',base:2,target:5},
+      {name:'R&D Advanced',func:'25 specialists',base:25,target:25},
+      {name:'US Lead Engine',func:'1000 companies',base:1000,target:1000},
+      {name:'Contact Generator',func:'5/company',base:5000,target:5000}
+    ];
+  }
   
-  const rows=baseAgents.map(a=>{
+  const rows=agents.map(a=>{
     const pct=Math.min(100,Math.round((a.base/a.target)*100));
     const cls=pct>=80?'eff-high':pct>=50?'eff-mid':'eff-low';
     const bar=pct>=80?'#3fb950':pct>=50?'#d29922':'#f85149';

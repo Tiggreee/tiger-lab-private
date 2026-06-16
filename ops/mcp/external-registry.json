@@ -9,7 +9,7 @@
       "package": "@modelcontextprotocol/server-memory",
       "category": "brain",
       "description": "Persistent memory between sessions. Creative Agent remembers past campaigns.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "high",
       "command": "npx @modelcontextprotocol/server-memory"
@@ -20,7 +20,7 @@
       "package": "@modelcontextprotocol/server-sequential-thinking",
       "category": "brain",
       "description": "Step-by-step reasoning. Better decisions from the engine.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "medium",
       "command": "npx @modelcontextprotocol/server-sequential-thinking"
@@ -31,7 +31,7 @@
       "package": "@modelcontextprotocol/server-filesystem",
       "category": "code",
       "description": "Secure file access. Agents read/write code safely.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "high",
       "command": "npx @modelcontextprotocol/server-filesystem"
@@ -42,7 +42,7 @@
       "package": "@github/mcp-server",
       "category": "code",
       "description": "Full repo control. Auto-PRs, commits, issues from agents.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "needsToken": true,
       "impact": "high",
@@ -54,7 +54,7 @@
       "package": "mcp-server-git",
       "category": "code",
       "description": "Local git operations. Branch, diff, log from agents.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "medium",
       "command": "uvx mcp-server-git"
@@ -65,7 +65,7 @@
       "package": "@modelcontextprotocol/server-sqlite",
       "category": "data",
       "description": "Direct DB queries. Dashboard reads leads.db live.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "high",
       "command": "npx @modelcontextprotocol/server-sqlite"
@@ -76,7 +76,7 @@
       "package": "mcp-csv-server",
       "category": "data",
       "description": "Process CSV exports. Pipeline reads/writes leads seamlessly.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "medium",
       "command": "npx mcp-csv-server"
@@ -87,7 +87,7 @@
       "package": "@modelcontextprotocol/server-fetch",
       "category": "research",
       "description": "Web content fetching. R&D Engine researches with live data.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "high",
       "command": "npx @modelcontextprotocol/server-fetch"
@@ -98,7 +98,7 @@
       "package": "@modelcontextprotocol/server-puppeteer",
       "category": "research",
       "description": "Headless browser. Scrape leads, screenshot campaigns.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "medium",
       "command": "npx @modelcontextprotocol/server-puppeteer"
@@ -109,7 +109,7 @@
       "package": "mcp-rss-server",
       "category": "research",
       "description": "RSS feed reader. Monitor competitors, industry news.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "low",
       "command": "npx mcp-rss-server"
@@ -120,7 +120,7 @@
       "package": "@modelcontextprotocol/server-time",
       "category": "automation",
       "description": "Timezone handling. Pipeline respects MX/US/EU schedules.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "medium",
       "command": "npx @modelcontextprotocol/server-time"
@@ -131,7 +131,7 @@
       "package": "mcp-cron-server",
       "category": "automation",
       "description": "Task scheduling. Auto-backups, reports, maintenance.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "medium",
       "command": "npx mcp-cron-server"
@@ -142,7 +142,7 @@
       "package": "mcp-docker-server",
       "category": "automation",
       "description": "Container management. Scale engine across environments.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "low",
       "command": "npx mcp-docker-server"
@@ -153,7 +153,7 @@
       "package": "mcp-markdown-server",
       "category": "docs",
       "description": "Generate docs, specs, reports in MD. Product Architect writes real specs.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "medium",
       "command": "npx mcp-markdown-server"
@@ -164,7 +164,7 @@
       "package": "mcp-pdf-server",
       "category": "docs",
       "description": "Generate PDF proposals from campaigns. Professional client docs.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "medium",
       "command": "npx mcp-pdf-server"
@@ -175,7 +175,7 @@
       "package": "mcp-screenshot-server",
       "category": "docs",
       "description": "Capture landing previews. Quality Verifier sees campaign output.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "low",
       "command": "npx mcp-screenshot-server"
@@ -186,7 +186,7 @@
       "package": "@modelcontextprotocol/server-slack",
       "category": "comm",
       "description": "Slack notifications. Pipeline alerts, payment confirmations.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "medium",
       "command": "npx @modelcontextprotocol/server-slack"
@@ -197,7 +197,7 @@
       "package": "mcp-email-server",
       "category": "comm",
       "description": "Send real campaign emails. No more dead templates.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "high",
       "command": "npx mcp-email-server"
@@ -208,7 +208,7 @@
       "package": "mcp-json-server",
       "category": "utility",
       "description": "Validate/transform JSON. TigerLab MCP tools self-validate.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "low",
       "command": "npx mcp-json-server"
@@ -219,7 +219,7 @@
       "package": "mcp-image-server",
       "category": "utility",
       "description": "Local image processing. Resize for social media without API.",
-      "enabled": false,
+      "enabled": true,
       "free": true,
       "impact": "low",
       "command": "npx mcp-image-server"
