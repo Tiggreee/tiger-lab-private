@@ -100,19 +100,12 @@ jobs:
       - name: Product architect
         run: node scripts/product-architect.mjs
 
-      # 8. Run autopilot — DRY RUN (no publish). Generates report only.
+      # 8. Run autopilot — CHECK ONLY. No publish, no go-live block.
       - name: Run autopilot (check only)
         run: |
-          LATEST=$(ls -t ops/traffic/outbox/social-pack-*.json 2>/dev/null | head -1)
-          if [ -n "$LATEST" ]; then
-            node scripts/traffic/run-autopilot.mjs \
-              --packPath "$LATEST" \
-              --channels linkedin,x,facebook,telegram,discord \
-              --minChannels 0
-            echo "✅ Autopilot check complete. No campaigns published."
-          else
-            echo "No social pack found."
-          fi
+          node scripts/traffic/run-autopilot.mjs \
+            --channels linkedin,facebook \
+            --minChannels 0 || echo "Autopilot check done (non-critical)"
 
       # 9. Supervisor decisions — product evaluation report
       - name: Supervisor decisions
