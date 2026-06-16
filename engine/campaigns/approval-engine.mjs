@@ -59,7 +59,9 @@ function approveCampaign(campaignId) {
   const packName = `social-pack-${product.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-approved`;
   const packFile = join(OUTBOX_DIR, `${packName}.json`);
   
-  const funnelUrl = `https://tiger-backend-production.up.railway.app/api/checkout?product=${encodeURIComponent(product.toLowerCase().replace(/\s+/g, '-'))}&plan=starter`;
+  const stripeUrl = `https://tiger-backend-production.up.railway.app/api/checkout?product=${encodeURIComponent(product.toLowerCase().replace(/\s+/g, '-'))}&plan=starter&provider=stripe`;
+  const paypalUrl = `https://tiger-backend-production.up.railway.app/api/checkout?product=${encodeURIComponent(product.toLowerCase().replace(/\s+/g, '-'))}&plan=starter&provider=paypal`;
+  const funnelUrl = `https://tiger-backend-production.up.railway.app/checkout?product=${encodeURIComponent(product.toLowerCase().replace(/\s+/g, '-'))}`;
   
   const pack = {
     campaign: packName,
@@ -67,6 +69,10 @@ function approveCampaign(campaignId) {
     approved: true,
     product,
     campaignId,
+    payments: {
+      stripe: stripeUrl,
+      paypal: paypalUrl
+    },
     funnel: {
       trafficDestination: funnelUrl,
       closeChannel: 'landing',
