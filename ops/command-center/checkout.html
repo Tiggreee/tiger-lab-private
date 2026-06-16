@@ -6,10 +6,13 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:#0a0a14;font:14px/1.5 'Segoe UI',system-ui,sans-serif;color:#c9d1d9;display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
-.card{background:#161b22;border:1px solid #21262d;border-radius:12px;max-width:420px;width:100%;padding:32px;box-shadow:0 8px 32px rgba(0,0,0,.3)}
+.card{background:#161b22;border:1px solid #21262d;border-radius:12px;max-width:440px;width:100%;padding:32px;box-shadow:0 8px 32px rgba(0,0,0,.3)}
 .logo{text-align:center;font-size:2rem;margin-bottom:8px}
 h1{font-size:1.2rem;color:#f0f6fc;text-align:center;margin-bottom:4px}
-.sub{font-size:.75rem;color:#8b949e;text-align:center;margin-bottom:20px}
+.sub{font-size:.75rem;color:#8b949e;text-align:center;margin-bottom:12px}
+.currency-toggle{display:flex;justify-content:center;gap:0;margin:12px 0;background:#0d1117;border-radius:8px;overflow:hidden}
+.currency-toggle button{flex:1;padding:8px;border:none;background:transparent;color:#8b949e;font-size:.7rem;font-weight:600;cursor:pointer;transition:all .2s}
+.currency-toggle button.active{background:#6C47FF;color:#fff}
 .price{text-align:center;margin:20px 0}
 .price .amount{font-size:2.5rem;font-weight:800;color:#f0f6fc}
 .price .period{font-size:.8rem;color:#8b949e}
@@ -17,37 +20,29 @@ h1{font-size:1.2rem;color:#f0f6fc;text-align:center;margin-bottom:4px}
 .features div{margin:6px 0;color:#8b949e}
 .features div::before{content:'✅ ';color:#3fb950}
 .btn{display:block;width:100%;padding:14px;border:none;border-radius:8px;font-size:.9rem;font-weight:700;cursor:pointer;text-align:center;margin:10px 0;transition:all .2s;text-decoration:none}
-.btn-stripe{background:#635BFF;color:#fff}
-.btn-stripe:hover{background:#7C73FF}
-.btn-paypal{background:#0070BA;color:#fff}
-.btn-paypal:hover{background:#0090DA}
+.btn-stripe{background:#635BFF;color:#fff}.btn-stripe:hover{background:#7C73FF}
+.btn-paypal{background:#0070BA;color:#fff}.btn-paypal:hover{background:#0090DA}
 .divider{display:flex;align-items:center;margin:16px 0;color:#484f58;font-size:.7rem}
 .divider::before,.divider::after{content:'';flex:1;height:1px;background:#21262d}
 .divider span{padding:0 12px}
 .footer{text-align:center;font-size:.6rem;color:#484f58;margin-top:16px}
-.product-info{display:flex;align-items:center;gap:10px;background:#0d1117;padding:10px;border-radius:8px;margin-bottom:16px}
-.product-info .icon{font-size:1.5rem}
-.product-info .name{font-size:.8rem;font-weight:600;color:#f0f6fc}
 #status{text-align:center;font-size:.7rem;margin-top:10px;min-height:20px}
 </style>
 </head>
 <body>
 <div class="card">
-  <div class="logo">📄</div>
+  <div class="logo" id="productIcon">📄</div>
   <h1 id="productName">Docflow API</h1>
   <div class="sub">Starter Plan · Automatización documental</div>
   
-  <div class="product-info">
-    <span class="icon" id="productIcon">📄</span>
-    <div>
-      <div class="name" id="productTitle">Docflow API</div>
-      <div style="font-size:.65rem;color:#8b949e">CFDI 4.0 · API-first · Soporte MX</div>
-    </div>
+  <div class="currency-toggle">
+    <button id="btnMXN" class="active" onclick="switchCurrency('MXN')">🇲🇽 MXN</button>
+    <button id="btnUSD" onclick="switchCurrency('USD')">🇺🇸 USD</button>
   </div>
 
   <div class="price">
-    <div class="amount">$69</div>
-    <div class="period">USD / mes</div>
+    <div class="amount" id="priceAmount">$349</div>
+    <div class="period" id="priceLabel">MXN / mes</div>
   </div>
 
   <div class="features">
@@ -70,24 +65,35 @@ h1{font-size:1.2rem;color:#f0f6fc;text-align:center;margin-bottom:4px}
 const params=new URLSearchParams(window.location.search);
 const product=params.get('product')||'docflow-api';
 const plan=params.get('plan')||'starter';
+let currency='MXN';
 
-const products={
-  'docflow-api':{name:'Docflow API',icon:'📄',price:69,desc:'CFDI 4.0 · API-first · Soporte MX'},
-  'script-premium-kit':{name:'Script Premium Kit',icon:'⚡',price:89,desc:'20+ scripts · Sin programar'}
+const pricing={
+  'docflow-api':{mxn:349,usd:19,icon:'📄',name:'Docflow API',desc:'CFDI 4.0 · API-first · Soporte MX'},
+  'script-premium-kit':{mxn:449,usd:25,icon:'⚡',name:'Script Premium Kit',desc:'20+ scripts · Sin programar'}
 };
 
-const p=products[product]||products['docflow-api'];
+const p=pricing[product]||pricing['docflow-api'];
+
+function switchCurrency(c){
+  currency=c;
+  document.getElementById('btnMXN').className=c==='MXN'?'active':'';
+  document.getElementById('btnUSD').className=c==='USD'?'active':'';
+  document.getElementById('priceAmount').textContent=c==='MXN'?'$'+p.mxn:'$'+p.usd;
+  document.getElementById('priceLabel').textContent=c==='MXN'?'MXN / mes':'USD / month';
+  updateLinks();
+}
+
+function updateLinks(){
+  const stripeUrl=`https://tiger-backend-production.up.railway.app/api/checkout?product=${product}&plan=${plan}&provider=stripe&currency=${currency.toLowerCase()}&amount=${currency==='MXN'?p.mxn:p.usd}`;
+  const paypalUrl=`https://tiger-backend-production.up.railway.app/api/checkout?product=${product}&plan=${plan}&provider=paypal&currency=${currency.toLowerCase()}&amount=${currency==='MXN'?p.mxn:p.usd}`;
+  document.getElementById('btnStripe').href=stripeUrl;
+  document.getElementById('btnPayPal').href=paypalUrl;
+}
+
 document.getElementById('productName').textContent=p.name+' — Starter';
 document.getElementById('productIcon').textContent=p.icon;
-document.getElementById('productTitle').textContent=p.name;
-document.querySelector('.amount').textContent='$'+p.price;
 document.querySelector('.sub').textContent='Starter Plan · '+p.desc;
-
-const stripeUrl=`https://tiger-backend-production.up.railway.app/api/checkout?product=${product}&plan=${plan}&provider=stripe`;
-const paypalUrl=`https://tiger-backend-production.up.railway.app/api/checkout?product=${product}&plan=${plan}&provider=paypal`;
-
-document.getElementById('btnStripe').href=stripeUrl;
-document.getElementById('btnPayPal').href=paypalUrl;
+updateLinks();
 </script>
 </body>
 </html>

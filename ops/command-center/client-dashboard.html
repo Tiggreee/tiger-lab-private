@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>TigerLab — Client Dashboard</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0a0a14;font:13px/1.5 'Segoe UI',system-ui,sans-serif;color:#c9d1d9;min-height:100vh}
+header{background:#161b22;border-bottom:1px solid #21262d;padding:12px 24px;display:flex;justify-content:space-between;align-items:center}
+header h1{font-size:.9rem;color:#f0f6fc}
+header .badge{background:#1a3a2a;color:#3fb950;padding:4px 12px;border-radius:12px;font-size:.65rem;font-weight:600}
+.container{max-width:800px;margin:0 auto;padding:24px}
+.card{background:#161b22;border:1px solid #21262d;border-radius:10px;padding:20px;margin-bottom:16px}
+.card h2{font-size:.8rem;color:#8b949e;text-transform:uppercase;letter-spacing:.5px;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #21262d}
+.stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
+.stat{text-align:center;padding:12px;background:#0d1117;border-radius:8px}
+.stat .val{font-size:1.5rem;font-weight:700;color:#f0f6fc}
+.stat .lbl{font-size:.6rem;color:#8b949e;margin-top:4px;text-transform:uppercase}
+.doc-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #21262d22;font-size:.75rem}
+.doc-row .status{font-size:.6rem;padding:2px 8px;border-radius:8px}
+.status-ok{background:#1a3a2a;color:#3fb950}
+.status-pending{background:#3a2f1a;color:#d29922}
+footer{text-align:center;font-size:.6rem;color:#484f58;padding:20px}
+.welcome{text-align:center;padding:40px 20px}
+.welcome h2{font-size:1.3rem;color:#f0f6fc;margin-bottom:8px;border:none}
+.welcome p{color:#8b949e;font-size:.8rem}
+</style>
+</head>
+<body>
+<header>
+  <h1>🐯 TigerLab — Client Portal</h1>
+  <span class="badge">✅ Active</span>
+</header>
+
+<div class="container">
+  <div class="welcome">
+    <div style="font-size:3rem;margin-bottom:12px">📄</div>
+    <h2 id="welcomeTitle">Welcome to Docflow API</h2>
+    <p>Your document automation is being configured. First results in 24 hours.</p>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat"><div class="val">1</div><div class="lbl">Documents Processed</div></div>
+    <div class="stat"><div class="val" id="nextDelivery">24h</div><div class="lbl">Next Delivery</div></div>
+    <div class="stat"><div class="val" id="setupProgress">60%</div><div class="lbl">Setup Progress</div></div>
+  </div>
+
+  <div class="card">
+    <h2>📋 Recent Activity</h2>
+    <div class="doc-row"><span>Onboarding setup</span><span class="status status-ok">complete</span></div>
+    <div class="doc-row"><span>Document template creation</span><span class="status status-ok">complete</span></div>
+    <div class="doc-row"><span>API key generation</span><span class="status status-pending">in progress</span></div>
+    <div class="doc-row"><span>First automation test</span><span class="status status-pending">scheduled</span></div>
+  </div>
+</div>
+
+<footer>🐯 TigerLab Client Portal · Your automation is being built</footer>
+<script>
+const p=new URLSearchParams(window.location.search);
+const product=p.get('product')||'docflow-api';
+const names={'docflow-api':'Docflow API · Document Automation','script-premium-kit':'Script Premium Kit · Automation'};
+document.getElementById('welcomeTitle').textContent=names[product]||names['docflow-api'];
+</script>
+</body>
+</html>
