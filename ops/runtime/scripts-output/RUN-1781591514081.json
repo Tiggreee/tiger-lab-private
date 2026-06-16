@@ -1,0 +1,15 @@
+{
+  "id": "RUN-1781591514081",
+  "script": "Invoice Automator",
+  "clientId": "demo-client-001",
+  "status": "completed",
+  "startedAt": "2026-06-16T06:31:54.081Z",
+  "completedAt": "2026-06-16T06:31:54.081Z",
+  "duration": 824,
+  "output": "PDF+XML generated successfully",
+  "metrics": {
+    "itemsProcessed": 81,
+    "errors": 0,
+    "warnings": 0
+  }
+}

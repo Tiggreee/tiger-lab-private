@@ -1,0 +1,14 @@
+{
+  "id": "DOC-1781591514079-c2afc6",
+  "clientId": "demo-client-001",
+  "type": "invoice",
+  "status": "created",
+  "data": {
+    "amount": 349,
+    "currency": "MXN",
+    "description": "Demo — Docflow API monthly",
+    "cfdiReady": false
+  },
+  "createdAt": "2026-06-16T06:31:54.080Z",
+  "updatedAt": "2026-06-16T06:31:54.080Z"
+}

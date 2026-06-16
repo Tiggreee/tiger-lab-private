@@ -6,6 +6,46 @@
 
 **Versión única.**
 
+## Estado Actual — 16 Junio 2026
+
+| Indicador | Valor | Status |
+|---|---|---|
+| Pipeline | Corriendo 6 AM diario | ✅ Autónomo |
+| Campañas | 2 listas (Docflow + Script Kit) | ✅ 100% quality |
+| Checkout | Dual MX ($349) / US ($19) | ✅ Stripe + PayPal |
+| API Docflow | Funcional — key gen + docs + scripts | ✅ OPERATIONAL |
+| Client Portal | Post-pago interactivo | ✅ Live data |
+| Leads | 2000 (1000 MX + 1000 US) | ✅ SQLite |
+| R&D | 25 especialistas activos | ✅ EU + MX + US |
+| LinkedIn | Publica en página empresa | ✅ ORG_ID fix |
+| MCP | 8 servers funcionales | ✅ Memory activo |
+| Event DB | 8 tablas SQL | ✅ Logger activo |
+| Revenue | $0 | ⏳ OBJ-01 |
+
+## Next Step
+
+```
+🔴 CRÍTICO: Primer cliente real paga por Docflow API
+   → checkout.html?product=docflow-api → Stripe/PayPal → $349 MXN
+   
+🟡 En progreso: Pipeline autónomo con publishing
+🟡 En progreso: Validar tokens de 4 redes sociales
+🟢 Completado: API funcional, design assets, quality verified
+```
+
+## Bots vs Agents vs MCP — ¿Qué es cada cosa?
+
+| Concepto | Definición | En TigerLab |
+|---|---|---|
+| **Bot** | Script simple que hace UNA tarea repetitiva. No decide, ejecuta. | `dashboard-monitor.mjs` — revisa salud cada 15 min. `campaign-cleaner.mjs` — borra duplicados. |
+| **Agent** | Sistema que percibe, decide y actúa. Tiene memoria y objetivos. | `CreativeAgent` — diseña campañas, aprende de resultados. `ProductRDAgent` — investiga mercado EU. |
+| **MCP Server** | Protocolo estándar para que IAs usen herramientas externas. JSON-RPC. | `mcp-client.mjs` — conecta 8 servers externos (Memory, Fetch, etc). Nuestros 48 MCP tools en `ops/mcp/`. |
+
+**¿Lo estamos usando bien?**
+- Bots: ✅ Sí. Tareas repetitivas automatizadas.
+- Agents: ⚠️ Parcial. Hay definiciones (.agent.md) y ejecutables (.mjs) pero no todos están conectados al pipeline.
+- MCP: ⚠️ Parcial. Los 48 tools propios son specs (JSON). Los 8 externos son funcionales pero solo 1 (Memory) está activo en flujo. Los demás esperan wiring.
+
 ## Comparativa: Inicio vs Hoy (13 Junio 2026)
 
 | Indicador | Inicio | Hoy | Delta |
