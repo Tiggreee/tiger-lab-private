@@ -273,6 +273,18 @@ async function postLinkedIn(text) {
   const personId = me.id;
   if (!personId) throw new Error('Could not resolve LinkedIn person ID from /v2/me response');
   
+  // Determine author: organization page takes priority for brand content
+  let authorUrn = `urn:li:person:${personId}`;
+  if (process.env.LINKEDIN_ORG_ID) {
+    try {
+      const orgId = extractLinkedInOrgId(process.env.LINKEDIN_ORG_ID);
+      authorUrn = `urn:li:organization:${orgId}`;
+      console.log(`   LinkedIn: posting as organization ${orgId}`);
+    } catch {
+      console.log('   LinkedIn: ORG_ID invalid, falling back to personal profile');
+    }
+  }
+  
   // Step 2: Post using the REST API (not deprecated v2/ugcPosts)
   // Documentation: https://learn.microsoft.com/en-us/linkedin/marketing/integrations/community-management/shares/posts-api
   const postResp = await fetch('https://api.linkedin.com/rest/posts', {
@@ -284,7 +296,7 @@ async function postLinkedIn(text) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      author: `urn:li:person:${personId}`,
+      author: authorUrn,
       commentary: text,
       visibility: 'PUBLIC',
       distribution: {

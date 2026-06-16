@@ -104,7 +104,7 @@ jobs:
       - name: Run autopilot (check only)
         run: |
           node scripts/traffic/run-autopilot.mjs \
-            --channels linkedin,facebook \
+            --channels linkedin,x,facebook,telegram,discord \
             --minChannels 0 || echo "Autopilot check done (non-critical)"
 
       # 9. Supervisor decisions — product evaluation report
