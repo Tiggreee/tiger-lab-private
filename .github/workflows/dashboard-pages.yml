@@ -31,7 +31,7 @@ jobs:
           cp ops/runtime/campaigns/index.json ops/command-center/runtime/campaigns/index.json 2>/dev/null || echo "No index yet"
           echo "Data copied for static deployment"
       
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v4
         with:
           path: ops/command-center
