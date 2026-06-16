@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>TigerLab — Design B: Topographic</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#060610;color:#c9d1d9;font:11px/1.2 'Segoe UI',system-ui,sans-serif;overflow:hidden;height:100vh}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse at 40% 50%,#0a2010 0%,transparent 70%),radial-gradient(ellipse at 70% 30%,#1a1030 0%,transparent 60%);z-index:-1}
+header{position:fixed;top:0;left:0;width:100%;padding:8px 16px;z-index:10;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,#060610,transparent)}
+h1{font-size:.8rem;font-weight:700;color:#e0e0ff;letter-spacing:2px}
+.back{color:#3a3a5a;font-size:.5rem;text-decoration:none}.back:hover{color:#6C47FF}
+.legend{display:flex;gap:10px;font-size:.5rem;color:#5a5a7a}
+.legend span{display:flex;align-items:center;gap:3px}
+.d{width:6px;height:6px;border-radius:50%}.dg{background:#3fb950;box-shadow:0 0 5px#3fb95088}.dy{background:#d29922;box-shadow:0 0 5px#d2992288}.dr{background:#f85149;box-shadow:0 0 5px#f8514988}
+canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:1}
+.nodes{position:fixed;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none}
+.node{position:absolute;pointer-events:all;cursor:pointer;transition:all .4s;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.node .n-circle{width:var(--sz);height:var(--sz);border-radius:50%;background:var(--bg);border:1px solid var(--bc);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:all .3s;overflow:hidden}
+.node:hover .n-circle{transform:scale(1.2);box-shadow:0 0 24px var(--glow)}
+.node .n-name{font-size:.55rem;font-weight:700;color:#e0e0ff;margin-top:1px}
+.node .n-pct{font-size:.45rem;color:#6b6b8a}
+.node.dead .n-circle{filter:blur(3px);opacity:.3}
+.node.dead .n-name{opacity:.3}
+footer{position:fixed;bottom:0;left:0;width:100%;text-align:center;font-size:.5rem;color:#3a3a5a;z-index:5;padding:3px}
+</style>
+</head>
+<body>
+<header>
+<h1>TOPOGRAPHIC CONTOUR MAP</h1>
+<div class="legend">
+<span><span class="d dg"></span>Peak (Active)</span>
+<span><span class="d dy"></span>Slope (Build)</span>
+<span><span class="d dr"></span>Valley (Dead)</span>
+</div>
+<a class="back" href="/">← Dashboard</a>
+</header>
+<div class="nodes" id="nodes"></div>
+<canvas id="bg"></canvas>
+<footer>Topographic View · Elevation = Activity</footer>
+<script>
+const modules=[
+  {id:'lead-engine',name:'Lead Engine',x:8,y:45,elev:6,color:'green',dead:false},
+  {id:'prospect',name:'Prospect',x:18,y:38,elev:5,color:'green',dead:false},
+  {id:'creative',name:'Creative',x:28,y:52,elev:3,color:'yellow',dead:false},
+  {id:'materializer',name:'Materializer',x:40,y:35,elev:7,color:'green',dead:false},
+  {id:'quality',name:'Quality',x:52,y:42,elev:6,color:'green',dead:false},
+  {id:'router',name:'Router',x:62,y:38,elev:5,color:'green',dead:false},
+  {id:'autopilot',name:'Autopilot',x:74,y:32,elev:7,color:'green',dead:false},
+  {id:'pipeline',name:'Pipeline',x:88,y:28,elev:8,color:'green',dead:false},
+  {id:'product-engine',name:'Product Engine',x:12,y:22,elev:6,color:'green',dead:false},
+  {id:'rnd',name:'R&D',x:18,y:16,elev:5,color:'green',dead:false},
+  {id:'payments',name:'Payments',x:80,y:52,elev:5,color:'green',dead:false},
+  {id:'dashboard-monitor',name:'Monitor',x:60,y:65,elev:2,color:'yellow',dead:true},
+  {id:'archive',name:'Archive',x:80,y:68,elev:1,color:'red',dead:true},
+  {id:'product-supervisor',name:'Supervisor',x:45,y:68,elev:2,color:'yellow',dead:true},
+  {id:'gate',name:'Gate',x:30,y:20,elev:6,color:'green',dead:false}
+];
+
+const canvas=document.getElementById('bg');
+canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+const ctx=canvas.getContext('2d');
+
+// Draw contour lines connecting modules by elevation
+const conns=[['lead-engine','prospect'],['prospect','creative'],['creative','materializer'],['materializer','quality'],['quality','router'],['router','autopilot'],['autopilot','pipeline'],['product-engine','materializer'],['rnd','creative'],['payments','pipeline'],['creative','dashboard-monitor'],['quality','product-supervisor'],['product-supervisor','archive']];
+
+function drawContours(){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  // Topographic rings around active modules
+  modules.forEach(m=>{
+    if(m.dead)return;
+    const cx=(m.x/100)*canvas.width,cy=(m.y/100)*canvas.height;
+    const radius=m.elev*12;
+    for(let i=3;i>=1;i--){
+      ctx.beginPath();ctx.arc(cx,cy,radius+i*15,0,Math.PI*2);
+      ctx.strokeStyle=`rgba(63,185,80,${0.06+i*0.03})`;ctx.lineWidth=.5;ctx.stroke();
+    }
+  });
+  // Flow lines
+  conns.forEach(([from,to])=>{
+    const a=modules.find(m=>m.id===from),b=modules.find(m=>m.id===to);
+    if(!a||!b)return;
+    const ax=(a.x/100)*canvas.width,ay=(a.y/100)*canvas.height;
+    const bx=(b.x/100)*canvas.width,by=(b.y/100)*canvas.height;
+    ctx.beginPath();ctx.moveTo(ax,ay);
+    const mx=(ax+bx)/2,my=(ay+by)/2-20;
+    ctx.quadraticCurveTo(mx,my,bx,by);
+    ctx.strokeStyle=b.dead?'rgba(248,81,73,.2)':'rgba(63,185,80,.25)';
+    ctx.lineWidth=b.dead?1:1.5;ctx.setLineDash([5,3]);ctx.stroke();
+    ctx.setLineDash([]);
+    // Flow particle
+    ctx.beginPath();ctx.arc(mx,my,2,0,Math.PI*2);
+    ctx.fillStyle=b.dead?'rgba(248,81,73,.4)':'rgba(63,185,80,.5)';
+    ctx.fill();
+  });
+}
+drawContours();
+
+const container=document.getElementById('nodes');
+modules.forEach(m=>{
+  const sz=20+m.elev*8;
+  const n=document.createElement('div');
+  n.className='node'+(m.dead?' dead':'');
+  n.style.cssText=`left:${m.x}%;top:${m.y}%;--sz:${sz}px;--bg:${m.dead?'rgba(20,10,10,.7)':m.color==='yellow'?'rgba(30,25,10,.7)':'rgba(10,20,15,.7)'};--bc:${m.dead?'rgba(248,81,73,.4)':m.color==='yellow'?'rgba(210,153,34,.4)':'rgba(63,185,80,.4)'};--glow:${m.dead?'rgba(248,81,73,.15)':m.color==='yellow'?'rgba(210,153,34,.15)':'rgba(63,185,80,.2)'}`;
+  n.innerHTML=`<div class="n-circle"><span class="n-name">${m.name}</span><span class="n-pct">${m.dead?'DEAD':m.elev>=6?'PEAK '+m.elev*10+'%':'ELEV '+m.elev*10+'%'}</span></div>`;
+  container.appendChild(n);
+});
+
+window.onresize=()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;drawContours()};
+setTimeout(()=>location.reload(),30000);
+</script>
+</body>
+</html>
