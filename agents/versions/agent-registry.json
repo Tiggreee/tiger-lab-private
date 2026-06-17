@@ -1,7 +1,21 @@
 {
   "agents": [
     {
-      "agentName": "agentName",
+      "agentName": "maker",
+      "activeAgentVersion": "1.0.0",
+      "activePromptVersion": "v1",
+      "rollbackAgentVersion": "1.0.0",
+      "rollbackPromptVersion": "v1"
+    },
+    {
+      "agentName": "checker",
+      "activeAgentVersion": "1.0.0",
+      "activePromptVersion": "v1",
+      "rollbackAgentVersion": "1.0.0",
+      "rollbackPromptVersion": "v1"
+    },
+    {
+      "agentName": "lead-engine",
       "activeAgentVersion": "1.0.0",
       "activePromptVersion": "v1",
       "rollbackAgentVersion": "1.0.0",
