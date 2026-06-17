@@ -4,13 +4,26 @@
  * THE ONLY AGENT WITH PERSISTENT MEMORY.
  * Self-improving creative director. Benchmark: best in NA + LATAM.
  * Creates 6-channel campaigns. Learns from every iteration.
+ * 
+ * NOW WITH: Market Researcher Agent (right hand) providing insights.
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { spawn } from 'node:child_process';
 
 const MEMORY_PATH = resolve('ops/runtime/creative-agent-memory.json');
 const CAMPAIGNS_DIR = resolve('ops/runtime/campaigns');
+const RESEARCH_DIR = resolve('ops/runtime/market-research');
+
+function loadMarketBriefing(product, segment = 'contabilidad') {
+  const briefingPath = resolve(RESEARCH_DIR, `${product.toLowerCase().replace(/ /g, '-')}-${segment}.json`);
+  try {
+    return JSON.parse(readFileSync(briefingPath, 'utf8'));
+  } catch {
+    return null;
+  }
+}
 
 const CHANNELS = {
   email:    { max: 3000, fmt: 'html',     tone: 'Professional, warm', img: [600,300] },
@@ -78,19 +91,97 @@ function generateImagePrompt(product, channel) {
   return `Professional marketing image for "${product}". ${p.headline}. Clean modern design. ${p.colors?.header} gradient background. No text overlay. ${w}×${h}px. Business SaaS style. Latin American professional audience.`;
 }
 
-function scoreCampaign(campaign, mem) {
-  let score = 50;
-  if (campaign.copies && Object.keys(campaign.copies).length === 6) score += 20;
-  if (campaign.copies?.x?.length <= 280) score += 10;
-  if (campaign.copies?.email?.length > 500) score += 10;
-  // Learning bonus: if we used patterns from past successes
-  const patternMatch = mem.patterns.bestHeadlines.some(h => campaign.copies?.linkedin?.includes(h));
-  if (patternMatch) score += 10;
-  return Math.min(100, score);
+function analyzeUniqueness(copies) {
+  const uniqueHeadlines = new Set(Object.values(copies).map(c => c.split('\n')[0]));
+  const averageLength = Object.values(copies).reduce((a,b) => a + b.length, 0) / Object.keys(copies).length;
+  const hasEmojis = Object.values(copies).some(c => /[\p{Emoji}]/gu.test(c));
+  return { uniqueHeadlines: uniqueHeadlines.size, averageLength, hasEmojis };
 }
 
-function createCampaign(product, target) {
+function scoreCampaign(campaign, mem) {
+  let score = 50;
+  const copies = campaign.copies || {};
+  
+  // Channel coverage: +20 for full 6 channels
+  const channelCount = Object.keys(copies).length;
+  if (channelCount === 6) score += 20;
+  else if (channelCount >= 4) score += 10;
+  
+  // Format compliance: +15 for respecting channel limits
+  const xCompliant = (copies.x?.length || 0) <= 280;
+  const emailDepth = (copies.email?.length || 0) > 500;
+  const linkedinDepth = (copies.linkedin?.length || 0) > 300;
+  if (xCompliant && emailDepth && linkedinDepth) score += 15;
+  else if (xCompliant) score += 8;
+  
+  // Uniqueness: +20 for unique headlines per channel
+  const analysis = analyzeUniqueness(copies);
+  if (analysis.uniqueHeadlines >= 5) score += 20;
+  else if (analysis.uniqueHeadlines >= 3) score += 10;
+  
+  // Tone variety: +10 for emojis and visual differentiation
+  if (analysis.hasEmojis) score += 10;
+  
+  // Pattern learning: +15 if using proven successful headlines
+  const patternMatches = mem.patterns.bestHeadlines.filter(h => 
+    Object.values(copies).some(c => c.includes(h))
+  ).length;
+  if (patternMatches > 0) score += Math.min(15, patternMatches * 5);
+  
+  // Historical improvement: +10 if better than average
+  if (mem.campaigns.length > 0 && mem.evolution.averageScore > 0) {
+    if (score > mem.evolution.averageScore) score += 10;
+  }
+  
+  return Math.min(100, Math.max(5, score));
+}
+
+function generateRecommendations(campaign, mem) {
+  const recs = [];
+  const copies = campaign.copies || {};
+  
+  // Check uniqueness
+  const analysis = analyzeUniqueness(copies);
+  if (analysis.uniqueHeadlines < 5) {
+    recs.push('⚠️ Some headlines repeat across channels. Make each one unique to the platform.');
+  }
+  
+  // Check depth
+  if ((copies.email?.length || 0) < 500) {
+    recs.push('📝 Email copy too short. Expand with value props and benefits (aim for 500+ chars).');
+  }
+  
+  if ((copies.linkedin?.length || 0) < 300) {
+    recs.push('🔗 LinkedIn copy too short. Add a hook, context, and CTA (aim for 300+ chars).');
+  }
+  
+  // Check X compliance
+  if ((copies.x?.length || 0) > 280) {
+    recs.push('❌ X copy exceeds 280 chars. Trim to fit the platform.');
+  }
+  
+  // Check pattern usage
+  if (mem.patterns.bestHeadlines.length > 0) {
+    const patternMatches = mem.patterns.bestHeadlines.filter(h => 
+      Object.values(copies).some(c => c.includes(h))
+    ).length;
+    
+    if (patternMatches === 0) {
+      recs.push('💡 No proven headline patterns detected. Consider using: ' + mem.patterns.bestHeadlines.slice(0,2).join(', '));
+    }
+  }
+  
+  // Check emotion/engagement
+  if (!analysis.hasEmojis) {
+    recs.push('😊 Add emojis to increase engagement. Try: 🔥 ✨ 💡 🎯 🚀');
+  }
+  
+  return recs;
+}
+
+function createCampaign(product, target, segment = 'contabilidad') {
   const mem = loadMemory();
+  const briefing = loadMarketBriefing(product, segment);
   const id = `CAMP-${Date.now()}`;
   const dir = resolve(CAMPAIGNS_DIR, id);
   
@@ -106,11 +197,12 @@ function createCampaign(product, target) {
   }
   
   const campaign = {
-    id, product, target, createdAt: new Date().toISOString(),
+    id, product, target, segment, createdAt: new Date().toISOString(),
     channels: Object.keys(CHANNELS),
     copies, images,
     score: 0,
-    status: 'draft'
+    status: 'draft',
+    hasMarketInsight: briefing !== null
   };
   
   campaign.score = scoreCampaign(campaign, mem);
@@ -124,12 +216,16 @@ function createCampaign(product, target) {
     performance: { opens: 0, clicks: 0, conversions: 0 },
     learnings: [],
     ownerFeedback: '',
-    improvedInNext: false
+    improvedInNext: false,
+    hasMarketResearch: briefing !== null
   });
   
   // Update patterns
   mem.patterns.bestHeadlines.push(PRODUCTS[product]?.headline || '');
   mem.patterns.bestCTAs.push(PRODUCTS[product]?.cta || '');
+  if (briefing?.recommendations?.wordsthatConvert) {
+    mem.patterns.bestHeadlines.push(...briefing.recommendations.wordsthatConvert);
+  }
   
   // Update evolution
   const scores = mem.campaigns.map(c => c.score);
@@ -155,7 +251,30 @@ function createCampaign(product, target) {
     benchmark: campaign.score >= 85 ? '🏆 BEST IN CLASS' : campaign.score >= 70 ? '✅ PRODUCTION READY' : '🔧 NEEDS WORK'
   }, null, 2), 'utf8');
   
-  return { campaign, mem };
+  // Generate analysis with recommendations
+  const recs = generateRecommendations(campaign, mem);
+  const analysis = analyzeUniqueness(copies);
+  const analysisData = {
+    generatedAt: new Date().toISOString(),
+    campaignId: id,
+    uniqueness: analysis,
+    recommendations: recs,
+    marketInsights: briefing ? {
+      segment: briefing.segment,
+      topAngles: briefing.brief.messaging.topAngles.map(a => a.headline),
+      audienceInsights: briefing.brief.messaging.audienceInsights,
+      channelStrategy: briefing.brief.channelStrategy
+    } : null,
+    insights: {
+      isImprovement: mem.campaigns.length > 0 && campaign.score > mem.evolution.averageScore,
+      comparedToAverage: campaign.score - (mem.evolution.averageScore || 0),
+      nextIteration: recs.length === 0 ? '✅ Ready to publish' : `⚠️ ${recs.length} suggestions for next iteration`
+    }
+  };
+  
+  writeFileSync(resolve(dir, 'analysis.json'), JSON.stringify(analysisData, null, 2), 'utf8');
+  
+  return { campaign, mem, briefing };
 }
 
 function learn() {
@@ -172,20 +291,51 @@ function learn() {
   }
   
   console.log('Recent campaigns:');
-  recent.forEach(c => console.log(`  ${c.id}: ${c.product} — ${c.score}/100`));
+  recent.forEach((c, i) => {
+    const indicator = i === recent.length - 1 ? '→ Latest' : '  ';
+    console.log(`  ${indicator} ${c.id}: ${c.product} — ${c.score}/100`);
+  });
   
+  // Analyze trend
   const improving = recent.length >= 2 && recent[recent.length-1].score > recent[0].score;
-  console.log(`\n📈 ${improving ? 'IMPROVING — each campaign better than the last' : 'LEARNING — gathering data to improve'}`);
+  const avgRecent = Math.round(recent.reduce((a,b) => a + b.score, 0) / recent.length);
   
-  // Generate learnings
-  console.log('\n🧠 Learnings:');
-  const bestScore = Math.max(...recent.map(c => c.score));
-  if (bestScore < 70) console.log('  → Copy needs more emotional hooks. Add urgency words.');
-  if (bestScore < 85) console.log('  → Diversify CTAs per channel. Don\'t repeat the same CTA.');
-  console.log('  → A/B test headlines: question vs statement format.');
-  console.log('  → LinkedIn copy should be 2x longer than X copy for better engagement.');
+  console.log(`\n📈 Trend Analysis:`);
+  console.log(`  Recent avg: ${avgRecent}/100 (overall avg: ${mem.evolution.averageScore}/100)`);
+  console.log(`  Status: ${improving ? '🚀 IMPROVING' : '📊 LEARNING'}`);
   
-  return { recent, improving, avgScore: mem.evolution.averageScore };
+  if (improving) {
+    const delta = recent[recent.length-1].score - recent[0].score;
+    console.log(`  → Improvement: +${delta} points in last ${recent.length} campaigns`);
+  }
+  
+  // Pattern analysis
+  console.log(`\n🧠 Pattern Analysis:`);
+  console.log(`  Best headlines: ${mem.patterns.bestHeadlines.length}`);
+  console.log(`  Best CTAs: ${mem.patterns.bestCTAs.length}`);
+  
+  // Recommendations
+  console.log(`\n💡 Recommendations:`);
+  
+  if (avgRecent < 70) {
+    console.log('  → Copy needs more emotional hooks. Add urgency words: "Ahora", "Hoy", "Limitado"');
+    console.log('  → Test different CTA formats: Question vs Direct Action vs Social Proof');
+  }
+  
+  if (avgRecent >= 70 && avgRecent < 85) {
+    console.log('  → Great start! Next: A/B test headlines (Question format vs Statement format)');
+    console.log('  → Diversify CTAs per channel. LinkedIn CTA ≠ X CTA');
+  }
+  
+  if (avgRecent >= 85) {
+    console.log('  → 🏆 Hitting high scores. Maintain this quality and scale.');
+    console.log('  → Next: Test channel-specific hooks. What works on LinkedIn might not work on X.');
+  }
+  
+  console.log('  → Always include a proven headline from mem.patterns.bestHeadlines');
+  console.log('  → LinkedIn copy should be 2x longer than X copy for better engagement');
+  
+  return { recent, improving, avgScore: mem.evolution.averageScore, avgRecent };
 }
 
 function benchmark() {
@@ -230,17 +380,39 @@ function main() {
   if (args.includes('--create')) {
     const product = args.includes('--product') ? args[args.indexOf('--product') + 1] : 'Docflow API';
     const target = args.includes('--target') ? args[args.indexOf('--target') + 1] : 'contabilidad';
+    const segment = args.includes('--segment') ? args[args.indexOf('--segment') + 1] : 'contabilidad';
     
     console.log('=== CREATIVE AGENT — CAMPAIGN CREATION ===\n');
     console.log(`Product: ${product}`);
     console.log(`Target: ${target}`);
+    console.log(`Segment: ${segment}`);
     
-    const { campaign, mem } = createCampaign(product, target);
+    const { campaign, mem, briefing } = createCampaign(product, target, segment);
+    const recs = generateRecommendations(campaign, mem);
     
     console.log(`\n📦 Campaign: ${campaign.id}`);
     console.log(`📊 Score: ${campaign.score}/100 — ${campaign.score >= 85 ? '🏆 BEST IN CLASS' : campaign.score >= 70 ? '✅ PRODUCTION READY' : '🔧 NEEDS WORK'}`);
+    console.log(`📈 vs Average: ${campaign.score > mem.evolution.averageScore ? '+' : ''}${campaign.score - mem.evolution.averageScore} points`);
     console.log(`🧠 Memory: ${mem.totalCampaigns} campaigns, avg ${mem.evolution.averageScore}/100`);
+    
+    if (briefing) {
+      console.log(`\n🔍 Market Research Applied:`);
+      console.log(`   Segment: ${briefing.segment}`);
+      console.log(`   Top Angles: ${briefing.brief.messaging.topAngles.map(a => a.headline).join(' | ')}`);
+      console.log(`   Keywords: ${briefing.brief.recommendations.wordsthatConvert.join(', ')}`);
+    } else {
+      console.log(`\n💡 Tip: Run market researcher first for enhanced briefing:`);
+      console.log(`   node engine/campaigns/market-researcher-agent.mjs --research --product "${product}" --segment ${segment}`);
+    }
+    
     console.log(`\n📂 ${campaign.channels.length} files in ops/runtime/campaigns/${campaign.id}/`);
+    
+    if (recs.length > 0) {
+      console.log(`\n⚙️  Suggestions for next iteration:`);
+      recs.forEach(rec => console.log(`   ${rec}`));
+    } else {
+      console.log(`\n✅ Ready to publish! No improvements needed.`);
+    }
     
   } else if (args.includes('--memory')) {
     const mem = loadMemory();
@@ -253,8 +425,8 @@ function main() {
     benchmark();
     
   } else {
-    console.log('Creative Agent — Tigre Creativo');
-    console.log('  --create --product "Docflow API" --target contabilidad');
+    console.log('Creative Agent — Tigre Creativo (with Market Researcher partner)');
+    console.log('  --create --product "Docflow API" --target contabilidad --segment contabilidad');
     console.log('  --memory     View campaign history');
     console.log('  --learn      Self-improvement analysis');
     console.log('  --benchmark  Capability assessment');
