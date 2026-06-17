@@ -41,5 +41,11 @@
   "summary": {
     "totalProducts": 5,
     "totalChannels": 5
+  },
+  "funnel": {
+    "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout",
+    "closeChannel": "landing",
+    "closeDestination": "https://tiger-backend-production.up.railway.app/checkout",
+    "closeLink": "https://tiger-backend-production.up.railway.app/checkout"
   }
 }
