@@ -41,6 +41,9 @@ import { PlanId } from '../../src/shared/domain/value-objects/PlanId';
 import { ProductId } from '../../src/shared/domain/value-objects/ProductId';
 import { Version } from '../../src/shared/domain/value-objects/Version';
 import { readRuntimeState, updateRuntimeState } from '../../src/shared/infrastructure/persistence/runtime-state';
+import { ExecutionModeController } from '../http/controllers/ExecutionModeController';
+import { ModelController } from '../http/controllers/ModelController';
+import { TelemetryController } from '../http/controllers/TelemetryController';
 import { DecisionController } from '../http/controllers/DecisionController';
 import { CatalogController } from '../http/controllers/CatalogController';
 import { BillingController } from '../http/controllers/BillingController';
@@ -456,6 +459,9 @@ export interface ServerDependencyContainer {
   readonly botController: BotController;
   readonly catalogController: CatalogController;
   readonly decisionController: DecisionController;
+  readonly executionModeController: ExecutionModeController;
+  readonly modelController: ModelController;
+  readonly telemetryController: TelemetryController;
 }
 
 function assertRequiredEnv(keys: readonly string[]): void {
@@ -566,6 +572,9 @@ export function createServerDependencyContainer(): ServerDependencyContainer {
     ),
     botController: new BotController(resolveOfferUseCase, captureLeadUseCase, scoreLeadUseCase),
     catalogController: new CatalogController(),
-    decisionController: new DecisionController(new DecisionEngine())
+    decisionController: new DecisionController(new DecisionEngine()),
+    executionModeController: new ExecutionModeController(),
+    modelController: new ModelController(),
+    telemetryController: new TelemetryController()
   };
 }

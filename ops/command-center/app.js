@@ -182,7 +182,7 @@ async function render(){
   const unified=await fetchJSON(UNIFIED);
   if(!unified){$('footerText').textContent='Dashboard offline';return}
   renderKPIs(unified);renderGate(unified);renderProducts(unified);renderLeads(unified);
-  renderAlerts();renderCampaigns();renderAgentEfficiency();renderMcpToggles();renderMcpRanking();renderFooter();botCycle();
+  renderAlerts();renderCampaigns();renderAgentEfficiency();renderMcpToggles();renderMcpRanking();renderFooter();renderAutonomousState();renderModels();botCycle();
   // Tooltips
   document.querySelectorAll('.card').forEach(c=>{
     const h=c.querySelector('h2');if(!h||c._hasTip)return;c._hasTip=true;
@@ -204,8 +204,97 @@ let isProd=true;const ne=$('neonProd');if(ne){ne.style.cursor='pointer';ne.title
 
 setInterval(render,30000);setInterval(renderAlerts,60000);render().catch(console.error);
 
-// Bot
-let factIdx=0,botClicks=0;document.addEventListener('DOMContentLoaded',()=>{const f=document.getElementById('botFace');if(!f)return;f.addEventListener('click',()=>{botClicks++;try{new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACAf39/f4B/f3+Af3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f38').play().catch(()=>{})}catch{}if(botClicks>=6){botClicks=0;const e=['💩','💩','💩','🔥','💥','✨'];for(let i=0;i<20;i++){const el=document.createElement('span');el.textContent=e[Math.floor(Math.random()*e.length)];el.style.cssText=`position:fixed;font-size:${24+Math.random()*36}px;pointer-events:none;z-index:9999;left:${10+Math.random()*80}%;top:${10+Math.random()*80}%;animation:shitFall ${1+Math.random()*2}s ease-out forwards`;document.body.appendChild(el);setTimeout(()=>el.remove(),3000)}if(!$('shitStyle')){const s=document.createElement('style');s.id='shitStyle';s.textContent='@keyframes shitFall{0%{opacity:1;transform:translateY(0) rotate(0deg) scale(1)}100%{opacity:0;transform:translateY(-200px) rotate(720deg) scale(0)}}';document.head.appendChild(s)}}})});
+async function renderModels(){
+  const data = await fetchJSON('/runtime/models');
+  const grid = $('modelGrid');
+  if(!grid || !data) return;
+  
+  if(!data.models || data.models.length === 0){
+    grid.innerHTML = '<div class="dim">No local models registered</div>';
+    return;
+  }
+
+  grid.innerHTML = data.models.map(m => `
+    <div class="resource-item">
+      <button class="btn-remove" onclick="window.removeModel('${m.id}')">Remove</button>
+      <div class="model-name">${m.name}</div>
+      <div class="model-details">
+        Type: ${m.type}<br>
+        Endpoint: ${m.endpoint}<br>
+        Capacity: ${m.capacity}
+      </div>
+    </div>
+  `).join('');
+}
+
+window.showAddModel = async function(){
+  const name = prompt('Model Name:');
+  if(!name) return;
+  const type = prompt('Model Type (e.g. Reasoning, Fast, Creative):');
+  if(!type) return;
+  const endpoint = prompt('Model Endpoint (URL):');
+  if(!endpoint) return;
+  const capacity = prompt('Model Capacity (e.g. 70B, 8B):');
+
+  try {
+    const r = await fetch('/runtime/models', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ name, type, endpoint, capacity })
+    });
+    if(r.ok) renderModels();
+  } catch {
+    alert('Server error adding model');
+  }
+};
+
+window.removeModel = async function(id){
+  if(!confirm('Remove this model resource?')) return;
+  try {
+    const r = await fetch(`/runtime/models/${id}`, { method: 'DELETE' });
+    if(r.ok) renderModels();
+  } catch {
+    alert('Server error removing model');
+  }
+};
+
+async function renderAutonomousState(){
+  const telemetry = await fetchJSON('/runtime/telemetry') || {};
+  const state = await fetchJSON('/runtime/execution-modes.json') || { current: 'AUTO' };
+  
+  const modes = {
+    'AUTO': { desc: 'Full autonomy', color: '#6366f1' },
+    'PRO': { desc: 'User approval on criticals', color: '#f59e0b' },
+    'DEV': { desc: 'Dry-run / Verbose', color: '#10b981' }
+  };
+  const currentMode = state.current || 'AUTO';
+  const current = modes[currentMode] || modes['AUTO'];
+  
+  $('modeValue').textContent = currentMode;
+  $('modeValue').style.color = current.color;
+  $('modeDesc').textContent = current.desc;
+  $('busEvents').textContent = telemetry.busEvents || 0;
+  $('busSubs').textContent = `${telemetry.busSubs || 0} active subs`;
+  $('wtActive').textContent = telemetry.wtActive || 0;
+  $('wtTotal').textContent = `${telemetry.wtTotal || 0} total pools`;
+  $('memKeys').textContent = telemetry.memKeys || 0;
+}
+
+window.toggleExecutionMode = async function(){
+  const modes = ['AUTO', 'PRO', 'DEV'];
+  const current = $('modeValue').textContent;
+  const next = modes[(modes.indexOf(current) + 1) % modes.length];
+  try {
+    const r = await fetch('/runtime/execution-mode/toggle', { 
+      method: 'POST', 
+      headers: {'Content-Type': 'application/json'}, 
+      body: JSON.stringify({ mode: next }) 
+    });
+    if(r.ok) renderAutonomousState();
+  } catch {
+    alert('Local server required to toggle modes. Run: npm run command-center');
+  }
+};let factIdx=0,botClicks=0;document.addEventListener('DOMContentLoaded',()=>{const f=document.getElementById('botFace');if(!f)return;f.addEventListener('click',()=>{botClicks++;try{new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACAf39/f4B/f3+Af3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f38').play().catch(()=>{})}catch{}if(botClicks>=6){botClicks=0;const e=['💩','💩','💩','🔥','💥','✨'];for(let i=0;i<20;i++){const el=document.createElement('span');el.textContent=e[Math.floor(Math.random()*e.length)];el.style.cssText=`position:fixed;font-size:${24+Math.random()*36}px;pointer-events:none;z-index:9999;left:${10+Math.random()*80}%;top:${10+Math.random()*80}%;animation:shitFall ${1+Math.random()*2}s ease-out forwards`;document.body.appendChild(el);setTimeout(()=>el.remove(),3000)}if(!$('shitStyle')){const s=document.createElement('style');s.id='shitStyle';s.textContent='@keyframes shitFall{0%{opacity:1;transform:translateY(0) rotate(0deg) scale(1)}100%{opacity:0;transform:translateY(-200px) rotate(720deg) scale(0)}}';document.head.appendChild(s)}}})});
 let rFact='🐯 Engine data...';
 async function fetchRandomFact(){try{const apis=['https://uselessfacts.jsph.pl/api/v2/facts/random?language=en','https://catfact.ninja/fact','https://api.chucknorris.io/jokes/random'];const r=await fetch(apis[Math.floor(Math.random()*3)]);const d=await r.json();return d.text||d.fact||d.value||'🐯'}catch{return'🐯'}}
 async function botCycle(){const el=$('botFact');if(!el)return;if(factIdx%3!==2){const f=[`🟢 Gate: ${$('systemStatusBadge')?.textContent||'GO'} | ${new Date().toLocaleTimeString()}`,`💪 Chuck Norris can divide by zero. The engine just did.`,`📊 Live data. No hardcodes. See the difference?`,`🐱 A cat's purr is at 25Hz. Our engine hums at 6AM.`];el.textContent=f[Math.floor(Math.random()*f.length)]}else{if(!rFact||rFact.startsWith('🐯 Engine'))rFact=await fetchRandomFact();el.textContent=rFact.substring(0,120);rFact=await fetchRandomFact()}factIdx++}

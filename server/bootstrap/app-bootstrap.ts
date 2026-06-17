@@ -29,6 +29,9 @@ import { buildDevAccessRoutes } from '../http/routes/dev-access-routes';
 import { buildHealthRoutes } from '../http/routes/health-routes';
 import { buildLinkedInIntegrationRoutes } from '../http/routes/linkedin-integration-routes';
 import { buildProductRoutes } from '../http/routes/product-routes';
+import { buildExecutionModeRoutes } from '../http/routes/execution-mode-routes';
+import { buildModelRoutes } from '../http/routes/model-routes';
+import { buildTelemetryRoutes } from '../http/routes/telemetry-routes';
 import { Router } from '../http/routes/router';
 import { HttpRequestContext, HttpRoute } from '../http/types';
 
@@ -50,6 +53,9 @@ function createRouter(): Router {
   router.registerMany(buildDevAccessRoutes());
   router.registerMany(buildCatalogRoutes(container.catalogController));
   router.registerMany(buildDecisionRoutes(container.decisionController));
+  router.registerMany(buildExecutionModeRoutes(container.executionModeController));
+  router.registerMany(buildModelRoutes(container.modelController));
+  router.registerMany(buildTelemetryRoutes(container.telemetryController));
 
   return router;
 }

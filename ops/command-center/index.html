@@ -24,6 +24,18 @@ h1{font-size:.9rem;font-weight:500;color:var(--text);letter-spacing:1px;text-tra
 .actions .btn-map:hover{background:rgba(60,100,130,.3)}
 .actions .btn-refresh{background:rgba(70,90,130,.2);color:var(--text)}
 .actions .btn-refresh:hover{background:rgba(70,90,130,.35)}
+.actions .btn-mode{background:rgba(63,185,80,.15);border-color:rgba(63,185,80,.3);color:#3fb950;font-weight:600}
+.actions .btn-mode:hover{background:rgba(63,185,80,.3)}
+.actions .btn-mode.pro{background:rgba(99,120,176,.15);border-color:rgba(99,120,176,.3);color:#6378b0}
+.actions .btn-mode.dev{background:rgba(210,153,34,.15);border-color:rgba(210,153,34,.3);color:#d29922}
+.autonomous-status{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:8px;backdrop-filter:blur(10px)}
+.autonomous-status h2{font-size:.7rem;font-weight:500;color:var(--text-dim);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px}
+.autonomous-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.autonomous-item{background:rgba(15,20,35,.4);border-radius:6px;padding:8px;border-left:3px solid var(--accent)}
+.autonomous-item .label{font-size:.55rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
+.autonomous-item .value{font-size:1rem;font-weight:600;color:var(--text)}
+.autonomous-item .sub{font-size:.5rem;color:var(--text-dim);margin-top:2px}
+.mode-indicator{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;animation:pulse 2s ease-in-out infinite}
 .kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:8px}
 .kpi{background:var(--card-bg);border:1px solid var(--border);border-radius:7px;padding:10px 12px;text-align:center;backdrop-filter:blur(8px)}
 .kpi small{display:block;font-size:.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.6px;margin-bottom:3px}
@@ -87,11 +99,48 @@ footer{font-size:.6rem;color:var(--text-dim);text-align:center;padding:8px 0 0;b
   <div class="actions">
     <button id="notifyBtn" title="Spoiler: todo esta bien... o no">Alerts</button>
     <button id="mapBtn" class="btn-map" onclick="window.open('/project-map.html','_blank')" title="A ver si encuentras algo util aqui">Mapa</button>
+    <button id="modeBtn" class="btn-mode" onclick="window.toggleExecutionMode()" title="Cambiar modo de ejecucion">AUTO</button>
     <button id="refreshBtn" class="btn-refresh" title="Actualizar para ver casi lo mismo">Refresh</button>
   </div>
 </header>
 
 <div class="kpi-row" id="kpiRow"></div>
+
+<section class="autonomous-status">
+  <h2>Autonomous Engine State</h2>
+  <div class="autonomous-grid">
+    <div class="autonomous-item" id="stat-mode">
+      <div class="label">Execution Mode</div>
+      <div class="value" id="modeValue" style="cursor:pointer; color:var(--brand)" onclick="window.toggleExecutionMode()">AUTO</div>
+      <div class="sub" id="modeDesc">Full autonomy</div>
+    </div>
+    <div class="autonomous-item" id="stat-bus">
+      <div class="label">Event Bus</div>
+      <div class="value" id="busEvents">0</div>
+      <div class="sub" id="busSubs">0 active subs</div>
+    </div>
+    <div class="autonomous-item" id="stat-worktrees">
+      <div class="label">Worktrees</div>
+      <div class="value" id="wtActive">0</div>
+      <div class="sub" id="wtTotal">0 total pools</div>
+    </div>
+    <div class="autonomous-item" id="stat-memory">
+      <div class="label">Shared Memory l_s</div>
+      <div class="value" id="memKeys">0</div>
+      <div class="sub" id="memOwner">system owner</div>
+    </div>
+  </div>
+</section>
+
+<section class="resource-management">
+  <h2>Local Model Resources</h2>
+  <div class="resource-grid" id="modelGrid">
+    <!-- Models will be rendered here -->
+  </div>
+  <div class="resource-actions">
+    <button class="btn" onclick="window.showAddModel()">+ Add Local Model</button>
+  </div>
+</section>
 
 <div class="grid-2">
   <section class="card" id="campaignPanel">

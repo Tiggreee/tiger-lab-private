@@ -8,13 +8,24 @@ const EVENT_BUS = resolve('engine/runtime/event-bus.mjs');
 const SKILLS_LOADER = resolve('engine/runtime/skills-loader.mjs');
 const MCP_CONNECTOR = resolve('engine/runtime/mcp-connector.mjs');
 const WORKTREE_POOL = resolve('scripts/git/worktree-pool.mjs');
+const MODES_SCRIPT = resolve('engine/runtime/execution-modes.mjs');
 
-const GUARDRAILS = {
-  MAX_TOKENS_PER_TASK: 50000,
-  MAX_CONSECUTIVE_FAILURES: 3,
-  HARD_TIMEOUT_MS: 5 * 60 * 1000,
-  CHECKPOINT_INTERVAL: 3
-};
+async function getActiveGuardrails() {
+  try {
+    const { execSync } = await import('node:child_process');
+    const result = execSync(`node ${MODES_SCRIPT} --guardrails`, { encoding: 'utf8' });
+    return JSON.parse(result);
+  } catch {
+    return {
+      maxTokensPerTask: 50000,
+      maxConsecutiveFailures: 3,
+      hardTimeoutMs: 300000,
+      checkpointInterval: 3,
+      requiresApproval: false,
+      dryRun: false
+    };
+  }
+}
 
 function loadState() {
   try { return JSON.parse(readFileSync(ORCHESTRATOR_STATE, 'utf8')); } catch { return { tasks: [], nextId: 1, failures: {} }; }
@@ -71,15 +82,16 @@ export async function submitTask(description, context = {}) {
   return task;
 }
 
-function checkGuardrails(task, state) {
-  if (task.tokensUsed > GUARDRAILS.MAX_TOKENS_PER_TASK) {
-    return { blocked: true, reason: 'Token budget exceeded', limit: GUARDRAILS.MAX_TOKENS_PER_TASK };
+async function checkGuardrails(task, state) {
+  const guardrails = await getActiveGuardrails();
+  if (task.tokensUsed > guardrails.maxTokensPerTask) {
+    return { blocked: true, reason: 'Token budget exceeded', limit: guardrails.maxTokensPerTask };
   }
-  if (task.failures >= GUARDRAILS.MAX_CONSECUTIVE_FAILURES) {
-    return { blocked: true, reason: 'Consecutive failure limit reached', limit: GUARDRAILS.MAX_CONSECUTIVE_FAILURES };
+  if (task.failures >= guardrails.maxConsecutiveFailures) {
+    return { blocked: true, reason: 'Consecutive failure limit reached', limit: guardrails.maxConsecutiveFailures };
   }
-  if (task.startedAt && (Date.now() - new Date(task.startedAt).getTime()) > GUARDRAILS.HARD_TIMEOUT_MS) {
-    return { blocked: true, reason: 'Hard timeout exceeded', limit: GUARDRAILS.HARD_TIMEOUT_MS };
+  if (task.startedAt && (Date.now() - new Date(task.startedAt).getTime()) > guardrails.hardTimeoutMs) {
+    return { blocked: true, reason: 'Hard timeout exceeded', limit: guardrails.hardTimeoutMs };
   }
   return { blocked: false };
 }
@@ -93,7 +105,21 @@ export async function runMaker(taskId) {
   const task = state.tasks.find(t => t.id === taskId);
   if (!task) return { error: `Task not found: ${taskId}` };
 
-  const guardrail = checkGuardrails(task, state);
+  const guardrails = await getActiveGuardrails();
+  if (guardrails.dryRun) {
+    console.log(`[DRY-RUN] Simulating Maker for task ${taskId}...`);
+    task.status = 'maker:done';
+    task.makerResult = {
+      dryRun: true,
+      simulated: true,
+      timestamp: new Date().toISOString()
+    };
+    saveState(state);
+    await emitEvent('agent:completed', { agent: 'maker', taskId, dryRun: true });
+    return task.makerResult;
+  }
+
+  const guardrail = await checkGuardrails(task, state);
   if (guardrail.blocked) {
     task.status = 'blocked';
     task.blockedReason = guardrail.reason;
@@ -144,7 +170,21 @@ export async function runChecker(taskId) {
   if (!task) return { error: `Task not found: ${taskId}` };
   if (!task.makerResult) return { error: 'Maker must run first' };
 
-  const guardrail = checkGuardrails(task, state);
+  const guardrails = await getActiveGuardrails();
+  if (guardrails.dryRun) {
+    console.log(`[DRY-RUN] Simulating Checker for task ${taskId}...`);
+    task.status = 'completed';
+    task.checkerResult = {
+      dryRun: true,
+      verdict: 'PASS (simulated)',
+      timestamp: new Date().toISOString()
+    };
+    saveState(state);
+    await emitEvent('agent:completed', { agent: 'checker', taskId, dryRun: true });
+    return task.checkerResult;
+  }
+
+  const guardrail = await checkGuardrails(task, state);
   if (guardrail.blocked) {
     task.status = 'blocked';
     task.blockedReason = guardrail.reason;
@@ -195,6 +235,20 @@ export async function runChecker(taskId) {
 
 export async function runPipeline(description, context = {}) {
   const task = await submitTask(description, context);
+  
+  const guardrails = await getActiveGuardrails();
+  if (guardrails.requiresApproval) {
+    // Simple implementation: for now, every pipeline in PRO mode requires initial approval
+    task.status = 'awaiting_approval';
+    saveState(loadState());
+    await emitEvent('task:paused', { taskId: task.id, reason: 'Initial approval required' });
+    return {
+      taskId: task.id,
+      status: 'awaiting_approval',
+      message: 'Task paused for user approval'
+    };
+  }
+
   await runMaker(task.id);
   const checkResult = await runChecker(task.id);
   return {
@@ -205,7 +259,26 @@ export async function runPipeline(description, context = {}) {
   };
 }
 
-export function getTask(taskId) {
+export async function resumeTask(taskId) {
+  const state = loadState();
+  const task = state.tasks.find(t => t.id === taskId);
+  if (!task) return { error: `Task not found: ${taskId}` };
+  if (task.status !== 'awaiting_approval') return { error: `Task is not awaiting approval. Status: ${task.status}` };
+
+  task.status = 'pending';
+  saveState(state);
+  
+  // Resume the pipeline from where it left off
+  // In a real system, we'd track the exact step, but here we just run the pipeline logic
+  await runMaker(task.id);
+  const checkResult = await runChecker(task.id);
+  
+  return {
+    taskId: task.id,
+    verdict: checkResult.verdict,
+    status: 'completed'
+  };
+}
   const state = loadState();
   return state.tasks.find(t => t.id === taskId) || null;
 }
@@ -225,7 +298,7 @@ export function stats() {
   return {
     total: state.tasks.length,
     byStatus,
-    guardrails: GUARDRAILS,
+    // guardrails: GUARDRAILS, // Removed hardcoded GUARDRAILS
     totalTokensUsed: state.tasks.reduce((sum, t) => sum + (t.tokensUsed || 0), 0),
     totalFailures: state.tasks.reduce((sum, t) => sum + (t.failures || 0), 0)
   };
@@ -234,32 +307,36 @@ export function stats() {
 const args = process.argv.slice(2);
 
 if (args.includes('--run')) {
-  const description = args[args.indexOf('--run') + 1] || 'Test task';
-  runPipeline(description).then(r => console.log(JSON.stringify(r, null, 2)));
-} else if (args.includes('--submit')) {
-  const description = args[args.indexOf('--submit') + 1] || 'Test task';
-  submitTask(description).then(t => console.log(JSON.stringify(t, null, 2)));
-} else if (args.includes('--maker')) {
-  const id = parseInt(args[args.indexOf('--maker') + 1]);
-  runMaker(id).then(r => console.log(JSON.stringify(r, null, 2)));
-} else if (args.includes('--checker')) {
-  const id = parseInt(args[args.indexOf('--checker') + 1]);
-  runChecker(id).then(r => console.log(JSON.stringify(r, null, 2)));
-} else if (args.includes('--get')) {
-  const id = parseInt(args[args.indexOf('--get') + 1]);
-  console.log(JSON.stringify(getTask(id), null, 2));
-} else if (args.includes('--list')) {
-  const status = args[args.indexOf('--list') + 1];
-  console.log(JSON.stringify(listTasks(status === '--' ? null : status), null, 2));
-} else if (args.includes('--stats')) {
-  console.log(JSON.stringify(stats(), null, 2));
-} else {
-  console.log('Orchestrator — Maker/Checker sub-agent pipeline');
-  console.log('  --run <description>       Full pipeline: submit → maker → checker');
-  console.log('  --submit <description>    Submit task only');
-  console.log('  --maker <taskId>          Run maker on task');
-  console.log('  --checker <taskId>        Run checker on task');
-  console.log('  --get <taskId>            Get task details');
-  console.log('  --list [status]           List tasks');
-  console.log('  --stats                   Show orchestrator statistics');
-}
+    const description = args[args.indexOf('--run') + 1] || 'Test task';
+    runPipeline(description).then(r => console.log(JSON.stringify(r, null, 2)));
+  } else if (args.includes('--submit')) {
+    const description = args[args.indexOf('--submit') + 1] || 'Test task';
+    submitTask(description).then(t => console.log(JSON.stringify(t, null, 2)));
+  } else if (args.includes('--resume')) {
+    const id = parseInt(args[args.indexOf('--resume') + 1]);
+    resumeTask(id).then(r => console.log(JSON.stringify(r, null, 2)));
+  } else if (args.includes('--maker')) {
+    const id = parseInt(args[args.indexOf('--maker') + 1]);
+    runMaker(id).then(r => console.log(JSON.stringify(r, null, 2)));
+  } else if (args.includes('--checker')) {
+    const id = parseInt(args[args.indexOf('--checker') + 1]);
+    runChecker(id).then(r => console.log(JSON.stringify(r, null, 2)));
+  } else if (args.includes('--get')) {
+    const id = parseInt(args[args.indexOf('--get') + 1]);
+    console.log(JSON.stringify(getTask(id), null, 2));
+  } else if (args.includes('--list')) {
+    const status = args[args.indexOf('--list') + 1];
+    console.log(JSON.stringify(listTasks(status === '--' ? null : status), null, 2));
+  } else if (args.includes('--stats')) {
+    console.log(JSON.stringify(stats(), null, 2));
+  } else {
+    console.log('Orchestrator — Maker/Checker sub-agent pipeline');
+    console.log('  --run <description>       Full pipeline: submit → maker → checker');
+    console.log('  --submit <description>    Submit task only');
+    console.log('  --resume <taskId>         Resume a paused task');
+    console.log('  --maker <taskId>          Run maker on task');
+    console.log('  --checker <taskId>        Run checker on task');
+    console.log('  --get <taskId>            Get task details');
+    console.log('  --list [status]           List tasks');
+    console.log('  --stats                   Show orchestrator statistics');
+  }
