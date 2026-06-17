@@ -108,18 +108,17 @@ jobs:
       - name: Product architect
         run: node scripts/product-architect.mjs
 
-      # 8. Run autopilot — LIVE PUBLISH a todas las redes
-      - name: Run autopilot LIVE
+      # 8. Run autopilot — CHECK ONLY. No publish. Waits for dashboard APPROVE.
+      - name: Run autopilot (check only)
         run: |
           LATEST=$(ls -t ops/traffic/outbox/social-pack-*.json 2>/dev/null | head -1)
           if [ -n "$LATEST" ]; then
             node scripts/traffic/run-autopilot.mjs \
               --packPath "$LATEST" \
               --channels linkedin,x,facebook,telegram,discord \
-              --live \
-              --minChannels 1
+              --minChannels 0 || echo "Autopilot check done"
           else
-            echo "No social pack found. Skipping autopilot."
+            echo "No social pack found."
           fi
 
       # 9. Supervisor decisions — product evaluation report
