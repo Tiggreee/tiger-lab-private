@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { execSync } from 'node:child_process';
 
 const CATALOG_PATH = path.resolve('ops/catalog/products.json');
 const BENCHMARKS_PATH = path.resolve('ops/catalog/benchmarks.json');
@@ -8,6 +9,17 @@ const SCORES_PATH = path.resolve('ops/runtime/product-scores.json');
 const ROADMAPS_PATH = path.resolve('ops/runtime/product-roadmaps.json');
 const HISTORY_PATH = path.resolve('ops/runtime/product-score-history.json');
 const DASHBOARD_PATH = path.resolve('ops/runtime/dashboard-unified.json');
+const MODULE_ALERTS_PATH = path.resolve('ops/runtime/module-bypass-alerts.json');
+const WAVE_PLAN_PATH = path.resolve('ops/runtime/product-wave-plan.json');
+
+const ORCHESTRATION_MODULES = [
+  { id: 'design', command: 'node scripts/product-architect.mjs', stage: 'design', optional: true },
+  { id: 'development', command: 'node scripts/generate-product.mjs --dryRun', stage: 'development', optional: true },
+  { id: 'market-foundation', command: 'node scripts/analyze-monetization.mjs', stage: 'foundation', optional: true },
+  { id: 'security-foundation', command: 'node scripts/verify-systems.mjs', stage: 'foundation', optional: true },
+];
+
+const PROTECTED_KEYWORDS = ['billing', 'checkout', 'auth', 'prod:gate', 'production-go-no-go'];
 
 const DIMENSIONS = [
   { id: 'market_fit', label: 'Market Fit', weight: 0.20 },
@@ -71,6 +83,184 @@ const BENCHMARKS = {
 function loadJSON(p) {
   try { return JSON.parse(fs.readFileSync(p, 'utf8')); }
   catch { return null; }
+}
+
+function isProtectedModule(moduleDef) {
+  const haystack = `${moduleDef.id} ${moduleDef.command}`.toLowerCase();
+  return PROTECTED_KEYWORDS.some((keyword) => haystack.includes(keyword));
+}
+
+function runOrchestrationModules({ failOpen = true, skipExecution = false } = {}) {
+  const startedAt = new Date().toISOString();
+  const alerts = [];
+  const modules = [];
+
+  for (const moduleDef of ORCHESTRATION_MODULES) {
+    if (isProtectedModule(moduleDef)) {
+      alerts.push({
+        type: 'module_blocked_by_policy',
+        moduleId: moduleDef.id,
+        severity: 'critical',
+        message: `Blocked protected module '${moduleDef.id}' from fail-open orchestration.`
+      });
+      modules.push({
+        ...moduleDef,
+        status: 'blocked',
+        bypassed: false,
+        reason: 'protected-by-runtime-hardening'
+      });
+      continue;
+    }
+
+    if (skipExecution) {
+      modules.push({ ...moduleDef, status: 'skipped', bypassed: false, reason: 'summary-only-mode' });
+      continue;
+    }
+
+    try {
+      execSync(moduleDef.command, {
+        cwd: process.cwd(),
+        stdio: 'pipe',
+        encoding: 'utf8',
+        timeout: 120000,
+      });
+      modules.push({ ...moduleDef, status: 'ok', bypassed: false });
+    } catch (error) {
+      const message = error instanceof Error ? error.message : 'unknown module execution error';
+      const bypassed = failOpen && moduleDef.optional;
+      modules.push({
+        ...moduleDef,
+        status: bypassed ? 'bypassed' : 'failed',
+        bypassed,
+        reason: message.slice(0, 300)
+      });
+      alerts.push({
+        type: bypassed ? 'module_bypassed' : 'module_failed',
+        moduleId: moduleDef.id,
+        severity: bypassed ? 'warn' : 'critical',
+        message: bypassed
+          ? `Module '${moduleDef.id}' failed and was bypassed to keep flow active.`
+          : `Module '${moduleDef.id}' failed and stopped orchestration.`,
+      });
+
+      if (!bypassed) {
+        fs.writeFileSync(MODULE_ALERTS_PATH, JSON.stringify({
+          generatedAt: new Date().toISOString(),
+          startedAt,
+          failOpen,
+          flowStatus: 'stopped',
+          alerts,
+          modules,
+        }, null, 2));
+        throw error;
+      }
+    }
+  }
+
+  const flowStatus = modules.some((m) => m.status === 'failed') ? 'degraded' : 'active';
+  const report = {
+    generatedAt: new Date().toISOString(),
+    startedAt,
+    failOpen,
+    flowStatus,
+    alerts,
+    modules,
+    summary: {
+      total: modules.length,
+      ok: modules.filter((m) => m.status === 'ok').length,
+      bypassed: modules.filter((m) => m.status === 'bypassed').length,
+      blocked: modules.filter((m) => m.status === 'blocked').length,
+      failed: modules.filter((m) => m.status === 'failed').length,
+      skipped: modules.filter((m) => m.status === 'skipped').length,
+    }
+  };
+
+  fs.writeFileSync(MODULE_ALERTS_PATH, JSON.stringify(report, null, 2));
+  return report;
+}
+
+function toHybridId(a, b, index) {
+  const slugA = a.product.id.replace(/[^a-z0-9-]/gi, '-');
+  const slugB = b.product.id.replace(/[^a-z0-9-]/gi, '-');
+  return `hybrid-${slugA}-${slugB}-${index + 1}`.toLowerCase();
+}
+
+function buildWavePlan(allResults) {
+  const maxProducts = 21;
+  const completed = allResults.filter((r) => r.score >= 90);
+  const fallbackPool = allResults.filter((r) => r.score < 90);
+  const queue = [...completed, ...fallbackPool];
+
+  const waves = [];
+  let pointer = 0;
+  let totalPlanned = 0;
+
+  while (pointer < queue.length && totalPlanned < maxProducts) {
+    const waveIndex = waves.length;
+    const baseSlots = Math.min(5, maxProducts - totalPlanned);
+    const baseProducts = queue.slice(pointer, pointer + baseSlots);
+    pointer += baseProducts.length;
+    totalPlanned += baseProducts.length;
+
+    const hybrids = [];
+    if (baseProducts.length >= 2) {
+      const pairA = [baseProducts[0], baseProducts[1]];
+      hybrids.push({
+        id: toHybridId(pairA[0], pairA[1], 0),
+        name: `${pairA[0].product.name} x ${pairA[1].product.name}`,
+        sourceProducts: [pairA[0].product.id, pairA[1].product.id],
+        type: 'hybrid',
+        stage: 'concept'
+      });
+    }
+    if (baseProducts.length >= 4 && totalPlanned + hybrids.length < maxProducts) {
+      const pairB = [baseProducts[2], baseProducts[3]];
+      hybrids.push({
+        id: toHybridId(pairB[0], pairB[1], 1),
+        name: `${pairB[0].product.name} x ${pairB[1].product.name}`,
+        sourceProducts: [pairB[0].product.id, pairB[1].product.id],
+        type: 'hybrid',
+        stage: 'concept'
+      });
+    }
+
+    const trimmedHybrids = hybrids.slice(0, Math.max(0, Math.min(2, maxProducts - totalPlanned)));
+    totalPlanned += trimmedHybrids.length;
+
+    waves.push({
+      wave: waveIndex + 1,
+      products: baseProducts.map((r) => ({
+        id: r.product.id,
+        name: r.product.name,
+        score: r.score,
+        status: r.product.status,
+        completion: r.score >= 90 ? 'finished' : 'working'
+      })),
+      hybrids: trimmedHybrids,
+      totals: {
+        products: baseProducts.length,
+        hybrids: trimmedHybrids.length,
+        waveTotal: baseProducts.length + trimmedHybrids.length,
+      }
+    });
+  }
+
+  return {
+    generatedAt: new Date().toISOString(),
+    policy: {
+      productsPerWave: 5,
+      hybridsPerWave: 2,
+      maxProducts: 21
+    },
+    totals: {
+      waves: waves.length,
+      plannedProducts: waves.reduce((acc, w) => acc + w.totals.products, 0),
+      plannedHybrids: waves.reduce((acc, w) => acc + w.totals.hybrids, 0),
+      plannedOverall: waves.reduce((acc, w) => acc + w.totals.waveTotal, 0),
+      completedInputProducts: completed.length,
+    },
+    waves,
+  };
 }
 
 function classifyScore(score) {
@@ -214,6 +404,14 @@ function generateRoadmap(product, score, benchmarks) {
 }
 
 async function main() {
+  const summaryOnly = process.argv.includes('--summary-only');
+  const strictModules = process.argv.includes('--strict-modules');
+
+  const moduleReport = runOrchestrationModules({
+    failOpen: !strictModules,
+    skipExecution: summaryOnly,
+  });
+
   // Support R&D pipeline input — score INVEST ideas alongside existing products
   const rndInput = process.argv.includes('--rnd-input') ? process.argv[process.argv.indexOf('--rnd-input') + 1] : null;
   let rndProducts = [];
@@ -325,6 +523,9 @@ async function main() {
 
   fs.writeFileSync(SCORES_PATH, JSON.stringify(report, null, 2));
 
+  const wavePlan = buildWavePlan(allResults);
+  fs.writeFileSync(WAVE_PLAN_PATH, JSON.stringify(wavePlan, null, 2));
+
   const roadmaps = {};
   for (const r of allResults) roadmaps[r.product.id] = r.roadmap;
   fs.writeFileSync(ROADMAPS_PATH, JSON.stringify(roadmaps, null, 2));
@@ -364,9 +565,26 @@ async function main() {
       target95: report.priorityQueue.p1_target_95.map(r => r.product.name),
       engineReady: report.priorityQueue.p0_engine_ready.map(r => r.product.name),
     }
+    ,
+    moduleHealth: {
+      flowStatus: moduleReport.flowStatus,
+      failOpen: moduleReport.failOpen,
+      alerts: moduleReport.alerts.length,
+      bypassedModules: moduleReport.summary.bypassed,
+      failedModules: moduleReport.summary.failed,
+    },
+    wavePlan: {
+      waves: wavePlan.totals.waves,
+      plannedOverall: wavePlan.totals.plannedOverall,
+      plannedProducts: wavePlan.totals.plannedProducts,
+      plannedHybrids: wavePlan.totals.plannedHybrids,
+      maxProducts: wavePlan.policy.maxProducts,
+    }
   };
   fs.writeFileSync(DASHBOARD_PATH, JSON.stringify(dash, null, 2));
   console.log(`\nDashboard data updated.`);
+  console.log(`Module health: ${moduleReport.flowStatus} | bypassed ${moduleReport.summary.bypassed} | failed ${moduleReport.summary.failed}`);
+  console.log(`Wave plan: ${wavePlan.totals.waves} waves | ${wavePlan.totals.plannedProducts} products + ${wavePlan.totals.plannedHybrids} hybrids (max ${wavePlan.policy.maxProducts})`);
 }
 
 main().catch(err => { console.error(`FATAL: ${err.message}`); process.exit(1); });

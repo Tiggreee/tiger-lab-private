@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-06-17T02:31:13.763Z",
+  "policy": {
+    "productsPerWave": 5,
+    "hybridsPerWave": 2,
+    "maxProducts": 21
+  },
+  "totals": {
+    "waves": 1,
+    "plannedProducts": 5,
+    "plannedHybrids": 2,
+    "plannedOverall": 7,
+    "completedInputProducts": 0
+  },
+  "waves": [
+    {
+      "wave": 1,
+      "products": [
+        {
+          "id": "docflow-api",
+          "name": "Docflow API",
+          "score": 84,
+          "status": "active",
+          "completion": "working"
+        },
+        {
+          "id": "script-premium-kit",
+          "name": "Script Premium Kit",
+          "score": 84,
+          "status": "active",
+          "completion": "working"
+        },
+        {
+          "id": "facturautentico-cloud",
+          "name": "FacturAutentico Cloud",
+          "score": 56,
+          "status": "paused",
+          "completion": "working"
+        },
+        {
+          "id": "facturautentico",
+          "name": "FacturAutentica",
+          "score": 56,
+          "status": "paused",
+          "completion": "working"
+        },
+        {
+          "id": "sentrylog-lite",
+          "name": "Sentrylog Lite",
+          "score": 38,
+          "status": "planned",
+          "completion": "working"
+        }
+      ],
+      "hybrids": [
+        {
+          "id": "hybrid-docflow-api-script-premium-kit-1",
+          "name": "Docflow API x Script Premium Kit",
+          "sourceProducts": [
+            "docflow-api",
+            "script-premium-kit"
+          ],
+          "type": "hybrid",
+          "stage": "concept"
+        },
+        {
+          "id": "hybrid-facturautentico-cloud-facturautentico-2",
+          "name": "FacturAutentico Cloud x FacturAutentica",
+          "sourceProducts": [
+            "facturautentico-cloud",
+            "facturautentico"
+          ],
+          "type": "hybrid",
+          "stage": "concept"
+        }
+      ],
+      "totals": {
+        "products": 5,
+        "hybrids": 2,
+        "waveTotal": 7
+      }
+    }
+  ]
+}

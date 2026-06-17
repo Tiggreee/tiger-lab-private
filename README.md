@@ -23,30 +23,41 @@ This is not a proof-of-concept. This is an operational system ready to generate 
 | **Automation** | 🟢 ON | 6 AM daily pipeline + event persistence | Leads scored, campaigns published |
 | **Gate Status** | 🟢 GO | 18/18 checks PASS. No contradictions. | Release-ready. |
 
-### Automated Revenue Loop (No Human Steps)
+### Verified Automation Status (Code-Backed)
 
-**Full end-to-end automation:** Lead enrichment → Scoring → Campaign generation → Email send → Response tracking → Auto-qualification → Checkout → Provisioning (all automated).
+**Implemented and verifiable in code:**
+- ✅ Lead enrichment in SQLite via OpenStreetMap (`engine/leads/lead-engine.mjs`)
+- ✅ Campaign asset generation to files (`engine/campaigns/campaign-materializer.mjs`)
+- ✅ Channel copy adaptation/routing logic (`engine/campaigns/campaign-router.mjs`)
+- ✅ Billing endpoints for checkout + Stripe/PayPal webhooks (`server/http/routes/billing-routes.ts`)
+- ✅ Billing controller handling register, webhook verify, and provision (`server/http/controllers/BillingController.ts`)
 
-See [engine/AUTOMATED_REVENUE_LOOP.md](engine/AUTOMATED_REVENUE_LOOP.md) for:
-- 7-stage pipeline (enrichment through provisioning)
-- Current automation status (what's ready, what's blocked)
-- How to activate it (3 steps: SendGrid API key + enable email + run test)
-- Expected revenue: 3 payments from 100 hot leads in <24 hours
+**Important limitations (also in code):**
+- ⚠️ Lead intelligence currently generates outreach text and simulates progression; it does not execute real outreach by itself (`engine/leads/lead-intelligence.mjs`).
+- ⚠️ Provisioning uses in-memory ports/default adapters unless external services are configured (`server/bootstrap/dependency-container.ts`, `src/shared/infrastructure/bootstrap/dependency-container.ts`).
+- ⚠️ No outbound phone-call bot is implemented.
 
-**What's Ready Now:**
-- ✅ Lead enrichment (OpenStreetMap, daily)
-- ✅ Lead scoring (based on fit + urgency)
-- ✅ Campaign generation (email templates, social posts)
-- ✅ Checkout links (auto-generated per lead)
-- ✅ Stripe/PayPal webhooks (auto-provision on payment)
-- ✅ SalesBot chat (15-min auto-booked for replies)
+**Policy:** no timeline or revenue promises are stated here unless validated by runtime evidence.
 
-**What's Blocked:**
-- ⏳ Email sending (needs SendGrid API key)
-- ⏳ Social posting (needs LinkedIn, X, Facebook tokens)
-- ⏳ WhatsApp fallback (needs WhatsApp Business account)
+### Module Fail-Open + Wave Policy
 
-**Timeline:** Minimum viable setup (email only) = 15 minutes. First revenue = <24 hours from setup.
+- Default behavior in product orchestration is **fail-open for non-critical modules** (design/development/foundation): if one module fails, it is bypassed, an alert is recorded, and flow stays active.
+- Protected surfaces are never bypassed by this mechanism (billing/auth/checkout/prod gate).
+- Runtime evidence files:
+	- `ops/runtime/module-bypass-alerts.json`
+	- `ops/runtime/product-wave-plan.json`
+- Wave planning policy:
+	- `5` products finished/working per wave
+	- `+2` hybrid ideas per wave from completed products
+	- `21` max total products planned
+
+Run:
+
+```bash
+npm run prod:engine
+# strict mode (no bypass)
+node scripts/product-development-engine.mjs --strict-modules
+```
 
 ---
 
@@ -211,22 +222,20 @@ ops/                 → Runtime evidence, dashboards, playbooks
 
 **✅ Strengths:**
 - Real data (2000 leads in DB, not mock).
-- Fully automated pipeline (6 AM daily).
-- 24 agents proven active + tracked.
+- Lead enrichment + campaign asset generation are implemented.
+- Billing routes and webhook handlers for Stripe/PayPal are implemented.
 - Gate enforces release discipline.
-- Dashboard shows real KPIs + agent health.
-- Dual pricing + checkout working.
-- Stripe + PayPal integrated.
+- Dashboard exposes runtime KPIs + agent health.
 
 **⚠️ Critical Path Items:**
-1. **First payment must be reconciled** (payment → invoice → account → API key). That's the signal.
-2. **Lead conversion path must be measured** (2000 leads → 100 discovery calls → 5-10 pilots).
-3. **MCP simplification** (activate only Memory + Fetch + Sequential for MVP).
+1. **First payment must be reconciled** (payment → invoice evidence → account/provision trace).
+2. **Real outreach execution must be wired** (email/social delivery adapters + tokens/secrets).
+3. **MCP activation must be evidence-based** (enable only servers that are tested end-to-end).
 
 **🎯 Go-Live Decision:**
-- **GO if:** 1-2 paid pilots + payment reconciliation confirmed + CAC <$50.
-- **NO_GO if:** Zero discovery calls booked OR zero leads enriched after Week 1.
-- **GO_WITH_WARNINGS if:** Leads stuck at scoring (not reaching outreach).
+- **GO if:** payment webhook flow is verified in production and provisioning evidence exists for a paid event.
+- **NO_GO if:** no verifiable payment-to-provision trace exists.
+- **GO_WITH_WARNINGS if:** billing works but delivery adapters (email/social) are still partially manual.
 
 ---
 
