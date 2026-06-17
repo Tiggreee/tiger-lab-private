@@ -17,6 +17,8 @@ const requiredFiles = [
   'agent-tiggreeeon.yaml',
 ];
 
+const allowedExtensions = new Set(['.yaml', '.yml']);
+
 const requiredRootKeys = [
   'name',
   'version',
@@ -144,6 +146,10 @@ function getBooleanFlag(content, keyPath, expected) {
 if (!fs.existsSync(agentsDir)) {
   errors.push('Missing directory .github/copilot/agents');
 } else {
+  const discoveredFiles = fs.readdirSync(agentsDir)
+    .filter((file) => allowedExtensions.has(path.extname(file).toLowerCase()))
+    .sort();
+
   for (const file of requiredFiles) {
     const fullPath = path.join(agentsDir, file);
     const content = read(fullPath);
@@ -222,6 +228,62 @@ if (!fs.existsSync(agentsDir)) {
             errors.push(`${file}: missing handoffs.${key}`);
           }
         }
+      }
+    }
+  }
+
+  for (const file of discoveredFiles) {
+    if (requiredFiles.includes(file)) {
+      continue;
+    }
+
+    const fullPath = path.join(agentsDir, file);
+    const content = read(fullPath);
+
+    if (content === null) {
+      errors.push(`Cannot read discovered agent file: ${path.join('.github/copilot/agents', file)}`);
+      continue;
+    }
+
+    for (const key of requiredRootKeys) {
+      if (!hasRootKey(content, key)) {
+        errors.push(`${file}: missing root key '${key}'`);
+      }
+    }
+
+    const mission = getScalar(content, 'mission');
+    if (!mission) {
+      errors.push(`${file}: mission must not be empty`);
+    } else if (missions.has(mission)) {
+      errors.push(`${file}: mission duplicates ${missions.get(mission)}`);
+    } else {
+      missions.set(mission, file);
+    }
+
+    const scopeInclude = getNestedArrayBlock(content, 'scope', 'include');
+    if (scopeInclude.length === 0) {
+      errors.push(`${file}: scope.include must contain at least one path`);
+    }
+
+    const inputs = getArrayBlock(content, 'inputs');
+    if (inputs.length === 0) {
+      errors.push(`${file}: inputs must contain at least one item`);
+    }
+
+    const outputs = getArrayBlock(content, 'outputs');
+    if (outputs.length === 0) {
+      errors.push(`${file}: outputs must contain at least one item`);
+    }
+
+    const successCriteria = getArrayBlock(content, 'success_criteria');
+    if (successCriteria.length === 0) {
+      errors.push(`${file}: success_criteria must contain at least one item`);
+    }
+
+    const caps = getArrayBlock(content, 'capabilities');
+    for (const cap of standardCapabilities) {
+      if (!caps.includes(cap)) {
+        errors.push(`${file}: missing capability '${cap}'`);
       }
     }
   }

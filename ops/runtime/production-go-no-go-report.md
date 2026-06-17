@@ -1,8 +1,8 @@
 # Production Go/No-Go Report
 
-- generatedAt: 2026-06-17T00:09:51.080Z
+- generatedAt: 2026-06-17T00:32:22.408Z
 - gateStatus: GO
-- summary: PASS 15 | WARN 0 | FAIL 0
+- summary: PASS 18 | WARN 0 | FAIL 0
 
 ## Checks
 
@@ -39,6 +39,12 @@
 - P15 Integridad de evidencia runtime (sin placeholders/samples): PASS
   details: No se detectaron placeholders ni IDs sample en evidencia operativa.
   ownerAction: Sin accion.
+- P17 Freshness de evidencia de release: PASS
+  details: Reporte reciente (0.0h).
+  ownerAction: Sin accion.
+- P18 Consistencia de status en README: PASS
+  details: README sin contradicciones criticas detectadas.
+  ownerAction: Sin accion.
 - P8 Pruebas criticas de humo: PASS
   details: test:smoke OK.
   ownerAction: Sin accion.
@@ -50,6 +56,9 @@
   ownerAction: Sin accion.
 - P14 Railway deploy status: PASS
   details: Railway: success
+  ownerAction: Sin accion.
+- P16 Validacion de gobernanza de agentes: PASS
+  details: check:copilot:agents OK.
   ownerAction: Sin accion.
 
 ## Owner Next Actions

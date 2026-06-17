@@ -38,6 +38,17 @@ ac(checks, 'P14', 'Railway deploy status', 'high', () => {
   return { status: last === 'success' ? 'PASS' : 'WARN', details: `Railway: ${last}`, evidence: ['.github/workflows/backend-railway-deploy.yml'], ownerAction: last === 'success' ? 'Sin accion.' : 'Revisar Railway logs.' };
 });
 
+ac(checks, 'P16', 'Validacion de gobernanza de agentes', 'critical', () => {
+  if (!runChecks) return { status: 'WARN', details: 'No se ejecutaron comandos (--no-commands).', evidence: ['npm run check:copilot:agents'], ownerAction: 'Ejecutar validacion de agentes.' };
+  const r = sh('npm', ['run', 'check:copilot:agents']);
+  return {
+    status: r.ok ? 'PASS' : 'FAIL',
+    details: r.ok ? 'check:copilot:agents OK.' : 'check:copilot:agents fallo.',
+    evidence: ['npm run check:copilot:agents'],
+    ownerAction: r.ok ? 'Sin accion.' : 'Corregir definiciones YAML de agentes antes de release.'
+  };
+});
+
 const report = generateReport(checks, strict);
 const outDir = path.join(root, 'ops', 'runtime');
 fs.mkdirSync(outDir, { recursive: true });

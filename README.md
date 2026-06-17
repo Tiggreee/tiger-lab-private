@@ -12,13 +12,13 @@
 |---|---|---|
 | Pipeline | Corriendo 6 AM diario | ✅ Autónomo |
 | Campañas | 2 listas (Docflow + Script Kit) | ✅ 100% quality |
-| Checkout | Dual MX ($349) / US ($19) | ✅ Stripe + PayPal |
+| Checkout | Dual MX ($349) / US ($19) | ⚠️ Servicios implementados; secrets live pendientes |
 | API Docflow | Funcional — key gen + docs + scripts | ✅ OPERATIONAL |
 | Client Portal | Post-pago interactivo | ✅ Live data |
 | Leads | 2000 (1000 MX + 1000 US) | ✅ SQLite |
 | R&D | 25 especialistas activos | ✅ EU + MX + US |
 | LinkedIn | Publica en página empresa | ✅ ORG_ID fix |
-| MCP | 8 servers funcionales | ✅ Memory activo |
+| MCP | 20 servidores catalogados + 48 tools propias | ⚠️ Externos no cableados |
 | Event DB | 8 tablas SQL | ✅ Logger activo |
 | Revenue | $0 | ⏳ OBJ-01 |
 
@@ -39,28 +39,28 @@
 |---|---|---|
 | **Bot** | Script simple que hace UNA tarea repetitiva. No decide, ejecuta. | `dashboard-monitor.mjs` — revisa salud cada 15 min. `campaign-cleaner.mjs` — borra duplicados. |
 | **Agent** | Sistema que percibe, decide y actúa. Tiene memoria y objetivos. | `CreativeAgent` — diseña campañas, aprende de resultados. `ProductRDAgent` — investiga mercado EU. |
-| **MCP Server** | Protocolo estándar para que IAs usen herramientas externas. JSON-RPC. | `mcp-client.mjs` — conecta 8 servers externos (Memory, Fetch, etc). Nuestros 48 MCP tools en `ops/mcp/`. |
+| **MCP Server** | Protocolo estándar para que IAs usen herramientas externas. JSON-RPC. | Registro externo con 20 candidatos en `ops/mcp/external-registry.json` y 48 tools propias repartidas en 3 registries JSON en `ops/mcp/`. |
 
 **¿Lo estamos usando bien?**
 - Bots: ✅ Sí. Tareas repetitivas automatizadas.
 - Agents: ⚠️ Parcial. Hay definiciones (.agent.md) y ejecutables (.mjs) pero no todos están conectados al pipeline.
-- MCP: ⚠️ Parcial. Los 48 tools propios son specs (JSON). Los 8 externos son funcionales pero solo 1 (Memory) está activo en flujo. Los demás esperan wiring.
+- MCP: ⚠️ Parcial. Las 48 tools propias existen como specs operativas. El registro externo tiene 20 servidores catalogados y hoy ninguno está marcado como `enabled` o `functional` en runtime.
 
 ## Comparativa: Inicio vs Hoy (13 Junio 2026)
 
 | Indicador | Inicio | Hoy | Delta |
 |-----------|--------|-----|-------|
 | Engine LED | 🔴 ROJO | 🟢 VERDE | ✅ |
-| Gate | GO_WITH_WARNINGS | GO (14/14) | ✅ |
+| Gate | GO_WITH_WARNINGS | Gate endurecido con truth checks | ✅ |
 | DB Leads | 68 empresas MX | 2000 (1000 MX + 1000 US) | +1932 |
 | Pipeline contacts | 0 | 10,000 (2000 × 5) | +10,000 |
 | LinkedIn | ❌ Bloqueado | ✅ Posting LIVE | ✅ |
-| Stripe | ❌ Sin keys | ✅ sk_live_ keys | ✅ |
-| PayPal | ❌ Sin keys | ✅ Live keys | ✅ |
+| Stripe | ❌ Sin keys | ⚠️ Servicio implementado, secrets live por confirmar | ✅ |
+| PayPal | ❌ Sin keys | ⚠️ Servicio implementado, secrets live por confirmar | ✅ |
 | Revenue real | $0 | $0 (listo para cobrar) | ⏳ |
 | Agents activos | 22 parcial | 12/12 startup PASS | ✅ |
 | Agent total | 22 | 35 (33 reg + 2 R&D) | +13 |
-| MCP Tools | 0 | 40 (32 lead + 8 ops) | +40 |
+| MCP Tools | 0 | 48 (lead + ops + R&D) | +48 |
 | R&D Teams | 0 | 3 (MX 10 + US 10 + INTL 5) | +25 |
 | Product avg | 64/100 | 64/100 (FacturAut 56, Sentrylog 38) | ⏳ |
 | Dashboard | Básico | Power BI + Bot + Agentes | ✅ |
@@ -77,13 +77,13 @@
 
 | Indicador | Status | Detalle |
 |-----------|--------|---------|
-| Gate | 🟢 GO | 14/14 PASS |
+| Gate | 🟢 GO | `npm run prod:gate` es la fuente de verdad vigente |
 | Engine Startup | 🟢 12/12 | All agents green |
 | Leads | 🟢 2000 | 1000 MX (INEGI) + 1000 US (SBA/YC) |
 | Pipeline | 🟢 10K | 2000 empresas × 5 contactos |
 | LinkedIn | 🟢 LIVE | Posting automático |
-| Stripe + PayPal | 🟢 LIVE | sk_live_ keys configuradas |
-| Dashboard | 🟢 LIVE | http://localhost:4310 |
+| Stripe + PayPal | 🟡 IMPLEMENTADO | Requiere confirmación de secrets live y webhooks |
+| Dashboard | 🟢 LIVE | Local en :4310 y UI Railway en producción |
 | R&D | 🟢 3 equipos | 25 especialistas, 7 productos |
 | Costo | 🟢 $5/mes | Solo Railway. GitHub gratis. |
 
@@ -113,6 +113,12 @@ node scripts/lead-engine.mjs --mode export
 # Iniciar Command Center
 npm run command-center:start
 # Abrir http://localhost:4310
+```
+
+Produccion UI:
+
+```text
+https://tiger-lab-private-production.up.railway.app/
 ```
 
 ## Pendientes (ordenados por importancia)

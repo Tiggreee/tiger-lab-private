@@ -13,6 +13,11 @@ function exists(root, relPath) { return fs.existsSync(p(root, relPath)); }
 function readText(root, relPath) { return fs.readFileSync(p(root, relPath), 'utf8'); }
 function readJson(root, relPath) { return JSON.parse(readText(root, relPath)); }
 
+function extractIsoValue(text, key) {
+  const match = text.match(new RegExp(`^${key}:\\s*(.+)$`, 'm'));
+  return match ? match[1].trim() : '';
+}
+
 function countPatternMatches(root, relPath, patterns) {
   if (!exists(root, relPath)) return { file: relPath, matches: 0 };
   const text = readText(root, relPath);
@@ -233,6 +238,72 @@ export function buildStructuralChecks(rootPath) {
       ownerAction: totalMatches === 0
         ? 'Sin accion.'
         : 'Eliminar placeholders/IDs sample en runtime y regenerar evidencia real antes de go-live.',
+    };
+  });
+
+  addCheck('P17', 'Freshness de evidencia de release', 'critical', () => {
+    const reportPath = 'ops/runtime/production-go-no-go-report.md';
+    if (!exists(rootPath, reportPath)) {
+      return {
+        status: 'FAIL',
+        details: 'No existe production-go-no-go-report.md.',
+        evidence: [reportPath],
+        ownerAction: 'Generar evidencia de release antes de go-live.',
+      };
+    }
+
+    const reportText = readText(rootPath, reportPath);
+    const generatedAt = extractIsoValue(reportText, '- generatedAt');
+    const reportDate = generatedAt ? new Date(generatedAt) : null;
+    const now = new Date();
+
+    if (!generatedAt || Number.isNaN(reportDate?.getTime())) {
+      return {
+        status: 'FAIL',
+        details: 'El reporte no incluye un generatedAt valido.',
+        evidence: [reportPath],
+        ownerAction: 'Regenerar reporte con timestamp valido.',
+      };
+    }
+
+    if (reportDate.getTime() > now.getTime() + 60_000) {
+      return {
+        status: 'FAIL',
+        details: `El reporte esta fechado en el futuro: ${generatedAt}.`,
+        evidence: [reportPath],
+        ownerAction: 'Corregir reloj/evidencia y regenerar el gate.',
+      };
+    }
+
+    const ageHours = (now.getTime() - reportDate.getTime()) / 3_600_000;
+    return {
+      status: ageHours <= 24 ? 'PASS' : 'WARN',
+      details: ageHours <= 24 ? `Reporte reciente (${ageHours.toFixed(1)}h).` : `Reporte stale (${ageHours.toFixed(1)}h).`,
+      evidence: [reportPath],
+      ownerAction: ageHours <= 24 ? 'Sin accion.' : 'Regenerar evidencia antes de release.',
+    };
+  });
+
+  addCheck('P18', 'Consistencia de status en README', 'high', () => {
+    const readmePath = 'README.md';
+    const readme = readText(rootPath, readmePath);
+
+    const contradictions = [];
+    if (readme.includes('Stripe + PayPal | 🟢 LIVE') && readme.includes('Configurar Stripe live keys')) {
+      contradictions.push('Stripe aparece LIVE y pendiente al mismo tiempo.');
+    }
+    if (readme.includes('Stripe + PayPal | 🟢 LIVE') && readme.includes('Configurar PayPal live keys')) {
+      contradictions.push('PayPal aparece LIVE y pendiente al mismo tiempo.');
+    }
+    if (readme.includes('MCP | 8 servers funcionales') && readme.includes('MCP: ⚠️ Parcial')) {
+      contradictions.push('MCP aparece funcional y parcial al mismo tiempo.');
+    }
+
+    return {
+      status: contradictions.length === 0 ? 'PASS' : 'FAIL',
+      details: contradictions.length === 0 ? 'README sin contradicciones criticas detectadas.' : contradictions.join(' '),
+      evidence: [readmePath],
+      ownerAction: contradictions.length === 0 ? 'Sin accion.' : 'Corregir claims conflictivos en README antes de release.',
     };
   });
 

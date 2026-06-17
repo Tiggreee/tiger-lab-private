@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-17T00:09:51.080Z",
+  "generatedAt": "2026-06-17T00:32:22.408Z",
   "strict": false,
   "gateStatus": "GO",
   "summary": {
-    "pass": 15,
+    "pass": 18,
     "warn": 0,
     "fail": 0
   },
@@ -158,6 +158,28 @@
       "ownerAction": "Sin accion."
     },
     {
+      "id": "P17",
+      "title": "Freshness de evidencia de release",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "Reporte reciente (0.0h).",
+      "evidence": [
+        "ops/runtime/production-go-no-go-report.md"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P18",
+      "title": "Consistencia de status en README",
+      "severity": "high",
+      "status": "PASS",
+      "details": "README sin contradicciones criticas detectadas.",
+      "evidence": [
+        "README.md"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
       "id": "P8",
       "title": "Pruebas criticas de humo",
       "severity": "critical",
@@ -196,6 +218,17 @@
       "details": "Railway: success",
       "evidence": [
         ".github/workflows/backend-railway-deploy.yml"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P16",
+      "title": "Validacion de gobernanza de agentes",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "check:copilot:agents OK.",
+      "evidence": [
+        "npm run check:copilot:agents"
       ],
       "ownerAction": "Sin accion."
     }
