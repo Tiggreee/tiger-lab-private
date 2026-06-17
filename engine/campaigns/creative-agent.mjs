@@ -70,19 +70,59 @@ function saveMemory(mem) {
 
 function generateCopy(product, channel) {
   const p = PRODUCTS[product] || PRODUCTS['Docflow API'];
-  const ch = CHANNELS[channel];
-  const mem = loadMemory();
-  
+
+  // X: write naturally to fit 280 — no substring + '...'
+  function buildXCopy() {
+    const hl = p.headline.length <= 80 ? p.headline : p.headline.split('.')[0] + '.';
+    const cta = p.cta.length <= 25 ? p.cta : 'Ver más →';
+    const full = `🔥 ${hl}\n✅ ${p.bullets[0]}\n${cta}`;
+    if (full.length <= 280) return full;
+    const short = `🔥 ${hl}\n${cta}`;
+    return short.length <= 280 ? short : `🔥 ${hl.substring(0, 250)}\n${cta}`;
+  }
+
   const templates = {
-    email: () => `${p.headline}\n\n${p.body}\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n${p.cta}`,
-    linkedin: () => `🔥 ${p.headline}\n\n${p.body}\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n💡 ${p.cta}`,
-    x: () => `🔥 ${p.headline}\n${p.bullets.slice(0,2).map(b => `✅ ${b}`).join('\n')}\n${p.cta}`.substring(0, 277) + '...',
-    facebook: () => `🔥 ${p.headline}\n\n${p.body.substring(0, 150)}...\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n${p.cta}`,
-    telegram: () => `*${product}*\n\n${p.headline}\n\n${p.body.substring(0, 200)}...\n\n[${p.cta.replace('→','')}](https://tigerlab.dev)`,
-    discord: () => `**${product}**\n\n${p.headline}\n\n${p.body.substring(0, 200)}...\n\n👉 tigerlab.dev`
+    email: () => [
+      `<div style="font-family:Inter,sans-serif;max-width:600px;margin:auto;padding:24px;color:#1a1a1a">`,
+      `<h1 style="font-size:24px;line-height:1.3;margin-bottom:12px">${p.headline}</h1>`,
+      `<p style="font-size:16px;line-height:1.7;color:#444;margin-bottom:16px">${p.body}</p>`,
+      `<ul style="padding-left:20px;margin-bottom:24px">`,
+      p.bullets.map(b => `<li style="font-size:15px;line-height:1.6;color:#333;margin-bottom:6px">${b}</li>`).join('\n'),
+      `</ul>`,
+      `<a href="https://tigerlab.dev" style="display:inline-block;background:${p.colors?.header || '#6C47FF'};color:#fff;padding:12px 28px;border-radius:6px;text-decoration:none;font-weight:700;font-size:15px">${p.cta}</a>`,
+      `</div>`
+    ].join('\n'),
+    linkedin: () => `🔥 ${p.headline}\n\n${p.body}\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n💡 ${p.cta}\n\n#automatización #pyme #fintech #CFDI`,
+    x: buildXCopy,
+    facebook: () => `🔥 ${p.headline}\n\n${p.body}\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n${p.cta}`,
+    telegram: () => `*${product}*\n\n*${p.headline}*\n\n${p.body}\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n👉 [${p.cta.replace('→', '').trim()}](https://tigerlab.dev)`,
+    discord: () => `**${product}**\n\n**${p.headline}**\n\n${p.body}\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n👉 https://tigerlab.dev`
   };
-  
+
   return (templates[channel] || templates.linkedin)();
+}
+
+function validateCopyOutput(copies) {
+  const errors = [];
+  const warnings = [];
+  for (const ch of Object.keys(CHANNELS)) {
+    if (!copies[ch]) errors.push(`Missing channel: ${ch}`);
+  }
+  if (copies.x && copies.x.length > 280) {
+    errors.push(`X copy exceeds 280 chars (${copies.x.length}). Fix buildXCopy.`);
+  }
+  if (copies.email && !copies.email.includes('<a ')) {
+    warnings.push('Email missing CTA anchor tag');
+  }
+  if (copies.linkedin && copies.linkedin.length < 100) {
+    warnings.push(`LinkedIn too short: ${copies.linkedin.length} chars`);
+  }
+  const firstLines = Object.values(copies).map(c => c.split('\n')[0]);
+  const unique = new Set(firstLines);
+  if (unique.size < firstLines.length) {
+    warnings.push('Some channels share identical first lines — differentiate them');
+  }
+  return { valid: errors.length === 0, errors, warnings };
 }
 
 function generateImagePrompt(product, channel) {
@@ -196,13 +236,27 @@ function createCampaign(product, target, segment = 'contabilidad') {
     images[ch] = { prompt: generateImagePrompt(product, ch), size: CHANNELS[ch].img, generated: false };
   }
   
+  if (!briefing) {
+    process.stderr.write(`[CreativeAgent] ⚠️  No market briefing found for "${product}" / segment "${segment}"\n`);
+    process.stderr.write(`[CreativeAgent]    Run first: node engine/campaigns/market-researcher-agent.mjs --research --product "${product}" --segment ${segment}\n`);
+  }
+
+  const validation = validateCopyOutput(copies);
+  if (!validation.valid) {
+    throw new Error(`Copy validation failed:\n${validation.errors.join('\n')}`);
+  }
+  if (validation.warnings.length > 0) {
+    process.stderr.write(`[CreativeAgent] Copy warnings:\n${validation.warnings.map(w => '  • ' + w).join('\n')}\n`);
+  }
+
   const campaign = {
     id, product, target, segment, createdAt: new Date().toISOString(),
     channels: Object.keys(CHANNELS),
     copies, images,
     score: 0,
     status: 'draft',
-    hasMarketInsight: briefing !== null
+    hasMarketInsight: briefing !== null,
+    copyValidation: validation
   };
   
   campaign.score = scoreCampaign(campaign, mem);

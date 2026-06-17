@@ -29,6 +29,10 @@ This is not a proof-of-concept. This is an operational system ready to generate 
 - ✅ Lead enrichment in SQLite via OpenStreetMap (`engine/leads/lead-engine.mjs`)
 - ✅ Campaign asset generation to files (`engine/campaigns/campaign-materializer.mjs`)
 - ✅ Channel copy adaptation/routing logic (`engine/campaigns/campaign-router.mjs`)
+- ✅ 6-channel copy generation with X ≤280 chars, real HTML email, full-body telegram/discord (`engine/campaigns/creative-agent.mjs`)
+- ✅ Market research briefings (segments, pain points, copy angles, keywords) (`engine/campaigns/market-researcher-agent.mjs`)
+- ✅ Visual design specifications per channel — no emojis, no AI cartoons, real stock specs (`engine/campaigns/visual-designer-agent.mjs`)
+- ✅ Live image search via Unsplash/Pexels/Pixabay APIs with curated fallback (`engine/campaigns/asset-generator-agent.mjs`)
 - ✅ Billing endpoints for checkout + Stripe/PayPal webhooks (`server/http/routes/billing-routes.ts`)
 - ✅ Billing controller handling register, webhook verify, and provision (`server/http/controllers/BillingController.ts`)
 
@@ -67,7 +71,10 @@ node scripts/product-development-engine.mjs --strict-modules
 | Agent | Function | Impact |
 |-------|----------|--------|
 | **Lead Engine** | Seeds 2K companies, scores by ICP fit, enriches contacts | 10K outreach-ready contacts |
-| **Creative Agent** | Designs 6-channel campaign packs | 6 simultaneous channels |
+| **Creative Agent** | Designs 6-channel campaign packs. Persistent memory. Self-improving. | 6 simultaneous channels |
+| **Market Researcher Agent** | Segments, pain points, keywords, copy angles per product | Data-backed copy |
+| **Visual Designer Agent** | Professional image specs per channel (no emojis, no AI cartoons) | Real stock photo briefs |
+| **Asset Generator Agent** | Fetches real images from Unsplash/Pexels/Pixabay APIs | Live image sourcing |
 | **Product Engine** | Benchmarks vs EU competitors, generates pricing tiers | Pricing confidence |
 | **Content Engine** | Generates landing pages, email sequences, specs | 25+ assets/day |
 | **Campaign Materializer** | MJML + Unsplash → production-ready social assets | Zero manual design work |
