@@ -1,0 +1,40 @@
+{
+  "campaign": "docflow-api-batch-9",
+  "generatedAt": "2026-06-17T07:27:19.645Z",
+  "product": "Docflow API",
+  "variant": 9,
+  "headline": "La automatización que tu despacho contable necesita.",
+  "funnel": {
+    "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+    "closeChannel": "landing",
+    "closeDestination": "https://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+    "closeLink": "https://tiger-backend-production.up.railway.app/checkout?product=docflow-api"
+  },
+  "channels": {
+    "linkedin": {
+      "copyPaste": "🔥 La automatización que tu despacho contable necesita.\n\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta con lo que ya usas. Primer mes con precio de lanzamiento.\n\n💡 Prueba 7 días gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=docflow-api\n\n#Automatización #SaaS #PyMEs #TigerLab",
+      "chars": 360,
+      "limit": 3000
+    },
+    "x": {
+      "copyPaste": "La automatización que tu despacho contable necesita.\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta...\nhttps://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+      "chars": 233,
+      "limit": 280
+    },
+    "facebook": {
+      "copyPaste": "🔥 La automatización que tu despacho contable necesita.\n\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta con lo que ya usas. Primer mes con precio de lanzamiento.\n\n✅ Prueba 7 días gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+      "chars": 319,
+      "limit": 2000
+    },
+    "telegram": {
+      "copyPaste": "*Docflow API*\n\nLa automatización que tu despacho contable necesita.\n\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta con lo que ya usas. Primer mes con precio de lanzamiento.\n\n[Prueba 7 días gratis](https://tiger-backend-production.up.railway.app/checkout?product=docflow-api)",
+      "chars": 329,
+      "limit": 4096
+    },
+    "discord": {
+      "copyPaste": "**Docflow API**\n\nLa automatización que tu despacho contable necesita.\n\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta con lo que ya usas. Primer mes con precio de lanzamiento.\n\nhttps://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+      "chars": 307,
+      "limit": 2000
+    }
+  }
+}

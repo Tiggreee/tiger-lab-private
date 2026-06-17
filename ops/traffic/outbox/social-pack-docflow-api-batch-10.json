@@ -1,0 +1,40 @@
+{
+  "campaign": "docflow-api-batch-10",
+  "generatedAt": "2026-06-17T07:27:19.645Z",
+  "product": "Docflow API",
+  "variant": 10,
+  "headline": "De papel a digital en un solo paso.",
+  "funnel": {
+    "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+    "closeChannel": "landing",
+    "closeDestination": "https://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+    "closeLink": "https://tiger-backend-production.up.railway.app/checkout?product=docflow-api"
+  },
+  "channels": {
+    "linkedin": {
+      "copyPaste": "🔥 De papel a digital en un solo paso.\n\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta con lo que ya usas. Primer mes con precio de lanzamiento.\n\n💡 Prueba 7 días gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=docflow-api\n\n#Automatización #SaaS #PyMEs #TigerLab",
+      "chars": 343,
+      "limit": 3000
+    },
+    "x": {
+      "copyPaste": "De papel a digital en un solo paso.\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta...\nhttps://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+      "chars": 216,
+      "limit": 280
+    },
+    "facebook": {
+      "copyPaste": "🔥 De papel a digital en un solo paso.\n\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta con lo que ya usas. Primer mes con precio de lanzamiento.\n\n✅ Prueba 7 días gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+      "chars": 302,
+      "limit": 2000
+    },
+    "telegram": {
+      "copyPaste": "*Docflow API*\n\nDe papel a digital en un solo paso.\n\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta con lo que ya usas. Primer mes con precio de lanzamiento.\n\n[Prueba 7 días gratis](https://tiger-backend-production.up.railway.app/checkout?product=docflow-api)",
+      "chars": 312,
+      "limit": 4096
+    },
+    "discord": {
+      "copyPaste": "**Docflow API**\n\nDe papel a digital en un solo paso.\n\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta con lo que ya usas. Primer mes con precio de lanzamiento.\n\nhttps://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+      "chars": 290,
+      "limit": 2000
+    }
+  }
+}

@@ -74,6 +74,10 @@ jobs:
       - name: Campaign Designer
         run: node engine/campaigns/campaign-designer.mjs --product "Docflow API" --target contabilidad --channels email,linkedin --dry-run
 
+      # 4.5 Batch Campaign Generator — 25 fresh variants per product
+      - name: Batch Campaign Generator
+        run: node engine/campaigns/batch-campaign-generator.mjs 25
+
       # 5. Generate outreach desde leads nuevos
       - name: Generate outreach
         run: |
