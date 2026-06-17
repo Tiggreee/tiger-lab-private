@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T00:32:22.408Z",
+  "generatedAt": "2026-06-17T16:01:53.309Z",
   "strict": false,
   "gateStatus": "GO",
   "summary": {
@@ -13,7 +13,7 @@
       "title": "Catalogo activo y consistente",
       "severity": "critical",
       "status": "PASS",
-      "details": "Activos: 2 productos.",
+      "details": "Activos: 3 productos.",
       "evidence": [
         "ops/catalog/products.json",
         "ops/catalog/plans.json",
@@ -162,7 +162,7 @@
       "title": "Freshness de evidencia de release",
       "severity": "critical",
       "status": "PASS",
-      "details": "Reporte reciente (0.0h).",
+      "details": "Reporte reciente (0.3h).",
       "evidence": [
         "ops/runtime/production-go-no-go-report.md"
       ],

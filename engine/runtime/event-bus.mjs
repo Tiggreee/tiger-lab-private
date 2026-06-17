@@ -5,8 +5,14 @@ import { resolve } from 'node:path';
 const STATE_PATH = resolve('ops/runtime/event-bus-state.json');
 const SUBS_PATH = resolve('ops/runtime/event-bus-subscribers.json');
 
+const GUARDRAILS = {
+  MAX_EVENTS: 1000,
+  MAX_EVENT_AGE_HOURS: 24,
+  MAX_CONSECUTIVE_FAILURES: 5
+};
+
 function loadState() {
-  try { return JSON.parse(readFileSync(STATE_PATH, 'utf8')); } catch { return { events: [], nextId: 1 }; }
+  try { return JSON.parse(readFileSync(STATE_PATH, 'utf8')); } catch { return { events: [], nextId: 1, failures: {} }; }
 }
 
 function saveState(state) {
@@ -25,6 +31,15 @@ function saveSubscribers(subs) {
 
 export function emit(eventType, payload = {}) {
   const state = loadState();
+
+  if (state.events.length >= GUARDRAILS.MAX_EVENTS) {
+    const cutoff = Date.now() - (GUARDRAILS.MAX_EVENT_AGE_HOURS * 60 * 60 * 1000);
+    state.events = state.events.filter(e => new Date(e.timestamp).getTime() > cutoff);
+    if (state.events.length >= GUARDRAILS.MAX_EVENTS) {
+      state.events = state.events.slice(-Math.floor(GUARDRAILS.MAX_EVENTS * 0.8));
+    }
+  }
+
   const event = {
     id: state.nextId,
     type: eventType,
@@ -36,6 +51,30 @@ export function emit(eventType, payload = {}) {
   state.nextId++;
   saveState(state);
   return event;
+}
+
+export function recordFailure(subscriberName, eventType) {
+  const state = loadState();
+  if (!state.failures) state.failures = {};
+  if (!state.failures[subscriberName]) state.failures[subscriberName] = {};
+  if (!state.failures[subscriberName][eventType]) state.failures[subscriberName][eventType] = 0;
+  state.failures[subscriberName][eventType]++;
+  saveState(state);
+  return state.failures[subscriberName][eventType];
+}
+
+export function resetFailures(subscriberName, eventType) {
+  const state = loadState();
+  if (state.failures?.[subscriberName]?.[eventType]) {
+    state.failures[subscriberName][eventType] = 0;
+    saveState(state);
+  }
+}
+
+export function isBlocked(subscriberName, eventType) {
+  const state = loadState();
+  const failures = state.failures?.[subscriberName]?.[eventType] || 0;
+  return failures >= GUARDRAILS.MAX_CONSECUTIVE_FAILURES;
 }
 
 export function subscribe(eventType, subscriberName) {
@@ -57,7 +96,9 @@ export function getPending(subscriberName) {
       .filter(([type, names]) => type === event.type && names.includes(subscriberName))
       .length > 0;
     if (interested && !event.consumed.includes(subscriberName)) {
-      pending.push(event);
+      if (!isBlocked(subscriberName, event.type)) {
+        pending.push(event);
+      }
     }
   }
   return pending;
@@ -96,7 +137,9 @@ export function stats() {
     totalEvents: state.events.length,
     byType,
     subscriberCount: Object.values(subs).reduce((a, b) => a + b.length, 0),
-    subscribers: subs
+    subscribers: subs,
+    failures: state.failures || {},
+    guardrails: GUARDRAILS
   };
 }
 

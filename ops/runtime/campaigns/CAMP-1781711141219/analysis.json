@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-06-17T15:45:41.236Z",
+  "campaignId": "CAMP-1781711141219",
+  "uniqueness": {
+    "uniqueHeadlines": 4,
+    "averageLength": 392,
+    "hasEmojis": true
+  },
+  "recommendations": [
+    "⚠️ Some headlines repeat across channels. Make each one unique to the platform."
+  ],
+  "marketInsights": null,
+  "insights": {
+    "isImprovement": true,
+    "comparedToAverage": 8,
+    "nextIteration": "⚠️ 1 suggestions for next iteration"
+  }
+}

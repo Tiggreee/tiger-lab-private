@@ -1,13 +1,13 @@
 # Production Go/No-Go Report
 
-- generatedAt: 2026-06-17T00:32:22.408Z
+- generatedAt: 2026-06-17T16:01:53.309Z
 - gateStatus: GO
 - summary: PASS 18 | WARN 0 | FAIL 0
 
 ## Checks
 
 - P1 Catalogo activo y consistente: PASS
-  details: Activos: 2 productos.
+  details: Activos: 3 productos.
   ownerAction: Sin accion.
 - P2 Funnels y eventos trazables: PASS
   details: Eventos clave presentes.
@@ -40,7 +40,7 @@
   details: No se detectaron placeholders ni IDs sample en evidencia operativa.
   ownerAction: Sin accion.
 - P17 Freshness de evidencia de release: PASS
-  details: Reporte reciente (0.0h).
+  details: Reporte reciente (0.3h).
   ownerAction: Sin accion.
 - P18 Consistencia de status en README: PASS
   details: README sin contradicciones criticas detectadas.

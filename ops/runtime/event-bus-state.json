@@ -1,0 +1,14 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "type": "agent:started",
+      "payload": {},
+      "timestamp": "2026-06-17T15:43:11.231Z",
+      "consumed": [
+        "checker"
+      ]
+    }
+  ],
+  "nextId": 2
+}

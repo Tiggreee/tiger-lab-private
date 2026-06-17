@@ -1,0 +1,59 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "description": "Test task with guardrails",
+      "context": {},
+      "status": "pending",
+      "makerResult": null,
+      "checkerResult": null,
+      "finalVerdict": null,
+      "tokensUsed": 0,
+      "failures": 0,
+      "checkpoints": [],
+      "createdAt": "2026-06-17T16:00:46.426Z",
+      "startedAt": null,
+      "completedAt": null
+    },
+    {
+      "id": 2,
+      "description": "Test full pipeline with guardrails",
+      "context": {},
+      "status": "completed",
+      "makerResult": {
+        "promptInjected": true,
+        "skillsCount": 0,
+        "memorySaved": false,
+        "renderedPrompt": "# Maker Agent v1\n\nYou are the Maker agent. Your role is to write code, build features, and produce artifacts.\n\n## Task\n\n{{task}}\n\n## Context\n\n- Customer: {{customerId}}\n- Product: {{productId}}\n\n## In...",
+        "timestamp": "2026-06-17T16:01:09.237Z"
+      },
+      "checkerResult": {
+        "verdict": "PASS",
+        "issues": [],
+        "skillsApplied": 0,
+        "promptInjected": true,
+        "timestamp": "2026-06-17T16:01:09.239Z"
+      },
+      "finalVerdict": "PASS",
+      "tokensUsed": 2589,
+      "failures": 0,
+      "checkpoints": [
+        {
+          "stage": "maker:done",
+          "timestamp": "2026-06-17T16:01:09.237Z",
+          "tokensUsed": 1251
+        },
+        {
+          "stage": "checker:done",
+          "timestamp": "2026-06-17T16:01:09.239Z",
+          "tokensUsed": 2589
+        }
+      ],
+      "createdAt": "2026-06-17T16:01:09.234Z",
+      "startedAt": "2026-06-17T16:01:09.236Z",
+      "completedAt": "2026-06-17T16:01:09.239Z"
+    }
+  ],
+  "nextId": 3,
+  "failures": {}
+}

@@ -1,0 +1,39 @@
+{
+  "enabled": [
+    "memory",
+    "filesystem",
+    "sqlite"
+  ],
+  "calls": [
+    {
+      "serverId": "memory",
+      "action": "save",
+      "timestamp": "2026-06-17T15:43:42.915Z"
+    },
+    {
+      "serverId": "filesystem",
+      "action": "read",
+      "detail": "engine/runtime/event-bus.mjs",
+      "timestamp": "2026-06-17T15:44:55.599Z"
+    },
+    {
+      "serverId": "memory",
+      "action": "save",
+      "detail": "test-session",
+      "timestamp": "2026-06-17T15:44:57.659Z"
+    },
+    {
+      "serverId": "memory",
+      "action": "load",
+      "detail": "test-session",
+      "timestamp": "2026-06-17T15:44:59.473Z"
+    }
+  ],
+  "errors": [
+    {
+      "serverId": "filesystem",
+      "message": "Tool call failed: read — Cannot read properties of undefined (reading 'startsWith')",
+      "timestamp": "2026-06-17T15:43:43.903Z"
+    }
+  ]
+}

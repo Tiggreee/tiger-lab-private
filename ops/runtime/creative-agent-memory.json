@@ -1,6 +1,6 @@
 {
   "agentId": "creative-agent",
-  "totalCampaigns": 8,
+  "totalCampaigns": 17,
   "campaigns": [
     {
       "id": "CAMP-1781334207583",
@@ -177,6 +177,213 @@
       "learnings": [],
       "ownerFeedback": "",
       "improvedInNext": false
+    },
+    {
+      "id": "CAMP-1781711140703",
+      "product": "Docflow API",
+      "createdAt": "2026-06-17T15:45:40.705Z",
+      "score": 100,
+      "copies": {
+        "email": "<div style=\"font-family:Inter,sans-serif;max-width:600px;margin:auto;padding:24p",
+        "linkedin": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "x": "🔥 Automatiza documentos. Ahorra 10h/semana.\n✅ Automatización completa\nPrueba gr",
+        "facebook": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "telegram": "*Docflow API*\n\n*Automatiza documentos. Ahorra 10h/semana.*\n\nDeja de perder tiemp",
+        "discord": "**Docflow API**\n\n**Automatiza documentos. Ahorra 10h/semana.**\n\nDeja de perder t"
+      },
+      "performance": {
+        "opens": 0,
+        "clicks": 0,
+        "conversions": 0
+      },
+      "learnings": [],
+      "ownerFeedback": "",
+      "improvedInNext": false,
+      "hasMarketResearch": false
+    },
+    {
+      "id": "CAMP-1781711140835",
+      "product": "Docflow API",
+      "createdAt": "2026-06-17T15:45:40.837Z",
+      "score": 100,
+      "copies": {
+        "email": "<div style=\"font-family:Inter,sans-serif;max-width:600px;margin:auto;padding:24p",
+        "linkedin": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "x": "🔥 Automatiza documentos. Ahorra 10h/semana.\n✅ Automatización completa\nPrueba gr",
+        "facebook": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "telegram": "*Docflow API*\n\n*Automatiza documentos. Ahorra 10h/semana.*\n\nDeja de perder tiemp",
+        "discord": "**Docflow API**\n\n**Automatiza documentos. Ahorra 10h/semana.**\n\nDeja de perder t"
+      },
+      "performance": {
+        "opens": 0,
+        "clicks": 0,
+        "conversions": 0
+      },
+      "learnings": [],
+      "ownerFeedback": "",
+      "improvedInNext": false,
+      "hasMarketResearch": false
+    },
+    {
+      "id": "CAMP-1781711140977",
+      "product": "Docflow API",
+      "createdAt": "2026-06-17T15:45:40.979Z",
+      "score": 100,
+      "copies": {
+        "email": "<div style=\"font-family:Inter,sans-serif;max-width:600px;margin:auto;padding:24p",
+        "linkedin": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "x": "🔥 Automatiza documentos. Ahorra 10h/semana.\n✅ Automatización completa\nPrueba gr",
+        "facebook": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "telegram": "*Docflow API*\n\n*Automatiza documentos. Ahorra 10h/semana.*\n\nDeja de perder tiemp",
+        "discord": "**Docflow API**\n\n**Automatiza documentos. Ahorra 10h/semana.**\n\nDeja de perder t"
+      },
+      "performance": {
+        "opens": 0,
+        "clicks": 0,
+        "conversions": 0
+      },
+      "learnings": [],
+      "ownerFeedback": "",
+      "improvedInNext": false,
+      "hasMarketResearch": false
+    },
+    {
+      "id": "CAMP-1781711141095",
+      "product": "Docflow API",
+      "createdAt": "2026-06-17T15:45:41.096Z",
+      "score": 100,
+      "copies": {
+        "email": "<div style=\"font-family:Inter,sans-serif;max-width:600px;margin:auto;padding:24p",
+        "linkedin": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "x": "🔥 Automatiza documentos. Ahorra 10h/semana.\n✅ Automatización completa\nPrueba gr",
+        "facebook": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "telegram": "*Docflow API*\n\n*Automatiza documentos. Ahorra 10h/semana.*\n\nDeja de perder tiemp",
+        "discord": "**Docflow API**\n\n**Automatiza documentos. Ahorra 10h/semana.**\n\nDeja de perder t"
+      },
+      "performance": {
+        "opens": 0,
+        "clicks": 0,
+        "conversions": 0
+      },
+      "learnings": [],
+      "ownerFeedback": "",
+      "improvedInNext": false,
+      "hasMarketResearch": false
+    },
+    {
+      "id": "CAMP-1781711141219",
+      "product": "Docflow API",
+      "createdAt": "2026-06-17T15:45:41.224Z",
+      "score": 100,
+      "copies": {
+        "email": "<div style=\"font-family:Inter,sans-serif;max-width:600px;margin:auto;padding:24p",
+        "linkedin": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "x": "🔥 Automatiza documentos. Ahorra 10h/semana.\n✅ Automatización completa\nPrueba gr",
+        "facebook": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "telegram": "*Docflow API*\n\n*Automatiza documentos. Ahorra 10h/semana.*\n\nDeja de perder tiemp",
+        "discord": "**Docflow API**\n\n**Automatiza documentos. Ahorra 10h/semana.**\n\nDeja de perder t"
+      },
+      "performance": {
+        "opens": 0,
+        "clicks": 0,
+        "conversions": 0
+      },
+      "learnings": [],
+      "ownerFeedback": "",
+      "improvedInNext": false,
+      "hasMarketResearch": false
+    },
+    {
+      "id": "CAMP-1781711141338",
+      "product": "Docflow API",
+      "createdAt": "2026-06-17T15:45:41.340Z",
+      "score": 100,
+      "copies": {
+        "email": "<div style=\"font-family:Inter,sans-serif;max-width:600px;margin:auto;padding:24p",
+        "linkedin": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "x": "🔥 Automatiza documentos. Ahorra 10h/semana.\n✅ Automatización completa\nPrueba gr",
+        "facebook": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "telegram": "*Docflow API*\n\n*Automatiza documentos. Ahorra 10h/semana.*\n\nDeja de perder tiemp",
+        "discord": "**Docflow API**\n\n**Automatiza documentos. Ahorra 10h/semana.**\n\nDeja de perder t"
+      },
+      "performance": {
+        "opens": 0,
+        "clicks": 0,
+        "conversions": 0
+      },
+      "learnings": [],
+      "ownerFeedback": "",
+      "improvedInNext": false,
+      "hasMarketResearch": false
+    },
+    {
+      "id": "CAMP-1781711141437",
+      "product": "Docflow API",
+      "createdAt": "2026-06-17T15:45:41.438Z",
+      "score": 100,
+      "copies": {
+        "email": "<div style=\"font-family:Inter,sans-serif;max-width:600px;margin:auto;padding:24p",
+        "linkedin": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "x": "🔥 Automatiza documentos. Ahorra 10h/semana.\n✅ Automatización completa\nPrueba gr",
+        "facebook": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "telegram": "*Docflow API*\n\n*Automatiza documentos. Ahorra 10h/semana.*\n\nDeja de perder tiemp",
+        "discord": "**Docflow API**\n\n**Automatiza documentos. Ahorra 10h/semana.**\n\nDeja de perder t"
+      },
+      "performance": {
+        "opens": 0,
+        "clicks": 0,
+        "conversions": 0
+      },
+      "learnings": [],
+      "ownerFeedback": "",
+      "improvedInNext": false,
+      "hasMarketResearch": false
+    },
+    {
+      "id": "CAMP-1781711141525",
+      "product": "Docflow API",
+      "createdAt": "2026-06-17T15:45:41.527Z",
+      "score": 100,
+      "copies": {
+        "email": "<div style=\"font-family:Inter,sans-serif;max-width:600px;margin:auto;padding:24p",
+        "linkedin": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "x": "🔥 Automatiza documentos. Ahorra 10h/semana.\n✅ Automatización completa\nPrueba gr",
+        "facebook": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "telegram": "*Docflow API*\n\n*Automatiza documentos. Ahorra 10h/semana.*\n\nDeja de perder tiemp",
+        "discord": "**Docflow API**\n\n**Automatiza documentos. Ahorra 10h/semana.**\n\nDeja de perder t"
+      },
+      "performance": {
+        "opens": 0,
+        "clicks": 0,
+        "conversions": 0
+      },
+      "learnings": [],
+      "ownerFeedback": "",
+      "improvedInNext": false,
+      "hasMarketResearch": false
+    },
+    {
+      "id": "CAMP-1781711141620",
+      "product": "Docflow API",
+      "createdAt": "2026-06-17T15:45:41.622Z",
+      "score": 100,
+      "copies": {
+        "email": "<div style=\"font-family:Inter,sans-serif;max-width:600px;margin:auto;padding:24p",
+        "linkedin": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "x": "🔥 Automatiza documentos. Ahorra 10h/semana.\n✅ Automatización completa\nPrueba gr",
+        "facebook": "🔥 Automatiza documentos. Ahorra 10h/semana.\n\nDeja de perder tiempo en papeleo. ",
+        "telegram": "*Docflow API*\n\n*Automatiza documentos. Ahorra 10h/semana.*\n\nDeja de perder tiemp",
+        "discord": "**Docflow API**\n\n**Automatiza documentos. Ahorra 10h/semana.**\n\nDeja de perder t"
+      },
+      "performance": {
+        "opens": 0,
+        "clicks": 0,
+        "conversions": 0
+      },
+      "learnings": [],
+      "ownerFeedback": "",
+      "improvedInNext": false,
+      "hasMarketResearch": false
     }
   ],
   "patterns": {
@@ -188,6 +395,15 @@
       "Automatiza documentos. Ahorra 10h/semana.",
       "Scripts listos. Resultados inmediatos.",
       "CFDI 4.0 sin estrés. Sin contador extra.",
+      "Automatiza documentos. Ahorra 10h/semana.",
+      "Automatiza documentos. Ahorra 10h/semana.",
+      "Automatiza documentos. Ahorra 10h/semana.",
+      "Automatiza documentos. Ahorra 10h/semana.",
+      "Automatiza documentos. Ahorra 10h/semana.",
+      "Automatiza documentos. Ahorra 10h/semana.",
+      "Automatiza documentos. Ahorra 10h/semana.",
+      "Automatiza documentos. Ahorra 10h/semana.",
+      "Automatiza documentos. Ahorra 10h/semana.",
       "Automatiza documentos. Ahorra 10h/semana."
     ],
     "bestCTAs": [
@@ -198,15 +414,24 @@
       "Prueba gratis 7 días →",
       "Descarga el kit gratis →",
       "Empieza gratis →",
+      "Prueba gratis 7 días →",
+      "Prueba gratis 7 días →",
+      "Prueba gratis 7 días →",
+      "Prueba gratis 7 días →",
+      "Prueba gratis 7 días →",
+      "Prueba gratis 7 días →",
+      "Prueba gratis 7 días →",
+      "Prueba gratis 7 días →",
+      "Prueba gratis 7 días →",
       "Prueba gratis 7 días →"
     ],
     "bestChannels": [],
     "worstCopy": []
   },
   "evolution": {
-    "averageScore": 86,
+    "averageScore": 94,
     "scoreTrend": "improving",
-    "totalIterations": 8
+    "totalIterations": 17
   },
-  "version": 9
+  "version": 18
 }
