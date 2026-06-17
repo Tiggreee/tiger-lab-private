@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-13T20:37:13.094Z",
+  "generatedAt": "2026-06-17T09:10:11.620Z",
   "overallStatus": "FAILURES_DETECTED",
   "summary": {
     "total": 27,
-    "pass": 25,
-    "warn": 0,
-    "fail": 2
+    "pass": 23,
+    "warn": 3,
+    "fail": 1
   },
   "checks": [
     {
@@ -13,7 +13,7 @@
       "status": "PASS",
       "detail": "StripePaymentService exists with checkout, webhook, verify signature",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/server/bootstrap/stripe-payment-service.ts"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\server\\bootstrap\\stripe-payment-service.ts"
       ]
     },
     {
@@ -21,35 +21,39 @@
       "status": "PASS",
       "detail": "POST /billing/webhooks/stripe route found",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/server/http/routes/billing-routes.ts"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\server\\http\\routes\\billing-routes.ts"
       ]
     },
     {
       "label": "Stripe Live Keys Configured",
-      "status": "FAIL",
-      "detail": ".env.production.example not found",
-      "evidence": []
+      "status": "WARN",
+      "detail": "Documented in .env.production.example but not set in GitHub Secrets — Victor must set STRIPE_SECRET_KEY and STRIPE_WEBHOOK_SECRET",
+      "evidence": [
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\.env.production.example"
+      ]
     },
     {
       "label": "PayPal Service Available",
       "status": "PASS",
       "detail": "PayPalPaymentService exists at server/bootstrap/paypal-payment-service.ts",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/server/bootstrap/paypal-payment-service.ts"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\server\\bootstrap\\paypal-payment-service.ts"
       ]
     },
     {
       "label": "PayPal Live Keys Configured",
-      "status": "FAIL",
-      "detail": ".env.production.example not found",
-      "evidence": []
+      "status": "WARN",
+      "detail": "Documented but not set in GitHub Secrets — Victor must set PAYPAL_CLIENT_ID and PAYPAL_CLIENT_SECRET",
+      "evidence": [
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\.env.production.example"
+      ]
     },
     {
       "label": "Lead Pipeline Exists",
       "status": "PASS",
       "detail": "pipeline.json exists",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/leads/pipeline.json"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\leads\\pipeline.json"
       ]
     },
     {
@@ -57,7 +61,7 @@
       "status": "PASS",
       "detail": "25 leads total, 20 contacted. Industries: servicios profesionales, fintech, logistica, ecommerce",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/leads/pipeline.json"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\leads\\pipeline.json"
       ]
     },
     {
@@ -65,7 +69,7 @@
       "status": "PASS",
       "detail": "ICP config active for lead generation",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/leads/icp-config.json"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\leads\\icp-config.json"
       ]
     },
     {
@@ -73,43 +77,46 @@
       "status": "PASS",
       "detail": "2 outreach files: outreach-batch-2026-06-12.md, outreach-batch-2026-06-13.md",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/sales/outreach/outreach-batch-2026-06-12.md",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/sales/outreach/outreach-batch-2026-06-13.md"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\sales\\outreach\\outreach-batch-2026-06-12.md",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\sales\\outreach\\outreach-batch-2026-06-13.md"
       ]
     },
     {
       "label": "Social Packs Generated",
       "status": "PASS",
-      "detail": "13 social packs in outbox",
+      "detail": "71 social packs in outbox",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/social-pack-all-about-money-pilot.json",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/social-pack-daily-2026-06-12.json",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/social-pack-daily-2026-06-13.json",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/social-pack-docflow-api-pilot.json",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/social-pack-facturaautentica-railway-ready-2026-06-01.json"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\social-pack-all-about-money-pilot.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\social-pack-daily-2026-06-12.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\social-pack-daily-2026-06-13-publish.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\social-pack-daily-2026-06-13-threaded.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\social-pack-daily-2026-06-13.json"
       ]
     },
     {
       "label": "Social Pack Quality Score",
-      "status": "PASS",
-      "detail": "Average quality score: 91, highest: 100",
+      "status": "WARN",
+      "detail": "Average quality score 22 — below 80 threshold",
       "evidence": []
     },
     {
       "label": "Autopilot Reports Generated",
       "status": "PASS",
-      "detail": "10 autopilot reports",
+      "detail": "13 autopilot reports",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-12-1781265495133.json",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-12-1781277184224.json",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-13-1781365215124.json",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-13-1781368780013.json",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-13-1781372231557.json",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-13-1781376040683.json",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-13-1781379504693.json",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-daily-2026-06-13-1781383021698.json",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-linkedin-today-1781250279006.json",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/traffic/outbox/autopilot-report-produccion-week1-1781252149724.json"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\autopilot-report-daily-2026-06-12-1781265495133.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\autopilot-report-daily-2026-06-12-1781277184224.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\autopilot-report-daily-2026-06-13-1781365215124.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\autopilot-report-daily-2026-06-13-1781368780013.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\autopilot-report-daily-2026-06-13-1781372231557.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\autopilot-report-daily-2026-06-13-1781376040683.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\autopilot-report-daily-2026-06-13-1781379504693.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\autopilot-report-daily-2026-06-13-1781383021698.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\autopilot-report-daily-2026-06-13-publish-1781368332143.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\autopilot-report-daily-2026-06-13-threaded-1781367926725.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\autopilot-report-first-payment-1781464701969.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\autopilot-report-linkedin-today-1781250279006.json",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\traffic\\outbox\\autopilot-report-produccion-week1-1781252149724.json"
       ]
     },
     {
@@ -117,13 +124,13 @@
       "status": "PASS",
       "detail": "25 landing pages for 5 products across LinkedIn, X / Twitter, Facebook, Telegram, Discord",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/landings/index.json"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\landings\\index.json"
       ]
     },
     {
       "label": "All Active Products Have Landings",
-      "status": "PASS",
-      "detail": "All 2 active products have landing pages",
+      "status": "FAIL",
+      "detail": "Active products without landings: dryrun",
       "evidence": []
     },
     {
@@ -131,15 +138,15 @@
       "status": "PASS",
       "detail": "9 bot files: ContentBot.md, FAQBot.md, IncidentBot.md, MarketResearchBot.md, ProvisionBot.md, ReconciliationBot.md, ReleaseGateBot.md, SalesBot.md, SupervisorSyncBot.md",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/bots/ContentBot.md",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/bots/FAQBot.md",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/bots/IncidentBot.md",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/bots/MarketResearchBot.md",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/bots/ProvisionBot.md",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/bots/ReconciliationBot.md",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/bots/ReleaseGateBot.md",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/bots/SalesBot.md",
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/bots/SupervisorSyncBot.md"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\bots\\ContentBot.md",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\bots\\FAQBot.md",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\bots\\IncidentBot.md",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\bots\\MarketResearchBot.md",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\bots\\ProvisionBot.md",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\bots\\ReconciliationBot.md",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\bots\\ReleaseGateBot.md",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\bots\\SalesBot.md",
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\bots\\SupervisorSyncBot.md"
       ]
     },
     {
@@ -147,15 +154,15 @@
       "status": "PASS",
       "detail": "BotOrchestrator.ts exists",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/bots/engine/BotOrchestrator.ts"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\bots\\engine\\BotOrchestrator.ts"
       ]
     },
     {
       "label": "All Agents Active",
       "status": "PASS",
-      "detail": "22/22 agents active (7 direct monetization, 8 indirect, 5 support)",
+      "detail": "24/24 agents active (7 direct monetization, 8 indirect, 5 support)",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/runtime/agent-monitor.json"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\runtime\\agent-monitor.json"
       ]
     },
     {
@@ -167,15 +174,15 @@
     {
       "label": "Monetization Agents Contributing",
       "status": "PASS",
-      "detail": "77% of agents (17/22) contribute to monetization",
+      "detail": "79% of agents (19/24) contribute to monetization",
       "evidence": []
     },
     {
       "label": "Product Catalog Valid",
       "status": "PASS",
-      "detail": "5 products (2 active, 2 paused)",
+      "detail": "6 products (3 active, 2 paused)",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/catalog/products.json"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\catalog\\products.json"
       ]
     },
     {
@@ -183,7 +190,7 @@
       "status": "PASS",
       "detail": "1 pricing rules active (e.g. default-monthly-pricing)",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/catalog/pricing-rules.json"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\catalog\\pricing-rules.json"
       ]
     },
     {
@@ -191,15 +198,15 @@
       "status": "PASS",
       "detail": "GitHub policy check exists",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/runtime/github-policy-report.json"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\runtime\\github-policy-report.json"
       ]
     },
     {
       "label": "Daily Automation Workflow Exists",
       "status": "PASS",
-      "detail": "daily-sales-automation.yml with 19 steps",
+      "detail": "daily-sales-automation.yml with 24 steps",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/.github/workflows/daily-sales-automation.yml"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\.github\\workflows\\daily-sales-automation.yml"
       ]
     },
     {
@@ -207,7 +214,7 @@
       "status": "PASS",
       "detail": "agent-monitor.yml every 2 hours",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/.github/workflows/agent-monitor.yml"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\.github\\workflows\\agent-monitor.yml"
       ]
     },
     {
@@ -215,7 +222,7 @@
       "status": "PASS",
       "detail": "production-go-no-go.yml active",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/.github/workflows/production-go-no-go.yml"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\.github\\workflows\\production-go-no-go.yml"
       ]
     },
     {
@@ -223,39 +230,29 @@
       "status": "PASS",
       "detail": "dashboard-unified.json has monetization, campaigns, products, bots, agents, devops data",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/runtime/dashboard-unified.json"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\runtime\\dashboard-unified.json"
       ]
     },
     {
       "label": "Production Gate Status",
       "status": "PASS",
-      "detail": "Gate: GO (14/14 checks pass)",
+      "detail": "Gate: GO (18/18 checks pass)",
       "evidence": [
-        "/home/runner/work/tiger-lab-private/tiger-lab-private/ops/runtime/production-go-no-go-report.json"
+        "C:\\Users\\victo\\Documents\\TripleTen\\tiger-lab-private\\ops\\runtime\\production-go-no-go-report.json"
       ]
     }
   ],
   "generatedTasks": [
     {
-      "id": "SYS-003",
-      "title": "Resolver: Stripe Live Keys Configured",
+      "id": "SYS-014",
+      "title": "Resolver: All Active Products Have Landings",
       "area": "system",
       "priority": "P0",
       "owner": "human",
       "status": "todo",
-      "dueDate": "2026-06-14",
-      "nextAction": ".env.production.example not found"
-    },
-    {
-      "id": "SYS-005",
-      "title": "Resolver: PayPal Live Keys Configured",
-      "area": "system",
-      "priority": "P0",
-      "owner": "human",
-      "status": "todo",
-      "dueDate": "2026-06-14",
-      "nextAction": ".env.production.example not found"
+      "dueDate": "2026-06-18",
+      "nextAction": "Active products without landings: dryrun"
     }
   ],
-  "recommendation": "2 blocking issue(s) found. Resolve tasks above before deploying."
+  "recommendation": "1 blocking issue(s) found. Resolve tasks above before deploying."
 }

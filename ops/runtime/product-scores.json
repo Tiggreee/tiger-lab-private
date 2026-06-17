@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T23:24:15.873Z",
+  "generatedAt": "2026-06-17T09:10:11.638Z",
   "engine": {
     "averageScore": 64,
     "productsAt95": 0,
@@ -8,7 +8,7 @@
     "productsAt75plus": 2,
     "totalBenchmarks": 5,
     "totalCompetitors": 20,
-    "estimatedTotalEffortHours": 146
+    "estimatedTotalEffortHours": 180
   },
   "productResults": [
     {
@@ -322,6 +322,147 @@
         "estimatedHours": 10,
         "estimatedSprints": 2,
         "status": "PROGRESSING",
+        "priorityProducts": "high"
+      }
+    },
+    {
+      "product": {
+        "id": "dryrun",
+        "name": "--dryRun",
+        "status": "active"
+      },
+      "benchmark": null,
+      "score": 68,
+      "classification": {
+        "tier": "P2",
+        "label": "Early Stage — Needs work",
+        "color": "🟠"
+      },
+      "dimensions": {
+        "market_fit": {
+          "score": 85,
+          "weight": 0.2,
+          "label": "Market Fit"
+        },
+        "technical_quality": {
+          "score": 60,
+          "weight": 0.15,
+          "label": "Technical Quality"
+        },
+        "monetization_readiness": {
+          "score": 80,
+          "weight": 0.15,
+          "label": "Monetization Readiness"
+        },
+        "completion_level": {
+          "score": 55,
+          "weight": 0.15,
+          "label": "Completion Level"
+        },
+        "competitiveness": {
+          "score": 75,
+          "weight": 0.15,
+          "label": "Competitiveness vs Benchmarks"
+        },
+        "automation_coverage": {
+          "score": 45,
+          "weight": 0.1,
+          "label": "Automation Coverage"
+        },
+        "documentation": {
+          "score": 40,
+          "weight": 0.05,
+          "label": "Documentation & Onboarding"
+        },
+        "integration_depth": {
+          "score": 70,
+          "weight": 0.05,
+          "label": "Integration Depth"
+        }
+      },
+      "gaps": [
+        {
+          "dimension": "Documentation & Onboarding",
+          "score": 40,
+          "gap": 40
+        },
+        {
+          "dimension": "Automation Coverage",
+          "score": 45,
+          "gap": 35
+        },
+        {
+          "dimension": "Completion Level",
+          "score": 55,
+          "gap": 25
+        },
+        {
+          "dimension": "Technical Quality",
+          "score": 60,
+          "gap": 20
+        },
+        {
+          "dimension": "Integration Depth",
+          "score": 70,
+          "gap": 10
+        },
+        {
+          "dimension": "Competitiveness vs Benchmarks",
+          "score": 75,
+          "gap": 5
+        }
+      ],
+      "roadmap": {
+        "currentScore": 68,
+        "targetScore95": 93,
+        "targetScore90": 80,
+        "steps": [
+          {
+            "priority": "P0",
+            "action": "Crear README, API docs, onboarding guide para --dryRun",
+            "effort": "bajo",
+            "owner": "human",
+            "gap": 40
+          },
+          {
+            "priority": "P0",
+            "action": "Automatizar CI/CD, tests, deploy para --dryRun",
+            "effort": "medio",
+            "owner": "human",
+            "gap": 35
+          },
+          {
+            "priority": "P0",
+            "action": "Completar features core faltantes de --dryRun: revisar backlog y priorizar",
+            "effort": "alto",
+            "owner": "human",
+            "gap": 25
+          },
+          {
+            "priority": "P1",
+            "action": "Hardening técnico: tests, types, error handling, performance para --dryRun",
+            "effort": "alto",
+            "owner": "human",
+            "gap": 20
+          },
+          {
+            "priority": "P2",
+            "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para --dryRun",
+            "effort": "medio",
+            "owner": "ai",
+            "gap": 10
+          },
+          {
+            "priority": "P2",
+            "action": "Benchmark contra competidores: implementar features diferenciadores clave",
+            "effort": "alto",
+            "owner": "ai",
+            "gap": 5
+          }
+        ],
+        "estimatedHours": 34,
+        "estimatedSprints": 5,
+        "status": "EARLY_STAGE",
         "priorityProducts": "high"
       }
     },
@@ -1292,6 +1433,147 @@
       }
     ],
     "p2_waiting_for_refinement": [
+      {
+        "product": {
+          "id": "dryrun",
+          "name": "--dryRun",
+          "status": "active"
+        },
+        "benchmark": null,
+        "score": 68,
+        "classification": {
+          "tier": "P2",
+          "label": "Early Stage — Needs work",
+          "color": "🟠"
+        },
+        "dimensions": {
+          "market_fit": {
+            "score": 85,
+            "weight": 0.2,
+            "label": "Market Fit"
+          },
+          "technical_quality": {
+            "score": 60,
+            "weight": 0.15,
+            "label": "Technical Quality"
+          },
+          "monetization_readiness": {
+            "score": 80,
+            "weight": 0.15,
+            "label": "Monetization Readiness"
+          },
+          "completion_level": {
+            "score": 55,
+            "weight": 0.15,
+            "label": "Completion Level"
+          },
+          "competitiveness": {
+            "score": 75,
+            "weight": 0.15,
+            "label": "Competitiveness vs Benchmarks"
+          },
+          "automation_coverage": {
+            "score": 45,
+            "weight": 0.1,
+            "label": "Automation Coverage"
+          },
+          "documentation": {
+            "score": 40,
+            "weight": 0.05,
+            "label": "Documentation & Onboarding"
+          },
+          "integration_depth": {
+            "score": 70,
+            "weight": 0.05,
+            "label": "Integration Depth"
+          }
+        },
+        "gaps": [
+          {
+            "dimension": "Documentation & Onboarding",
+            "score": 40,
+            "gap": 40
+          },
+          {
+            "dimension": "Automation Coverage",
+            "score": 45,
+            "gap": 35
+          },
+          {
+            "dimension": "Completion Level",
+            "score": 55,
+            "gap": 25
+          },
+          {
+            "dimension": "Technical Quality",
+            "score": 60,
+            "gap": 20
+          },
+          {
+            "dimension": "Integration Depth",
+            "score": 70,
+            "gap": 10
+          },
+          {
+            "dimension": "Competitiveness vs Benchmarks",
+            "score": 75,
+            "gap": 5
+          }
+        ],
+        "roadmap": {
+          "currentScore": 68,
+          "targetScore95": 93,
+          "targetScore90": 80,
+          "steps": [
+            {
+              "priority": "P0",
+              "action": "Crear README, API docs, onboarding guide para --dryRun",
+              "effort": "bajo",
+              "owner": "human",
+              "gap": 40
+            },
+            {
+              "priority": "P0",
+              "action": "Automatizar CI/CD, tests, deploy para --dryRun",
+              "effort": "medio",
+              "owner": "human",
+              "gap": 35
+            },
+            {
+              "priority": "P0",
+              "action": "Completar features core faltantes de --dryRun: revisar backlog y priorizar",
+              "effort": "alto",
+              "owner": "human",
+              "gap": 25
+            },
+            {
+              "priority": "P1",
+              "action": "Hardening técnico: tests, types, error handling, performance para --dryRun",
+              "effort": "alto",
+              "owner": "human",
+              "gap": 20
+            },
+            {
+              "priority": "P2",
+              "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para --dryRun",
+              "effort": "medio",
+              "owner": "ai",
+              "gap": 10
+            },
+            {
+              "priority": "P2",
+              "action": "Benchmark contra competidores: implementar features diferenciadores clave",
+              "effort": "alto",
+              "owner": "ai",
+              "gap": 5
+            }
+          ],
+          "estimatedHours": 34,
+          "estimatedSprints": 5,
+          "status": "EARLY_STAGE",
+          "priorityProducts": "high"
+        }
+      },
       {
         "product": {
           "id": "facturautentico-cloud",

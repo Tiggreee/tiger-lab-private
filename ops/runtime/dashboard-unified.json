@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T23:24:23.533Z",
+  "generatedAt": "2026-06-17T09:10:11.800Z",
   "monetization": {
     "leadsToday": 10,
     "generatedContent": 10,
@@ -37,110 +37,8 @@
         "generatedAt": "2026-05-31T05:20:21.500Z"
       },
       {
-        "file": "social-pack-script-premium-kit-2026-06-13.json",
-        "name": "script-premium-kit-2026-06-13",
-        "topic": "Script Premium Kit: runbooks ejecutables y scripts listos para produccion que eliminan trabajo manual recurrente",
-        "avgScore": 100,
-        "projectedLift": 24,
-        "targetReached": true,
-        "mcpDecision": "apply",
-        "channels": [
-          "linkedin",
-          "x",
-          "facebook",
-          "telegram",
-          "discord"
-        ],
-        "generatedAt": "2026-06-13T20:19:39.161Z"
-      },
-      {
-        "file": "social-pack-produccion-week1.json",
-        "name": "produccion-week1",
-        "topic": "Automatización SMB ya disponible — Docflow API + Script Kit",
-        "avgScore": 100,
-        "projectedLift": 24,
-        "targetReached": true,
-        "mcpDecision": "apply",
-        "channels": [
-          "linkedin",
-          "x",
-          "facebook",
-          "telegram",
-          "discord"
-        ],
-        "generatedAt": "2026-06-12T08:02:49.716Z"
-      },
-      {
-        "file": "social-pack-mcp-leads-2026-06-11.json",
-        "name": "mcp-leads-2026-06-11",
-        "topic": "Campanas con leads calificables en menos de 24h",
-        "avgScore": 97,
-        "projectedLift": 22,
-        "targetReached": true,
-        "mcpDecision": "apply",
-        "channels": [
-          "linkedin",
-          "x",
-          "facebook",
-          "telegram",
-          "discord"
-        ],
-        "generatedAt": "2026-06-11T07:18:51.336Z"
-      },
-      {
-        "file": "social-pack-mcp-cfdi-2026-06-11.json",
-        "name": "mcp-cfdi-2026-06-11",
-        "topic": "Cumplimiento CFDI sin caos operativo",
-        "avgScore": 100,
-        "projectedLift": 24,
-        "targetReached": true,
-        "mcpDecision": "apply",
-        "channels": [
-          "linkedin",
-          "x",
-          "facebook",
-          "telegram",
-          "discord"
-        ],
-        "generatedAt": "2026-06-11T07:18:51.271Z"
-      },
-      {
-        "file": "social-pack-linkedin-today.json",
-        "name": "linkedin-today",
-        "topic": "Automatización de operaciones para SMBs sin equipo técnico",
-        "avgScore": 100,
-        "projectedLift": 24,
-        "targetReached": true,
-        "mcpDecision": "apply",
-        "channels": [
-          "linkedin",
-          "x",
-          "facebook",
-          "telegram",
-          "discord"
-        ],
-        "generatedAt": "2026-06-12T07:43:17.057Z"
-      },
-      {
-        "file": "social-pack-launch-4-products.json",
-        "name": "launch-4-products",
-        "topic": "Sistema autonomo para atraer leads con menos friccion operativa",
-        "avgScore": 94,
-        "projectedLift": 20,
-        "targetReached": true,
-        "mcpDecision": "unknown",
-        "channels": [
-          "linkedin",
-          "x",
-          "facebook",
-          "telegram",
-          "discord"
-        ],
-        "generatedAt": "2026-05-31T03:05:22.764Z"
-      },
-      {
-        "file": "social-pack-landing-social.json",
-        "name": "landing-social-2026-06-13",
+        "file": "social-pack-script-premium-kit-batch-9.json",
+        "name": "script-premium-kit-batch-9",
         "topic": "N/A",
         "avgScore": 0,
         "projectedLift": 0,
@@ -148,38 +46,37 @@
         "mcpDecision": "unknown",
         "channels": [
           "linkedin",
-          "twitter",
+          "x",
           "facebook",
           "telegram",
           "discord"
         ],
-        "generatedAt": "2026-06-13T20:37:01.812Z"
+        "generatedAt": "2026-06-17T07:27:19.679Z"
       },
       {
-        "file": "social-pack-first-payment.json",
-        "name": "first-payment",
+        "file": "social-pack-script-premium-kit-batch-8.json",
+        "name": "script-premium-kit-batch-8",
         "topic": "N/A",
         "avgScore": 0,
         "projectedLift": 0,
         "targetReached": false,
         "mcpDecision": "unknown",
         "channels": [
-          "email",
           "linkedin",
           "x",
           "facebook",
           "telegram",
           "discord"
         ],
-        "generatedAt": "2026-06-14T19:18:14.454Z"
+        "generatedAt": "2026-06-17T07:27:19.678Z"
       },
       {
-        "file": "social-pack-facturautentico-cloud-pilot.json",
-        "name": "facturautentico-cloud-pilot",
-        "topic": "Facturacion cloud lista para escalar sin caos",
-        "avgScore": 100,
-        "projectedLift": 24,
-        "targetReached": true,
+        "file": "social-pack-script-premium-kit-batch-7.json",
+        "name": "script-premium-kit-batch-7",
+        "topic": "N/A",
+        "avgScore": 0,
+        "projectedLift": 0,
+        "targetReached": false,
         "mcpDecision": "unknown",
         "channels": [
           "linkedin",
@@ -188,7 +85,109 @@
           "telegram",
           "discord"
         ],
-        "generatedAt": "2026-05-31T04:56:16.558Z"
+        "generatedAt": "2026-06-17T07:27:19.678Z"
+      },
+      {
+        "file": "social-pack-script-premium-kit-batch-6.json",
+        "name": "script-premium-kit-batch-6",
+        "topic": "N/A",
+        "avgScore": 0,
+        "projectedLift": 0,
+        "targetReached": false,
+        "mcpDecision": "unknown",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-06-17T07:27:19.678Z"
+      },
+      {
+        "file": "social-pack-script-premium-kit-batch-5.json",
+        "name": "script-premium-kit-batch-5",
+        "topic": "N/A",
+        "avgScore": 0,
+        "projectedLift": 0,
+        "targetReached": false,
+        "mcpDecision": "unknown",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-06-17T07:27:19.678Z"
+      },
+      {
+        "file": "social-pack-script-premium-kit-batch-4.json",
+        "name": "script-premium-kit-batch-4",
+        "topic": "N/A",
+        "avgScore": 0,
+        "projectedLift": 0,
+        "targetReached": false,
+        "mcpDecision": "unknown",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-06-17T07:27:19.678Z"
+      },
+      {
+        "file": "social-pack-script-premium-kit-batch-3.json",
+        "name": "script-premium-kit-batch-3",
+        "topic": "N/A",
+        "avgScore": 0,
+        "projectedLift": 0,
+        "targetReached": false,
+        "mcpDecision": "unknown",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-06-17T07:27:19.678Z"
+      },
+      {
+        "file": "social-pack-script-premium-kit-batch-25.json",
+        "name": "script-premium-kit-batch-25",
+        "topic": "N/A",
+        "avgScore": 0,
+        "projectedLift": 0,
+        "targetReached": false,
+        "mcpDecision": "unknown",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-06-17T07:27:19.679Z"
+      },
+      {
+        "file": "social-pack-script-premium-kit-batch-24.json",
+        "name": "script-premium-kit-batch-24",
+        "topic": "N/A",
+        "avgScore": 0,
+        "projectedLift": 0,
+        "targetReached": false,
+        "mcpDecision": "unknown",
+        "channels": [
+          "linkedin",
+          "x",
+          "facebook",
+          "telegram",
+          "discord"
+        ],
+        "generatedAt": "2026-06-17T07:27:19.679Z"
       }
     ]
   },
@@ -208,8 +207,8 @@
     ]
   },
   "products": {
-    "total": 5,
-    "active": 2,
+    "total": 6,
+    "active": 3,
     "paused": 2,
     "planned": 1,
     "items": [
@@ -242,13 +241,19 @@
         "name": "FacturAutentica",
         "status": "paused",
         "plans": ""
+      },
+      {
+        "id": "dryrun",
+        "name": "--dryRun",
+        "status": "active",
+        "plans": ""
       }
     ]
   },
   "tasks": {
-    "total": 14,
+    "total": 15,
     "done": 12,
-    "pending": 2,
+    "pending": 3,
     "items": [
       {
         "id": "PL-003",
@@ -438,6 +443,16 @@
         "settledBy": "engine",
         "evidence": "Stripe + PayPal live keys. Engine cobra, campaigns convierten.",
         "daysUntilDue": 4
+      },
+      {
+        "id": "SYS-014",
+        "title": "Resolver: All Active Products Have Landings",
+        "area": "system",
+        "priority": "P0",
+        "owner": "human",
+        "status": "todo",
+        "dueDate": "2026-06-18",
+        "nextAction": "Active products without landings: dryrun"
       }
     ]
   },

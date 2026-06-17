@@ -70,6 +70,10 @@ jobs:
       - name: Design Agent
         run: node engine/design/design-agent.mjs --all --product "Docflow API" && node engine/design/design-agent.mjs --all --product "Script Premium Kit"
 
+      # 3.8 Image Generator — generates 30 campaign images per product
+      - name: Image Generator
+        run: node engine/design/image-generator.mjs --product "Docflow API" && node engine/design/image-generator.mjs --product "Script Premium Kit"
+
       # 4. Campaign Designer — diseño y aprobación
       - name: Campaign Designer
         run: node engine/campaigns/campaign-designer.mjs --product "Docflow API" --target contabilidad --channels email,linkedin --dry-run

@@ -195,6 +195,16 @@
       "settledBy": "engine",
       "evidence": "Stripe + PayPal live keys. Engine cobra, campaigns convierten.",
       "daysUntilDue": 4
+    },
+    {
+      "id": "SYS-014",
+      "title": "Resolver: All Active Products Have Landings",
+      "area": "system",
+      "priority": "P0",
+      "owner": "human",
+      "status": "todo",
+      "dueDate": "2026-06-18",
+      "nextAction": "Active products without landings: dryrun"
     }
   ]
 }

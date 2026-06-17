@@ -77,6 +77,59 @@
     "status": "PROGRESSING",
     "priorityProducts": "high"
   },
+  "dryrun": {
+    "currentScore": 68,
+    "targetScore95": 93,
+    "targetScore90": 80,
+    "steps": [
+      {
+        "priority": "P0",
+        "action": "Crear README, API docs, onboarding guide para --dryRun",
+        "effort": "bajo",
+        "owner": "human",
+        "gap": 40
+      },
+      {
+        "priority": "P0",
+        "action": "Automatizar CI/CD, tests, deploy para --dryRun",
+        "effort": "medio",
+        "owner": "human",
+        "gap": 35
+      },
+      {
+        "priority": "P0",
+        "action": "Completar features core faltantes de --dryRun: revisar backlog y priorizar",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 25
+      },
+      {
+        "priority": "P1",
+        "action": "Hardening técnico: tests, types, error handling, performance para --dryRun",
+        "effort": "alto",
+        "owner": "human",
+        "gap": 20
+      },
+      {
+        "priority": "P2",
+        "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para --dryRun",
+        "effort": "medio",
+        "owner": "ai",
+        "gap": 10
+      },
+      {
+        "priority": "P2",
+        "action": "Benchmark contra competidores: implementar features diferenciadores clave",
+        "effort": "alto",
+        "owner": "ai",
+        "gap": 5
+      }
+    ],
+    "estimatedHours": 34,
+    "estimatedSprints": 5,
+    "status": "EARLY_STAGE",
+    "priorityProducts": "high"
+  },
   "facturautentico-cloud": {
     "currentScore": 56,
     "targetScore95": 81,
