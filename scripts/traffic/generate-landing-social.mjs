@@ -359,6 +359,12 @@ function saveSocialPackFromLandings(allLandings) {
   const pack = {
     campaign: `landing-social-${new Date().toISOString().slice(0, 10)}`,
     generatedAt: new Date().toISOString(),
+    funnel: {
+      trafficDestination: 'https://tiger-backend-production.up.railway.app/checkout?product=docflow-api',
+      closeChannel: 'landing',
+      closeDestination: 'https://tiger-backend-production.up.railway.app/checkout?product=docflow-api',
+      closeLink: 'https://tiger-backend-production.up.railway.app/checkout?product=docflow-api'
+    },
     channels: {},
     summary: { totalProducts: Object.keys(byChannel).length > 0 ? [...new Set(allLandings.map(l => l.productId))].length : 0, totalChannels: Object.keys(byChannel).length }
   };
