@@ -3,10 +3,10 @@
   "generatedAt": "2026-06-15T22:28:30.498Z",
   "product": "Docflow API",
   "funnel": {
-    "trafficDestination": "https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter",
+    "trafficDestination": "https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter",
     "closeChannel": "landing",
-    "closeDestination": "https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter",
-    "closeLink": "https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter"
+    "closeDestination": "https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter",
+    "closeLink": "https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter"
   },
   "channels": {
     "email": {

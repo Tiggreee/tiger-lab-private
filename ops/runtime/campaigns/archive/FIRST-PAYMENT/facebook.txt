@@ -7,6 +7,6 @@ Docflow API automatiza todo tu flujo documental:
 
 💡 Primer mes a solo $69 USD.
 
-👉 https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter
+👉 https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter
 
 Tu tiempo vale más. Automatízalo.

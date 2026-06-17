@@ -84,8 +84,8 @@ function switchCurrency(c){
 }
 
 function updateLinks(){
-  const stripeUrl=`https://tiger-backend-production.up.railway.app/api/checkout?product=${product}&plan=${plan}&provider=stripe&currency=${currency.toLowerCase()}&amount=${currency==='MXN'?p.mxn:p.usd}`;
-  const paypalUrl=`https://tiger-backend-production.up.railway.app/api/checkout?product=${product}&plan=${plan}&provider=paypal&currency=${currency.toLowerCase()}&amount=${currency==='MXN'?p.mxn:p.usd}`;
+  const stripeUrl=`https://tiger-lab-private-production.up.railway.app/api/checkout?product=${product}&plan=${plan}&provider=stripe&currency=${currency.toLowerCase()}&amount=${currency==='MXN'?p.mxn:p.usd}`;
+  const paypalUrl=`https://tiger-lab-private-production.up.railway.app/api/checkout?product=${product}&plan=${plan}&provider=paypal&currency=${currency.toLowerCase()}&amount=${currency==='MXN'?p.mxn:p.usd}`;
   document.getElementById('btnStripe').href=stripeUrl;
   document.getElementById('btnPayPal').href=paypalUrl;
 }
