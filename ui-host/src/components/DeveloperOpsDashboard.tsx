@@ -144,7 +144,12 @@ function nowIso(): string {
 }
 
 function resolveApiBaseUrl(): string {
-  return (import.meta.env.VITE_API_BASE_URL as string | undefined) || ''
+  const envUrl = import.meta.env.VITE_API_BASE_URL as string | undefined
+  if (envUrl) return envUrl
+  if (typeof window !== 'undefined') {
+    return window.location.origin
+  }
+  return ''
 }
 
 export default function DeveloperOpsDashboard() {
