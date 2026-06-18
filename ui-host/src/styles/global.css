@@ -3,17 +3,18 @@
 }
 
 :root {
-  --bg-0: #090a0d;
-  --bg-1: #12151c;
-  --ink: #f1eee8;
-  --muted: #b9b4a8;
-  --line: rgba(241, 238, 232, 0.16);
-  --accent: #f3b23b;
-  --accent-2: #78d4ff;
-  --card: rgba(12, 16, 24, 0.74);
-  --shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  --bg-0: #0a0b1e;
+  --bg-1: #020617;
+  --ink: #e2e8f0;
+  --muted: #94a3b8;
+  --line: rgba(71, 85, 105, 0.5);
+  --accent: #6366f1;
+  --accent-2: #10b981;
+  --card: rgba(30, 41, 59, 0.7);
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
   --font-title: 'Space Grotesk', 'Montserrat', 'Segoe UI', sans-serif;
   --font-body: 'Manrope', 'Segoe UI', sans-serif;
+  --glass: rgba(255, 255, 255, 0.03);
 }
 
 html,
@@ -23,10 +24,63 @@ body,
   min-height: 100%;
   width: 100%;
   font-family: var(--font-body);
-  background: radial-gradient(circle at 15% 10%, #202735 0%, transparent 38%),
-    radial-gradient(circle at 82% 14%, #2d1720 0%, transparent 34%),
-    linear-gradient(140deg, var(--bg-0), var(--bg-1));
+  background: radial-gradient(circle at 15% 10%, #1e1b4b 0, var(--bg-0) 60%), linear-gradient(180deg, #0f172a 0, #020617 100%);
   color: var(--ink);
+}
+
+.autonomous-status, .resource-management {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.autonomous-status h2, .resource-management h2 {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.autonomous-grid, .resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.autonomous-item, .resource-item {
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.autonomous-item:hover, .resource-item:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.autonomous-item .label, .resource-item .label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.autonomous-item .value, .resource-item .value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 4px;
+}
+
+.autonomous-item .sub, .resource-item .sub {
+  font-size: 0.8rem;
+  color: #64748b;
 }
 
 a {

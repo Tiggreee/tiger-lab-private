@@ -172,10 +172,101 @@ export default function DeveloperOpsDashboard() {
   const [vmdevNotes, setVmdevNotes] = useState<string>(() => localStorage.getItem(STORAGE_KEYS.notes) || '')
   const [deleteGuardMessage, setDeleteGuardMessage] = useState<string>('')
 
+  // --- Autonomous Engine & Model State ---
+  const [telemetry, setTelemetry] = useState<any>(null)
+  const [modeState, setModeState] = useState<any>(null)
+  const [models, setModels] = useState<any[]>([])
+
   const accessSession = readDevAccessSession()
   const canManageChecklist = Boolean(accessSession?.canManageChecklist)
   const canDeleteRecords = Boolean(accessSession?.canDeleteRecords)
   const actorLabel = accessSession?.actor || 'unknown'
+
+  useEffect(() => {
+    async function syncEngineState() {
+      const api = resolveApiBaseUrl()
+      if (!api) {
+        console.warn('VITE_API_BASE_URL is not defined. Using relative paths.')
+      }
+      try {
+        const [telRes, modeRes, modRes] = await Promise.all([
+          fetch(`${api}/runtime/telemetry`),
+          fetch(`${api}/runtime/execution-modes.json`),
+          fetch(`${api}/runtime/models`)
+        ])
+        if (telRes.ok) setTelemetry(await telRes.json())
+        if (modeRes.ok) setModeState(await modeRes.json())
+        if (modRes.ok) {
+          const modData = await modRes.json()
+          setModels(modData.models || [])
+        }
+      } catch (e) {
+        console.error('Engine state sync failed', e)
+      }
+    }
+    syncEngineState()
+    const interval = setInterval(syncEngineState, 30000)
+    return () => clearInterval(interval)
+  }, [])
+
+  async function toggleExecutionMode() {
+    const currentMode = modeState?.current || 'AUTO'
+    const modes = ['AUTO', 'PRO', 'DEV']
+    const next = modes[(modes.indexOf(currentMode) + 1) % modes.length]
+    try {
+      const r = await fetch(`${resolveApiBaseUrl()}/runtime/execution-mode/toggle`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ mode: next })
+      })
+      if (r.ok) {
+        const res = await fetch(`${resolveApiBaseUrl()}/runtime/execution-modes.json`)
+        setModeState(await res.json())
+      }
+    } catch (e) {
+      console.error('Mode toggle failed', e)
+    }
+  }
+
+  async function addModel() {
+    const name = prompt('Model Name:')
+    if (!name) return
+    const type = prompt('Model Type (e.g. Reasoning, Fast, Creative):')
+    if (!type) return
+    const endpoint = prompt('Model Endpoint (URL):')
+    if (!endpoint) return
+    const capacity = prompt('Model Capacity (e.g. 70B, 8B):')
+
+    try {
+      const r = await fetch(`${resolveApiBaseUrl()}/runtime/models`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, type, endpoint, capacity })
+      })
+      if (r.ok) {
+        const res = await fetch(`${resolveApiBaseUrl()}/runtime/models`)
+        const data = await res.json()
+        setModels(data.models || [])
+      }
+    } catch (e) {
+      console.error('Add model failed', e)
+    }
+  }
+
+  async function removeModel(id: string) {
+    if (!confirm('Remove this model resource?')) return
+    try {
+      const r = await fetch(`${resolveApiBaseUrl()}/runtime/models/${id}`, { method: 'DELETE' })
+      if (r.ok) {
+        const res = await fetch(`${resolveApiBaseUrl()}/runtime/models`)
+        const data = await res.json()
+        setModels(data.models || [])
+      }
+    } catch (e) {
+      console.error('Remove model failed', e)
+    }
+  }
+
 
   const technicalReadyForAutoClear =
     automationStatus === 'success' &&
@@ -389,7 +480,69 @@ export default function DeveloperOpsDashboard() {
         </div>
       </header>
 
+      <section className="autonomous-status">
+        <h2>Autonomous Engine State</h2>
+        <div className="autonomous-grid">
+          <div className="autonomous-item">
+            <div className="label">Execution Mode</div>
+            <div className="value" style={{ cursor: 'pointer', color: 'var(--accent)' }} onClick={toggleExecutionMode}>
+              {modeState?.current || 'AUTO'}
+            </div>
+            <div className="sub">
+              {modeState?.current === 'AUTO' ? 'Full autonomy' : 
+               modeState?.current === 'PRO' ? 'User approval on criticals' : 'Dry-run / Verbose'}
+            </div>
+          </div>
+          <div className="autonomous-item">
+            <div className="label">Event Bus</div>
+            <div className="value">{telemetry?.busEvents || 0}</div>
+            <div className="sub">{telemetry?.busSubs || 0} active subs</div>
+          </div>
+          <div className="autonomous-item">
+            <div className="label">Worktrees</div>
+            <div className="value">{telemetry?.wtActive || 0}</div>
+            <div className="sub">{telemetry?.wtTotal || 0} total pools</div>
+          </div>
+          <div className="autonomous-item">
+            <div className="label">Shared Memory</div>
+            <div className="value">{telemetry?.memKeys || 0}</div>
+            <div className="sub">{telemetry?.memOwner || 'system'} owner</div>
+          </div>
+        </div>
+      </section>
+
+      <section className="resource-management">
+        <h2>Local Model Resources</h2>
+        <div className="resource-grid">
+          {models.length === 0 ? (
+            <div className="dim">No local models registered</div>
+          ) : (
+            models.map(m => (
+              <div key={m.id} className="resource-item">
+                <button className="btn-remove" onClick={() => removeModel(m.id)}>Remove</button>
+                <div className="model-name">{m.name}</div>
+                <div className="model-details">
+                  Type: {m.type}<br />
+                  Endpoint: {m.endpoint}<br />
+                  Capacity: {m.capacity}
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+        <div className="resource-actions">
+          <button className="btn" onClick={addModel}>+ Add Local Model</button>
+        </div>
+      </section>
+
+      <div style={{ marginBottom: '24px', textAlign: 'center' }}>
+        <a href="https://tiger-lab-private-production.up.railway.app/command-center/project-map-3d.html" target="_blank" className="devops-root-link" style={{ padding: '12px 24px', borderRadius: '12px', fontWeight: 'bold', textDecoration: 'none', background: 'var(--accent)', color: 'white' }}>
+          🚀 Open 3D Infrastructure Map
+        </a>
+      </div>
+
       <section className="devops-grid">
+
         <article className="devops-card">
           <h2>Aprobacion y Sello</h2>
           <p className="devops-muted">No se habilitan ejecuciones de sprint hasta sellar tareas humanas criticas.</p>
