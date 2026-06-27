@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const GENERIC_AI_PATTERNS = [
   {
     pattern: /\bblueprint\b/i,
