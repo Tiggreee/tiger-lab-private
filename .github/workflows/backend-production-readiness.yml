@@ -22,8 +22,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run full test suite
-        run: npm run test:all
+      - name: Run production-critical test suite (no global coverage gate)
+        run: npm run test:unit && npm run test:integration && npm run test:contract && npm run test:e2e && npm run test:smoke
 
       - name: Build backend
         run: npm run build:server

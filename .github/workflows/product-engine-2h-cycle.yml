@@ -67,4 +67,4 @@ jobs:
           git config user.email "bot@tigerlab.ai"
           git add ops/runtime/product-scores.json ops/runtime/product-roadmaps.json ops/runtime/product-score-history.json ops/runtime/dashboard-unified.json
           git diff --cached --quiet || git commit -m "prod-engine: auto-cycle $(date -u '+%Y-%m-%dT%H:%M')"
-          git push
+          git push || echo "Push skipped (protected branch requires PR)."

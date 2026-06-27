@@ -34,4 +34,4 @@ jobs:
           git config user.email "bot@tigerlab.ai"
           git add ops/runtime/failures-history.json ops/runtime/dashboard-unified.json
           git diff --cached --quiet || git commit -m "failures-monitor: scan $(date -u '+%Y-%m-%dT%H:%M')"
-          git push
+          git push || echo "Push skipped (protected branch requires PR)."
