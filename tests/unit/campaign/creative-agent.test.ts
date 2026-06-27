@@ -19,19 +19,35 @@ function runCreativeAgent(args: string): string {
 function getLatestCampaignDir(): string | null {
   if (!existsSync(CAMPAIGNS_DIR)) return null;
   const dirs = readdirSync(CAMPAIGNS_DIR)
-    .filter(d => d.startsWith('CAMP-'))
+    .filter(d => /^CAMP-\d+$/.test(d))
     .sort()
     .reverse();
   return dirs.length > 0 ? resolve(CAMPAIGNS_DIR, dirs[0]) : null;
 }
 
+function createCampaignAndGetDir(): string {
+  const output = runCreativeAgent('--create --product "Docflow API" --segment contabilidad');
+  const id = output.match(/Campaign:\s+(CAMP-\d+)/)?.[1];
+
+  if (id) {
+    const dir = resolve(CAMPAIGNS_DIR, id);
+    if (existsSync(dir)) {
+      return dir;
+    }
+  }
+
+  const latest = getLatestCampaignDir();
+  if (!latest) {
+    throw new Error('No campaign directory found after creative-agent run.');
+  }
+  return latest;
+}
+
 describe('Creative Agent — Copy Generation', () => {
   it('X copy must be ≤ 280 chars (never truncated with ...)', () => {
-    runCreativeAgent('--create --product "Docflow API" --segment contabilidad');
-    const dir = getLatestCampaignDir();
-    expect(dir).not.toBeNull();
+    const dir = createCampaignAndGetDir();
 
-    const xFile = resolve(dir!, 'x.txt');
+    const xFile = resolve(dir, 'x.txt');
     expect(existsSync(xFile)).toBe(true);
 
     const xContent = readFileSync(xFile, 'utf8');
@@ -40,9 +56,8 @@ describe('Creative Agent — Copy Generation', () => {
   });
 
   it('Email copy must contain valid HTML structure', () => {
-    runCreativeAgent('--create --product "Docflow API" --segment contabilidad');
-    const dir = getLatestCampaignDir();
-    const emailFile = resolve(dir!, 'email.html');
+    const dir = createCampaignAndGetDir();
+    const emailFile = resolve(dir, 'email.html');
     expect(existsSync(emailFile)).toBe(true);
 
     const html = readFileSync(emailFile, 'utf8');
@@ -54,18 +69,16 @@ describe('Creative Agent — Copy Generation', () => {
   });
 
   it('LinkedIn copy must be ≥ 100 chars', () => {
-    runCreativeAgent('--create --product "Docflow API" --segment contabilidad');
-    const dir = getLatestCampaignDir();
-    const li = readFileSync(resolve(dir!, 'linkedin.txt'), 'utf8');
+    const dir = createCampaignAndGetDir();
+    const li = readFileSync(resolve(dir, 'linkedin.txt'), 'utf8');
     expect(li.length).toBeGreaterThanOrEqual(100);
   });
 
   it('Telegram/Discord must contain full body text — no substring truncation', () => {
-    runCreativeAgent('--create --product "Docflow API" --segment contabilidad');
-    const dir = getLatestCampaignDir();
+    const dir = createCampaignAndGetDir();
 
-    const telegram = readFileSync(resolve(dir!, 'telegram.md'), 'utf8');
-    const discord  = readFileSync(resolve(dir!, 'discord.md'), 'utf8');
+    const telegram = readFileSync(resolve(dir, 'telegram.md'), 'utf8');
+    const discord  = readFileSync(resolve(dir, 'discord.md'), 'utf8');
 
     expect(telegram.endsWith('...')).toBe(false);
     expect(discord.endsWith('...')).toBe(false);
@@ -76,20 +89,17 @@ describe('Creative Agent — Copy Generation', () => {
 
 describe('Creative Agent — Output Structure', () => {
   it('generates exactly 6 channel files', () => {
-    runCreativeAgent('--create --product "Docflow API" --segment contabilidad');
-    const dir = getLatestCampaignDir();
-    expect(dir).not.toBeNull();
+    const dir = createCampaignAndGetDir();
 
     const expected = ['email.html', 'linkedin.txt', 'x.txt', 'facebook.txt', 'telegram.md', 'discord.md'];
     for (const file of expected) {
-      expect(existsSync(resolve(dir!, file))).toBe(true);
+      expect(existsSync(resolve(dir, file))).toBe(true);
     }
   });
 
   it('generates campaign.json with required fields', () => {
-    runCreativeAgent('--create --product "Docflow API" --segment contabilidad');
-    const dir = getLatestCampaignDir();
-    const campaign = JSON.parse(readFileSync(resolve(dir!, 'campaign.json'), 'utf8'));
+    const dir = createCampaignAndGetDir();
+    const campaign = JSON.parse(readFileSync(resolve(dir, 'campaign.json'), 'utf8'));
 
     expect(campaign.id).toMatch(/^CAMP-\d+$/);
     expect(campaign.product).toBeDefined();
@@ -99,9 +109,8 @@ describe('Creative Agent — Output Structure', () => {
   });
 
   it('generates scorecard.json with score field', () => {
-    runCreativeAgent('--create --product "Docflow API" --segment contabilidad');
-    const dir = getLatestCampaignDir();
-    const scorecard = JSON.parse(readFileSync(resolve(dir!, 'scorecard.json'), 'utf8'));
+    const dir = createCampaignAndGetDir();
+    const scorecard = JSON.parse(readFileSync(resolve(dir, 'scorecard.json'), 'utf8'));
 
     expect(typeof scorecard.score).toBe('number');
     expect(scorecard.score).toBeGreaterThanOrEqual(0);
@@ -110,9 +119,8 @@ describe('Creative Agent — Output Structure', () => {
   });
 
   it('generates analysis.json with validation result', () => {
-    runCreativeAgent('--create --product "Docflow API" --segment contabilidad');
-    const dir = getLatestCampaignDir();
-    const analysis = JSON.parse(readFileSync(resolve(dir!, 'analysis.json'), 'utf8'));
+    const dir = createCampaignAndGetDir();
+    const analysis = JSON.parse(readFileSync(resolve(dir, 'analysis.json'), 'utf8'));
 
     expect(analysis.campaignId).toBeDefined();
     expect(analysis.uniqueness).toBeDefined();
@@ -121,9 +129,8 @@ describe('Creative Agent — Output Structure', () => {
 
 describe('Creative Agent — Channel Limits Compliance', () => {
   it('all channel copies respect max character limits', () => {
-    runCreativeAgent('--create --product "Docflow API" --segment contabilidad');
-    const dir = getLatestCampaignDir();
-    const campaign = JSON.parse(readFileSync(resolve(dir!, 'campaign.json'), 'utf8'));
+    const dir = createCampaignAndGetDir();
+    const campaign = JSON.parse(readFileSync(resolve(dir, 'campaign.json'), 'utf8'));
 
     const LIMITS: Record<string, number> = {
       x: 280,
