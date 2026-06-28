@@ -73,12 +73,21 @@ function generateCopy(product, channel) {
 
   // X: write naturally to fit 280 — no substring + '...'
   function buildXCopy() {
-    const hl = p.headline.length <= 80 ? p.headline : p.headline.split('.')[0] + '.';
-    const cta = p.cta.length <= 25 ? p.cta : 'Ver más →';
-    const full = `🔥 ${hl}\n✅ ${p.bullets[0]}\n${cta}`;
+    const cta = p.cta.length <= 30 ? p.cta : 'Ver más →';
+
+    const productSpecific = {
+      'Docflow API': `${product}: automatizacion CFDI y timbrado XML en minutos.\n80% menos tiempo operativo en flujos documentales.\n${cta} https://tigerlab.dev`,
+      'Script Premium Kit': `${product}: scripts para automatizacion de procesos repetitivos.\n10h menos por semana con runbooks listos.\n${cta} https://tigerlab.dev`,
+      'FacturAutentico Cloud': `${product}: facturacion CFDI 4.0 con timbrado y control centralizado.\nCumplimiento SAT sin retrabajo operativo.\n${cta} https://tigerlab.dev`
+    };
+
+    const full = productSpecific[product] || `${product}: ${p.headline}\n${p.body}\n${cta} https://tigerlab.dev`;
     if (full.length <= 280) return full;
-    const short = `🔥 ${hl}\n${cta}`;
-    return short.length <= 280 ? short : `🔥 ${hl.substring(0, 250)}\n${cta}`;
+
+    const compact = `${product}: ${p.headline.split('.')[0]}.\n${cta} https://tigerlab.dev`;
+    if (compact.length <= 280) return compact;
+
+    return `${product}: ${p.headline.substring(0, 180)}\n${cta} https://tigerlab.dev`;
   }
 
   const templates = {
