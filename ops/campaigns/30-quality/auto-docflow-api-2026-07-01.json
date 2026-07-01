@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-07-01T13:11:36.217Z",
+  "briefId": "auto-docflow-api-2026-07-01",
+  "campaignId": "CAMP-1782911496182",
+  "qualityResult": {
+    "campaignId": "CAMP-1782911496182",
+    "threshold": 45,
+    "averageSpecificity": 54,
+    "passed": true,
+    "failedChannels": [],
+    "channels": [
+      {
+        "channel": "email",
+        "specificityScore": 51,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "linkedin",
+        "specificityScore": 51,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "x",
+        "specificityScore": 69,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "facebook",
+        "specificityScore": 51,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "telegram",
+        "specificityScore": 51,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "discord",
+        "specificityScore": 51,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      }
+    ]
+  }
+}

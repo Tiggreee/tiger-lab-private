@@ -22,11 +22,12 @@ const REAL_SERVERS = {
     description: 'Persistent knowledge graph memory'
   },
   fetch: {
-    name: 'Fetch MCP', 
-    package: '@modelcontextprotocol/server-fetch',
-    command: 'npx',
-    args: ['-y', '@modelcontextprotocol/server-fetch'],
-    description: 'Web content fetching'
+    name: 'Fetch MCP',
+    package: 'mcp-server-fetch',
+    command: 'uvx',
+    args: ['mcp-server-fetch'],
+    description: 'Web content fetching (Python server via uvx — requires uv/python in PATH)',
+    needsPython: true
   },
   sequential: {
     name: 'Sequential Thinking MCP',
@@ -174,8 +175,12 @@ async function main() {
       
       client.disconnect();
     } catch (e) {
-      console.error(`Failed to connect to ${id}:`, e.message);
-      console.log('Using built-in fallback instead.');
+      const cfg = REAL_SERVERS[id];
+      console.error(`Failed to connect to ${id}: ${e.message}`);
+      if (cfg?.needsPython) {
+        console.error(`  ${cfg.name} requires Python + uv. Install uv (https://docs.astral.sh/uv/) so "uvx ${cfg.package}" works.`);
+      }
+      process.exitCode = 1;
     }
     return;
   }
@@ -195,8 +200,32 @@ async function main() {
     return;
   }
 
+  if (args.includes('--verify')) {
+    const targets = ['memory', 'sequential'];
+    const results = [];
+    for (const id of targets) {
+      try {
+        const client = new McpClient(id);
+        await client.connect();
+        const tools = await client.listTools();
+        client.disconnect();
+        results.push({ id, status: tools.length > 0 ? 'PASS' : 'FAIL', tools: tools.length });
+      } catch (e) {
+        results.push({ id, status: 'FAIL', error: e.message, tools: 0 });
+      }
+    }
+    for (const r of results) {
+      console.log(`  ${r.status === 'PASS' ? 'PASS' : 'FAIL'}  ${r.id} — ${r.tools} tools${r.error ? ` (${r.error})` : ''}`);
+    }
+    const failed = results.filter((r) => r.status === 'FAIL').length;
+    console.log(`\n  MCP verify: ${results.length - failed}/${results.length} servers functional.`);
+    process.exitCode = failed === 0 ? 0 : 1;
+    return;
+  }
+
   console.log('TigerLab MCP Client');
   console.log('  --list       List all servers + memory');
+  console.log('  --verify     Connect-test memory + sequential (PASS/FAIL)');
   console.log('  --connect    Connect to MCP server (memory, fetch, sequential)');
   console.log('  --save key value  Save to persistent memory');
   console.log('  --load key   Load from persistent memory');

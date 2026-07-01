@@ -26,6 +26,10 @@ h2{font-size:.8rem;color:#8b949e;text-transform:uppercase;letter-spacing:.5px;ma
 .btn-approve{background:#238636;color:#fff}
 .btn-reject{background:#f85149;color:#fff}
 .btn-back{background:#21262d;color:#c9d1d9}
+.actions button:disabled{opacity:.65;cursor:not-allowed}
+.action-status{margin-top:10px;font-size:.72rem;color:#8b949e;min-height:20px}
+.action-status.ok{color:#3fb950}
+.action-status.err{color:#f85149}
 footer{text-align:center;font-size:.65rem;color:#484f58;margin-top:30px;padding-top:10px;border-top:1px solid #21262d}
 </style>
 </head>
@@ -38,16 +42,31 @@ footer{text-align:center;font-size:.65rem;color:#484f58;margin-top:30px;padding-
 </div>
 <div id="channels"></div>
 <div class="actions">
-  <button class="btn-approve" onclick="approve()">✅ APPROVE</button>
-  <button class="btn-reject" onclick="reject()">❌ REJECT</button>
+  <button id="approveBtn" class="btn-approve" onclick="approve()">✅ APPROVE</button>
+  <button id="rejectBtn" class="btn-reject" onclick="reject()">❌ REJECT</button>
   <button class="btn-back" onclick="window.close()">← Back</button>
 </div>
+<div id="actionStatus" class="action-status"></div>
 <footer>TigerLab Campaign Preview — <span id="footerTime"></span></footer>
 
 <script>
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 let campaign = null;
+
+function setActionStatus(msg, kind = '') {
+  const el = document.getElementById('actionStatus');
+  if (!el) return;
+  el.textContent = msg || '';
+  el.className = `action-status ${kind}`.trim();
+}
+
+function setActionLoading(loading) {
+  const ab = document.getElementById('approveBtn');
+  const rb = document.getElementById('rejectBtn');
+  if (ab) ab.disabled = !!loading;
+  if (rb) rb.disabled = !!loading;
+}
 
 async function load() {
   if (!id) { document.body.innerHTML = '<h1>❌ No campaign ID provided</h1>'; return; }
@@ -95,18 +114,50 @@ async function load() {
   }
 }
 
-function approve() {
-  fetch('/runtime/campaigns/approve', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({id,action:'approve'}) });
-  document.getElementById('statusBadge').textContent = '✅ APPROVED';
-  document.getElementById('statusBadge').className = 'approved';
-  if (window.opener) window.opener.location.reload();
+async function approve() {
+  setActionLoading(true);
+  setActionStatus('Aprobando campaña...');
+  try {
+    const res = await fetch('/runtime/campaigns/approve', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({id,action:'approve'})
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.error || 'No se pudo aprobar.');
+
+    document.getElementById('statusBadge').textContent = '✅ APPROVED';
+    document.getElementById('statusBadge').className = 'approved';
+    setActionStatus('Campaña aprobada y publicada para ejecución.', 'ok');
+    if (window.opener) window.opener.location.reload();
+  } catch (err) {
+    setActionStatus(`Error al aprobar: ${err.message}`, 'err');
+  } finally {
+    setActionLoading(false);
+  }
 }
 
-function reject() {
-  if (confirm('Reject this campaign?')) {
+async function reject() {
+  if (!confirm('Reject this campaign?')) return;
+  setActionLoading(true);
+  setActionStatus('Rechazando campaña...');
+  try {
+    const res = await fetch('/runtime/campaigns/reject', {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({id,action:'reject'})
+    });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error(data.error || 'No se pudo rechazar.');
+
     document.getElementById('statusBadge').textContent = '❌ REJECTED';
     document.getElementById('statusBadge').className = 'pending';
+    setActionStatus('Campaña rechazada.', 'ok');
     if (window.opener) window.opener.location.reload();
+  } catch (err) {
+    setActionStatus(`Error al rechazar: ${err.message}`, 'err');
+  } finally {
+    setActionLoading(false);
   }
 }
 

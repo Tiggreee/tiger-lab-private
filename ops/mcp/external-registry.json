@@ -13,7 +13,9 @@
       "free": true,
       "impact": "high",
       "command": "npx @modelcontextprotocol/server-memory",
-      "functional": false
+      "functional": true,
+      "verifiedAt": "2026-07-01",
+      "verifiedBy": "mcp-client --connect memory (9 tools listed)"
     },
     "sequential-thinking": {
       "id": "mcp-sequential",
@@ -25,7 +27,9 @@
       "free": true,
       "impact": "medium",
       "command": "npx @modelcontextprotocol/server-sequential-thinking",
-      "functional": false
+      "functional": true,
+      "verifiedAt": "2026-07-01",
+      "verifiedBy": "mcp-client --connect sequential (sequentialthinking tool listed)"
     },
     "filesystem": {
       "id": "mcp-filesystem",
@@ -91,14 +95,16 @@
     "fetch": {
       "id": "mcp-fetch",
       "name": "Fetch MCP",
-      "package": "@modelcontextprotocol/server-fetch",
+      "package": "mcp-server-fetch",
       "category": "research",
       "description": "Web content fetching. R&D Engine researches with live data.",
       "enabled": false,
       "free": true,
+      "needsPython": true,
       "impact": "high",
-      "command": "npx @modelcontextprotocol/server-fetch",
-      "functional": false
+      "command": "uvx mcp-server-fetch",
+      "functional": false,
+      "note": "Official fetch server is Python (uvx), not npm. Requires uv/python in PATH."
     },
     "puppeteer": {
       "id": "mcp-puppeteer",

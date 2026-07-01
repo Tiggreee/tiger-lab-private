@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-17T09:10:11.636Z",
-  "startedAt": "2026-06-17T09:10:10.996Z",
+  "generatedAt": "2026-07-01T00:08:20.336Z",
+  "startedAt": "2026-07-01T00:08:20.335Z",
   "failOpen": true,
   "flowStatus": "active",
   "alerts": [],
@@ -10,40 +10,44 @@
       "command": "node scripts/product-architect.mjs",
       "stage": "design",
       "optional": true,
-      "status": "ok",
-      "bypassed": false
+      "status": "skipped",
+      "bypassed": false,
+      "reason": "summary-only-mode"
     },
     {
       "id": "development",
       "command": "node scripts/generate-product.mjs --dryRun",
       "stage": "development",
       "optional": true,
-      "status": "ok",
-      "bypassed": false
+      "status": "skipped",
+      "bypassed": false,
+      "reason": "summary-only-mode"
     },
     {
       "id": "market-foundation",
       "command": "node scripts/analyze-monetization.mjs",
       "stage": "foundation",
       "optional": true,
-      "status": "ok",
-      "bypassed": false
+      "status": "skipped",
+      "bypassed": false,
+      "reason": "summary-only-mode"
     },
     {
       "id": "security-foundation",
       "command": "node scripts/verify-systems.mjs",
       "stage": "foundation",
       "optional": true,
-      "status": "ok",
-      "bypassed": false
+      "status": "skipped",
+      "bypassed": false,
+      "reason": "summary-only-mode"
     }
   ],
   "summary": {
     "total": 4,
-    "ok": 4,
+    "ok": 0,
     "bypassed": 0,
     "blocked": 0,
     "failed": 0,
-    "skipped": 0
+    "skipped": 4
   }
 }

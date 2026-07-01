@@ -1134,6 +1134,16 @@
       "currency": "USD",
       "createdAt": "2026-06-09T14:29:50.964Z",
       "status": "succeeded"
+    },
+    "pay_timbox_prod_20260701_001": {
+      "paymentId": "pay_timbox_prod_20260701_001",
+      "customerId": "cust_timbox_prod_20260701_001",
+      "productId": "facturautentico-cloud",
+      "planId": "starter",
+      "amount": 116,
+      "currency": "MXN",
+      "createdAt": "2026-07-01T13:01:00.000Z",
+      "status": "succeeded"
     }
   },
   "accounts": {},
@@ -1301,10 +1311,398 @@
       "planId": "starter",
       "amount": 39,
       "currency": "USD",
-      "status": "skipped",
-      "detail": "Invoice provider 'manual' is not active. Pending manual/retry issuance.",
-      "recipients": [],
-      "issuedAt": "2026-06-09T14:29:50.983Z"
+      "status": "failed",
+      "detail": "Timbox adapter issue failed: 502 {\"error\":\"Timbox SOAP call failed\",\"detail\":\"cfdi:Comprobante:Sello - El resultado de la digesti\\u00f3n debe ser igual al resultado de la desencripci\\u00f3n del sello\"}",
+      "recipients": [
+        "test@local.dev"
+      ],
+      "issuedAt": "2026-06-18T14:00:49.738Z"
+    },
+    "pay_timbox_prod_20260701_001": {
+      "paymentId": "pay_timbox_prod_20260701_001",
+      "customerId": "cust_timbox_prod_20260701_001",
+      "productId": "facturautentico-cloud",
+      "planId": "starter",
+      "amount": 116,
+      "currency": "MXN",
+      "status": "issued",
+      "detail": "Timbox production timbrado exitoso.",
+      "cfdiUuid": "EB322E41-A7F9-4316-B087-E12304BB6115",
+      "recipients": [
+        "billing@tigrelabs.mx"
+      ],
+      "issuedAt": "2026-07-01T13:02:00.000Z"
     }
-  }
+  },
+  "invoiceMcpAudits": {
+    "mcp-1781762088990-a7fj6xtm": {
+      "auditId": "mcp-1781762088990-a7fj6xtm",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "Timbox adapter issue failed: 502 <br />\n<b>Warning</b>:  Array to string conversion in <b>C:\\Users\\victo\\Documents\\Tigre-Labs\\tiger-lab-private\\integrations\\timbox\\php-adapter\\public\\index.php</b> on line <b>56</b><br />\n{\"error\":\"Timbox SOAP call failed\",\"detail\":\"Los datos de autentificaci\\u00f3n enviados son incorrectos\"}",
+      "benchmark": {
+        "latencyMs": 1189,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 0,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": true,
+        "sampleSize": 0
+      },
+      "recommendations": [
+        "Marca incidente de proveedor y activa fallback manual controlado."
+      ],
+      "startedAt": "2026-06-18T05:54:47.799Z",
+      "finishedAt": "2026-06-18T05:54:48.988Z"
+    },
+    "mcp-1781762126998-9vhnb948": {
+      "auditId": "mcp-1781762126998-9vhnb948",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "Timbox adapter issue failed: 502 <br />\n<b>Warning</b>:  Array to string conversion in <b>C:\\Users\\victo\\Documents\\Tigre-Labs\\tiger-lab-private\\integrations\\timbox\\php-adapter\\public\\index.php</b> on line <b>92</b><br />\n{\"error\":\"Timbox SOAP call failed\",\"detail\":\"Los datos de autentificaci\\u00f3n enviados son incorrectos\"}",
+      "benchmark": {
+        "latencyMs": 787,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 1
+      },
+      "recommendations": [
+        "Marca incidente de proveedor y activa fallback manual controlado."
+      ],
+      "startedAt": "2026-06-18T05:55:26.209Z",
+      "finishedAt": "2026-06-18T05:55:26.996Z"
+    },
+    "mcp-1781762158969-47idzrte": {
+      "auditId": "mcp-1781762158969-47idzrte",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "Timbox adapter issue failed: 502 {\"error\":\"Timbox SOAP call failed\",\"detail\":\"Los datos de autentificaci\\u00f3n enviados son incorrectos\"}",
+      "benchmark": {
+        "latencyMs": 844,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 2
+      },
+      "recommendations": [
+        "Marca incidente de proveedor y activa fallback manual controlado."
+      ],
+      "startedAt": "2026-06-18T05:55:58.122Z",
+      "finishedAt": "2026-06-18T05:55:58.966Z"
+    },
+    "mcp-1781762725937-nsklosee": {
+      "auditId": "mcp-1781762725937-nsklosee",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "Timbox credentials, adapter, or CFDI XML (SXML) are missing. Pending manual/retry issuance.",
+      "benchmark": {
+        "latencyMs": 0,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 3
+      },
+      "recommendations": [
+        "Enviar a revision manual con evidencia completa para definir correccion de bajo riesgo."
+      ],
+      "startedAt": "2026-06-18T06:05:25.936Z",
+      "finishedAt": "2026-06-18T06:05:25.936Z"
+    },
+    "mcp-1781764025747-q54yslns": {
+      "auditId": "mcp-1781764025747-q54yslns",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "Timbox credentials, adapter, or CFDI XML (SXML) are missing. Pending manual/retry issuance.",
+      "benchmark": {
+        "latencyMs": 0,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 4
+      },
+      "recommendations": [
+        "Enviar a revision manual con evidencia completa para definir correccion de bajo riesgo."
+      ],
+      "startedAt": "2026-06-18T06:27:05.746Z",
+      "finishedAt": "2026-06-18T06:27:05.746Z"
+    },
+    "mcp-1781774635202-9uu7kcmy": {
+      "auditId": "mcp-1781774635202-9uu7kcmy",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "blocked",
+      "decision": "block",
+      "detail": "Timbox adapter issue failed: 502 <br />\n<b>Warning</b>:  Array to string conversion in <b>C:\\Users\\victo\\Documents\\Tigre-Labs\\tiger-lab-private\\integrations\\timbox\\php-adapter\\public\\index.php</b> on line <b>102</b><br />\n{\"error\":\"Timbox SOAP call failed\",\"detail\":\"Los datos de autentificaci\\u00f3n enviados son incorrectos\"}",
+      "benchmark": {
+        "latencyMs": 1405,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 5
+      },
+      "recommendations": [
+        "Marca incidente de proveedor y activa fallback manual controlado."
+      ],
+      "startedAt": "2026-06-18T09:23:53.795Z",
+      "finishedAt": "2026-06-18T09:23:55.200Z"
+    },
+    "mcp-1781774691716-5lg0f08w": {
+      "auditId": "mcp-1781774691716-5lg0f08w",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "Timbox adapter issue failed: 502 {\"error\":\"Timbox SOAP call failed\",\"detail\":\"2:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Comprobante': The attribute 'Sello' is required but missing.2:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Comprobante': The attribute 'NoCertificado' is required but missing.2:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Comprobante': The attribute 'Certificado' is required but missing.2:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Comprobante': The attribute 'Exportacion' is required but missing.2:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Comprobante': The attribute 'LugarExpedicion' is required but missing.3:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4InformacionGlobal', attribute 'Mes': The attribute 'Mes' is not allowed.3:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4InformacionGlobal': The attribute 'Meses' is required but missing.4:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Emisor': The attribute 'RegimenFiscal' is required but missing.4:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Emisor': Element content is not allowed, because the content type is empty.8:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Receptor', attribute 'UsoCFDI': [facet 'enumeration'] The value 'P001' is not an element of the set 'G01', 'G02', 'G03', 'I01', 'I02', 'I03', 'I04', 'I05', 'I06', 'I07', 'I08', 'D01', 'D02', 'D03', 'D04', 'D05', 'D06', 'D07', 'D08', 'D09', 'D10', 'P01', 'S01', 'CP01', 'CN01'.8:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Receptor', attribute 'UsoCFDI': 'P001' is not a valid value of the atomic type 'http:\\/\\/www.sat.gob.mx\\/sitio_internet\\/cfd\\/catalogosc_UsoCFDI'.8:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Receptor': The attribute 'DomicilioFiscalReceptor' is required but missing.8:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Receptor': The attribute 'RegimenFiscalReceptor' is required but missing.8:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Receptor': Element content is not allowed, because the content type is empty.12:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Concepto', attribute 'Clave': The attribute 'Clave' is not allowed.12:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Concepto': The attribute 'ClaveProdServ' is required but missing.12:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Concepto': The attribute 'ObjetoImp' is required but missing.\"}",
+      "benchmark": {
+        "latencyMs": 967,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 6
+      },
+      "recommendations": [
+        "Marca incidente de proveedor y activa fallback manual controlado."
+      ],
+      "startedAt": "2026-06-18T09:24:50.747Z",
+      "finishedAt": "2026-06-18T09:24:51.714Z"
+    },
+    "mcp-1781776407176-b0zmrygg": {
+      "auditId": "mcp-1781776407176-b0zmrygg",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "Timbox adapter issue failed: 502 {\"error\":\"Timbox SOAP call failed\",\"detail\":\"cfdi:Comprobante:Emisor:Rfc - El RFC del emisor no corresponde con RFC's destinados para ambiente de pruebas\"}",
+      "benchmark": {
+        "latencyMs": 1083,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 7
+      },
+      "recommendations": [
+        "Marca incidente de proveedor y activa fallback manual controlado."
+      ],
+      "startedAt": "2026-06-18T09:53:26.091Z",
+      "finishedAt": "2026-06-18T09:53:27.174Z"
+    },
+    "mcp-1781776433322-ci0irbkb": {
+      "auditId": "mcp-1781776433322-ci0irbkb",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "Timbox adapter issue failed: 502 {\"error\":\"Timbox SOAP call failed\",\"detail\":\"cfdi:Comprobante:Emisor:Rfc - El RFC del emisor no corresponde con RFC's destinados para ambiente de pruebas\"}",
+      "benchmark": {
+        "latencyMs": 1032,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 8
+      },
+      "recommendations": [
+        "Marca incidente de proveedor y activa fallback manual controlado."
+      ],
+      "startedAt": "2026-06-18T09:53:52.285Z",
+      "finishedAt": "2026-06-18T09:53:53.317Z"
+    },
+    "mcp-1781776452878-euvimbfe": {
+      "auditId": "mcp-1781776452878-euvimbfe",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "Timbox adapter issue failed: 502 {\"error\":\"Timbox SOAP call failed\",\"detail\":\"cfdi:Comprobante:Fecha - La fecha del comprobante es posterior a la actual, considerar la zona horaria de la emisi\\u00f3n del CFDI.\"}",
+      "benchmark": {
+        "latencyMs": 1046,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 9
+      },
+      "recommendations": [
+        "Marca incidente de proveedor y activa fallback manual controlado."
+      ],
+      "startedAt": "2026-06-18T09:54:11.830Z",
+      "finishedAt": "2026-06-18T09:54:12.876Z"
+    },
+    "mcp-1781776471485-ypewxj2c": {
+      "auditId": "mcp-1781776471485-ypewxj2c",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "Timbox adapter issue failed: 502 {\"error\":\"Timbox SOAP call failed\",\"detail\":\"cfdi:Comprobante:Sello - No es un Base64 v\\u00e1lido\"}",
+      "benchmark": {
+        "latencyMs": 958,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 10
+      },
+      "recommendations": [
+        "Marca incidente de proveedor y activa fallback manual controlado."
+      ],
+      "startedAt": "2026-06-18T09:54:30.525Z",
+      "finishedAt": "2026-06-18T09:54:31.483Z"
+    },
+    "mcp-1781776574846-sgp1fdmn": {
+      "auditId": "mcp-1781776574846-sgp1fdmn",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "Timbox adapter issue failed: 502 {\"error\":\"Timbox SOAP call failed\",\"detail\":\"13:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Comprobante': The attribute 'SubTotal' is required but missing.13:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Comprobante': The attribute 'Moneda' is required but missing.13:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Comprobante': The attribute 'Total' is required but missing.13:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Comprobante': The attribute 'TipoDeComprobante' is required but missing.13:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Comprobante': The attribute 'Exportacion' is required but missing.13:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Comprobante': The attribute 'LugarExpedicion' is required but missing.13:0: ERROR: Element 'http:\\/\\/www.sat.gob.mx\\/cfd\\/4Comprobante': Missing child element(s). Expected is one of ( http:\\/\\/www.sat.gob.mx\\/cfd\\/4InformacionGlobal, http:\\/\\/www.sat.gob.mx\\/cfd\\/4CfdiRelacionados, http:\\/\\/www.sat.gob.mx\\/cfd\\/4Emisor ).\"}",
+      "benchmark": {
+        "latencyMs": 1197,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 11
+      },
+      "recommendations": [
+        "Marca incidente de proveedor y activa fallback manual controlado."
+      ],
+      "startedAt": "2026-06-18T09:56:13.648Z",
+      "finishedAt": "2026-06-18T09:56:14.845Z"
+    },
+    "mcp-1781776680398-2qxap8h1": {
+      "auditId": "mcp-1781776680398-2qxap8h1",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "Timbox adapter issue failed: 502 {\"error\":\"Timbox SOAP call failed\",\"detail\":\"cfdi:Comprobante:Sello - El resultado de la digesti\\u00f3n debe ser igual al resultado de la desencripci\\u00f3n del sello\"}",
+      "benchmark": {
+        "latencyMs": 1165,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 12
+      },
+      "recommendations": [
+        "Marca incidente de proveedor y activa fallback manual controlado."
+      ],
+      "startedAt": "2026-06-18T09:57:59.230Z",
+      "finishedAt": "2026-06-18T09:58:00.395Z"
+    },
+    "mcp-1781777119613-dwih08bx": {
+      "auditId": "mcp-1781777119613-dwih08bx",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "Timbox adapter issue failed: 502 {\"error\":\"Timbox SOAP call failed\",\"detail\":\"cfdi:Comprobante:Sello - El resultado de la digesti\\u00f3n debe ser igual al resultado de la desencripci\\u00f3n del sello\"}",
+      "benchmark": {
+        "latencyMs": 1727,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 13
+      },
+      "recommendations": [
+        "Marca incidente de proveedor y activa fallback manual controlado."
+      ],
+      "startedAt": "2026-06-18T10:05:17.884Z",
+      "finishedAt": "2026-06-18T10:05:19.611Z"
+    },
+    "mcp-1781791240979-sa7j42jn": {
+      "auditId": "mcp-1781791240979-sa7j42jn",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "No valid recipients configured for invoice delivery.",
+      "benchmark": {
+        "latencyMs": 0,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 14
+      },
+      "recommendations": [
+        "Enviar a revision manual con evidencia completa para definir correccion de bajo riesgo."
+      ],
+      "startedAt": "2026-06-18T14:00:40.978Z",
+      "finishedAt": "2026-06-18T14:00:40.978Z"
+    },
+    "mcp-1781791249733-isch1le5": {
+      "auditId": "mcp-1781791249733-isch1le5",
+      "paymentId": "pay_manual_1",
+      "provider": "timbox",
+      "action": "issue_cfdi",
+      "status": "failed",
+      "decision": "manual-review",
+      "detail": "Timbox adapter issue failed: 502 {\"error\":\"Timbox SOAP call failed\",\"detail\":\"cfdi:Comprobante:Sello - El resultado de la digesti\\u00f3n debe ser igual al resultado de la desencripci\\u00f3n del sello\"}",
+      "benchmark": {
+        "latencyMs": 1452,
+        "latencyTargetMs": 4000,
+        "withinLatencyTarget": true,
+        "recentFailureRate": 1,
+        "failureRateThreshold": 0.2,
+        "withinFailureRateTarget": false,
+        "sampleSize": 15
+      },
+      "recommendations": [
+        "Marca incidente de proveedor y activa fallback manual controlado."
+      ],
+      "startedAt": "2026-06-18T14:00:48.279Z",
+      "finishedAt": "2026-06-18T14:00:49.731Z"
+    }
+  },
+  "linkedinOAuth": {}
 }

@@ -40,6 +40,24 @@ When the user explicitly says `tiggreeeon`, switch to direct execution mode:
 | GitHub for Startups | $9,964.81 | $4,982.40 |
 | AI Credits (after day 5) | Available | **ZERO** |
 
+### Resource Efficiency Protocol (Mandatory)
+
+To avoid wasted cycles, secrets churn, and repeated false-negative loops:
+
+1. Use a two-tier validation model and report which tier is failing:
+   - Tier A (`traffic:go-live`): minimum publish-critical secrets.
+   - Tier B (`traffic:ready`): extended ecosystem secrets.
+2. Never claim "fully green" if Tier B is failing; report "Tier A pass / Tier B fail" explicitly.
+3. Validate in runtime context (Railway service env), not only local shell env.
+4. Before asking for secret rotation/regeneration, verify if the value can be viewed/copied first.
+5. Regenerate secrets only when visibility/copy is impossible or compromise is confirmed.
+6. After secret updates:
+   - Restart/redeploy runtime services once.
+   - Re-run Tier A and Tier B checks once.
+   - Publish a concise PASS/FAIL matrix.
+7. Keep one active checklist per provider (LinkedIn, X, Facebook, Telegram, Discord) to prevent duplicated work.
+8. If a check is red, output exact missing variable names and source screen path, not generic advice.
+
 
 
 ### Mandatory Engine+Agents Switch

@@ -1,0 +1,19 @@
+{
+  "id": "auto-docflow-api-2026-07-01",
+  "productName": "Docflow API",
+  "target": "contabilidad",
+  "segment": "contabilidad",
+  "problemDetail": "captura manual de XML CFDI y reconciliacion de cobros en procesos operativos",
+  "primaryOutcome": "automatizacion de flujo documental con evidencia fiscal y trazabilidad diaria",
+  "proofPoint": "operacion productiva con dashboard en linea, reconciliacion MATCH y gate GO",
+  "domainTerms": [
+    "cfdi",
+    "xml",
+    "timbrado",
+    "uuid",
+    "reconciliacion",
+    "sat",
+    "pac"
+  ],
+  "qualityThreshold": 45
+}

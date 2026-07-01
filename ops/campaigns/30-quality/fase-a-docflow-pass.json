@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-06-28T01:35:13.972Z",
+  "briefId": "fase-a-docflow-pass",
+  "campaignId": "CAMP-1782610513949",
+  "qualityResult": {
+    "campaignId": "CAMP-1782610513949",
+    "threshold": 60,
+    "averageSpecificity": 68,
+    "passed": true,
+    "failedChannels": [],
+    "channels": [
+      {
+        "channel": "email",
+        "specificityScore": 63,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "linkedin",
+        "specificityScore": 63,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "x",
+        "specificityScore": 95,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "facebook",
+        "specificityScore": 63,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "telegram",
+        "specificityScore": 63,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "discord",
+        "specificityScore": 63,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      }
+    ]
+  }
+}

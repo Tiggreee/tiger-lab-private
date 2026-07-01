@@ -1,6 +1,6 @@
 import { findGenericAIPatterns, scoreBrandSpecificity } from './content-quality-guard.mjs';
 
-export const DEFAULT_QUALITY_THRESHOLD = 60;
+export const DEFAULT_QUALITY_THRESHOLD = 80;
 
 function normalizeText(value) {
   return String(value || '').trim();

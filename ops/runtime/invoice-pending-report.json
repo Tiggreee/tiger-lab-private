@@ -1,12 +1,13 @@
 {
-  "generatedAt": "2026-06-09T14:29:55.457Z",
+  "generatedAt": "2026-07-01T13:06:37.835Z",
   "totals": {
-    "invoices": 1,
-    "pending": 1,
-    "skipped": 1,
-    "failed": 0
+    "invoices": 2,
+    "pending": 0,
+    "skipped": 0,
+    "failed": 0,
+    "excludedSyntheticFixtures": 1
   },
-  "pending": [
+  "excludedSyntheticFixtures": [
     {
       "paymentId": "pay_manual_1",
       "customerId": "cust_manual_1",
@@ -14,10 +15,13 @@
       "planId": "starter",
       "amount": 39,
       "currency": "USD",
-      "status": "skipped",
-      "detail": "Invoice provider 'manual' is not active. Pending manual/retry issuance.",
-      "recipients": [],
-      "issuedAt": "2026-06-09T14:29:50.983Z"
+      "status": "failed",
+      "detail": "Timbox adapter issue failed: 502 {\"error\":\"Timbox SOAP call failed\",\"detail\":\"cfdi:Comprobante:Sello - El resultado de la digesti\\u00f3n debe ser igual al resultado de la desencripci\\u00f3n del sello\"}",
+      "recipients": [
+        "test@local.dev"
+      ],
+      "issuedAt": "2026-06-18T14:00:49.738Z"
     }
-  ]
+  ],
+  "pending": []
 }

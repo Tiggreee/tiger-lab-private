@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { readFileSync } from 'node:fs';
 import { readRuntimeState } from '../../src/shared/infrastructure/persistence/runtime-state';
 import { FacturamaResendInvoiceAutomationService } from '../../server/bootstrap/invoice-automation-service';
 
@@ -8,6 +9,80 @@ interface RetryItem {
   paymentId: string;
   status: 'issued' | 'skipped' | 'failed';
   detail: string;
+}
+
+function resolveInvoiceProvider(): string {
+  return (process.env.INVOICE_PROVIDER || 'timbox').trim().toLowerCase();
+}
+
+function extractXmlAttribute(xml: string, attributeName: string): string {
+  const escaped = attributeName.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const matcher = new RegExp(`\\b${escaped}="([^"]*)"`);
+  const match = xml.match(matcher);
+  return match?.[1]?.trim() || '';
+}
+
+function resolveTimboxSxmlBase64(): string | null {
+  const inlineBase64 = process.env.TIMBOX_SXML_BASE64?.trim();
+  if (inlineBase64) {
+    return inlineBase64;
+  }
+
+  const xmlPath = process.env.TIMBOX_SXML_PATH?.trim();
+  if (!xmlPath) {
+    return null;
+  }
+
+  try {
+    const xmlContent = readFileSync(xmlPath, 'utf8');
+    if (!xmlContent.trim()) {
+      return null;
+    }
+    return Buffer.from(xmlContent, 'utf8').toString('base64');
+  } catch {
+    return null;
+  }
+}
+
+function validateTimboxSxmlPayload(sxml: string): string[] {
+  const errors: string[] = [];
+
+  let xml = '';
+  try {
+    xml = Buffer.from(sxml, 'base64').toString('utf8');
+  } catch {
+    errors.push('SXML is not valid base64.');
+  }
+
+  if (!xml || !xml.includes('<cfdi:Comprobante')) {
+    errors.push('SXML decoded payload does not contain cfdi:Comprobante root.');
+  }
+
+  const noCertificado = extractXmlAttribute(xml, 'NoCertificado');
+  const certificado = extractXmlAttribute(xml, 'Certificado');
+  const sello = extractXmlAttribute(xml, 'Sello');
+
+  if (!noCertificado) {
+    errors.push('cfdi:Comprobante NoCertificado is required.');
+  } else if (!/^[0-9]{20}$/.test(noCertificado)) {
+    if (noCertificado.length > 100) {
+      errors.push('NoCertificado appears to contain full certificate content instead of 20-digit serial.');
+    } else {
+      errors.push(`NoCertificado must match [0-9]{20}. Received '${noCertificado}'.`);
+    }
+  }
+
+  if (!certificado) {
+    errors.push('cfdi:Comprobante Certificado is required.');
+  } else if (certificado.length < 300) {
+    errors.push('cfdi:Comprobante Certificado is suspiciously short (expected full base64 DER cert).');
+  }
+
+  if (!sello) {
+    errors.push('cfdi:Comprobante Sello is required.');
+  }
+
+  return errors;
 }
 
 function getArg(flag: string): string | undefined {
@@ -52,6 +127,38 @@ async function runInvoiceRetry(argv: string[]): Promise<number> {
     failed: 0,
     items: []
   };
+
+  if (resolveInvoiceProvider() === 'timbox') {
+    const sxml = resolveTimboxSxmlBase64();
+    if (!sxml) {
+      report.failed += 1;
+      report.items.push({
+        paymentId: paymentIdFilter || 'all',
+        status: 'failed',
+        detail: 'Timbox preflight blocked retry: missing TIMBOX_SXML_BASE64 or TIMBOX_SXML_PATH.'
+      });
+    } else {
+      const preflightErrors = validateTimboxSxmlPayload(sxml);
+      if (preflightErrors.length > 0) {
+        report.failed += 1;
+        report.items.push({
+          paymentId: paymentIdFilter || 'all',
+          status: 'failed',
+          detail: `Timbox preflight blocked retry: ${preflightErrors.join(' | ')}`
+        });
+      }
+    }
+
+    if (report.failed > 0) {
+      const runtimeDir = path.resolve('ops/runtime');
+      fs.mkdirSync(runtimeDir, { recursive: true });
+      const reportPath = path.join(runtimeDir, 'invoice-retry-report.json');
+      fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n', 'utf8');
+      console.log(JSON.stringify(report, null, 2));
+      console.log(`Report written: ${reportPath}`);
+      return strict ? 2 : 0;
+    }
+  }
 
   for (const invoice of candidateInvoices) {
     const payment = state.payments?.[invoice.paymentId];

@@ -1,0 +1,17 @@
+{
+  "id": "auto-script-premium-kit-2026-07-01",
+  "productName": "Script Premium Kit",
+  "target": "operaciones",
+  "segment": "pymes",
+  "problemDetail": "procesos manuales y repetitivos en operacion comercial sin trazabilidad",
+  "primaryOutcome": "automatizacion operativa con ejecucion diaria y seguimiento en dashboard",
+  "proofPoint": "pipeline y command center funcionando en produccion",
+  "domainTerms": [
+    "automatizacion",
+    "operaciones",
+    "pipeline",
+    "dashboard",
+    "conversion"
+  ],
+  "qualityThreshold": 45
+}

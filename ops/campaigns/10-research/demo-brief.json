@@ -1,0 +1,11 @@
+{
+  "id": "demo-brief",
+  "productName": "Docflow API",
+  "target": "contabilidad",
+  "segment": "contabilidad",
+  "problemDetail": "flujos documentales manuales que consumen horas cada semana",
+  "primaryOutcome": "automatizacion CFDI con menos retrabajo",
+  "proofPoint": "80% menos tiempo operativo",
+  "domainTerms": ["cfdi", "timbrado", "xml", "integracion"],
+  "qualityThreshold": 45
+}

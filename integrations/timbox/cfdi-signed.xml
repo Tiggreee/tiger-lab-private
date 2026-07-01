@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/4 http://www.sat.gob.mx/sitio_internet/cfd/4/cfdv40.xsd" Version="4.0" Serie="TEST" Folio="1" Fecha="2026-07-01T07:01:42" Sello="OTL8eiFcca7Md80XCviTl5aE8qK62yUSeiaJtYsu95LlPrLxySuOOEfonMiRJOavZbbUnnh7Quy7BcuMqvv4vybHUbXZFBP9lNMBIoQN75RGm2ATO9afcCPwiUlq5FNhH7IbMXfTWHPZFHs7iDUq5zX94HDfubhF7quHNpmayuEedRwhmUXQdxnjU4AXFl6b1qvPNaL+OwMQDbLXT8b8TmNt6GEsImeYSYJUmsxqXSw5FWgtbha1frftk1BDvcCrZ+Tp2rv+WrS1wo0TgQMV0resoRtNENEGuZYJnc85x9YFVPBSqNkzTTypR+Pfw/KI/GOw55slEUpyUEymdu5aDQ==" FormaPago="03" NoCertificado="00001000000725699623" Certificado="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" SubTotal="100.00" Moneda="MXN" Total="116.00" TipoDeComprobante="I" Exportacion="01" MetodoPago="PUE" LugarExpedicion="06600">
+  <cfdi:InformacionGlobal Periodicidad="01" Meses="06" Año="2026"/>
+  <cfdi:Emisor Rfc="SALV880427GW4" Nombre="VICTOR MANUEL SALGADO LUNA" RegimenFiscal="612"/>
+  <cfdi:Receptor Rfc="XAXX010101000" Nombre="Publico General" DomicilioFiscalReceptor="06600" RegimenFiscalReceptor="616" UsoCFDI="S01"/>
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="84111506" Cantidad="1" ClaveUnidad="E48" Unidad="Servicio" Descripcion="Servicio de Prueba" ValorUnitario="100.00" Importe="100.00" ObjetoImp="02">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16.00"/>
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosTrasladados="16.00">
+    <cfdi:Traslados>
+      <cfdi:Traslado Base="100.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="16.00"/>
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+</cfdi:Comprobante>

@@ -338,7 +338,7 @@ function main() {
   console.log(`  ${passed} PASS · ${warned} WARN · ${failed} FAIL`);
   if (generatedTasks.length > 0) {
     console.log(`\n  ⚠️  Auto-generated ${generatedTasks.length} task(s) for FAIL items:`);
-    generatedTasks.forEach(t => console.log(`     - ${t.title}: ${t.detail}`));
+    generatedTasks.forEach(t => console.log(`     - ${t.title}: ${t.nextAction}`));
   }
   console.log(`\n  Saved: ${OUTPUT}`);
 }

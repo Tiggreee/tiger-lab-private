@@ -1,0 +1,11 @@
+{
+  "id": "fase-a-docflow-pass",
+  "productName": "Docflow API",
+  "target": "contabilidad",
+  "segment": "contabilidad",
+  "problemDetail": "flujos documentales manuales que consumen horas y generan errores CFDI",
+  "primaryOutcome": "automatizacion completa de validacion y timbrado CFDI",
+  "proofPoint": "casos reales con reduccion del 80% en tiempo operativo",
+  "domainTerms": ["cfdi", "timbrado", "xml", "integracion", "facturacion"],
+  "qualityThreshold": 60
+}

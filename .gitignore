@@ -23,3 +23,6 @@ yarn-error.log*
 build/
 dist/
 .tmp/
+
+# Local tooling
+tools/php/

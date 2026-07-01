@@ -1,0 +1,24 @@
+{
+  "updatedAt": "2026-06-29T00:00:00.000Z",
+  "policy": {
+    "rule": "single-writer",
+    "fallback": "read-only",
+    "notes": "If owner workflow is unavailable, keep last known value and surface UNKNOWN instead of synthetic defaults."
+  },
+  "owners": {
+    "ops/runtime/dashboard-unified.json": ".github/workflows/agent-monitor.yml",
+    "ops/runtime/agent-monitor.json": ".github/workflows/agent-monitor.yml",
+    "ops/runtime/pricing.json": ".github/workflows/agent-monitor.yml",
+    "ops/runtime/supervisor-report.json": ".github/workflows/agent-monitor.yml",
+    "ops/runtime/system-verification.json": ".github/workflows/agent-monitor.yml",
+    "ops/runtime/product-scores.json": ".github/workflows/product-engine-2h-cycle.yml",
+    "ops/runtime/product-roadmaps.json": ".github/workflows/product-engine-2h-cycle.yml",
+    "ops/runtime/product-score-history.json": ".github/workflows/product-engine-2h-cycle.yml",
+    "ops/runtime/failures-history.json": ".github/workflows/failures-monitor-2h-cycle.yml",
+    "ops/runtime/billing-reconciliation-report.json": "scripts/billing-reconciliation.mjs",
+    "ops/runtime/billing-reconciliation-report.md": "scripts/billing-reconciliation.mjs",
+    "ops/runtime/production-go-no-go-report.json": "scripts/production-go-no-go.mjs",
+    "ops/runtime/production-go-no-go-report.md": "scripts/production-go-no-go.mjs",
+    "ops/runtime/campaigns/index.json": "scripts/traffic/sync-runtime-campaign-index.mjs"
+  }
+}

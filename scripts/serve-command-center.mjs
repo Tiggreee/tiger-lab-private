@@ -1,14 +1,20 @@
 import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const PORT = Number(process.env.COMMAND_CENTER_PORT || 4310);
-const root = path.resolve('ops');
-const MCP_TOOLS_PATH = path.resolve('ops/mcp/lead-tools.json');
+const PORT = Number(process.env.PORT || process.env.COMMAND_CENTER_PORT || 4310);
+const scriptDir = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(scriptDir, '..');
+const root = path.join(repoRoot, 'ops');
+const MCP_TOOLS_PATH = path.join(repoRoot, 'ops/mcp/lead-tools.json');
 
 // Fix: serve /index.html -> /command-center/index.html
 function defaultIndex(urlPath) {
   if (urlPath === '/' || urlPath === '/index.html') {
+    return '/command-center/index.html';
+  }
+  if (urlPath === '/command-center' || urlPath === '/command-center/' || urlPath === '/command-center/index') {
     return '/command-center/index.html';
   }
   if (urlPath === '/project-map.html' || urlPath === '/project-map-b.html' || urlPath === '/project-map-3d.html' || urlPath === '/checkout.html') {
@@ -33,22 +39,104 @@ function serveJson(res, status, data) {
 }
 
 function serveFile(res, filePath) {
-  if (!fs.existsSync(filePath)) {
+  let effectivePath = filePath;
+  if (fs.existsSync(effectivePath) && fs.statSync(effectivePath).isDirectory()) {
+    effectivePath = path.join(effectivePath, 'index.html');
+  }
+
+  if (fs.existsSync(effectivePath) && fs.statSync(effectivePath).isDirectory()) {
     res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
     res.end('Not found');
     return;
   }
 
-  const ext = path.extname(filePath).toLowerCase();
+  if (!fs.existsSync(effectivePath)) {
+    res.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+    res.end('Not found');
+    return;
+  }
+
+  const ext = path.extname(effectivePath).toLowerCase();
   const type = contentTypes[ext] || 'application/octet-stream';
-  const data = fs.readFileSync(filePath);
+  const data = fs.readFileSync(effectivePath);
   res.writeHead(200, { 'Content-Type': type, 'Cache-Control': 'no-store' });
   res.end(data);
+}
+
+function readRequestBodyJSON(req) {
+  return new Promise((resolve, reject) => {
+    let raw = '';
+    req.on('data', (chunk) => {
+      raw += chunk;
+      if (raw.length > 1024 * 1024) {
+        reject(new Error('Payload too large'));
+      }
+    });
+    req.on('end', () => {
+      if (!raw) {
+        resolve({});
+        return;
+      }
+      try {
+        resolve(JSON.parse(raw));
+      } catch (error) {
+        reject(error);
+      }
+    });
+    req.on('error', reject);
+  });
 }
 
 function handleMCP(req, res) {
   const url = new URL(req.url || '/', 'http://localhost');
   const pathname = url.pathname;
+
+  // GET /runtime/telemetry — live command-center telemetry payload
+  if (pathname === '/runtime/telemetry' && req.method === 'GET') {
+    const executionModesPath = path.join(repoRoot, 'ops/runtime/execution-modes.json');
+    const mcpActivityPath = path.join(repoRoot, 'ops/runtime/mcp-activity.json');
+    const agentMonitorPath = path.join(repoRoot, 'ops/runtime/agent-monitor.json');
+
+    let modeState = {};
+    let mcpState = {};
+    let agentState = {};
+
+    try {
+      if (fs.existsSync(executionModesPath)) {
+        modeState = JSON.parse(fs.readFileSync(executionModesPath, 'utf8'));
+      }
+    } catch {}
+
+    try {
+      if (fs.existsSync(mcpActivityPath)) {
+        mcpState = JSON.parse(fs.readFileSync(mcpActivityPath, 'utf8'));
+      }
+    } catch {}
+
+    try {
+      if (fs.existsSync(agentMonitorPath)) {
+        agentState = JSON.parse(fs.readFileSync(agentMonitorPath, 'utf8'));
+      }
+    } catch {}
+
+    const mcpReport = (mcpState && mcpState.report) || {};
+    const agentSummary = (agentState && agentState.summary) || {};
+
+    serveJson(res, 200, {
+      checkedAt: new Date().toISOString(),
+      mode: String(modeState.current || 'AUTO').toUpperCase(),
+      busEvents: Number(modeState.busEvents || 0),
+      busSubs: Number(modeState.busSubs || 0),
+      wtActive: Number(modeState.activeWorktrees || 0),
+      wtTotal: Number(modeState.totalPools || 0),
+      memKeys: Number(modeState.memoryKeys || 0),
+      mcpActive: Number(mcpReport.active || 0),
+      mcpTotalUses: Number(mcpReport.totalUses || 0),
+      agentsActive: Number(agentSummary.activeAgents || 0),
+      agentsTotal: Number(agentSummary.totalAgents || 0)
+    });
+    return;
+  }
 
   // GET /mcp/tools — list all tools
   if (pathname === '/mcp/tools') {
@@ -86,11 +174,7 @@ function handleMCP(req, res) {
 
   // POST /runtime/campaigns/:id/approve — approve campaign
   if (pathname.startsWith('/runtime/campaigns/approve') && req.method === 'POST') {
-    const approval = require('./engine/campaigns/approval-engine.mjs');
-    // Simple inline approval for dashboard
-    const fs = require('fs');
-    const path = require('path');
-    const idxPath = path.resolve('ops/runtime/campaigns/index.json');
+    const idxPath = path.join(repoRoot, 'ops/runtime/campaigns/index.json');
     const idx = fs.existsSync(idxPath) ? JSON.parse(fs.readFileSync(idxPath, 'utf8')) : { campaigns: [] };
     
     readRequestBodyJSON(req).then(body => {
@@ -105,7 +189,7 @@ function handleMCP(req, res) {
         // Build social pack
         const product = entry.product || 'Docflow API';
         const funnelUrl = `https://tiger-lab-private-production.up.railway.app/checkout?product=${encodeURIComponent(product.toLowerCase().replace(/\s+/g,'-'))}`;
-        const outboxDir = path.resolve('ops/traffic/outbox');
+        const outboxDir = path.join(repoRoot, 'ops/traffic/outbox');
         fs.mkdirSync(outboxDir, { recursive: true });
         
         const packName = `social-pack-${product.toLowerCase().replace(/[^a-z0-9]+/g,'-')}-approved`;
@@ -120,7 +204,7 @@ function handleMCP(req, res) {
           channels: {}
         };
         
-        const campaignDir = path.resolve('ops/runtime/campaigns', campaignId);
+        const campaignDir = path.join(repoRoot, 'ops/runtime/campaigns', campaignId);
         const exts = { email:'html', linkedin:'txt', x:'txt', facebook:'txt', telegram:'md', discord:'md' };
         for (const [ch, ext] of Object.entries(exts)) {
           const f = path.join(campaignDir, `${ch}.${ext}`);
@@ -137,14 +221,89 @@ function handleMCP(req, res) {
     return;
   }
 
+  // POST /runtime/campaigns/:id/reject — reject campaign
+  if (pathname.startsWith('/runtime/campaigns/reject') && req.method === 'POST') {
+    const idxPath = path.join(repoRoot, 'ops/runtime/campaigns/index.json');
+    const idx = fs.existsSync(idxPath) ? JSON.parse(fs.readFileSync(idxPath, 'utf8')) : { campaigns: [] };
+
+    readRequestBodyJSON(req).then(body => {
+      const campaignId = (body || {}).id;
+      const entry = (idx.campaigns || []).find(c => c.id === campaignId);
+      if (entry) {
+        entry.status = 'rejected';
+        entry.rejectedAt = new Date().toISOString();
+        idx.updated = new Date().toISOString();
+        fs.writeFileSync(idxPath, JSON.stringify(idx, null, 2));
+        serveJson(res, 200, { status: 'rejected', product: entry.product, message: 'Campaign rejected.' });
+      } else {
+        serveJson(res, 404, { error: 'Campaign not found' });
+      }
+    }).catch(() => serveJson(res, 500, { error: 'Failed to process rejection' }));
+    return;
+  }
+
+  // POST /runtime/execution-mode/toggle — switch execution mode (AUTO/PRO/DEV)
+  if (pathname === '/runtime/execution-mode/toggle' && req.method === 'POST') {
+    const executionModesPath = path.join(repoRoot, 'ops/runtime/execution-modes.json');
+    const validModes = new Set(['AUTO', 'PRO', 'DEV']);
+
+    readRequestBodyJSON(req)
+      .then((body) => {
+        const requested = String((body || {}).mode || '').trim().toUpperCase();
+        if (!validModes.has(requested)) {
+          serveJson(res, 400, { error: 'Invalid mode. Expected AUTO, PRO, or DEV.' });
+          return;
+        }
+
+        const now = new Date().toISOString();
+        let currentState = { current: 'AUTO', history: [], lastChanged: now };
+        if (fs.existsSync(executionModesPath)) {
+          try {
+            const raw = fs.readFileSync(executionModesPath, 'utf8');
+            const parsed = JSON.parse(raw);
+            if (parsed && typeof parsed === 'object') {
+              currentState = { ...currentState, ...parsed };
+            }
+          } catch {
+            // Keep service available even if file is malformed.
+          }
+        }
+
+        const previous = String(currentState.current || 'AUTO').toUpperCase();
+        const nextState = {
+          ...currentState,
+          current: requested,
+          lastChanged: now,
+          history: [
+            ...(Array.isArray(currentState.history) ? currentState.history : []),
+            { from: previous, to: requested, changedAt: now }
+          ].slice(-50)
+        };
+
+        fs.writeFileSync(executionModesPath, JSON.stringify(nextState, null, 2));
+        serveJson(res, 200, { status: 'ok', previous, current: requested, lastChanged: now });
+      })
+      .catch((error) => {
+        console.error('execution-mode toggle error:', error);
+        serveJson(res, 500, { error: 'Failed to toggle execution mode', detail: error?.message || 'unknown error' });
+      });
+    return;
+  }
+
   serveJson(res, 404, { error: 'MCP endpoint not found' });
 }
 
 const server = http.createServer((req, res) => {
   const urlPath = (req.url || '/').split('?')[0];
 
-  // MCP route
-  if (urlPath.startsWith('/mcp/')) {
+  // API routes served by the command center backend.
+  if (
+    urlPath.startsWith('/mcp/') ||
+    urlPath === '/runtime/telemetry' ||
+    urlPath.startsWith('/runtime/campaigns/approve') ||
+    urlPath.startsWith('/runtime/campaigns/reject') ||
+    urlPath === '/runtime/execution-mode/toggle'
+  ) {
     handleMCP(req, res);
     return;
   }

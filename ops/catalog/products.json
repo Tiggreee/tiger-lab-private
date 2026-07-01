@@ -66,15 +66,6 @@
       "tier": "P1",
       "targetTo95": "PAC contratado + motor CFDI + documentación",
       "benchmarkCategory": "Motor CFDI / PAC Management"
-    },
-    {
-      "id": "dryrun",
-      "name": "--dryRun",
-      "status": "active",
-      "planIds": [
-        "starter",
-        "pro"
-      ]
     }
   ]
 }

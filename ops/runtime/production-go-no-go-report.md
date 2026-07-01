@@ -1,13 +1,13 @@
 # Production Go/No-Go Report
 
-- generatedAt: 2026-06-17T16:01:53.309Z
+- generatedAt: 2026-07-01T17:29:37.245Z
 - gateStatus: GO
-- summary: PASS 18 | WARN 0 | FAIL 0
+- summary: PASS 21 | WARN 0 | FAIL 0
 
 ## Checks
 
 - P1 Catalogo activo y consistente: PASS
-  details: Activos: 3 productos.
+  details: Activos: 2 productos.
   ownerAction: Sin accion.
 - P2 Funnels y eventos trazables: PASS
   details: Eventos clave presentes.
@@ -40,7 +40,7 @@
   details: No se detectaron placeholders ni IDs sample en evidencia operativa.
   ownerAction: Sin accion.
 - P17 Freshness de evidencia de release: PASS
-  details: Reporte reciente (0.3h).
+  details: Reporte reciente (0.7h).
   ownerAction: Sin accion.
 - P18 Consistencia de status en README: PASS
   details: README sin contradicciones criticas detectadas.
@@ -59,6 +59,15 @@
   ownerAction: Sin accion.
 - P16 Validacion de gobernanza de agentes: PASS
   details: check:copilot:agents OK.
+  ownerAction: Sin accion.
+- P19 Smoke publico del dashboard de produccion: PASS
+  details: prod:dashboard:smoke OK.
+  ownerAction: Sin accion.
+- P20 Alineacion index runtime vs 50-published: PASS
+  details: campaigns:index:check OK.
+  ownerAction: Sin accion.
+- P21 Reconciliacion fiscal obligatoria (MATCH): PASS
+  details: billing:reconcile:strict OK (MATCH).
   ownerAction: Sin accion.
 
 ## Owner Next Actions

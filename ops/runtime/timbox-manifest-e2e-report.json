@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-07-01T12:16:04.292Z",
+  "status": "BLOCKED",
+  "method": "firmar_manifiesto",
+  "wsdl": "https://staging.ws.timbox.com.mx/manifiesto/wsdl",
+  "adapterUrl": "",
+  "runtimeMs": 1,
+  "code": null,
+  "message": "Missing required config for selected manifest method.",
+  "missing": [
+    "TIMBOX_ADAPTER_MANIFIESTO_URL|TIMBOX_ADAPTER_URL",
+    "TIMBOX_USERNAME",
+    "TIMBOX_PASSWORD",
+    "TIMBOX_MANIFIESTO_EMAIL",
+    "TIMBOX_MANIFIESTO_RFC",
+    "TIMBOX_MANIFIESTO_RAZON_SOCIAL",
+    "TIMBOX_MANIFIESTO_CERTIFICADO_PEM|TIMBOX_MANIFIESTO_CERTIFICADO_PATH",
+    "TIMBOX_MANIFIESTO_LLAVE_PEM|TIMBOX_MANIFIESTO_LLAVE_PATH"
+  ],
+  "config": {
+    "usernameMasked": "missing",
+    "passwordMasked": "missing",
+    "emailMasked": "missing",
+    "hasCertificado": false,
+    "hasLlave": false
+  }
+}

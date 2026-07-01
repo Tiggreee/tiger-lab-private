@@ -10,6 +10,8 @@ import { resolve } from 'node:path';
 
 const DASH_PATH = resolve('ops/runtime/dashboard-unified.json');
 const ALERTS_PATH = resolve('ops/runtime/dashboard-alerts.json');
+const BILLING_PATH = resolve('ops/runtime/billing-reconciliation-report.json');
+const GATE_PATH = resolve('ops/runtime/production-go-no-go-report.json');
 const INTERVAL_MS = 15 * 60 * 1000;
 
 let previousSnapshot = null;
@@ -19,58 +21,86 @@ function loadJSON(p) {
   catch { return null; }
 }
 
+function parseNumber(value) {
+  if (value === null || value === undefined || value === '') {
+    return null;
+  }
+  const n = Number(value);
+  return Number.isFinite(n) ? n : null;
+}
+
+function computeDelta(current, previous) {
+  if (current === null || previous === null) return null;
+  return current - previous;
+}
+
+function formatMetric(value, fallback = 'UNKNOWN') {
+  return value === null ? fallback : String(value);
+}
+
+function normalizeBillingStatus(value) {
+  const normalized = String(value || 'unknown').trim().toUpperCase();
+  if (normalized === 'OK' || normalized === 'MATCH') return 'MATCH';
+  if (normalized === 'MISMATCH') return 'MISMATCH';
+  return 'UNKNOWN';
+}
+
+function deriveGateStatus(gateReport, billingStatus) {
+  if (billingStatus !== 'MATCH') {
+    return billingStatus === 'MISMATCH' ? 'NO_GO' : 'UNKNOWN';
+  }
+  const gate = String(gateReport?.gateStatus || 'UNKNOWN').trim().toUpperCase();
+  if (gate === 'GO' || gate === 'GO_WITH_WARNINGS' || gate === 'NO_GO') {
+    return gate;
+  }
+  return 'UNKNOWN';
+}
+
 function analyze(data, prev) {
   const now = new Date().toISOString();
-  const gate = data?.systemStatus?.gate || 'UNKNOWN';
-  const leads = 1000; // INEGI seed
-  const agents = data?.agentMonitor?.summary?.activeAgents || 22;
+  const billingReport = loadJSON(BILLING_PATH);
+  const gateReport = loadJSON(GATE_PATH);
+  const billingStatus = normalizeBillingStatus(billingReport?.status);
+  const gate = deriveGateStatus(gateReport, billingStatus);
+  const leads = parseNumber(data?.monetization?.leadsToday);
+  const agents = parseNumber(data?.agentMonitor?.summary?.activeAgents);
   const products = data?.products?.items || [];
-  const avgScore = 64; // Hardcoded until product engine populates
-  const failures = data?.failuresMonitor?.failedToday || 0;
-  const revenue = data?.monetization?.averagePrice ? Number((data.monetization.averagePrice || '').replace('$','')) : 0;
-  const campaigns = data?.campaigns?.total || 0;
+  const avgScore = null;
+  const failures = parseNumber(data?.failuresMonitor?.failedToday);
+  const revenue = parseNumber(data?.monetization?.averagePrice);
+  const campaigns = parseNumber(data?.campaigns?.total);
 
   // Trends (vs previous check)
-  const leadTrend = prev ? (leads - (prev.leads||0)) : 0;
-  const revenueTrend = prev ? (revenue - (prev.revenue||0)) : 0;
-  const campaignTrend = prev ? (campaigns - (prev.campaigns||0)) : 0;
-  const scoreTrend = prev ? (avgScore - (prev.productAvg||0)) : 0;
+  const leadTrend = computeDelta(leads, prev?.leads ?? null);
+  const revenueTrend = computeDelta(revenue, prev?.revenue ?? null);
+  const campaignTrend = computeDelta(campaigns, prev?.campaigns ?? null);
+  const scoreTrend = computeDelta(avgScore, prev?.productAvg ?? null);
 
   // Alerts
   const alerts = [];
   if (gate !== 'GO') alerts.push({ type:'gate', msg:`Gate: ${gate}`, level:'warn' });
-  if (leads < 500) alerts.push({ type:'leads', msg:`Leads: ${leads} (<500 target)`, level:'warn' });
-  if (failures > 5) alerts.push({ type:'failures', msg:`${failures} failures`, level:'warn' });
-  if (avgScore < 70) alerts.push({ type:'products', msg:`Avg score ${avgScore}/100`, level:'info' });
+  if (billingStatus !== 'MATCH') alerts.push({ type:'billing', msg:`Billing reconciliation: ${billingStatus}`, level:'warn' });
+  if (leads !== null && leads < 500) alerts.push({ type:'leads', msg:`Leads: ${leads} (<500 target)`, level:'warn' });
+  if (failures !== null && failures > 5) alerts.push({ type:'failures', msg:`${failures} failures`, level:'warn' });
+  if (avgScore !== null && avgScore < 70) alerts.push({ type:'products', msg:`Avg score ${avgScore}/100`, level:'info' });
 
-  // Revenue intelligence
-  const revenueMsg = revenue > 0 
-    ? `💰 $${revenue} revenue tracked. Pipeline: 5000 contacts ready.`
-    : `📊 No revenue yet. Pipeline ready. Stripe + PayPal live.`;
-
-  // Predictions
-  const predictions = [];
-  if (leadTrend > 0) predictions.push(`📈 Leads growing (+${leadTrend}). Target 2000 in 2 weeks.`);
-  if (scoreTrend > 0) predictions.push(`📈 Product scores improving (+${scoreTrend}). Continue dev cycles.`);
-  if (campaigns > 5) predictions.push(`📬 ${campaigns} campaigns active. Expect 3-5% conversion.`);
-  if (revenue === 0) predictions.push(`⏳ First revenue within 72h of first campaign send.`);
+  const revenueMsg = revenue === null
+    ? 'Revenue: UNKNOWN (no evidence in runtime source).'
+    : `Revenue observed: ${revenue}.`;
 
   // Recommendations
   const recommendations = [];
-  if (avgScore < 70) recommendations.push({ action:'dev', detail:'Focus Docflow API + Script Kit to push past 70 avg.' });
-  if (leads < 2000) recommendations.push({ action:'leads', detail:'Run inegi-seed-generator to expand to 2000 companies.' });
-  if (campaigns < 3) recommendations.push({ action:'campaigns', detail:'Design and approve 3 campaign variants for A/B testing.' });
-  if (revenue === 0) recommendations.push({ action:'revenue', detail:'Send first email campaign to top-100 prospects.' });
-  recommendations.push({ action:'monitor', detail:'Dashboard healthy. Bot watching 24/7.' });
+  if (billingStatus !== 'MATCH') recommendations.push({ action:'billing', detail:'Resolver mismatch fiscal antes de cualquier release comercial.' });
+  if (leads === null) recommendations.push({ action:'data', detail:'Publicar evidencia real de leads para sustituir UNKNOWN.' });
+  if (campaigns === null) recommendations.push({ action:'data', detail:'Publicar evidencia real de campañas para sustituir UNKNOWN.' });
 
   // Health score (0-100)
   let health = 100;
-  if (gate !== 'GO') health -= 30;
-  if (leads < 100) health -= 20;
-  if (avgScore < 50) health -= 20;
-  if (avgScore < 70) health -= 10;
-  if (failures > 10) health -= 15;
-  if (revenue === 0 && campaigns > 0) health -= 5;
+  if (gate !== 'GO') health -= 35;
+  if (billingStatus !== 'MATCH') health -= 35;
+  if (leads === null) health -= 10;
+  if (campaigns === null) health -= 10;
+  if (failures !== null && failures > 10) health -= 10;
   health = Math.max(0, Math.min(100, health));
 
   return {
@@ -78,11 +108,12 @@ function analyze(data, prev) {
     status: health >= 80 ? 'HEALTHY' : health >= 50 ? 'MONITORING' : 'ATTENTION',
     health,
     gate,
+    billingStatus,
     snapshot: { leads, agents, products: products.length, productAvg: avgScore, revenue, campaigns, failures },
     trends: { leads: leadTrend, revenue: revenueTrend, campaigns: campaignTrend, scores: scoreTrend },
     alerts: alerts.length ? alerts : [{ type:'ok', msg:'All systems green.', level:'ok' }],
     revenueIntelligence: revenueMsg,
-    predictions: predictions.length ? predictions : ['📊 Collecting baseline data for predictions.'],
+    predictions: [],
     recommendations
   };
 }
@@ -97,10 +128,10 @@ function run() {
   
   const icon = report.status === 'HEALTHY' ? '🟢' : report.status === 'MONITORING' ? '🟡' : '🔴';
   console.log(`${icon} Health: ${report.health}/100 — ${report.status}`);
-  console.log(`   Gate: ${report.gate} | Leads: ${report.snapshot.leads} | Revenue: $${report.snapshot.revenue}`);
-  console.log(`   Trends: leads ${report.trends.leads >=0 ? '+' : ''}${report.trends.leads} | campaigns ${report.trends.campaigns >=0 ? '+' : ''}${report.trends.campaigns}`);
+  console.log(`   Gate: ${report.gate} | Billing: ${report.billingStatus} | Leads: ${formatMetric(report.snapshot.leads)}`);
+  console.log(`   Trends: leads ${formatMetric(report.trends.leads)} | campaigns ${formatMetric(report.trends.campaigns)}`);
   console.log(`   ${report.revenueIntelligence}`);
-  console.log(`   Predictions: ${report.predictions.length} | Recommendations: ${report.recommendations.length}`);
+  console.log(`   Recommendations: ${report.recommendations.length}`);
   console.log(`   Alerts: ${report.alerts.filter(a=>a.level!=='ok').length}`);
   
   return report;

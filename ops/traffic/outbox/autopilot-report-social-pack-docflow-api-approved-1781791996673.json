@@ -1,0 +1,68 @@
+{
+  "executedAt": "2026-06-18T14:13:16.672Z",
+  "campaign": "social-pack-docflow-api-approved",
+  "packPath": "C:\\Users\\victo\\Documents\\Tigre-Labs\\tiger-lab-private\\ops\\traffic\\outbox\\social-pack-docflow-api-approved.json",
+  "requestedChannels": [
+    "linkedin",
+    "x",
+    "facebook",
+    "telegram",
+    "discord"
+  ],
+  "readyChannels": [],
+  "liveRequested": false,
+  "minChannels": 0,
+  "readiness": [
+    {
+      "channel": "linkedin",
+      "hasCopy": true,
+      "missingSecrets": [
+        "LINKEDIN_ACCESS_TOKEN"
+      ],
+      "ready": false
+    },
+    {
+      "channel": "x",
+      "hasCopy": true,
+      "missingSecrets": [
+        "X_API_KEY",
+        "X_API_SECRET",
+        "X_ACCESS_TOKEN",
+        "X_ACCESS_TOKEN_SECRET"
+      ],
+      "ready": false
+    },
+    {
+      "channel": "facebook",
+      "hasCopy": true,
+      "missingSecrets": [
+        "FACEBOOK_PAGE_ID",
+        "FACEBOOK_PAGE_ACCESS_TOKEN"
+      ],
+      "ready": false
+    },
+    {
+      "channel": "telegram",
+      "hasCopy": true,
+      "missingSecrets": [
+        "TELEGRAM_BOT_TOKEN",
+        "TELEGRAM_CHAT_ID"
+      ],
+      "ready": false
+    },
+    {
+      "channel": "discord",
+      "hasCopy": true,
+      "missingSecrets": [
+        "DISCORD_BOT_TOKEN",
+        "DISCORD_CHANNEL_ID"
+      ],
+      "ready": false
+    }
+  ],
+  "steps": {
+    "goLive": "skipped",
+    "dryPublish": "skipped",
+    "livePublish": "skipped"
+  }
+}

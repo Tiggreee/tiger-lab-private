@@ -135,7 +135,7 @@ export async function runMaker(taskId) {
   await emitEvent('agent:started', { agent: 'maker', taskId });
 
   const skills = await loadSkillsFor('maker');
-  const prompt = readFileSync(resolve('agents/prompts/maker/v1.md'), 'utf8');
+  const prompt = readFileSync(resolve('agents/prompts/maker/v2.md'), 'utf8');
 
   let injected = prompt;
   try {
@@ -199,7 +199,7 @@ export async function runChecker(taskId) {
   await emitEvent('agent:started', { agent: 'checker', taskId });
 
   const skills = await loadSkillsFor('checker');
-  const prompt = readFileSync(resolve('agents/prompts/checker/v1.md'), 'utf8');
+  const prompt = readFileSync(resolve('agents/prompts/checker/v2.md'), 'utf8');
 
   let injected = prompt;
   try {

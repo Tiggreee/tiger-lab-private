@@ -1,0 +1,19 @@
+{
+  "id": "auto-facturautentico-pro-2026-07-01",
+  "productName": "FacturAutentico Cloud",
+  "target": "finanzas",
+  "segment": "pymes",
+  "problemDetail": "errores en emision CFDI por sellado, nombre fiscal y regimen; retrabajo en cierre de cobranza",
+  "primaryOutcome": "timbrado productivo con validaciones previas y trazabilidad fiscal de pago a factura",
+  "proofPoint": "timbrado exitoso en produccion con UUID y conciliacion estricta en MATCH",
+  "domainTerms": [
+    "cfdi",
+    "timbrado",
+    "sello",
+    "regimen fiscal",
+    "uuid",
+    "facturacion",
+    "pac"
+  ],
+  "qualityThreshold": 60
+}

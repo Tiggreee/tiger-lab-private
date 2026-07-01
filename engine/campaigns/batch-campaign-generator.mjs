@@ -14,16 +14,16 @@ const CAMPAIGNS_DIR = resolve('ops/runtime/campaigns');
 
 const HEADLINES = {
   'Docflow API': [
-    'Deja de perder 10 horas por semana en papeleo.',
-    'Automatiza tus documentos como nunca antes.',
-    '¿Tu equipo aún hace facturas a mano?',
-    'El 80% de las PyMEs mexicanas aún facturan manualmente.',
-    'CFDI 4.0 sin estrés. Sin contador extra.',
-    'Tu tiempo vale más que el papeleo interminable.',
-    'Automatización documental hecha para México.',
-    'Facturación electrónica en segundos, no en horas.',
-    'La automatización que tu despacho contable necesita.',
-    'De papel a digital en un solo paso.'
+    'Cierra tu flujo documental en minutos, no en horas.',
+    'Facturación y control en un solo tablero operativo.',
+    'Tu operación crece mejor cuando el papeleo no estorba.',
+    'CFDI 4.0 integrado desde el día uno, sin parches.',
+    'Menos retrabajo. Más facturas correctas a la primera.',
+    'Automatiza validación, timbrado y seguimiento en una sola API.',
+    'Escala tu despacho sin escalar el caos administrativo.',
+    'Convierte procesos manuales en flujos medibles y rápidos.',
+    'Documentos listos para auditoría sin maratones de fin de mes.',
+    'Estandariza tu operación documental con control real.'
   ],
   'Script Premium Kit': [
     '20+ scripts probados. 0 programación necesaria.',

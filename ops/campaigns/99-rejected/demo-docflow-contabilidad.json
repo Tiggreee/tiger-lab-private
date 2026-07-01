@@ -1,0 +1,77 @@
+{
+  "finalizedAt": "2026-06-28T01:31:53.904Z",
+  "briefId": "demo-docflow-contabilidad",
+  "campaignId": "CAMP-1782610313882",
+  "qualityResult": {
+    "campaignId": "CAMP-1782610313882",
+    "threshold": 60,
+    "averageSpecificity": 55,
+    "passed": false,
+    "failedChannels": [
+      "x"
+    ],
+    "channels": [
+      {
+        "channel": "email",
+        "specificityScore": 63,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "linkedin",
+        "specificityScore": 63,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "x",
+        "specificityScore": 14,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 14 below threshold 60."
+        ]
+      },
+      {
+        "channel": "facebook",
+        "specificityScore": 63,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "telegram",
+        "specificityScore": 63,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "discord",
+        "specificityScore": 63,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      }
+    ]
+  },
+  "brief": {
+    "id": "demo-docflow-contabilidad",
+    "productName": "Docflow API",
+    "target": "contabilidad",
+    "segment": "contabilidad",
+    "problemDetail": "flujos documentales manuales que consumen horas y generan errores CFDI",
+    "primaryOutcome": "automatizacion completa de validacion y timbrado CFDI",
+    "proofPoint": "casos reales con reduccion del 80% en tiempo operativo",
+    "domainTerms": [
+      "cfdi",
+      "timbrado",
+      "xml",
+      "integracion",
+      "facturacion"
+    ],
+    "qualityThreshold": 60
+  }
+}

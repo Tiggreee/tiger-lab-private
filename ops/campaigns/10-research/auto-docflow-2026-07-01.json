@@ -1,0 +1,17 @@
+{
+  "id": "auto-docflow-2026-07-01",
+  "productName": "Docflow API",
+  "target": "contabilidad",
+  "segment": "contabilidad",
+  "problemDetail": "captura y validacion manual de XML/CFDI que frena cierres de cobranza",
+  "primaryOutcome": "pipeline automatico de documentos con conciliacion trazable en minutos",
+  "proofPoint": "operacion real con gate de produccion en GO y reconciliacion fiscal en MATCH",
+  "domainTerms": [
+    "cfdi",
+    "xml",
+    "timbrado",
+    "reconciliacion",
+    "automatizacion"
+  ],
+  "qualityThreshold": 60
+}

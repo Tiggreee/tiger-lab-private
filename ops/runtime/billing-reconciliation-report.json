@@ -1,16 +1,27 @@
 {
-  "generatedAt": "2026-06-09T14:29:25.668Z",
+  "generatedAt": "2026-07-01T17:29:37.221Z",
   "status": "ok",
+  "statusReason": "all-checks-match",
   "totals": {
-    "payments": 3,
-    "succeededPayments": 3,
-    "invoices": 3,
+    "payments": 2,
+    "succeededPayments": 2,
+    "succeededPaymentsInScope": 1,
+    "excludedSyntheticFixtures": 1,
+    "invoices": 2,
     "mismatchCount": 0
   },
   "checks": {
     "missingInvoiceForSucceededPayment": [],
     "nonIssuedInvoiceForSucceededPayment": [],
     "invoiceWithoutPayment": [],
-    "duplicateIssuedCfdiUuid": []
+    "duplicateIssuedCfdiUuid": [],
+    "excludedSyntheticFixtures": [
+      {
+        "paymentId": "pay_manual_1",
+        "customerId": "cust_manual_1",
+        "invoiceStatus": "failed",
+        "reason": "synthetic-fixture"
+      }
+    ]
   }
 }

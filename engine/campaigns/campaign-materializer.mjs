@@ -15,11 +15,11 @@ const CAMPAIGNS_DIR = resolve('ops/runtime/campaigns');
 
 const PRODUCTS = {
   'Docflow API': {
-    color: '#6C47FF',
+    color: '#0F766E',
     logo: '📄',
     unsplash: 'document+automation+technology',
-    headline: 'Deja de perder 10 horas por semana en papeleo.',
-    subhead: 'Docflow API automatiza todo tu flujo documental.',
+    headline: 'Cierra tu flujo documental en minutos, no en horas.',
+    subhead: 'Docflow API conecta, valida y factura sin fricción operativa.',
     bullets: ['Automatización completa de documentos y flujos', 'Integración con tu stack en minutos, no meses', 'CFDI 4.0 nativo — facturación electrónica MX', 'API-first. Conecta con lo que ya usas.'],
     cta: 'Prueba 7 días gratis',
     url: 'https://tigerlab.dev/docflow',
@@ -45,15 +45,15 @@ function emailHTML(product) {
   return `<!DOCTYPE html>
 <html lang="es">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"></head>
-<body style="margin:0;padding:0;background:#F5F3FF;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">
-<table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(108,71,255,0.12);">
+<body style="margin:0;padding:0;background:#F4F7FB;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(15,23,42,0.10);">
   <tr><td style="background:${p.color};padding:48px 32px;text-align:center;">
     <div style="font-size:48px;margin-bottom:12px;">${p.logo}</div>
     <h1 style="color:#ffffff;margin:0;font-size:26px;font-weight:800;line-height:1.3;">${p.headline}</h1>
     <p style="color:rgba(255,255,255,0.9);margin:12px 0 0;font-size:16px;">${p.subhead}</p>
   </td></tr>
   <tr><td style="padding:32px;">
-    <div style="background:#F8F6FF;border-radius:12px;padding:24px;margin-bottom:24px;">
+    <div style="background:#F7FAFC;border-radius:12px;padding:24px;margin-bottom:24px;">
       <p style="color:#333;font-size:15px;margin:0 0 16px;font-weight:600;">${product} te ofrece:</p>
       ${p.bullets.map((b,i) => `<div style="display:flex;align-items:flex-start;margin-bottom:12px;font-size:14px;color:#444;">
         <span style="color:${p.color};font-weight:700;margin-right:10px;flex-shrink:0;">${i+1}.</span>
@@ -68,7 +68,7 @@ function emailHTML(product) {
       <p style="color:#666;font-size:14px;font-style:italic;">${p.testimonial}</p>
     </div>
   </td></tr>
-  <tr><td style="background:#F8F6FF;padding:20px 32px;text-align:center;">
+  <tr><td style="background:#F7FAFC;padding:20px 32px;text-align:center;">
     <p style="color:#999;font-size:12px;margin:0;">© 2026 Tiger Lab. Todos los derechos reservados.<br>Este email fue enviado porque tu empresa está en nuestro pipeline de leads calificados.</p>
   </td></tr>
 </table>

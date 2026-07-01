@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-17T09:10:11.800Z",
+  "generatedAt": "2026-06-29T15:01:31.748Z",
   "monetization": {
-    "leadsToday": 10,
+    "leadsToday": null,
     "generatedContent": 10,
     "activeBots": 4,
-    "averagePrice": "$69.00"
+    "averagePrice": null
   },
   "funnel": {
     "stages": [
@@ -199,11 +199,11 @@
       "SalesBot"
     ],
     "paperPending": [
-      "ReconciliationBot",
       "IncidentBot",
+      "MarketResearchBot",
+      "ReconciliationBot",
       "ReleaseGateBot",
-      "SupervisorSyncBot",
-      "MarketResearchBot"
+      "SupervisorSyncBot"
     ]
   },
   "products": {
@@ -547,7 +547,7 @@
     "note": "Cada landing page esta optimizada para el tono y formato de su canal social."
   },
   "agentMonitor": {
-    "generatedAt": "2026-06-16T23:24:15.779Z",
+    "generatedAt": "2026-06-18T14:13:13.633Z",
     "summary": {
       "totalAgents": 24,
       "activeAgents": 24,
@@ -953,67 +953,52 @@
       }
     ]
   },
+  "billing": {
+    "status": "UNKNOWN",
+    "mismatchCount": 0,
+    "generatedAt": "2026-06-29T13:04:49.161Z"
+  },
   "development": {
     "gaps": [
       {
-        "id": "lock-gate-auto-on-vscode-open",
-        "title": "Verificar lock gate automatico al abrir VS Code",
+        "id": "P21",
+        "title": "Reconciliacion fiscal obligatoria (MATCH)",
         "severity": "critical",
-        "requiresHuman": true
+        "requiresHuman": true,
+        "source": "production-gate",
+        "nextAction": "NO_GO obligatorio: publicar evidencia fiscal real en scope (no fixture) y obtener MATCH antes de release."
       },
       {
-        "id": "qr-owner-device-only",
-        "title": "Restringir QR al celular del owner",
+        "id": "P21-owner-action",
+        "title": "NO_GO obligatorio: publicar evidencia fiscal real en scope (no fixture) y obtener MATCH antes de release.",
         "severity": "critical",
-        "requiresHuman": true
+        "requiresHuman": true,
+        "source": "owner-next-actions",
+        "nextAction": "NO_GO obligatorio: publicar evidencia fiscal real en scope (no fixture) y obtener MATCH antes de release."
       },
       {
-        "id": "lock-gate-mini-access-ui",
-        "title": "Mini UI de accesos (PC y celular)",
+        "id": "PL-010",
+        "title": "Activar PAC SW Sapien para desbloquear facturación",
         "severity": "high",
-        "requiresHuman": false
+        "requiresHuman": true,
+        "source": "tasks",
+        "nextAction": "Victor completando contratación SW Sapien. Mientras tanto se cobra directo, factura después."
       },
       {
-        "id": "bot-coverage-paper-pack",
-        "title": "Formalizar cobertura de bots papel faltantes",
-        "severity": "high",
-        "requiresHuman": true
-      },
-      {
-        "id": "bot-runtime-wiring-plan",
-        "title": "Plan de wiring runtime para bots nuevos",
-        "severity": "high",
-        "requiresHuman": true
-      },
-      {
-        "id": "launch-real-campaign",
-        "title": "Lanzar 1 campana real con seguimiento de pago",
+        "id": "PL-005",
+        "title": "Conectar PAC SW Sapien para CFDI",
         "severity": "critical",
-        "requiresHuman": true
+        "requiresHuman": true,
+        "source": "tasks",
+        "nextAction": "Victor llenando formulario de contratación SW Sapien (no Finkok)."
       },
       {
-        "id": "landing-dynamic-product",
-        "title": "Landing dinamica por producto",
+        "id": "SYS-014",
+        "title": "Resolver: All Active Products Have Landings",
         "severity": "critical",
-        "requiresHuman": true
-      },
-      {
-        "id": "market-research-ai-bridge",
-        "title": "Ejecutar market-research para producto \"lazo entre IAs\"",
-        "severity": "high",
-        "requiresHuman": true
-      },
-      {
-        "id": "checkout-default-product",
-        "title": "Quitar dependencia de producto default en checkout",
-        "severity": "high",
-        "requiresHuman": false
-      },
-      {
-        "id": "define-pac-strategy",
-        "title": "Definir estrategia PAC por fase (off/byo/managed)",
-        "severity": "medium",
-        "requiresHuman": true
+        "requiresHuman": true,
+        "source": "tasks",
+        "nextAction": "Active products without landings: dryrun"
       }
     ],
     "finishedProducts": [
@@ -1027,9 +1012,75 @@
     "sealed": false
   },
   "systemStatus": {
-    "automation": "success",
-    "dashboard": "success",
-    "checkout": "success",
-    "gate": "GO"
+    "automation": "OK",
+    "dashboard": "OK",
+    "checkout": "UNKNOWN",
+    "gate": "UNKNOWN"
+  },
+  "productEngine": {
+    "generatedAt": "2026-07-01T00:08:20.339Z",
+    "engine": {
+      "averageScore": 64,
+      "productsAt95": 0,
+      "productsOnTrack95": 0,
+      "productsAt90plus": 0,
+      "productsAt75plus": 2,
+      "totalBenchmarks": 5,
+      "totalCompetitors": 20,
+      "estimatedTotalEffortHours": 244
+    },
+    "topProducts": [
+      {
+        "name": "Docflow API",
+        "score": 84,
+        "tier": "P3",
+        "status": "active"
+      },
+      {
+        "name": "Script Premium Kit",
+        "score": 84,
+        "tier": "P3",
+        "status": "active"
+      },
+      {
+        "name": "--dryRun",
+        "score": 68,
+        "tier": "P2",
+        "status": "active"
+      },
+      {
+        "name": "FacturAutentico Cloud",
+        "score": 56,
+        "tier": "P1",
+        "status": "paused"
+      },
+      {
+        "name": "FacturAutentica",
+        "score": 56,
+        "tier": "P1",
+        "status": "paused"
+      }
+    ],
+    "priorityQueue": {
+      "target95": [
+        "Docflow API",
+        "Script Premium Kit"
+      ],
+      "engineReady": []
+    },
+    "moduleHealth": {
+      "flowStatus": "active",
+      "failOpen": true,
+      "alerts": 0,
+      "bypassedModules": 0,
+      "failedModules": 0
+    },
+    "wavePlan": {
+      "waves": 2,
+      "plannedOverall": 8,
+      "plannedProducts": 6,
+      "plannedHybrids": 2,
+      "maxProducts": 21
+    }
   }
 }

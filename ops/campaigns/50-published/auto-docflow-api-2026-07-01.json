@@ -1,0 +1,75 @@
+{
+  "finalizedAt": "2026-07-01T13:11:36.218Z",
+  "briefId": "auto-docflow-api-2026-07-01",
+  "campaignId": "CAMP-1782911496182",
+  "qualityResult": {
+    "campaignId": "CAMP-1782911496182",
+    "threshold": 45,
+    "averageSpecificity": 54,
+    "passed": true,
+    "failedChannels": [],
+    "channels": [
+      {
+        "channel": "email",
+        "specificityScore": 51,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "linkedin",
+        "specificityScore": 51,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "x",
+        "specificityScore": 69,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "facebook",
+        "specificityScore": 51,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "telegram",
+        "specificityScore": 51,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "discord",
+        "specificityScore": 51,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      }
+    ]
+  },
+  "brief": {
+    "id": "auto-docflow-api-2026-07-01",
+    "productName": "Docflow API",
+    "target": "contabilidad",
+    "segment": "contabilidad",
+    "problemDetail": "captura manual de XML CFDI y reconciliacion de cobros en procesos operativos",
+    "primaryOutcome": "automatizacion de flujo documental con evidencia fiscal y trazabilidad diaria",
+    "proofPoint": "operacion productiva con dashboard en linea, reconciliacion MATCH y gate GO",
+    "domainTerms": [
+      "cfdi",
+      "xml",
+      "timbrado",
+      "uuid",
+      "reconciliacion",
+      "sat",
+      "pac"
+    ],
+    "qualityThreshold": 45
+  }
+}

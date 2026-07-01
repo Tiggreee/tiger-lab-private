@@ -15,8 +15,26 @@ function shouldRunActiveProbes(): boolean {
   return process.env.HEALTHCHECK_ACTIVE_PROBES === 'true';
 }
 
+function resolveInvoiceProvider(): string {
+  return (process.env.INVOICE_PROVIDER || 'timbox').trim().toLowerCase();
+}
+
 function hasCfdiProviderConfig(): boolean {
-  return hasValue('FACTURAMA_API_KEY') && hasValue('FACTURAMA_API_SECRET');
+  const provider = resolveInvoiceProvider();
+  if (provider === 'timbox') {
+    return (
+      hasValue('TIMBOX_ADAPTER_URL') &&
+      hasValue('TIMBOX_USERNAME') &&
+      hasValue('TIMBOX_PASSWORD') &&
+      (hasValue('TIMBOX_SXML_BASE64') || hasValue('TIMBOX_SXML_PATH'))
+    );
+  }
+
+  if (provider === 'facturama') {
+    return hasValue('FACTURAMA_API_KEY') && hasValue('FACTURAMA_API_SECRET');
+  }
+
+  return false;
 }
 
 function hasInvoiceEmailConfig(): boolean {
@@ -79,7 +97,7 @@ export class HealthController {
       },
       cfdiProvider: {
         status: isProduction() ? (hasCfdiProviderConfig() ? 'up' : 'down') : 'skipped',
-        detail: 'Facturama credentials required for CFDI timbrado in production.'
+        detail: `CFDI provider (${resolveInvoiceProvider()}) credentials required for timbrado in production.`
       },
       invoiceEmailDelivery: {
         status: isProduction() ? (hasInvoiceEmailConfig() ? 'up' : 'down') : 'skipped',

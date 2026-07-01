@@ -1,0 +1,89 @@
+{
+  "finalizedAt": "2026-07-01T13:11:36.300Z",
+  "briefId": "auto-script-premium-kit-2026-07-01",
+  "campaignId": "CAMP-1782911496274",
+  "qualityResult": {
+    "campaignId": "CAMP-1782911496274",
+    "threshold": 45,
+    "averageSpecificity": 18,
+    "passed": false,
+    "failedChannels": [
+      "email",
+      "linkedin",
+      "facebook",
+      "telegram",
+      "discord"
+    ],
+    "channels": [
+      {
+        "channel": "email",
+        "specificityScore": 0,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 0 below threshold 45."
+        ]
+      },
+      {
+        "channel": "linkedin",
+        "specificityScore": 0,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 0 below threshold 45."
+        ]
+      },
+      {
+        "channel": "x",
+        "specificityScore": 50,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "facebook",
+        "specificityScore": 0,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 0 below threshold 45."
+        ]
+      },
+      {
+        "channel": "telegram",
+        "specificityScore": 28,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 28 below threshold 45."
+        ]
+      },
+      {
+        "channel": "discord",
+        "specificityScore": 28,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 28 below threshold 45."
+        ]
+      }
+    ]
+  },
+  "brief": {
+    "id": "auto-script-premium-kit-2026-07-01",
+    "productName": "Script Premium Kit",
+    "target": "operaciones",
+    "segment": "pymes",
+    "problemDetail": "procesos manuales y repetitivos en operacion comercial sin trazabilidad",
+    "primaryOutcome": "automatizacion operativa con ejecucion diaria y seguimiento en dashboard",
+    "proofPoint": "pipeline y command center funcionando en produccion",
+    "domainTerms": [
+      "automatizacion",
+      "operaciones",
+      "pipeline",
+      "dashboard",
+      "conversion"
+    ],
+    "qualityThreshold": 45
+  }
+}

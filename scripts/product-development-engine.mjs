@@ -9,6 +9,7 @@ const SCORES_PATH = path.resolve('ops/runtime/product-scores.json');
 const ROADMAPS_PATH = path.resolve('ops/runtime/product-roadmaps.json');
 const HISTORY_PATH = path.resolve('ops/runtime/product-score-history.json');
 const DASHBOARD_PATH = path.resolve('ops/runtime/dashboard-unified.json');
+const VIABILITY_PATH = path.resolve('ops/runtime/product-viability-agent-report.json');
 const MODULE_ALERTS_PATH = path.resolve('ops/runtime/module-bypass-alerts.json');
 const WAVE_PLAN_PATH = path.resolve('ops/runtime/product-wave-plan.json');
 
@@ -80,9 +81,102 @@ const BENCHMARKS = {
   }
 };
 
+const PRODUCT_PLAYBOOKS = {
+  'docflow-api': {
+    blocked: [
+      'Ship a template library for the 3 highest-value document workflows',
+      'Publish a quickstart showing API auth, webhook delivery, and audit trail',
+      'Add a demo pack with a real end-to-end flow, not a dummy stub'
+    ],
+    foundation: [
+      'Close the integration depth gap with webhooks, email delivery, and signed event examples',
+      'Publish 3 walkthroughs: intake, approval, and export/history',
+      'Package a comparison page against Documenso and Docuseal with a clear why-us section'
+    ]
+  },
+  'script-premium-kit': {
+    blocked: [
+      'Bundle the top scripts into 3 outcome-based packs with install instructions',
+      'Publish a CLI/README flow that takes a user from zero to first automation in 10 minutes',
+      'Add a changelog and upgrade path so the pack feels maintained, not random'
+    ],
+    foundation: [
+      'Package 10 turnkey scripts by business outcome instead of by technology',
+      'Ship examples for SMB ops, sales follow-up, and recurring admin work',
+      'Create a buyer-facing comparison page versus Make, n8n, and Pipedream'
+    ]
+  },
+  'facturautentico-cloud': {
+    blocked: [
+      'Contract the PAC and validate the CFDI timbrado path end to end',
+      'Add a SAT-compliant sample XML and a failure catalog for common timbrado errors',
+      'Publish rollback, audit, and invoice reconciliation steps before relaunch'
+    ],
+    foundation: [
+      'Do not expand scope until PAC is live and the first invoice cycle is proven',
+      'Document the exact operational path from payment to CFDI issuance',
+      'Create a recovery playbook for PAC failures and retries'
+    ]
+  },
+  facturautentico: {
+    blocked: [
+      'Contract the PAC and prove the shared timbrado flow before any UI work',
+      'Align the on-premise flow with the cloud product on CFDI validation and audit trail',
+      'Write the operator checklist for invoice issuance and recovery'
+    ],
+    foundation: [
+      'Keep scope locked to the PAC unblocker until invoice issuance is real',
+      'Reuse the same CFDI validation and reconciliation discipline as the cloud product',
+      'Avoid new features until the release path is demonstrably closed-loop'
+    ]
+  },
+  'sentrylog-lite': {
+    blocked: [
+      'Validate whether this should ship standalone or as a bundle with Docflow API',
+      'Build the minimal ingest, search, and alert sample before adding polish',
+      'Run a demand test with a concrete logging buyer persona before committing more build time'
+    ],
+    foundation: [
+      'Position the product around SMB-friendly observability and fast setup',
+      'Prepare one integration path and one alert path, not a broad platform',
+      'Decide bundle pricing with the existing active products'
+    ]
+  }
+};
+
 function loadJSON(p) {
   try { return JSON.parse(fs.readFileSync(p, 'utf8')); }
   catch { return null; }
+}
+
+function loadViabilityReport() {
+  return loadJSON(VIABILITY_PATH) || { products: [], summary: {} };
+}
+
+function getViabilityEntry(viabilityReport, productId) {
+  return (viabilityReport?.products || []).find((entry) => entry.productId === productId) || null;
+}
+
+function getBenchmarkCompetitorNames(benchmarkData) {
+  return (benchmarkData?.comparableProducts || [])
+    .slice(0, 2)
+    .map((competitor) => competitor.name)
+    .filter(Boolean);
+}
+
+function buildProductLens(product, benchmarkData, viabilityEntry) {
+  const playbook = PRODUCT_PLAYBOOKS[product.id] || { blocked: [], foundation: [] };
+  const blockers = Array.isArray(viabilityEntry?.viability?.blockers) ? viabilityEntry.viability.blockers : [];
+  const competitors = getBenchmarkCompetitorNames(benchmarkData);
+  const competitorLabel = competitors.length > 0 ? competitors.join(' y ') : 'competidores directos';
+
+  return {
+    blockers,
+    playbook,
+    competitors,
+    competitorLabel,
+    localAiNeed: playbook.localAiNeed || 'Baja. No se necesita un LLM local para este producto.'
+  };
 }
 
 function isProtectedModule(moduleDef) {
@@ -334,57 +428,104 @@ function scoreProduct(product, benchmarks) {
   return { finalScore, classification: classifyScore(finalScore), scores, gaps, avgCompetitor, maxCompetitor };
 }
 
-function generateRoadmap(product, score, benchmarks) {
+function generateRoadmap(product, score, benchmarks, viabilityEntry) {
   const bmData = benchmarks[product.id];
+  const lens = buildProductLens(product, bmData, viabilityEntry);
   const steps = [];
-  const target95 = 95 - score.finalScore;
-  const target90 = 90 - score.finalScore;
+
+  const isBlocked = product.status === 'paused' || String(viabilityEntry?.viability?.status || '').toUpperCase() === 'BLOCKED' || lens.blockers.length > 0;
+  const blockerLabel = lens.blockers[0] || 'resolver la dependencia externa principal';
 
   if (score.finalScore >= 95) {
-    steps.push({ priority: 'P0', action: 'Mantener — engine grade, monitorear competidores', effort: 'bajo', owner: 'ai' });
-    return { currentScore: score.finalScore, targetScore: 95, steps, status: 'PRODUCTION_READY' };
+    steps.push({
+      priority: 'P0',
+      action: `Mantener '${product.name}' y monitorear ${lens.competitorLabel} sin cambiar el core que ya funciona`,
+      effort: 'bajo',
+      owner: 'ai'
+    });
+    return {
+      currentScore: score.finalScore,
+      targetScore: 95,
+      steps,
+      status: 'PRODUCTION_READY',
+      focus: 'defend',
+      localAiNeed: lens.localAiNeed
+    };
   }
 
-  // Auto-generate steps based on gaps
+  if (isBlocked) {
+    steps.push({
+      priority: 'P0',
+      action: `Resolver bloqueo real de '${product.name}': ${blockerLabel}`,
+      effort: 'medio',
+      owner: 'human',
+      blocker: true
+    });
+    for (const action of lens.playbook.blocked.slice(0, 2)) {
+      steps.push({
+        priority: 'P0',
+        action,
+        effort: 'medio',
+        owner: 'human'
+      });
+    }
+  }
+
   for (const gap of score.gaps) {
     if (gap.gap <= 0) continue;
     let action = '';
     let effort = 'medio';
 
     if (gap.dimension === 'Market Fit') {
-      action = `Investigar mercado para ${product.name}: entrevistar 5 prospects, validar propuesta de valor`;
+      action = `Validar propuesta de '${product.name}' con 5 prospectos del segmento objetivo y cerrar el caso de uso más urgente`;
       effort = 'medio';
     } else if (gap.dimension === 'Technical Quality') {
-      action = `Hardening técnico: tests, types, error handling, performance para ${product.name}`;
+      action = `Hardening técnico de '${product.name}': tests, types, error handling y performance en el flujo principal`;
       effort = 'alto';
     } else if (gap.dimension === 'Monetization Readiness') {
-      action = `Configurar pricing + checkout + payment integration para ${product.name}`;
+      action = `Cerrar monetización de '${product.name}': pricing, checkout y evidencia de cobro real`;
       effort = 'medio';
     } else if (gap.dimension === 'Completion Level') {
-      action = `Completar features core faltantes de ${product.name}: revisar backlog y priorizar`;
+      action = `Completar el core de '${product.name}': priorizar las 3 capacidades que el buyer realmente compra`;
       effort = 'alto';
     } else if (gap.dimension === 'Competitiveness vs Benchmarks') {
-      const top = bmData?.comparableProducts?.[0];
-      action = `Benchmark contra ${top?.name || 'competidores'}: implementar features diferenciadores clave`;
+      action = `Diferenciar '${product.name}' contra ${lens.competitorLabel}: cerrar la brecha que el benchmark muestra`;
       effort = 'alto';
     } else if (gap.dimension === 'Automation Coverage') {
-      action = `Automatizar CI/CD, tests, deploy para ${product.name}`;
+      action = `Automatizar CI/CD, pruebas y despliegue de '${product.name}' para reducir trabajo manual`;
       effort = 'medio';
     } else if (gap.dimension === 'Documentation & Onboarding') {
-      action = `Crear README, API docs, onboarding guide para ${product.name}`;
+      action = `Publicar README, quickstart y onboarding de '${product.name}' con un flujo real de arranque`;
       effort = 'bajo';
     } else if (gap.dimension === 'Integration Depth') {
-      action = `Agregar integraciones clave (Stripe, GitHub, Slack, Email) para ${product.name}`;
+      action = `Profundizar integraciones de '${product.name}' según su caso de uso: no sumar conectores genéricos sin demanda`;
       effort = 'medio';
     }
 
-    steps.push({ priority: gap.gap > 20 ? 'P0' : gap.gap > 10 ? 'P1' : 'P2', action, effort, owner: gap.gap > 15 ? 'human' : 'ai', gap: gap.gap });
+    steps.push({
+      priority: gap.gap > 20 ? 'P0' : gap.gap > 10 ? 'P1' : 'P2',
+      action,
+      effort,
+      owner: gap.gap > 15 ? 'human' : 'ai',
+      gap: gap.gap
+    });
   }
 
-  // Ensure we have at least 3 steps
+  const productPlaybookSteps = isBlocked ? lens.playbook.blocked : lens.playbook.foundation;
+  for (const action of productPlaybookSteps) {
+    if (steps.some((step) => step.action === action)) continue;
+    steps.push({
+      priority: isBlocked ? 'P0' : 'P1',
+      action,
+      effort: 'medio',
+      owner: isBlocked ? 'human' : 'ai'
+    });
+  }
+
+  // Ensure we have at least 3 concrete steps, never abstract filler.
   if (steps.length < 3) {
-    steps.push({ priority: 'P2', action: `Revisión general de calidad para ${product.name}`, effort: 'bajo', owner: 'ai', gap: 0 });
-    steps.push({ priority: 'P2', action: `Actualizar documentación y ejemplos de ${product.name}`, effort: 'bajo', owner: 'ai', gap: 0 });
+    steps.push({ priority: 'P2', action: `Concretar un caso de uso real para '${product.name}' y escribir el flujo de punta a punta`, effort: 'bajo', owner: 'ai', gap: 0 });
+    steps.push({ priority: 'P2', action: `Actualizar documentación y ejemplos de '${product.name}' con evidencia operacional real`, effort: 'bajo', owner: 'ai', gap: 0 });
   }
 
   const estimatedHours = steps.reduce((sum, s) => sum + (s.effort === 'alto' ? 8 : s.effort === 'medio' ? 4 : 2), 0);
@@ -398,7 +539,14 @@ function generateRoadmap(product, score, benchmarks) {
     steps,
     estimatedHours,
     estimatedSprints: Math.ceil(estimatedHours / 8),
-    status: score.finalScore >= 90 ? 'CLOSE_TO_TARGET' : score.finalScore >= 75 ? 'PROGRESSING' : 'EARLY_STAGE',
+    status: isBlocked ? 'BLOCKED_BY_EXTERNAL_DEPENDENCY' : score.finalScore >= 90 ? 'CLOSE_TO_TARGET' : score.finalScore >= 75 ? 'PROGRESSING' : 'EARLY_STAGE',
+    blocker: isBlocked ? blockerLabel : null,
+    localAiNeed: lens.localAiNeed,
+    productLens: {
+      competitors: lens.competitors,
+      blockers: lens.blockers,
+      localAiNeed: lens.localAiNeed,
+    },
     priorityProducts: product.status === 'active' ? 'high' : product.status === 'paused' ? 'medium' : 'low'
   };
 }
@@ -435,6 +583,7 @@ async function main() {
   
   const catalog = loadJSON(CATALOG_PATH);
   if (!catalog || !catalog.products) { console.error('No products catalog found'); process.exit(1); }
+  const viabilityReport = loadViabilityReport();
 
   const products = [...catalog.products, ...rndProducts];
   const history = loadJSON(HISTORY_PATH) || { snapshots: [] };
@@ -448,7 +597,8 @@ async function main() {
 
   for (const product of products) {
     const scoreData = scoreProduct(product, BENCHMARKS);
-    const roadmap = generateRoadmap(product, scoreData, BENCHMARKS);
+    const viabilityEntry = getViabilityEntry(viabilityReport, product.id);
+    const roadmap = generateRoadmap(product, scoreData, BENCHMARKS, viabilityEntry);
     const bm = BENCHMARKS[product.id];
 
     currentSnapshot.scores[product.id] = {
@@ -456,6 +606,7 @@ async function main() {
       score: scoreData.finalScore,
       tier: scoreData.classification.tier,
       status: product.status,
+      viability: viabilityEntry?.viability?.status || null,
       dimensions: {
         documentation: scoreData.dimensions?.find(d => d.id === 'documentation')?.score || 0,
         integration_depth: scoreData.dimensions?.find(d => d.id === 'integration_depth')?.score || 0,
@@ -470,6 +621,11 @@ async function main() {
 
     allResults.push({
       product: { id: product.id, name: product.name, status: product.status, statusReason: product.statusReason },
+      viability: viabilityEntry ? {
+        status: viabilityEntry.viability?.status || null,
+        blockers: viabilityEntry.viability?.blockers || [],
+        agentDecision: viabilityEntry.agentDecision || null,
+      } : null,
       benchmark: bm ? {
         category: bm.category,
         competitors: bm.comparableProducts,

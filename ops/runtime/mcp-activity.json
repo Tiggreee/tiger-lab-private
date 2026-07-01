@@ -1,13 +1,81 @@
 {
-  "tracked": {},
-  "history": [],
+  "tracked": {
+    "mcp-filesystem": {
+      "uses": 1,
+      "enabled": false,
+      "lastUsed": "2026-06-18T14:13:14.257Z",
+      "firstSeen": "2026-06-18T14:13:14.256Z"
+    },
+    "mcp-github": {
+      "uses": 1,
+      "enabled": false,
+      "lastUsed": "2026-06-18T14:13:14.454Z",
+      "firstSeen": "2026-06-18T14:13:14.454Z"
+    },
+    "mcp-fetch": {
+      "uses": 1,
+      "enabled": false,
+      "lastUsed": "2026-06-18T14:13:14.645Z",
+      "firstSeen": "2026-06-18T14:13:14.644Z"
+    }
+  },
+  "history": [
+    {
+      "time": "2026-06-18T14:13:14.257Z",
+      "server": "mcp-filesystem",
+      "action": "use"
+    },
+    {
+      "time": "2026-06-18T14:13:14.454Z",
+      "server": "mcp-github",
+      "action": "use"
+    },
+    {
+      "time": "2026-06-18T14:13:14.645Z",
+      "server": "mcp-fetch",
+      "action": "use"
+    }
+  ],
   "report": {
-    "generatedAt": "2026-06-16T04:02:09.244Z",
+    "generatedAt": "2026-06-18T14:13:14.831Z",
     "total": 20,
     "active": 0,
-    "totalUses": 0,
-    "topServer": "Memory MCP",
+    "totalUses": 3,
+    "topServer": "Filesystem MCP",
     "servers": [
+      {
+        "id": "mcp-filesystem",
+        "name": "Filesystem MCP",
+        "category": "code",
+        "enabled": false,
+        "uses": 1,
+        "lastUsed": "2026-06-18T14:13:14.257Z",
+        "impact": "high",
+        "score": 43,
+        "rank": 1
+      },
+      {
+        "id": "mcp-github",
+        "name": "GitHub MCP",
+        "category": "code",
+        "enabled": false,
+        "uses": 1,
+        "lastUsed": "2026-06-18T14:13:14.454Z",
+        "impact": "high",
+        "score": 43,
+        "rank": 2
+      },
+      {
+        "id": "mcp-fetch",
+        "name": "Fetch MCP",
+        "category": "research",
+        "enabled": false,
+        "uses": 1,
+        "lastUsed": "2026-06-18T14:13:14.645Z",
+        "impact": "high",
+        "score": 43,
+        "rank": 3
+      },
       {
         "id": "mcp-memory",
         "name": "Memory MCP",
@@ -16,42 +84,12 @@
         "uses": 0,
         "impact": "high",
         "score": 40,
-        "rank": 1
-      },
-      {
-        "id": "mcp-filesystem",
-        "name": "Filesystem MCP",
-        "category": "code",
-        "enabled": false,
-        "uses": 0,
-        "impact": "high",
-        "score": 40,
-        "rank": 2
-      },
-      {
-        "id": "mcp-github",
-        "name": "GitHub MCP",
-        "category": "code",
-        "enabled": false,
-        "uses": 0,
-        "impact": "high",
-        "score": 40,
-        "rank": 3
+        "rank": 4
       },
       {
         "id": "mcp-sqlite",
         "name": "SQLite MCP",
         "category": "data",
-        "enabled": false,
-        "uses": 0,
-        "impact": "high",
-        "score": 40,
-        "rank": 4
-      },
-      {
-        "id": "mcp-fetch",
-        "name": "Fetch MCP",
-        "category": "research",
         "enabled": false,
         "uses": 0,
         "impact": "high",

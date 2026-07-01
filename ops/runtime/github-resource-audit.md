@@ -1,17 +1,17 @@
 # GitHub Resource Audit
 
-- generatedAt: 2026-06-13T16:25:39.580Z
+- generatedAt: 2026-07-01T13:52:57.731Z
 - repo: Tigre-Labs/tiger-lab-private
-- periodStart: 2026-06-01T00:00:00.000Z
-- periodEnd: 2026-06-13T16:25:39.208Z
+- periodStart: 2026-07-01T00:00:00.000Z
+- periodEnd: 2026-07-01T13:52:57.367Z
 - actionsMinutesRepoEstimate: 0.00
 - actionsCap50: 25000
 - actionsUsagePctOfCap: 0.00%
 - actionsStatus: UNKNOWN
 - startupBudgetCap50USD: 4982.40
 - startupCreditsKnown: no
-- aiUsagePolicyStatus: ENFORCE_ZERO_AI
-- aiUsagePolicyDetail: Day > 5 UTC: AI usage must remain zero according to repo policy.
+- aiUsagePolicyStatus: WITHIN_ALLOWED_WINDOW
+- aiUsagePolicyDetail: Day <= 5 UTC: AI usage window still open by policy.
 
 ## Notes
 

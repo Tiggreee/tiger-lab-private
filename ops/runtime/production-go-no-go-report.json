@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-17T16:01:53.309Z",
+  "generatedAt": "2026-07-01T17:29:37.245Z",
   "strict": false,
   "gateStatus": "GO",
   "summary": {
-    "pass": 18,
+    "pass": 21,
     "warn": 0,
     "fail": 0
   },
@@ -13,7 +13,7 @@
       "title": "Catalogo activo y consistente",
       "severity": "critical",
       "status": "PASS",
-      "details": "Activos: 3 productos.",
+      "details": "Activos: 2 productos.",
       "evidence": [
         "ops/catalog/products.json",
         "ops/catalog/plans.json",
@@ -162,7 +162,7 @@
       "title": "Freshness de evidencia de release",
       "severity": "critical",
       "status": "PASS",
-      "details": "Reporte reciente (0.3h).",
+      "details": "Reporte reciente (0.7h).",
       "evidence": [
         "ops/runtime/production-go-no-go-report.md"
       ],
@@ -229,6 +229,41 @@
       "details": "check:copilot:agents OK.",
       "evidence": [
         "npm run check:copilot:agents"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P19",
+      "title": "Smoke publico del dashboard de produccion",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "prod:dashboard:smoke OK.",
+      "evidence": [
+        "npm run prod:dashboard:smoke"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P20",
+      "title": "Alineacion index runtime vs 50-published",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "campaigns:index:check OK.",
+      "evidence": [
+        "npm run campaigns:index:check"
+      ],
+      "ownerAction": "Sin accion."
+    },
+    {
+      "id": "P21",
+      "title": "Reconciliacion fiscal obligatoria (MATCH)",
+      "severity": "critical",
+      "status": "PASS",
+      "details": "billing:reconcile:strict OK (MATCH).",
+      "evidence": [
+        "npm run billing:reconcile:strict",
+        "ops/runtime/billing-reconciliation-report.json",
+        "ops/runtime/billing-reconciliation-report.md"
       ],
       "ownerAction": "Sin accion."
     }

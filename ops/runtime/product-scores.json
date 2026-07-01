@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T09:10:11.638Z",
+  "generatedAt": "2026-07-01T00:08:20.339Z",
   "engine": {
     "averageScore": 64,
     "productsAt95": 0,
@@ -8,7 +8,7 @@
     "productsAt75plus": 2,
     "totalBenchmarks": 5,
     "totalCompetitors": 20,
-    "estimatedTotalEffortHours": 180
+    "estimatedTotalEffortHours": 244
   },
   "productResults": [
     {
@@ -16,6 +16,11 @@
         "id": "docflow-api",
         "name": "Docflow API",
         "status": "active"
+      },
+      "viability": {
+        "status": "VIABLE",
+        "blockers": [],
+        "agentDecision": "keep"
       },
       "benchmark": {
         "category": "API de Flujos Documentales / Workflow Automation",
@@ -135,36 +140,50 @@
         "steps": [
           {
             "priority": "P2",
-            "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Docflow API",
+            "action": "Profundizar integraciones de 'Docflow API' según su caso de uso: no sumar conectores genéricos sin demanda",
             "effort": "medio",
             "owner": "ai",
             "gap": 10
           },
           {
             "priority": "P2",
-            "action": "Crear README, API docs, onboarding guide para Docflow API",
+            "action": "Publicar README, quickstart y onboarding de 'Docflow API' con un flujo real de arranque",
             "effort": "bajo",
             "owner": "ai",
             "gap": 5
           },
           {
-            "priority": "P2",
-            "action": "Revisión general de calidad para Docflow API",
-            "effort": "bajo",
-            "owner": "ai",
-            "gap": 0
+            "priority": "P1",
+            "action": "Close the integration depth gap with webhooks, email delivery, and signed event examples",
+            "effort": "medio",
+            "owner": "ai"
           },
           {
-            "priority": "P2",
-            "action": "Actualizar documentación y ejemplos de Docflow API",
-            "effort": "bajo",
-            "owner": "ai",
-            "gap": 0
+            "priority": "P1",
+            "action": "Publish 3 walkthroughs: intake, approval, and export/history",
+            "effort": "medio",
+            "owner": "ai"
+          },
+          {
+            "priority": "P1",
+            "action": "Package a comparison page against Documenso and Docuseal with a clear why-us section",
+            "effort": "medio",
+            "owner": "ai"
           }
         ],
-        "estimatedHours": 10,
-        "estimatedSprints": 2,
+        "estimatedHours": 18,
+        "estimatedSprints": 3,
         "status": "PROGRESSING",
+        "blocker": null,
+        "localAiNeed": "Baja. No se necesita un LLM local para este producto.",
+        "productLens": {
+          "competitors": [
+            "Documenso",
+            "Docuseal"
+          ],
+          "blockers": [],
+          "localAiNeed": "Baja. No se necesita un LLM local para este producto."
+        },
         "priorityProducts": "high"
       }
     },
@@ -173,6 +192,11 @@
         "id": "script-premium-kit",
         "name": "Script Premium Kit",
         "status": "active"
+      },
+      "viability": {
+        "status": "VIABLE",
+        "blockers": [],
+        "agentDecision": "keep"
       },
       "benchmark": {
         "category": "Automatización / Scripts Premium para PyMEs",
@@ -292,36 +316,50 @@
         "steps": [
           {
             "priority": "P2",
-            "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Script Premium Kit",
+            "action": "Profundizar integraciones de 'Script Premium Kit' según su caso de uso: no sumar conectores genéricos sin demanda",
             "effort": "medio",
             "owner": "ai",
             "gap": 10
           },
           {
             "priority": "P2",
-            "action": "Crear README, API docs, onboarding guide para Script Premium Kit",
+            "action": "Publicar README, quickstart y onboarding de 'Script Premium Kit' con un flujo real de arranque",
             "effort": "bajo",
             "owner": "ai",
             "gap": 5
           },
           {
-            "priority": "P2",
-            "action": "Revisión general de calidad para Script Premium Kit",
-            "effort": "bajo",
-            "owner": "ai",
-            "gap": 0
+            "priority": "P1",
+            "action": "Package 10 turnkey scripts by business outcome instead of by technology",
+            "effort": "medio",
+            "owner": "ai"
           },
           {
-            "priority": "P2",
-            "action": "Actualizar documentación y ejemplos de Script Premium Kit",
-            "effort": "bajo",
-            "owner": "ai",
-            "gap": 0
+            "priority": "P1",
+            "action": "Ship examples for SMB ops, sales follow-up, and recurring admin work",
+            "effort": "medio",
+            "owner": "ai"
+          },
+          {
+            "priority": "P1",
+            "action": "Create a buyer-facing comparison page versus Make, n8n, and Pipedream",
+            "effort": "medio",
+            "owner": "ai"
           }
         ],
-        "estimatedHours": 10,
-        "estimatedSprints": 2,
+        "estimatedHours": 18,
+        "estimatedSprints": 3,
         "status": "PROGRESSING",
+        "blocker": null,
+        "localAiNeed": "Baja. No se necesita un LLM local para este producto.",
+        "productLens": {
+          "competitors": [
+            "Make (Integromat)",
+            "n8n"
+          ],
+          "blockers": [],
+          "localAiNeed": "Baja. No se necesita un LLM local para este producto."
+        },
         "priorityProducts": "high"
       }
     },
@@ -331,6 +369,7 @@
         "name": "--dryRun",
         "status": "active"
       },
+      "viability": null,
       "benchmark": null,
       "score": 68,
       "classification": {
@@ -419,42 +458,42 @@
         "steps": [
           {
             "priority": "P0",
-            "action": "Crear README, API docs, onboarding guide para --dryRun",
+            "action": "Publicar README, quickstart y onboarding de '--dryRun' con un flujo real de arranque",
             "effort": "bajo",
             "owner": "human",
             "gap": 40
           },
           {
             "priority": "P0",
-            "action": "Automatizar CI/CD, tests, deploy para --dryRun",
+            "action": "Automatizar CI/CD, pruebas y despliegue de '--dryRun' para reducir trabajo manual",
             "effort": "medio",
             "owner": "human",
             "gap": 35
           },
           {
             "priority": "P0",
-            "action": "Completar features core faltantes de --dryRun: revisar backlog y priorizar",
+            "action": "Completar el core de '--dryRun': priorizar las 3 capacidades que el buyer realmente compra",
             "effort": "alto",
             "owner": "human",
             "gap": 25
           },
           {
             "priority": "P1",
-            "action": "Hardening técnico: tests, types, error handling, performance para --dryRun",
+            "action": "Hardening técnico de '--dryRun': tests, types, error handling y performance en el flujo principal",
             "effort": "alto",
             "owner": "human",
             "gap": 20
           },
           {
             "priority": "P2",
-            "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para --dryRun",
+            "action": "Profundizar integraciones de '--dryRun' según su caso de uso: no sumar conectores genéricos sin demanda",
             "effort": "medio",
             "owner": "ai",
             "gap": 10
           },
           {
             "priority": "P2",
-            "action": "Benchmark contra competidores: implementar features diferenciadores clave",
+            "action": "Diferenciar '--dryRun' contra competidores directos: cerrar la brecha que el benchmark muestra",
             "effort": "alto",
             "owner": "ai",
             "gap": 5
@@ -463,6 +502,13 @@
         "estimatedHours": 34,
         "estimatedSprints": 5,
         "status": "EARLY_STAGE",
+        "blocker": null,
+        "localAiNeed": "Baja. No se necesita un LLM local para este producto.",
+        "productLens": {
+          "competitors": [],
+          "blockers": [],
+          "localAiNeed": "Baja. No se necesita un LLM local para este producto."
+        },
         "priorityProducts": "high"
       }
     },
@@ -472,6 +518,14 @@
         "name": "FacturAutentico Cloud",
         "status": "paused",
         "statusReason": "Requiere PAC (Proveedor Autorizado de Certificacion) para CFDI. Sin PAC no opera. Pendiente de contratacion."
+      },
+      "viability": {
+        "status": "BLOCKED",
+        "blockers": [
+          "PAC (Proveedor Autorizado de Certificación) no contratado",
+          "Sin PAC no puede timbrar CFDI"
+        ],
+        "agentDecision": "pause"
       },
       "benchmark": {
         "category": "CFDI / Facturación Electrónica MX",
@@ -621,64 +675,102 @@
         "steps": [
           {
             "priority": "P0",
-            "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para FacturAutentico Cloud",
+            "action": "Resolver bloqueo real de 'FacturAutentico Cloud': PAC (Proveedor Autorizado de Certificación) no contratado",
+            "effort": "medio",
+            "owner": "human",
+            "blocker": true
+          },
+          {
+            "priority": "P0",
+            "action": "Contract the PAC and validate the CFDI timbrado path end to end",
+            "effort": "medio",
+            "owner": "human"
+          },
+          {
+            "priority": "P0",
+            "action": "Add a SAT-compliant sample XML and a failure catalog for common timbrado errors",
+            "effort": "medio",
+            "owner": "human"
+          },
+          {
+            "priority": "P0",
+            "action": "Profundizar integraciones de 'FacturAutentico Cloud' según su caso de uso: no sumar conectores genéricos sin demanda",
             "effort": "medio",
             "owner": "human",
             "gap": 45
           },
           {
             "priority": "P0",
-            "action": "Crear README, API docs, onboarding guide para FacturAutentico Cloud",
+            "action": "Publicar README, quickstart y onboarding de 'FacturAutentico Cloud' con un flujo real de arranque",
             "effort": "bajo",
             "owner": "human",
             "gap": 40
           },
           {
             "priority": "P0",
-            "action": "Automatizar CI/CD, tests, deploy para FacturAutentico Cloud",
+            "action": "Automatizar CI/CD, pruebas y despliegue de 'FacturAutentico Cloud' para reducir trabajo manual",
             "effort": "medio",
             "owner": "human",
             "gap": 35
           },
           {
             "priority": "P0",
-            "action": "Benchmark contra Facturapi: implementar features diferenciadores clave",
+            "action": "Diferenciar 'FacturAutentico Cloud' contra Facturapi y Facturación.com: cerrar la brecha que el benchmark muestra",
             "effort": "alto",
             "owner": "human",
             "gap": 28
           },
           {
             "priority": "P0",
-            "action": "Completar features core faltantes de FacturAutentico Cloud: revisar backlog y priorizar",
+            "action": "Completar el core de 'FacturAutentico Cloud': priorizar las 3 capacidades que el buyer realmente compra",
             "effort": "alto",
             "owner": "human",
             "gap": 25
           },
           {
             "priority": "P1",
-            "action": "Hardening técnico: tests, types, error handling, performance para FacturAutentico Cloud",
+            "action": "Hardening técnico de 'FacturAutentico Cloud': tests, types, error handling y performance en el flujo principal",
             "effort": "alto",
             "owner": "human",
             "gap": 20
           },
           {
             "priority": "P1",
-            "action": "Configurar pricing + checkout + payment integration para FacturAutentico Cloud",
+            "action": "Cerrar monetización de 'FacturAutentico Cloud': pricing, checkout y evidencia de cobro real",
             "effort": "medio",
             "owner": "human",
             "gap": 20
           },
           {
             "priority": "P2",
-            "action": "Investigar mercado para FacturAutentico Cloud: entrevistar 5 prospects, validar propuesta de valor",
+            "action": "Validar propuesta de 'FacturAutentico Cloud' con 5 prospectos del segmento objetivo y cerrar el caso de uso más urgente",
             "effort": "medio",
             "owner": "ai",
             "gap": 10
+          },
+          {
+            "priority": "P0",
+            "action": "Publish rollback, audit, and invoice reconciliation steps before relaunch",
+            "effort": "medio",
+            "owner": "human"
           }
         ],
-        "estimatedHours": 42,
-        "estimatedSprints": 6,
-        "status": "EARLY_STAGE",
+        "estimatedHours": 58,
+        "estimatedSprints": 8,
+        "status": "BLOCKED_BY_EXTERNAL_DEPENDENCY",
+        "blocker": "PAC (Proveedor Autorizado de Certificación) no contratado",
+        "localAiNeed": "Baja. No se necesita un LLM local para este producto.",
+        "productLens": {
+          "competitors": [
+            "Facturapi",
+            "Facturación.com"
+          ],
+          "blockers": [
+            "PAC (Proveedor Autorizado de Certificación) no contratado",
+            "Sin PAC no puede timbrar CFDI"
+          ],
+          "localAiNeed": "Baja. No se necesita un LLM local para este producto."
+        },
         "priorityProducts": "medium"
       }
     },
@@ -688,6 +780,14 @@
         "name": "FacturAutentica",
         "status": "paused",
         "statusReason": "Requiere PAC (Proveedor Autorizado de Certificacion) para CFDI. Sin PAC no opera. Misma dependencia que FacturAutentico Cloud."
+      },
+      "viability": {
+        "status": "BLOCKED",
+        "blockers": [
+          "PAC (Proveedor Autorizado de Certificación) no contratado",
+          "Misma dependencia que FacturAutentico Cloud"
+        ],
+        "agentDecision": "pause"
       },
       "benchmark": {
         "category": "Motor CFDI / PAC Management",
@@ -837,64 +937,102 @@
         "steps": [
           {
             "priority": "P0",
-            "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para FacturAutentica",
+            "action": "Resolver bloqueo real de 'FacturAutentica': PAC (Proveedor Autorizado de Certificación) no contratado",
+            "effort": "medio",
+            "owner": "human",
+            "blocker": true
+          },
+          {
+            "priority": "P0",
+            "action": "Contract the PAC and prove the shared timbrado flow before any UI work",
+            "effort": "medio",
+            "owner": "human"
+          },
+          {
+            "priority": "P0",
+            "action": "Align the on-premise flow with the cloud product on CFDI validation and audit trail",
+            "effort": "medio",
+            "owner": "human"
+          },
+          {
+            "priority": "P0",
+            "action": "Profundizar integraciones de 'FacturAutentica' según su caso de uso: no sumar conectores genéricos sin demanda",
             "effort": "medio",
             "owner": "human",
             "gap": 45
           },
           {
             "priority": "P0",
-            "action": "Crear README, API docs, onboarding guide para FacturAutentica",
+            "action": "Publicar README, quickstart y onboarding de 'FacturAutentica' con un flujo real de arranque",
             "effort": "bajo",
             "owner": "human",
             "gap": 40
           },
           {
             "priority": "P0",
-            "action": "Automatizar CI/CD, tests, deploy para FacturAutentica",
+            "action": "Automatizar CI/CD, pruebas y despliegue de 'FacturAutentica' para reducir trabajo manual",
             "effort": "medio",
             "owner": "human",
             "gap": 35
           },
           {
             "priority": "P0",
-            "action": "Benchmark contra Facturapi: implementar features diferenciadores clave",
+            "action": "Diferenciar 'FacturAutentica' contra Facturapi y División Facturación: cerrar la brecha que el benchmark muestra",
             "effort": "alto",
             "owner": "human",
             "gap": 29
           },
           {
             "priority": "P0",
-            "action": "Completar features core faltantes de FacturAutentica: revisar backlog y priorizar",
+            "action": "Completar el core de 'FacturAutentica': priorizar las 3 capacidades que el buyer realmente compra",
             "effort": "alto",
             "owner": "human",
             "gap": 25
           },
           {
             "priority": "P1",
-            "action": "Hardening técnico: tests, types, error handling, performance para FacturAutentica",
+            "action": "Hardening técnico de 'FacturAutentica': tests, types, error handling y performance en el flujo principal",
             "effort": "alto",
             "owner": "human",
             "gap": 20
           },
           {
             "priority": "P1",
-            "action": "Configurar pricing + checkout + payment integration para FacturAutentica",
+            "action": "Cerrar monetización de 'FacturAutentica': pricing, checkout y evidencia de cobro real",
             "effort": "medio",
             "owner": "human",
             "gap": 20
           },
           {
             "priority": "P2",
-            "action": "Investigar mercado para FacturAutentica: entrevistar 5 prospects, validar propuesta de valor",
+            "action": "Validar propuesta de 'FacturAutentica' con 5 prospectos del segmento objetivo y cerrar el caso de uso más urgente",
             "effort": "medio",
             "owner": "ai",
             "gap": 10
+          },
+          {
+            "priority": "P0",
+            "action": "Write the operator checklist for invoice issuance and recovery",
+            "effort": "medio",
+            "owner": "human"
           }
         ],
-        "estimatedHours": 42,
-        "estimatedSprints": 6,
-        "status": "EARLY_STAGE",
+        "estimatedHours": 58,
+        "estimatedSprints": 8,
+        "status": "BLOCKED_BY_EXTERNAL_DEPENDENCY",
+        "blocker": "PAC (Proveedor Autorizado de Certificación) no contratado",
+        "localAiNeed": "Baja. No se necesita un LLM local para este producto.",
+        "productLens": {
+          "competitors": [
+            "Facturapi",
+            "División Facturación"
+          ],
+          "blockers": [
+            "PAC (Proveedor Autorizado de Certificación) no contratado",
+            "Misma dependencia que FacturAutentico Cloud"
+          ],
+          "localAiNeed": "Baja. No se necesita un LLM local para este producto."
+        },
         "priorityProducts": "medium"
       }
     },
@@ -903,6 +1041,15 @@
         "id": "sentrylog-lite",
         "name": "Sentrylog Lite",
         "status": "planned"
+      },
+      "viability": {
+        "status": "UNCERTAIN",
+        "blockers": [
+          "No hay código ni implementación",
+          "Mercado de logging tiene competidores establecidos",
+          "Solo tiene sentido si se vende como bundle con Docflow API"
+        ],
+        "agentDecision": "hold"
       },
       "benchmark": {
         "category": "Logging / Observabilidad Ligero",
@@ -1052,64 +1199,103 @@
         "steps": [
           {
             "priority": "P0",
-            "action": "Completar features core faltantes de Sentrylog Lite: revisar backlog y priorizar",
+            "action": "Resolver bloqueo real de 'Sentrylog Lite': No hay código ni implementación",
+            "effort": "medio",
+            "owner": "human",
+            "blocker": true
+          },
+          {
+            "priority": "P0",
+            "action": "Validate whether this should ship standalone or as a bundle with Docflow API",
+            "effort": "medio",
+            "owner": "human"
+          },
+          {
+            "priority": "P0",
+            "action": "Build the minimal ingest, search, and alert sample before adding polish",
+            "effort": "medio",
+            "owner": "human"
+          },
+          {
+            "priority": "P0",
+            "action": "Completar el core de 'Sentrylog Lite': priorizar las 3 capacidades que el buyer realmente compra",
             "effort": "alto",
             "owner": "human",
             "gap": 60
           },
           {
             "priority": "P0",
-            "action": "Configurar pricing + checkout + payment integration para Sentrylog Lite",
+            "action": "Cerrar monetización de 'Sentrylog Lite': pricing, checkout y evidencia de cobro real",
             "effort": "medio",
             "owner": "human",
             "gap": 50
           },
           {
             "priority": "P0",
-            "action": "Hardening técnico: tests, types, error handling, performance para Sentrylog Lite",
+            "action": "Hardening técnico de 'Sentrylog Lite': tests, types, error handling y performance en el flujo principal",
             "effort": "alto",
             "owner": "human",
             "gap": 45
           },
           {
             "priority": "P0",
-            "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Sentrylog Lite",
+            "action": "Profundizar integraciones de 'Sentrylog Lite' según su caso de uso: no sumar conectores genéricos sin demanda",
             "effort": "medio",
             "owner": "human",
             "gap": 45
           },
           {
             "priority": "P0",
-            "action": "Crear README, API docs, onboarding guide para Sentrylog Lite",
+            "action": "Publicar README, quickstart y onboarding de 'Sentrylog Lite' con un flujo real de arranque",
             "effort": "bajo",
             "owner": "human",
             "gap": 40
           },
           {
             "priority": "P0",
-            "action": "Investigar mercado para Sentrylog Lite: entrevistar 5 prospects, validar propuesta de valor",
+            "action": "Validar propuesta de 'Sentrylog Lite' con 5 prospectos del segmento objetivo y cerrar el caso de uso más urgente",
             "effort": "medio",
             "owner": "human",
             "gap": 35
           },
           {
             "priority": "P0",
-            "action": "Automatizar CI/CD, tests, deploy para Sentrylog Lite",
+            "action": "Automatizar CI/CD, pruebas y despliegue de 'Sentrylog Lite' para reducir trabajo manual",
             "effort": "medio",
             "owner": "human",
             "gap": 35
           },
           {
             "priority": "P0",
-            "action": "Benchmark contra Better Stack: implementar features diferenciadores clave",
+            "action": "Diferenciar 'Sentrylog Lite' contra Better Stack y SigNoz: cerrar la brecha que el benchmark muestra",
             "effort": "alto",
             "owner": "human",
             "gap": 27
+          },
+          {
+            "priority": "P0",
+            "action": "Run a demand test with a concrete logging buyer persona before committing more build time",
+            "effort": "medio",
+            "owner": "human"
           }
         ],
-        "estimatedHours": 42,
-        "estimatedSprints": 6,
-        "status": "EARLY_STAGE",
+        "estimatedHours": 58,
+        "estimatedSprints": 8,
+        "status": "BLOCKED_BY_EXTERNAL_DEPENDENCY",
+        "blocker": "No hay código ni implementación",
+        "localAiNeed": "Baja. No se necesita un LLM local para este producto.",
+        "productLens": {
+          "competitors": [
+            "Better Stack",
+            "SigNoz"
+          ],
+          "blockers": [
+            "No hay código ni implementación",
+            "Mercado de logging tiene competidores establecidos",
+            "Solo tiene sentido si se vende como bundle con Docflow API"
+          ],
+          "localAiNeed": "Baja. No se necesita un LLM local para este producto."
+        },
         "priorityProducts": "low"
       }
     }
@@ -1122,6 +1308,11 @@
           "id": "docflow-api",
           "name": "Docflow API",
           "status": "active"
+        },
+        "viability": {
+          "status": "VIABLE",
+          "blockers": [],
+          "agentDecision": "keep"
         },
         "benchmark": {
           "category": "API de Flujos Documentales / Workflow Automation",
@@ -1241,36 +1432,50 @@
           "steps": [
             {
               "priority": "P2",
-              "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Docflow API",
+              "action": "Profundizar integraciones de 'Docflow API' según su caso de uso: no sumar conectores genéricos sin demanda",
               "effort": "medio",
               "owner": "ai",
               "gap": 10
             },
             {
               "priority": "P2",
-              "action": "Crear README, API docs, onboarding guide para Docflow API",
+              "action": "Publicar README, quickstart y onboarding de 'Docflow API' con un flujo real de arranque",
               "effort": "bajo",
               "owner": "ai",
               "gap": 5
             },
             {
-              "priority": "P2",
-              "action": "Revisión general de calidad para Docflow API",
-              "effort": "bajo",
-              "owner": "ai",
-              "gap": 0
+              "priority": "P1",
+              "action": "Close the integration depth gap with webhooks, email delivery, and signed event examples",
+              "effort": "medio",
+              "owner": "ai"
             },
             {
-              "priority": "P2",
-              "action": "Actualizar documentación y ejemplos de Docflow API",
-              "effort": "bajo",
-              "owner": "ai",
-              "gap": 0
+              "priority": "P1",
+              "action": "Publish 3 walkthroughs: intake, approval, and export/history",
+              "effort": "medio",
+              "owner": "ai"
+            },
+            {
+              "priority": "P1",
+              "action": "Package a comparison page against Documenso and Docuseal with a clear why-us section",
+              "effort": "medio",
+              "owner": "ai"
             }
           ],
-          "estimatedHours": 10,
-          "estimatedSprints": 2,
+          "estimatedHours": 18,
+          "estimatedSprints": 3,
           "status": "PROGRESSING",
+          "blocker": null,
+          "localAiNeed": "Baja. No se necesita un LLM local para este producto.",
+          "productLens": {
+            "competitors": [
+              "Documenso",
+              "Docuseal"
+            ],
+            "blockers": [],
+            "localAiNeed": "Baja. No se necesita un LLM local para este producto."
+          },
           "priorityProducts": "high"
         }
       },
@@ -1279,6 +1484,11 @@
           "id": "script-premium-kit",
           "name": "Script Premium Kit",
           "status": "active"
+        },
+        "viability": {
+          "status": "VIABLE",
+          "blockers": [],
+          "agentDecision": "keep"
         },
         "benchmark": {
           "category": "Automatización / Scripts Premium para PyMEs",
@@ -1398,36 +1608,50 @@
           "steps": [
             {
               "priority": "P2",
-              "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Script Premium Kit",
+              "action": "Profundizar integraciones de 'Script Premium Kit' según su caso de uso: no sumar conectores genéricos sin demanda",
               "effort": "medio",
               "owner": "ai",
               "gap": 10
             },
             {
               "priority": "P2",
-              "action": "Crear README, API docs, onboarding guide para Script Premium Kit",
+              "action": "Publicar README, quickstart y onboarding de 'Script Premium Kit' con un flujo real de arranque",
               "effort": "bajo",
               "owner": "ai",
               "gap": 5
             },
             {
-              "priority": "P2",
-              "action": "Revisión general de calidad para Script Premium Kit",
-              "effort": "bajo",
-              "owner": "ai",
-              "gap": 0
+              "priority": "P1",
+              "action": "Package 10 turnkey scripts by business outcome instead of by technology",
+              "effort": "medio",
+              "owner": "ai"
             },
             {
-              "priority": "P2",
-              "action": "Actualizar documentación y ejemplos de Script Premium Kit",
-              "effort": "bajo",
-              "owner": "ai",
-              "gap": 0
+              "priority": "P1",
+              "action": "Ship examples for SMB ops, sales follow-up, and recurring admin work",
+              "effort": "medio",
+              "owner": "ai"
+            },
+            {
+              "priority": "P1",
+              "action": "Create a buyer-facing comparison page versus Make, n8n, and Pipedream",
+              "effort": "medio",
+              "owner": "ai"
             }
           ],
-          "estimatedHours": 10,
-          "estimatedSprints": 2,
+          "estimatedHours": 18,
+          "estimatedSprints": 3,
           "status": "PROGRESSING",
+          "blocker": null,
+          "localAiNeed": "Baja. No se necesita un LLM local para este producto.",
+          "productLens": {
+            "competitors": [
+              "Make (Integromat)",
+              "n8n"
+            ],
+            "blockers": [],
+            "localAiNeed": "Baja. No se necesita un LLM local para este producto."
+          },
           "priorityProducts": "high"
         }
       }
@@ -1439,6 +1663,7 @@
           "name": "--dryRun",
           "status": "active"
         },
+        "viability": null,
         "benchmark": null,
         "score": 68,
         "classification": {
@@ -1527,42 +1752,42 @@
           "steps": [
             {
               "priority": "P0",
-              "action": "Crear README, API docs, onboarding guide para --dryRun",
+              "action": "Publicar README, quickstart y onboarding de '--dryRun' con un flujo real de arranque",
               "effort": "bajo",
               "owner": "human",
               "gap": 40
             },
             {
               "priority": "P0",
-              "action": "Automatizar CI/CD, tests, deploy para --dryRun",
+              "action": "Automatizar CI/CD, pruebas y despliegue de '--dryRun' para reducir trabajo manual",
               "effort": "medio",
               "owner": "human",
               "gap": 35
             },
             {
               "priority": "P0",
-              "action": "Completar features core faltantes de --dryRun: revisar backlog y priorizar",
+              "action": "Completar el core de '--dryRun': priorizar las 3 capacidades que el buyer realmente compra",
               "effort": "alto",
               "owner": "human",
               "gap": 25
             },
             {
               "priority": "P1",
-              "action": "Hardening técnico: tests, types, error handling, performance para --dryRun",
+              "action": "Hardening técnico de '--dryRun': tests, types, error handling y performance en el flujo principal",
               "effort": "alto",
               "owner": "human",
               "gap": 20
             },
             {
               "priority": "P2",
-              "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para --dryRun",
+              "action": "Profundizar integraciones de '--dryRun' según su caso de uso: no sumar conectores genéricos sin demanda",
               "effort": "medio",
               "owner": "ai",
               "gap": 10
             },
             {
               "priority": "P2",
-              "action": "Benchmark contra competidores: implementar features diferenciadores clave",
+              "action": "Diferenciar '--dryRun' contra competidores directos: cerrar la brecha que el benchmark muestra",
               "effort": "alto",
               "owner": "ai",
               "gap": 5
@@ -1571,6 +1796,13 @@
           "estimatedHours": 34,
           "estimatedSprints": 5,
           "status": "EARLY_STAGE",
+          "blocker": null,
+          "localAiNeed": "Baja. No se necesita un LLM local para este producto.",
+          "productLens": {
+            "competitors": [],
+            "blockers": [],
+            "localAiNeed": "Baja. No se necesita un LLM local para este producto."
+          },
           "priorityProducts": "high"
         }
       },
@@ -1580,6 +1812,14 @@
           "name": "FacturAutentico Cloud",
           "status": "paused",
           "statusReason": "Requiere PAC (Proveedor Autorizado de Certificacion) para CFDI. Sin PAC no opera. Pendiente de contratacion."
+        },
+        "viability": {
+          "status": "BLOCKED",
+          "blockers": [
+            "PAC (Proveedor Autorizado de Certificación) no contratado",
+            "Sin PAC no puede timbrar CFDI"
+          ],
+          "agentDecision": "pause"
         },
         "benchmark": {
           "category": "CFDI / Facturación Electrónica MX",
@@ -1729,64 +1969,102 @@
           "steps": [
             {
               "priority": "P0",
-              "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para FacturAutentico Cloud",
+              "action": "Resolver bloqueo real de 'FacturAutentico Cloud': PAC (Proveedor Autorizado de Certificación) no contratado",
+              "effort": "medio",
+              "owner": "human",
+              "blocker": true
+            },
+            {
+              "priority": "P0",
+              "action": "Contract the PAC and validate the CFDI timbrado path end to end",
+              "effort": "medio",
+              "owner": "human"
+            },
+            {
+              "priority": "P0",
+              "action": "Add a SAT-compliant sample XML and a failure catalog for common timbrado errors",
+              "effort": "medio",
+              "owner": "human"
+            },
+            {
+              "priority": "P0",
+              "action": "Profundizar integraciones de 'FacturAutentico Cloud' según su caso de uso: no sumar conectores genéricos sin demanda",
               "effort": "medio",
               "owner": "human",
               "gap": 45
             },
             {
               "priority": "P0",
-              "action": "Crear README, API docs, onboarding guide para FacturAutentico Cloud",
+              "action": "Publicar README, quickstart y onboarding de 'FacturAutentico Cloud' con un flujo real de arranque",
               "effort": "bajo",
               "owner": "human",
               "gap": 40
             },
             {
               "priority": "P0",
-              "action": "Automatizar CI/CD, tests, deploy para FacturAutentico Cloud",
+              "action": "Automatizar CI/CD, pruebas y despliegue de 'FacturAutentico Cloud' para reducir trabajo manual",
               "effort": "medio",
               "owner": "human",
               "gap": 35
             },
             {
               "priority": "P0",
-              "action": "Benchmark contra Facturapi: implementar features diferenciadores clave",
+              "action": "Diferenciar 'FacturAutentico Cloud' contra Facturapi y Facturación.com: cerrar la brecha que el benchmark muestra",
               "effort": "alto",
               "owner": "human",
               "gap": 28
             },
             {
               "priority": "P0",
-              "action": "Completar features core faltantes de FacturAutentico Cloud: revisar backlog y priorizar",
+              "action": "Completar el core de 'FacturAutentico Cloud': priorizar las 3 capacidades que el buyer realmente compra",
               "effort": "alto",
               "owner": "human",
               "gap": 25
             },
             {
               "priority": "P1",
-              "action": "Hardening técnico: tests, types, error handling, performance para FacturAutentico Cloud",
+              "action": "Hardening técnico de 'FacturAutentico Cloud': tests, types, error handling y performance en el flujo principal",
               "effort": "alto",
               "owner": "human",
               "gap": 20
             },
             {
               "priority": "P1",
-              "action": "Configurar pricing + checkout + payment integration para FacturAutentico Cloud",
+              "action": "Cerrar monetización de 'FacturAutentico Cloud': pricing, checkout y evidencia de cobro real",
               "effort": "medio",
               "owner": "human",
               "gap": 20
             },
             {
               "priority": "P2",
-              "action": "Investigar mercado para FacturAutentico Cloud: entrevistar 5 prospects, validar propuesta de valor",
+              "action": "Validar propuesta de 'FacturAutentico Cloud' con 5 prospectos del segmento objetivo y cerrar el caso de uso más urgente",
               "effort": "medio",
               "owner": "ai",
               "gap": 10
+            },
+            {
+              "priority": "P0",
+              "action": "Publish rollback, audit, and invoice reconciliation steps before relaunch",
+              "effort": "medio",
+              "owner": "human"
             }
           ],
-          "estimatedHours": 42,
-          "estimatedSprints": 6,
-          "status": "EARLY_STAGE",
+          "estimatedHours": 58,
+          "estimatedSprints": 8,
+          "status": "BLOCKED_BY_EXTERNAL_DEPENDENCY",
+          "blocker": "PAC (Proveedor Autorizado de Certificación) no contratado",
+          "localAiNeed": "Baja. No se necesita un LLM local para este producto.",
+          "productLens": {
+            "competitors": [
+              "Facturapi",
+              "Facturación.com"
+            ],
+            "blockers": [
+              "PAC (Proveedor Autorizado de Certificación) no contratado",
+              "Sin PAC no puede timbrar CFDI"
+            ],
+            "localAiNeed": "Baja. No se necesita un LLM local para este producto."
+          },
           "priorityProducts": "medium"
         }
       },
@@ -1796,6 +2074,14 @@
           "name": "FacturAutentica",
           "status": "paused",
           "statusReason": "Requiere PAC (Proveedor Autorizado de Certificacion) para CFDI. Sin PAC no opera. Misma dependencia que FacturAutentico Cloud."
+        },
+        "viability": {
+          "status": "BLOCKED",
+          "blockers": [
+            "PAC (Proveedor Autorizado de Certificación) no contratado",
+            "Misma dependencia que FacturAutentico Cloud"
+          ],
+          "agentDecision": "pause"
         },
         "benchmark": {
           "category": "Motor CFDI / PAC Management",
@@ -1945,64 +2231,102 @@
           "steps": [
             {
               "priority": "P0",
-              "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para FacturAutentica",
+              "action": "Resolver bloqueo real de 'FacturAutentica': PAC (Proveedor Autorizado de Certificación) no contratado",
+              "effort": "medio",
+              "owner": "human",
+              "blocker": true
+            },
+            {
+              "priority": "P0",
+              "action": "Contract the PAC and prove the shared timbrado flow before any UI work",
+              "effort": "medio",
+              "owner": "human"
+            },
+            {
+              "priority": "P0",
+              "action": "Align the on-premise flow with the cloud product on CFDI validation and audit trail",
+              "effort": "medio",
+              "owner": "human"
+            },
+            {
+              "priority": "P0",
+              "action": "Profundizar integraciones de 'FacturAutentica' según su caso de uso: no sumar conectores genéricos sin demanda",
               "effort": "medio",
               "owner": "human",
               "gap": 45
             },
             {
               "priority": "P0",
-              "action": "Crear README, API docs, onboarding guide para FacturAutentica",
+              "action": "Publicar README, quickstart y onboarding de 'FacturAutentica' con un flujo real de arranque",
               "effort": "bajo",
               "owner": "human",
               "gap": 40
             },
             {
               "priority": "P0",
-              "action": "Automatizar CI/CD, tests, deploy para FacturAutentica",
+              "action": "Automatizar CI/CD, pruebas y despliegue de 'FacturAutentica' para reducir trabajo manual",
               "effort": "medio",
               "owner": "human",
               "gap": 35
             },
             {
               "priority": "P0",
-              "action": "Benchmark contra Facturapi: implementar features diferenciadores clave",
+              "action": "Diferenciar 'FacturAutentica' contra Facturapi y División Facturación: cerrar la brecha que el benchmark muestra",
               "effort": "alto",
               "owner": "human",
               "gap": 29
             },
             {
               "priority": "P0",
-              "action": "Completar features core faltantes de FacturAutentica: revisar backlog y priorizar",
+              "action": "Completar el core de 'FacturAutentica': priorizar las 3 capacidades que el buyer realmente compra",
               "effort": "alto",
               "owner": "human",
               "gap": 25
             },
             {
               "priority": "P1",
-              "action": "Hardening técnico: tests, types, error handling, performance para FacturAutentica",
+              "action": "Hardening técnico de 'FacturAutentica': tests, types, error handling y performance en el flujo principal",
               "effort": "alto",
               "owner": "human",
               "gap": 20
             },
             {
               "priority": "P1",
-              "action": "Configurar pricing + checkout + payment integration para FacturAutentica",
+              "action": "Cerrar monetización de 'FacturAutentica': pricing, checkout y evidencia de cobro real",
               "effort": "medio",
               "owner": "human",
               "gap": 20
             },
             {
               "priority": "P2",
-              "action": "Investigar mercado para FacturAutentica: entrevistar 5 prospects, validar propuesta de valor",
+              "action": "Validar propuesta de 'FacturAutentica' con 5 prospectos del segmento objetivo y cerrar el caso de uso más urgente",
               "effort": "medio",
               "owner": "ai",
               "gap": 10
+            },
+            {
+              "priority": "P0",
+              "action": "Write the operator checklist for invoice issuance and recovery",
+              "effort": "medio",
+              "owner": "human"
             }
           ],
-          "estimatedHours": 42,
-          "estimatedSprints": 6,
-          "status": "EARLY_STAGE",
+          "estimatedHours": 58,
+          "estimatedSprints": 8,
+          "status": "BLOCKED_BY_EXTERNAL_DEPENDENCY",
+          "blocker": "PAC (Proveedor Autorizado de Certificación) no contratado",
+          "localAiNeed": "Baja. No se necesita un LLM local para este producto.",
+          "productLens": {
+            "competitors": [
+              "Facturapi",
+              "División Facturación"
+            ],
+            "blockers": [
+              "PAC (Proveedor Autorizado de Certificación) no contratado",
+              "Misma dependencia que FacturAutentico Cloud"
+            ],
+            "localAiNeed": "Baja. No se necesita un LLM local para este producto."
+          },
           "priorityProducts": "medium"
         }
       },
@@ -2011,6 +2335,15 @@
           "id": "sentrylog-lite",
           "name": "Sentrylog Lite",
           "status": "planned"
+        },
+        "viability": {
+          "status": "UNCERTAIN",
+          "blockers": [
+            "No hay código ni implementación",
+            "Mercado de logging tiene competidores establecidos",
+            "Solo tiene sentido si se vende como bundle con Docflow API"
+          ],
+          "agentDecision": "hold"
         },
         "benchmark": {
           "category": "Logging / Observabilidad Ligero",
@@ -2160,64 +2493,103 @@
           "steps": [
             {
               "priority": "P0",
-              "action": "Completar features core faltantes de Sentrylog Lite: revisar backlog y priorizar",
+              "action": "Resolver bloqueo real de 'Sentrylog Lite': No hay código ni implementación",
+              "effort": "medio",
+              "owner": "human",
+              "blocker": true
+            },
+            {
+              "priority": "P0",
+              "action": "Validate whether this should ship standalone or as a bundle with Docflow API",
+              "effort": "medio",
+              "owner": "human"
+            },
+            {
+              "priority": "P0",
+              "action": "Build the minimal ingest, search, and alert sample before adding polish",
+              "effort": "medio",
+              "owner": "human"
+            },
+            {
+              "priority": "P0",
+              "action": "Completar el core de 'Sentrylog Lite': priorizar las 3 capacidades que el buyer realmente compra",
               "effort": "alto",
               "owner": "human",
               "gap": 60
             },
             {
               "priority": "P0",
-              "action": "Configurar pricing + checkout + payment integration para Sentrylog Lite",
+              "action": "Cerrar monetización de 'Sentrylog Lite': pricing, checkout y evidencia de cobro real",
               "effort": "medio",
               "owner": "human",
               "gap": 50
             },
             {
               "priority": "P0",
-              "action": "Hardening técnico: tests, types, error handling, performance para Sentrylog Lite",
+              "action": "Hardening técnico de 'Sentrylog Lite': tests, types, error handling y performance en el flujo principal",
               "effort": "alto",
               "owner": "human",
               "gap": 45
             },
             {
               "priority": "P0",
-              "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Sentrylog Lite",
+              "action": "Profundizar integraciones de 'Sentrylog Lite' según su caso de uso: no sumar conectores genéricos sin demanda",
               "effort": "medio",
               "owner": "human",
               "gap": 45
             },
             {
               "priority": "P0",
-              "action": "Crear README, API docs, onboarding guide para Sentrylog Lite",
+              "action": "Publicar README, quickstart y onboarding de 'Sentrylog Lite' con un flujo real de arranque",
               "effort": "bajo",
               "owner": "human",
               "gap": 40
             },
             {
               "priority": "P0",
-              "action": "Investigar mercado para Sentrylog Lite: entrevistar 5 prospects, validar propuesta de valor",
+              "action": "Validar propuesta de 'Sentrylog Lite' con 5 prospectos del segmento objetivo y cerrar el caso de uso más urgente",
               "effort": "medio",
               "owner": "human",
               "gap": 35
             },
             {
               "priority": "P0",
-              "action": "Automatizar CI/CD, tests, deploy para Sentrylog Lite",
+              "action": "Automatizar CI/CD, pruebas y despliegue de 'Sentrylog Lite' para reducir trabajo manual",
               "effort": "medio",
               "owner": "human",
               "gap": 35
             },
             {
               "priority": "P0",
-              "action": "Benchmark contra Better Stack: implementar features diferenciadores clave",
+              "action": "Diferenciar 'Sentrylog Lite' contra Better Stack y SigNoz: cerrar la brecha que el benchmark muestra",
               "effort": "alto",
               "owner": "human",
               "gap": 27
+            },
+            {
+              "priority": "P0",
+              "action": "Run a demand test with a concrete logging buyer persona before committing more build time",
+              "effort": "medio",
+              "owner": "human"
             }
           ],
-          "estimatedHours": 42,
-          "estimatedSprints": 6,
-          "status": "EARLY_STAGE",
+          "estimatedHours": 58,
+          "estimatedSprints": 8,
+          "status": "BLOCKED_BY_EXTERNAL_DEPENDENCY",
+          "blocker": "No hay código ni implementación",
+          "localAiNeed": "Baja. No se necesita un LLM local para este producto.",
+          "productLens": {
+            "competitors": [
+              "Better Stack",
+              "SigNoz"
+            ],
+            "blockers": [
+              "No hay código ni implementación",
+              "Mercado de logging tiene competidores establecidos",
+              "Solo tiene sentido si se vende como bundle con Docflow API"
+            ],
+            "localAiNeed": "Baja. No se necesita un LLM local para este producto."
+          },
           "priorityProducts": "low"
         }
       }
@@ -2229,6 +2601,15 @@
           "name": "Sentrylog Lite",
           "status": "planned"
         },
+        "viability": {
+          "status": "UNCERTAIN",
+          "blockers": [
+            "No hay código ni implementación",
+            "Mercado de logging tiene competidores establecidos",
+            "Solo tiene sentido si se vende como bundle con Docflow API"
+          ],
+          "agentDecision": "hold"
+        },
         "benchmark": {
           "category": "Logging / Observabilidad Ligero",
           "competitors": [
@@ -2377,64 +2758,103 @@
           "steps": [
             {
               "priority": "P0",
-              "action": "Completar features core faltantes de Sentrylog Lite: revisar backlog y priorizar",
+              "action": "Resolver bloqueo real de 'Sentrylog Lite': No hay código ni implementación",
+              "effort": "medio",
+              "owner": "human",
+              "blocker": true
+            },
+            {
+              "priority": "P0",
+              "action": "Validate whether this should ship standalone or as a bundle with Docflow API",
+              "effort": "medio",
+              "owner": "human"
+            },
+            {
+              "priority": "P0",
+              "action": "Build the minimal ingest, search, and alert sample before adding polish",
+              "effort": "medio",
+              "owner": "human"
+            },
+            {
+              "priority": "P0",
+              "action": "Completar el core de 'Sentrylog Lite': priorizar las 3 capacidades que el buyer realmente compra",
               "effort": "alto",
               "owner": "human",
               "gap": 60
             },
             {
               "priority": "P0",
-              "action": "Configurar pricing + checkout + payment integration para Sentrylog Lite",
+              "action": "Cerrar monetización de 'Sentrylog Lite': pricing, checkout y evidencia de cobro real",
               "effort": "medio",
               "owner": "human",
               "gap": 50
             },
             {
               "priority": "P0",
-              "action": "Hardening técnico: tests, types, error handling, performance para Sentrylog Lite",
+              "action": "Hardening técnico de 'Sentrylog Lite': tests, types, error handling y performance en el flujo principal",
               "effort": "alto",
               "owner": "human",
               "gap": 45
             },
             {
               "priority": "P0",
-              "action": "Agregar integraciones clave (Stripe, GitHub, Slack, Email) para Sentrylog Lite",
+              "action": "Profundizar integraciones de 'Sentrylog Lite' según su caso de uso: no sumar conectores genéricos sin demanda",
               "effort": "medio",
               "owner": "human",
               "gap": 45
             },
             {
               "priority": "P0",
-              "action": "Crear README, API docs, onboarding guide para Sentrylog Lite",
+              "action": "Publicar README, quickstart y onboarding de 'Sentrylog Lite' con un flujo real de arranque",
               "effort": "bajo",
               "owner": "human",
               "gap": 40
             },
             {
               "priority": "P0",
-              "action": "Investigar mercado para Sentrylog Lite: entrevistar 5 prospects, validar propuesta de valor",
+              "action": "Validar propuesta de 'Sentrylog Lite' con 5 prospectos del segmento objetivo y cerrar el caso de uso más urgente",
               "effort": "medio",
               "owner": "human",
               "gap": 35
             },
             {
               "priority": "P0",
-              "action": "Automatizar CI/CD, tests, deploy para Sentrylog Lite",
+              "action": "Automatizar CI/CD, pruebas y despliegue de 'Sentrylog Lite' para reducir trabajo manual",
               "effort": "medio",
               "owner": "human",
               "gap": 35
             },
             {
               "priority": "P0",
-              "action": "Benchmark contra Better Stack: implementar features diferenciadores clave",
+              "action": "Diferenciar 'Sentrylog Lite' contra Better Stack y SigNoz: cerrar la brecha que el benchmark muestra",
               "effort": "alto",
               "owner": "human",
               "gap": 27
+            },
+            {
+              "priority": "P0",
+              "action": "Run a demand test with a concrete logging buyer persona before committing more build time",
+              "effort": "medio",
+              "owner": "human"
             }
           ],
-          "estimatedHours": 42,
-          "estimatedSprints": 6,
-          "status": "EARLY_STAGE",
+          "estimatedHours": 58,
+          "estimatedSprints": 8,
+          "status": "BLOCKED_BY_EXTERNAL_DEPENDENCY",
+          "blocker": "No hay código ni implementación",
+          "localAiNeed": "Baja. No se necesita un LLM local para este producto.",
+          "productLens": {
+            "competitors": [
+              "Better Stack",
+              "SigNoz"
+            ],
+            "blockers": [
+              "No hay código ni implementación",
+              "Mercado de logging tiene competidores establecidos",
+              "Solo tiene sentido si se vende como bundle con Docflow API"
+            ],
+            "localAiNeed": "Baja. No se necesita un LLM local para este producto."
+          },
           "priorityProducts": "low"
         }
       }

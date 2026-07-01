@@ -11,7 +11,10 @@ const CATALOG = join(OPS, 'catalog', 'products.json');
 const LANDINGS = join(OPS, 'landings', 'index.json');
 const TASKS = join(OPS, 'command-center', 'tasks.json');
 const AGENT_MONITOR = join(RUNTIME, 'agent-monitor.json');
+const BILLING_RECONCILIATION = join(RUNTIME, 'billing-reconciliation-report.json');
+const PRODUCTION_GATE = join(RUNTIME, 'production-go-no-go-report.json');
 const BOTS_DIR = join(ROOT, 'bots');
+const FINISHED_PRODUCTS_DIR = join(ROOT, 'products', 'finished');
 const OUTPUT = join(RUNTIME, 'dashboard-unified.json');
 
 function readJSON(path, fallback = null) {
@@ -45,18 +48,34 @@ function gatherCampaigns() {
   return { total: files.length, recent: campaigns };
 }
 
-function gatherBots() {
+function extractGateCheck(gateReport, checkId) {
+  const checks = Array.isArray(gateReport?.checks) ? gateReport.checks : [];
+  return checks.find((check) => String(check?.id || '').trim() === checkId) || null;
+}
+
+function gatherBots(gateReport) {
   if (!existsSync(BOTS_DIR)) return { active: [], paperPending: [] };
-  const active = [];
-  const paperPending = ['ReconciliationBot', 'IncidentBot', 'ReleaseGateBot', 'SupervisorSyncBot', 'MarketResearchBot'];
+  const botDefinitions = [];
   const entries = readdirSync(BOTS_DIR, { withFileTypes: true });
   for (const e of entries) {
     if (e.isFile() && (e.name.endsWith('.md') || e.name.endsWith('.ts'))) {
-      active.push(e.name.replace(/\.(md|ts)$/, ''));
+      botDefinitions.push(e.name.replace(/\.(md|ts)$/, ''));
     }
   }
+
+  const p5 = extractGateCheck(gateReport, 'P5');
+  const evidence = Array.isArray(p5?.evidence) ? p5.evidence : [];
+  const operationalBots = evidence
+    .filter((item) => typeof item === 'string' && item.startsWith('bots/') && item.endsWith('.md'))
+    .map((item) => item.split('/').pop()?.replace(/\.md$/, '') || '')
+    .filter(Boolean);
+
+  const activeSet = new Set(operationalBots.length > 0 ? operationalBots : botDefinitions);
+  const active = botDefinitions.filter((name) => activeSet.has(name));
+  const paperPending = botDefinitions.filter((name) => !activeSet.has(name));
+
   return {
-    active: active.filter(b => !paperPending.includes(b)),
+    active,
     paperPending
   };
 }
@@ -79,26 +98,110 @@ function gatherProducts() {
   };
 }
 
-function gatherDevelopment() {
-  const gaps = [
-    { id: 'lock-gate-auto-on-vscode-open', title: 'Verificar lock gate automatico al abrir VS Code', severity: 'critical', requiresHuman: true },
-    { id: 'qr-owner-device-only', title: 'Restringir QR al celular del owner', severity: 'critical', requiresHuman: true },
-    { id: 'lock-gate-mini-access-ui', title: 'Mini UI de accesos (PC y celular)', severity: 'high', requiresHuman: false },
-    { id: 'bot-coverage-paper-pack', title: 'Formalizar cobertura de bots papel faltantes', severity: 'high', requiresHuman: true },
-    { id: 'bot-runtime-wiring-plan', title: 'Plan de wiring runtime para bots nuevos', severity: 'high', requiresHuman: true },
-    { id: 'launch-real-campaign', title: 'Lanzar 1 campana real con seguimiento de pago', severity: 'critical', requiresHuman: true },
-    { id: 'landing-dynamic-product', title: 'Landing dinamica por producto', severity: 'critical', requiresHuman: true },
-    { id: 'market-research-ai-bridge', title: 'Ejecutar market-research para producto "lazo entre IAs"', severity: 'high', requiresHuman: true },
-    { id: 'checkout-default-product', title: 'Quitar dependencia de producto default en checkout', severity: 'high', requiresHuman: false },
-    { id: 'define-pac-strategy', title: 'Definir estrategia PAC por fase (off/byo/managed)', severity: 'medium', requiresHuman: true }
-  ];
+function normalizeSeverity(value) {
+  const sev = String(value || '').trim().toLowerCase();
+  if (sev === 'critical' || sev === 'high' || sev === 'medium' || sev === 'low') return sev;
+  return 'medium';
+}
+
+function gatherFinishedProducts() {
+  if (!existsSync(FINISHED_PRODUCTS_DIR)) return [];
+  const entries = readdirSync(FINISHED_PRODUCTS_DIR, { withFileTypes: true });
+  return entries
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => ({
+      name: entry.name,
+      status: 'imported-to-monolith',
+      location: `products/finished/${entry.name}`,
+      note: 'Producto importado desde repo externo.'
+    }));
+}
+
+function gatherDevelopment(gateReport, tasksData) {
+  const gaps = [];
+  const checks = Array.isArray(gateReport?.checks) ? gateReport.checks : [];
+  const ownerNextActions = Array.isArray(gateReport?.ownerNextActions) ? gateReport.ownerNextActions : [];
+  const tasks = Array.isArray(tasksData?.tasks) ? tasksData.tasks : [];
+
+  for (const check of checks) {
+    const status = String(check?.status || '').trim().toUpperCase();
+    if (status !== 'FAIL' && status !== 'WARN') continue;
+    gaps.push({
+      id: String(check?.id || `gate-${gaps.length + 1}`),
+      title: String(check?.title || 'Gate check pendiente').trim(),
+      severity: normalizeSeverity(check?.severity),
+      requiresHuman: true,
+      source: 'production-gate',
+      nextAction: String(check?.ownerAction || '').trim() || null
+    });
+  }
+
+  for (const action of ownerNextActions) {
+    gaps.push({
+      id: `${String(action?.id || 'gate')}-owner-action`,
+      title: String(action?.action || 'Owner action pendiente').trim(),
+      severity: 'critical',
+      requiresHuman: true,
+      source: 'owner-next-actions',
+      nextAction: String(action?.action || '').trim() || null
+    });
+  }
+
+  for (const task of tasks) {
+    const status = String(task?.status || '').trim().toLowerCase();
+    if (status === 'done') continue;
+    gaps.push({
+      id: String(task?.id || `task-${gaps.length + 1}`),
+      title: String(task?.title || 'Task pendiente').trim(),
+      severity: normalizeSeverity(String(task?.priority || '').trim().toLowerCase() === 'p0' ? 'critical' : 'high'),
+      requiresHuman: String(task?.owner || '').trim().toLowerCase() === 'human',
+      source: 'tasks',
+      nextAction: String(task?.nextAction || '').trim() || null
+    });
+  }
+
+  const uniqueGaps = [];
+  const seen = new Set();
+  for (const gap of gaps) {
+    const key = `${gap.id}|${gap.title}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    uniqueGaps.push(gap);
+  }
+
   return {
-    gaps,
-    finishedProducts: [
-      { name: 'tigre-labs-context-engine', status: 'imported-to-monolith', location: 'products/finished/tigre-labs-context-engine', note: 'Producto importado desde repo externo.' }
-    ],
-    sealed: false
+    gaps: uniqueGaps,
+    finishedProducts: gatherFinishedProducts(),
+    sealed: uniqueGaps.length === 0
   };
+}
+
+function deriveServiceStatus(gateReport, checkId) {
+  const check = extractGateCheck(gateReport, checkId);
+  const status = String(check?.status || '').trim().toUpperCase();
+  if (status === 'PASS') return 'OK';
+  if (status === 'FAIL') return 'FAIL';
+  return 'UNKNOWN';
+}
+
+function normalizeBillingStatus(value) {
+  const normalized = String(value || 'unknown').trim().toUpperCase();
+  if (normalized === 'OK' || normalized === 'MATCH') return 'MATCH';
+  if (normalized === 'MISMATCH') return 'MISMATCH';
+  if (normalized === 'UNKNOWN') return 'UNKNOWN';
+  return 'UNKNOWN';
+}
+
+function deriveSystemGate(gateReport, billingStatus) {
+  if (billingStatus !== 'MATCH') {
+    return billingStatus === 'MISMATCH' ? 'NO_GO' : 'UNKNOWN';
+  }
+
+  const gate = String(gateReport?.gateStatus || '').trim().toUpperCase();
+  if (gate === 'GO' || gate === 'GO_WITH_WARNINGS' || gate === 'NO_GO') {
+    return gate;
+  }
+  return 'UNKNOWN';
 }
 
 function main() {
@@ -108,9 +211,13 @@ function main() {
   const tasksData = readJSON(TASKS, { tasks: [] });
   const landingsData = readJSON(LANDINGS, null);
   const campaigns = gatherCampaigns();
-  const bots = gatherBots();
   const products = gatherProducts();
-  const devData = gatherDevelopment();
+  const billingReport = readJSON(BILLING_RECONCILIATION, null);
+  const gateReport = readJSON(PRODUCTION_GATE, null);
+  const bots = gatherBots(gateReport);
+  const devData = gatherDevelopment(gateReport, tasksData);
+  const billingStatus = normalizeBillingStatus(billingReport?.status);
+  const derivedGate = deriveSystemGate(gateReport, billingStatus);
 
   const totalTasks = tasksData.tasks?.length || 0;
   const doneTasks = tasksData.tasks?.filter(t => t.status === 'done').length || 0;
@@ -119,10 +226,10 @@ function main() {
   const unified = {
     generatedAt: new Date().toISOString(),
     monetization: {
-      leadsToday: 10,
+      leadsToday: null,
       generatedContent: campaigns.total,
       activeBots: bots.active.length,
-      averagePrice: '$69.00'
+      averagePrice: null
     },
     funnel: {
       stages: ['Visit', 'Lead', 'Trial', 'Checkout', 'Paid'],
@@ -139,23 +246,31 @@ function main() {
     },
     landings: landingsData,
     agentMonitor,
+    billing: {
+      status: billingStatus,
+      mismatchCount: Number.isFinite(Number(billingReport?.totals?.mismatchCount))
+        ? Number(billingReport.totals.mismatchCount)
+        : null,
+      generatedAt: billingReport?.generatedAt || null
+    },
     development: devData,
     systemStatus: {
-      automation: 'success',
-      dashboard: 'success',
-      checkout: 'success',
-      gate: 'GO'
+      automation: deriveServiceStatus(gateReport, 'P4'),
+      dashboard: deriveServiceStatus(gateReport, 'P19'),
+      checkout: billingStatus === 'MATCH' ? 'OK' : billingStatus,
+      gate: derivedGate
     }
   };
 
   mkdirSync(RUNTIME, { recursive: true });
   writeFileSync(OUTPUT, JSON.stringify(unified, null, 2), 'utf-8');
-  console.log(`  Monetization KPIs: ${unified.monetization.leadsToday} leads, ${unified.monetization.generatedContent} content, ${unified.monetization.activeBots} bots`);
+  console.log(`  Monetization KPIs: leads=${unified.monetization.leadsToday ?? 'UNKNOWN'}, content=${unified.monetization.generatedContent}, bots=${unified.monetization.activeBots}`);
   console.log(`  Campaigns: ${campaigns.total} total, ${campaigns.recent.length} recent`);
   console.log(`  Products: ${products.total} (${products.active} active, ${products.paused} paused, ${products.planned} planned)`);
   console.log(`  Bots: ${bots.active.length} active, ${bots.paperPending.length} paper`);
   console.log(`  Tasks: ${totalTasks} (${doneTasks} done, ${pendingTasks} pending)`);
   console.log(`  Agent Monitor: ${agentMonitor.summary.totalAgents} agents (${agentMonitor.summary.activeAgents} active)`);
+  console.log(`  Billing: ${unified.billing.status} | Gate: ${unified.systemStatus.gate}`);
   console.log(`  Dev gaps: ${devData.gaps.length}`);
   console.log(`\nSaved: ${OUTPUT}`);
 }

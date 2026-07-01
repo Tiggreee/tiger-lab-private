@@ -1,9 +1,11 @@
 name: agent-monitor
 
+concurrency:
+  group: runtime-ops
+  cancel-in-progress: false
+
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */2 * * *'
 
 jobs:
   monitor:
@@ -35,6 +37,9 @@ jobs:
 
       - name: Verify all systems
         run: node scripts/verify-systems.mjs
+
+      - name: Run production gate before commit
+        run: npm run prod:gate
 
       - name: Commit monitor results
         run: |

@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-07-01T12:28:59.120Z",
+  "strict": true,
+  "attempted": 0,
+  "issued": 0,
+  "skipped": 0,
+  "failed": 1,
+  "items": [
+    {
+      "paymentId": "all",
+      "status": "failed",
+      "detail": "Timbox preflight blocked retry: cfdi:Comprobante Certificado is suspiciously short (expected full base64 DER cert)."
+    }
+  ]
+}

@@ -5,16 +5,31 @@ const SCORES='/runtime/product-scores.json';
 const DECISIONS='/runtime/engine-decisions.json';
 const CAMPAIGNS_IDX='/runtime/campaigns/index.json';
 const MONITOR='/runtime/agent-monitor.json';
+let lastCampaignActionMsg='';
+let lastCampaignActionAt=0;
 
 async function fetchJSON(url){try{const r=await fetch(url,{cache:'no-store'});return r.ok?r.json():null}catch{return null}}
 
+function displayMetric(value){
+  if(value===null||value===undefined) return 'UNKNOWN';
+  if(typeof value==='number' && !Number.isFinite(value)) return 'UNKNOWN';
+  return String(value);
+}
+
 function renderKPIs(data){
   const m=data.monetization||{},am=data.agentMonitor?.summary||{};
-  const kpis=[['Leads',m.leadsToday||0],['Agents',am.activeAgents||22],['Products',data.products?.active||0],['Pipe',m.generatedContent||0]];
+  const kpis=[['Leads',displayMetric(m.leadsToday)],['Agents',displayMetric(am.activeAgents)],['Products',displayMetric(data.products?.active)],['Pipe',displayMetric(m.generatedContent)]];
   $('kpiRow').innerHTML=kpis.map(([l,v])=>`<div class="kpi"><small>${l}</small><b>${v}</b></div>`).join('')
 }
 
-function renderGate(data){const g=data.systemStatus?.gate||'---',el=$('systemStatusBadge');el.textContent=g;el.className=`gate-badge ${g==='GO'?'gate-go':'gate-nogo'}`}
+function renderGate(data,alerts){
+  const billingStatus=String(alerts?.billingStatus||data?.billing?.status||'UNKNOWN').toUpperCase();
+  let g=String(alerts?.gate||data?.systemStatus?.gate||'UNKNOWN').toUpperCase();
+  if(billingStatus!=='MATCH'){g=billingStatus==='MISMATCH'?'NO_GO':'UNKNOWN'}
+  const el=$('systemStatusBadge');
+  el.textContent=g;
+  el.className=`gate-badge ${g==='GO'?'gate-go':'gate-nogo'}`;
+}
 
 async function renderProducts(){
   const s=await fetchJSON(SCORES);
@@ -33,17 +48,22 @@ async function renderProducts(){
 }
 
 async function renderLeads(){
-  let companies=0,byInd={},byCity={};
+  let companies=null,byInd={},byCity={};
   try{
     const csv=await fetch('/runtime/../database/exports/companies.csv');
-    if(csv){const lines=(await csv.text()).trim().split('\n').slice(1);companies=lines.length;lines.forEach(l=>{const c=l.split(',');const ind=c[3]||'?',city=c[8]||'?';byInd[ind]=(byInd[ind]||0)+1;byCity[city]=(byCity[city]||0)+1})}
-  }catch{companies=1000;byInd={'contabilidad':265,'facturación':199,'consultoría':159,'software':127,'financiero':64,'fintech':47}}
-  let h=`<div class="lead-row"><span class="lbl">Companies:</span> <b>${companies}</b></div>`;
-  h+=`<div class="lead-row"><span class="lbl">Contacts:</span> <b>${companies*5}</b></div>`;
+    if(csv){const lines=(await csv.text()).trim().split('\n').slice(1);companies=lines.length;lines.forEach(l=>{const c=l.split(',');const ind=c[3]||'?';const city=c[8]||'?';byInd[ind]=(byInd[ind]||0)+1;byCity[city]=(byCity[city]||0)+1})}
+  }catch{}
+  const contacts=null;
+  let h=`<div class="lead-row"><span class="lbl">Companies:</span> <b>${displayMetric(companies)}</b></div>`;
+  h+=`<div class="lead-row"><span class="lbl">Contacts:</span> <b>${displayMetric(contacts)}</b></div>`;
   h+='<div class="lead-section"><h3>Top Industries</h3>';
-  Object.entries(byInd).sort((a,b)=>b[1]-a[1]).slice(0,6).forEach(([k,v])=>h+=`<div class="lead-stat"><span>${k}</span><span>${v}</span></div>`);
+  const indRows=Object.entries(byInd).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  if(indRows.length===0){h+='<div class="lead-stat"><span>UNKNOWN</span><span>UNKNOWN</span></div>'}
+  indRows.forEach(([k,v])=>h+=`<div class="lead-stat"><span>${k}</span><span>${v}</span></div>`);
   h+='</div><div class="lead-section"><h3>Top Cities</h3>';
-  Object.entries(byCity).sort((a,b)=>b[1]-a[1]).slice(0,6).forEach(([k,v])=>h+=`<div class="lead-stat"><span>${k}</span><span>${v}</span></div>`);
+  const cityRows=Object.entries(byCity).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  if(cityRows.length===0){h+='<div class="lead-stat"><span>UNKNOWN</span><span>UNKNOWN</span></div>'}
+  cityRows.forEach(([k,v])=>h+=`<div class="lead-stat"><span>${k}</span><span>${v}</span></div>`);
   h+='</div>';$('leadsContent').innerHTML=h
 }
 
@@ -71,14 +91,38 @@ async function renderCampaigns(){
   list.innerHTML=campaigns.map(c=>{const cl=colors[c.product]||'#1f6feb';return`<div style="display:flex;gap:4px;margin:2px 0"><button onclick="window.open('/command-center/campaign-preview.html?id=${c.id}','_blank')" style="flex:1;padding:6px 8px;border:none;border-radius:4px;background:${cl};color:${cl==='#d29922'?'#000':'#fff'};font-size:.7rem;cursor:pointer;font-weight:600;text-align:left;">${c.status==='approved'?'✅':'⏳'} ${c.product} <span style="opacity:.7;font-size:.6rem;">${c.score}/100</span></button><button onclick="window.approveNow('${c.id}')" style="padding:4px 8px;border:none;border-radius:4px;background:#238636;color:#fff;font-size:.6rem;cursor:pointer;font-weight:700;">▶</button></div>`}).join('');
   if(detail)detail.innerHTML='<div class="dim" style="padding:10px;font-size:.7rem;text-align:center;">📊 <b>'+campaigns.length+' campaigns</b><br>💡 Click to preview | ▶ to approve &amp; publish</div>'
 }
+
+function setCampaignActionMessage(message, isError=false){
+  const detail=$('campaignDetail');
+  if(!detail)return;
+  const tone=isError?'#f85149':'#3fb950';
+  detail.innerHTML=`<div style="padding:10px;font-size:.72rem;border:1px solid rgba(99,120,176,.25);border-radius:6px;color:${tone};background:rgba(13,17,23,.6)">${message}</div>`;
+  lastCampaignActionMsg=message;
+  lastCampaignActionAt=Date.now();
+}
+
 window.approveNow=function(id){
-  const c=window._campaigns?.find(x=>x.id===id);
-  if(!c)return;
+  if(!id)return;
+  const targetBtn=[...document.querySelectorAll('button')].find(b=>b.getAttribute('onclick')===`window.approveNow('${id}')`);
+  if(targetBtn){targetBtn.disabled=true;targetBtn.textContent='...';targetBtn.style.opacity='0.7'}
+  setCampaignActionMessage('Aprobando campaña y encolando publicación...');
   fetch('/runtime/campaigns/approve',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id})})
-    .then(r=>r.json()).then(d=>{
-      alert(`✅ APPROVED: ${d.product}\n📢 Publishing to LinkedIn, Facebook, X, Telegram, Discord\n🔗 ${d.funnelUrl}\n\nTrack: https://github.com/Tigre-Labs/tiger-lab-private/actions`);
+    .then(async r=>{
+      const d=await r.json().catch(()=>({}));
+      if(!r.ok) throw new Error(d.error||'Approval failed');
+      const footer=$('footerText');
+      if(footer) footer.textContent=`APPROVED: ${d.product} | Publishing queued | ${new Date().toLocaleTimeString()}`;
+      setCampaignActionMessage(`Aprobada: ${d.product||id} | Cola de publicación activa.`, false);
       render();
-    }).catch(()=>alert('❌ Approval needs local server. Run: npm run command-center'));
+    })
+    .catch((e)=>{
+      const footer=$('footerText');
+      if(footer) footer.textContent=`Approval error: ${e.message}`;
+      setCampaignActionMessage(`Error al aprobar: ${e.message}`, true);
+    })
+    .finally(()=>{
+      if(targetBtn){targetBtn.disabled=false;targetBtn.textContent='▶';targetBtn.style.opacity='1'}
+    });
 };
 
 async function renderAgentEfficiency(){
@@ -91,30 +135,24 @@ async function renderAgentEfficiency(){
   const monAgents=mon?.agents||[];
   let agents=[];
   if(monAgents.length>0){
-    agents=monAgents.map(a=>({name:a.name||a.id||'?',func:a.role||a.type||'agent',base:a.status==='active'?100:50,target:100}));
+    agents=monAgents.map(a=>{
+      const statusText=String(a.status||'').toLowerCase();
+      const isActive=typeof a.active==='boolean'
+        ? a.active
+        : statusText==='active'||statusText==='ok'||statusText==='healthy'||statusText==='running';
+      return {
+        name:a.name||a.id||'?',
+        func:a.role||a.type||'agent',
+        base:isActive?100:0,
+        target:100
+      };
+    });
   } else {
-    agents=[
-      {name:'Lead Engine',func:'seed+enrich DB',base:data?.leadEngine?.stats?.companies||1000,target:2000},
-      {name:'Creative Agent',func:'6-channel campaigns',base:6,target:6},
-      {name:'Product Engine',func:'benchmark+score',base:data?.products?.total||5,target:12},
-      {name:'Production Gate',func:'14 checks',base:14,target:14},
-      {name:'R&D Engine',func:'EU scanning',base:10,target:20},
-      {name:'Agent Monitor',func:'agents tracked',base:am.activeAgents||22,target:22},
-      {name:'Dashboard Monitor',func:'health+alerts',base:90,target:100},
-      {name:'Content Engine',func:'content gen',base:data?.monetization?.generatedContent||10,target:50},
-      {name:'Lead Intelligence',func:'ICP+outreach',base:data?.monetization?.leadsToday||10,target:50},
-      {name:'Product Architect',func:'blueprints',base:2,target:5},
-      {name:'Campaign Materializer',func:'MJML+Unsplash',base:6,target:6},
-      {name:'Quality Verifier',func:'6 checks',base:3,target:9},
-      {name:'Campaign Cleaner',func:'1/product',base:9,target:9},
-      {name:'Campaign Router',func:'6 platforms',base:6,target:6},
-      {name:'Social Autopilot',func:'5ch publishing',base:5,target:5},
-      {name:'Payments',func:'Stripe+PayPal',base:2,target:2},
-      {name:'Product Supervisor',func:'lifecycle',base:2,target:5},
-      {name:'R&D Advanced',func:'25 specialists',base:25,target:25},
-      {name:'US Lead Engine',func:'1000 companies',base:1000,target:1000},
-      {name:'Contact Generator',func:'5/company',base:5000,target:5000}
-    ];
+    const c=$('agentEfficiency');
+    if(c){
+      c.innerHTML='<div class="dim">Agent monitor evidence missing: UNKNOWN</div>';
+    }
+    return;
   }
   
   const rows=agents.map(a=>{
@@ -124,7 +162,7 @@ async function renderAgentEfficiency(){
     return{html:`<tr><td class="agent-name">${a.name}</td><td style="font-size:.55rem;color:#8b949e">${a.func}</td><td><span class="eff-bar"><span class="eff-fill" style="width:${pct}%;background:${bar}"></span></span><span class="eff-val ${cls}">${pct}%</span></td></tr>`,pct}
   }).sort((a,b)=>b.pct-a.pct);
   
-  const avg=Math.round(baseAgents.reduce((s,a)=>s+Math.min(100,Math.round((a.base/a.target)*100)),0)/baseAgents.length);
+  const avg=Math.round(agents.reduce((s,a)=>s+Math.min(100,Math.round((a.base/a.target)*100)),0)/Math.max(1,agents.length));
   const c=$('agentEfficiency');
   if(c){
     c.innerHTML=`<table class="agent-table"><thead><tr><th>Agent</th><th>Function</th><th style="width:120px">Efficiency</th></tr></thead><tbody>${rows.map(r=>r.html).join('')}</tbody></table><div style="margin-top:6px;font-size:.65rem;text-align:right;color:#8b949e">Overall: <b style="color:${avg>=80?'#3fb950':avg>=50?'#d29922':'#f85149'}">${avg}%</b></div>`;
@@ -132,7 +170,16 @@ async function renderAgentEfficiency(){
   }
 }
 
-function renderFooter(){const jokes=['Engine vivo. Como yo después de 3 cafés.','Pipeline corriendo. Más confiable que mi WiFi.','Dashboard actualizado. Sin hardcodeos. Casi.','Bot con tus caras. Lo demás es código.'];$('footerText').textContent=jokes[Math.floor(Math.random()*jokes.length)]+' | '+new Date().toLocaleString()}
+function renderFooter(){
+  const footer=$('footerText');
+  if(!footer)return;
+  if(lastCampaignActionMsg && (Date.now()-lastCampaignActionAt)<15000){
+    footer.textContent=lastCampaignActionMsg+' | '+new Date().toLocaleString();
+    return;
+  }
+  const jokes=['Engine vivo. Como yo después de 3 cafés.','Pipeline corriendo. Más confiable que mi WiFi.','Dashboard actualizado. Sin hardcodeos. Casi.','Bot con tus caras. Lo demás es código.'];
+  footer.textContent=jokes[Math.floor(Math.random()*jokes.length)]+' | '+new Date().toLocaleString();
+}
 
 async function renderMcpToggles(){
   const data=await fetchJSON('/mcp/external-registry.json');
@@ -181,7 +228,8 @@ async function renderMcpRanking(){
 async function render(){
   const unified=await fetchJSON(UNIFIED);
   if(!unified){$('footerText').textContent='Dashboard offline';return}
-  renderKPIs(unified);renderGate(unified);renderProducts(unified);renderLeads(unified);
+  const alerts=await fetchJSON(ALERTS);
+  renderKPIs(unified);renderGate(unified,alerts);renderProducts(unified);renderLeads(unified);
   renderAlerts();renderCampaigns();renderAgentEfficiency();renderMcpToggles();renderMcpRanking();renderFooter();renderAutonomousState();renderModels();botCycle();
   // Tooltips
   document.querySelectorAll('.card').forEach(c=>{
@@ -269,6 +317,14 @@ async function renderAutonomousState(){
   };
   const currentMode = state.current || 'AUTO';
   const current = modes[currentMode] || modes['AUTO'];
+
+  const modeBtn = $('modeBtn');
+  if(modeBtn){
+    modeBtn.textContent = currentMode;
+    modeBtn.classList.remove('pro','dev');
+    if(currentMode === 'PRO') modeBtn.classList.add('pro');
+    if(currentMode === 'DEV') modeBtn.classList.add('dev');
+  }
   
   $('modeValue').textContent = currentMode;
   $('modeValue').style.color = current.color;
@@ -282,19 +338,29 @@ async function renderAutonomousState(){
 
 window.toggleExecutionMode = async function(){
   const modes = ['AUTO', 'PRO', 'DEV'];
-  const current = $('modeValue').textContent;
+  const current = ($('modeValue')?.textContent || 'AUTO').trim().toUpperCase();
   const next = modes[(modes.indexOf(current) + 1) % modes.length];
+  const modeBtn = $('modeBtn');
+  if(modeBtn){modeBtn.disabled=true;modeBtn.style.opacity='0.7'}
   try {
     const r = await fetch('/runtime/execution-mode/toggle', { 
       method: 'POST', 
       headers: {'Content-Type': 'application/json'}, 
       body: JSON.stringify({ mode: next }) 
     });
-    if(r.ok) renderAutonomousState();
+    if(!r.ok){
+      const data = await r.json().catch(()=>({}));
+      throw new Error(data.error || 'Mode toggle failed');
+    }
+    await renderAutonomousState();
   } catch {
-    alert('Local server required to toggle modes. Run: npm run command-center');
+    alert('No se pudo cambiar modo AUTO/PRO/DEV en este momento.');
+  } finally {
+    if(modeBtn){modeBtn.disabled=false;modeBtn.style.opacity='1'}
   }
-};let factIdx=0,botClicks=0;document.addEventListener('DOMContentLoaded',()=>{const f=document.getElementById('botFace');if(!f)return;f.addEventListener('click',()=>{botClicks++;try{new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACAf39/f4B/f3+Af3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f38').play().catch(()=>{})}catch{}if(botClicks>=6){botClicks=0;const e=['💩','💩','💩','🔥','💥','✨'];for(let i=0;i<20;i++){const el=document.createElement('span');el.textContent=e[Math.floor(Math.random()*e.length)];el.style.cssText=`position:fixed;font-size:${24+Math.random()*36}px;pointer-events:none;z-index:9999;left:${10+Math.random()*80}%;top:${10+Math.random()*80}%;animation:shitFall ${1+Math.random()*2}s ease-out forwards`;document.body.appendChild(el);setTimeout(()=>el.remove(),3000)}if(!$('shitStyle')){const s=document.createElement('style');s.id='shitStyle';s.textContent='@keyframes shitFall{0%{opacity:1;transform:translateY(0) rotate(0deg) scale(1)}100%{opacity:0;transform:translateY(-200px) rotate(720deg) scale(0)}}';document.head.appendChild(s)}}})});
+};
+
+let factIdx=0,botClicks=0;document.addEventListener('DOMContentLoaded',()=>{const f=document.getElementById('botFace');if(!f)return;f.addEventListener('click',()=>{botClicks++;try{new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACAf39/f4B/f3+Af3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f38').play().catch(()=>{})}catch{}if(botClicks>=6){botClicks=0;const e=['💩','💩','💩','🔥','💥','✨'];for(let i=0;i<20;i++){const el=document.createElement('span');el.textContent=e[Math.floor(Math.random()*e.length)];el.style.cssText=`position:fixed;font-size:${24+Math.random()*36}px;pointer-events:none;z-index:9999;left:${10+Math.random()*80}%;top:${10+Math.random()*80}%;animation:shitFall ${1+Math.random()*2}s ease-out forwards`;document.body.appendChild(el);setTimeout(()=>el.remove(),3000)}if(!$('shitStyle')){const s=document.createElement('style');s.id='shitStyle';s.textContent='@keyframes shitFall{0%{opacity:1;transform:translateY(0) rotate(0deg) scale(1)}100%{opacity:0;transform:translateY(-200px) rotate(720deg) scale(0)}}';document.head.appendChild(s)}}})});
 let rFact='🐯 Engine data...';
 async function fetchRandomFact(){try{const apis=['https://uselessfacts.jsph.pl/api/v2/facts/random?language=en','https://catfact.ninja/fact','https://api.chucknorris.io/jokes/random'];const r=await fetch(apis[Math.floor(Math.random()*3)]);const d=await r.json();return d.text||d.fact||d.value||'🐯'}catch{return'🐯'}}
 async function botCycle(){const el=$('botFact');if(!el)return;if(factIdx%3!==2){const f=[`🟢 Gate: ${$('systemStatusBadge')?.textContent||'GO'} | ${new Date().toLocaleTimeString()}`,`💪 Chuck Norris can divide by zero. The engine just did.`,`📊 Live data. No hardcodes. See the difference?`,`🐱 A cat's purr is at 25Hz. Our engine hums at 6AM.`];el.textContent=f[Math.floor(Math.random()*f.length)]}else{if(!rFact||rFact.startsWith('🐯 Engine'))rFact=await fetchRandomFact();el.textContent=rFact.substring(0,120);rFact=await fetchRandomFact()}factIdx++}

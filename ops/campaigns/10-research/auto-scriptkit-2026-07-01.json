@@ -1,0 +1,17 @@
+{
+  "id": "auto-scriptkit-2026-07-01",
+  "productName": "Script Premium Kit",
+  "target": "operaciones",
+  "segment": "pymes",
+  "problemDetail": "operaciones repetitivas de backoffice sin estandar ni trazabilidad",
+  "primaryOutcome": "automatizacion comercial lista para usar con ejecucion diaria y evidencia",
+  "proofPoint": "flujo de contenido y comando central funcionando en produccion",
+  "domainTerms": [
+    "automatizacion",
+    "backoffice",
+    "ops",
+    "campanas",
+    "pipeline"
+  ],
+  "qualityThreshold": 60
+}

@@ -1,0 +1,76 @@
+{
+  "finalizedAt": "2026-06-27T23:10:05.872Z",
+  "briefId": "demo-brief",
+  "campaignId": "CAMP-1782601805838",
+  "qualityResult": {
+    "campaignId": "CAMP-1782601805838",
+    "threshold": 45,
+    "averageSpecificity": 50,
+    "passed": false,
+    "failedChannels": [
+      "x"
+    ],
+    "channels": [
+      {
+        "channel": "email",
+        "specificityScore": 57,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "linkedin",
+        "specificityScore": 57,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "x",
+        "specificityScore": 13,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 13 below threshold 45."
+        ]
+      },
+      {
+        "channel": "facebook",
+        "specificityScore": 57,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "telegram",
+        "specificityScore": 57,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "discord",
+        "specificityScore": 57,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      }
+    ]
+  },
+  "brief": {
+    "id": "demo-brief",
+    "productName": "Docflow API",
+    "target": "contabilidad",
+    "segment": "contabilidad",
+    "problemDetail": "flujos documentales manuales que consumen horas cada semana",
+    "primaryOutcome": "automatizacion CFDI con menos retrabajo",
+    "proofPoint": "80% menos tiempo operativo",
+    "domainTerms": [
+      "cfdi",
+      "timbrado",
+      "xml",
+      "integracion"
+    ],
+    "qualityThreshold": 45
+  }
+}

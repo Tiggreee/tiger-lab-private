@@ -19,9 +19,31 @@ function readRuntimeState() {
   };
 }
 
+function startsWithAny(value, prefixes) {
+  const normalized = String(value || '').trim().toLowerCase();
+  if (!normalized) return false;
+  return prefixes.some((prefix) => normalized.startsWith(prefix));
+}
+
+function hasLocalRecipient(invoice) {
+  const recipients = Array.isArray(invoice?.recipients) ? invoice.recipients : [];
+  if (recipients.length === 0) return false;
+  return recipients.every((recipient) => String(recipient || '').trim().toLowerCase().endsWith('@local.dev'));
+}
+
+function isSyntheticFixture(invoice) {
+  return (
+    startsWithAny(invoice?.paymentId, ['pay_manual_']) ||
+    startsWithAny(invoice?.customerId, ['cust_manual_']) ||
+    startsWithAny(invoice?.productId, ['sandbox-', 'test-', 'demo-']) ||
+    hasLocalRecipient(invoice)
+  );
+}
+
 function buildPendingReport(invoicesMap) {
   const invoices = Object.values(invoicesMap || {});
-  const pending = invoices.filter((invoice) => invoice.status !== 'issued');
+  const pending = invoices.filter((invoice) => invoice.status !== 'issued' && !isSyntheticFixture(invoice));
+  const excludedSyntheticFixtures = invoices.filter((invoice) => invoice.status !== 'issued' && isSyntheticFixture(invoice));
 
   const grouped = {
     skipped: pending.filter((invoice) => invoice.status === 'skipped'),
@@ -34,8 +56,10 @@ function buildPendingReport(invoicesMap) {
       invoices: invoices.length,
       pending: pending.length,
       skipped: grouped.skipped.length,
-      failed: grouped.failed.length
+      failed: grouped.failed.length,
+      excludedSyntheticFixtures: excludedSyntheticFixtures.length
     },
+    excludedSyntheticFixtures,
     pending
   };
 }
@@ -47,6 +71,7 @@ function printConsole(report) {
   process.stdout.write(`Pending: ${report.totals.pending}\n`);
   process.stdout.write(`Skipped: ${report.totals.skipped}\n`);
   process.stdout.write(`Failed: ${report.totals.failed}\n\n`);
+  process.stdout.write(`Excluded synthetic fixtures: ${report.totals.excludedSyntheticFixtures}\n\n`);
 
   for (const item of report.pending) {
     process.stdout.write(
@@ -64,6 +89,7 @@ function printMarkdown(report) {
   lines.push(`- pending: ${report.totals.pending}`);
   lines.push(`- skipped: ${report.totals.skipped}`);
   lines.push(`- failed: ${report.totals.failed}`);
+  lines.push(`- excludedSyntheticFixtures: ${report.totals.excludedSyntheticFixtures}`);
   lines.push('');
 
   if (report.pending.length === 0) {

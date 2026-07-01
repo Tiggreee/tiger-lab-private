@@ -1,46 +1,46 @@
 {
-  "checkedAt": "2026-06-17T09:10:11.724Z",
-  "status": "HEALTHY",
-  "health": 90,
-  "gate": "GO",
+  "checkedAt": "2026-06-29T12:17:51.828Z",
+  "status": "ATTENTION",
+  "health": 20,
+  "gate": "UNKNOWN",
+  "billingStatus": "UNKNOWN",
   "snapshot": {
-    "leads": 1000,
+    "leads": null,
     "agents": 24,
-    "products": 5,
-    "productAvg": 64,
-    "revenue": 69,
+    "products": 6,
+    "productAvg": null,
+    "revenue": null,
     "campaigns": 10,
-    "failures": 0
+    "failures": null
   },
   "trends": {
-    "leads": 0,
-    "revenue": 0,
-    "campaigns": 0,
-    "scores": 0
+    "leads": null,
+    "revenue": null,
+    "campaigns": null,
+    "scores": null
   },
   "alerts": [
     {
-      "type": "products",
-      "msg": "Avg score 64/100",
-      "level": "info"
+      "type": "gate",
+      "msg": "Gate: UNKNOWN",
+      "level": "warn"
+    },
+    {
+      "type": "billing",
+      "msg": "Billing reconciliation: UNKNOWN",
+      "level": "warn"
     }
   ],
-  "revenueIntelligence": "💰 $69 revenue tracked. Pipeline: 5000 contacts ready.",
-  "predictions": [
-    "📬 10 campaigns active. Expect 3-5% conversion."
-  ],
+  "revenueIntelligence": "Revenue: UNKNOWN (no evidence in runtime source).",
+  "predictions": [],
   "recommendations": [
     {
-      "action": "dev",
-      "detail": "Focus Docflow API + Script Kit to push past 70 avg."
+      "action": "billing",
+      "detail": "Resolver mismatch fiscal antes de cualquier release comercial."
     },
     {
-      "action": "leads",
-      "detail": "Run inegi-seed-generator to expand to 2000 companies."
-    },
-    {
-      "action": "monitor",
-      "detail": "Dashboard healthy. Bot watching 24/7."
+      "action": "data",
+      "detail": "Publicar evidencia real de leads para sustituir UNKNOWN."
     }
   ]
 }

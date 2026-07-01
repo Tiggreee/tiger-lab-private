@@ -1,0 +1,60 @@
+{
+  "checkedAt": "2026-06-27T23:10:05.871Z",
+  "briefId": "demo-brief",
+  "campaignId": "CAMP-1782601805838",
+  "qualityResult": {
+    "campaignId": "CAMP-1782601805838",
+    "threshold": 45,
+    "averageSpecificity": 50,
+    "passed": false,
+    "failedChannels": [
+      "x"
+    ],
+    "channels": [
+      {
+        "channel": "email",
+        "specificityScore": 57,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "linkedin",
+        "specificityScore": 57,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "x",
+        "specificityScore": 13,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 13 below threshold 45."
+        ]
+      },
+      {
+        "channel": "facebook",
+        "specificityScore": 57,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "telegram",
+        "specificityScore": 57,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "discord",
+        "specificityScore": 57,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      }
+    ]
+  }
+}

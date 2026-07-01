@@ -1,10 +1,11 @@
 name: daily-sales-automation
 
+concurrency:
+  group: runtime-ops
+  cancel-in-progress: false
+
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 12 * * 1-5'
-    - cron: '0 12-20 * * 6'
 
 permissions:
   contents: write
@@ -104,18 +105,6 @@ jobs:
       - name: Resource audit snapshot
         run: node scripts/github-resource-audit.mjs --repo "${{ github.repository }}"
 
-      # 7. Agent monitor — escanea todos los agentes y su contribucion
-      - name: Agent monitor
-        run: node scripts/agent-monitor.mjs
-
-      # 8. Monetization engine — pricing recommendations
-      - name: Monetization engine
-        run: node scripts/monetization-engine.mjs
-
-      # 9. Product architect — repo blueprints and changelog
-      - name: Product architect
-        run: node scripts/product-architect.mjs
-
       # 8. Run autopilot — CHECK ONLY. No publish. Waits for dashboard APPROVE.
       - name: Run autopilot (check only)
         run: |
@@ -129,17 +118,9 @@ jobs:
             echo "No social pack found."
           fi
 
-      # 9. Supervisor decisions — product evaluation report
-      - name: Supervisor decisions
-        run: node scripts/supervisor-decision-maker.mjs report
-
-      # 11. Unified dashboard data — consolida todos los dashboards en un JSON
-      - name: Unified dashboard data
-        run: node scripts/unified-dashboard-data.mjs
-
-      # 9. System verification — valida cada sistema contra sus entradas/salidas
-      - name: System verification
-        run: node scripts/verify-systems.mjs
+      # 9. Production gate before any commit
+      - name: Run production gate
+        run: npm run prod:gate
 
       # 10. Generate daily report
       - name: Generate daily report
@@ -151,9 +132,9 @@ jobs:
           echo "Autopilot: completed" >> daily-report.md
           echo "Dashboard: prioritized" >> daily-report.md
           echo "Social landings: generated" >> daily-report.md
-          echo "Agent monitor: completed" >> daily-report.md
-          echo "Unified dashboard: generated" >> daily-report.md
-          echo "System verification: completed" >> daily-report.md
+          echo "Agent monitor: owner workflow handles runtime artifacts" >> daily-report.md
+          echo "Unified dashboard: owner workflow handles runtime artifacts" >> daily-report.md
+          echo "System verification: owner workflow handles runtime artifacts" >> daily-report.md
 
       - name: Upload report
         uses: actions/upload-artifact@v4
@@ -165,6 +146,6 @@ jobs:
         run: |
           git config user.name "tiger-bot"
           git config user.email "bot@tigerlab.dev"
-          git add ops/traffic/outbox/ ops/traffic/research/ ops/traffic/outbox/**-cards/ ops/sales/outreach/ ops/leads/ ops/landings/ ops/artifacts/ ops/runtime/agent-monitor.json ops/runtime/dashboard-unified.json ops/runtime/pricing.json ops/runtime/supervisor-report.json ops/runtime/system-verification.json ops/runtime/github-resource-audit.json ops/runtime/github-resource-audit.md ops/command-center/tasks.json ops/command-center/decisions.json ops/runtime/dashboard-prioritization-report.json
+          git add ops/traffic/outbox/ ops/traffic/research/ ops/traffic/outbox/**-cards/ ops/sales/outreach/ ops/leads/ ops/landings/ ops/artifacts/ ops/runtime/github-resource-audit.json ops/runtime/github-resource-audit.md ops/runtime/dashboard-prioritization-report.json
           git diff --cached --quiet || git commit -m "daily-sales: full pipeline $(date -u +%Y-%m-%d)"
           git push || echo "Nothing to push or push skipped"

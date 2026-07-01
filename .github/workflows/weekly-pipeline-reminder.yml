@@ -1,8 +1,6 @@
 name: Weekly Pipeline Reminder
 
 on:
-  schedule:
-    - cron: "0 13 * * 1"
   workflow_dispatch:
 
 permissions:

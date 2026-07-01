@@ -1,0 +1,91 @@
+{
+  "finalizedAt": "2026-07-01T13:10:49.429Z",
+  "briefId": "auto-docflow-pro-2026-07-01",
+  "campaignId": "CAMP-1782911449406",
+  "qualityResult": {
+    "campaignId": "CAMP-1782911449406",
+    "threshold": 60,
+    "averageSpecificity": 48,
+    "passed": false,
+    "failedChannels": [
+      "email",
+      "linkedin",
+      "facebook",
+      "telegram",
+      "discord"
+    ],
+    "channels": [
+      {
+        "channel": "email",
+        "specificityScore": 45,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 45 below threshold 60."
+        ]
+      },
+      {
+        "channel": "linkedin",
+        "specificityScore": 45,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 45 below threshold 60."
+        ]
+      },
+      {
+        "channel": "x",
+        "specificityScore": 63,
+        "genericPatterns": [],
+        "passed": true,
+        "reasons": []
+      },
+      {
+        "channel": "facebook",
+        "specificityScore": 45,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 45 below threshold 60."
+        ]
+      },
+      {
+        "channel": "telegram",
+        "specificityScore": 45,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 45 below threshold 60."
+        ]
+      },
+      {
+        "channel": "discord",
+        "specificityScore": 45,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 45 below threshold 60."
+        ]
+      }
+    ]
+  },
+  "brief": {
+    "id": "auto-docflow-pro-2026-07-01",
+    "productName": "Docflow API",
+    "target": "contabilidad",
+    "segment": "contabilidad",
+    "problemDetail": "captura manual de XML CFDI 4.0, validacion de sellos y conciliacion de cobros en hojas sueltas",
+    "primaryOutcome": "flujo API con validacion XML, timbrado, conciliacion y evidencia operativa diaria",
+    "proofPoint": "stack en GO con reconciliacion fiscal MATCH y UUID real emitido en produccion",
+    "domainTerms": [
+      "cfdi",
+      "timbrado",
+      "xml",
+      "uuid",
+      "reconciliacion",
+      "sat",
+      "pac"
+    ],
+    "qualityThreshold": 60
+  }
+}

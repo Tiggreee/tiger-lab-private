@@ -2,10 +2,15 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { evaluateDraftQuality, DEFAULT_QUALITY_THRESHOLD } from './campaign-quality-gate.mjs';
+import { syncRuntimeCampaignIndex } from './sync-runtime-campaign-index.mjs';
 
 const ROOT = process.cwd();
 const CAMPAIGN_STATES_ROOT = path.resolve(ROOT, 'ops/campaigns');
 const RUNTIME_CAMPAIGNS_ROOT = path.resolve(ROOT, 'ops/runtime/campaigns');
+const WORKER_LOCK_PATH = path.join(CAMPAIGN_STATES_ROOT, '.folder-worker.lock');
+const PRODUCTS_CATALOG_PATH = path.resolve(ROOT, 'ops/catalog/products.json');
+
+let runInProgress = false;
 
 const STAGES = {
   inbox: path.join(CAMPAIGN_STATES_ROOT, '00-inbox'),
@@ -30,6 +35,85 @@ function listInboxBriefs() {
     .map((item) => path.join(STAGES.inbox, item.name));
 }
 
+function listProcessedBriefIds() {
+  const ids = new Set();
+  for (const stagePath of [STAGES.inbox, STAGES.research, STAGES.approved, STAGES.rejected]) {
+    const entries = fs.readdirSync(stagePath, { withFileTypes: true });
+    for (const entry of entries) {
+      if (!entry.isFile() || !entry.name.endsWith('.json')) continue;
+      ids.add(path.basename(entry.name, '.json'));
+    }
+  }
+  return ids;
+}
+
+function inferCampaignContext(product) {
+  const productName = String(product?.name || 'Producto').toLowerCase();
+  if (productName.includes('docflow') || productName.includes('factur')) {
+    return {
+      target: 'contabilidad',
+      segment: 'contabilidad',
+      problemDetail: 'captura manual de XML CFDI y reconciliacion de cobros en procesos operativos',
+      primaryOutcome: 'automatizacion de flujo documental con evidencia fiscal y trazabilidad diaria',
+      proofPoint: 'operacion productiva con dashboard en linea, reconciliacion MATCH y gate GO',
+      domainTerms: ['cfdi', 'xml', 'timbrado', 'uuid', 'reconciliacion', 'sat', 'pac'],
+      qualityThreshold: 45
+    };
+  }
+
+  return {
+    target: 'operaciones',
+    segment: 'pymes',
+    problemDetail: 'procesos manuales y repetitivos en operacion comercial sin trazabilidad',
+    primaryOutcome: 'automatizacion operativa con ejecucion diaria y seguimiento en dashboard',
+    proofPoint: 'pipeline y command center funcionando en produccion',
+    domainTerms: ['automatizacion', 'operaciones', 'pipeline', 'dashboard', 'conversion'],
+    qualityThreshold: 45
+  };
+}
+
+function seedInboxFromActiveProducts() {
+  if (!fs.existsSync(PRODUCTS_CATALOG_PATH)) {
+    return 0;
+  }
+
+  const catalog = loadJson(PRODUCTS_CATALOG_PATH);
+  const products = Array.isArray(catalog?.products) ? catalog.products : [];
+  const active = products.filter((product) => String(product?.status || '').toLowerCase() === 'active');
+  const processedIds = listProcessedBriefIds();
+  const today = new Date().toISOString().slice(0, 10);
+
+  let created = 0;
+  for (const product of active) {
+    const productId = String(product?.id || '').trim();
+    const productName = String(product?.name || '').trim();
+    if (!productId || !productName || productId === 'dryrun') {
+      continue;
+    }
+
+    const briefId = `auto-${productId}-${today}`;
+    if (processedIds.has(briefId)) {
+      continue;
+    }
+
+    const context = inferCampaignContext(product);
+    saveJson(path.join(STAGES.inbox, `${briefId}.json`), {
+      id: briefId,
+      productName,
+      target: context.target,
+      segment: context.segment,
+      problemDetail: context.problemDetail,
+      primaryOutcome: context.primaryOutcome,
+      proofPoint: context.proofPoint,
+      domainTerms: context.domainTerms,
+      qualityThreshold: context.qualityThreshold
+    });
+    created += 1;
+  }
+
+  return created;
+}
+
 function loadJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
 }
@@ -37,6 +121,35 @@ function loadJson(filePath) {
 function saveJson(filePath, data) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+}
+
+function acquireWorkerLock() {
+  try {
+    const fd = fs.openSync(WORKER_LOCK_PATH, 'wx');
+    fs.writeFileSync(fd, `${process.pid}\n`, 'utf8');
+    return fd;
+  } catch (error) {
+    if (error && error.code === 'EEXIST') {
+      return null;
+    }
+    throw error;
+  }
+}
+
+function releaseWorkerLock(fd) {
+  try {
+    if (typeof fd === 'number') {
+      fs.closeSync(fd);
+    }
+  } catch {
+    // Best effort close.
+  }
+
+  try {
+    fs.rmSync(WORKER_LOCK_PATH, { force: true });
+  } catch {
+    // Best effort cleanup.
+  }
 }
 
 function resolveBriefId(briefPath, brief) {
@@ -115,6 +228,9 @@ function buildDraftSnapshot(campaignId, briefId) {
 }
 
 function buildQualityInput(brief, snapshot) {
+  const briefThreshold = Number(brief.qualityThreshold);
+  const threshold = Number.isFinite(briefThreshold) ? briefThreshold : DEFAULT_QUALITY_THRESHOLD;
+
   return {
     campaignId: snapshot.campaignId,
     copies: snapshot.campaign?.copies || {},
@@ -126,10 +242,7 @@ function buildQualityInput(brief, snapshot) {
       domainTerms: brief.domainTerms
     },
     fallbackProduct: snapshot.campaign?.product || 'Docflow API',
-    threshold:
-      Number.isFinite(Number(brief.qualityThreshold)) && Number(brief.qualityThreshold) > 0
-        ? Number(brief.qualityThreshold)
-        : DEFAULT_QUALITY_THRESHOLD
+    threshold
   };
 }
 
@@ -189,36 +302,63 @@ function parseArgs(argv) {
 }
 
 function runOnce() {
-  ensureStages();
-  const briefs = listInboxBriefs();
-  const results = [];
-
-  for (const briefPath of briefs) {
-    try {
-      results.push(processBrief(briefPath));
-    } catch (error) {
-      results.push({
-        briefId: path.basename(briefPath, '.json'),
-        status: 'error',
-        error: String(error?.message || error)
-      });
-    }
+  if (runInProgress) {
+    process.stdout.write('Folder worker skipped: in-process run still active.\n');
+    return;
   }
 
-  const summary = {
-    runAt: new Date().toISOString(),
-    processed: results.length,
-    approved: results.filter((item) => item.status === 'approved').length,
-    rejected: results.filter((item) => item.status === 'rejected').length,
-    skipped: results.filter((item) => item.status === 'skipped').length,
-    errors: results.filter((item) => item.status === 'error').length,
-    results
-  };
+  runInProgress = true;
+  const lockFd = acquireWorkerLock();
+  if (lockFd === null) {
+    process.stdout.write('Folder worker skipped: lock exists from another process.\n');
+    runInProgress = false;
+    return;
+  }
 
-  saveJson(path.join(CAMPAIGN_STATES_ROOT, 'worker-last-run.json'), summary);
+  ensureStages();
+  const results = [];
 
-  process.stdout.write(`Folder worker processed: ${summary.processed}\n`);
-  process.stdout.write(`Approved: ${summary.approved}, Rejected: ${summary.rejected}, Errors: ${summary.errors}\n`);
+  try {
+    let briefs = listInboxBriefs();
+    if (briefs.length === 0) {
+      const created = seedInboxFromActiveProducts();
+      if (created > 0) {
+        process.stdout.write(`Auto-seeded inbox briefs: ${created}\n`);
+      }
+      briefs = listInboxBriefs();
+    }
+
+    for (const briefPath of briefs) {
+      try {
+        results.push(processBrief(briefPath));
+      } catch (error) {
+        results.push({
+          briefId: path.basename(briefPath, '.json'),
+          status: 'error',
+          error: String(error?.message || error)
+        });
+      }
+    }
+
+    const summary = {
+      runAt: new Date().toISOString(),
+      processed: results.length,
+      approved: results.filter((item) => item.status === 'approved').length,
+      rejected: results.filter((item) => item.status === 'rejected').length,
+      skipped: results.filter((item) => item.status === 'skipped').length,
+      errors: results.filter((item) => item.status === 'error').length,
+      results
+    };
+
+    saveJson(path.join(CAMPAIGN_STATES_ROOT, 'worker-last-run.json'), summary);
+    syncRuntimeCampaignIndex();
+
+    process.stdout.write(`Folder worker processed: ${summary.processed}\n`);
+    process.stdout.write(`Approved: ${summary.approved}, Rejected: ${summary.rejected}, Errors: ${summary.errors}\n`);
+  } finally {
+    releaseWorkerLock(lockFd);
+    runInProgress = false;
+  }
 }
 
 function main() {

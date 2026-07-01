@@ -6,14 +6,14 @@
 <style>
 :root{--deep:#040b14;--card-bg:rgba(10,16,30,.7);--border:rgba(90,110,160,.15);--text:#bcc8dd;--text-dim:#5a6a8a;--accent:#6378b0;--green:rgba(100,160,130,.5);--yellow:rgba(160,140,80,.5);--red:rgba(160,90,90,.5)}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--deep);overflow:hidden;height:100vh;font:11px 'Segoe UI',system-ui,sans-serif;perspective:1200px;cursor:grab;user-select:none}
+body{background:var(--deep);overflow:hidden;height:100vh;font:11px 'Segoe UI',system-ui,sans-serif;perspective:1700px;cursor:grab;user-select:none;touch-action:none}
 body:active{cursor:grabbing}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at center,rgba(15,25,45,.8),var(--deep) 70%);z-index:-1}
 header{position:fixed;top:0;left:0;width:100%;padding:10px 18px;z-index:10;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(180deg,rgba(6,10,20,.95),transparent)}
 h1{font-size:.7rem;font-weight:500;color:var(--text);letter-spacing:2px;text-transform:uppercase}
 .hint{font-size:.5rem;color:var(--text-dim)}
 .back{color:var(--text-dim);font-size:.5rem;text-decoration:none}.back:hover{color:var(--accent)}
-#scene{position:fixed;top:15%;left:50%;width:90vw;height:80vh;margin-left:-45vw;transform-style:preserve-3d;transition:transform .12s linear}
+#scene{position:fixed;top:8%;left:50%;width:86vw;height:84vh;margin-left:-43vw;transform-style:preserve-3d;transform-origin:50% 35%;transition:transform .12s linear}
 .node{position:absolute;transform-style:preserve-3d;cursor:pointer}
 .node .card{background:rgba(10,16,30,.82);border:1px solid var(--border);border-radius:12px 4px 12px 4px;padding:7px 10px;text-align:center;color:var(--text);min-width:78px;backdrop-filter:blur(4px)}
 .node:hover .card{border-color:var(--accent);box-shadow:0 0 18px var(--accent-glow, rgba(99,120,176,.3))}
@@ -27,6 +27,7 @@ h1{font-size:.7rem;font-weight:500;color:var(--text);letter-spacing:2px;text-tra
 #connLayer{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0}
 #connLayer line{stroke-width:1.2}
 footer{position:fixed;bottom:0;left:0;width:100%;text-align:center;font-size:.5rem;color:var(--text-dim);z-index:5;padding:3px}
+#renderStatus{position:fixed;top:42px;left:18px;z-index:12;font-size:.55rem;color:#8b949e;background:rgba(6,10,20,.7);border:1px solid rgba(99,120,176,.2);padding:3px 8px;border-radius:6px}
 </style>
 </head>
 <body>
@@ -35,32 +36,52 @@ footer{position:fixed;bottom:0;left:0;width:100%;text-align:center;font-size:.5r
 <span class="hint">Drag to rotate -- Scroll to zoom</span>
 <a class="back" href="/project-map.html" title="Regresar al mapa 2D, cobarde">Infrastructure</a>
 </header>
+<div id="renderStatus">Inicializando 3D...</div>
 <div id="scene">
 <svg id="connLayer" width="900" height="600"></svg>
 </div>
 <footer>3D View -- Modules + Connections</footer>
 <script>
+let statusEl = null;
+function setStatus(msg, isError = false) {
+  if (!statusEl) statusEl = document.getElementById('renderStatus');
+  if (!statusEl) return;
+  statusEl.textContent = msg;
+  statusEl.style.color = isError ? '#f85149' : '#8b949e';
+}
+
 const modules=[
-  {name:'Lead Engine',x:30,y:5,z:-40,color:'green',dead:false,pct:'95%',desc:'2K companies'},
-  {name:'Prospect',x:180,y:15,z:-30,color:'green',dead:false,pct:'90%',desc:'ICP scoring'},
-  {name:'Product Engine',x:380,y:5,z:-20,color:'green',dead:false,pct:'88%',desc:'12 products'},
-  {name:'Creative',x:30,y:25,z:-20,color:'yellow',dead:false,pct:'70%',desc:'6-channel ⚠️'},
-  {name:'Materializer',x:250,y:20,z:-10,color:'green',dead:false,pct:'98%',desc:'MJML+Unsplash'},
-  {name:'Design Agent',x:500,y:15,z:-10,color:'green',dead:false,pct:'92%',desc:'CSS+Images'},
-  {name:'Quality',x:150,y:40,z:0,color:'green',dead:false,pct:'95%',desc:'6 checks'},
-  {name:'Cleaner',x:380,y:35,z:0,color:'green',dead:false,pct:'92%',desc:'1/product'},
-  {name:'Router',x:550,y:40,z:10,color:'green',dead:false,pct:'90%',desc:'6 platforms'},
-  {name:'Autopilot',x:250,y:55,z:30,color:'green',dead:false,pct:'85%',desc:'5ch --live'},
-  {name:'Pipeline',x:500,y:55,z:50,color:'yellow',dead:false,pct:'82%',desc:'12-step ⚠️'},
-  {name:'Payments',x:650,y:30,z:20,color:'green',dead:false,pct:'85%',desc:'Stripe+PP'},
-  {name:'Monitor',x:50,y:70,z:-30,color:'yellow',dead:true,pct:'75%',desc:'Degraded'},
-  {name:'Supervisor',x:200,y:70,z:-40,color:'yellow',dead:true,pct:'70%',desc:'Needs fix'},
-  {name:'R&D Engine',x:600,y:10,z:-10,color:'green',dead:false,pct:'88%',desc:'25 specialists'},
+  {name:'Lead Engine',x:36,y:118,z:-140,color:'green',dead:false,pct:'95%',desc:'2K companies'},
+  {name:'Prospect',x:196,y:98,z:-120,color:'green',dead:false,pct:'90%',desc:'ICP scoring'},
+  {name:'Product Engine',x:398,y:112,z:-90,color:'green',dead:false,pct:'88%',desc:'12 products'},
+  {name:'Creative',x:46,y:286,z:-70,color:'yellow',dead:false,pct:'70%',desc:'6-channel ⚠️'},
+  {name:'Materializer',x:274,y:226,z:-30,color:'green',dead:false,pct:'98%',desc:'MJML+Unsplash'},
+  {name:'Design Agent',x:514,y:182,z:-20,color:'green',dead:false,pct:'92%',desc:'CSS+Images'},
+  {name:'Quality',x:170,y:368,z:0,color:'green',dead:false,pct:'95%',desc:'6 checks'},
+  {name:'Cleaner',x:392,y:334,z:22,color:'green',dead:false,pct:'92%',desc:'1/product'},
+  {name:'Router',x:604,y:288,z:44,color:'green',dead:false,pct:'90%',desc:'6 platforms'},
+  {name:'Autopilot',x:290,y:468,z:86,color:'green',dead:false,pct:'85%',desc:'5ch --live'},
+  {name:'Pipeline',x:566,y:470,z:130,color:'yellow',dead:false,pct:'82%',desc:'12-step ⚠️'},
+  {name:'Payments',x:764,y:310,z:70,color:'green',dead:false,pct:'85%',desc:'Stripe+PP'},
+  {name:'Monitor',x:72,y:508,z:-100,color:'yellow',dead:true,pct:'75%',desc:'Degraded'},
+  {name:'Supervisor',x:226,y:538,z:-130,color:'yellow',dead:true,pct:'70%',desc:'Needs fix'},
+  {name:'R&D Engine',x:692,y:116,z:-50,color:'green',dead:false,pct:'88%',desc:'25 specialists'},
 ];
 
 const scene=document.getElementById('scene');
 const svg=document.getElementById('connLayer');
-let rotX=-10,rotY=-20,scale=0.82,dragging=false,lx=0,ly=0;
+let rotX=-18,rotY=-30,scale=0.9,dragging=false,lx=0,ly=0;
+
+const bounds = modules.reduce((acc, m) => ({
+  minX: Math.min(acc.minX, m.x),
+  maxX: Math.max(acc.maxX, m.x),
+  minY: Math.min(acc.minY, m.y),
+  maxY: Math.max(acc.maxY, m.y)
+}), { minX: Infinity, maxX: -Infinity, minY: Infinity, maxY: -Infinity });
+const layoutCenterX = (bounds.minX + bounds.maxX) / 2;
+const layoutCenterY = (bounds.minY + bounds.maxY) / 2;
+const layoutOffsetX = 450 - layoutCenterX;
+const layoutOffsetY = 300 - layoutCenterY;
 
 function updateConnections(){
   svg.innerHTML='';
@@ -75,7 +96,7 @@ function updateConnections(){
   conns.forEach(([from,to])=>{
     const a=modules.find(m=>m.name===from),b=modules.find(m=>m.name===to);
     if(!a||!b)return;
-    const ax=a.x+35,ay=a.y+12,bx=b.x+35,by=b.y+12;
+    const ax=(a.x + layoutOffsetX)+35,ay=(a.y + layoutOffsetY)+12,bx=(b.x + layoutOffsetX)+35,by=(b.y + layoutOffsetY)+12;
     const line=document.createElementNS(ns,'line');
     line.setAttribute('x1',ax);line.setAttribute('y1',ay);
     line.setAttribute('x2',bx);line.setAttribute('y2',by);
@@ -92,7 +113,10 @@ function updateConnections(){
 modules.forEach(m=>{
   const n=document.createElement('div');
   n.className=`node${m.dead?' dead':''}`;
-  n.style.cssText=`left:${m.x}px;top:${m.y}px;transform:translateZ(${m.z}px)`;
+  const lift = Math.round(m.z * 0.12);
+  const shadowY = Math.max(2, Math.round((m.z + 180) / 35));
+  const shadowBlur = Math.max(6, Math.round((m.z + 180) / 12));
+  n.style.cssText=`left:${m.x + layoutOffsetX}px;top:${m.y + layoutOffsetY}px;transform:translateZ(${m.z}px) translateY(${lift}px);filter:drop-shadow(0 ${shadowY}px ${shadowBlur}px rgba(0,0,0,.40))`;
   n.innerHTML=`<div class="card"><div class="led ${m.color==='green'?'led-g':m.color==='yellow'?'led-y':'led-r'}"></div><div class="n-name">${m.name}</div><div class="n-pct">${m.pct}</div></div>`;
   scene.appendChild(n);
 });
@@ -101,14 +125,24 @@ function render(){
   const cx=Math.max(-45,Math.min(45,rotX));
   const cy=Math.max(-45,Math.min(45,rotY));
   const cs=Math.max(.35,Math.min(1.3,scale));
-  scene.style.transform=`translate(calc(-50% + 7vw),-50%) rotateX(${cx}deg) rotateY(${cy}deg) scale(${cs})`;
+  scene.style.transform=`translate(-50%,0) rotateX(${cx}deg) rotateY(${cy}deg) scale(${cs})`;
 }
 updateConnections();render();
 
-document.addEventListener('mousedown',e=>{dragging=true;lx=e.clientX;ly=e.clientY});
-document.addEventListener('mousemove',e=>{if(!dragging)return;rotY+=(e.clientX-lx)*.12;rotX-=(e.clientY-ly)*.12;lx=e.clientX;ly=e.clientY;render()});
-document.addEventListener('mouseup',()=>dragging=false);
+document.addEventListener('pointerdown',e=>{dragging=true;lx=e.clientX;ly=e.clientY});
+document.addEventListener('pointermove',e=>{if(!dragging)return;rotY+=(e.clientX-lx)*.12;rotX-=(e.clientY-ly)*.12;lx=e.clientX;ly=e.clientY;render()});
+document.addEventListener('pointerup',()=>dragging=false);
+document.addEventListener('pointercancel',()=>dragging=false);
 document.addEventListener('wheel',e=>{e.preventDefault();scale=Math.max(.35,Math.min(1.3,scale-e.deltaY*.0004));render()},{passive:false});
+
+setStatus('3D activo');
+setTimeout(()=>{
+  if (statusEl) statusEl.style.display = 'none';
+}, 1800);
+
+window.addEventListener('error', (evt) => {
+  setStatus(`Error de render: ${evt.message || 'desconocido'}`, true);
+});
 </script>
 </body>
 </html>

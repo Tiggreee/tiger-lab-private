@@ -2,8 +2,6 @@ name: automation-smoke
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "15 11 * * 1-5"
 
 jobs:
   run-dry-automation:
