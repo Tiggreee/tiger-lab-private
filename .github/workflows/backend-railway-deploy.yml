@@ -42,6 +42,57 @@ jobs:
         if: steps.check-token.outputs.skip != 'true'
         run: npm install -g @railway/cli
 
+      - name: Sync runtime secrets to Railway
+        if: steps.check-token.outputs.skip != 'true'
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
+          STRIPE_WEBHOOK_SECRET: ${{ secrets.STRIPE_WEBHOOK_SECRET }}
+          PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
+          PAYPAL_CLIENT_SECRET: ${{ secrets.PAYPAL_CLIENT_SECRET }}
+          PAYPAL_WEBHOOK_ID: ${{ secrets.PAYPAL_WEBHOOK_ID }}
+          TIMBOX_USERNAME: ${{ secrets.TIMBOX_USERNAME }}
+          TIMBOX_PASSWORD: ${{ secrets.TIMBOX_PASSWORD }}
+          FACTURAMA_API_KEY: ${{ secrets.FACTURAMA_API_KEY }}
+          FACTURAMA_API_SECRET: ${{ secrets.FACTURAMA_API_SECRET }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          set -euo pipefail
+          KEYS=(
+            STRIPE_SECRET_KEY
+            STRIPE_WEBHOOK_SECRET
+            PAYPAL_CLIENT_ID
+            PAYPAL_CLIENT_SECRET
+            PAYPAL_WEBHOOK_ID
+            TIMBOX_USERNAME
+            TIMBOX_PASSWORD
+            FACTURAMA_API_KEY
+            FACTURAMA_API_SECRET
+            RESEND_API_KEY
+            ANTHROPIC_API_KEY
+            OPENAI_API_KEY
+          )
+          args=()
+          synced=()
+          for key in "${KEYS[@]}"; do
+            value="${!key:-}"
+            if [ -n "$value" ]; then
+              args+=(--set "$key=$value")
+              synced+=("$key")
+            fi
+          done
+          if [ ${#args[@]} -eq 0 ]; then
+            echo "No runtime secrets present in GitHub — nothing to sync to Railway."
+            exit 0
+          fi
+          echo "Syncing ${#synced[@]} secret(s) to Railway (values hidden): ${synced[*]}"
+          npx @railway/cli variables "${args[@]}" \
+            --service tiger-backend \
+            --environment production \
+            --skip-deploys
+
       - name: Deploy backend to Railway
         if: steps.check-token.outputs.skip != 'true'
         env:
