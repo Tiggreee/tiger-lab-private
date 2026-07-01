@@ -3,23 +3,23 @@
     {
       "agentName": "maker",
       "activeAgentVersion": "1.0.0",
-      "activePromptVersion": "v1",
+      "activePromptVersion": "v2",
       "rollbackAgentVersion": "1.0.0",
-      "rollbackPromptVersion": "v1"
+      "rollbackPromptVersion": "v2"
     },
     {
       "agentName": "checker",
       "activeAgentVersion": "1.0.0",
-      "activePromptVersion": "v1",
+      "activePromptVersion": "v2",
       "rollbackAgentVersion": "1.0.0",
-      "rollbackPromptVersion": "v1"
+      "rollbackPromptVersion": "v2"
     },
     {
       "agentName": "lead-engine",
       "activeAgentVersion": "1.0.0",
-      "activePromptVersion": "v1",
+      "activePromptVersion": "v2",
       "rollbackAgentVersion": "1.0.0",
-      "rollbackPromptVersion": "v1"
+      "rollbackPromptVersion": "v2"
     }
   ]
 }

@@ -10,7 +10,8 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { spawn } from 'node:child_process';
+import { spawn, spawnSync } from 'node:child_process';
+import { generateText, detectProvider } from '../runtime/llm-provider.mjs';
 
 const MEMORY_PATH = resolve('ops/runtime/creative-agent-memory.json');
 const CAMPAIGNS_DIR = resolve('ops/runtime/campaigns');
@@ -68,44 +69,44 @@ function saveMemory(mem) {
   writeFileSync(MEMORY_PATH, JSON.stringify(mem, null, 2), 'utf8');
 }
 
-function generateCopy(product, channel) {
+function generateCopy(product, channel, context = {}) {
   const p = PRODUCTS[product] || PRODUCTS['Docflow API'];
+  const lead = context.headline || p.headline;
+  const hook = context.hook || '';
 
   // X: write naturally to fit 280 — no substring + '...'
   function buildXCopy() {
     const cta = p.cta.length <= 30 ? p.cta : 'Ver más →';
+    const leadLine = `${product}: ${lead.split('.')[0]}.`;
+    const hookLine = hook ? `${hook}\n` : '';
 
-    const productSpecific = {
-      'Docflow API': `${product}: automatizacion CFDI y timbrado XML en minutos.\n80% menos tiempo operativo en flujos documentales.\n${cta} https://tigerlab.dev`,
-      'Script Premium Kit': `${product}: scripts para automatizacion de procesos repetitivos.\n10h menos por semana con runbooks listos.\n${cta} https://tigerlab.dev`,
-      'FacturAutentico Cloud': `${product}: facturacion CFDI 4.0 con timbrado y control centralizado.\nCumplimiento SAT sin retrabajo operativo.\n${cta} https://tigerlab.dev`
-    };
-
-    const full = productSpecific[product] || `${product}: ${p.headline}\n${p.body}\n${cta} https://tigerlab.dev`;
+    const full = `${hookLine}${leadLine}\n${cta} https://tigerlab.dev`;
     if (full.length <= 280) return full;
 
-    const compact = `${product}: ${p.headline.split('.')[0]}.\n${cta} https://tigerlab.dev`;
+    const compact = `${leadLine}\n${cta} https://tigerlab.dev`;
     if (compact.length <= 280) return compact;
 
-    return `${product}: ${p.headline.substring(0, 180)}\n${cta} https://tigerlab.dev`;
+    return `${product}: ${lead.substring(0, 180)}\n${cta} https://tigerlab.dev`;
   }
 
+  const hookBlock = hook ? `${hook}\n\n` : '';
   const templates = {
     email: () => [
       `<div style="font-family:Inter,sans-serif;max-width:600px;margin:auto;padding:24px;color:#1a1a1a">`,
-      `<h1 style="font-size:24px;line-height:1.3;margin-bottom:12px">${p.headline}</h1>`,
+      `<h1 style="font-size:24px;line-height:1.3;margin-bottom:12px">${lead}</h1>`,
+      hook ? `<p style="font-size:15px;line-height:1.6;color:${p.colors?.header || '#6C47FF'};margin-bottom:8px;font-weight:600">${hook}</p>` : '',
       `<p style="font-size:16px;line-height:1.7;color:#444;margin-bottom:16px">${p.body}</p>`,
       `<ul style="padding-left:20px;margin-bottom:24px">`,
       p.bullets.map(b => `<li style="font-size:15px;line-height:1.6;color:#333;margin-bottom:6px">${b}</li>`).join('\n'),
       `</ul>`,
       `<a href="https://tigerlab.dev" style="display:inline-block;background:${p.colors?.header || '#6C47FF'};color:#fff;padding:12px 28px;border-radius:6px;text-decoration:none;font-weight:700;font-size:15px">${p.cta}</a>`,
       `</div>`
-    ].join('\n'),
-    linkedin: () => `🔥 ${p.headline}\n\n${p.body}\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n💡 ${p.cta}\n\n#automatización #pyme #fintech #CFDI`,
+    ].filter(Boolean).join('\n'),
+    linkedin: () => `🔥 ${lead}\n\n${hookBlock}${p.body}\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n💡 ${p.cta}\n\n#automatización #pyme #fintech #CFDI`,
     x: buildXCopy,
-    facebook: () => `🔥 ${p.headline}\n\n${p.body}\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n${p.cta}`,
-    telegram: () => `*${product}*\n\n*${p.headline}*\n\n${p.body}\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n👉 [${p.cta.replace('→', '').trim()}](https://tigerlab.dev)`,
-    discord: () => `**${product}**\n\n**${p.headline}**\n\n${p.body}\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n👉 https://tigerlab.dev`
+    facebook: () => `🔥 ${lead}\n\n${hookBlock}${p.body}\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n${p.cta}`,
+    telegram: () => `*${product}*\n\n*${lead}*\n\n${hookBlock}${p.body}\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n👉 [${p.cta.replace('→', '').trim()}](https://tigerlab.dev)`,
+    discord: () => `**${product}**\n\n**${lead}**\n\n${hookBlock}${p.body}\n\n${p.bullets.map(b => `✅ ${b}`).join('\n')}\n\n👉 https://tigerlab.dev`
   };
 
   return (templates[channel] || templates.linkedin)();
@@ -228,9 +229,30 @@ function generateRecommendations(campaign, mem) {
   return recs;
 }
 
+function ensureMarketBriefing(product, segment) {
+  let briefing = loadMarketBriefing(product, segment);
+  if (briefing) return briefing;
+
+  // Auto-run the Market Researcher Agent (right hand) so the Creative never generates blind.
+  const researcher = resolve('engine/campaigns/market-researcher-agent.mjs');
+  const res = spawnSync(process.execPath, [researcher, '--research', '--product', product, '--segment', segment], { stdio: 'ignore' });
+  if (res.status === 0) {
+    briefing = loadMarketBriefing(product, segment);
+    if (briefing) {
+      process.stderr.write(`[CreativeAgent] Market briefing auto-generated for "${product}" / ${segment}.\n`);
+      return briefing;
+    }
+  }
+
+  process.stderr.write(`[CreativeAgent] ⚠️  Market briefing unavailable for "${product}" / ${segment} — using base templates.\n`);
+  return null;
+}
+
 function createCampaign(product, target, segment = 'contabilidad') {
   const mem = loadMemory();
-  const briefing = loadMarketBriefing(product, segment);
+  const briefing = ensureMarketBriefing(product, segment);
+  const angles = briefing?.brief?.messaging?.topAngles || [];
+  const hooks = briefing?.brief?.recommendations?.hooks || [];
   const id = `CAMP-${Date.now()}`;
   const dir = resolve(CAMPAIGNS_DIR, id);
   
@@ -240,15 +262,12 @@ function createCampaign(product, target, segment = 'contabilidad') {
   const copies = {};
   const images = {};
   
-  for (const ch of Object.keys(CHANNELS)) {
-    copies[ch] = generateCopy(product, ch);
+  Object.keys(CHANNELS).forEach((ch, i) => {
+    const angle = angles.length ? angles[i % angles.length] : null;
+    const hook = hooks.length ? hooks[i % hooks.length] : null;
+    copies[ch] = generateCopy(product, ch, { headline: angle?.headline, hook });
     images[ch] = { prompt: generateImagePrompt(product, ch), size: CHANNELS[ch].img, generated: false };
-  }
-  
-  if (!briefing) {
-    process.stderr.write(`[CreativeAgent] ⚠️  No market briefing found for "${product}" / segment "${segment}"\n`);
-    process.stderr.write(`[CreativeAgent]    Run first: node engine/campaigns/market-researcher-agent.mjs --research --product "${product}" --segment ${segment}\n`);
-  }
+  });
 
   const validation = validateCopyOutput(copies);
   if (!validation.valid) {
@@ -437,6 +456,29 @@ function benchmark() {
   return { capabilities, score: mem.evolution.averageScore, totalCampaigns: mem.totalCampaigns };
 }
 
+/**
+ * Optional LLM enhancement. Uses a real provider when an API key is configured,
+ * and the deterministic template fallback otherwise. Never blocks campaign creation.
+ */
+async function enhanceHeadline(product, segment) {
+  const briefing = ensureMarketBriefing(product, segment);
+  const p = PRODUCTS[product] || PRODUCTS['Docflow API'];
+  const angles = (briefing?.brief?.messaging?.topAngles || []).map(a => a.headline).filter(Boolean);
+  const keywords = briefing?.brief?.recommendations?.wordsthatConvert || [];
+
+  const system = 'Eres un copywriter senior de performance marketing B2B en México. Escribe titulares en español, concretos, sin relleno.';
+  const prompt = [
+    `Producto: ${product}`,
+    `Propuesta base: ${p.headline}`,
+    angles.length ? `Ángulos de investigación: ${angles.join(' | ')}` : '',
+    keywords.length ? `Palabras que convierten: ${keywords.join(', ')}` : '',
+    'Devuelve un solo titular de máximo 12 palabras.'
+  ].filter(Boolean).join('\n');
+
+  const result = await generateText({ system, prompt, maxTokens: 60 });
+  return { ...result, briefing: Boolean(briefing) };
+}
+
 function main() {
   const args = process.argv.slice(2);
   
@@ -487,9 +529,26 @@ function main() {
   } else if (args.includes('--benchmark')) {
     benchmark();
     
+  } else if (args.includes('--enhance')) {
+    const product = args.includes('--product') ? args[args.indexOf('--product') + 1] : 'Docflow API';
+    const segment = args.includes('--segment') ? args[args.indexOf('--segment') + 1] : 'contabilidad';
+    const { provider } = detectProvider();
+    console.log('=== CREATIVE AGENT — LLM HEADLINE ENHANCE ===\n');
+    console.log(`Product: ${product}`);
+    console.log(`Segment: ${segment}`);
+    console.log(`LLM provider: ${provider}${provider === 'template' ? ' (no API key — deterministic fallback)' : ''}\n`);
+    return enhanceHeadline(product, segment).then(({ text, provider: used, model, fallback }) => {
+      console.log(`Headline: ${text}`);
+      console.log(`\nSource: ${used}${model ? ` (${model})` : ''} | fallback: ${fallback}`);
+    }).catch(err => {
+      console.error(`Enhance failed: ${err.message}`);
+      process.exitCode = 1;
+    });
+
   } else {
     console.log('Creative Agent — Tigre Creativo (with Market Researcher partner)');
     console.log('  --create --product "Docflow API" --target contabilidad --segment contabilidad');
+    console.log('  --enhance --product "Docflow API" --segment contabilidad   LLM headline (real key or fallback)');
     console.log('  --memory     View campaign history');
     console.log('  --learn      Self-improvement analysis');
     console.log('  --benchmark  Capability assessment');
