@@ -59,7 +59,11 @@ $AUTO_REFRESH_FECHA = $autoRefreshFechaEnv === ''
 $ALLOW_NON_TEST_RFC_STAGING = strtolower(trim((string) (getenv('TIMBOX_ALLOW_NON_TEST_RFC_STAGING') ?: 'false'))) === 'true';
 
 // ── XSLT cadena original CFDI 4.0 ────────────────────────────────────────────
+// El XSLT oficial del SAT se guarda localmente (con sus includes resueltos) para
+// generar la cadena original offline. La descarga por red falla por 403/NONET y
+// por los 33 includes de complementos, por lo que solo es un ultimo recurso.
 $XSLT_URL = 'https://www.sat.gob.mx/sitio_internet/cfd/4/cadenaoriginal_4_0/cadenaoriginal_4_0.xslt';
+$XSLT_LOCAL_PATH = trim((string) (getenv('CFDI_XSLT_LOCAL_PATH') ?: (__DIR__ . '/../integrations/timbox/xslt/cadenaoriginal_4_0.xslt')));
 
 // ── Pedir password del .key de forma segura ──────────────────────────────────
 // Permite inyectar por variable de entorno para automatizacion local.
@@ -214,47 +218,22 @@ if ($EMISOR_REGIMEN !== '') {
 // Quitar Sello actual para calcular cadena original limpia
 $xmlContent = preg_replace('/Sello="[^"]*"/', 'Sello=""', $xmlContent);
 
-// ── Generar cadena original via XSLT ─────────────────────────────────────────
-echo "Descargando XSLT cadena original...\n";
+// ── Generar cadena original via XSLT oficial SAT (local, offline) ─────────────
+$cadena = null;
 
-if (!class_exists('XSLTProcessor')) {
-    if ($ALLOW_UNSAFE_MANUAL_CADENA) {
-        fwrite(STDERR, "WARN: XSLTProcessor no disponible. Usando cadena manual por contingencia (riesgo de rechazo por digest).\n");
-        $cadena = generarCadenaOriginalManual($xmlContent);
-    } else {
-        fwrite(STDERR, "ERROR: XSLTProcessor no disponible en este PHP. Instala/extiende PHP con soporte XSL para generar cadena original valida.\n");
-        fwrite(STDERR, "ERROR: Si necesitas desbloqueo temporal, usa TIMBOX_ALLOW_UNSAFE_MANUAL_CADENA=true.\n");
-        exit(1);
-    }
+if (class_exists('XSLTProcessor')) {
+    $cadena = generarCadenaOriginalXslt($xmlContent, $XSLT_LOCAL_PATH, $XSLT_URL);
 }
 
-if (!isset($cadena)) {
-    $xsltContent = @file_get_contents($XSLT_URL);
-    if ($xsltContent === false) {
-        if ($ALLOW_UNSAFE_MANUAL_CADENA) {
-            fwrite(STDERR, "WARN: No se pudo descargar XSLT oficial SAT. Usando cadena manual por contingencia (riesgo de rechazo por digest).\n");
-            $cadena = generarCadenaOriginalManual($xmlContent);
-        } else {
-            fwrite(STDERR, "ERROR: No se pudo descargar XSLT oficial SAT desde $XSLT_URL.\n");
-            fwrite(STDERR, "ERROR: Sin XSLT oficial no se genera cadena valida y el sello sera rechazado.\n");
-            fwrite(STDERR, "ERROR: Si necesitas desbloqueo temporal, usa TIMBOX_ALLOW_UNSAFE_MANUAL_CADENA=true.\n");
-            exit(1);
-        }
+if ($cadena === null) {
+    if ($ALLOW_UNSAFE_MANUAL_CADENA) {
+        fwrite(STDERR, "WARN: XSLT oficial no disponible. Usando cadena manual (solo valida para CFDI sin complementos).\n");
+        $cadena = generarCadenaOriginalManual($xmlContent);
     } else {
-        $xsl = new DOMDocument();
-        $xsl->loadXML($xsltContent);
-
-        $xml = new DOMDocument();
-        $xml->loadXML($xmlContent);
-
-        $processor = new XSLTProcessor();
-        $processor->importStylesheet($xsl);
-        $cadena = $processor->transformToXml($xml);
-        if ($cadena === false || $cadena === null) {
-            fwrite(STDERR, "ERROR: Fallo la transformacion XSLT\n");
-            exit(1);
-        }
-        $cadena = trim($cadena);
+        fwrite(STDERR, "ERROR: No se pudo generar la cadena original con el XSLT oficial del SAT.\n");
+        fwrite(STDERR, "ERROR: Verifica que exista el XSLT local en $XSLT_LOCAL_PATH y que PHP tenga soporte XSL.\n");
+        fwrite(STDERR, "ERROR: Desbloqueo temporal (solo CFDI sin complementos): TIMBOX_ALLOW_UNSAFE_MANUAL_CADENA=true.\n");
+        exit(1);
     }
 }
 
@@ -389,25 +368,188 @@ function normalizarNoCertificadoSAT(string $serialRaw): string
     return $serialRaw;
 }
 
+function generarCadenaOriginalXslt(string $xml, string $localXsltPath, string $xsltUrl): ?string
+{
+    $xsl = null;
+
+    // Preferir XSLT oficial local (offline, con includes resueltos en el mismo dir).
+    if ($localXsltPath !== '' && is_file($localXsltPath)) {
+        $candidate = new DOMDocument();
+        if (@$candidate->load($localXsltPath) !== false) {
+            $xsl = $candidate;
+        }
+    }
+
+    // Ultimo recurso: descargar XSLT del SAT (suele fallar por 403 y por includes).
+    if ($xsl === null) {
+        $xsltContent = @file_get_contents($xsltUrl);
+        if ($xsltContent === false) {
+            return null;
+        }
+        $candidate = new DOMDocument();
+        if (@$candidate->loadXML($xsltContent) === false) {
+            return null;
+        }
+        $xsl = $candidate;
+    }
+
+    $processor = new XSLTProcessor();
+    if (@$processor->importStylesheet($xsl) === false) {
+        return null;
+    }
+
+    $doc = new DOMDocument();
+    if (@$doc->loadXML($xml) === false) {
+        return null;
+    }
+
+    $cadena = @$processor->transformToXml($doc);
+    if ($cadena === false || $cadena === null) {
+        return null;
+    }
+
+    return trim($cadena);
+}
+
+/**
+ * Genera la cadena original CFDI 4.0 replicando cadenaoriginal_4_0.xslt del SAT.
+ * Cubre la estructura estandar sin complementos (Comprobante, InformacionGlobal,
+ * CfdiRelacionados, Emisor, Receptor, Conceptos e Impuestos). No cubre nodos de
+ * Complemento; para esos casos debe usarse el XSLT oficial.
+ */
 function generarCadenaOriginalManual(string $xml): string
 {
     $doc = new DOMDocument();
     $doc->loadXML($xml);
-    $root = $doc->documentElement;
 
-    $attrs = [];
-    $attrOrder = ['Version','Serie','Folio','Fecha','FormaPago','NoCertificado',
-                  'SubTotal','Descuento','Moneda','TipoCambio','Total',
-                  'TipoDeComprobante','Exportacion','MetodoPago','LugarExpedicion'];
+    $xp = new DOMXPath($doc);
+    $xp->registerNamespace('cfdi', 'http://www.sat.gob.mx/cfd/4');
 
-    foreach ($attrOrder as $name) {
-        $val = $root->getAttribute($name);
-        if ($val !== '') {
-            $attrs[] = $val;
+    $norm = static function (string $s): string {
+        return trim((string) preg_replace('/\s+/u', ' ', $s));
+    };
+    $req = static function (?DOMElement $node, string $attr) use ($norm): string {
+        if ($node === null) {
+            return '|';
+        }
+        return '|' . $norm($node->getAttribute($attr));
+    };
+    $opt = static function (?DOMElement $node, string $attr) use ($norm): string {
+        if ($node === null || !$node->hasAttribute($attr)) {
+            return '';
+        }
+        return '|' . $norm($node->getAttribute($attr));
+    };
+
+    $first = static function (DOMXPath $xp, string $expr, ?DOMNode $ctx = null): ?DOMElement {
+        $list = $ctx === null ? $xp->query($expr) : $xp->query($expr, $ctx);
+        $node = $list && $list->length > 0 ? $list->item(0) : null;
+        return $node instanceof DOMElement ? $node : null;
+    };
+
+    $c = $doc->documentElement; // cfdi:Comprobante
+    $out = '|';
+
+    // Comprobante
+    $out .= $req($c, 'Version');
+    $out .= $opt($c, 'Serie');
+    $out .= $opt($c, 'Folio');
+    $out .= $req($c, 'Fecha');
+    $out .= $opt($c, 'FormaPago');
+    $out .= $req($c, 'NoCertificado');
+    $out .= $opt($c, 'CondicionesDePago');
+    $out .= $req($c, 'SubTotal');
+    $out .= $opt($c, 'Descuento');
+    $out .= $req($c, 'Moneda');
+    $out .= $opt($c, 'TipoCambio');
+    $out .= $req($c, 'Total');
+    $out .= $req($c, 'TipoDeComprobante');
+    $out .= $req($c, 'Exportacion');
+    $out .= $opt($c, 'MetodoPago');
+    $out .= $req($c, 'LugarExpedicion');
+    $out .= $opt($c, 'Confirmacion');
+
+    // InformacionGlobal
+    $ig = $first($xp, './cfdi:InformacionGlobal', $c);
+    if ($ig !== null) {
+        $out .= $req($ig, 'Periodicidad');
+        $out .= $req($ig, 'Meses');
+        $out .= $req($ig, 'Año');
+    }
+
+    // CfdiRelacionados (puede repetirse)
+    foreach ($xp->query('./cfdi:CfdiRelacionados', $c) as $rel) {
+        $out .= $req($rel, 'TipoRelacion');
+        foreach ($xp->query('./cfdi:CfdiRelacionado', $rel) as $r) {
+            $out .= $req($r, 'UUID');
         }
     }
 
-    return '||4.0|' . implode('|', $attrs) . '||';
+    // Emisor
+    $emisor = $first($xp, './cfdi:Emisor', $c);
+    $out .= $req($emisor, 'Rfc');
+    $out .= $req($emisor, 'Nombre');
+    $out .= $req($emisor, 'RegimenFiscal');
+    $out .= $opt($emisor, 'FacAtrAdquirente');
+
+    // Receptor
+    $receptor = $first($xp, './cfdi:Receptor', $c);
+    $out .= $req($receptor, 'Rfc');
+    $out .= $req($receptor, 'Nombre');
+    $out .= $req($receptor, 'DomicilioFiscalReceptor');
+    $out .= $opt($receptor, 'ResidenciaFiscal');
+    $out .= $opt($receptor, 'NumRegIdTrib');
+    $out .= $req($receptor, 'RegimenFiscalReceptor');
+    $out .= $req($receptor, 'UsoCFDI');
+
+    // Conceptos
+    foreach ($xp->query('./cfdi:Conceptos/cfdi:Concepto', $c) as $con) {
+        $out .= $req($con, 'ClaveProdServ');
+        $out .= $opt($con, 'NoIdentificacion');
+        $out .= $req($con, 'Cantidad');
+        $out .= $req($con, 'ClaveUnidad');
+        $out .= $opt($con, 'Unidad');
+        $out .= $req($con, 'Descripcion');
+        $out .= $req($con, 'ValorUnitario');
+        $out .= $req($con, 'Importe');
+        $out .= $opt($con, 'Descuento');
+        $out .= $req($con, 'ObjetoImp');
+
+        foreach ($xp->query('./cfdi:Impuestos/cfdi:Traslados/cfdi:Traslado', $con) as $t) {
+            $out .= $req($t, 'Base');
+            $out .= $req($t, 'Impuesto');
+            $out .= $req($t, 'TipoFactor');
+            $out .= $opt($t, 'TasaOCuota');
+            $out .= $opt($t, 'Importe');
+        }
+        foreach ($xp->query('./cfdi:Impuestos/cfdi:Retenciones/cfdi:Retencion', $con) as $r) {
+            $out .= $req($r, 'Base');
+            $out .= $req($r, 'Impuesto');
+            $out .= $req($r, 'TipoFactor');
+            $out .= $req($r, 'TasaOCuota');
+            $out .= $req($r, 'Importe');
+        }
+    }
+
+    // Impuestos (globales)
+    $imp = $first($xp, './cfdi:Impuestos', $c);
+    if ($imp !== null) {
+        foreach ($xp->query('./cfdi:Retenciones/cfdi:Retencion', $imp) as $r) {
+            $out .= $req($r, 'Impuesto');
+            $out .= $req($r, 'Importe');
+        }
+        $out .= $opt($imp, 'TotalImpuestosRetenidos');
+        foreach ($xp->query('./cfdi:Traslados/cfdi:Traslado', $imp) as $t) {
+            $out .= $req($t, 'Base');
+            $out .= $req($t, 'Impuesto');
+            $out .= $req($t, 'TipoFactor');
+            $out .= $opt($t, 'TasaOCuota');
+            $out .= $opt($t, 'Importe');
+        }
+        $out .= $opt($imp, 'TotalImpuestosTrasladados');
+    }
+
+    return $out . '||';
 }
 
 function loadPrivateKeyFromFile(string $keyPath, string $password): mixed
