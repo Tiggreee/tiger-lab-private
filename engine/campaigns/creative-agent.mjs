@@ -248,7 +248,40 @@ function ensureMarketBriefing(product, segment) {
   return null;
 }
 
-function createCampaign(product, target, segment = 'contabilidad') {
+/**
+ * Optional LLM refinement of a single headline. Returns the base headline
+ * unchanged when no API key is configured (verified template behavior stays intact).
+ * With a key, the result must pass length + forbidden-term guardrails or the base is kept.
+ */
+async function llmEnhanceLead(product, baseHeadline, briefing) {
+  if (!baseHeadline) return baseHeadline;
+  const { provider } = detectProvider();
+  if (provider === 'template') return baseHeadline; // no key: do not alter verified output
+
+  try {
+    const keywords = briefing?.brief?.recommendations?.wordsthatConvert || [];
+    const system = 'Eres copywriter senior B2B en México. Mejoras titulares en español: concretos, sin relleno, máximo 12 palabras.';
+    const prompt = [
+      `Producto: ${product}`,
+      `Titular base: ${baseHeadline}`,
+      keywords.length ? `Palabras que convierten: ${keywords.join(', ')}` : '',
+      'Devuelve solo el titular mejorado, una sola línea, sin comillas.'
+    ].filter(Boolean).join('\n');
+
+    const { text } = await generateText({ system, prompt, maxTokens: 40 });
+    const cleaned = String(text).split('\n')[0].replace(/^["']|["']$/g, '').trim();
+    const lower = cleaned.toLowerCase();
+    const forbidden = ['password', 'secret', 'token'];
+    if (cleaned.length >= 8 && cleaned.length <= 90 && !forbidden.some(t => lower.includes(t))) {
+      return cleaned;
+    }
+    return baseHeadline;
+  } catch {
+    return baseHeadline;
+  }
+}
+
+async function createCampaign(product, target, segment = 'contabilidad') {
   const mem = loadMemory();
   const briefing = ensureMarketBriefing(product, segment);
   const angles = briefing?.brief?.messaging?.topAngles || [];
@@ -262,12 +295,15 @@ function createCampaign(product, target, segment = 'contabilidad') {
   const copies = {};
   const images = {};
   
-  Object.keys(CHANNELS).forEach((ch, i) => {
+  const channelKeys = Object.keys(CHANNELS);
+  for (let i = 0; i < channelKeys.length; i++) {
+    const ch = channelKeys[i];
     const angle = angles.length ? angles[i % angles.length] : null;
     const hook = hooks.length ? hooks[i % hooks.length] : null;
-    copies[ch] = generateCopy(product, ch, { headline: angle?.headline, hook });
+    const headline = await llmEnhanceLead(product, angle?.headline, briefing);
+    copies[ch] = generateCopy(product, ch, { headline, hook });
     images[ch] = { prompt: generateImagePrompt(product, ch), size: CHANNELS[ch].img, generated: false };
-  });
+  }
 
   const validation = validateCopyOutput(copies);
   if (!validation.valid) {
@@ -479,7 +515,7 @@ async function enhanceHeadline(product, segment) {
   return { ...result, briefing: Boolean(briefing) };
 }
 
-function main() {
+async function main() {
   const args = process.argv.slice(2);
   
   if (args.includes('--create')) {
@@ -492,7 +528,7 @@ function main() {
     console.log(`Target: ${target}`);
     console.log(`Segment: ${segment}`);
     
-    const { campaign, mem, briefing } = createCampaign(product, target, segment);
+    const { campaign, mem, briefing } = await createCampaign(product, target, segment);
     const recs = generateRecommendations(campaign, mem);
     
     console.log(`\n📦 Campaign: ${campaign.id}`);
@@ -555,4 +591,7 @@ function main() {
   }
 }
 
-main();
+main().catch(err => {
+  console.error(err.message);
+  process.exitCode = 1;
+});

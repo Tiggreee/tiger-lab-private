@@ -2,6 +2,7 @@ import { randomUUID } from 'node:crypto';
 import { ResolveOfferUseCase } from '../../../src/catalog/application/use-cases/ResolveOfferUseCase';
 import { CaptureLeadUseCase } from '../../../src/lead/application/use-cases/CaptureLeadUseCase';
 import { ScoreLeadUseCase } from '../../../src/lead/application/use-cases/ScoreLeadUseCase';
+import { BotRouter } from '../../../bots/engine/BotRouter';
 import { BotQueryRequest } from '../contracts/requests/bot-query-request';
 import { ConversationEntryRequest } from '../contracts/requests/conversation-entry-request';
 import { BotQueryResponse } from '../contracts/responses/bot-query-response';
@@ -12,7 +13,8 @@ export class BotController {
   constructor(
     private readonly resolveOfferUseCase: ResolveOfferUseCase,
     private readonly captureLeadUseCase: CaptureLeadUseCase,
-    private readonly scoreLeadUseCase: ScoreLeadUseCase
+    private readonly scoreLeadUseCase: ScoreLeadUseCase,
+    private readonly botRouter: BotRouter = new BotRouter()
   ) {}
 
   public async botQuery(request: BotQueryRequest): Promise<BotQueryResponse> {
@@ -45,12 +47,32 @@ export class BotController {
 
     const message = request.message || '';
 
+    // Compute a real recommendation via the commercial decision engine.
+    // The HTTP boundary stays resilient: any orchestration failure falls back
+    // to a safe default instead of failing the request.
+    let recommendation = 'collect_requirements';
+    let reply = message ? `Auto-response generated for: ${message.slice(0, 120)}` : 'Auto-response generated.';
+    try {
+      const decision = this.botRouter.route({
+        botName: 'SalesBot',
+        channel: 'web',
+        message,
+        customerId: leadId,
+        productId: request.productId || 'facturautentico-cloud',
+        leadScore: request.score ?? 50
+      });
+      recommendation = decision.nextAction;
+      reply = decision.responseText;
+    } catch {
+      // Keep the safe fallback recommendation/reply.
+    }
+
     return {
       status: 'ok',
       action: 'bot-query',
       result: {
-        reply: message ? `Auto-response generated for: ${message.slice(0, 120)}` : 'Auto-response generated.',
-        recommendation: 'start_trial',
+        reply,
+        recommendation,
         dryRun: request.dryRun !== false
       }
     };
