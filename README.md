@@ -1,5 +1,8 @@
 # TigerLab — Production-Ready Autonomous Monetization Engine
 
+[![CI](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/ci.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/ci.yml)
+[![Backend Production Readiness](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/backend-production-readiness.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/backend-production-readiness.yml)
+
 > **Engine Status: 🟢 GO**
 > 
 > 24 agents active. 2 products live. 2000 leads ready. Dual pricing MX $349 / US $19. All systems nominal.
@@ -20,7 +23,7 @@ This is not a proof-of-concept. This is an operational system ready to generate 
 | **Dashboard** | 🟢 LIVE | Real-time agent + lead + product data | localhost:4310 |
 | **Production Deploy** | 🟢 LIVE | Railway at tiger-backend-production.up.railway.app | Public-facing |
 | **Agents Active** | 🟢 24/24 | 7 direct monetization + 12 indirect + 5 governance | Online |
-| **Automation** | 🟢 ON | 6 AM daily pipeline + event persistence | Leads scored, campaigns published |
+| **Automation** | 🟢 ON | Scheduled cron: product/failures every 2h, sales 06:00 UTC, billing 07:00 UTC | Leads scored, campaign packs generated + validated |
 | **Gate Status** | 🟢 GO | 18/18 checks PASS. No contradictions. | Release-ready. |
 
 ### Verified Automation Status (Code-Backed)
@@ -40,6 +43,7 @@ This is not a proof-of-concept. This is an operational system ready to generate 
 - ⚠️ Lead intelligence currently generates outreach text and simulates progression; it does not execute real outreach by itself (`engine/leads/lead-intelligence.mjs`).
 - ⚠️ Provisioning uses in-memory ports/default adapters unless external services are configured (`server/bootstrap/dependency-container.ts`, `src/shared/infrastructure/bootstrap/dependency-container.ts`).
 - ⚠️ No outbound phone-call bot is implemented.
+- ⚠️ Live social posting is a manual `Social Publish` dispatch (dry-run by default); the scheduled pipelines generate and validate branded packs but never auto-post to networks. This is a deliberate safety gate.
 
 **Policy:** no timeline or revenue promises are stated here unless validated by runtime evidence.
 
