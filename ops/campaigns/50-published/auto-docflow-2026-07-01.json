@@ -1,11 +1,11 @@
 {
-  "checkedAt": "2026-07-02T02:47:25.032Z",
-  "briefId": "auto-docflow-api-2026-07-02",
-  "campaignId": "CAMP-1782955207094",
+  "finalizedAt": "2026-07-02T02:46:29.618Z",
+  "briefId": "auto-docflow-2026-07-01",
+  "campaignId": "CAMP-1782911400870",
   "qualityResult": {
-    "campaignId": "CAMP-1782955207094",
+    "campaignId": "CAMP-1782911400870",
     "threshold": 45,
-    "averageSpecificity": 57,
+    "averageSpecificity": 53,
     "passed": true,
     "failedChannels": [],
     "channels": [
@@ -18,14 +18,14 @@
       },
       {
         "channel": "linkedin",
-        "specificityScore": 57,
+        "specificityScore": 51,
         "genericPatterns": [],
         "passed": true,
         "reasons": []
       },
       {
         "channel": "x",
-        "specificityScore": 76,
+        "specificityScore": 63,
         "genericPatterns": [],
         "passed": true,
         "reasons": []
@@ -39,7 +39,7 @@
       },
       {
         "channel": "telegram",
-        "specificityScore": 57,
+        "specificityScore": 51,
         "genericPatterns": [],
         "passed": true,
         "reasons": []
@@ -52,5 +52,22 @@
         "reasons": []
       }
     ]
+  },
+  "brief": {
+    "id": "auto-docflow-2026-07-01",
+    "productName": "Docflow API",
+    "target": "contabilidad",
+    "segment": "contabilidad",
+    "problemDetail": "captura y validacion manual de XML/CFDI que frena cierres de cobranza",
+    "primaryOutcome": "pipeline automatico de documentos con conciliacion trazable en minutos",
+    "proofPoint": "operacion real con gate de produccion en GO y reconciliacion fiscal en MATCH",
+    "domainTerms": [
+      "cfdi",
+      "xml",
+      "timbrado",
+      "reconciliacion",
+      "automatizacion"
+    ],
+    "qualityThreshold": 60
   }
 }

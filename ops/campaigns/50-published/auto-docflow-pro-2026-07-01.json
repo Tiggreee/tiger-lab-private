@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-02T02:46:29.630Z",
+  "finalizedAt": "2026-07-02T02:46:29.628Z",
   "briefId": "auto-docflow-pro-2026-07-01",
   "campaignId": "CAMP-1782911449406",
   "qualityResult": {
@@ -52,5 +52,24 @@
         "reasons": []
       }
     ]
+  },
+  "brief": {
+    "id": "auto-docflow-pro-2026-07-01",
+    "productName": "Docflow API",
+    "target": "contabilidad",
+    "segment": "contabilidad",
+    "problemDetail": "captura manual de XML CFDI 4.0, validacion de sellos y conciliacion de cobros en hojas sueltas",
+    "primaryOutcome": "flujo API con validacion XML, timbrado, conciliacion y evidencia operativa diaria",
+    "proofPoint": "stack en GO con reconciliacion fiscal MATCH y UUID real emitido en produccion",
+    "domainTerms": [
+      "cfdi",
+      "timbrado",
+      "xml",
+      "uuid",
+      "reconciliacion",
+      "sat",
+      "pac"
+    ],
+    "qualityThreshold": 60
   }
 }

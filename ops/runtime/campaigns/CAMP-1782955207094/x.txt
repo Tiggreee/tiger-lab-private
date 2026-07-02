@@ -1,3 +1,1 @@
-Los contadores que automatizan ganan 15+ horas/mes
-Docflow API: Resultados en minutos, no horas.
-Prueba gratis 7 días → https://tigerlab.dev
+Contadores: automatiza captura de CFDI XML, timbrado y reconciliacion ante el SAT. Docflow API concilia cobros en minutos. Prueba 7 dias -> https://tigerlab.dev

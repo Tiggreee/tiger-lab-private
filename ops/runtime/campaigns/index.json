@@ -1,24 +1,68 @@
 {
-  "updated": "2026-07-01T17:38:06.305Z",
-  "total": 2,
+  "updated": "2026-07-02T02:47:39.229Z",
+  "total": 5,
   "campaigns": [
     {
       "id": "CAMP-1782610513949",
       "product": "Docflow API",
       "score": 68,
-      "status": "approved",
+      "status": "published",
+      "channel": "unknown",
       "channels": [],
       "createdAt": "2026-06-28T01:35:13.973Z",
-      "approvedAt": "2026-06-28T01:35:13.973Z"
+      "approvedAt": "2026-06-28T01:35:13.973Z",
+      "publishedAt": "2026-06-28T01:35:13.973Z"
     },
     {
       "id": "CAMP-1782911496182",
       "product": "Docflow API",
       "score": 54,
-      "status": "approved",
+      "status": "published",
+      "channel": "unknown",
       "channels": [],
       "createdAt": "2026-07-01T13:11:36.218Z",
-      "approvedAt": "2026-07-01T13:11:36.218Z"
+      "approvedAt": "2026-07-01T13:11:36.218Z",
+      "publishedAt": "2026-07-01T13:11:36.218Z"
+    },
+    {
+      "id": "CAMP-1782955207094",
+      "product": "Docflow API",
+      "score": 100,
+      "status": "published",
+      "channel": "email",
+      "channels": [
+        "email",
+        "linkedin",
+        "x",
+        "facebook",
+        "telegram",
+        "discord"
+      ],
+      "createdAt": "2026-07-02T01:20:07.095Z",
+      "approvedAt": "2026-07-02T02:47:25.029Z",
+      "publishedAt": "2026-07-02T02:47:25.029Z"
+    },
+    {
+      "id": "CAMP-1782911400870",
+      "product": "Docflow API",
+      "score": 53,
+      "status": "published",
+      "channel": "unknown",
+      "channels": [],
+      "createdAt": "2026-07-02T02:46:29.618Z",
+      "approvedAt": "2026-07-02T02:46:29.618Z",
+      "publishedAt": "2026-07-02T02:46:29.618Z"
+    },
+    {
+      "id": "CAMP-1782911449406",
+      "product": "Docflow API",
+      "score": 48,
+      "status": "published",
+      "channel": "unknown",
+      "channels": [],
+      "createdAt": "2026-07-02T02:46:29.628Z",
+      "approvedAt": "2026-07-02T02:46:29.628Z",
+      "publishedAt": "2026-07-02T02:46:29.628Z"
     }
   ]
 }

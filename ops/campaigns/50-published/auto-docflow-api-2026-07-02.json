@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-02T02:47:25.032Z",
+  "finalizedAt": "2026-07-02T02:47:25.029Z",
   "briefId": "auto-docflow-api-2026-07-02",
   "campaignId": "CAMP-1782955207094",
   "qualityResult": {
@@ -52,5 +52,24 @@
         "reasons": []
       }
     ]
+  },
+  "brief": {
+    "id": "auto-docflow-api-2026-07-02",
+    "productName": "Docflow API",
+    "target": "contabilidad",
+    "segment": "contabilidad",
+    "problemDetail": "captura manual de XML CFDI y reconciliacion de cobros en procesos operativos",
+    "primaryOutcome": "automatizacion de flujo documental con evidencia fiscal y trazabilidad diaria",
+    "proofPoint": "operacion productiva con dashboard en linea, reconciliacion MATCH y gate GO",
+    "domainTerms": [
+      "cfdi",
+      "xml",
+      "timbrado",
+      "uuid",
+      "reconciliacion",
+      "sat",
+      "pac"
+    ],
+    "qualityThreshold": 45
   }
 }

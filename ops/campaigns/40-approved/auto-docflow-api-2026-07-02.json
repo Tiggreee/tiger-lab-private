@@ -1,15 +1,13 @@
 {
-  "finalizedAt": "2026-07-02T01:20:07.114Z",
+  "finalizedAt": "2026-07-02T02:47:25.029Z",
   "briefId": "auto-docflow-api-2026-07-02",
   "campaignId": "CAMP-1782955207094",
   "qualityResult": {
     "campaignId": "CAMP-1782955207094",
     "threshold": 45,
-    "averageSpecificity": 49,
-    "passed": false,
-    "failedChannels": [
-      "x"
-    ],
+    "averageSpecificity": 57,
+    "passed": true,
+    "failedChannels": [],
     "channels": [
       {
         "channel": "email",
@@ -27,12 +25,10 @@
       },
       {
         "channel": "x",
-        "specificityScore": 28,
+        "specificityScore": 76,
         "genericPatterns": [],
-        "passed": false,
-        "reasons": [
-          "Specificity score 28 below threshold 45."
-        ]
+        "passed": true,
+        "reasons": []
       },
       {
         "channel": "facebook",
