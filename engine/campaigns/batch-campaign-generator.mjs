@@ -54,6 +54,23 @@ const CHECKOUT = {
   'Script Premium Kit': 'https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit'
 };
 
+const BRAND = {
+  'Docflow API': {
+    productName: 'Docflow API',
+    problemDetail: 'procesos documentales lentos con integraciones fragiles',
+    primaryOutcome: 'orquestar documentos y CFDI por API con trazabilidad',
+    proofPoint: 'equipos con endpoints estables reducen errores de integracion y retrabajo',
+    domainTerms: ['cfdi', 'api', 'documental', 'timbrado', 'facturacion']
+  },
+  'Script Premium Kit': {
+    productName: 'Script Premium Kit',
+    problemDetail: 'tareas administrativas repetitivas hechas a mano',
+    primaryOutcome: 'automatizar contabilidad y administracion sin programar',
+    proofPoint: '20+ scripts probados que ahorran horas de trabajo manual',
+    domainTerms: ['scripts', 'contabilidad', 'automatizacion', 'pymes']
+  }
+};
+
 const CHANNELS = ['linkedin', 'x', 'facebook', 'telegram', 'discord'];
 
 function generateBatch(product, count = 25) {
@@ -74,6 +91,7 @@ function generateBatch(product, count = 25) {
       product,
       variant,
       headline,
+      brand: BRAND[product] || BRAND['Docflow API'],
       funnel: {
         trafficDestination: url,
         closeChannel: 'landing',
@@ -87,12 +105,12 @@ function generateBatch(product, count = 25) {
       const limits = { linkedin: 3000, x: 280, facebook: 2000, telegram: 4096, discord: 2000 };
       const max = limits[ch] || 2000;
       
-      let copy = `${headline}\n\n${body}\n\n${cta}: ${url}`;
+      let copy = `${product}: ${headline}\n\n${body}\n\n${cta}: ${url}`;
       
       // Channel-specific adaptation
-      if (ch === 'x') copy = `${headline}\n${body.substring(0, 100)}...\n${url}`;
-      if (ch === 'linkedin') copy = `🔥 ${headline}\n\n${body}\n\n💡 ${cta}\n👉 ${url}\n\n#Automatización #SaaS #PyMEs #TigerLab`;
-      if (ch === 'facebook') copy = `🔥 ${headline}\n\n${body}\n\n✅ ${cta}\n👉 ${url}`;
+      if (ch === 'x') copy = `${product}: ${headline}\n${body.substring(0, 100)}...\n${url}`;
+      if (ch === 'linkedin') copy = `🔥 ${product} — ${headline}\n\n${body}\n\n💡 ${cta}\n👉 ${url}\n\n#Automatización #SaaS #PyMEs #TigerLab`;
+      if (ch === 'facebook') copy = `🔥 ${product} — ${headline}\n\n${body}\n\n✅ ${cta}\n👉 ${url}`;
       if (ch === 'telegram') copy = `*${product}*\n\n${headline}\n\n${body}\n\n[${cta}](${url})`;
       if (ch === 'discord') copy = `**${product}**\n\n${headline}\n\n${body}\n\n${url}`;
       

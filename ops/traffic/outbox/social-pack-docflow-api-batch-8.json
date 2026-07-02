@@ -1,0 +1,53 @@
+{
+  "campaign": "docflow-api-batch-8",
+  "generatedAt": "2026-07-02T05:01:30.095Z",
+  "product": "Docflow API",
+  "variant": 8,
+  "headline": "Convierte procesos manuales en flujos medibles y rápidos.",
+  "brand": {
+    "productName": "Docflow API",
+    "problemDetail": "procesos documentales lentos con integraciones fragiles",
+    "primaryOutcome": "orquestar documentos y CFDI por API con trazabilidad",
+    "proofPoint": "equipos con endpoints estables reducen errores de integracion y retrabajo",
+    "domainTerms": [
+      "cfdi",
+      "api",
+      "documental",
+      "timbrado",
+      "facturacion"
+    ]
+  },
+  "funnel": {
+    "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+    "closeChannel": "landing",
+    "closeDestination": "https://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+    "closeLink": "https://tiger-backend-production.up.railway.app/checkout?product=docflow-api"
+  },
+  "channels": {
+    "linkedin": {
+      "copyPaste": "🔥 Docflow API — Convierte procesos manuales en flujos medibles y rápidos.\n\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta con lo que ya usas. Primer mes con precio de lanzamiento.\n\n💡 Prueba 7 días gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=docflow-api\n\n#Automatización #SaaS #PyMEs #TigerLab",
+      "chars": 379,
+      "limit": 3000
+    },
+    "x": {
+      "copyPaste": "Docflow API: Convierte procesos manuales en flujos medibles y rápidos.\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta...\nhttps://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+      "chars": 251,
+      "limit": 280
+    },
+    "facebook": {
+      "copyPaste": "🔥 Docflow API — Convierte procesos manuales en flujos medibles y rápidos.\n\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta con lo que ya usas. Primer mes con precio de lanzamiento.\n\n✅ Prueba 7 días gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+      "chars": 338,
+      "limit": 2000
+    },
+    "telegram": {
+      "copyPaste": "*Docflow API*\n\nConvierte procesos manuales en flujos medibles y rápidos.\n\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta con lo que ya usas. Primer mes con precio de lanzamiento.\n\n[Prueba 7 días gratis](https://tiger-backend-production.up.railway.app/checkout?product=docflow-api)",
+      "chars": 334,
+      "limit": 4096
+    },
+    "discord": {
+      "copyPaste": "**Docflow API**\n\nConvierte procesos manuales en flujos medibles y rápidos.\n\nDocflow API automatiza TODO tu flujo documental. Integración con CFDI 4.0 nativo. API-first. Conecta con lo que ya usas. Primer mes con precio de lanzamiento.\n\nhttps://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+      "chars": 312,
+      "limit": 2000
+    }
+  }
+}

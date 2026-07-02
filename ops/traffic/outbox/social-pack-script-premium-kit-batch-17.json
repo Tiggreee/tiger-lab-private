@@ -1,0 +1,52 @@
+{
+  "campaign": "script-premium-kit-batch-17",
+  "generatedAt": "2026-07-02T05:01:30.112Z",
+  "product": "Script Premium Kit",
+  "variant": 17,
+  "headline": "Scripts mexicanos para empresas mexicanas.",
+  "brand": {
+    "productName": "Script Premium Kit",
+    "problemDetail": "tareas administrativas repetitivas hechas a mano",
+    "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+    "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+    "domainTerms": [
+      "scripts",
+      "contabilidad",
+      "automatizacion",
+      "pymes"
+    ]
+  },
+  "funnel": {
+    "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+    "closeChannel": "landing",
+    "closeDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+    "closeLink": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit"
+  },
+  "channels": {
+    "linkedin": {
+      "copyPaste": "🔥 Script Premium Kit — Scripts mexicanos para empresas mexicanas.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+      "chars": 374,
+      "limit": 3000
+    },
+    "x": {
+      "copyPaste": "Script Premium Kit: Scripts mexicanos para empresas mexicanas.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+      "chars": 250,
+      "limit": 280
+    },
+    "facebook": {
+      "copyPaste": "🔥 Script Premium Kit — Scripts mexicanos para empresas mexicanas.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+      "chars": 333,
+      "limit": 2000
+    },
+    "telegram": {
+      "copyPaste": "*Script Premium Kit*\n\nScripts mexicanos para empresas mexicanas.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n[Descarga el kit gratis](https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit)",
+      "chars": 329,
+      "limit": 4096
+    },
+    "discord": {
+      "copyPaste": "**Script Premium Kit**\n\nScripts mexicanos para empresas mexicanas.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+      "chars": 305,
+      "limit": 2000
+    }
+  }
+}

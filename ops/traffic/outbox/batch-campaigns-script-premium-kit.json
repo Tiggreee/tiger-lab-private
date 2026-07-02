@@ -1,14 +1,26 @@
 {
-  "generatedAt": "2026-06-17T07:27:19.679Z",
+  "generatedAt": "2026-07-02T05:01:30.112Z",
   "product": "Script Premium Kit",
   "totalPacks": 25,
   "packs": [
     {
       "campaign": "script-premium-kit-batch-1",
-      "generatedAt": "2026-06-17T07:27:19.678Z",
+      "generatedAt": "2026-07-02T05:01:30.111Z",
       "product": "Script Premium Kit",
       "variant": 1,
       "headline": "20+ scripts probados. 0 programación necesaria.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -17,18 +29,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 20+ scripts probados. 0 programación necesaria.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 358,
+          "copyPaste": "🔥 Script Premium Kit — 20+ scripts probados. 0 programación necesaria.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 379,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "20+ scripts probados. 0 programación necesaria.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 235,
+          "copyPaste": "Script Premium Kit: 20+ scripts probados. 0 programación necesaria.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 255,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 20+ scripts probados. 0 programación necesaria.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 317,
+          "copyPaste": "🔥 Script Premium Kit — 20+ scripts probados. 0 programación necesaria.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 338,
           "limit": 2000
         },
         "telegram": {
@@ -45,10 +57,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-2",
-      "generatedAt": "2026-06-17T07:27:19.678Z",
+      "generatedAt": "2026-07-02T05:01:30.111Z",
       "product": "Script Premium Kit",
       "variant": 2,
       "headline": "Automatiza tu negocio sin escribir una línea de código.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -57,18 +81,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Automatiza tu negocio sin escribir una línea de código.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 366,
+          "copyPaste": "🔥 Script Premium Kit — Automatiza tu negocio sin escribir una línea de código.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 387,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Automatiza tu negocio sin escribir una línea de código.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 243,
+          "copyPaste": "Script Premium Kit: Automatiza tu negocio sin escribir una línea de código.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 263,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Automatiza tu negocio sin escribir una línea de código.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 325,
+          "copyPaste": "🔥 Script Premium Kit — Automatiza tu negocio sin escribir una línea de código.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 346,
           "limit": 2000
         },
         "telegram": {
@@ -85,10 +109,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-3",
-      "generatedAt": "2026-06-17T07:27:19.678Z",
+      "generatedAt": "2026-07-02T05:01:30.111Z",
       "product": "Script Premium Kit",
       "variant": 3,
       "headline": "Scripts listos para usar. Resultados inmediatos.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -97,18 +133,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Scripts listos para usar. Resultados inmediatos.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 359,
+          "copyPaste": "🔥 Script Premium Kit — Scripts listos para usar. Resultados inmediatos.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 380,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Scripts listos para usar. Resultados inmediatos.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 236,
+          "copyPaste": "Script Premium Kit: Scripts listos para usar. Resultados inmediatos.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 256,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Scripts listos para usar. Resultados inmediatos.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 318,
+          "copyPaste": "🔥 Script Premium Kit — Scripts listos para usar. Resultados inmediatos.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 339,
           "limit": 2000
         },
         "telegram": {
@@ -125,10 +161,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-4",
-      "generatedAt": "2026-06-17T07:27:19.678Z",
+      "generatedAt": "2026-07-02T05:01:30.111Z",
       "product": "Script Premium Kit",
       "variant": 4,
       "headline": "¿Sigues haciendo tareas repetitivas manualmente?",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -137,18 +185,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 ¿Sigues haciendo tareas repetitivas manualmente?\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 359,
+          "copyPaste": "🔥 Script Premium Kit — ¿Sigues haciendo tareas repetitivas manualmente?\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 380,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "¿Sigues haciendo tareas repetitivas manualmente?\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 236,
+          "copyPaste": "Script Premium Kit: ¿Sigues haciendo tareas repetitivas manualmente?\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 256,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 ¿Sigues haciendo tareas repetitivas manualmente?\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 318,
+          "copyPaste": "🔥 Script Premium Kit — ¿Sigues haciendo tareas repetitivas manualmente?\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 339,
           "limit": 2000
         },
         "telegram": {
@@ -165,10 +213,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-5",
-      "generatedAt": "2026-06-17T07:27:19.678Z",
+      "generatedAt": "2026-07-02T05:01:30.111Z",
       "product": "Script Premium Kit",
       "variant": 5,
       "headline": "El kit de automatización para PyMEs más completo.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -177,18 +237,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 El kit de automatización para PyMEs más completo.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 360,
+          "copyPaste": "🔥 Script Premium Kit — El kit de automatización para PyMEs más completo.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 381,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "El kit de automatización para PyMEs más completo.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 237,
+          "copyPaste": "Script Premium Kit: El kit de automatización para PyMEs más completo.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 257,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 El kit de automatización para PyMEs más completo.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 319,
+          "copyPaste": "🔥 Script Premium Kit — El kit de automatización para PyMEs más completo.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 340,
           "limit": 2000
         },
         "telegram": {
@@ -205,10 +265,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-6",
-      "generatedAt": "2026-06-17T07:27:19.678Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 6,
       "headline": "Instala, ejecuta, ahorra. Así de simple.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -217,18 +289,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Instala, ejecuta, ahorra. Así de simple.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 351,
+          "copyPaste": "🔥 Script Premium Kit — Instala, ejecuta, ahorra. Así de simple.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 372,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Instala, ejecuta, ahorra. Así de simple.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 228,
+          "copyPaste": "Script Premium Kit: Instala, ejecuta, ahorra. Así de simple.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 248,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Instala, ejecuta, ahorra. Así de simple.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 310,
+          "copyPaste": "🔥 Script Premium Kit — Instala, ejecuta, ahorra. Así de simple.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 331,
           "limit": 2000
         },
         "telegram": {
@@ -245,10 +317,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-7",
-      "generatedAt": "2026-06-17T07:27:19.678Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 7,
       "headline": "Scripts mexicanos para empresas mexicanas.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -257,18 +341,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Scripts mexicanos para empresas mexicanas.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 353,
+          "copyPaste": "🔥 Script Premium Kit — Scripts mexicanos para empresas mexicanas.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 374,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Scripts mexicanos para empresas mexicanas.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 230,
+          "copyPaste": "Script Premium Kit: Scripts mexicanos para empresas mexicanas.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 250,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Scripts mexicanos para empresas mexicanas.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 312,
+          "copyPaste": "🔥 Script Premium Kit — Scripts mexicanos para empresas mexicanas.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 333,
           "limit": 2000
         },
         "telegram": {
@@ -285,10 +369,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-8",
-      "generatedAt": "2026-06-17T07:27:19.678Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 8,
       "headline": "Automatización plug-and-play. Sin curva de aprendizaje.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -297,18 +393,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Automatización plug-and-play. Sin curva de aprendizaje.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 366,
+          "copyPaste": "🔥 Script Premium Kit — Automatización plug-and-play. Sin curva de aprendizaje.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 387,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Automatización plug-and-play. Sin curva de aprendizaje.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 243,
+          "copyPaste": "Script Premium Kit: Automatización plug-and-play. Sin curva de aprendizaje.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 263,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Automatización plug-and-play. Sin curva de aprendizaje.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 325,
+          "copyPaste": "🔥 Script Premium Kit — Automatización plug-and-play. Sin curva de aprendizaje.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 346,
           "limit": 2000
         },
         "telegram": {
@@ -325,10 +421,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-9",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 9,
       "headline": "Delegale a los scripts. Tú enfócate en crecer.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -337,18 +445,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Delegale a los scripts. Tú enfócate en crecer.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 357,
+          "copyPaste": "🔥 Script Premium Kit — Delegale a los scripts. Tú enfócate en crecer.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 378,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Delegale a los scripts. Tú enfócate en crecer.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 234,
+          "copyPaste": "Script Premium Kit: Delegale a los scripts. Tú enfócate en crecer.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 254,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Delegale a los scripts. Tú enfócate en crecer.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 316,
+          "copyPaste": "🔥 Script Premium Kit — Delegale a los scripts. Tú enfócate en crecer.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 337,
           "limit": 2000
         },
         "telegram": {
@@ -365,10 +473,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-10",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 10,
       "headline": "Resultados en minutos, no en meses.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -377,18 +497,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Resultados en minutos, no en meses.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 346,
+          "copyPaste": "🔥 Script Premium Kit — Resultados en minutos, no en meses.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 367,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Resultados en minutos, no en meses.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 223,
+          "copyPaste": "Script Premium Kit: Resultados en minutos, no en meses.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 243,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Resultados en minutos, no en meses.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 305,
+          "copyPaste": "🔥 Script Premium Kit — Resultados en minutos, no en meses.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 326,
           "limit": 2000
         },
         "telegram": {
@@ -405,10 +525,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-11",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 11,
       "headline": "20+ scripts probados. 0 programación necesaria.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -417,18 +549,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 20+ scripts probados. 0 programación necesaria.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 358,
+          "copyPaste": "🔥 Script Premium Kit — 20+ scripts probados. 0 programación necesaria.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 379,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "20+ scripts probados. 0 programación necesaria.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 235,
+          "copyPaste": "Script Premium Kit: 20+ scripts probados. 0 programación necesaria.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 255,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 20+ scripts probados. 0 programación necesaria.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 317,
+          "copyPaste": "🔥 Script Premium Kit — 20+ scripts probados. 0 programación necesaria.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 338,
           "limit": 2000
         },
         "telegram": {
@@ -445,10 +577,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-12",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 12,
       "headline": "Automatiza tu negocio sin escribir una línea de código.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -457,18 +601,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Automatiza tu negocio sin escribir una línea de código.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 366,
+          "copyPaste": "🔥 Script Premium Kit — Automatiza tu negocio sin escribir una línea de código.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 387,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Automatiza tu negocio sin escribir una línea de código.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 243,
+          "copyPaste": "Script Premium Kit: Automatiza tu negocio sin escribir una línea de código.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 263,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Automatiza tu negocio sin escribir una línea de código.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 325,
+          "copyPaste": "🔥 Script Premium Kit — Automatiza tu negocio sin escribir una línea de código.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 346,
           "limit": 2000
         },
         "telegram": {
@@ -485,10 +629,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-13",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 13,
       "headline": "Scripts listos para usar. Resultados inmediatos.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -497,18 +653,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Scripts listos para usar. Resultados inmediatos.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 359,
+          "copyPaste": "🔥 Script Premium Kit — Scripts listos para usar. Resultados inmediatos.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 380,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Scripts listos para usar. Resultados inmediatos.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 236,
+          "copyPaste": "Script Premium Kit: Scripts listos para usar. Resultados inmediatos.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 256,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Scripts listos para usar. Resultados inmediatos.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 318,
+          "copyPaste": "🔥 Script Premium Kit — Scripts listos para usar. Resultados inmediatos.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 339,
           "limit": 2000
         },
         "telegram": {
@@ -525,10 +681,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-14",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 14,
       "headline": "¿Sigues haciendo tareas repetitivas manualmente?",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -537,18 +705,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 ¿Sigues haciendo tareas repetitivas manualmente?\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 359,
+          "copyPaste": "🔥 Script Premium Kit — ¿Sigues haciendo tareas repetitivas manualmente?\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 380,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "¿Sigues haciendo tareas repetitivas manualmente?\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 236,
+          "copyPaste": "Script Premium Kit: ¿Sigues haciendo tareas repetitivas manualmente?\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 256,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 ¿Sigues haciendo tareas repetitivas manualmente?\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 318,
+          "copyPaste": "🔥 Script Premium Kit — ¿Sigues haciendo tareas repetitivas manualmente?\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 339,
           "limit": 2000
         },
         "telegram": {
@@ -565,10 +733,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-15",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 15,
       "headline": "El kit de automatización para PyMEs más completo.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -577,18 +757,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 El kit de automatización para PyMEs más completo.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 360,
+          "copyPaste": "🔥 Script Premium Kit — El kit de automatización para PyMEs más completo.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 381,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "El kit de automatización para PyMEs más completo.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 237,
+          "copyPaste": "Script Premium Kit: El kit de automatización para PyMEs más completo.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 257,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 El kit de automatización para PyMEs más completo.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 319,
+          "copyPaste": "🔥 Script Premium Kit — El kit de automatización para PyMEs más completo.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 340,
           "limit": 2000
         },
         "telegram": {
@@ -605,10 +785,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-16",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 16,
       "headline": "Instala, ejecuta, ahorra. Así de simple.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -617,18 +809,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Instala, ejecuta, ahorra. Así de simple.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 351,
+          "copyPaste": "🔥 Script Premium Kit — Instala, ejecuta, ahorra. Así de simple.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 372,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Instala, ejecuta, ahorra. Así de simple.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 228,
+          "copyPaste": "Script Premium Kit: Instala, ejecuta, ahorra. Así de simple.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 248,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Instala, ejecuta, ahorra. Así de simple.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 310,
+          "copyPaste": "🔥 Script Premium Kit — Instala, ejecuta, ahorra. Así de simple.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 331,
           "limit": 2000
         },
         "telegram": {
@@ -645,10 +837,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-17",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 17,
       "headline": "Scripts mexicanos para empresas mexicanas.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -657,18 +861,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Scripts mexicanos para empresas mexicanas.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 353,
+          "copyPaste": "🔥 Script Premium Kit — Scripts mexicanos para empresas mexicanas.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 374,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Scripts mexicanos para empresas mexicanas.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 230,
+          "copyPaste": "Script Premium Kit: Scripts mexicanos para empresas mexicanas.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 250,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Scripts mexicanos para empresas mexicanas.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 312,
+          "copyPaste": "🔥 Script Premium Kit — Scripts mexicanos para empresas mexicanas.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 333,
           "limit": 2000
         },
         "telegram": {
@@ -685,10 +889,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-18",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 18,
       "headline": "Automatización plug-and-play. Sin curva de aprendizaje.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -697,18 +913,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Automatización plug-and-play. Sin curva de aprendizaje.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 366,
+          "copyPaste": "🔥 Script Premium Kit — Automatización plug-and-play. Sin curva de aprendizaje.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 387,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Automatización plug-and-play. Sin curva de aprendizaje.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 243,
+          "copyPaste": "Script Premium Kit: Automatización plug-and-play. Sin curva de aprendizaje.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 263,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Automatización plug-and-play. Sin curva de aprendizaje.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 325,
+          "copyPaste": "🔥 Script Premium Kit — Automatización plug-and-play. Sin curva de aprendizaje.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 346,
           "limit": 2000
         },
         "telegram": {
@@ -725,10 +941,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-19",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 19,
       "headline": "Delegale a los scripts. Tú enfócate en crecer.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -737,18 +965,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Delegale a los scripts. Tú enfócate en crecer.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 357,
+          "copyPaste": "🔥 Script Premium Kit — Delegale a los scripts. Tú enfócate en crecer.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 378,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Delegale a los scripts. Tú enfócate en crecer.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 234,
+          "copyPaste": "Script Premium Kit: Delegale a los scripts. Tú enfócate en crecer.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 254,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Delegale a los scripts. Tú enfócate en crecer.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 316,
+          "copyPaste": "🔥 Script Premium Kit — Delegale a los scripts. Tú enfócate en crecer.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 337,
           "limit": 2000
         },
         "telegram": {
@@ -765,10 +993,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-20",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 20,
       "headline": "Resultados en minutos, no en meses.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -777,18 +1017,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Resultados en minutos, no en meses.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 346,
+          "copyPaste": "🔥 Script Premium Kit — Resultados en minutos, no en meses.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 367,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Resultados en minutos, no en meses.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 223,
+          "copyPaste": "Script Premium Kit: Resultados en minutos, no en meses.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 243,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Resultados en minutos, no en meses.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 305,
+          "copyPaste": "🔥 Script Premium Kit — Resultados en minutos, no en meses.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 326,
           "limit": 2000
         },
         "telegram": {
@@ -805,10 +1045,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-21",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 21,
       "headline": "20+ scripts probados. 0 programación necesaria.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -817,18 +1069,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 20+ scripts probados. 0 programación necesaria.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 358,
+          "copyPaste": "🔥 Script Premium Kit — 20+ scripts probados. 0 programación necesaria.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 379,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "20+ scripts probados. 0 programación necesaria.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 235,
+          "copyPaste": "Script Premium Kit: 20+ scripts probados. 0 programación necesaria.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 255,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 20+ scripts probados. 0 programación necesaria.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 317,
+          "copyPaste": "🔥 Script Premium Kit — 20+ scripts probados. 0 programación necesaria.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 338,
           "limit": 2000
         },
         "telegram": {
@@ -845,10 +1097,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-22",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 22,
       "headline": "Automatiza tu negocio sin escribir una línea de código.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -857,18 +1121,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Automatiza tu negocio sin escribir una línea de código.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 366,
+          "copyPaste": "🔥 Script Premium Kit — Automatiza tu negocio sin escribir una línea de código.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 387,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Automatiza tu negocio sin escribir una línea de código.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 243,
+          "copyPaste": "Script Premium Kit: Automatiza tu negocio sin escribir una línea de código.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 263,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Automatiza tu negocio sin escribir una línea de código.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 325,
+          "copyPaste": "🔥 Script Premium Kit — Automatiza tu negocio sin escribir una línea de código.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 346,
           "limit": 2000
         },
         "telegram": {
@@ -885,10 +1149,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-23",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 23,
       "headline": "Scripts listos para usar. Resultados inmediatos.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -897,18 +1173,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 Scripts listos para usar. Resultados inmediatos.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 359,
+          "copyPaste": "🔥 Script Premium Kit — Scripts listos para usar. Resultados inmediatos.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 380,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "Scripts listos para usar. Resultados inmediatos.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 236,
+          "copyPaste": "Script Premium Kit: Scripts listos para usar. Resultados inmediatos.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 256,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 Scripts listos para usar. Resultados inmediatos.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 318,
+          "copyPaste": "🔥 Script Premium Kit — Scripts listos para usar. Resultados inmediatos.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 339,
           "limit": 2000
         },
         "telegram": {
@@ -925,10 +1201,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-24",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 24,
       "headline": "¿Sigues haciendo tareas repetitivas manualmente?",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -937,18 +1225,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 ¿Sigues haciendo tareas repetitivas manualmente?\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 359,
+          "copyPaste": "🔥 Script Premium Kit — ¿Sigues haciendo tareas repetitivas manualmente?\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 380,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "¿Sigues haciendo tareas repetitivas manualmente?\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 236,
+          "copyPaste": "Script Premium Kit: ¿Sigues haciendo tareas repetitivas manualmente?\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 256,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 ¿Sigues haciendo tareas repetitivas manualmente?\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 318,
+          "copyPaste": "🔥 Script Premium Kit — ¿Sigues haciendo tareas repetitivas manualmente?\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 339,
           "limit": 2000
         },
         "telegram": {
@@ -965,10 +1253,22 @@
     },
     {
       "campaign": "script-premium-kit-batch-25",
-      "generatedAt": "2026-06-17T07:27:19.679Z",
+      "generatedAt": "2026-07-02T05:01:30.112Z",
       "product": "Script Premium Kit",
       "variant": 25,
       "headline": "El kit de automatización para PyMEs más completo.",
+      "brand": {
+        "productName": "Script Premium Kit",
+        "problemDetail": "tareas administrativas repetitivas hechas a mano",
+        "primaryOutcome": "automatizar contabilidad y administracion sin programar",
+        "proofPoint": "20+ scripts probados que ahorran horas de trabajo manual",
+        "domainTerms": [
+          "scripts",
+          "contabilidad",
+          "automatizacion",
+          "pymes"
+        ]
+      },
       "funnel": {
         "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
         "closeChannel": "landing",
@@ -977,18 +1277,18 @@
       },
       "channels": {
         "linkedin": {
-          "copyPaste": "🔥 El kit de automatización para PyMEs más completo.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
-          "chars": 360,
+          "copyPaste": "🔥 Script Premium Kit — El kit de automatización para PyMEs más completo.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n💡 Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit\n\n#Automatización #SaaS #PyMEs #TigerLab",
+          "chars": 381,
           "limit": 3000
         },
         "x": {
-          "copyPaste": "El kit de automatización para PyMEs más completo.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 237,
+          "copyPaste": "Script Premium Kit: El kit de automatización para PyMEs más completo.\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programa...\nhttps://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 257,
           "limit": 280
         },
         "facebook": {
-          "copyPaste": "🔥 El kit de automatización para PyMEs más completo.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
-          "chars": 319,
+          "copyPaste": "🔥 Script Premium Kit — El kit de automatización para PyMEs más completo.\n\nAutomatiza contabilidad, facturación y administración en minutos. 20+ scripts probados. Sin programar. Sin dolores de cabeza. Actualizaciones incluidas.\n\n✅ Descarga el kit gratis\n👉 https://tiger-backend-production.up.railway.app/checkout?product=script-premium-kit",
+          "chars": 340,
           "limit": 2000
         },
         "telegram": {
