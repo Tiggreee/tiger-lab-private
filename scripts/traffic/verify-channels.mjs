@@ -250,15 +250,20 @@ async function verifyLinkedIn() {
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: new URLSearchParams({ client_id: clientId, client_secret: clientSecret, token })
       });
+      const introBody = await introspectResp.text();
       if (introspectResp.ok) {
-        const info = await introspectResp.json();
+        const info = JSON.parse(introBody);
         const scopes = String(info.scope || '');
         const hasOrg = /w_organization_social/.test(scopes);
         scopeHint = ` Scopes: ${scopes || '(none reported)'}.${hasOrg ? '' : ' MISSING w_organization_social -> cannot post as page (needs Community Management API product).'}`;
+      } else {
+        scopeHint = ` Introspect ${introspectResp.status}: ${introBody.slice(0, 200)}.`;
       }
-    } catch {
-      // introspection is best-effort only
+    } catch (err) {
+      scopeHint = ` Introspect error: ${err.message}.`;
     }
+  } else {
+    scopeHint = ' (client id/secret not set, cannot introspect scopes)';
   }
 
   // Discover organizations the token can administer so the user can set
