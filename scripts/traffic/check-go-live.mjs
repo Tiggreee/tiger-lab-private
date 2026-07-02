@@ -7,7 +7,7 @@ import path from 'node:path';
 const CHANNELS = ['linkedin', 'x', 'facebook', 'telegram', 'discord'];
 
 const REQUIRED_BY_CHANNEL = {
-  linkedin: ['LINKEDIN_ACCESS_TOKEN', 'LINKEDIN_ORG_ID'],
+  linkedin: ['LINKEDIN_ACCESS_TOKEN'],
   x: ['X_API_KEY', 'X_API_SECRET', 'X_ACCESS_TOKEN', 'X_ACCESS_TOKEN_SECRET'],
   facebook: ['FACEBOOK_PAGE_ID', 'FACEBOOK_PAGE_ACCESS_TOKEN'],
   telegram: ['TELEGRAM_BOT_TOKEN', 'TELEGRAM_CHAT_ID'],
