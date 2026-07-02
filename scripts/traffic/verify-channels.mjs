@@ -142,7 +142,41 @@ async function verifyDiscord() {
   });
   const body = await resp.text();
   if (!resp.ok) {
-    return { ok: false, detail: `Channel ${channelId} unreachable (GET channel ${resp.status}): ${body}` };
+    // Auth may be fine but the channel id is wrong or the bot is not in that
+    // server. Discover the text channels the bot can actually see (read-only).
+    let discovered = '';
+    if (resp.status === 401) {
+      return { ok: false, detail: `Bot token rejected (GET channel 401): ${body}` };
+    }
+    try {
+      const guildsResp = await fetch('https://discord.com/api/v10/users/@me/guilds', {
+        headers: { Authorization: `Bot ${token}` }
+      });
+      if (guildsResp.ok) {
+        const guilds = JSON.parse(await guildsResp.text());
+        const hints = [];
+        for (const guild of guilds) {
+          const chResp = await fetch(`https://discord.com/api/v10/guilds/${guild.id}/channels`, {
+            headers: { Authorization: `Bot ${token}` }
+          });
+          if (chResp.ok) {
+            const channels = JSON.parse(await chResp.text());
+            for (const ch of channels) {
+              // type 0 = text, type 5 = announcement — both accept messages.
+              if (ch.type === 0 || ch.type === 5) {
+                hints.push(`${ch.id} (#${ch.name} in "${guild.name}")`);
+              }
+            }
+          }
+        }
+        discovered = hints.length
+          ? ` Text channels the bot can see -> ${hints.join(' | ')}. Use one as DISCORD_CHANNEL_ID.`
+          : ' Bot is in no servers — invite it with Send Messages permission, then re-run.';
+      }
+    } catch {
+      /* discovery is best-effort */
+    }
+    return { ok: false, detail: `Channel ${channelId} unreachable (GET channel ${resp.status}): ${body}.${discovered}` };
   }
   const channel = JSON.parse(body);
   return { ok: true, detail: `Bot can see channel #${channel.name || channelId}.` };
