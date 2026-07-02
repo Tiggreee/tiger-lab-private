@@ -143,7 +143,10 @@ jobs:
       # already committed; a posting failure turns the run red without losing data.
       - name: Engine live publish to networks
         run: |
-          LATEST=$(ls -t ops/traffic/outbox/social-pack-*.json 2>/dev/null | head -1)
+          # Exclude social-pack-landing-social.json: it is a multi-product landing
+          # aggregate without brand metadata and with a legacy "twitter" channel key,
+          # so it fails the authenticity guard. Post the newest branded campaign pack.
+          LATEST=$(ls -t ops/traffic/outbox/social-pack-*.json 2>/dev/null | grep -v 'social-pack-landing-social.json' | head -1)
           if [ -n "$LATEST" ]; then
             node scripts/traffic/run-autopilot.mjs \
               --packPath "$LATEST" \
