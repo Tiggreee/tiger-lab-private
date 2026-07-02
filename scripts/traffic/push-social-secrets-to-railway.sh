@@ -4,7 +4,7 @@ set -euo pipefail
 
 ENV_FILE="${1:-}"
 TARGET_ENV="${2:-production}"
-SERVICES_CSV="${3:-tiger-dashboard,tiger-backend}"
+SERVICES_CSV="${3:-tiger-backend}"
 
 if [[ -z "${ENV_FILE}" ]]; then
   echo "Usage: $0 <env-file> [railway-environment] [service1,service2,...]" >&2

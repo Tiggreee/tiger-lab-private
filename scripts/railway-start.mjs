@@ -1,9 +1,8 @@
 import { spawn } from 'node:child_process';
 
-const mode = (process.env.RAILWAY_START_MODE || 'backend').toLowerCase();
-const command = mode === 'dashboard' ? 'npm run command-center:start' : 'npm run start';
+const command = 'npm run start';
 
-console.log(`[railway-start] mode=${mode} command="${command}"`);
+console.log(`[railway-start] command="${command}"`);
 
 const child = spawn(command, {
   shell: true,
