@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>TigerLab — Campaign Preview</title>
+<title>Tiger Command Center - Campaign Preview</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font:13px/1.5 'Segoe UI',system-ui,sans-serif;background:#0c1117;color:#c9d1d9;padding:20px;max-width:900px;margin:0 auto}
@@ -21,143 +21,99 @@ h2{font-size:.8rem;color:#8b949e;text-transform:uppercase;letter-spacing:.5px;ma
 .approved{background:#1a3a2a;color:#3fb950;padding:2px 8px;border-radius:8px;font-size:.6rem;font-weight:600}
 .pending{background:#3a2f1a;color:#d29922;padding:2px 8px;border-radius:8px;font-size:.6rem;font-weight:600}
 .status-bar{display:flex;gap:12px;align-items:center;margin-bottom:16px}
-.actions{display:flex;gap:8px;margin-top:20px}
-.actions button{padding:8px 20px;border:none;border-radius:6px;font-size:.75rem;cursor:pointer;font-weight:600}
-.btn-approve{background:#238636;color:#fff}
-.btn-reject{background:#f85149;color:#fff}
-.btn-back{background:#21262d;color:#c9d1d9}
-.actions button:disabled{opacity:.65;cursor:not-allowed}
-.action-status{margin-top:10px;font-size:.72rem;color:#8b949e;min-height:20px}
-.action-status.ok{color:#3fb950}
-.action-status.err{color:#f85149}
+.govern{background:#111722;border:1px solid #21262d;border-left:3px solid #4fd1c5;border-radius:6px;padding:12px 14px;margin-top:20px;font-size:.72rem;color:#8b949e}
+.govern b{color:#c9d1d9}
+.govern code{background:#0d1117;border:1px solid #30363d;border-radius:4px;padding:1px 6px;color:#4fd1c5;font-family:'Cascadia Code',Consolas,monospace}
+.actions{margin-top:16px}
+.btn-back{padding:8px 20px;border:none;border-radius:6px;font-size:.75rem;cursor:pointer;font-weight:600;background:#21262d;color:#c9d1d9}
 footer{text-align:center;font-size:.65rem;color:#484f58;margin-top:30px;padding-top:10px;border-top:1px solid #21262d}
 </style>
 </head>
 <body>
-<h1 id="campaignTitle">🎯 Loading...</h1>
+<h1 id="campaignTitle">Loading...</h1>
 <div class="status-bar">
-  <span id="statusBadge" class="pending">⏳ PENDING</span>
+  <span id="statusBadge" class="pending">PENDING</span>
   <span id="scoreBadge" class="score-badge score-high">0/100</span>
   <span class="meta" id="metaInfo"></span>
 </div>
 <div id="channels"></div>
-<div class="actions">
-  <button id="approveBtn" class="btn-approve" onclick="approve()">✅ APPROVE</button>
-  <button id="rejectBtn" class="btn-reject" onclick="reject()">❌ REJECT</button>
-  <button class="btn-back" onclick="window.close()">← Back</button>
+<div class="govern">
+  <b>Read-only.</b> La aprobacion y publicacion se gobiernan por CLI, no desde esta pantalla.
+  Aprobar: <code>npm run campaigns:approve -- &lt;id&gt;</code> ·
+  Rechazar: <code>npm run campaigns:reject -- &lt;id&gt;</code> ·
+  Pendientes: <code>npm run campaigns:pending</code>
 </div>
-<div id="actionStatus" class="action-status"></div>
-<footer>TigerLab Campaign Preview — <span id="footerTime"></span></footer>
+<div class="actions">
+  <button class="btn-back" onclick="window.close()">Cerrar</button>
+</div>
+<footer>Tiger Command Center - Campaign Preview - <span id="footerTime"></span></footer>
 
 <script>
 const params = new URLSearchParams(window.location.search);
 const id = params.get('id');
 let campaign = null;
 
-function setActionStatus(msg, kind = '') {
-  const el = document.getElementById('actionStatus');
-  if (!el) return;
-  el.textContent = msg || '';
-  el.className = `action-status ${kind}`.trim();
-}
-
-function setActionLoading(loading) {
-  const ab = document.getElementById('approveBtn');
-  const rb = document.getElementById('rejectBtn');
-  if (ab) ab.disabled = !!loading;
-  if (rb) rb.disabled = !!loading;
-}
-
 async function load() {
-  if (!id) { document.body.innerHTML = '<h1>❌ No campaign ID provided</h1>'; return; }
-  
+  if (!id) { document.body.innerHTML = '<h1>No campaign ID provided</h1>'; return; }
+
   try {
     // Load campaign index
     const idx = await fetch('/runtime/campaigns/index.json');
     const data = await idx.json();
     campaign = data.campaigns?.find(c => c.id === id);
-    
+
     if (!campaign) throw new Error('Campaign not found');
-    
-    document.title = `${campaign.product} — Campaign Preview`;
-    document.getElementById('campaignTitle').textContent = `🎯 ${campaign.product}`;
+
+    document.title = `${campaign.product} - Campaign Preview`;
+    document.getElementById('campaignTitle').textContent = campaign.product;
     document.getElementById('scoreBadge').textContent = `${campaign.score}/100`;
     document.getElementById('scoreBadge').className = `score-badge ${campaign.score >= 80 ? 'score-high' : 'score-mid'}`;
-    document.getElementById('statusBadge').textContent = campaign.status === 'approved' ? '✅ APPROVED' : '⏳ PENDING';
-    document.getElementById('statusBadge').className = campaign.status === 'approved' ? 'approved' : 'pending';
+    const isApproved = campaign.status === 'approved' || campaign.status === 'published';
+    document.getElementById('statusBadge').textContent = isApproved ? String(campaign.status).toUpperCase() : 'PENDING';
+    document.getElementById('statusBadge').className = isApproved ? 'approved' : 'pending';
     document.getElementById('metaInfo').innerHTML = `<b>Target:</b> ${campaign.target||'N/A'} | <b>Channels:</b> ${(campaign.channels||[]).join(', ')}`;
     document.getElementById('footerTime').textContent = new Date().toLocaleString();
-    
+
     // Load each channel's content
     const channels = campaign.channels || ['email','linkedin','x','facebook','telegram','discord'];
     const exts = { email:'html', linkedin:'txt', x:'txt', facebook:'txt', telegram:'md', discord:'md' };
-    const labels = { email:'📧 Email', linkedin:'💼 LinkedIn', x:'🐦 X/Twitter', facebook:'📘 Facebook', telegram:'📱 Telegram', discord:'💬 Discord' };
-    
+    const labels = { email:'Email', linkedin:'LinkedIn', x:'X/Twitter', facebook:'Facebook', telegram:'Telegram', discord:'Discord' };
+
     let html = '';
     for (const ch of channels) {
       const ext = exts[ch] || 'txt';
-      try {
-        const r = await fetch(`/runtime/campaigns/${id}/${ch}.${ext}`);
-        const copy = r.ok ? await r.text() : 'Content not available';
-        html += `<div class="channel-card">
-          <h3>${labels[ch]||ch} <span class="ch-info">${ext} · ${copy.length} chars</span></h3>
-          <div class="copy-box">${copy.substring(0, 2000)}</div>
-        </div>`;
-      } catch {
-        html += `<div class="channel-card"><h3>${labels[ch]||ch}</h3><div class="copy-box">Loading...</div></div>`;
-      }
+      html += `<div class="channel-card">
+        <h3><span class="ch-name"></span> <span class="ch-info"></span></h3>
+        <div class="copy-box">Loading...</div>
+      </div>`;
     }
     document.getElementById('channels').innerHTML = html;
-    
+
+    // Populate cards using textContent so campaign copy can never inject HTML.
+    const cards = document.querySelectorAll('.channel-card');
+    let ci = 0;
+    for (const ch of channels) {
+      const ext = exts[ch] || 'txt';
+      const card = cards[ci];
+      ci += 1;
+      let copy = 'Content not available';
+      try {
+        const r = await fetch(`/runtime/campaigns/${id}/${ch}.${ext}`);
+        if (r.ok) copy = await r.text();
+      } catch { /* keep fallback */ }
+      if (!card) continue;
+      card.querySelector('.ch-name').textContent = labels[ch] || ch;
+      card.querySelector('.ch-info').textContent = `${ext} - ${copy.length} chars`;
+      card.querySelector('.copy-box').textContent = copy.substring(0, 2000);
+    }
+
   } catch (e) {
-    document.body.innerHTML = `<h1>❌ Error loading campaign</h1><p>${e.message}</p><p>Campaign ID: ${id}</p>`;
-  }
-}
-
-async function approve() {
-  setActionLoading(true);
-  setActionStatus('Aprobando campaña...');
-  try {
-    const res = await fetch('/runtime/campaigns/approve', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({id,action:'approve'})
-    });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error(data.error || 'No se pudo aprobar.');
-
-    document.getElementById('statusBadge').textContent = '✅ APPROVED';
-    document.getElementById('statusBadge').className = 'approved';
-    setActionStatus('Campaña aprobada y publicada para ejecución.', 'ok');
-    if (window.opener) window.opener.location.reload();
-  } catch (err) {
-    setActionStatus(`Error al aprobar: ${err.message}`, 'err');
-  } finally {
-    setActionLoading(false);
-  }
-}
-
-async function reject() {
-  if (!confirm('Reject this campaign?')) return;
-  setActionLoading(true);
-  setActionStatus('Rechazando campaña...');
-  try {
-    const res = await fetch('/runtime/campaigns/reject', {
-      method:'POST',
-      headers:{'Content-Type':'application/json'},
-      body:JSON.stringify({id,action:'reject'})
-    });
-    const data = await res.json().catch(() => ({}));
-    if (!res.ok) throw new Error(data.error || 'No se pudo rechazar.');
-
-    document.getElementById('statusBadge').textContent = '❌ REJECTED';
-    document.getElementById('statusBadge').className = 'pending';
-    setActionStatus('Campaña rechazada.', 'ok');
-    if (window.opener) window.opener.location.reload();
-  } catch (err) {
-    setActionStatus(`Error al rechazar: ${err.message}`, 'err');
-  } finally {
-    setActionLoading(false);
+    document.body.textContent = '';
+    const h = document.createElement('h1');
+    h.textContent = 'Error loading campaign';
+    const p = document.createElement('p');
+    p.textContent = `${e.message} (id: ${id})`;
+    document.body.append(h, p);
   }
 }
 
