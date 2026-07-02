@@ -94,9 +94,36 @@ async function verifyTelegram() {
   );
   const chatBody = await chatResp.text();
   if (!chatResp.ok) {
+    // The chat_id is wrong or the bot is not in it. Read getUpdates (read-only)
+    // and surface the chat ids the bot can actually see, so the right value is
+    // obvious without guessing.
+    let discovered = '';
+    try {
+      const upResp = await fetch(`https://api.telegram.org/bot${token}/getUpdates`);
+      if (upResp.ok) {
+        const updates = JSON.parse(await upResp.text());
+        const seen = new Map();
+        for (const update of updates.result || []) {
+          const chat =
+            update.message?.chat ||
+            update.channel_post?.chat ||
+            update.my_chat_member?.chat;
+          if (chat && !seen.has(chat.id)) {
+            seen.set(chat.id, `${chat.id} (${chat.type}${chat.title ? `: ${chat.title}` : chat.username ? `: @${chat.username}` : ''})`);
+          }
+        }
+        if (seen.size > 0) {
+          discovered = ` Chats the bot currently sees -> ${[...seen.values()].join(' | ')}. Use one of these as TELEGRAM_CHAT_ID.`;
+        } else {
+          discovered = ' getUpdates returned no chats — add @' + me.result?.username + ' to the target chat and send one message there, then re-run.';
+        }
+      }
+    } catch {
+      /* discovery is best-effort */
+    }
     return {
       ok: false,
-      detail: `Bot @${me.result?.username} is valid, but chat "${chatId}" is unreachable (getChat ${chatResp.status}): ${chatBody}`
+      detail: `Bot @${me.result?.username} is valid, but chat "${chatId}" is unreachable (getChat ${chatResp.status}): ${chatBody}.${discovered}`
     };
   }
   const chat = JSON.parse(chatBody);
