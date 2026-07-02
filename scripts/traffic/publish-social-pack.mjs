@@ -464,8 +464,13 @@ async function main() {
   }
 
   process.stdout.write(`\n${succeeded.length} succeeded, ${failed.length} failed\n`);
-  // Do not exit with error code - let the autopilot continue with channels that work
-  // process.exit(1);
+
+  // In LIVE mode, a run that posted to zero channels is a real failure — surface
+  // it red instead of faking success. Dry-run and partial success stay green so
+  // the autopilot can keep going with the channels that do work.
+  if (!options.dryRun && results.length > 0 && succeeded.length === 0) {
+    process.exitCode = 1;
+  }
 }
 
 main().catch((error) => {
