@@ -71,14 +71,30 @@ async function main() {
     return;
   }
 
+  // --raw prints ONLY the Page token (no labels), so it can be piped straight
+  // into `gh secret set` without ever being displayed:
+  //   node ... --raw --pageId <id> | gh secret set FACEBOOK_PAGE_ACCESS_TOKEN --env production-social
+  if (process.argv.includes('--raw')) {
+    const wantedId = arg('pageId');
+    const chosen = wantedId ? pages.find((page) => page.id === wantedId) : pages[0];
+    if (!chosen) {
+      process.stderr.write(`No page matched --pageId ${wantedId}.\n`);
+      process.exitCode = 1;
+      return;
+    }
+    process.stdout.write(chosen.access_token);
+    return;
+  }
+
   process.stdout.write('\nPages you manage (use the matching values in secrets):\n');
   process.stdout.write('-----------------------------------------------------\n');
   for (const page of pages) {
     process.stdout.write(`\nPage: ${page.name}\n`);
     process.stdout.write(`  FACEBOOK_PAGE_ID           = ${page.id}\n`);
-    process.stdout.write(`  FACEBOOK_PAGE_ACCESS_TOKEN = ${page.access_token}\n`);
+    process.stdout.write(`  FACEBOOK_PAGE_ACCESS_TOKEN = <hidden — re-run with --raw --pageId ${page.id} to pipe it into gh secret set>\n`);
   }
-  process.stdout.write('\nThe Page token above is permanent. Set it as the FACEBOOK_PAGE_ACCESS_TOKEN secret.\n');
+  process.stdout.write('\nThe Page token is permanent. Pipe it into the secret without printing:\n');
+  process.stdout.write('  node scripts/traffic/fb-page-token.mjs --appId ID --appSecret SECRET --userToken TOKEN --raw --pageId <PAGE_ID> | gh secret set FACEBOOK_PAGE_ACCESS_TOKEN --env production-social\n');
 }
 
 main().catch((error) => {
