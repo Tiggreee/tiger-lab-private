@@ -112,7 +112,7 @@ function autoFix(improvements) {
     if (integrationGap) {
       const intDir = resolve('ops', 'docs', imp.product.toLowerCase().replace(/[^a-z0-9]+/g, '-'), 'integrations');
       mkdirSync(intDir, { recursive: true });
-      writeFileSync(resolve(intDir, 'webhook-guide.md'), `# Webhook Integration — ${imp.product}\n\n## Setup\n\`\`\`bash\ncurl -X POST https://tiger-lab-private-production.up.railway.app/webhooks/${imp.product.toLowerCase().replace(/[^a-z0-9]+/g, '-')} -H "Content-Type: application/json" -d '{"event":"test"}'\n\`\`\`\n\n## Events\n- order.created\n- payment.succeeded\n- subscription.updated\n`, 'utf8');
+      writeFileSync(resolve(intDir, 'webhook-guide.md'), `# Webhook Integration — ${imp.product}\n\n## Setup\n\`\`\`bash\ncurl -X POST https://tiger-backend-production.up.railway.app/webhooks/${imp.product.toLowerCase().replace(/[^a-z0-9]+/g, '-')} -H "Content-Type: application/json" -d '{"event":"test"}'\n\`\`\`\n\n## Events\n- order.created\n- payment.succeeded\n- subscription.updated\n`, 'utf8');
       fixed++;
     }
   }

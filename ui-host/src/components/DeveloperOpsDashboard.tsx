@@ -541,7 +541,7 @@ export default function DeveloperOpsDashboard() {
       </section>
 
       <div style={{ marginBottom: '24px', textAlign: 'center' }}>
-        <a href="https://tiger-lab-private-production.up.railway.app/command-center/project-map-3d.html" target="_blank" className="devops-root-link" style={{ padding: '12px 24px', borderRadius: '12px', fontWeight: 'bold', textDecoration: 'none', background: 'var(--accent)', color: 'white' }}>
+        <a href="https://tiger-backend-production.up.railway.app/command-center/project-map-3d.html" target="_blank" className="devops-root-link" style={{ padding: '12px 24px', borderRadius: '12px', fontWeight: 'bold', textDecoration: 'none', background: 'var(--accent)', color: 'white' }}>
           🚀 Open 3D Infrastructure Map
         </a>
       </div>

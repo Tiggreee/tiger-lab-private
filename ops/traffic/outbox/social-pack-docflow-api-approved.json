@@ -5,14 +5,14 @@
   "product": "Docflow API",
   "campaignId": "CAMP-MAT-1781681031177",
   "payments": {
-    "stripe": "https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter&provider=stripe",
-    "paypal": "https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter&provider=paypal"
+    "stripe": "https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter&provider=stripe",
+    "paypal": "https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter&provider=paypal"
   },
   "funnel": {
-    "trafficDestination": "https://tiger-lab-private-production.up.railway.app/checkout?product=docflow-api",
+    "trafficDestination": "https://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
     "closeChannel": "landing",
-    "closeDestination": "https://tiger-lab-private-production.up.railway.app/checkout?product=docflow-api",
-    "closeLink": "https://tiger-lab-private-production.up.railway.app/checkout?product=docflow-api"
+    "closeDestination": "https://tiger-backend-production.up.railway.app/checkout?product=docflow-api",
+    "closeLink": "https://tiger-backend-production.up.railway.app/checkout?product=docflow-api"
   },
   "channels": {
     "email": {

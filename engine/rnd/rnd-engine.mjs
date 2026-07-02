@@ -7,6 +7,7 @@
 
 import { writeFileSync, mkdirSync, existsSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { complete, parseJsonLoose, isLlmEnabled, llmStatus } from '../llm/llm-port.mjs';
 
 const PIPELINE_PATH = resolve('ops/runtime/rnd-pipeline.json');
 const RND_DIR = resolve('ops/runtime/rnd');
@@ -64,15 +65,15 @@ function scoreIdea(idea) {
   };
 }
 
-function runRNDCycle() {
+function runRNDCycle(ideas = DISCOVERED_IDEAS) {
   mkdirSync(RND_DIR, { recursive: true });
   
   console.log('=== PRODUCT R&D ENGINE ===');
   console.log(`EU Sources: ${EU_SOURCES.length}`);
   console.log(`Regulations tracked: ${EU_REGULATIONS.length}`);
-  console.log(`Ideas discovered: ${DISCOVERED_IDEAS.length}\n`);
+  console.log(`Ideas discovered: ${ideas.length}\n`);
   
-  const scored = DISCOVERED_IDEAS.map(scoreIdea).sort((a,b) => b.totalScore - a.totalScore);
+  const scored = ideas.map(scoreIdea).sort((a,b) => b.totalScore - a.totalScore);
   
   const invest = scored.filter(i => i.decision === 'INVEST');
   const zombie = scored.filter(i => i.decision === 'ZOMBIE');
@@ -100,7 +101,7 @@ function runRNDCycle() {
   // Generate pipeline
   const pipeline = {
     generatedAt: new Date().toISOString(),
-    totalScanned: DISCOVERED_IDEAS.length,
+    totalScanned: ideas.length,
     decisions: { invest: invest.length, zombie: zombie.length, killed: killed.length },
     investIdeas: invest.map(i => ({
       id: `RD-${Date.now()}-${Math.random().toString(36).substring(2,6)}`,
@@ -134,24 +135,65 @@ function runRNDCycle() {
   return pipeline;
 }
 
-function main() {
+const VALID_CATS = ['devtools', 'fintech', 'ailegal', 'climatetech', 'identity', 'funding', 'community'];
+const VALID_EU = ['critical', 'mandatory', 'high', 'medium', 'low'];
+
+// Optional LLM-backed idea generation. Returns the deterministic seed when the
+// LLM is disabled or the response is unusable, so discovery never breaks.
+async function discoverIdeas() {
+  if (!isLlmEnabled()) return DISCOVERED_IDEAS;
+
+  const system = 'You are a B2B SaaS market analyst for the EU. Respond with strict JSON only.';
+  const prompt = [
+    'Generate 10 concrete EU B2B SaaS product ideas driven by regulation and market gaps.',
+    'Return a JSON array. Each item: {"name","cat","eu","desc","competitors","signals"}.',
+    `"cat" must be one of: ${VALID_CATS.join(', ')}.`,
+    `"eu" must be one of: ${VALID_EU.join(', ')}.`,
+    '"competitors" is an array of 2-4 real company names. "signals" is an array of short tags.',
+    'No prose, no code fences, JSON array only.'
+  ].join('\n');
+
+  const raw = await complete(prompt, { system, maxTokens: 1500, temperature: 0.8 });
+  const parsed = parseJsonLoose(raw, null);
+  if (!Array.isArray(parsed) || parsed.length === 0) return DISCOVERED_IDEAS;
+
+  const cleaned = parsed
+    .filter((i) => i && typeof i.name === 'string')
+    .map((i) => ({
+      name: i.name,
+      cat: VALID_CATS.includes(i.cat) ? i.cat : 'devtools',
+      eu: VALID_EU.includes(i.eu) ? i.eu : 'medium',
+      desc: typeof i.desc === 'string' ? i.desc : '',
+      competitors: Array.isArray(i.competitors) ? i.competitors.slice(0, 4) : [],
+      signals: Array.isArray(i.signals) ? i.signals.slice(0, 4) : []
+    }));
+
+  return cleaned.length > 0 ? cleaned : DISCOVERED_IDEAS;
+}
+
+async function main() {
   const args = process.argv.slice(2);
-  
-  if (args.includes('--scan')) {
-    console.log('Scanning EU sources...');
-    // Simulate scan
-    EU_SOURCES.forEach(s => console.log(`  📡 ${s.name}: ${s.categories.length} categories`));
-    console.log(`\n✅ Discovered ${DISCOVERED_IDEAS.length} ideas\n`);
-    runRNDCycle();
-  } else if (args.includes('--pipeline')) {
+
+  if (args.includes('--pipeline')) {
     if (existsSync(PIPELINE_PATH)) {
       console.log(readFileSync(PIPELINE_PATH, 'utf8'));
     } else {
       console.log('No pipeline yet. Run --scan first.');
     }
-  } else {
-    runRNDCycle();
+    return;
   }
+
+  const src = llmStatus();
+  console.log(`Idea source: ${src.enabled ? `LLM (${src.provider}/${src.model})` : `deterministic seed (${src.reason})`}`);
+
+  if (args.includes('--scan')) {
+    console.log('Scanning EU sources...');
+    EU_SOURCES.forEach(s => console.log(`  📡 ${s.name}: ${s.categories.length} categories`));
+  }
+
+  const ideas = await discoverIdeas();
+  console.log(`\n✅ Discovered ${ideas.length} ideas\n`);
+  runRNDCycle(ideas);
 }
 
 main();

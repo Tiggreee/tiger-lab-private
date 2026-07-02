@@ -188,7 +188,7 @@ function handleMCP(req, res) {
         
         // Build social pack
         const product = entry.product || 'Docflow API';
-        const funnelUrl = `https://tiger-lab-private-production.up.railway.app/checkout?product=${encodeURIComponent(product.toLowerCase().replace(/\s+/g,'-'))}`;
+        const funnelUrl = `https://tiger-backend-production.up.railway.app/checkout?product=${encodeURIComponent(product.toLowerCase().replace(/\s+/g,'-'))}`;
         const outboxDir = path.join(repoRoot, 'ops/traffic/outbox');
         fs.mkdirSync(outboxDir, { recursive: true });
         
@@ -197,8 +197,8 @@ function handleMCP(req, res) {
           campaign: packName, generatedAt: new Date().toISOString(), approved: true,
           product, campaignId,
           payments: {
-            stripe: `https://tiger-lab-private-production.up.railway.app/api/checkout?product=${encodeURIComponent(product.toLowerCase().replace(/\s+/g,'-'))}&plan=starter&provider=stripe`,
-            paypal: `https://tiger-lab-private-production.up.railway.app/api/checkout?product=${encodeURIComponent(product.toLowerCase().replace(/\s+/g,'-'))}&plan=starter&provider=paypal`
+            stripe: `https://tiger-backend-production.up.railway.app/api/checkout?product=${encodeURIComponent(product.toLowerCase().replace(/\s+/g,'-'))}&plan=starter&provider=stripe`,
+            paypal: `https://tiger-backend-production.up.railway.app/api/checkout?product=${encodeURIComponent(product.toLowerCase().replace(/\s+/g,'-'))}&plan=starter&provider=paypal`
           },
           funnel: { trafficDestination: funnelUrl, closeChannel: 'landing', closeDestination: funnelUrl, closeLink: funnelUrl },
           channels: {}

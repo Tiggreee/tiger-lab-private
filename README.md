@@ -18,7 +18,7 @@ This is not a proof-of-concept. This is an operational system ready to generate 
 | **Product Catalog** | 🟢 LIVE | Docflow API + Script Premium Kit | 2 revenue paths |
 | **Checkout** | 🟢 LIVE | Stripe + PayPal dual gateway | MX $349 / US $19 |
 | **Dashboard** | 🟢 LIVE | Real-time agent + lead + product data | localhost:4310 |
-| **Production Deploy** | 🟢 LIVE | Railway at tiger-lab-private-production.up.railway.app | Public-facing |
+| **Production Deploy** | 🟢 LIVE | Railway at tiger-backend-production.up.railway.app | Public-facing |
 | **Agents Active** | 🟢 24/24 | 7 direct monetization + 12 indirect + 5 governance | Online |
 | **Automation** | 🟢 ON | 6 AM daily pipeline + event persistence | Leads scored, campaigns published |
 | **Gate Status** | 🟢 GO | 18/18 checks PASS. No contradictions. | Release-ready. |

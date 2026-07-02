@@ -1,0 +1,47 @@
+{
+  "facturautentico-cloud": {
+    "category": "CFDI / Facturación Electrónica MX",
+    "comparableProducts": [
+      { "name": "Facturapi", "url": "https://facturapi.io", "strengths": ["API-first CFDI", "Multi-PAC", "Webhooks"], "price": "Desde $299/mes", "rating": 92 },
+      { "name": "Facturación.com", "url": "https://facturacion.com", "strengths": ["SAT certified", "30K+ clients", "PAC Finkok native"], "price": "Desde $399/mes", "rating": 90 },
+      { "name": "Contpaq Facturación", "url": "https://www.contpaq.com", "strengths": ["Contabilidad integrada", "On-premise + cloud", "Nómina"], "price": "Desde $199/mes", "rating": 88 },
+      { "name": "Aspel FACTU", "url": "https://www.aspel.com.mx", "strengths": ["Mercado MX establecido", "Multi-empresa", "Inventarios"], "price": "Desde $249/mes", "rating": 86 }
+    ]
+  },
+  "docflow-api": {
+    "category": "API de Flujos Documentales / Workflow Automation",
+    "comparableProducts": [
+      { "name": "Documenso", "url": "https://documenso.com", "strengths": ["Open source", "API-first", "Self-hostable"], "price": "Gratis (self-host) / $15/mes cloud", "rating": 91 },
+      { "name": "Docuseal", "url": "https://www.docuseal.co", "strengths": ["Open source", "Plantillas", "Firma electrónica"], "price": "Gratis (self-host) / $20/mes cloud", "rating": 89 },
+      { "name": "Zapier Interfaces", "url": "https://zapier.com", "strengths": ["5000+ integraciones", "No-code", "IA"], "price": "Desde $30/mes", "rating": 95 },
+      { "name": "Nintex", "url": "https://www.nintex.com", "strengths": ["Enterprise", "Workflow automation", "Doc generation"], "price": "Desde $100/mes", "rating": 88 }
+    ]
+  },
+  "sentrylog-lite": {
+    "category": "Logging / Observabilidad Ligero",
+    "comparableProducts": [
+      { "name": "Better Stack", "url": "https://betterstack.com", "strengths": ["Logs + uptime", "Equipo pequeño friendly", "Gratis 1GB/mes"], "price": "Gratis / $29/mes", "rating": 90 },
+      { "name": "SigNoz", "url": "https://signoz.io", "strengths": ["Open source", "OpenTelemetry", "Traces + metrics"], "price": "Gratis (self-host)", "rating": 93 },
+      { "name": "Axiom", "url": "https://axiom.co", "strengths": ["Sin índices", "Rápido", "5TB gratis"], "price": "Gratis / $49/mes", "rating": 88 },
+      { "name": "Logtail", "url": "https://logtail.com", "strengths": ["ClickHouse-based", "SQL queries", "Equipos pequeños"], "price": "Gratis / $19/mes", "rating": 86 }
+    ]
+  },
+  "script-premium-kit": {
+    "category": "Automatización / Scripts Premium para PyMEs",
+    "comparableProducts": [
+      { "name": "Make (Integromat)", "url": "https://www.make.com", "strengths": ["Visual builder", "2000+ apps", "Escenarios complejos"], "price": "Desde $9/mes", "rating": 94 },
+      { "name": "n8n", "url": "https://n8n.io", "strengths": ["Open source", "Self-host", "IA nodes"], "price": "Gratis (self-host)", "rating": 93 },
+      { "name": "Actiondesk", "url": "https://www.actiondesk.io", "strengths": ["Spreadsheet-native", "Operaciones", "No-code"], "price": "Desde $39/mes", "rating": 85 },
+      { "name": "Pipedream", "url": "https://pipedream.com", "strengths": ["Developer-first", "1000+ integraciones", "Gratis 10k eventos/mes"], "price": "Gratis / $19/mes", "rating": 91 }
+    ]
+  },
+  "facturautentico": {
+    "category": "Motor CFDI / PAC Management",
+    "comparableProducts": [
+      { "name": "Facturapi", "url": "https://facturapi.io", "strengths": ["API-first", "Multi-PAC", "Complementos"], "price": "Desde $299/mes", "rating": 92 },
+      { "name": "División Facturación", "url": "https://divisionfacturacion.com", "strengths": ["CFDI 4.0", "PAC agnóstico", "Batch"], "price": "Desde $199/mes", "rating": 88 },
+      { "name": "Factura Rapid", "url": "https://www.facturarapid.com", "strengths": ["Simplicidad", "CFDI + nómina", "Soporte MX"], "price": "Desde $149/mes", "rating": 85 },
+      { "name": "SumUp Facturas", "url": "https://sumup.com", "strengths": ["Pagos + facturas", "App móvil", "Sin mensualidad"], "price": "Gratis + comisión", "rating": 82 }
+    ]
+  }
+}

@@ -116,6 +116,10 @@
     "db:init": "node scripts/init-database.mjs",
     "prod:engine": "node scripts/product-development-engine.mjs",
     "prod:engine:status": "node scripts/product-development-engine.mjs --summary-only",
+    "prod:factory": "node engine/runtime/product-factory.mjs",
+    "rnd:discover": "node engine/rnd/rnd-engine.mjs --scan",
+    "rnd:materialize": "node engine/rnd/idea-materializer.mjs",
+    "llm:status": "node engine/llm/llm-port.mjs",
     "github:resource:audit": "node scripts/github-resource-audit.mjs"
   },
   "overrides": {

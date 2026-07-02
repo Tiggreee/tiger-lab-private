@@ -41,7 +41,7 @@
 5. social-pack-launch-4-products.json
    ✓ Score: 94 | Lift: 20%
    ✓ Todos los canales presentes
-   ✓ URL funcional (Railway): tiger-lab-private-production.up.railway.app
+   ✓ URL funcional (Railway): tiger-backend-production.up.railway.app
    
 6. social-pack-facturautentico-cloud-pilot.json
    ⚠️  FALTA: Revisar si tiene copy o solo metadata

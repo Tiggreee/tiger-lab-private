@@ -41,8 +41,8 @@ Notas:
 ## Publicacion en GitHub Pages
 
 - Workflow: .github/workflows/ui-host-pages.yml
-- URL objetivo: https://tiger-lab-private-production.up.railway.app
-- Dashboard directo: https://tiger-lab-private-production.up.railway.app
+- URL objetivo: https://tiger-backend-production.up.railway.app
+- Dashboard directo: https://tiger-backend-production.up.railway.app
 
 Notas tecnicas:
 

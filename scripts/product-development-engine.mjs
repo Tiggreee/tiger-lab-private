@@ -33,7 +33,7 @@ const DIMENSIONS = [
   { id: 'integration_depth', label: 'Integration Depth', weight: 0.05 },
 ];
 
-const BENCHMARKS = {
+const BENCHMARKS_FALLBACK = {
   "facturautentico-cloud": {
     "category": "CFDI / Facturación Electrónica MX",
     "comparableProducts": [
@@ -80,6 +80,24 @@ const BENCHMARKS = {
     ]
   }
 };
+
+// Single source of truth: ops/catalog/benchmarks.json. Falls back to the inline
+// dataset above if the file is missing or unreadable, so scoring never breaks.
+function loadBenchmarks() {
+  try {
+    if (fs.existsSync(BENCHMARKS_PATH)) {
+      const parsed = JSON.parse(fs.readFileSync(BENCHMARKS_PATH, 'utf8'));
+      if (parsed && typeof parsed === 'object' && Object.keys(parsed).length > 0) {
+        return parsed;
+      }
+    }
+  } catch {
+    // fall through to inline fallback
+  }
+  return BENCHMARKS_FALLBACK;
+}
+
+const BENCHMARKS = loadBenchmarks();
 
 const PRODUCT_PLAYBOOKS = {
   'docflow-api': {

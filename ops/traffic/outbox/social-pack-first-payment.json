@@ -3,29 +3,29 @@
   "generatedAt": "2026-06-14T19:18:14.454Z",
   "product": "Docflow API",
   "funnel": {
-    "trafficDestination": "https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter",
+    "trafficDestination": "https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter",
     "closeChannel": "landing",
-    "closeDestination": "https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter",
-    "closeLink": "https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter"
+    "closeDestination": "https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter",
+    "closeLink": "https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter"
   },
   "channels": {
     "email": {
-      "copyPaste": "Hola,\n\nImagina recuperar 10 horas por semana que hoy pierdes en papeleo.\n\nDocflow API automatiza TODO tu flujo documental:\n✅ Flujos de trabajo automatizados\n✅ CFDI 4.0 nativo (facturación electrónica MX)\n✅ Integración con tu stack en minutos\n\nPrimer mes a precio de lanzamiento: $69 USD.\n\n👉 Pruébalo ahora: https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter\n\n— Tiger Lab"
+      "copyPaste": "Hola,\n\nImagina recuperar 10 horas por semana que hoy pierdes en papeleo.\n\nDocflow API automatiza TODO tu flujo documental:\n✅ Flujos de trabajo automatizados\n✅ CFDI 4.0 nativo (facturación electrónica MX)\n✅ Integración con tu stack en minutos\n\nPrimer mes a precio de lanzamiento: $69 USD.\n\n👉 Pruébalo ahora: https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter\n\n— Tiger Lab"
     },
     "linkedin": {
-      "copyPaste": "🔥 Recupera 10h/semana en papeleo.\n\nDocflow API automatiza tu flujo documental completo:\n✅ Workflows automatizados\n✅ CFDI 4.0 nativo MX\n✅ API-first. Sin fricción.\n\n💡 Primer mes: $69 USD\n👉 https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter\n\n#Automatización #SaaS #PyMEs #Productividad"
+      "copyPaste": "🔥 Recupera 10h/semana en papeleo.\n\nDocflow API automatiza tu flujo documental completo:\n✅ Workflows automatizados\n✅ CFDI 4.0 nativo MX\n✅ API-first. Sin fricción.\n\n💡 Primer mes: $69 USD\n👉 https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter\n\n#Automatización #SaaS #PyMEs #Productividad"
     },
     "x": {
-      "copyPaste": "🔥 Recupera 10h/semana. Docflow API automatiza tu flujo documental. CFDI 4.0 nativo. $69/mes. https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter"
+      "copyPaste": "🔥 Recupera 10h/semana. Docflow API automatiza tu flujo documental. CFDI 4.0 nativo. $69/mes. https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter"
     },
     "facebook": {
-      "copyPaste": "🔥 Deja de perder 10 horas por semana en papeleo.\n\nDocflow API automatiza todo tu flujo documental:\n✅ Workflows inteligentes\n✅ Facturación electrónica CFDI 4.0 nativa\n✅ Integración en minutos, no meses\n\n💡 Primer mes a solo $69 USD.\n\n👉 https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter\n\nTu tiempo vale más. Automatízalo."
+      "copyPaste": "🔥 Deja de perder 10 horas por semana en papeleo.\n\nDocflow API automatiza todo tu flujo documental:\n✅ Workflows inteligentes\n✅ Facturación electrónica CFDI 4.0 nativa\n✅ Integración en minutos, no meses\n\n💡 Primer mes a solo $69 USD.\n\n👉 https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter\n\nTu tiempo vale más. Automatízalo."
     },
     "telegram": {
-      "copyPaste": "*Docflow API* 🔥\n\nRecupera 10h/semana en papeleo.\n\n✅ Workflows automatizados\n✅ CFDI 4.0 nativo\n✅ API-first\n\n💡 $69/mes — [Pruébalo aquí](https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter)"
+      "copyPaste": "*Docflow API* 🔥\n\nRecupera 10h/semana en papeleo.\n\n✅ Workflows automatizados\n✅ CFDI 4.0 nativo\n✅ API-first\n\n💡 $69/mes — [Pruébalo aquí](https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter)"
     },
     "discord": {
-      "copyPaste": "**Docflow API** 🔥\n\nRecupera 10h/semana automatizando tu flujo documental.\n\n✅ Workflows | ✅ CFDI 4.0 | ✅ API-first\n\n💡 $69/mes → https://tiger-lab-private-production.up.railway.app/api/checkout?product=docflow-api&plan=starter"
+      "copyPaste": "**Docflow API** 🔥\n\nRecupera 10h/semana automatizando tu flujo documental.\n\n✅ Workflows | ✅ CFDI 4.0 | ✅ API-first\n\n💡 $69/mes → https://tiger-backend-production.up.railway.app/api/checkout?product=docflow-api&plan=starter"
     }
   }
 }

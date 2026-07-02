@@ -2,10 +2,20 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const [, , repo, type = 'saas'] = process.argv;
+const rawArgs = process.argv.slice(2);
+const dryRun = rawArgs.some((arg) => arg === '--dry-run' || arg === '--dryRun');
+const positional = rawArgs.filter((arg) => !arg.startsWith('-'));
+const repo = positional[0];
+const type = positional[1] || 'saas';
 
 if (!repo) {
-  console.error('Uso: generate-product.mjs <repo> [type]');
+  if (dryRun) {
+    // Validate-only invocation without a target repo: no-op success. Used by the
+    // development-engine orchestration to exercise the path without writing.
+    process.stdout.write(`${JSON.stringify({ ok: true, command: 'generate-product', dryRun: true, operation: 'noop' })}\n`);
+    process.exit(0);
+  }
+  console.error('Uso: generate-product.mjs <repo> [type] [--dry-run]');
   process.exit(1);
 }
 
@@ -55,6 +65,11 @@ const productId = normalizeProductId(repo);
 const productName = repo.trim();
 const productType = type.trim().toLowerCase();
 
+if (!productId) {
+  console.error(`Nombre de producto inválido: '${repo}'. Debe contener caracteres alfanuméricos.`);
+  process.exit(1);
+}
+
 const catalogPath = path.resolve('ops/catalog/products.json');
 ensureDirectory(path.dirname(catalogPath));
 
@@ -80,10 +95,7 @@ if (existingIndex >= 0) {
   });
 }
 
-fs.writeFileSync(catalogPath, `${JSON.stringify(catalog, null, 2)}\n`, 'utf8');
-
 const releasesDir = path.resolve('ops/releases');
-ensureDirectory(releasesDir);
 const releasePath = path.join(releasesDir, `${productId}.json`);
 const releaseManifest = {
   productId,
@@ -93,18 +105,24 @@ const releaseManifest = {
   generatedAt: new Date().toISOString(),
   version: '0.1.0'
 };
-fs.writeFileSync(releasePath, `${JSON.stringify(releaseManifest, null, 2)}\n`, 'utf8');
+
+if (!dryRun) {
+  fs.writeFileSync(catalogPath, `${JSON.stringify(catalog, null, 2)}\n`, 'utf8');
+  ensureDirectory(releasesDir);
+  fs.writeFileSync(releasePath, `${JSON.stringify(releaseManifest, null, 2)}\n`, 'utf8');
+}
 
 process.stdout.write(
   `${JSON.stringify({
     ok: true,
     command: 'generate-product',
+    dryRun,
     data: {
       productId,
       name: productName,
       type: productType,
       planIds: nextPlans,
-      operation,
+      operation: dryRun ? `${operation}-dry-run` : operation,
       catalogPath,
       releaseManifestPath: releasePath
     }
