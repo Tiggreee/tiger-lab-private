@@ -7,6 +7,35 @@
 > 
 > 24 agents active. 2 products live. 2000 leads ready. Dual pricing MX $349 / US $19. All systems nominal.
 
+## Engine & Agent Health (Live Badges)
+
+These badges reflect real runs. Every workflow below fires automatically on a schedule or on push — no hollow manual-only triggers.
+
+**Scheduled engine & agents (run themselves):**
+
+[![Product Development Engine](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/product-engine-2h-cycle.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/product-engine-2h-cycle.yml)
+[![Failures Monitor](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/failures-monitor-2h-cycle.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/failures-monitor-2h-cycle.yml)
+[![Daily Sales Automation](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/daily-sales-automation.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/daily-sales-automation.yml)
+[![Billing Reconciliation](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/billing-reconciliation-daily.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/billing-reconciliation-daily.yml)
+[![Agent Monitor](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/agent-monitor.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/agent-monitor.yml)
+[![GitHub Policy Monitor](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/github-policy-monitor.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/github-policy-monitor.yml)
+[![Automation Smoke](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/automation-smoke.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/automation-smoke.yml)
+[![Repo Intel Sync](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/repo-intel-sync.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/repo-intel-sync.yml)
+[![Daily Monetization Reminder](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/daily-monetization-reminder.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/daily-monetization-reminder.yml)
+[![Weekly Pipeline Reminder](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/weekly-pipeline-reminder.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/weekly-pipeline-reminder.yml)
+
+**Quality & delivery (run on push / PR):**
+
+[![CI](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/ci.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/ci.yml)
+[![E2E](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/e2e.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/e2e.yml)
+[![Contract Tests](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/contract-tests.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/contract-tests.yml)
+[![Schema Validation](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/schema-validation.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/schema-validation.yml)
+[![Security](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/security.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/security.yml)
+[![Copilot Agents Validation](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/copilot-agents-validation.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/copilot-agents-validation.yml)
+[![Backend Production Readiness](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/backend-production-readiness.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/backend-production-readiness.yml)
+[![Deploy Backend to Railway](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/backend-railway-deploy.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/backend-railway-deploy.yml)
+[![Product Release Pipeline](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/product-release-pipeline.yml/badge.svg)](https://github.com/Tigre-Labs/tiger-lab-private/actions/workflows/product-release-pipeline.yml)
+
 ---
 
 ## The Path to Revenue (Next 72 Hours)
@@ -23,7 +52,7 @@ This is not a proof-of-concept. This is an operational system ready to generate 
 | **Dashboard** | 🟢 LIVE | Real-time agent + lead + product data | localhost:4310 |
 | **Production Deploy** | 🟢 LIVE | Railway at tiger-backend-production.up.railway.app | Public-facing |
 | **Agents Active** | 🟢 24/24 | 7 direct monetization + 12 indirect + 5 governance | Online |
-| **Automation** | 🟢 ON | Scheduled cron: product/failures every 2h, sales 06:00 UTC, billing 07:00 UTC | Leads scored, campaign packs generated + validated |
+| **Automation** | 🟢 ON | Scheduled cron: product/failures every 2h, agent-monitor every 6h, sales 06:00 UTC, billing/policy/smoke/intel daily, weekly board Mondays | Leads scored, packs generated + validated, agents self-scan on a clock |
 | **Gate Status** | 🟢 GO | 18/18 checks PASS. No contradictions. | Release-ready. |
 
 ### Verified Automation Status (Code-Backed)
@@ -43,7 +72,7 @@ This is not a proof-of-concept. This is an operational system ready to generate 
 - ⚠️ Lead intelligence currently generates outreach text and simulates progression; it does not execute real outreach by itself (`engine/leads/lead-intelligence.mjs`).
 - ⚠️ Provisioning uses in-memory ports/default adapters unless external services are configured (`server/bootstrap/dependency-container.ts`, `src/shared/infrastructure/bootstrap/dependency-container.ts`).
 - ⚠️ No outbound phone-call bot is implemented.
-- ⚠️ Live social posting is a manual `Social Publish` dispatch (dry-run by default); the scheduled pipelines generate and validate branded packs but never auto-post to networks. This is a deliberate safety gate.
+- ⚠️ Live social posting runs through the `Social Publish` workflow with a `dry_run` toggle that defaults to dry-run for safety. The publisher is fully wired: validated branded packs post to LinkedIn/X/Facebook/Telegram/Discord when dispatched with `dry_run=false` and the channel secrets are present. This is a controlled gate, not a permanent block — the scheduled pipelines generate and validate the packs, and live posting is one dispatch (or a future scheduled `dry_run=false` run) away.
 
 **Policy:** no timeline or revenue promises are stated here unless validated by runtime evidence.
 

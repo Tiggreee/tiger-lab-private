@@ -1,6 +1,8 @@
 name: github-policy-monitor
 
 on:
+  schedule:
+    - cron: '30 5 * * *'
   workflow_dispatch:
 
 jobs:

@@ -1,6 +1,8 @@
 name: Daily Monetization Reminder
 
 on:
+  schedule:
+    - cron: '0 13 * * *'
   workflow_dispatch:
 
 permissions:

@@ -1,6 +1,8 @@
 name: repo-intel-sync
 
 on:
+  schedule:
+    - cron: '15 4 * * *'
   workflow_dispatch:
 
 jobs:
