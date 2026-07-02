@@ -267,15 +267,23 @@ function main() {
   report.steps.dryPublish = dryResult.ok ? 'passed' : 'failed';
   // Note: dry run may fail for some channels but that's okay - we continue
 
+  let liveOk = true;
   if (options.live) {
     const liveArgs = ['--packPath', packPath, '--channels', readyChannels.join(',')];
     const liveResult = runNodeScript(publishScript, liveArgs);
     report.steps.livePublish = liveResult.ok ? 'passed' : 'failed';
-    // Note: live publish may fail for some channels but we continue with what succeeded
+    liveOk = liveResult.ok;
   }
 
   const reportPath = writeReport(options, report);
   process.stdout.write(`\nAutopilot completed. Report: ${reportPath}\n`);
+
+  // Honest signal: if live posting was requested but reached zero channels,
+  // fail so the engine's scheduled run turns red instead of faking success.
+  if (options.live && !liveOk) {
+    process.exitCode = 1;
+    process.stdout.write('Autopilot live publish reached zero channels.\n');
+  }
 }
 
 try {

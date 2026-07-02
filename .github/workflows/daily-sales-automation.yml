@@ -107,19 +107,6 @@ jobs:
       - name: Resource audit snapshot
         run: node scripts/github-resource-audit.mjs --repo "${{ github.repository }}"
 
-      # 8. Run autopilot — CHECK ONLY. No publish. Waits for dashboard APPROVE.
-      - name: Run autopilot (check only)
-        run: |
-          LATEST=$(ls -t ops/traffic/outbox/social-pack-*.json 2>/dev/null | head -1)
-          if [ -n "$LATEST" ]; then
-            node scripts/traffic/run-autopilot.mjs \
-              --packPath "$LATEST" \
-              --channels linkedin,x,facebook,telegram,discord \
-              --minChannels 0 || echo "Autopilot check done"
-          else
-            echo "No social pack found."
-          fi
-
       # 9. Production gate before any commit
       - name: Run production gate
         run: npm run prod:gate
@@ -151,3 +138,18 @@ jobs:
           git add ops/traffic/outbox/ ops/traffic/research/ ops/traffic/outbox/**-cards/ ops/sales/outreach/ ops/leads/ ops/landings/ ops/artifacts/ ops/runtime/github-resource-audit.json ops/runtime/github-resource-audit.md ops/runtime/dashboard-prioritization-report.json
           git diff --cached --quiet || git commit -m "daily-sales: full pipeline $(date -u +%Y-%m-%d)"
           git push || echo "Nothing to push or push skipped"
+
+      # 11. Engine posts to the networks — LIVE. Runs last so the collected data is
+      # already committed; a posting failure turns the run red without losing data.
+      - name: Engine live publish to networks
+        run: |
+          LATEST=$(ls -t ops/traffic/outbox/social-pack-*.json 2>/dev/null | head -1)
+          if [ -n "$LATEST" ]; then
+            node scripts/traffic/run-autopilot.mjs \
+              --packPath "$LATEST" \
+              --channels linkedin,x,facebook,telegram,discord \
+              --minChannels 0 \
+              --live
+          else
+            echo "No social pack found — nothing to publish."
+          fi
