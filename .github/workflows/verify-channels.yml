@@ -1,0 +1,46 @@
+name: Verify Channels
+
+# Read-only credential check for the social channels. Runs the same auth each
+# poster uses but hits a read endpoint — it never publishes. Use it to confirm a
+# secret is fixed before the engine's scheduled live run.
+
+on:
+  workflow_dispatch:
+    inputs:
+      channel:
+        description: Channel to verify (telegram, discord, facebook, x, linkedin, or all)
+        required: true
+        default: all
+        type: string
+
+jobs:
+  verify:
+    name: Verify channel credentials
+    runs-on: ubuntu-latest
+    environment: production-social
+    permissions:
+      contents: read
+
+    env:
+      LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+      LINKEDIN_ORG_ID: ${{ secrets.LINKEDIN_ORG_ID }}
+      X_API_KEY: ${{ secrets.X_API_KEY }}
+      X_API_SECRET: ${{ secrets.X_API_SECRET }}
+      X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+      X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+      FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+      FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+      DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Verify channel
+        run: node scripts/traffic/verify-channels.mjs --channel "${{ inputs.channel }}"
