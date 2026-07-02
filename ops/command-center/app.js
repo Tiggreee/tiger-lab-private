@@ -1,367 +1,334 @@
-const $=id=>document.getElementById(id);
-const UNIFIED='/runtime/dashboard-unified.json';
-const ALERTS='/runtime/dashboard-alerts.json';
-const SCORES='/runtime/product-scores.json';
-const DECISIONS='/runtime/engine-decisions.json';
-const CAMPAIGNS_IDX='/runtime/campaigns/index.json';
-const MONITOR='/runtime/agent-monitor.json';
-let lastCampaignActionMsg='';
-let lastCampaignActionAt=0;
+/**
+ * Tiger Command Center — dashboard client.
+ * Read-only operations console. Every panel maps to a real runtime data
+ * source; there are no synthetic metrics, jokes, or external calls. Campaign
+ * approval is intentionally NOT actionable here — publishing is governed by
+ * the CLI approval console (npm run campaigns:pending / campaigns:approve).
+ */
 
-async function fetchJSON(url){try{const r=await fetch(url,{cache:'no-store'});return r.ok?r.json():null}catch{return null}}
+const $ = (id) => document.getElementById(id);
 
-function displayMetric(value){
-  if(value===null||value===undefined) return 'UNKNOWN';
-  if(typeof value==='number' && !Number.isFinite(value)) return 'UNKNOWN';
+const UNIFIED = '/runtime/dashboard-unified.json';
+const ALERTS = '/runtime/dashboard-alerts.json';
+const SCORES = '/runtime/product-scores.json';
+const CAMPAIGNS = '/runtime/campaigns/index.json';
+const MONITOR = '/runtime/agent-monitor.json';
+const MCP_ACTIVITY = '/runtime/mcp-activity.json';
+const TELEMETRY = '/runtime/telemetry';
+const EXEC_MODES = '/runtime/execution-modes.json';
+const MODELS = '/runtime/models';
+
+const MODE_INFO = {
+  AUTO: { desc: 'Full autonomy', cls: '' },
+  PRO: { desc: 'Approval on criticals', cls: 'pro' },
+  DEV: { desc: 'Dry-run / verbose', cls: 'dev' }
+};
+
+function scoreColor(v) {
+  return v >= 80 ? 'var(--go)' : v >= 50 ? 'var(--warn)' : 'var(--nogo)';
+}
+
+function metric(value) {
+  if (value === null || value === undefined) return '—';
+  if (typeof value === 'number' && !Number.isFinite(value)) return '—';
   return String(value);
 }
 
-function renderKPIs(data){
-  const m=data.monetization||{},am=data.agentMonitor?.summary||{};
-  const kpis=[['Leads',displayMetric(m.leadsToday)],['Agents',displayMetric(am.activeAgents)],['Products',displayMetric(data.products?.active)],['Pipe',displayMetric(m.generatedContent)]];
-  $('kpiRow').innerHTML=kpis.map(([l,v])=>`<div class="kpi"><small>${l}</small><b>${v}</b></div>`).join('')
+async function fetchJSON(url) {
+  try {
+    const r = await fetch(url, { cache: 'no-store' });
+    return r.ok ? await r.json() : null;
+  } catch {
+    return null;
+  }
 }
 
-function renderGate(data,alerts){
-  const billingStatus=String(alerts?.billingStatus||data?.billing?.status||'UNKNOWN').toUpperCase();
-  let g=String(alerts?.gate||data?.systemStatus?.gate||'UNKNOWN').toUpperCase();
-  if(billingStatus!=='MATCH'){g=billingStatus==='MISMATCH'?'NO_GO':'UNKNOWN'}
-  const el=$('systemStatusBadge');
-  el.textContent=g;
-  el.className=`gate-badge ${g==='GO'?'gate-go':'gate-nogo'}`;
-}
-
-async function renderProducts(){
-  const s=await fetchJSON(SCORES);
-  let items=[],labels=[],scores=[],colors=[];
-  if(s?.productResults){items=s.productResults.map(r=>({name:r.product?.name||'?',score:r.score||0}))}
-  items.sort((a,b)=>b.score-a.score);items=items.slice(0,5);
-  items.forEach(p=>{labels.push(p.name);scores.push(p.score);colors.push(p.score>=95?'#3fb950':p.score>=75?'#d29922':p.score>=50?'#f0883e':'#f85149')});
-
-  const canvas=document.createElement('canvas');
-  canvas.id='productChart';
-  $('productScores').innerHTML='';
-  $('productScores').appendChild(canvas);
-  
-  if(window._productChart)window._productChart.destroy();
-  window._productChart=new Chart(canvas,{type:'bar',data:{labels,datasets:[{data:scores,backgroundColor:colors,borderRadius:4,borderSkipped:false}]},options:{indexAxis:'y',responsive:!0,maintainAspectRatio:!1,plugins:{legend:{display:!1}},scales:{x:{max:100,grid:{color:'#21262d'},ticks:{color:'#8b949e',font:{size:9}}},y:{grid:{display:!1},ticks:{color:'#c9d1d9',font:{size:10}}}}}});
-}
-
-async function renderLeads(){
-  let companies=null,byInd={},byCity={};
-  try{
-    const csv=await fetch('/runtime/../database/exports/companies.csv');
-    if(csv){const lines=(await csv.text()).trim().split('\n').slice(1);companies=lines.length;lines.forEach(l=>{const c=l.split(',');const ind=c[3]||'?';const city=c[8]||'?';byInd[ind]=(byInd[ind]||0)+1;byCity[city]=(byCity[city]||0)+1})}
-  }catch{}
-  const contacts=null;
-  let h=`<div class="lead-row"><span class="lbl">Companies:</span> <b>${displayMetric(companies)}</b></div>`;
-  h+=`<div class="lead-row"><span class="lbl">Contacts:</span> <b>${displayMetric(contacts)}</b></div>`;
-  h+='<div class="lead-section"><h3>Top Industries</h3>';
-  const indRows=Object.entries(byInd).sort((a,b)=>b[1]-a[1]).slice(0,6);
-  if(indRows.length===0){h+='<div class="lead-stat"><span>UNKNOWN</span><span>UNKNOWN</span></div>'}
-  indRows.forEach(([k,v])=>h+=`<div class="lead-stat"><span>${k}</span><span>${v}</span></div>`);
-  h+='</div><div class="lead-section"><h3>Top Cities</h3>';
-  const cityRows=Object.entries(byCity).sort((a,b)=>b[1]-a[1]).slice(0,6);
-  if(cityRows.length===0){h+='<div class="lead-stat"><span>UNKNOWN</span><span>UNKNOWN</span></div>'}
-  cityRows.forEach(([k,v])=>h+=`<div class="lead-stat"><span>${k}</span><span>${v}</span></div>`);
-  h+='</div>';$('leadsContent').innerHTML=h
-}
-
-async function renderAlerts(){
-  const d=await fetchJSON(ALERTS);
-  if(!d){$('alertsContent').innerHTML='<div class="dim">No alert data</div>';return}
-  $('alertsStatus').innerHTML=d.status==='HEALTHY'?'🟢':d.status==='MONITORING'?'🟡':'🟠';
-  $('alertsTime').textContent=`Last: ${new Date(d.checkedAt).toLocaleTimeString()} | Health: ${d.health}/100`;
-  let html='';
-  if(d.revenueIntelligence)html+=`<div class="alert-item alert-info">${d.revenueIntelligence}</div>`;
-  (d.predictions||[]).slice(0,2).forEach(p=>html+=`<div class="alert-item alert-info">${p}</div>`);
-  (d.recommendations||[]).slice(0,2).forEach(r=>html+=`<div class="alert-item alert-warn">→ ${r.detail}</div>`);
-  (d.alerts||[]).filter(a=>a.level!=='ok').forEach(a=>html+=`<div class="alert-item alert-${a.level}">${a.msg}</div>`);
-  $('alertsContent').innerHTML=html||'<div class="dim">All systems nominal</div>'
-}
-
-async function renderCampaigns(){
-  const list=$('campaignList'),detail=$('campaignDetail');
-  if(!list)return;
-  const idx=await fetchJSON(CAMPAIGNS_IDX);
-  const campaigns=idx?.campaigns||[];
-  if(!campaigns.length){list.innerHTML='<div class="dim">No campaigns yet</div>';return}
-  const colors={'Docflow API':'#238636','Script Premium Kit':'#1f6feb','FacturAutentico Cloud':'#d29922'};
-  window._campaigns=campaigns;
-  list.innerHTML=campaigns.map(c=>{const cl=colors[c.product]||'#1f6feb';return`<div style="display:flex;gap:4px;margin:2px 0"><button onclick="window.open('/command-center/campaign-preview.html?id=${c.id}','_blank')" style="flex:1;padding:6px 8px;border:none;border-radius:4px;background:${cl};color:${cl==='#d29922'?'#000':'#fff'};font-size:.7rem;cursor:pointer;font-weight:600;text-align:left;">${c.status==='approved'?'✅':'⏳'} ${c.product} <span style="opacity:.7;font-size:.6rem;">${c.score}/100</span></button><button onclick="window.approveNow('${c.id}')" style="padding:4px 8px;border:none;border-radius:4px;background:#238636;color:#fff;font-size:.6rem;cursor:pointer;font-weight:700;">▶</button></div>`}).join('');
-  if(detail)detail.innerHTML='<div class="dim" style="padding:10px;font-size:.7rem;text-align:center;">📊 <b>'+campaigns.length+' campaigns</b><br>💡 Click to preview | ▶ to approve &amp; publish</div>'
-}
-
-function setCampaignActionMessage(message, isError=false){
-  const detail=$('campaignDetail');
-  if(!detail)return;
-  const tone=isError?'#f85149':'#3fb950';
-  detail.innerHTML=`<div style="padding:10px;font-size:.72rem;border:1px solid rgba(99,120,176,.25);border-radius:6px;color:${tone};background:rgba(13,17,23,.6)">${message}</div>`;
-  lastCampaignActionMsg=message;
-  lastCampaignActionAt=Date.now();
-}
-
-window.approveNow=function(id){
-  if(!id)return;
-  const targetBtn=[...document.querySelectorAll('button')].find(b=>b.getAttribute('onclick')===`window.approveNow('${id}')`);
-  if(targetBtn){targetBtn.disabled=true;targetBtn.textContent='...';targetBtn.style.opacity='0.7'}
-  setCampaignActionMessage('Aprobando campaña y encolando publicación...');
-  fetch('/runtime/campaigns/approve',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id})})
-    .then(async r=>{
-      const d=await r.json().catch(()=>({}));
-      if(!r.ok) throw new Error(d.error||'Approval failed');
-      const footer=$('footerText');
-      if(footer) footer.textContent=`APPROVED: ${d.product} | Publishing queued | ${new Date().toLocaleTimeString()}`;
-      setCampaignActionMessage(`Aprobada: ${d.product||id} | Cola de publicación activa.`, false);
-      render();
-    })
-    .catch((e)=>{
-      const footer=$('footerText');
-      if(footer) footer.textContent=`Approval error: ${e.message}`;
-      setCampaignActionMessage(`Error al aprobar: ${e.message}`, true);
-    })
-    .finally(()=>{
-      if(targetBtn){targetBtn.disabled=false;targetBtn.textContent='▶';targetBtn.style.opacity='1'}
+function animateBars(container) {
+  requestAnimationFrame(() => {
+    container.querySelectorAll('[data-w]').forEach((el) => {
+      el.style.width = `${el.getAttribute('data-w')}%`;
     });
-};
+  });
+}
 
-async function renderAgentEfficiency(){
-  const data=await fetchJSON(UNIFIED);
-  const am=data?.agentMonitor?.summary||{};
-  const mon=await fetchJSON(MONITOR);
-  $('agentEffTime').textContent=`(updated ${new Date().toLocaleTimeString()})`;
-  
-  // Real agents from monitor — not hardcoded 10
-  const monAgents=mon?.agents||[];
-  let agents=[];
-  if(monAgents.length>0){
-    agents=monAgents.map(a=>{
-      const statusText=String(a.status||'').toLowerCase();
-      const isActive=typeof a.active==='boolean'
-        ? a.active
-        : statusText==='active'||statusText==='ok'||statusText==='healthy'||statusText==='running';
-      return {
-        name:a.name||a.id||'?',
-        func:a.role||a.type||'agent',
-        base:isActive?100:0,
-        target:100
-      };
-    });
-  } else {
-    const c=$('agentEfficiency');
-    if(c){
-      c.innerHTML='<div class="dim">Agent monitor evidence missing: UNKNOWN</div>';
+function renderKPIs(data) {
+  const m = data.monetization || {};
+  const am = data.agentMonitor?.summary || {};
+  const kpis = [
+    ['Leads Today', metric(m.leadsToday)],
+    ['Active Agents', metric(am.activeAgents)],
+    ['Active Products', metric(data.products?.active)],
+    ['Content Pipeline', metric(m.generatedContent)]
+  ];
+  $('kpiRow').innerHTML = kpis
+    .map(([l, v]) => `<div class="kpi"><div class="lbl">${l}</div><div class="val num">${v}</div></div>`)
+    .join('');
+}
+
+function renderGate(data, alerts) {
+  const billing = String(alerts?.billingStatus || data?.billing?.status || 'UNKNOWN').toUpperCase();
+  let gate = String(alerts?.gate || data?.systemStatus?.gate || 'UNKNOWN').toUpperCase();
+  if (billing !== 'MATCH') gate = billing === 'MISMATCH' ? 'NO_GO' : 'UNKNOWN';
+  const el = $('systemStatusBadge');
+  el.textContent = gate.replace('_', '-');
+  const chip = el.closest('.chip');
+  if (chip) chip.className = `chip ${gate === 'GO' ? 'gate-go' : gate === 'NO_GO' ? 'gate-nogo' : ''}`;
+}
+
+async function renderProducts() {
+  const s = await fetchJSON(SCORES);
+  const host = $('productScores');
+  let items = [];
+  if (s?.productResults) {
+    items = s.productResults.map((r) => ({ name: r.product?.name || '?', score: Math.round(r.score || 0) }));
+  }
+  items.sort((a, b) => b.score - a.score);
+  items = items.slice(0, 6);
+  if (items.length === 0) {
+    host.innerHTML = '<div class="empty">No product scores available</div>';
+    return;
+  }
+  host.innerHTML = items
+    .map(
+      (p) => `<div class="row"><span class="name">${p.name}</span>
+      <span class="bar"><span class="fill" data-w="${Math.min(100, p.score)}" style="background:${scoreColor(p.score)}"></span></span>
+      <span class="v">${p.score}</span></div>`
+    )
+    .join('');
+  animateBars(host);
+}
+
+async function renderLeads() {
+  const host = $('leadsContent');
+  let companies = null;
+  const byInd = {};
+  const byCity = {};
+  try {
+    const res = await fetch('/runtime/../database/exports/companies.csv', { cache: 'no-store' });
+    if (res.ok) {
+      const lines = (await res.text()).trim().split('\n').slice(1);
+      companies = lines.length;
+      lines.forEach((l) => {
+        const c = l.split(',');
+        const ind = c[3] || '?';
+        const city = c[8] || '?';
+        byInd[ind] = (byInd[ind] || 0) + 1;
+        byCity[city] = (byCity[city] || 0) + 1;
+      });
     }
-    return;
-  }
-  
-  const rows=agents.map(a=>{
-    const pct=Math.min(100,Math.round((a.base/a.target)*100));
-    const cls=pct>=80?'eff-high':pct>=50?'eff-mid':'eff-low';
-    const bar=pct>=80?'#3fb950':pct>=50?'#d29922':'#f85149';
-    return{html:`<tr><td class="agent-name">${a.name}</td><td style="font-size:.55rem;color:#8b949e">${a.func}</td><td><span class="eff-bar"><span class="eff-fill" style="width:${pct}%;background:${bar}"></span></span><span class="eff-val ${cls}">${pct}%</span></td></tr>`,pct}
-  }).sort((a,b)=>b.pct-a.pct);
-  
-  const avg=Math.round(agents.reduce((s,a)=>s+Math.min(100,Math.round((a.base/a.target)*100)),0)/Math.max(1,agents.length));
-  const c=$('agentEfficiency');
-  if(c){
-    c.innerHTML=`<table class="agent-table"><thead><tr><th>Agent</th><th>Function</th><th style="width:120px">Efficiency</th></tr></thead><tbody>${rows.map(r=>r.html).join('')}</tbody></table><div style="margin-top:6px;font-size:.65rem;text-align:right;color:#8b949e">Overall: <b style="color:${avg>=80?'#3fb950':avg>=50?'#d29922':'#f85149'}">${avg}%</b></div>`;
-    requestAnimationFrame(()=>{c.querySelectorAll('.eff-fill').forEach(b=>{const t=b.style.width;b.style.width='0';requestAnimationFrame(()=>{b.style.width=t})})})
-  }
-}
-
-function renderFooter(){
-  const footer=$('footerText');
-  if(!footer)return;
-  if(lastCampaignActionMsg && (Date.now()-lastCampaignActionAt)<15000){
-    footer.textContent=lastCampaignActionMsg+' | '+new Date().toLocaleString();
-    return;
-  }
-  const jokes=['Engine vivo. Como yo después de 3 cafés.','Pipeline corriendo. Más confiable que mi WiFi.','Dashboard actualizado. Sin hardcodeos. Casi.','Bot con tus caras. Lo demás es código.'];
-  footer.textContent=jokes[Math.floor(Math.random()*jokes.length)]+' | '+new Date().toLocaleString();
-}
-
-async function renderMcpToggles(){
-  const data=await fetchJSON('/mcp/external-registry.json');
-  const container=$('mcpToggles');
-  if(!data||!container)return;
-  const servers=Object.values(data.servers||{});
-  const enabled=servers.filter(s=>s.enabled).length;
-  $('mcpCount').textContent=`${enabled}/${servers.length} active`;
-  const cats={};
-  servers.forEach(s=>{if(!cats[s.category])cats[s.category]=[];cats[s.category].push(s)});
-  let html='';
-  Object.entries(cats).forEach(([cat,items])=>{
-    html+=`<div style="margin-bottom:4px;font-size:.6rem;color:#8b949e;text-transform:uppercase;letter-spacing:.5px">${(data.categories||{})[cat]||cat}</div>`;
-    items.forEach(s=>{
-      html+=`<label style="display:flex;align-items:center;gap:6px;padding:2px 4px;font-size:.6rem;cursor:pointer;border-radius:3px" title="${s.description}">
-        <input type="checkbox" ${s.enabled?'checked':''} onchange="window.toggleMcp('${s.id}',this.checked)" style="accent-color:#3fb950">
-        <span style="flex:1;color:${s.enabled?'#c9d1d9':'#484f58'}">${s.name}</span>
-        <span style="font-size:.5rem;color:#484f58">${s.free?'FREE':'$'}</span>
-        <span style="font-size:.45rem;color:${s.impact==='high'?'#3fb950':s.impact==='medium'?'#d29922':'#8b949e'}">${s.impact.toUpperCase()}</span>
-      </label>`;
-    });
-  });
-  container.innerHTML=html;
-}
-window.toggleMcp=function(id,on){
-  fetch('/mcp/toggle',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id,enabled:on})}).catch(()=>{});
-};
-
-async function renderMcpRanking(){
-  const data=await fetchJSON('/runtime/mcp-activity.json');
-  const container=$('mcpRanking');
-  if(!data?.report?.servers||!container)return;
-  const servers=data.report.servers.slice(0,10);
-  $('mcpRankTime').textContent=`(updated ${new Date(data.generatedAt).toLocaleTimeString()})`;
-  let html='<table class="agent-table"><thead><tr><th>#</th><th>MCP Server</th><th>Uses</th><th style="width:100px">Score</th></tr></thead><tbody>';
-  servers.forEach(s=>{
-    const cls=s.score>=80?'eff-high':s.score>=50?'eff-mid':'eff-low';
-    const bar=s.score>=80?'#3fb950':s.score>=50?'#d29922':'#f85149';
-    html+=`<tr><td style="color:#484f58">${s.rank}</td><td>${s.name}<br><span style="font-size:.45rem;color:#484f58">${s.impact} impact · ${s.enabled?'🟢 on':'⚫ off'}</span></td><td>${s.uses}</td><td><span class="eff-bar"><span class="eff-fill" style="width:${s.score}%;background:${bar}"></span></span><span class="eff-val ${cls}">${s.score}%</span></td></tr>`;
-  });
-  html+='</tbody></table>';
-  container.innerHTML=html;
-  requestAnimationFrame(()=>{container.querySelectorAll('.eff-fill').forEach(b=>{const t=b.style.width;b.style.width='0';requestAnimationFrame(()=>{b.style.width=t})})});
-}
-
-async function render(){
-  const unified=await fetchJSON(UNIFIED);
-  if(!unified){$('footerText').textContent='Dashboard offline';return}
-  const alerts=await fetchJSON(ALERTS);
-  renderKPIs(unified);renderGate(unified,alerts);renderProducts(unified);renderLeads(unified);
-  renderAlerts();renderCampaigns();renderAgentEfficiency();renderMcpToggles();renderMcpRanking();renderFooter();renderAutonomousState();renderModels();botCycle();
-  // Tooltips
-  document.querySelectorAll('.card').forEach(c=>{
-    const h=c.querySelector('h2');if(!h||c._hasTip)return;c._hasTip=true;
-    const tips={KPI:'Live data from unified dashboard. Refreshes every 30s.',Product:'Real scores from product engine. Chart.js bars.','Campaign Manager':'Approve campaigns here. Click ▶ to publish.','Bot Monitor':'Dashboard health. Updates every 60s from alerts.json.',Leads:'Real data from companies.csv export. Live count.'};
-    let tip='Live engine data. Click to explore.';
-    if(h.textContent.includes('Product'))tip=tips.Product;
-    else if(h.textContent.includes('Campaign'))tip=tips['Campaign Manager'];
-    else if(h.textContent.includes('Monitor'))tip=tips['Bot Monitor'];
-    else if(h.textContent.includes('Efficiency'))tip='Agent efficiency from active monitoring. Top agents first.';
-    else if(h.textContent.includes('Leads'))tip=tips.Leads;
-    c.title=tip;c.style.cursor='help';
-  });
-}
-
-$('refreshBtn').addEventListener('click',render);
-$('notifyBtn').addEventListener('click',async()=>{if(!('Notification'in window))return alert('No support');const p=await Notification.requestPermission();alert(p==='granted'?'Alerts on':'Alerts off')});
-
-let isProd=true;const ne=$('neonProd');if(ne){ne.style.cursor='pointer';ne.title='Toggle Production/Dev';ne.addEventListener('click',()=>{isProd=!isProd;ne.textContent=isProd?'⚡ PRODUCTION ⚡':'🔧 DEVELOPMENT 🔧';ne.style.color=isProd?'#0f0':'#f0883e';ne.style.textShadow=isProd?'0 0 5px #0f0,0 0 10px #0f0':'0 0 5px #f0883e,0 0 10px #f0883e';ne.style.borderColor=isProd?'#0f044':'#f0883e44';document.title=isProd?'Tiger CC — PROD':'Tiger CC — DEV'})}
-
-setInterval(render,30000);setInterval(renderAlerts,60000);render().catch(console.error);
-
-async function renderModels(){
-  const data = await fetchJSON('/runtime/models');
-  const grid = $('modelGrid');
-  if(!grid || !data) return;
-  
-  if(!data.models || data.models.length === 0){
-    grid.innerHTML = '<div class="dim">No local models registered</div>';
-    return;
-  }
-
-  grid.innerHTML = data.models.map(m => `
-    <div class="resource-item">
-      <button class="btn-remove" onclick="window.removeModel('${m.id}')">Remove</button>
-      <div class="model-name">${m.name}</div>
-      <div class="model-details">
-        Type: ${m.type}<br>
-        Endpoint: ${m.endpoint}<br>
-        Capacity: ${m.capacity}
-      </div>
-    </div>
-  `).join('');
-}
-
-window.showAddModel = async function(){
-  const name = prompt('Model Name:');
-  if(!name) return;
-  const type = prompt('Model Type (e.g. Reasoning, Fast, Creative):');
-  if(!type) return;
-  const endpoint = prompt('Model Endpoint (URL):');
-  if(!endpoint) return;
-  const capacity = prompt('Model Capacity (e.g. 70B, 8B):');
-
-  try {
-    const r = await fetch('/runtime/models', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({ name, type, endpoint, capacity })
-    });
-    if(r.ok) renderModels();
   } catch {
-    alert('Server error adding model');
+    // Leads export not available in this deployment.
   }
-};
 
-window.removeModel = async function(id){
-  if(!confirm('Remove this model resource?')) return;
-  try {
-    const r = await fetch(`/runtime/models/${id}`, { method: 'DELETE' });
-    if(r.ok) renderModels();
-  } catch {
-    alert('Server error removing model');
+  const top = (obj) =>
+    Object.entries(obj)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 5);
+
+  let h = `<div class="stat"><span class="k">Companies</span><span class="v">${metric(companies)}</span></div>`;
+  const inds = top(byInd);
+  const cities = top(byCity);
+  h += '<div class="sec-title">Top Industries</div>';
+  h += inds.length
+    ? inds.map(([k, v]) => `<div class="stat"><span class="k">${k}</span><span class="v">${v}</span></div>`).join('')
+    : '<div class="dim">No data</div>';
+  h += '<div class="sec-title">Top Cities</div>';
+  h += cities.length
+    ? cities.map(([k, v]) => `<div class="stat"><span class="k">${k}</span><span class="v">${v}</span></div>`).join('')
+    : '<div class="dim">No data</div>';
+  host.innerHTML = h;
+}
+
+async function renderAlerts() {
+  const d = await fetchJSON(ALERTS);
+  const host = $('alertsContent');
+  if (!d) {
+    $('alertsStatus').textContent = '';
+    host.innerHTML = '<div class="empty">No alert data</div>';
+    return;
   }
-};
+  const status = String(d.status || '').toUpperCase();
+  $('alertsStatus').textContent = status ? `${status} · ${metric(d.health)}/100` : '';
+  $('alertsTime').textContent = d.checkedAt ? `Last check ${new Date(d.checkedAt).toLocaleTimeString()}` : '';
+  let html = '';
+  if (d.revenueIntelligence) html += `<div class="alert info">${d.revenueIntelligence}</div>`;
+  (d.predictions || []).slice(0, 2).forEach((p) => (html += `<div class="alert info">${p}</div>`));
+  (d.recommendations || []).slice(0, 2).forEach((r) => (html += `<div class="alert warn">${r.detail || r}</div>`));
+  (d.alerts || []).filter((a) => a.level !== 'ok').forEach((a) => (html += `<div class="alert ${a.level}">${a.msg}</div>`));
+  host.innerHTML = html || '<div class="empty">All systems nominal</div>';
+}
 
-async function renderAutonomousState(){
-  const telemetry = await fetchJSON('/runtime/telemetry') || {};
-  const state = await fetchJSON('/runtime/execution-modes.json') || { current: 'AUTO' };
-  
-  const modes = {
-    'AUTO': { desc: 'Full autonomy', color: '#6366f1' },
-    'PRO': { desc: 'User approval on criticals', color: '#f59e0b' },
-    'DEV': { desc: 'Dry-run / Verbose', color: '#10b981' }
-  };
-  const currentMode = state.current || 'AUTO';
-  const current = modes[currentMode] || modes['AUTO'];
+async function renderCampaigns() {
+  const host = $('campaignList');
+  const idx = await fetchJSON(CAMPAIGNS);
+  const campaigns = idx?.campaigns || [];
+  if (!campaigns.length) {
+    host.innerHTML = '<div class="empty">No campaigns</div>';
+    return;
+  }
+  const statusColor = (s) =>
+    s === 'approved' || s === 'published' ? 'var(--go)' : s === 'rejected' || s === 'expired' ? 'var(--nogo)' : 'var(--warn)';
+  host.innerHTML = campaigns
+    .slice(0, 12)
+    .map((c) => {
+      const s = String(c.status || 'pending').toLowerCase();
+      return `<div class="camp" onclick="window.open('/command-center/campaign-preview.html?id=${encodeURIComponent(c.id)}','_blank','noopener')" title="Open preview">
+        <span class="dot" style="background:${statusColor(s)}"></span>
+        <span class="cn">${c.product || 'Unknown'}</span>
+        <span class="cs">${metric(c.score)}</span>
+        <span class="tag" style="color:${statusColor(s)};border-color:${statusColor(s)}33">${s}</span>
+      </div>`;
+    })
+    .join('');
+}
+
+async function renderAgentEfficiency() {
+  const host = $('agentEfficiency');
+  const mon = await fetchJSON(MONITOR);
+  $('agentEffTime').textContent = `updated ${new Date().toLocaleTimeString()}`;
+  const monAgents = mon?.agents || [];
+  if (monAgents.length === 0) {
+    host.innerHTML = '<div class="empty">Agent monitor evidence missing</div>';
+    return;
+  }
+  const agents = monAgents.map((a) => {
+    const st = String(a.status || '').toLowerCase();
+    const active = typeof a.active === 'boolean' ? a.active : ['active', 'ok', 'healthy', 'running'].includes(st);
+    return { name: a.name || a.id || '?', func: a.role || a.type || 'agent', pct: active ? 100 : 0 };
+  });
+  const rows = agents
+    .map((a) => ({
+      pct: a.pct,
+      html: `<tr><td class="tname">${a.name}</td><td style="color:var(--text-mut)">${a.func}</td>
+      <td><span class="effbar"><span class="efffill" data-w="${a.pct}" style="background:${scoreColor(a.pct)}"></span></span>
+      <span class="num" style="color:${scoreColor(a.pct)}">${a.pct}%</span></td></tr>`
+    }))
+    .sort((x, y) => y.pct - x.pct);
+  const avg = Math.round(agents.reduce((s, a) => s + a.pct, 0) / Math.max(1, agents.length));
+  host.innerHTML = `<table class="t"><thead><tr><th>Agent</th><th>Function</th><th style="width:120px">Efficiency</th></tr></thead>
+    <tbody>${rows.map((r) => r.html).join('')}</tbody></table>
+    <div class="overall">Overall: <b style="color:${scoreColor(avg)}">${avg}%</b></div>`;
+  animateBars(host);
+}
+
+async function renderMcpRanking() {
+  const host = $('mcpRanking');
+  const data = await fetchJSON(MCP_ACTIVITY);
+  const servers = data?.report?.servers;
+  if (!Array.isArray(servers) || servers.length === 0) {
+    host.innerHTML = '<div class="empty">No MCP activity data</div>';
+    return;
+  }
+  if (data.generatedAt) $('mcpRankTime').textContent = `updated ${new Date(data.generatedAt).toLocaleTimeString()}`;
+  const rows = servers
+    .slice(0, 10)
+    .map(
+      (s) => `<tr><td style="color:var(--text-mut)">${s.rank}</td>
+      <td class="tname">${s.name}</td>
+      <td class="num">${s.uses}</td>
+      <td><span class="effbar"><span class="efffill" data-w="${s.score}" style="background:${scoreColor(s.score)}"></span></span>
+      <span class="num" style="color:${scoreColor(s.score)}">${s.score}%</span></td></tr>`
+    )
+    .join('');
+  host.innerHTML = `<table class="t"><thead><tr><th>#</th><th>Server</th><th>Uses</th><th style="width:110px">Score</th></tr></thead>
+    <tbody>${rows}</tbody></table>`;
+  animateBars(host);
+}
+
+async function renderModels() {
+  const host = $('modelGrid');
+  const data = await fetchJSON(MODELS);
+  const models = data?.models;
+  if (!Array.isArray(models) || models.length === 0) {
+    host.innerHTML = '<div class="empty">No local models registered</div>';
+    return;
+  }
+  host.innerHTML = models
+    .map(
+      (m) => `<div class="tile" style="margin-bottom:8px">
+      <div class="val" style="font-size:14px">${m.name || m.id}</div>
+      <div class="sub">${m.type || 'model'} · ${m.capacity || '—'}</div>
+      <div class="sub" style="color:var(--text-mut)">${m.endpoint || ''}</div>
+    </div>`
+    )
+    .join('');
+}
+
+async function renderAutonomousState() {
+  const telemetry = (await fetchJSON(TELEMETRY)) || {};
+  const state = (await fetchJSON(EXEC_MODES)) || { current: 'AUTO' };
+  const mode = String(state.current || telemetry.mode || 'AUTO').toUpperCase();
+  const info = MODE_INFO[mode] || MODE_INFO.AUTO;
 
   const modeBtn = $('modeBtn');
-  if(modeBtn){
-    modeBtn.textContent = currentMode;
-    modeBtn.classList.remove('pro','dev');
-    if(currentMode === 'PRO') modeBtn.classList.add('pro');
-    if(currentMode === 'DEV') modeBtn.classList.add('dev');
+  if (modeBtn) {
+    modeBtn.textContent = mode;
+    modeBtn.className = `btn mode ${info.cls}`;
   }
-  
-  $('modeValue').textContent = currentMode;
-  $('modeValue').style.color = current.color;
-  $('modeDesc').textContent = current.desc;
-  $('busEvents').textContent = telemetry.busEvents || 0;
-  $('busSubs').textContent = `${telemetry.busSubs || 0} active subs`;
-  $('wtActive').textContent = telemetry.wtActive || 0;
-  $('wtTotal').textContent = `${telemetry.wtTotal || 0} total pools`;
-  $('memKeys').textContent = telemetry.memKeys || 0;
+  $('modeValue').textContent = mode;
+  $('modeDesc').textContent = info.desc;
+  $('busEvents').textContent = metric(telemetry.busEvents ?? 0);
+  $('busSubs').textContent = metric(telemetry.busSubs ?? 0);
+  $('wtActive').textContent = metric(telemetry.wtActive ?? 0);
+  $('wtTotal').textContent = metric(telemetry.wtTotal ?? 0);
+  $('memKeys').textContent = metric(telemetry.memKeys ?? 0);
+  if (telemetry.agentsTotal !== undefined) {
+    $('stateMeta').textContent = `${metric(telemetry.agentsActive ?? 0)}/${metric(telemetry.agentsTotal)} agents · ${metric(telemetry.mcpActive ?? 0)} MCP active`;
+  }
 }
 
-window.toggleExecutionMode = async function(){
-  const modes = ['AUTO', 'PRO', 'DEV'];
+window.toggleExecutionMode = async function toggleExecutionMode() {
+  const order = ['AUTO', 'PRO', 'DEV'];
   const current = ($('modeValue')?.textContent || 'AUTO').trim().toUpperCase();
-  const next = modes[(modes.indexOf(current) + 1) % modes.length];
+  const next = order[(order.indexOf(current) + 1) % order.length];
   const modeBtn = $('modeBtn');
-  if(modeBtn){modeBtn.disabled=true;modeBtn.style.opacity='0.7'}
+  if (modeBtn) modeBtn.disabled = true;
   try {
-    const r = await fetch('/runtime/execution-mode/toggle', { 
-      method: 'POST', 
-      headers: {'Content-Type': 'application/json'}, 
-      body: JSON.stringify({ mode: next }) 
+    const r = await fetch('/runtime/execution-mode/toggle', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ mode: next })
     });
-    if(!r.ok){
-      const data = await r.json().catch(()=>({}));
-      throw new Error(data.error || 'Mode toggle failed');
-    }
+    if (!r.ok) throw new Error('toggle failed');
     await renderAutonomousState();
   } catch {
-    alert('No se pudo cambiar modo AUTO/PRO/DEV en este momento.');
+    $('footerText').textContent = 'Could not switch execution mode right now.';
   } finally {
-    if(modeBtn){modeBtn.disabled=false;modeBtn.style.opacity='1'}
+    if (modeBtn) modeBtn.disabled = false;
   }
 };
 
-let factIdx=0,botClicks=0;document.addEventListener('DOMContentLoaded',()=>{const f=document.getElementById('botFace');if(!f)return;f.addEventListener('click',()=>{botClicks++;try{new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACAf39/f4B/f3+Af3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f3+Af39/gH9/f4B/f38').play().catch(()=>{})}catch{}if(botClicks>=6){botClicks=0;const e=['💩','💩','💩','🔥','💥','✨'];for(let i=0;i<20;i++){const el=document.createElement('span');el.textContent=e[Math.floor(Math.random()*e.length)];el.style.cssText=`position:fixed;font-size:${24+Math.random()*36}px;pointer-events:none;z-index:9999;left:${10+Math.random()*80}%;top:${10+Math.random()*80}%;animation:shitFall ${1+Math.random()*2}s ease-out forwards`;document.body.appendChild(el);setTimeout(()=>el.remove(),3000)}if(!$('shitStyle')){const s=document.createElement('style');s.id='shitStyle';s.textContent='@keyframes shitFall{0%{opacity:1;transform:translateY(0) rotate(0deg) scale(1)}100%{opacity:0;transform:translateY(-200px) rotate(720deg) scale(0)}}';document.head.appendChild(s)}}})});
-let rFact='🐯 Engine data...';
-async function fetchRandomFact(){try{const apis=['https://uselessfacts.jsph.pl/api/v2/facts/random?language=en','https://catfact.ninja/fact','https://api.chucknorris.io/jokes/random'];const r=await fetch(apis[Math.floor(Math.random()*3)]);const d=await r.json();return d.text||d.fact||d.value||'🐯'}catch{return'🐯'}}
-async function botCycle(){const el=$('botFact');if(!el)return;if(factIdx%3!==2){const f=[`🟢 Gate: ${$('systemStatusBadge')?.textContent||'GO'} | ${new Date().toLocaleTimeString()}`,`💪 Chuck Norris can divide by zero. The engine just did.`,`📊 Live data. No hardcodes. See the difference?`,`🐱 A cat's purr is at 25Hz. Our engine hums at 6AM.`];el.textContent=f[Math.floor(Math.random()*f.length)]}else{if(!rFact||rFact.startsWith('🐯 Engine'))rFact=await fetchRandomFact();el.textContent=rFact.substring(0,120);rFact=await fetchRandomFact()}factIdx++}
-setInterval(botCycle,5000);botCycle();
+function renderFooter(gateOk) {
+  $('footerText').textContent = `Tiger Command Center · ${gateOk ? 'operational' : 'degraded'} · synced ${new Date().toLocaleString()}`;
+}
+
+async function render() {
+  const unified = await fetchJSON(UNIFIED);
+  const alerts = await fetchJSON(ALERTS);
+  $('syncTime').textContent = new Date().toLocaleTimeString();
+
+  if (unified) {
+    renderKPIs(unified);
+    renderGate(unified, alerts);
+  }
+  await Promise.all([
+    renderProducts(),
+    renderLeads(),
+    renderAlerts(),
+    renderCampaigns(),
+    renderAgentEfficiency(),
+    renderMcpRanking(),
+    renderModels(),
+    renderAutonomousState()
+  ]);
+  renderFooter(Boolean(unified));
+}
+
+$('refreshBtn').addEventListener('click', () => render());
+$('modeBtn').addEventListener('click', () => window.toggleExecutionMode());
+$('modeValue').addEventListener('click', () => window.toggleExecutionMode());
+
+render().catch(() => {
+  $('footerText').textContent = 'Dashboard offline — runtime data unavailable.';
+});
+setInterval(() => render().catch(() => {}), 30000);

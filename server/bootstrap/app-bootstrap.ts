@@ -88,7 +88,7 @@ function serveStaticFile(res: ServerResponse, urlPath: string): boolean {
   }
   
   const cleanPath = urlPath.startsWith('/command-center/') ? urlPath.replace('/command-center/', '') : null;
-  if (!cleanPath && urlPath !== '/index.html' && !urlPath.startsWith('/faces/') && !urlPath.startsWith('/runtime/') && !urlPath.startsWith('/app.js') && !urlPath.startsWith('/campaign-manager.js') && !urlPath.startsWith('/campaign-preview.html') && !urlPath.startsWith('/project-map.html') && !urlPath.startsWith('/project-map-3d.html') && !urlPath.startsWith('/project-map-b.html') && !urlPath.startsWith('/checkout.html') && !urlPath.startsWith('/client-dashboard.html') && !urlPath.startsWith('/botFace') && !urlPath.startsWith('/faces/')) {
+  if (!cleanPath && urlPath !== '/index.html' && !urlPath.startsWith('/runtime/') && !urlPath.startsWith('/app.js') && !urlPath.startsWith('/campaign-preview.html') && !urlPath.startsWith('/project-map.html') && !urlPath.startsWith('/project-map-3d.html') && !urlPath.startsWith('/project-map-b.html') && !urlPath.startsWith('/checkout.html') && !urlPath.startsWith('/client-dashboard.html')) {
     return false;
   }
   

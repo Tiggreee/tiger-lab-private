@@ -5,193 +5,217 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Tiger Command Center</title>
 <style>
-:root{--deep:#040b14;--card-bg:rgba(10,16,30,.7);--border:rgba(90,110,160,.15);--text:#bcc8dd;--text-dim:#5a6a8a;--accent:#6378b0;--accent-glow:rgba(99,120,176,.35);--grad-1:#3f5490;--grad-2:#408090;--bar-bg:rgba(60,80,120,.2);--danger:rgba(180,100,100,.6);--warn:rgba(160,140,80,.6);--info:rgba(90,130,180,.6)}
+:root{
+  --bg:#0a0e17;--bg-soft:#0f1420;--panel:#111826;--panel-2:#0d131f;
+  --line:#1e2838;--line-soft:#182234;
+  --text:#d6deec;--text-dim:#7d8aa3;--text-mut:#4d5871;
+  --accent:#4fd1c5;--accent-dim:#2a6f6a;
+  --go:#3fb98a;--nogo:#e5646e;--warn:#e0a94a;--info:#5b8fd6;
+  --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font:12px/1.4 'Segoe UI',system-ui,sans-serif;background:var(--deep);color:var(--text);padding:10px;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 60% at 30% 20%,rgba(40,55,100,.12),transparent),radial-gradient(ellipse 60% 70% at 70% 60%,rgba(30,70,80,.08),transparent);z-index:-1;pointer-events:none}
-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding:8px 12px;background:var(--card-bg);border:1px solid var(--border);border-radius:8px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-.led-row{display:flex;align-items:center;gap:10px}
-.status-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent-glow);animation:pulse 3s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:.7;box-shadow:0 0 6px var(--accent-glow)}50%{opacity:1;box-shadow:0 0 14px var(--accent-glow)}}
-h1{font-size:.9rem;font-weight:500;color:var(--text);letter-spacing:1px;text-transform:uppercase}
-.gate-badge{font-size:.6rem;padding:2px 8px;border-radius:10px;font-weight:600;text-transform:uppercase;letter-spacing:1px}
-.gate-go{background:rgba(80,120,160,.15);color:var(--accent);border:1px solid var(--border)}
-.gate-nogo{background:rgba(140,80,80,.15);color:var(--danger);border:1px solid rgba(140,80,80,.25)}
-.actions{display:flex;gap:6px}
-.actions button{border:1px solid var(--border);padding:5px 12px;border-radius:5px;font-size:.7rem;cursor:pointer;background:var(--card-bg);color:var(--text);font-weight:500;backdrop-filter:blur(8px);transition:all .2s}
-.actions button:hover{background:rgba(50,65,100,.25);border-color:var(--accent)}
-.actions .btn-map{background:rgba(60,100,130,.15);border-color:rgba(90,150,180,.3);color:#c0d8f0;font-weight:600}
-.actions .btn-map:hover{background:rgba(60,100,130,.3)}
-.actions .btn-refresh{background:rgba(70,90,130,.2);color:var(--text)}
-.actions .btn-refresh:hover{background:rgba(70,90,130,.35)}
-.actions .btn-mode{background:rgba(63,185,80,.15);border-color:rgba(63,185,80,.3);color:#3fb950;font-weight:600}
-.actions .btn-mode:hover{background:rgba(63,185,80,.3)}
-.actions .btn-mode.pro{background:rgba(99,120,176,.15);border-color:rgba(99,120,176,.3);color:#6378b0}
-.actions .btn-mode.dev{background:rgba(210,153,34,.15);border-color:rgba(210,153,34,.3);color:#d29922}
-.autonomous-status{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:12px;margin-bottom:8px;backdrop-filter:blur(10px)}
-.autonomous-status h2{font-size:.7rem;font-weight:500;color:var(--text-dim);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px}
-.autonomous-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.autonomous-item{background:rgba(15,20,35,.4);border-radius:6px;padding:8px;border-left:3px solid var(--accent)}
-.autonomous-item .label{font-size:.55rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;margin-bottom:2px}
-.autonomous-item .value{font-size:1rem;font-weight:600;color:var(--text)}
-.autonomous-item .sub{font-size:.5rem;color:var(--text-dim);margin-top:2px}
-.mode-indicator{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:4px;animation:pulse 2s ease-in-out infinite}
-.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:8px}
-.kpi{background:var(--card-bg);border:1px solid var(--border);border-radius:7px;padding:10px 12px;text-align:center;backdrop-filter:blur(8px)}
-.kpi small{display:block;font-size:.6rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.6px;margin-bottom:3px}
-.kpi b{font-size:1.4rem;font-weight:500;color:var(--text)}
-.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
-.card{background:var(--card-bg);border:1px solid var(--border);border-radius:8px;padding:12px;overflow:hidden;backdrop-filter:blur(10px)}
-.card h2{font-size:.7rem;font-weight:500;color:var(--text-dim);margin-bottom:8px;text-transform:uppercase;letter-spacing:.8px}
-.dim{font-size:.6rem;color:var(--text-dim);margin-bottom:4px}
-.score-bar{display:flex;align-items:center;gap:6px;margin-bottom:5px;font-size:.7rem}
-.score-bar .name{width:110px;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex-shrink:0}
-.score-bar .bar{flex:1;height:8px;background:var(--bar-bg);border-radius:4px;overflow:hidden}
-.score-bar .fill{height:100%;border-radius:4px;min-width:2px;background:linear-gradient(90deg,var(--grad-1),var(--grad-2))}
-.score-bar .val{width:28px;text-align:right;font-weight:600;font-size:.65rem;flex-shrink:0}
-.alert-item{font-size:.7rem;padding:4px 8px;margin-bottom:3px;border-radius:4px;border-left:3px solid transparent;background:rgba(15,20,35,.4)}
-.alert-critical{border-color:var(--danger);background:rgba(120,60,60,.1)}
-.alert-warn{border-color:var(--warn);background:rgba(100,80,40,.1)}
-.alert-info{border-color:var(--info);background:rgba(50,70,110,.1)}
-.lead-section{margin-bottom:8px}
-.lead-section h3{font-size:.65rem;font-weight:500;color:var(--text-dim);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
-.lead-row{font-size:.7rem;margin-bottom:3px}
-.lead-row .lbl{color:var(--text-dim)}
-.lead-stat{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid rgba(60,80,120,.1);font-size:.7rem}
-.lead-stat:last-child{border-bottom:none}
-.agent-table{width:100%;border-collapse:collapse;font-size:.65rem}
-.agent-table th{text-align:left;padding:4px 8px;color:var(--text-dim);font-weight:500;font-size:.6rem;text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border)}
-.agent-table td{padding:4px 8px;border-bottom:1px solid rgba(50,70,110,.08);white-space:nowrap}
-.agent-table .agent-name{max-width:200px;overflow:hidden;text-overflow:ellipsis}
-.agent-table .eff-bar{width:60px;height:6px;background:var(--bar-bg);border-radius:3px;overflow:hidden;display:inline-block;vertical-align:middle;margin-right:4px}
-.agent-table .eff-fill{height:100%;border-radius:3px;width:0!important;background:linear-gradient(90deg,var(--grad-1),var(--grad-2))}
-.agent-table .eff-fill.done{transition:width 1.2s ease-out}
-.agent-table .eff-val{font-weight:600;font-size:.6rem}
-.eff-high{color:var(--accent)}.eff-mid{color:var(--warn)}.eff-low{color:var(--danger)}
-footer{font-size:.6rem;color:var(--text-dim);text-align:center;padding:8px 0 0;border-top:1px solid var(--border);margin-top:8px}
-.bot-container{position:fixed;bottom:14px;right:14px;z-index:999;display:flex;flex-direction:column;align-items:flex-end;gap:4px}
-.bot-bubble{background:var(--card-bg);border:1px solid var(--border);border-radius:7px;padding:6px 10px;max-width:180px;font-size:.6rem;color:var(--text);backdrop-filter:blur(10px);box-shadow:0 2px 14px rgba(0,0,0,.4);animation:floatBubble 5s ease-in-out infinite;line-height:1.3}
-.bot-bubble strong{color:var(--accent);display:block;font-size:.55rem;margin-bottom:2px;font-weight:500}
-.bot-face{width:50px;height:65px;border-radius:50%/45%;border:1px solid var(--border);background-color:var(--deep);background-size:cover;background-position:center;animation:cycleFaces 10s steps(1) infinite;cursor:pointer;opacity:.85;transition:opacity .2s,transform .2s;overflow:hidden}
-.bot-face:hover{opacity:1;transform:scale(1.1)}
-@keyframes floatBubble{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-@keyframes cycleFaces{
-0%{background-image:url('/command-center/faces/Copilot_20260613_002326.png')}
-11.11%{background-image:url('/command-center/faces/Copilot_20260613_002457.png')}
-22.22%{background-image:url('/command-center/faces/Copilot_20260613_002729.png')}
-33.33%{background-image:url('/command-center/faces/Copilot_20260613_002939.png')}
-44.44%{background-image:url('/command-center/faces/Copilot_20260613_003102.png')}
-55.55%{background-image:url('/command-center/faces/Copilot_20260613_003257.png')}
-66.66%{background-image:url('/command-center/faces/Copilot_20260613_003439.png')}
-77.77%{background-image:url('/command-center/faces/Copilot_20260613_003620.png')}
-88.88%{background-image:url('/command-center/faces/Copilot_20260613_003747.png')}
-100%{background-image:url('/command-center/faces/Copilot_20260613_002326.png')}}
-@media(max-width:800px){.grid-2{grid-template-columns:1fr}.kpi-row{grid-template-columns:repeat(2,1fr)}.bot-container{right:6px;bottom:6px}}
+html,body{height:100%}
+body{
+  font:13px/1.5 "Inter","Segoe UI",system-ui,sans-serif;
+  background:var(--bg);color:var(--text);
+  padding:16px;letter-spacing:.1px;
+  background-image:
+    radial-gradient(1200px 500px at 15% -10%,rgba(79,209,197,.06),transparent),
+    radial-gradient(900px 600px at 100% 0%,rgba(91,143,214,.05),transparent);
+}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* Header */
+header{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:12px 16px;margin-bottom:14px;
+  background:linear-gradient(180deg,var(--panel),var(--panel-2));
+  border:1px solid var(--line);border-radius:12px;
+}
+.brand{display:flex;align-items:center;gap:11px;min-width:0}
+.pulse{width:9px;height:9px;border-radius:50%;background:var(--accent);
+  box-shadow:0 0 0 0 rgba(79,209,197,.5);animation:pulse 2.6s ease-out infinite;flex-shrink:0}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(79,209,197,.45)}70%{box-shadow:0 0 0 8px rgba(79,209,197,0)}100%{box-shadow:0 0 0 0 rgba(79,209,197,0)}}
+.brand h1{font-size:14px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#eaf1fb;white-space:nowrap}
+.brand .sub{font-size:10px;color:var(--text-mut);letter-spacing:2px;text-transform:uppercase;margin-top:1px}
+.head-right{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.chip{font-size:10.5px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;
+  padding:5px 11px;border-radius:20px;border:1px solid var(--line);color:var(--text-dim);background:var(--panel-2)}
+.chip.gate-go{color:var(--go);border-color:rgba(63,185,138,.35);background:rgba(63,185,138,.08)}
+.chip.gate-nogo{color:var(--nogo);border-color:rgba(229,100,110,.35);background:rgba(229,100,110,.08)}
+.chip .k{color:var(--text-mut);margin-right:6px}
+.btn{font:inherit;font-size:11px;font-weight:600;letter-spacing:.6px;cursor:pointer;
+  padding:6px 13px;border-radius:8px;border:1px solid var(--line);
+  background:var(--panel-2);color:var(--text);transition:.16s}
+.btn:hover{border-color:var(--accent-dim);color:#fff;background:#152233}
+.btn.mode{color:var(--accent);border-color:var(--accent-dim)}
+.btn.mode.pro{color:var(--warn);border-color:rgba(224,169,74,.4)}
+.btn.mode.dev{color:var(--info);border-color:rgba(91,143,214,.4)}
+a.link{color:var(--text-dim);font-size:11px;text-decoration:none;padding:6px 10px;border-radius:8px;border:1px solid transparent}
+a.link:hover{color:var(--text);border-color:var(--line)}
+
+/* KPI strip */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:12px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:14px 16px;position:relative;overflow:hidden}
+.kpi::after{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--accent),var(--accent-dim));opacity:.7}
+.kpi .lbl{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:var(--text-mut)}
+.kpi .val{font-size:26px;font-weight:600;color:#f2f6fc;margin-top:6px;line-height:1}
+.kpi .val.mut{color:var(--text-mut);font-size:18px}
+
+/* Grid + cards */
+.grid{display:grid;gap:12px;margin-bottom:12px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:1fr 1fr}
+.g3-1{grid-template-columns:2fr 1fr}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;overflow:hidden}
+.card>h2{display:flex;align-items:center;justify-content:space-between;gap:8px;
+  font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-dim);margin-bottom:12px}
+.card>h2 .meta{font-size:10px;font-weight:400;color:var(--text-mut);letter-spacing:.4px;text-transform:none}
+.tile{background:var(--panel-2);border:1px solid var(--line-soft);border-radius:9px;padding:11px 12px}
+.tile .lbl{font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:var(--text-mut)}
+.tile .val{font-size:19px;font-weight:600;color:#eaf1fb;margin-top:5px;line-height:1}
+.tile .sub{font-size:9.5px;color:var(--text-mut);margin-top:4px}
+.state-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.dim{font-size:11px;color:var(--text-mut)}
+.empty{padding:18px 4px;text-align:center;color:var(--text-mut);font-size:11px}
+
+/* score bars / lists */
+.row{display:flex;align-items:center;gap:9px;font-size:11.5px;padding:5px 0;border-bottom:1px solid var(--line-soft)}
+.row:last-child{border-bottom:none}
+.row .name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .bar{width:120px;height:6px;background:var(--panel-2);border:1px solid var(--line-soft);border-radius:4px;overflow:hidden;flex-shrink:0}
+.row .fill{height:100%;border-radius:4px;width:0;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.row .v{width:38px;text-align:right;font-family:var(--mono);font-size:10.5px;color:var(--text-dim);flex-shrink:0}
+.stat{display:flex;justify-content:space-between;gap:8px;padding:4px 0;border-bottom:1px solid var(--line-soft);font-size:11.5px}
+.stat:last-child{border-bottom:none}
+.stat .k{color:var(--text-mut)}
+.stat .v{font-family:var(--mono);color:var(--text)}
+.sec-title{font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:var(--text-mut);margin:10px 0 5px}
+
+/* campaigns read-only */
+.camp{display:flex;align-items:center;gap:9px;padding:8px 10px;margin:5px 0;border-radius:8px;
+  background:var(--panel-2);border:1px solid var(--line-soft);cursor:pointer;transition:.15s}
+.camp:hover{border-color:var(--accent-dim)}
+.camp .dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.camp .cn{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px}
+.camp .cs{font-family:var(--mono);font-size:10px;color:var(--text-mut)}
+.camp .tag{font-size:9px;letter-spacing:.6px;text-transform:uppercase;padding:2px 7px;border-radius:10px;border:1px solid var(--line)}
+
+/* alerts */
+.alert{font-size:11px;padding:6px 10px;margin-bottom:5px;border-radius:7px;border-left:3px solid var(--line);background:var(--panel-2)}
+.alert.critical{border-color:var(--nogo);background:rgba(229,100,110,.07)}
+.alert.warn{border-color:var(--warn);background:rgba(224,169,74,.07)}
+.alert.info{border-color:var(--info);background:rgba(91,143,214,.07)}
+
+/* tables */
+table.t{width:100%;border-collapse:collapse;font-size:11px}
+table.t th{text-align:left;padding:5px 8px;color:var(--text-mut);font-weight:500;font-size:9.5px;
+  text-transform:uppercase;letter-spacing:.8px;border-bottom:1px solid var(--line)}
+table.t td{padding:5px 8px;border-bottom:1px solid var(--line-soft);white-space:nowrap}
+table.t tr:last-child td{border-bottom:none}
+table.t .tname{max-width:180px;overflow:hidden;text-overflow:ellipsis}
+.effbar{display:inline-block;width:56px;height:6px;background:var(--panel-2);border:1px solid var(--line-soft);
+  border-radius:3px;overflow:hidden;vertical-align:middle;margin-right:6px}
+.efffill{display:block;height:100%;width:0;border-radius:3px;transition:width .9s cubic-bezier(.2,.8,.2,1)}
+.overall{margin-top:8px;font-size:11px;text-align:right;color:var(--text-mut)}
+
+footer{font-size:10.5px;color:var(--text-mut);text-align:center;padding:12px 0 4px;
+  border-top:1px solid var(--line);margin-top:4px;letter-spacing:.4px}
+.mb12{margin-bottom:12px}.mb8{margin-bottom:8px}.pointer{cursor:pointer}
+
+@media(max-width:900px){
+  .g4,.state-grid,.kpis{grid-template-columns:repeat(2,1fr)}
+  .g2,.g3-1{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
 <header>
-  <div class="led-row">
-    <span class="status-dot"></span>
-    <h1>Tiger Command Center</h1>
-    <span id="systemStatusBadge" class="gate-badge gate-go">GO</span>
+  <div class="brand">
+    <span class="pulse"></span>
+    <div>
+      <h1>Tiger Command Center</h1>
+      <div class="sub">Operations Console</div>
+    </div>
   </div>
-  <div class="actions">
-    <button id="notifyBtn" title="Spoiler: todo esta bien... o no">Alerts</button>
-    <button id="mapBtn" class="btn-map" onclick="window.open('/project-map.html','_blank')" title="A ver si encuentras algo util aqui">Mapa</button>
-    <button id="modeBtn" class="btn-mode" onclick="window.toggleExecutionMode()" title="Cambiar modo de ejecucion">AUTO</button>
-    <button id="refreshBtn" class="btn-refresh" title="Actualizar para ver casi lo mismo">Refresh</button>
+  <div class="head-right">
+    <span class="chip"><span class="k">Gate</span><span id="systemStatusBadge">—</span></span>
+    <span class="chip" id="syncChip"><span class="k">Sync</span><span id="syncTime">—</span></span>
+    <button id="modeBtn" class="btn mode" title="Cycle execution mode AUTO / PRO / DEV">AUTO</button>
+    <a class="link" href="/project-map.html" target="_blank" rel="noopener">Map</a>
+    <button id="refreshBtn" class="btn" title="Refresh now">Refresh</button>
   </div>
 </header>
 
-<div class="kpi-row" id="kpiRow"></div>
+<div class="kpis" id="kpiRow"></div>
 
-<section class="autonomous-status">
-  <h2>Autonomous Engine State</h2>
-  <div class="autonomous-grid">
-    <div class="autonomous-item" id="stat-mode">
-      <div class="label">Execution Mode</div>
-      <div class="value" id="modeValue" style="cursor:pointer; color:var(--brand)" onclick="window.toggleExecutionMode()">AUTO</div>
+<section class="card mb12">
+  <h2>Autonomous Engine State <span class="meta" id="stateMeta"></span></h2>
+  <div class="state-grid">
+    <div class="tile">
+      <div class="lbl">Execution Mode</div>
+      <div class="val pointer" id="modeValue" title="Cycle mode">AUTO</div>
       <div class="sub" id="modeDesc">Full autonomy</div>
     </div>
-    <div class="autonomous-item" id="stat-bus">
-      <div class="label">Event Bus</div>
-      <div class="value" id="busEvents">0</div>
-      <div class="sub" id="busSubs">0 active subs</div>
+    <div class="tile">
+      <div class="lbl">Event Bus</div>
+      <div class="val num" id="busEvents">0</div>
+      <div class="sub"><span id="busSubs">0</span> active subs</div>
     </div>
-    <div class="autonomous-item" id="stat-worktrees">
-      <div class="label">Worktrees</div>
-      <div class="value" id="wtActive">0</div>
-      <div class="sub" id="wtTotal">0 total pools</div>
+    <div class="tile">
+      <div class="lbl">Worktrees</div>
+      <div class="val num" id="wtActive">0</div>
+      <div class="sub"><span id="wtTotal">0</span> total pools</div>
     </div>
-    <div class="autonomous-item" id="stat-memory">
-      <div class="label">Shared Memory l_s</div>
-      <div class="value" id="memKeys">0</div>
-      <div class="sub" id="memOwner">system owner</div>
+    <div class="tile">
+      <div class="lbl">Shared Memory</div>
+      <div class="val num" id="memKeys">0</div>
+      <div class="sub">keys tracked</div>
     </div>
   </div>
 </section>
 
-<section class="resource-management">
-  <h2>Local Model Resources</h2>
-  <div class="resource-grid" id="modelGrid">
-    <!-- Models will be rendered here -->
-  </div>
-  <div class="resource-actions">
-    <button class="btn" onclick="window.showAddModel()">+ Add Local Model</button>
-  </div>
-</section>
-
-<div class="grid-2">
-  <section class="card" id="campaignPanel">
-    <h2>Campaigns</h2>
-    <div id="campaignList"></div>
-    <div id="campaignDetail"></div>
+<div class="grid g3-1">
+  <section class="card">
+    <h2>Product Scores</h2>
+    <div id="productScores"><div class="empty">Loading…</div></div>
   </section>
-  <section class="card" id="alertsPanel">
-    <h2>Bot Monitor <span id="alertsStatus"></span></h2>
-    <div id="alertsTime" class="dim"></div>
-    <div id="alertsContent"></div>
+  <section class="card">
+    <h2>Bot Monitor <span class="meta" id="alertsStatus"></span></h2>
+    <div class="dim mb8" id="alertsTime"></div>
+    <div id="alertsContent"><div class="empty">Loading…</div></div>
   </section>
 </div>
 
-<div class="grid-2">
+<div class="grid g2">
   <section class="card">
-    <h2>Product Scores</h2>
-    <div id="productScores"></div>
+    <h2>Campaigns <span class="meta">read-only · approval via CLI</span></h2>
+    <div id="campaignList"><div class="empty">Loading…</div></div>
   </section>
   <section class="card">
     <h2>Leads</h2>
-    <div id="leadsContent"></div>
+    <div id="leadsContent"><div class="empty">Loading…</div></div>
   </section>
 </div>
 
-<section class="card" style="margin-bottom:8px;">
-  <h2>🤖 Agent Efficiency <span id="agentEffTime" class="dim"></span></h2>
-  <div id="agentEfficiency"></div>
+<section class="card mb12">
+  <h2>Agent Efficiency <span class="meta" id="agentEffTime"></span></h2>
+  <div id="agentEfficiency"><div class="empty">Loading…</div></div>
 </section>
 
-<section class="card" style="margin-bottom:8px;">
-  <h2>🔌 MCP Servers <span id="mcpCount" class="dim"></span></h2>
-  <div id="mcpToggles"></div>
-</section>
-
-<section class="card" style="margin-bottom:8px;">
-  <h2>📊 MCP Activity Ranking <span id="mcpRankTime" class="dim"></span></h2>
-  <div id="mcpRanking"></div>
-</section>
-
-<footer id="footerText"></footer>
-
-<div class="bot-container">
-  <div class="bot-bubble" id="botBubble">
-    <strong>Tiger AI</strong>
-    <span id="botFact">Engine running. Pipeline: active.</span>
-  </div>
-  <div class="bot-face" id="botFace" title="Tiger AI -- 12 faces"></div>
+<div class="grid g2">
+  <section class="card">
+    <h2>MCP Activity Ranking <span class="meta" id="mcpRankTime"></span></h2>
+    <div id="mcpRanking"><div class="empty">No MCP activity data</div></div>
+  </section>
+  <section class="card">
+    <h2>Local Models <span class="meta">read-only</span></h2>
+    <div id="modelGrid"><div class="empty">No local models registered</div></div>
+  </section>
 </div>
 
+<footer id="footerText">Initializing…</footer>
+
 <script src="/command-center/app.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
 </body>
 </html>
