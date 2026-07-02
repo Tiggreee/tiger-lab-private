@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const baseUrl = new URL(process.env.PRODUCTION_DASHBOARD_URL || 'https://tiger-dashboard-production.up.railway.app');
+const baseUrl = new URL(process.env.PRODUCTION_DASHBOARD_URL || 'https://tiger-backend-production.up.railway.app');
 const timeoutMs = Number(process.env.PRODUCTION_DASHBOARD_SMOKE_TIMEOUT_MS || 15000);
 const invalidCampaignId = `smoke-${Date.now()}`;
 
@@ -67,14 +67,13 @@ await runCheck('dashboard-ui-version', async () => {
   return { url: '/command-center/app.js', statusCode: response.status };
 });
 
-await runCheck('dashboard-telemetry', async () => {
-  const { response, json } = await readJsonResponse(new URL('/runtime/telemetry', baseUrl));
-  if (!response.ok) fail('dashboard-telemetry', `expected 200, got ${response.status}`);
-  if (!json || typeof json !== 'object') fail('dashboard-telemetry', 'response was not valid JSON');
-  if (typeof json.checkedAt !== 'string') fail('dashboard-telemetry', 'missing checkedAt');
-  if (typeof json.mode !== 'string') fail('dashboard-telemetry', 'missing mode');
-  if (typeof json.agentsTotal !== 'number') fail('dashboard-telemetry', 'missing agentsTotal');
-  return { url: '/runtime/telemetry', statusCode: response.status, mode: json.mode, agentsTotal: json.agentsTotal };
+await runCheck('telemetry-protected', async () => {
+  // Runtime telemetry exposes operational internals and must NOT be publicly readable.
+  const { response } = await readJsonResponse(new URL('/runtime/telemetry', baseUrl));
+  if (![401, 403].includes(response.status)) {
+    fail('telemetry-protected', `expected 401/403 (auth-gated), got ${response.status}`);
+  }
+  return { url: '/runtime/telemetry', statusCode: response.status };
 });
 
 await runCheck('campaign-index', async () => {
@@ -87,17 +86,18 @@ await runCheck('campaign-index', async () => {
 
 for (const endpoint of ['/runtime/campaigns/approve', '/runtime/campaigns/reject']) {
   await runCheck(endpoint, async () => {
+    // An unknown campaign id must never be silently accepted (no unauthenticated publish).
     const { response, json, text } = await readJsonResponse(new URL(endpoint, baseUrl), {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ id: invalidCampaignId, reason: 'smoke' })
     });
-    if (response.status !== 404) fail(endpoint, `expected 404 for invalid campaign id, got ${response.status}`);
-    const errorText = typeof json?.error === 'string' ? json.error : text;
-    if (!String(errorText).toLowerCase().includes('campaign not found')) {
-      fail(endpoint, 'missing campaign-not-found error');
+    if (response.ok) fail(endpoint, `invalid campaign id was accepted (status ${response.status})`);
+    if (![401, 403, 404].includes(response.status)) {
+      fail(endpoint, `expected 401/403/404 for invalid campaign id, got ${response.status}`);
     }
-    return { url: endpoint, statusCode: response.status, invalidCampaignId };
+    const errorText = typeof json?.error === 'string' ? json.error : text;
+    return { url: endpoint, statusCode: response.status, invalidCampaignId, error: String(errorText).slice(0, 80) };
   });
 }
 
