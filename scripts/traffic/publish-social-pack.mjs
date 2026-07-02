@@ -53,10 +53,11 @@ function parseArgs(argv) {
     }
 
     if (key === 'channels') {
-      options.channels = value
+      const requested = value
         .split(',')
         .map((channel) => channel.trim().toLowerCase())
         .filter(Boolean);
+      options.channels = requested.includes('all') ? [...CHANNELS] : requested;
       index += 1;
     }
   }
