@@ -1,0 +1,177 @@
+{
+  "generatedAt": "2026-07-02T01:20:07.216Z",
+  "product": "Script Premium Kit",
+  "segment": "pymes",
+  "brief": {
+    "timestamp": "2026-07-02T01:20:07.215Z",
+    "product": "Script Premium Kit",
+    "segment": "pymes",
+    "market": {
+      "targetSegments": [
+        "Micro empresas",
+        "Freelancers",
+        "PyMEs",
+        "Contadores"
+      ],
+      "painPoints": [
+        "Pérdida de 10+ horas semanales en papeleo",
+        "No cumplen con requisitos del SAT a tiempo",
+        "Integración manual entre sistemas",
+        "Errores en facturación electrónica",
+        "Falta de control sobre documentos",
+        "No tienen visibilidad en tiempo real de impuestos"
+      ],
+      "keywords": [
+        "Automatización",
+        "SAT",
+        "Facturación electrónica",
+        "CFDI",
+        "Timbre",
+        "Deducible",
+        "Cumplimiento",
+        "Eficiencia"
+      ],
+      "trendingTopics": [
+        "IA en contabilidad",
+        "Automatización fiscal",
+        "Compliance SAT",
+        "Paperless office"
+      ],
+      "searchVolume": {
+        "high": [
+          "CFDI",
+          "Facturación",
+          "Contabilidad"
+        ],
+        "medium": [
+          "Automatización contable",
+          "Software factura"
+        ]
+      }
+    },
+    "messaging": {
+      "topAngles": [
+        {
+          "key": "compliance",
+          "headline": "Cumplimiento SAT garantizado",
+          "problem": "Un error fiscal = Multas + estrés",
+          "solution": "Validación automática contra reglas SAT actualizadas",
+          "proof": "100% de transacciones compliant. Auditoría gratuita."
+        },
+        {
+          "key": "integration",
+          "headline": "Tu stack existente sigue funcionando",
+          "problem": "Cambiar sistemas = Perder productividad",
+          "solution": "APIs abiertas. Webhooks. Integraciones nativas.",
+          "proof": "Conecta con Stripe, PayPal, tu banco, tu ERP"
+        },
+        {
+          "key": "simplicity",
+          "headline": "Sin curva de aprendizaje",
+          "problem": "Capacitación = Dinero desperdiciado",
+          "solution": "Interface intuitiva. Onboarding en 5 minutos.",
+          "proof": "Equipos productivos desde el día 1"
+        }
+      ],
+      "audienceInsights": {
+        "persona": "Sales Manager en PyME",
+        "motivations": [
+          "Ahorrar tiempo en tareas repetitivas",
+          "Cumplir con regulaciones (SAT, fiscales)",
+          "Mejorar accuracy / reducir errores",
+          "Scalear sin contratar más gente",
+          "Obtener visibilidad en tiempo real"
+        ],
+        "concerns": [
+          "Integración con sistemas existentes",
+          "Curva de aprendizaje",
+          "Costo vs beneficio",
+          "Soporte en español",
+          "Seguridad de datos"
+        ],
+        "timeline": "Decision makers en LATAM suelen evaluar 2-4 semanas antes de comprar"
+      },
+      "competitiveAdvantage": "Implementación 10x más rápida que la competencia",
+      "copyGuide": {
+        "do": [
+          "✅ Cuantificar beneficios: \"10h/semana\", \"85% menos errores\"",
+          "✅ Resolver pain points específicos: SAT, timbre, deducible",
+          "✅ Usar urgencia light: \"Hoy\", \"Este mes\", \"Antes del cambio SAT\"",
+          "✅ Proof social: \"Contadores de X empresa\", \"1000+ usuarios\"",
+          "✅ Local language: Usa \"Acá\", \"Contigo\", \"Tu negocio\""
+        ],
+        "dont": [
+          "❌ Jargon técnico sin traducción",
+          "❌ Claims sin números (generales)",
+          "❌ Olvidar que es mercado LATAM, no USA",
+          "❌ Ignorar que el SAT es miedo #1 en contabilidad",
+          "❌ Comparar con competitors sin datos"
+        ]
+      }
+    },
+    "recommendations": {
+      "copyAngles": [
+        "🚀 Automatiza {action}. Recupera {time_unit}.",
+        "❌ Deja de {problem}. Empieza a {solution}.",
+        "💡 {Key_insight} que nadie te cuenta."
+      ],
+      "strongCTAs": [
+        "Comienza gratis hoy →",
+        "Acceso inmediato. Sin tarjeta requerida.",
+        "Prueba 7 días sin costo →"
+      ],
+      "hooks": [
+        "¿Cuántas horas pierdes cada mes en papeleo?",
+        "El SAT cambió en 2024 — esto es lo que cambia para ti",
+        "Los contadores que automatizan ganan 15+ horas/mes"
+      ],
+      "wordsthatConvert": [
+        "Automatización",
+        "SAT",
+        "Facturación electrónica",
+        "CFDI",
+        "Timbre"
+      ]
+    },
+    "channelStrategy": {
+      "linkedin": "Thought leadership + ROI proof + Case studies",
+      "x": "Hot takes on SAT changes + Automation benefits + Problem/Solution",
+      "email": "Deep dives + Educational + ROI calculator",
+      "facebook": "Community + Success stories + Local proof",
+      "telegram": "Direct communication + Offers + Quick wins",
+      "discord": "Community building + Support + Tips"
+    }
+  },
+  "competition": {
+    "product": "Script Premium Kit",
+    "segment": "pymes",
+    "analysis": {
+      "strengths": [
+        "Implementación rápida",
+        "Soporte en español",
+        "CFDI compliance"
+      ],
+      "weaknesses": [
+        "Menos features que competencia heavy",
+        "Menor brand awareness"
+      ],
+      "opportunities": [
+        "Enfoque en SMBs underserved",
+        "Automatización end-to-end",
+        "Community building"
+      ],
+      "threats": [
+        "Competencia con VC backing",
+        "Cambios SAT impredecibles"
+      ]
+    },
+    "positioningStatement": "Script Premium Kit es la solución de pymes más fácil de implementar en LATAM. Para PyMEs que quieren resultados rápido sin complicaciones."
+  },
+  "actionItems": [
+    "1. Creative Agent: usa estos 3 angles como base",
+    "2. Weave estos keywords en cada pieza de copy",
+    "3. Testing: A/B test estos headlines primero",
+    "4. Per channel: usa la estrategia recomendada",
+    "5. Proof: incluye números de audience insights"
+  ]
+}

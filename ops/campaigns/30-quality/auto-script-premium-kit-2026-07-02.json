@@ -1,0 +1,75 @@
+{
+  "checkedAt": "2026-07-02T01:20:07.248Z",
+  "briefId": "auto-script-premium-kit-2026-07-02",
+  "campaignId": "CAMP-1782955207225",
+  "qualityResult": {
+    "campaignId": "CAMP-1782955207225",
+    "threshold": 45,
+    "averageSpecificity": 15,
+    "passed": false,
+    "failedChannels": [
+      "email",
+      "linkedin",
+      "x",
+      "facebook",
+      "telegram",
+      "discord"
+    ],
+    "channels": [
+      {
+        "channel": "email",
+        "specificityScore": 0,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 0 below threshold 45."
+        ]
+      },
+      {
+        "channel": "linkedin",
+        "specificityScore": 4,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 4 below threshold 45."
+        ]
+      },
+      {
+        "channel": "x",
+        "specificityScore": 28,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 28 below threshold 45."
+        ]
+      },
+      {
+        "channel": "facebook",
+        "specificityScore": 0,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 0 below threshold 45."
+        ]
+      },
+      {
+        "channel": "telegram",
+        "specificityScore": 32,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 32 below threshold 45."
+        ]
+      },
+      {
+        "channel": "discord",
+        "specificityScore": 28,
+        "genericPatterns": [],
+        "passed": false,
+        "reasons": [
+          "Specificity score 28 below threshold 45."
+        ]
+      }
+    ]
+  }
+}

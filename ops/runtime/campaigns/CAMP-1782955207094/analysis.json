@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-07-02T01:20:07.101Z",
+  "campaignId": "CAMP-1782955207094",
+  "uniqueness": {
+    "uniqueHeadlines": 6,
+    "averageLength": 445.6666666666667,
+    "hasEmojis": true
+  },
+  "recommendations": [
+    "💡 No proven headline patterns detected. Consider using: Automatiza documentos. Ahorra 10h/semana., Automatiza documentos. Ahorra 10h/semana."
+  ],
+  "marketInsights": {
+    "segment": "contabilidad",
+    "topAngles": [
+      "Sin curva de aprendizaje",
+      "Cumplimiento SAT garantizado",
+      "Resultados en minutos, no horas"
+    ],
+    "audienceInsights": {
+      "persona": "Contador/Contable en PyME",
+      "motivations": [
+        "Ahorrar tiempo en tareas repetitivas",
+        "Cumplir con regulaciones (SAT, fiscales)",
+        "Mejorar accuracy / reducir errores",
+        "Scalear sin contratar más gente",
+        "Obtener visibilidad en tiempo real"
+      ],
+      "concerns": [
+        "Integración con sistemas existentes",
+        "Curva de aprendizaje",
+        "Costo vs beneficio",
+        "Soporte en español",
+        "Seguridad de datos"
+      ],
+      "timeline": "Decision makers en LATAM suelen evaluar 2-4 semanas antes de comprar"
+    },
+    "channelStrategy": {
+      "linkedin": "Thought leadership + ROI proof + Case studies",
+      "x": "Hot takes on SAT changes + Automation benefits + Problem/Solution",
+      "email": "Deep dives + Educational + ROI calculator",
+      "facebook": "Community + Success stories + Local proof",
+      "telegram": "Direct communication + Offers + Quick wins",
+      "discord": "Community building + Support + Tips"
+    }
+  },
+  "insights": {
+    "isImprovement": true,
+    "comparedToAverage": 6,
+    "nextIteration": "⚠️ 1 suggestions for next iteration"
+  }
+}

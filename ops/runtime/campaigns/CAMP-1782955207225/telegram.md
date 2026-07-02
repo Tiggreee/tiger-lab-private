@@ -1,0 +1,14 @@
+*Script Premium Kit*
+
+*Tu stack existente sigue funcionando*
+
+El SAT cambió en 2024 — esto es lo que cambia para ti
+
+20+ scripts probados que automatizan contabilidad, facturación y administración. Sin programar. Sin dolores de cabeza.
+
+✅ 20+ scripts listos
+✅ Personalización total
+✅ Actualizaciones trimestrales
+✅ Soporte prioritario
+
+👉 [Descarga el kit gratis](https://tigerlab.dev)
