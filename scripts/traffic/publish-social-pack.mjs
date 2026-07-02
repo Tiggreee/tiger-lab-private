@@ -466,3 +466,8 @@ async function main() {
   // Do not exit with error code - let the autopilot continue with channels that work
   // process.exit(1);
 }
+
+main().catch((error) => {
+  process.stderr.write(`Fatal: ${error.stack || error.message}\n`);
+  process.exitCode = 1;
+});
