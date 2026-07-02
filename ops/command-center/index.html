@@ -92,6 +92,11 @@ a.link:hover{color:var(--text);border-color:var(--line)}
 .stat .v{font-family:var(--mono);color:var(--text)}
 .sec-title{font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:var(--text-mut);margin:10px 0 5px}
 
+/* agent status */
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:11px;font-size:10.5px;color:var(--text-dim)}
+.lgd{display:flex;align-items:center;gap:5px}
+.sdot{display:inline-block;width:8px;height:8px;border-radius:50%;flex-shrink:0}
+
 /* campaigns read-only */
 .camp{display:flex;align-items:center;gap:9px;padding:8px 10px;margin:5px 0;border-radius:8px;
   background:var(--panel-2);border:1px solid var(--line-soft);cursor:pointer;transition:.15s}
@@ -199,7 +204,7 @@ footer{font-size:10.5px;color:var(--text-mut);text-align:center;padding:12px 0 4
 </div>
 
 <section class="card mb12">
-  <h2>Agent Efficiency <span class="meta" id="agentEffTime"></span></h2>
+  <h2>Agent Status <span class="meta" id="agentEffTime"></span></h2>
   <div id="agentEfficiency"><div class="empty">Loading…</div></div>
 </section>
 

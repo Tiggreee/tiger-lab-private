@@ -51,12 +51,14 @@ function animateBars(container) {
   });
 }
 
-function renderKPIs(data) {
+function renderKPIs(data, agentCounts) {
   const m = data.monetization || {};
   const am = data.agentMonitor?.summary || {};
+  const agentsVal =
+    agentCounts && agentCounts.total ? `${agentCounts.live}/${agentCounts.total}` : metric(am.activeAgents);
   const kpis = [
     ['Leads Today', metric(m.leadsToday)],
-    ['Active Agents', metric(am.activeAgents)],
+    ['Agents Live', agentsVal],
     ['Active Products', metric(data.products?.active)],
     ['Content Pipeline', metric(m.generatedContent)]
   ];
@@ -182,33 +184,65 @@ async function renderCampaigns() {
     .join('');
 }
 
-async function renderAgentEfficiency() {
+const AGENT_STATE = {
+  live: { label: 'Live', color: 'var(--go)', desc: 'Wired into automation and producing output' },
+  wired: { label: 'Wired', color: 'var(--info)', desc: 'Connected to workflows/scripts, no output yet' },
+  working: { label: 'Working', color: 'var(--warn)', desc: 'Producing output but not wired into automation' },
+  offline: { label: 'Offline', color: 'var(--nogo)', desc: 'No connection and no output evidence' }
+};
+const AGENT_ORDER = { live: 0, wired: 1, working: 2, offline: 3 };
+
+function agentState(a) {
+  const channels = Array.isArray(a.integrationChannels)
+    ? a.integrationChannels.map((c) => String(c).toLowerCase())
+    : [];
+  // Interconnected = wired into real CI automation (a workflow actually references it).
+  // Having a script or a markdown definition is NOT interconnection.
+  const interconnected = Number(a.workflowCount) > 0 || channels.some((c) => c.includes('workflow'));
+  // Working = produces real output or has a runnable script behind it.
+  const working = a.evidence === true || a.hasScript === true || channels.some((c) => c.includes('evidence'));
+  if (interconnected && working) return 'live';
+  if (interconnected) return 'wired';
+  if (working) return 'working';
+  return 'offline';
+}
+
+function renderAgentStatus(mon) {
   const host = $('agentEfficiency');
-  const mon = await fetchJSON(MONITOR);
   $('agentEffTime').textContent = `updated ${new Date().toLocaleTimeString()}`;
   const monAgents = mon?.agents || [];
+  const counts = { live: 0, wired: 0, working: 0, offline: 0, total: monAgents.length };
   if (monAgents.length === 0) {
     host.innerHTML = '<div class="empty">Agent monitor evidence missing</div>';
-    return;
+    return counts;
   }
-  const agents = monAgents.map((a) => {
-    const st = String(a.status || '').toLowerCase();
-    const active = typeof a.active === 'boolean' ? a.active : ['active', 'ok', 'healthy', 'running'].includes(st);
-    return { name: a.name || a.id || '?', func: a.role || a.type || 'agent', pct: active ? 100 : 0 };
-  });
-  const rows = agents
-    .map((a) => ({
-      pct: a.pct,
-      html: `<tr><td class="tname">${a.name}</td><td style="color:var(--text-mut)">${a.func}</td>
-      <td><span class="effbar"><span class="efffill" data-w="${a.pct}" style="background:${scoreColor(a.pct)}"></span></span>
-      <span class="num" style="color:${scoreColor(a.pct)}">${a.pct}%</span></td></tr>`
-    }))
-    .sort((x, y) => y.pct - x.pct);
-  const avg = Math.round(agents.reduce((s, a) => s + a.pct, 0) / Math.max(1, agents.length));
-  host.innerHTML = `<table class="t"><thead><tr><th>Agent</th><th>Function</th><th style="width:120px">Efficiency</th></tr></thead>
-    <tbody>${rows.map((r) => r.html).join('')}</tbody></table>
-    <div class="overall">Overall: <b style="color:${scoreColor(avg)}">${avg}%</b></div>`;
-  animateBars(host);
+  const rows = monAgents
+    .map((a) => {
+      const st = agentState(a);
+      counts[st] += 1;
+      const info = AGENT_STATE[st];
+      const name = a.name || a.id || '?';
+      const kind = a.monetizationType || a.type || 'agent';
+      const wf = Number(a.workflowCount) || 0;
+      return {
+        order: AGENT_ORDER[st],
+        html: `<tr><td><span class="sdot" style="background:${info.color}"></span></td>
+        <td class="tname">${name}</td><td style="color:var(--text-mut)">${kind}</td>
+        <td style="color:${info.color};font-weight:600">${info.label}</td>
+        <td class="num" style="color:var(--text-mut)">${wf} wf</td></tr>`
+      };
+    })
+    .sort((x, y) => x.order - y.order);
+  const legend = Object.keys(AGENT_STATE)
+    .map(
+      (k) =>
+        `<span class="lgd" title="${AGENT_STATE[k].desc}"><span class="sdot" style="background:${AGENT_STATE[k].color}"></span>${AGENT_STATE[k].label} <span class="dim">${counts[k]}</span></span>`
+    )
+    .join('');
+  host.innerHTML = `<div class="legend">${legend}</div>
+    <table class="t"><thead><tr><th></th><th>Agent</th><th>Type</th><th>State</th><th>Wired</th></tr></thead>
+    <tbody>${rows.map((r) => r.html).join('')}</tbody></table>`;
+  return counts;
 }
 
 async function renderMcpRanking() {
@@ -305,10 +339,12 @@ function renderFooter(gateOk) {
 async function render() {
   const unified = await fetchJSON(UNIFIED);
   const alerts = await fetchJSON(ALERTS);
+  const monitor = await fetchJSON(MONITOR);
   $('syncTime').textContent = new Date().toLocaleTimeString();
 
+  const agentCounts = renderAgentStatus(monitor);
   if (unified) {
-    renderKPIs(unified);
+    renderKPIs(unified, agentCounts);
     renderGate(unified, alerts);
   }
   await Promise.all([
@@ -316,7 +352,6 @@ async function render() {
     renderLeads(),
     renderAlerts(),
     renderCampaigns(),
-    renderAgentEfficiency(),
     renderMcpRanking(),
     renderModels(),
     renderAutonomousState()
