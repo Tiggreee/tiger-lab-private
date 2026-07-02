@@ -58,6 +58,15 @@ await runCheck('dashboard-home', async () => {
   return { url: '/command-center/index.html', statusCode: response.status };
 });
 
+await runCheck('dashboard-ui-version', async () => {
+  const { response, text } = await readJsonResponse(new URL('/command-center/app.js', baseUrl));
+  if (!response.ok) fail('dashboard-ui-version', `expected 200, got ${response.status}`);
+  if (!text.includes('Read-only operations console')) {
+    fail('dashboard-ui-version', 'deployed app.js is stale (missing read-only console marker); dashboard service did not pick up the latest build');
+  }
+  return { url: '/command-center/app.js', statusCode: response.status };
+});
+
 await runCheck('dashboard-telemetry', async () => {
   const { response, json } = await readJsonResponse(new URL('/runtime/telemetry', baseUrl));
   if (!response.ok) fail('dashboard-telemetry', `expected 200, got ${response.status}`);
