@@ -237,6 +237,30 @@ async function verifyLinkedIn() {
   }
   const me = JSON.parse(body);
 
+  // Introspect the token to report which scopes were actually granted. Posting
+  // as a company page needs w_organization_social; LinkedIn silently drops
+  // org scopes if the Community Management API product is not approved.
+  let scopeHint = '';
+  const clientId = process.env.LINKEDIN_CLIENT_ID;
+  const clientSecret = process.env.LINKEDIN_CLIENT_SECRET;
+  if (clientId && clientSecret) {
+    try {
+      const introspectResp = await fetch('https://www.linkedin.com/oauth/v2/introspectToken', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ client_id: clientId, client_secret: clientSecret, token })
+      });
+      if (introspectResp.ok) {
+        const info = await introspectResp.json();
+        const scopes = String(info.scope || '');
+        const hasOrg = /w_organization_social/.test(scopes);
+        scopeHint = ` Scopes: ${scopes || '(none reported)'}.${hasOrg ? '' : ' MISSING w_organization_social -> cannot post as page (needs Community Management API product).'}`;
+      }
+    } catch {
+      // introspection is best-effort only
+    }
+  }
+
   // Discover organizations the token can administer so the user can set
   // LINKEDIN_ORG_ID and post as the company page. Needs rw_organization_admin
   // scope; if the token lacks it this call just returns nothing useful.
@@ -259,7 +283,7 @@ async function verifyLinkedIn() {
     // discovery is best-effort only
   }
 
-  return { ok: true, detail: `Token valid, member id resolved (${me.sub}).${orgHint}` };
+  return { ok: true, detail: `Token valid, member id resolved (${me.sub}).${scopeHint}${orgHint}` };
 }
 
 const VERIFIERS = {
