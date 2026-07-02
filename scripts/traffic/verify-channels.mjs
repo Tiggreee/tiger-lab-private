@@ -225,19 +225,18 @@ async function verifyX() {
 
 async function verifyLinkedIn() {
   const token = process.env.LINKEDIN_ACCESS_TOKEN;
-  const resp = await fetch('https://api.linkedin.com/v2/me', {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      'X-Restli-Protocol-Version': '2.0.0',
-      'Linkedin-Version': '202506'
-    }
+  // Modern OpenID endpoint. /v2/me is legacy and returns DISABLED_APPLICATION
+  // unless the app has the deprecated Sign In product; /v2/userinfo works with
+  // the "Sign In with LinkedIn using OpenID Connect" product (openid+profile).
+  const resp = await fetch('https://api.linkedin.com/v2/userinfo', {
+    headers: { Authorization: `Bearer ${token}` }
   });
   const body = await resp.text();
   if (!resp.ok) {
-    return { ok: false, detail: `Token/app rejected (GET /v2/me ${resp.status}): ${body}` };
+    return { ok: false, detail: `Token/app rejected (GET /v2/userinfo ${resp.status}): ${body}` };
   }
   const me = JSON.parse(body);
-  return { ok: true, detail: `Token valid, person id resolved (${me.id}).` };
+  return { ok: true, detail: `Token valid, member id resolved (${me.sub}).` };
 }
 
 const VERIFIERS = {

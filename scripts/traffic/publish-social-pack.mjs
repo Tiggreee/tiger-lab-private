@@ -256,23 +256,23 @@ async function postLinkedIn(text) {
   requiredEnv(['LINKEDIN_ACCESS_TOKEN']);
   const token = process.env.LINKEDIN_ACCESS_TOKEN;
   
-  // Step 1: Get Person ID from /v2/me (uses r_basicprofile)
-  const meResp = await fetch('https://api.linkedin.com/v2/me', {
+  // Step 1: Get member id from /v2/userinfo (OpenID Connect). The legacy /v2/me
+  // needs a deprecated product and returns DISABLED_APPLICATION; /v2/userinfo
+  // works with "Sign In with LinkedIn using OpenID Connect" (openid + profile).
+  const meResp = await fetch('https://api.linkedin.com/v2/userinfo', {
     headers: {
-      'Authorization': `Bearer ${token}`,
-      'X-Restli-Protocol-Version': '2.0.0',
-      'Linkedin-Version': '202506'
+      'Authorization': `Bearer ${token}`
     }
   });
   
   if (!meResp.ok) {
     const meErr = await meResp.text();
-    throw new Error(`LinkedIn /v2/me ${meResp.status}: ${meErr}`);
+    throw new Error(`LinkedIn /v2/userinfo ${meResp.status}: ${meErr}`);
   }
   
   const me = await meResp.json();
-  const personId = me.id;
-  if (!personId) throw new Error('Could not resolve LinkedIn person ID from /v2/me response');
+  const personId = me.sub;
+  if (!personId) throw new Error('Could not resolve LinkedIn member ID from /v2/userinfo response');
   
   // Determine author: organization page takes priority for brand content
   let authorUrn = `urn:li:person:${personId}`;
