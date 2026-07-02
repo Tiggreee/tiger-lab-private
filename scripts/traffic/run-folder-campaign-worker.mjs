@@ -304,7 +304,7 @@ function parseArgs(argv) {
 function runOnce() {
   if (runInProgress) {
     process.stdout.write('Folder worker skipped: in-process run still active.\n');
-    return;
+    return null;
   }
 
   runInProgress = true;
@@ -312,7 +312,7 @@ function runOnce() {
   if (lockFd === null) {
     process.stdout.write('Folder worker skipped: lock exists from another process.\n');
     runInProgress = false;
-    return;
+    return null;
   }
 
   ensureStages();
@@ -355,6 +355,7 @@ function runOnce() {
 
     process.stdout.write(`Folder worker processed: ${summary.processed}\n`);
     process.stdout.write(`Approved: ${summary.approved}, Rejected: ${summary.rejected}, Errors: ${summary.errors}\n`);
+    return summary;
   } finally {
     releaseWorkerLock(lockFd);
     runInProgress = false;
@@ -372,8 +373,32 @@ function main() {
   ensureStages();
   process.stdout.write('Folder worker watch mode started. Polling every 20 seconds.\n');
 
-  runOnce();
-  setInterval(runOnce, 20_000);
+  // Safety: watch mode auto-stops once there is no genuine new work to act on,
+  // so an unattended worker can never fly forever generating noise. Only real
+  // outcomes (approved/rejected/errors) reset the idle counter; skips do not.
+  const MAX_IDLE_CYCLES = 3;
+  let idleCycles = 0;
+  let timer;
+
+  const tick = () => {
+    const summary = runOnce();
+    const didWork =
+      Boolean(summary) &&
+      ((summary.approved || 0) + (summary.rejected || 0) + (summary.errors || 0)) > 0;
+    idleCycles = didWork ? 0 : idleCycles + 1;
+    if (idleCycles >= MAX_IDLE_CYCLES) {
+      process.stdout.write(
+        `Folder worker auto-stopping: ${MAX_IDLE_CYCLES} idle cycles, no new campaigns to act on.\n`
+      );
+      if (timer) {
+        clearInterval(timer);
+      }
+      process.exit(0);
+    }
+  };
+
+  tick();
+  timer = setInterval(tick, 20_000);
 }
 
 main();

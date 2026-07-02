@@ -1,0 +1,17 @@
+{
+  "updated": "2026-07-02T00:39:15.721Z",
+  "decisions": {
+    "CAMP-1782610513949": {
+      "status": "approved",
+      "at": "2026-06-28T01:35:13.973Z",
+      "by": "index-import",
+      "note": "Imported from runtime index (status=approved)."
+    },
+    "CAMP-1782911496182": {
+      "status": "approved",
+      "at": "2026-07-01T13:11:36.218Z",
+      "by": "index-import",
+      "note": "Imported from runtime index (status=approved)."
+    }
+  }
+}
