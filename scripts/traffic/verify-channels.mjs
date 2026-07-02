@@ -236,7 +236,30 @@ async function verifyLinkedIn() {
     return { ok: false, detail: `Token/app rejected (GET /v2/userinfo ${resp.status}): ${body}` };
   }
   const me = JSON.parse(body);
-  return { ok: true, detail: `Token valid, member id resolved (${me.sub}).` };
+
+  // Discover organizations the token can administer so the user can set
+  // LINKEDIN_ORG_ID and post as the company page. Needs rw_organization_admin
+  // scope; if the token lacks it this call just returns nothing useful.
+  let orgHint = '';
+  try {
+    const aclResp = await fetch(
+      'https://api.linkedin.com/v2/organizationAcls?q=roleAssignee&role=ADMINISTRATOR&state=APPROVED',
+      { headers: { Authorization: `Bearer ${token}`, 'X-Restli-Protocol-Version': '2.0.0' } }
+    );
+    if (aclResp.ok) {
+      const acl = await aclResp.json();
+      const orgIds = (acl.elements || [])
+        .map((el) => String(el.organizationalTarget || '').replace('urn:li:organization:', ''))
+        .filter(Boolean);
+      if (orgIds.length > 0) {
+        orgHint = ` Admin org id(s) -> ${orgIds.join(', ')}. Set one as LINKEDIN_ORG_ID to post as the page.`;
+      }
+    }
+  } catch {
+    // discovery is best-effort only
+  }
+
+  return { ok: true, detail: `Token valid, member id resolved (${me.sub}).${orgHint}` };
 }
 
 const VERIFIERS = {
