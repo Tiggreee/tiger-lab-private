@@ -6,7 +6,9 @@ concurrency:
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    # 3 disciplined cycles: 2h run / 2h rest, anchored at 06:00 UTC.
+    # Rest windows between runs are reserved for data collection.
+    - cron: '0 6,10,14 * * *'
   workflow_dispatch:
     inputs:
       cycle_type:
