@@ -24,8 +24,10 @@ real code those flows exist. Your local copy simply predated them.
 | Fiscal reconciliation | `npm run billing:reconcile:strict` | **MATCH (PASS)** |
 | Dashboard smoke | `npm run prod:dashboard:smoke` | **PASS** |
 
-The code is real and structurally healthy. **Nothing is broken in code.** Every red flow you
-reported traces to **unset secrets**, not missing functionality.
+The code is real and structurally healthy. The one genuine **code gap** — the public campaign
+checkout link returning 404 — has now been **fixed** (public `GET /checkout` -> redirect to a live
+payment session; see section B2.1). Every other red flow you reported traces to **unset runtime
+secrets/env**, not missing functionality.
 
 ---
 
@@ -71,14 +73,20 @@ secrets." The real, verified blockers are in section B2 below.
 
 ## B2) The ACTUAL revenue blockers (verified from the LIVE runtime, not secrets)
 
-1. **The campaign checkout link 404s (this is the revenue killer).** Every campaign/landing sends
-   customers to `https://tiger-backend-production.up.railway.app/checkout?product=X`. That URL
-   returns **HTTP 404** on the live backend. The deployed server serves `/` (the Command Center
-   dashboard), `/health`, and the `/billing/*` API — but there is **no `GET /checkout` page**. The
-   real checkout UI (`ui-host/src/.../Checkout.tsx`) is a separate SPA that deploys to GitHub Pages,
-   not to that backend host. Net effect: a customer who clicks any campaign link lands on a dead
-   404 page -> 0% conversion -> no revenue, regardless of secrets. The billing API exists at
-   `POST /billing/checkout/session`, but nothing routes a public click to it.
+1. **The campaign checkout link 404'd (this was the revenue killer) — NOW FIXED.** Every
+   campaign/landing sends customers to
+   `https://tiger-backend-production.up.railway.app/checkout?product=X`. That URL previously
+   returned **HTTP 404** on the live backend: the deployed server served `/` (the Command Center
+   dashboard), `/health`, and the `/billing/*` API — but there was **no `GET /checkout` page**. Net
+   effect: a customer who clicked any campaign link landed on a dead 404 -> 0% conversion -> no
+   revenue, regardless of secrets. **Fix shipped (commit `883ef7b`):** added a public, auth-bypassed
+   `GET /checkout` route (`server/http/routes/billing-routes.ts` + `checkout-support.ts`) that
+   resolves the published price from `ops/runtime/pricing.json`, creates a Stripe/PayPal session via
+   the existing `BillingController.createCheckoutSession`, and **302-redirects the buyer to the
+   hosted payment page**. It auto-retries the alternate provider if one is unconfigured and renders a
+   safe HTML fallback (never 404/500) when neither is available. Verified locally (GET /checkout no
+   longer 404s) and covered by integration tests; prod gate stays GO (21/0/0). Once Railway has the
+   payment env active (PayPal already `up`), a campaign click now lands on a real checkout.
 2. **CFDI/timbrado not wired in the runtime.** `/health` -> `cfdiProvider: skipped`
    ("CFDI provider (timbox) credentials required for timbrado in production"). `FACTURAMA_API_KEY`/
    `FACTURAMA_API_SECRET` are NOT in GitHub secrets and not active in the live runtime. This is the
@@ -95,12 +103,14 @@ secrets." The real, verified blockers are in section B2 below.
    That is a safety feature, not a bug. Set `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` for real
    generation (runbook sec.3).
 
-**Corrected summary:** payments and social secrets ARE configured (the owner was right). The
-remaining blockers are: (1) the campaign checkout link 404s — a broken funnel destination, a code/
-deploy fix, not a secret; (2) CFDI/timbrado credentials genuinely absent; (3) invoice email, (4)
-durable DB, and (5) the provision-confirm URLs not wired in the live runtime. So it is a **mix of a
-funnel-routing bug and a few runtime env vars**, not "everything is missing" and not "everything is
-just secrets."
+**Corrected summary:** payments and social secrets ARE configured (the owner was right). Blocker
+(1) the campaign checkout link that 404'd is now **fixed in code** (public `GET /checkout` ->
+redirect to a live payment session). The remaining blockers are all runtime env/config in Railway,
+not code: (2) CFDI/timbrado credentials genuinely absent (`FACTURAMA_API_KEY/SECRET`); (3) invoice
+email (`RESEND_API_KEY` + `BILLING_FROM_EMAIL`), (4) durable DB (`DATABASE_URL`), and (5) the
+provision-confirm URLs (`paymentGateway`/`entitlementApi`/`contentPublisherApi` `*_URL`) not wired in
+the live runtime. So it is a **funnel-routing bug (now fixed) plus a few runtime env vars** — not
+"everything is missing" and not "everything is just secrets."
 
 ## C) What AI / automation genuinely CANNOT do for you (and why)
 
@@ -197,8 +207,15 @@ uptime — it does **not** substitute for the merchant/social/PAC accounts in se
 - Fast-forwarded local `main` to the real `origin/main`.
 - Re-verified real state: 58/58 unit tests, gate GO, reconciliation MATCH.
 - Wrote this evidence-based reality doc.
+- Consolidated all 24 remote branches into a single clean `main` (11 dependabot bumps merged; no
+  feature code needed rescuing) — see `docs/audit/BRANCH_CONSOLIDATION_2026-07-08.md`.
+- **Fixed the checkout 404 (commit `883ef7b`):** added a public `GET /checkout` route that resolves
+  the published price, creates a Stripe/PayPal session, and 302-redirects the buyer to the hosted
+  payment page (with provider auto-retry + safe fallback). Added integration tests; server
+  type-checks; unit 58/58; prod gate GO 21/0/0.
 
-**Bottom line:** the engine is real and healthy. You are one configuration pass away from live —
-set billing secrets (revenue), then at least 1 social channel (distribution), then CFDI (invoicing).
-AI built and can operate all of it; only *you* can supply the verified accounts the law and the
-platforms require.
+**Bottom line:** the engine is real and healthy, and the funnel now routes a campaign click to a real
+payment page instead of a dead 404. You are one **runtime configuration** pass away from live — set
+billing env in Railway (revenue), then at least 1 social channel (distribution), then CFDI
+(invoicing). AI built and can operate all of it; only *you* can supply the verified accounts the law
+and the platforms require.
