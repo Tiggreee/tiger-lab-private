@@ -43,27 +43,64 @@ reported traces to **unset secrets**, not missing functionality.
   not blocked on AI to generate copy.
 - **Secrets governance**: `.env` / `.env.production` are gitignored. No credential is committed.
 
-## B) What is BLOCKED — and the exact reason (all secrets, not code)
+## B) CORRECTION (2026-07-08, later): the secrets ARE configured — I was wrong
 
-Run `npm run traffic:go-live`. Infra checks PASS; every failure is a **missing secret**:
+An earlier version of this document claimed "no secrets anywhere / all channels missing / revenue
+structurally impossible for lack of keys." **That was a methodology error and it was wrong.** The
+first audit ran the readiness checks against the **local shell environment**, which of course sees
+nothing because the secrets are not stored on the local PC. The secrets live in **GitHub Actions
+secrets** — exactly what the owner saw "by terminal" via `gh secret list`. Verified reality:
 
-1. **No revenue** -> billing secrets are not set in the server runtime.
-   Required (see `ops/playbooks/secrets-golive-runbook.md` sec.1): `STRIPE_SECRET_KEY`,
-   `STRIPE_WEBHOOK_SECRET`, `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`, `PAYPAL_MODE=live`,
-   `PAYPAL_WEBHOOK_ID`, plus real `*_RETURN_URL`/`*_CANCEL_URL`. Without these the checkout page
-   cannot charge a card, so revenue is structurally impossible regardless of code quality.
-2. **CFDI invoice** -> `FACTURAMA_API_KEY`, `FACTURAMA_API_SECRET` not set (runbook sec.1). Timbrado
-   tooling exists but has no PAC credentials to call.
-3. **Campaigns only hit your personal account/webpage** -> the 5 automated channels are all
-   `FAIL (missing)`: LinkedIn, X, Facebook, Telegram, Discord secrets are absent (runbook sec.2).
-   With zero channel tokens, the only place anything can appear is a manual/personal post. Set the
-   tokens and each channel flips to READY (`npm run traffic:ready`).
-4. **"Agents don't make new products"** -> the engine runs, but with no LLM key it produces
+**Payments — SET** (GitHub repo secrets, confirmed via `gh secret list`):
+`STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_SECRET`,
+`PAYPAL_MODE`, `PAYPAL_WEBHOOK_ID`, `PAYPAL_RETURN_URL`, `PAYPAL_CANCEL_URL`, `RAILWAY_TOKEN`.
+
+**Social — 4/5 channels READY, go-live checklist PASSED** (`production-social` GitHub environment,
+via `check-go-live.mjs --githubRepo ... --githubEnv production-social`):
+- X/Twitter READY 7/7, Facebook READY 4/4, Telegram READY 2/2, Discord READY 4/4.
+- LinkedIn 3/4 — only `LINKEDIN_ORG_ID` missing, which the runbook itself marks **optional** for
+  personal-profile posting. `check-go-live` prints "Go-live checklist passed."
+
+**Live billing API — DEPLOYED and protected** (probed `https://tiger-backend-production.up.railway.app`):
+- `POST /billing/checkout/session` -> HTTP **401** (route mounted, auth-protected — not 404).
+- `POST /billing/webhooks/stripe` -> 401, `POST /billing/webhooks/paypal` -> 500 (mounted).
+- `/health` reports `paypalConfig: up` ("PayPal checkout and webhook configuration ready").
+
+So publishing and payment plumbing are configured. The block is **not** "missing payment/social
+secrets." The real, verified blockers are in section B2 below.
+
+## B2) The ACTUAL revenue blockers (verified from the LIVE runtime, not secrets)
+
+1. **The campaign checkout link 404s (this is the revenue killer).** Every campaign/landing sends
+   customers to `https://tiger-backend-production.up.railway.app/checkout?product=X`. That URL
+   returns **HTTP 404** on the live backend. The deployed server serves `/` (the Command Center
+   dashboard), `/health`, and the `/billing/*` API — but there is **no `GET /checkout` page**. The
+   real checkout UI (`ui-host/src/.../Checkout.tsx`) is a separate SPA that deploys to GitHub Pages,
+   not to that backend host. Net effect: a customer who clicks any campaign link lands on a dead
+   404 page -> 0% conversion -> no revenue, regardless of secrets. The billing API exists at
+   `POST /billing/checkout/session`, but nothing routes a public click to it.
+2. **CFDI/timbrado not wired in the runtime.** `/health` -> `cfdiProvider: skipped`
+   ("CFDI provider (timbox) credentials required for timbrado in production"). `FACTURAMA_API_KEY`/
+   `FACTURAMA_API_SECRET` are NOT in GitHub secrets and not active in the live runtime. This is the
+   one credential group that is genuinely absent.
+3. **Invoice email not wired.** `/health` -> `invoiceEmailDelivery: skipped` (needs `RESEND_API_KEY`
+   + `BILLING_FROM_EMAIL`).
+4. **No durable database.** `/health` -> `postgres: skipped` (`DATABASE_URL` not configured). The
+   runtime uses file persistence only — no durable sales/entitlement store for reconciliation.
+5. **Provision-after-payment confirm chain not set.** `/health` -> `paymentGateway`, `entitlementApi`,
+   `contentPublisherApi` all `skipped` (their `*_URL` env vars unset) — the automated
+   "confirm payment -> grant entitlement -> deliver" links.
+6. **"Agents don't make new products"** -> the engine runs, but with no LLM key it produces
    deterministic template drafts, and nothing auto-promotes to the live catalog without approval.
    That is a safety feature, not a bug. Set `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` for real
    generation (runbook sec.3).
 
-**Summary: 100% of your red flows are configuration, 0% are code.**
+**Corrected summary:** payments and social secrets ARE configured (the owner was right). The
+remaining blockers are: (1) the campaign checkout link 404s — a broken funnel destination, a code/
+deploy fix, not a secret; (2) CFDI/timbrado credentials genuinely absent; (3) invoice email, (4)
+durable DB, and (5) the provision-confirm URLs not wired in the live runtime. So it is a **mix of a
+funnel-routing bug and a few runtime env vars**, not "everything is missing" and not "everything is
+just secrets."
 
 ## C) What AI / automation genuinely CANNOT do for you (and why)
 
