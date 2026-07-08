@@ -1,6 +1,6 @@
 # Production Go/No-Go Report
 
-- generatedAt: 2026-07-08T10:55:30.975Z
+- generatedAt: 2026-07-08T11:11:54.676Z
 - gateStatus: GO
 - summary: PASS 21 | WARN 0 | FAIL 0
 
@@ -40,7 +40,7 @@
   details: No se detectaron placeholders ni IDs sample en evidencia operativa.
   ownerAction: Sin accion.
 - P17 Freshness de evidencia de release: PASS
-  details: Reporte reciente (0.0h).
+  details: Reporte reciente (0.3h).
   ownerAction: Sin accion.
 - P18 Consistencia de status en README: PASS
   details: README sin contradicciones criticas detectadas.

@@ -5,9 +5,52 @@ import { validateProvisionProductRequest } from '../contracts/validators/validat
 import { sendJson } from '../response';
 import { getHeader } from '../request-utils';
 import { HttpRoute } from '../types';
+import { resolveCheckoutPrice, renderCheckoutFallback } from './checkout-support';
 
 export function buildBillingRoutes(controller: BillingController): readonly HttpRoute[] {
   return [
+    {
+      method: 'GET',
+      path: '/checkout',
+      handler: async (ctx) => {
+        const url = new URL(ctx.req.url || '/checkout', 'http://localhost');
+        const productId = (url.searchParams.get('product') || url.searchParams.get('productId') || 'docflow-api').trim();
+        const planId = (url.searchParams.get('plan') || url.searchParams.get('planId') || 'starter').trim();
+        const requested = (url.searchParams.get('provider') || '').trim().toLowerCase();
+        const providers: Array<'stripe' | 'paypal'> =
+          requested === 'stripe' || requested === 'paypal' ? [requested] : ['stripe', 'paypal'];
+
+        const price = resolveCheckoutPrice(productId, planId);
+
+        let lastError: unknown;
+        for (const provider of providers) {
+          try {
+            const response = await controller.createCheckoutSession({
+              provider,
+              productId,
+              planId,
+              amount: price?.amount,
+              currency: price?.currency
+            });
+            const approvalUrl =
+              response.result && typeof response.result.approvalUrl === 'string'
+                ? response.result.approvalUrl
+                : undefined;
+            if (approvalUrl) {
+              ctx.res.writeHead(302, { location: approvalUrl, 'cache-control': 'no-store' });
+              ctx.res.end();
+              return;
+            }
+          } catch (error) {
+            lastError = error;
+          }
+        }
+
+        // No provider could create a live session (e.g. unconfigured runtime) — never 404/500 the buyer.
+        void lastError;
+        renderCheckoutFallback(ctx.res, productId, price);
+      }
+    },
     {
       method: 'POST',
       path: '/provision-product',

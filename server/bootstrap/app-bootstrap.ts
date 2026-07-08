@@ -63,6 +63,7 @@ function createRouter(): Router {
 function shouldBypassAuth(route: HttpRoute): boolean {
   return (
     (route.path === '/health' && route.method === 'GET') ||
+    (route.path === '/checkout' && route.method === 'GET') ||
     route.path.startsWith('/dev-access/') ||
     (route.method === 'GET' && route.path.startsWith('/integrations/linkedin/oauth/')) ||
     (route.method === 'POST' && route.path.startsWith('/billing/webhooks'))
