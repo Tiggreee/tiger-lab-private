@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T17:29:37.245Z",
+  "generatedAt": "2026-07-08T10:55:30.975Z",
   "strict": false,
   "gateStatus": "GO",
   "summary": {
@@ -162,7 +162,7 @@
       "title": "Freshness de evidencia de release",
       "severity": "critical",
       "status": "PASS",
-      "details": "Reporte reciente (0.7h).",
+      "details": "Reporte reciente (0.0h).",
       "evidence": [
         "ops/runtime/production-go-no-go-report.md"
       ],
