@@ -130,7 +130,7 @@
     "esbuild": "^0.28.1"
   },
   "devDependencies": {
-    "@types/node": "^26.1.0",
+    "@types/node": "^26.2.0",
     "@types/pg": "^8.20.0",
     "@vitest/coverage-v8": "^4.1.9",
     "mjml": "^5.4.0",
