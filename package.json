@@ -132,7 +132,7 @@
   "devDependencies": {
     "@types/node": "^26.1.0",
     "@types/pg": "^8.20.0",
-    "@vitest/coverage-v8": "^4.1.9",
+    "@vitest/coverage-v8": "^4.1.11",
     "mjml": "^5.4.0",
     "puppeteer": "^25.3.0",
     "sharp": "^0.35.3",
